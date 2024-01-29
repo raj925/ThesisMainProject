@@ -3,15 +3,16 @@ requiredPackages <- c("tibble", "psych", "ltm", "stringr", "ggsci", "ggplot2", "
                       "pracma", "lattice", "MASS", "apcluster", "blme", 
                       "smacof","cluster","factoextra", "pwr", 
                       "magrittr", "tidyr", "dplyr", "boot", "rstatix", 
-                      "devtools",  "fossil", "tidyverse",
-                      "plotly","viridis","padr")
+                      "devtools",  "fossil", "tidyverse", "proxy",
+                      "plotly","viridis","padr", "wordcloud", "RColorBrewer", "tm", "logisticPCA", "rARPACK", "FactoMineR",
+                      "rpart", "caret", "tidyverse", "data.table", "verification", "glmnet",
+                      "GGally", "corrplot", "verification", "ROCR", "maptree",
+                      "glmnet", "gridExtra", "randomForest", "mgcv", "nnet", "pROC", "pls",
+                      "gbm", "e1071", "xgboost", "DT", "NeuralNetTools", "rpart.plot")
 
 new.packages <- requiredPackages[!(requiredPackages %in% installed.packages()[,"Package"])]
 if(length(new.packages)) install.packages(new.packages, repos = "http://cran.us.r-project.org")
 lapply(requiredPackages, require, character.only = TRUE)
-
-install_github("vqv/ggbiplot")
-library(ggbiplot)
 
 meanFun <- function(data, i){
   d <- data[i, ]

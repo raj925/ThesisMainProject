@@ -19,7 +19,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r, warning=FALSE, message=FALSE}
 
-source("./packageLoad.R")
+source("../packageLoad.R")
 
 caseFile <- paste("./ThinkAloudCodingCaseData.csv",sep = "")
 caseData <- read.csv(caseFile,header=TRUE,sep=",")

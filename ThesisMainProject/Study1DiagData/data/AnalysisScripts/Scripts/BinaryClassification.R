@@ -1,10 +1,4 @@
-requiredPackages <- c("rpart", "caret", "tidyverse", "data.table", "verification", "glmnet",
-                      "GGally", "corrplot", "verification", "ROCR", "maptree",
-                      "glmnet", "gridExtra", "randomForest", "mgcv", "nnet", "pROC", "pls",
-                      "gbm", "e1071", "xgboost", "DT", "NeuralNetTools", "rpart.plot", "ROCR")
-new.packages <- requiredPackages[!(requiredPackages %in% installed.packages()[,"Package"])]
-if(length(new.packages)) install.packages(new.packages)
-lapply(requiredPackages, require, character.only = TRUE)
+
 
 #####################
 ### Binary classification of ability

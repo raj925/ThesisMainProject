@@ -10,7 +10,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Load Packages
 ```{r, warning=FALSE, message=FALSE}
-source("./packageLoad.R")
+source("../packageLoad.R")
 require(NLP)
 
 data_summary <- function(x) {
