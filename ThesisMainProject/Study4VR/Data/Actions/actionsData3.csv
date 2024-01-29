@@ -1,0 +1,1298 @@
+SESSION START,NAME,SCENARIO,CURRENT SCENARIO VERSION,SCENARIO VERSION PLAYED,SESSION ID#,ACTION TIMESTAMP (SECS AFTER START),ACTION TITLE
+06/11/2023 12:48,Paeds Account 18,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339385,0,start scenario
+06/11/2023 12:49,Paeds Account 18,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339385,45,introduce yourself
+06/11/2023 12:49,Paeds Account 18,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339385,57,introduce yourself
+06/11/2023 12:49,Paeds Account 18,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339385,73,wash hands and apply ppe
+06/11/2023 12:50,Paeds Account 18,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339385,86,check weight & height
+06/11/2023 12:50,Paeds Account 18,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339385,92,presenting complaint
+06/11/2023 12:50,Paeds Account 18,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339385,108,past medical history
+06/11/2023 12:51,Paeds Account 18,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339385,148,measure oxygen saturations & heart rate
+06/11/2023 12:51,Paeds Account 18,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339385,151,measure blood pressure
+06/11/2023 12:51,Paeds Account 18,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339385,182,non-rebreather mask (15 l/min)
+06/11/2023 12:51,Paeds Account 18,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339385,193,provide reassurance
+06/11/2023 12:52,Paeds Account 18,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339385,199,do you have any questions?
+06/11/2023 12:52,Paeds Account 18,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339385,209,respiratory
+06/11/2023 12:52,Paeds Account 18,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339385,218,observe respiratory rate and signs of respiratory distress
+06/11/2023 12:52,Paeds Account 18,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339385,253,auscultate lungs
+06/11/2023 12:53,Paeds Account 18,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339385,289,check temperature (tympanic)
+06/11/2023 12:53,Paeds Account 18,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339385,313,ask consent to examine sam
+06/11/2023 12:54,Paeds Account 18,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339385,320,provide reassurance
+06/11/2023 12:54,Paeds Account 18,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339385,334,check capillary blood glucose
+06/11/2023 12:55,Paeds Account 18,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339385,414,capillary blood gas
+06/11/2023 12:56,Paeds Account 18,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339385,481,normal
+06/11/2023 12:56,Paeds Account 18,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339385,481,> 30 breaths per min
+06/11/2023 12:56,Paeds Account 18,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339385,481,severe / moderate
+06/11/2023 12:56,Paeds Account 18,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339385,481,sp o2 <95% in air and/or receiving oxygen
+06/11/2023 12:56,Paeds Account 18,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339385,481,> 120 bpm
+06/11/2023 12:56,Paeds Account 18,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339385,481,yes
+06/11/2023 12:56,Paeds Account 18,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339385,490,cbg result #1
+06/11/2023 12:57,Paeds Account 18,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339385,518,insert iv access and take bloods
+06/11/2023 12:58,Paeds Account 18,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339385,576,situation option 1
+06/11/2023 12:58,Paeds Account 18,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339385,576,situation option 2
+06/11/2023 12:58,Paeds Account 18,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339385,576,situation option 4
+06/11/2023 12:58,Paeds Account 18,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339385,576,background option 1
+06/11/2023 12:58,Paeds Account 18,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339385,576,background option 2
+06/11/2023 12:58,Paeds Account 18,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339385,576,background option 4
+06/11/2023 12:58,Paeds Account 18,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339385,576,assessment option 2
+06/11/2023 12:58,Paeds Account 18,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339385,576,assessment option 3
+06/11/2023 12:58,Paeds Account 18,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339385,576,assessment option 4
+06/11/2023 12:58,Paeds Account 18,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339385,576,assessment option 5
+06/11/2023 12:58,Paeds Account 18,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339385,576,recommendation option 4
+06/11/2023 12:59,Paeds Account 18,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339385,622,medication list
+06/11/2023 12:59,Paeds Account 18,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339385,631,e-prescription chart
+06/11/2023 12:59,Paeds Account 18,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339385,641,through air
+06/11/2023 13:00,Paeds Account 18,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339385,686,observe airway and talk to patient
+06/11/2023 13:00,Paeds Account 18,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339385,701,respiratory
+06/11/2023 13:00,Paeds Account 18,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339385,706,repeat blood pressure
+06/11/2023 13:00,Paeds Account 18,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339385,708,repeat blood pressure
+06/11/2023 13:00,Paeds Account 18,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339385,725,update carer
+06/11/2023 13:00,Paeds Account 18,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339385,736,observe respiratory rate and signs of respiratory distress
+06/11/2023 12:48,Paeds Account 16,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339387,0,start scenario
+06/11/2023 12:50,Paeds Account 16,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339387,110,ask consent to examine sam
+06/11/2023 12:50,Paeds Account 16,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339387,134,observe airway and talk to patient
+06/11/2023 12:51,Paeds Account 16,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339387,166,look in patient's mouth with a tongue depressor
+06/11/2023 12:51,Paeds Account 16,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339387,206,take pulse (peripheral)
+06/11/2023 12:52,Paeds Account 16,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339387,231,observe respiratory rate and signs of respiratory distress
+06/11/2023 12:52,Paeds Account 16,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339387,269,auscultate lungs
+06/11/2023 12:54,Paeds Account 16,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339387,335,capillary refill time (central)
+06/11/2023 12:54,Paeds Account 16,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339387,358,capillary refill time (peripheral)
+06/11/2023 12:54,Paeds Account 16,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339387,388,assess consciousness level (avpu)
+06/11/2023 12:55,Paeds Account 16,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339387,399,check pupils
+06/11/2023 12:55,Paeds Account 16,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339387,429,check upper body
+06/11/2023 12:56,Paeds Account 16,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339387,462,check lower body
+06/11/2023 12:56,Paeds Account 16,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339387,479,check capillary blood glucose
+06/11/2023 12:57,Paeds Account 16,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339387,514,measure blood pressure
+06/11/2023 12:57,Paeds Account 16,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339387,542,check temperature (tympanic)
+06/11/2023 12:57,Paeds Account 16,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339387,562,measure oxygen saturations & heart rate
+06/11/2023 12:58,Paeds Account 16,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339387,594,non-rebreather mask (15 l/min)
+06/11/2023 12:59,Paeds Account 16,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339387,659,insert iv access and take bloods
+06/11/2023 12:59,Paeds Account 16,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339387,677,check temperature (tympanic)
+06/11/2023 13:00,Paeds Account 16,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339387,724,presenting complaint
+06/11/2023 13:00,Paeds Account 16,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339387,735,history of presenting complaint
+06/11/2023 13:01,Paeds Account 16,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339387,763,past medical history
+06/11/2023 13:01,Paeds Account 16,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339387,800,ask for peak flow
+06/11/2023 13:04,Paeds Account 16,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339387,934,normal
+06/11/2023 13:04,Paeds Account 16,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339387,934,> 30 breaths per min
+06/11/2023 13:04,Paeds Account 16,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339387,934,severe / moderate
+06/11/2023 13:04,Paeds Account 16,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339387,934,sp o2 <95% in air and/or receiving oxygen
+06/11/2023 13:04,Paeds Account 16,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339387,934,> 120 bpm
+06/11/2023 13:04,Paeds Account 16,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339387,934,yes
+06/11/2023 13:04,Paeds Account 16,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339387,947,medication list
+06/11/2023 13:04,Paeds Account 16,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339387,976,medical history
+06/11/2023 13:05,Paeds Account 16,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339387,1005,leave scenario
+06/11/2023 12:50,Paeds Account 12,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339389,0,start scenario
+06/11/2023 12:51,Paeds Account 12,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339389,66,introduce yourself
+06/11/2023 12:51,Paeds Account 12,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339389,89,presenting complaint
+06/11/2023 12:51,Paeds Account 12,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339389,99,introduce yourself
+06/11/2023 12:52,Paeds Account 12,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339389,121,history of presenting complaint
+06/11/2023 12:52,Paeds Account 12,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339389,148,past medical history
+06/11/2023 12:53,Paeds Account 12,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339389,186,provide reassurance
+06/11/2023 12:53,Paeds Account 12,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339389,202,prescribed medications
+06/11/2023 12:54,Paeds Account 12,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339389,246,ask consent to examine sam
+06/11/2023 12:54,Paeds Account 12,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339389,288,observe airway and talk to patient
+06/11/2023 12:55,Paeds Account 12,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339389,315,ask to check child's inhaler technique
+06/11/2023 12:55,Paeds Account 12,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339389,326,observe respiratory rate and signs of respiratory distress
+06/11/2023 12:56,Paeds Account 12,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339389,385,auscultate lungs
+06/11/2023 12:57,Paeds Account 12,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339389,443,look in patient's mouth with a tongue depressor
+06/11/2023 12:58,Paeds Account 12,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339389,481,take pulse (peripheral)
+06/11/2023 12:58,Paeds Account 12,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339389,507,ask mother to let us give child 10 puffs of salbutamol inhaler via their own spacer
+06/11/2023 12:58,Paeds Account 12,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339389,526,auscultate lungs
+06/11/2023 12:59,Paeds Account 12,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339389,576,observe respiratory rate and signs of respiratory distress
+06/11/2023 13:00,Paeds Account 12,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339389,632,ask for peak flow
+06/11/2023 13:01,Paeds Account 12,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339389,673,update on clinical plan
+06/11/2023 13:01,Paeds Account 12,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339389,685,update carer
+06/11/2023 13:01,Paeds Account 12,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339389,697,allergies
+06/11/2023 13:01,Paeds Account 12,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339389,710,respiratory
+06/11/2023 13:02,Paeds Account 12,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339389,742,abdominal exam
+06/11/2023 13:03,Paeds Account 12,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339389,791,measure blood pressure
+06/11/2023 13:03,Paeds Account 12,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339389,817,check temperature (tympanic)
+06/11/2023 13:04,Paeds Account 12,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339389,836,measure oxygen saturations & heart rate
+06/11/2023 13:04,Paeds Account 12,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339389,848,ask for sputum cultures
+06/11/2023 13:04,Paeds Account 12,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339389,870,request an inpatient bed for patient
+06/11/2023 13:04,Paeds Account 12,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339389,884,non-rebreather mask (15 l/min)
+06/11/2023 13:05,Paeds Account 12,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339389,911,observe airway and talk to patient
+06/11/2023 13:06,Paeds Account 12,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339389,958,leave scenario
+06/11/2023 13:08,Paeds Account 4,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339457,0,start scenario
+06/11/2023 13:09,Paeds Account 4,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339457,36,measure oxygen saturations & heart rate
+06/11/2023 13:09,Paeds Account 4,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339457,47,allergies
+06/11/2023 13:09,Paeds Account 4,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339457,55,family history
+06/11/2023 13:10,Paeds Account 4,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339457,66,auscultate lungs
+06/11/2023 13:10,Paeds Account 4,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339457,81,ask for peak flow
+06/11/2023 13:10,Paeds Account 4,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339457,87,introduce yourself
+06/11/2023 13:10,Paeds Account 4,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339457,99,presenting complaint
+06/11/2023 13:10,Paeds Account 4,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339457,104,history of presenting complaint
+06/11/2023 13:10,Paeds Account 4,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339457,113,past medical history
+06/11/2023 13:10,Paeds Account 4,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339457,116,ask birth history
+06/11/2023 13:10,Paeds Account 4,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339457,122,antenatal history and scans
+06/11/2023 13:11,Paeds Account 4,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339457,126,developmental milestones
+06/11/2023 13:11,Paeds Account 4,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339457,127,allergies
+06/11/2023 13:11,Paeds Account 4,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339457,131,vaccination history
+06/11/2023 13:11,Paeds Account 4,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339457,140,check temperature (tympanic)
+06/11/2023 13:12,Paeds Account 4,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339457,203,introduce yourself
+06/11/2023 13:12,Paeds Account 4,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339457,210,respiratory
+06/11/2023 13:12,Paeds Account 4,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339457,218,non-rebreather mask (15 l/min)
+06/11/2023 13:13,Paeds Account 4,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339457,269,observe respiratory rate and signs of respiratory distress
+06/11/2023 13:15,Paeds Account 4,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339457,390,ask for peak flow
+06/11/2023 13:15,Paeds Account 4,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339457,420,ask for sputum cultures
+06/11/2023 13:16,Paeds Account 4,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339457,471,situation option 1
+06/11/2023 13:16,Paeds Account 4,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339457,471,situation option 2
+06/11/2023 13:16,Paeds Account 4,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339457,471,situation option 4
+06/11/2023 13:16,Paeds Account 4,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339457,471,background option 1
+06/11/2023 13:16,Paeds Account 4,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339457,471,background option 2
+06/11/2023 13:16,Paeds Account 4,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339457,471,background option 4
+06/11/2023 13:16,Paeds Account 4,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339457,471,assessment option 2
+06/11/2023 13:16,Paeds Account 4,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339457,471,assessment option 3
+06/11/2023 13:16,Paeds Account 4,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339457,471,assessment option 4
+06/11/2023 13:16,Paeds Account 4,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339457,471,assessment option 5
+06/11/2023 13:16,Paeds Account 4,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339457,471,recommendation option 4
+06/11/2023 13:17,Paeds Account 4,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339457,500,e-prescription chart
+06/11/2023 13:17,Paeds Account 4,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339457,531,e-prescription chart
+06/11/2023 13:18,Paeds Account 4,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339457,595,check capillary blood glucose
+06/11/2023 13:18,Paeds Account 4,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339457,596,measure blood pressure
+06/11/2023 13:19,Paeds Account 4,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339457,612,capillary blood gas
+06/11/2023 13:19,Paeds Account 4,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339457,615,ask for ecg
+06/11/2023 13:19,Paeds Account 4,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339457,617,ask for peak flow
+06/11/2023 13:20,Paeds Account 4,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339457,668,normal
+06/11/2023 13:20,Paeds Account 4,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339457,668,> 30 breaths per min
+06/11/2023 13:20,Paeds Account 4,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339457,668,severe / moderate
+06/11/2023 13:20,Paeds Account 4,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339457,668,sp o2 >95% with oxygen
+06/11/2023 13:20,Paeds Account 4,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339457,668,> 120 bpm
+06/11/2023 13:20,Paeds Account 4,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339457,668,yes
+06/11/2023 13:20,Paeds Account 4,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339457,685,ecg result #1
+06/11/2023 13:36,Paeds Account 9,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339523,0,start scenario
+06/11/2023 13:37,Paeds Account 9,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339523,38,introduce yourself
+06/11/2023 13:37,Paeds Account 9,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339523,65,presenting complaint
+06/11/2023 13:37,Paeds Account 9,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339523,75,history of presenting complaint
+06/11/2023 13:38,Paeds Account 9,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339523,93,ask about pain
+06/11/2023 13:38,Paeds Account 9,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339523,98,ask about fever
+06/11/2023 13:38,Paeds Account 9,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339523,109,ask about general activity level
+06/11/2023 13:38,Paeds Account 9,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339523,121,past medical history
+06/11/2023 13:38,Paeds Account 9,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339523,133,past surgical history
+06/11/2023 13:39,Paeds Account 9,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339523,164,allergies
+06/11/2023 13:39,Paeds Account 9,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339523,170,prescribed medications
+06/11/2023 13:39,Paeds Account 9,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339523,192,ask consent to examine sam
+06/11/2023 13:40,Paeds Account 9,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339523,242,introduce yourself
+06/11/2023 13:41,Paeds Account 9,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339523,268,measure blood pressure
+06/11/2023 13:41,Paeds Account 9,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339523,298,presenting complaint
+06/11/2023 13:41,Paeds Account 9,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339523,310,aggravating / relieving factors
+06/11/2023 13:42,Paeds Account 9,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339523,325,allergies
+06/11/2023 13:42,Paeds Account 9,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339523,334,check temperature (tympanic)
+06/11/2023 13:42,Paeds Account 9,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339523,356,provide reassurance
+06/11/2023 13:42,Paeds Account 9,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339523,376,provide reassurance
+06/11/2023 13:42,Paeds Account 9,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339523,382,check capillary blood glucose
+06/11/2023 13:43,Paeds Account 9,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339523,423,observe airway and talk to patient
+06/11/2023 13:44,Paeds Account 9,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339523,447,observe respiratory rate and signs of respiratory distress
+06/11/2023 13:44,Paeds Account 9,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339523,479,auscultate lungs
+06/11/2023 13:45,Paeds Account 9,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339523,510,measure oxygen saturations & heart rate
+06/11/2023 13:45,Paeds Account 9,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339523,531,non-rebreather mask (15 l/min)
+06/11/2023 13:45,Paeds Account 9,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339523,539,provide reassurance
+06/11/2023 13:45,Paeds Account 9,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339523,553,take pulse (central)
+06/11/2023 13:46,Paeds Account 9,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339523,579,check upper body
+06/11/2023 13:47,Paeds Account 9,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339523,627,history of presenting complaint
+06/11/2023 13:47,Paeds Account 9,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339523,642,check pupils
+06/11/2023 13:47,Paeds Account 9,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339523,666,check capillary blood glucose
+06/11/2023 13:48,Paeds Account 9,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339523,744,insert iv access and take bloods
+06/11/2023 13:50,Paeds Account 9,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339523,813,situation option 1
+06/11/2023 13:50,Paeds Account 9,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339523,813,situation option 2
+06/11/2023 13:50,Paeds Account 9,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339523,813,situation option 4
+06/11/2023 13:50,Paeds Account 9,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339523,813,background option 1
+06/11/2023 13:50,Paeds Account 9,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339523,813,background option 2
+06/11/2023 13:50,Paeds Account 9,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339523,813,background option 4
+06/11/2023 13:50,Paeds Account 9,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339523,813,assessment option 2
+06/11/2023 13:50,Paeds Account 9,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339523,813,assessment option 3
+06/11/2023 13:50,Paeds Account 9,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339523,813,assessment option 4
+06/11/2023 13:50,Paeds Account 9,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339523,813,assessment option 5
+06/11/2023 13:50,Paeds Account 9,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339523,813,recommendation option 1
+06/11/2023 13:50,Paeds Account 9,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339523,827,call on-call doctor
+06/11/2023 13:50,Paeds Account 9,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339523,862,e-prescription chart
+06/11/2023 13:51,Paeds Account 9,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339523,880,through air
+06/11/2023 13:51,Paeds Account 9,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339523,913,how are you feeling?
+06/11/2023 13:52,Paeds Account 9,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339523,929,auscultate lungs
+06/11/2023 13:53,Paeds Account 9,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339523,986,check hydration status
+06/11/2023 13:53,Paeds Account 9,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339523,1015,fluid prescription chart
+06/11/2023 13:54,Paeds Account 9,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339523,1068,normal
+06/11/2023 13:54,Paeds Account 9,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339523,1068,> 30 breaths per min
+06/11/2023 13:54,Paeds Account 9,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339523,1068,severe / moderate
+06/11/2023 13:54,Paeds Account 9,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339523,1068,sp o2 <95% in air and/or receiving oxygen
+06/11/2023 13:54,Paeds Account 9,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339523,1068,> 120 bpm
+06/11/2023 13:54,Paeds Account 9,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339523,1068,yes
+06/11/2023 13:54,Paeds Account 9,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339523,1090,20ml/kg 0.9% saline iv stat (max 500ml)
+06/11/2023 13:54,Paeds Account 9,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339523,1098,update on clinical plan
+06/11/2023 13:55,Paeds Account 9,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339523,1114,ask for peak flow
+06/11/2023 13:55,Paeds Account 9,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339523,1157,capillary refill time (peripheral)
+06/11/2023 13:56,Paeds Account 9,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339523,1171,repeat blood pressure
+06/11/2023 13:56,Paeds Account 9,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339523,1178,repeat blood pressure
+06/11/2023 13:56,Paeds Account 9,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339523,1196,leave scenario
+06/11/2023 13:36,Paeds Account 2,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339524,0,start scenario
+06/11/2023 13:37,Paeds Account 2,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339524,39,introduce yourself
+06/11/2023 13:37,Paeds Account 2,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339524,68,presenting complaint
+06/11/2023 13:38,Paeds Account 2,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339524,82,introduce yourself
+06/11/2023 13:38,Paeds Account 2,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339524,101,presenting complaint
+06/11/2023 13:38,Paeds Account 2,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339524,122,history of presenting complaint
+06/11/2023 13:39,Paeds Account 2,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339524,159,aggravating / relieving factors
+06/11/2023 13:39,Paeds Account 2,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339524,174,ask about pain
+06/11/2023 13:39,Paeds Account 2,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339524,186,past medical history
+06/11/2023 13:40,Paeds Account 2,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339524,237,update carer
+06/11/2023 13:40,Paeds Account 2,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339524,250,prescribed medications
+06/11/2023 13:40,Paeds Account 2,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339524,259,measure blood pressure
+06/11/2023 13:41,Paeds Account 2,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339524,266,allergies
+06/11/2023 13:41,Paeds Account 2,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339524,288,ask consent to examine sam
+06/11/2023 13:42,Paeds Account 2,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339524,328,observe respiratory rate and signs of respiratory distress
+06/11/2023 13:42,Paeds Account 2,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339524,370,observe respiratory rate and signs of respiratory distress
+06/11/2023 13:43,Paeds Account 2,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339524,401,auscultate lungs
+06/11/2023 13:44,Paeds Account 2,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339524,443,measure oxygen saturations & heart rate
+06/11/2023 13:44,Paeds Account 2,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339524,485,ask mother to let us give child 10 puffs of salbutamol inhaler via their own spacer
+06/11/2023 13:45,Paeds Account 2,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339524,506,repeat blood pressure
+06/11/2023 13:45,Paeds Account 2,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339524,508,repeat blood pressure
+06/11/2023 13:45,Paeds Account 2,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339524,508,repeat blood pressure
+06/11/2023 13:45,Paeds Account 2,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339524,522,repeat blood pressure
+06/11/2023 13:45,Paeds Account 2,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339524,524,repeat blood pressure
+06/11/2023 13:45,Paeds Account 2,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339524,524,repeat blood pressure
+06/11/2023 13:45,Paeds Account 2,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339524,525,repeat blood pressure
+06/11/2023 13:45,Paeds Account 2,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339524,525,repeat blood pressure
+06/11/2023 13:45,Paeds Account 2,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339524,526,repeat blood pressure
+06/11/2023 13:45,Paeds Account 2,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339524,538,check temperature (tympanic)
+06/11/2023 13:46,Paeds Account 2,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339524,610,skin assessment chart
+06/11/2023 13:47,Paeds Account 2,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339524,662,normal
+06/11/2023 13:47,Paeds Account 2,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339524,662,> 30 breaths per min
+06/11/2023 13:47,Paeds Account 2,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339524,662,severe / moderate
+06/11/2023 13:47,Paeds Account 2,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339524,662,sp o2 >95% with oxygen
+06/11/2023 13:47,Paeds Account 2,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339524,662,> 120 bpm
+06/11/2023 13:47,Paeds Account 2,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339524,662,yes
+06/11/2023 13:47,Paeds Account 2,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339524,674,medication list
+06/11/2023 13:48,Paeds Account 2,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339524,683,non-rebreather mask (15 l/min)
+06/11/2023 13:48,Paeds Account 2,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339524,708,capillary refill time (peripheral)
+06/11/2023 13:48,Paeds Account 2,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339524,735,check weight & height
+06/11/2023 13:50,Paeds Account 2,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339524,805,situation option 1
+06/11/2023 13:50,Paeds Account 2,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339524,805,situation option 2
+06/11/2023 13:50,Paeds Account 2,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339524,805,situation option 4
+06/11/2023 13:50,Paeds Account 2,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339524,805,background option 1
+06/11/2023 13:50,Paeds Account 2,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339524,805,background option 2
+06/11/2023 13:50,Paeds Account 2,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339524,805,background option 4
+06/11/2023 13:50,Paeds Account 2,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339524,805,assessment option 2
+06/11/2023 13:50,Paeds Account 2,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339524,805,assessment option 3
+06/11/2023 13:50,Paeds Account 2,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339524,805,assessment option 4
+06/11/2023 13:50,Paeds Account 2,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339524,805,assessment option 5
+06/11/2023 13:50,Paeds Account 2,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339524,805,recommendation option 4
+06/11/2023 13:50,Paeds Account 2,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339524,848,e-prescription chart
+06/11/2023 13:52,Paeds Account 2,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339524,925,update on clinical plan
+06/11/2023 13:52,Paeds Account 2,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339524,947,update carer
+06/11/2023 13:52,Paeds Account 2,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339524,963,repeat blood pressure
+06/11/2023 13:52,Paeds Account 2,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339524,964,repeat blood pressure
+06/11/2023 13:52,Paeds Account 2,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339524,965,repeat blood pressure
+06/11/2023 13:52,Paeds Account 2,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339524,965,repeat blood pressure
+06/11/2023 13:52,Paeds Account 2,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339524,965,repeat blood pressure
+06/11/2023 13:52,Paeds Account 2,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339524,965,repeat blood pressure
+06/11/2023 13:52,Paeds Account 2,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339524,966,repeat blood pressure
+06/11/2023 13:52,Paeds Account 2,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339524,966,repeat blood pressure
+06/11/2023 13:53,Paeds Account 2,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339524,986,leave scenario
+06/11/2023 13:38,Paeds Account 14,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339529,0,start scenario
+06/11/2023 13:38,Paeds Account 14,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339529,38,wash hands and apply ppe
+06/11/2023 13:38,Paeds Account 14,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339529,48,introduce yourself
+06/11/2023 13:39,Paeds Account 14,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339529,60,presenting complaint
+06/11/2023 13:39,Paeds Account 14,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339529,71,history of presenting complaint
+06/11/2023 13:39,Paeds Account 14,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339529,90,past medical history
+06/11/2023 13:39,Paeds Account 14,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339529,101,introduce yourself
+06/11/2023 13:40,Paeds Account 14,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339529,135,how are you feeling?
+06/11/2023 13:40,Paeds Account 14,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339529,142,ask consent to examine sam
+06/11/2023 13:40,Paeds Account 14,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339529,167,observe airway and talk to patient
+06/11/2023 13:41,Paeds Account 14,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339529,188,look in patient's mouth with a tongue depressor
+06/11/2023 13:41,Paeds Account 14,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339529,211,observe respiratory rate and signs of respiratory distress
+06/11/2023 13:41,Paeds Account 14,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339529,224,provide reassurance
+06/11/2023 13:42,Paeds Account 14,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339529,252,auscultate lungs
+06/11/2023 13:42,Paeds Account 14,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339529,292,measure oxygen saturations & heart rate
+06/11/2023 13:43,Paeds Account 14,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339529,339,non-rebreather mask (15 l/min)
+06/11/2023 13:43,Paeds Account 14,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339529,344,check temperature (tympanic)
+06/11/2023 13:43,Paeds Account 14,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339529,346,measure blood pressure
+06/11/2023 13:44,Paeds Account 14,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339529,371,insert iv access and take bloods
+06/11/2023 13:44,Paeds Account 14,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339529,379,request an inpatient bed for patient
+06/11/2023 13:44,Paeds Account 14,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339529,382,update on clinical plan
+06/11/2023 13:45,Paeds Account 14,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339529,441,situation option 1
+06/11/2023 13:45,Paeds Account 14,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339529,441,situation option 2
+06/11/2023 13:45,Paeds Account 14,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339529,441,situation option 4
+06/11/2023 13:45,Paeds Account 14,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339529,441,background option 1
+06/11/2023 13:45,Paeds Account 14,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339529,441,background option 2
+06/11/2023 13:45,Paeds Account 14,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339529,441,background option 4
+06/11/2023 13:45,Paeds Account 14,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339529,441,assessment option 2
+06/11/2023 13:45,Paeds Account 14,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339529,441,assessment option 3
+06/11/2023 13:45,Paeds Account 14,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339529,441,assessment option 4
+06/11/2023 13:45,Paeds Account 14,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339529,441,assessment option 5
+06/11/2023 13:45,Paeds Account 14,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339529,441,recommendation option 4
+06/11/2023 13:45,Paeds Account 14,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339529,450,ask about pain
+06/11/2023 13:45,Paeds Account 14,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339529,477,e-prescription chart
+06/11/2023 13:46,Paeds Account 14,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339529,490,through air
+06/11/2023 13:46,Paeds Account 14,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339529,499,check temperature (tympanic)
+06/11/2023 13:46,Paeds Account 14,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339529,502,repeat blood pressure
+06/11/2023 13:46,Paeds Account 14,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339529,503,repeat blood pressure
+06/11/2023 13:46,Paeds Account 14,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339529,504,repeat blood pressure
+06/11/2023 13:46,Paeds Account 14,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339529,525,normal
+06/11/2023 13:46,Paeds Account 14,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339529,525,> 30 breaths per min
+06/11/2023 13:46,Paeds Account 14,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339529,525,mild / none
+06/11/2023 13:46,Paeds Account 14,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339529,525,sp o2 <95% in air and/or receiving oxygen
+06/11/2023 13:46,Paeds Account 14,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339529,525,> 120 bpm
+06/11/2023 13:46,Paeds Account 14,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339529,525,yes
+06/11/2023 13:46,Paeds Account 14,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339529,538,call on-call doctor
+06/11/2023 13:47,Paeds Account 14,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339529,549,ask for sputum cultures
+06/11/2023 13:47,Paeds Account 14,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339529,568,take pulse (central)
+06/11/2023 13:47,Paeds Account 14,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339529,577,allergies
+06/11/2023 13:47,Paeds Account 14,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339529,580,please use accpm001
+06/11/2023 13:47,Paeds Account 14,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339529,596,parental smoking and pets
+06/11/2023 13:48,Paeds Account 14,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339529,623,capillary refill time (central)
+06/11/2023 13:48,Paeds Account 14,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339529,638,family history
+06/11/2023 13:48,Paeds Account 14,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339529,644,past surgical history
+06/11/2023 13:48,Paeds Account 14,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339529,653,auscultate heart sounds
+06/11/2023 13:48,Paeds Account 14,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339529,657,repeat blood pressure
+06/11/2023 13:49,Paeds Account 14,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339529,663,respiratory
+06/11/2023 13:49,Paeds Account 14,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339529,673,check weight & height
+06/11/2023 13:49,Paeds Account 14,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339529,683,ask for tips
+06/11/2023 13:38,Paeds Account 25,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339530,0,start scenario
+06/11/2023 13:38,Paeds Account 25,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339530,37,introduce yourself
+06/11/2023 13:39,Paeds Account 25,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339530,59,provide reassurance
+06/11/2023 13:39,Paeds Account 25,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339530,77,wash hands and apply ppe
+06/11/2023 13:39,Paeds Account 25,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339530,93,presenting complaint
+06/11/2023 13:40,Paeds Account 25,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339530,107,past medical history
+06/11/2023 13:40,Paeds Account 25,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339530,118,ask consent to examine sam
+06/11/2023 13:41,Paeds Account 25,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339530,178,allergies
+06/11/2023 13:41,Paeds Account 25,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339530,185,observe airway and talk to patient
+06/11/2023 13:41,Paeds Account 25,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339530,203,look in patient's mouth with a tongue depressor
+06/11/2023 13:42,Paeds Account 25,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339530,230,ask birth history
+06/11/2023 13:42,Paeds Account 25,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339530,251,antenatal history and scans
+06/11/2023 13:42,Paeds Account 25,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339530,272,observe respiratory rate and signs of respiratory distress
+06/11/2023 13:43,Paeds Account 25,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339530,306,auscultate lungs
+06/11/2023 13:44,Paeds Account 25,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339530,358,check hydration status
+06/11/2023 13:44,Paeds Account 25,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339530,370,prescribed medications
+06/11/2023 13:44,Paeds Account 25,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339530,379,measure oxygen saturations & heart rate
+06/11/2023 13:45,Paeds Account 25,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339530,419,check temperature (tympanic)
+06/11/2023 13:45,Paeds Account 25,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339530,436,ask mother to let us give child 10 puffs of salbutamol inhaler via their own spacer
+06/11/2023 13:45,Paeds Account 25,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339530,459,check capillary blood glucose
+06/11/2023 13:47,Paeds Account 25,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339530,530,non-rebreather mask (15 l/min)
+06/11/2023 13:47,Paeds Account 25,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339530,544,measure blood pressure
+06/11/2023 13:47,Paeds Account 25,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339530,552,update carer
+06/11/2023 13:47,Paeds Account 25,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339530,569,do you have any questions?
+06/11/2023 13:47,Paeds Account 25,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339530,572,check capillary blood glucose
+06/11/2023 13:48,Paeds Account 25,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339530,626,update on clinical plan
+06/11/2023 13:49,Paeds Account 25,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339530,649,vaccination history
+06/11/2023 13:49,Paeds Account 25,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339530,661,parental smoking and pets
+06/11/2023 13:49,Paeds Account 25,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339530,675,travel history
+06/11/2023 13:49,Paeds Account 25,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339530,687,family history
+06/11/2023 13:49,Paeds Account 25,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339530,699,respiratory
+06/11/2023 13:50,Paeds Account 25,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339530,731,capillary refill time (peripheral)
+06/11/2023 13:50,Paeds Account 25,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339530,758,ask for tips
+06/11/2023 13:51,Paeds Account 25,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339530,821,normal
+06/11/2023 13:51,Paeds Account 25,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339530,821,> 30 breaths per min
+06/11/2023 13:51,Paeds Account 25,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339530,821,severe / moderate
+06/11/2023 13:51,Paeds Account 25,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339530,821,sp o2 >95% with oxygen
+06/11/2023 13:51,Paeds Account 25,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339530,821,> 120 bpm
+06/11/2023 13:51,Paeds Account 25,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339530,821,yes
+06/11/2023 13:52,Paeds Account 25,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339530,831,paediatric early warning score (pews) escalation chart
+06/11/2023 13:52,Paeds Account 25,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339530,846,request an inpatient bed for patient
+06/11/2023 13:52,Paeds Account 25,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339530,861,paediatric asthma guidelines
+06/11/2023 13:53,Paeds Account 25,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339530,896,request swabs for mrsa screening
+06/11/2023 13:53,Paeds Account 25,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339530,909,update on clinical plan
+06/11/2023 13:53,Paeds Account 25,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339530,913,provide reassurance
+06/11/2023 13:54,Paeds Account 25,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339530,947,leave scenario
+06/11/2023 14:09,Paeds Account 12,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339618,0,start scenario
+06/11/2023 14:10,Paeds Account 12,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339618,37,introduce yourself
+06/11/2023 14:10,Paeds Account 12,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339618,55,presenting complaint
+06/11/2023 14:10,Paeds Account 12,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339618,79,history of presenting complaint
+06/11/2023 14:10,Paeds Account 12,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339618,84,measure oxygen saturations & heart rate
+06/11/2023 14:11,Paeds Account 12,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339618,124,past medical history
+06/11/2023 14:11,Paeds Account 12,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339618,126,measure blood pressure
+06/11/2023 14:12,Paeds Account 12,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339618,162,prescribed medications
+06/11/2023 14:12,Paeds Account 12,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339618,168,repeat blood pressure
+06/11/2023 14:12,Paeds Account 12,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339618,192,ask consent to examine sam
+06/11/2023 14:12,Paeds Account 12,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339618,201,allergies
+06/11/2023 14:13,Paeds Account 12,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339618,221,provide reassurance
+06/11/2023 14:13,Paeds Account 12,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339618,241,observe airway and talk to patient
+06/11/2023 14:13,Paeds Account 12,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339618,257,observe respiratory rate and signs of respiratory distress
+06/11/2023 14:13,Paeds Account 12,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339618,273,repeat blood pressure
+06/11/2023 14:14,Paeds Account 12,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339618,290,check capillary blood glucose
+06/11/2023 14:15,Paeds Account 12,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339618,344,take pulse (peripheral)
+06/11/2023 14:15,Paeds Account 12,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339618,371,capillary refill time (peripheral)
+06/11/2023 14:16,Paeds Account 12,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339618,395,abdominal exam
+06/11/2023 14:16,Paeds Account 12,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339618,424,ask for blood ketones
+06/11/2023 14:16,Paeds Account 12,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339618,441,assess consciousness level (avpu)
+06/11/2023 14:16,Paeds Account 12,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339618,449,repeat blood pressure
+06/11/2023 14:17,Paeds Account 12,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339618,497,normal
+06/11/2023 14:17,Paeds Account 12,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339618,497,20 - 30 breaths per min
+06/11/2023 14:17,Paeds Account 12,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339618,497,mild / none
+06/11/2023 14:17,Paeds Account 12,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339618,497,sp o2 >95% in air
+06/11/2023 14:17,Paeds Account 12,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339618,497,> 120 bpm
+06/11/2023 14:17,Paeds Account 12,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339618,497,yes
+06/11/2023 14:17,Paeds Account 12,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339618,513,diabetes team
+06/11/2023 14:18,Paeds Account 12,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339618,527,update carer
+06/11/2023 14:18,Paeds Account 12,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339618,531,update on clinical plan
+06/11/2023 14:18,Paeds Account 12,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339618,564,check upper body
+06/11/2023 14:19,Paeds Account 12,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339618,628,situation option 1
+06/11/2023 14:19,Paeds Account 12,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339618,628,situation option 2
+06/11/2023 14:19,Paeds Account 12,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339618,628,situation option 4
+06/11/2023 14:19,Paeds Account 12,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339618,628,background option 1
+06/11/2023 14:19,Paeds Account 12,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339618,628,background option 2
+06/11/2023 14:19,Paeds Account 12,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339618,628,background option 3
+06/11/2023 14:19,Paeds Account 12,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339618,628,assessment option 2
+06/11/2023 14:19,Paeds Account 12,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339618,628,assessment option 3
+06/11/2023 14:19,Paeds Account 12,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339618,628,assessment option 4
+06/11/2023 14:19,Paeds Account 12,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339618,628,recommendation option 1
+06/11/2023 14:20,Paeds Account 12,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339618,639,check hydration status
+06/11/2023 14:20,Paeds Account 12,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339618,655,capillary blood gas
+06/11/2023 14:20,Paeds Account 12,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339618,690,check weight & height
+06/11/2023 14:21,Paeds Account 12,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339618,711,provide reassurance
+06/11/2023 14:21,Paeds Account 12,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339618,724,cbg result #1
+06/11/2023 14:21,Paeds Account 12,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339618,740,call on-call doctor
+06/11/2023 14:21,Paeds Account 12,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339618,744,repeat blood pressure
+06/11/2023 14:22,Paeds Account 12,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339618,791,insert iv access and take bloods
+06/11/2023 14:22,Paeds Account 12,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339618,800,social and living situation
+06/11/2023 14:22,Paeds Account 12,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339618,812,family history
+06/11/2023 14:23,Paeds Account 12,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339618,821,gastrointestinal
+06/11/2023 14:23,Paeds Account 12,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339618,827,"feeding, growth and nutrition"
+06/11/2023 14:23,Paeds Account 12,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339618,858,request an inpatient bed for patient
+06/11/2023 14:24,Paeds Account 12,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339618,877,paediatric diabetic ketoacidosis guidelines
+06/11/2023 14:24,Paeds Account 12,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339618,904,ask for ecg
+06/11/2023 14:24,Paeds Account 12,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339618,911,ecg result #1
+06/11/2023 14:24,Paeds Account 12,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339618,929,call on-call doctor
+06/11/2023 14:25,Paeds Account 12,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339618,967,check temperature (tympanic)
+06/11/2023 14:25,Paeds Account 12,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339618,977,fluid prescription chart
+06/11/2023 14:26,Paeds Account 12,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339618,1015,fluid prescription chart
+06/11/2023 14:26,Paeds Account 12,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339618,1033,10ml/kg 0.9% saline iv stat (max 500ml)
+06/11/2023 14:26,Paeds Account 12,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339618,1053,ask for tips
+06/11/2023 14:27,Paeds Account 12,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339618,1078,1ml/kg/hour 0.9% saline + 40mmol/l kcl iv
+06/11/2023 14:27,Paeds Account 12,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339618,1091,paediatric diabetic ketoacidosis guidelines
+06/11/2023 14:27,Paeds Account 12,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339618,1110,fluid balance chart (intake/output)
+06/11/2023 14:28,Paeds Account 12,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339618,1126,call on-call doctor
+06/11/2023 14:09,Paeds Account 19,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339619,0,start scenario
+06/11/2023 14:10,Paeds Account 19,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339619,44,wash hands and apply ppe
+06/11/2023 14:10,Paeds Account 19,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339619,63,introduce yourself
+06/11/2023 14:11,Paeds Account 19,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339619,92,introduce yourself
+06/11/2023 14:11,Paeds Account 19,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339619,107,ask for tips
+06/11/2023 14:11,Paeds Account 19,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339619,124,presenting complaint
+06/11/2023 14:12,Paeds Account 19,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339619,146,presenting complaint
+06/11/2023 14:12,Paeds Account 19,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339619,171,past medical history
+06/11/2023 14:12,Paeds Account 19,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339619,198,past surgical history
+06/11/2023 14:13,Paeds Account 19,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339619,215,prescribed medications
+06/11/2023 14:13,Paeds Account 19,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339619,242,provide reassurance
+06/11/2023 14:13,Paeds Account 19,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339619,256,allergies
+06/11/2023 14:14,Paeds Account 19,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339619,288,measure oxygen saturations & heart rate
+06/11/2023 14:14,Paeds Account 19,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339619,312,measure blood pressure
+06/11/2023 14:15,Paeds Account 19,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339619,340,provide reassurance
+06/11/2023 14:16,Paeds Account 19,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339619,385,check temperature (tympanic)
+06/11/2023 14:16,Paeds Account 19,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339619,409,check capillary blood glucose
+06/11/2023 14:17,Paeds Account 19,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339619,486,respiratory
+06/11/2023 14:17,Paeds Account 19,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339619,501,ask consent to examine sam
+06/11/2023 14:18,Paeds Account 19,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339619,539,provide reassurance
+06/11/2023 14:18,Paeds Account 19,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339619,555,look in patient's mouth with a tongue depressor
+06/11/2023 14:20,Paeds Account 19,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339619,626,wash hands and apply ppe
+06/11/2023 14:20,Paeds Account 19,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339619,638,rapid response team (icu outreach)
+06/11/2023 14:21,Paeds Account 19,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339619,717,situation option 1
+06/11/2023 14:21,Paeds Account 19,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339619,717,situation option 2
+06/11/2023 14:21,Paeds Account 19,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339619,717,situation option 4
+06/11/2023 14:21,Paeds Account 19,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339619,717,background option 1
+06/11/2023 14:21,Paeds Account 19,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339619,717,background option 2
+06/11/2023 14:21,Paeds Account 19,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339619,717,background option 3
+06/11/2023 14:21,Paeds Account 19,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339619,717,assessment option 2
+06/11/2023 14:21,Paeds Account 19,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339619,717,assessment option 3
+06/11/2023 14:21,Paeds Account 19,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339619,717,assessment option 4
+06/11/2023 14:21,Paeds Account 19,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339619,717,recommendation option 1
+06/11/2023 14:21,Paeds Account 19,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339619,725,push emergency button
+06/11/2023 14:22,Paeds Account 19,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339619,766,ask for blood ketones
+06/11/2023 14:22,Paeds Account 19,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339619,790,insert iv access and take bloods
+06/11/2023 14:23,Paeds Account 19,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339619,842,leave scenario
+06/11/2023 14:15,Paeds Account 17,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339637,0,start scenario
+06/11/2023 14:15,Paeds Account 17,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339637,44,introduce yourself
+06/11/2023 14:15,Paeds Account 17,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339637,51,wash hands and apply ppe
+06/11/2023 14:16,Paeds Account 17,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339637,61,presenting complaint
+06/11/2023 14:16,Paeds Account 17,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339637,83,history of presenting complaint
+06/11/2023 14:17,Paeds Account 17,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339637,125,ask consent to examine sam
+06/11/2023 14:17,Paeds Account 17,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339637,141,introduce yourself
+06/11/2023 14:17,Paeds Account 17,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339637,171,observe airway and talk to patient
+06/11/2023 14:18,Paeds Account 17,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339637,184,measure oxygen saturations & heart rate
+06/11/2023 14:18,Paeds Account 17,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339637,212,update carer
+06/11/2023 14:18,Paeds Account 17,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339637,225,observe respiratory rate and signs of respiratory distress
+06/11/2023 14:19,Paeds Account 17,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339637,241,measure blood pressure
+06/11/2023 14:19,Paeds Account 17,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339637,277,take pulse (peripheral)
+06/11/2023 14:20,Paeds Account 17,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339637,300,capillary refill time (central)
+06/11/2023 14:21,Paeds Account 17,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339637,358,abdominal exam
+06/11/2023 14:21,Paeds Account 17,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339637,401,assess consciousness level (avpu)
+06/11/2023 14:21,Paeds Account 17,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339637,410,check pupils
+06/11/2023 14:22,Paeds Account 17,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339637,437,check upper body
+06/11/2023 14:22,Paeds Account 17,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339637,467,check lower body
+06/11/2023 14:23,Paeds Account 17,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339637,481,check capillary blood glucose
+06/11/2023 14:23,Paeds Account 17,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339637,492,capillary blood gas
+06/11/2023 14:23,Paeds Account 17,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339637,532,ask for blood ketones
+06/11/2023 14:24,Paeds Account 17,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339637,591,situation option 1
+06/11/2023 14:24,Paeds Account 17,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339637,591,situation option 2
+06/11/2023 14:24,Paeds Account 17,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339637,591,situation option 4
+06/11/2023 14:24,Paeds Account 17,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339637,591,background option 1
+06/11/2023 14:24,Paeds Account 17,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339637,591,background option 2
+06/11/2023 14:24,Paeds Account 17,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339637,591,background option 3
+06/11/2023 14:24,Paeds Account 17,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339637,591,assessment option 2
+06/11/2023 14:24,Paeds Account 17,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339637,591,assessment option 3
+06/11/2023 14:24,Paeds Account 17,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339637,591,assessment option 4
+06/11/2023 14:24,Paeds Account 17,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339637,591,recommendation option 1
+06/11/2023 14:37,Paeds Account 21,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339686,0,start scenario
+06/11/2023 14:38,Paeds Account 21,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339686,37,wash hands and apply ppe
+06/11/2023 14:38,Paeds Account 21,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339686,49,introduce yourself
+06/11/2023 14:38,Paeds Account 21,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339686,54,ask consent to examine sam
+06/11/2023 14:38,Paeds Account 21,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339686,59,measure blood pressure
+06/11/2023 14:38,Paeds Account 21,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339686,63,check weight & height
+06/11/2023 14:39,Paeds Account 21,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339686,86,presenting complaint
+06/11/2023 14:39,Paeds Account 21,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339686,112,measure oxygen saturations & heart rate
+06/11/2023 14:39,Paeds Account 21,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339686,123,history of presenting complaint
+06/11/2023 14:39,Paeds Account 21,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339686,137,capillary blood gas
+06/11/2023 14:40,Paeds Account 21,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339686,144,ask for blood ketones
+06/11/2023 14:40,Paeds Account 21,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339686,169,observe respiratory rate and signs of respiratory distress
+06/11/2023 14:40,Paeds Account 21,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339686,193,please use accpm001
+06/11/2023 14:40,Paeds Account 21,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339686,196,introduce yourself
+06/11/2023 14:42,Paeds Account 21,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339686,270,normal
+06/11/2023 14:42,Paeds Account 21,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339686,270,20 - 30 breaths per min
+06/11/2023 14:42,Paeds Account 21,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339686,270,mild / none
+06/11/2023 14:42,Paeds Account 21,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339686,270,sp o2 >95% in air
+06/11/2023 14:42,Paeds Account 21,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339686,270,> 120 bpm
+06/11/2023 14:42,Paeds Account 21,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339686,270,yes
+06/11/2023 14:42,Paeds Account 21,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339686,287,update carer
+06/11/2023 14:42,Paeds Account 21,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339686,297,provide reassurance
+06/11/2023 14:43,Paeds Account 21,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339686,348,provide reassurance
+06/11/2023 14:43,Paeds Account 21,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339686,353,how are you feeling?
+06/11/2023 14:43,Paeds Account 21,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339686,365,capillary refill time (central)
+06/11/2023 14:43,Paeds Account 21,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339686,372,aggravating / relieving factors
+06/11/2023 14:44,Paeds Account 21,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339686,384,home living situation
+06/11/2023 14:44,Paeds Account 21,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339686,390,school
+06/11/2023 14:44,Paeds Account 21,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339686,397,ask about pain
+06/11/2023 14:44,Paeds Account 21,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339686,414,family history
+06/11/2023 14:44,Paeds Account 21,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339686,430,ask about general activity level
+06/11/2023 14:45,Paeds Account 21,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339686,438,history of presenting complaint
+06/11/2023 14:45,Paeds Account 21,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339686,475,check capillary blood glucose
+06/11/2023 14:45,Paeds Account 21,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339686,483,diabetes team
+06/11/2023 14:46,Paeds Account 21,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339686,550,situation option 1
+06/11/2023 14:46,Paeds Account 21,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339686,550,situation option 2
+06/11/2023 14:46,Paeds Account 21,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339686,550,situation option 4
+06/11/2023 14:46,Paeds Account 21,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339686,550,background option 1
+06/11/2023 14:46,Paeds Account 21,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339686,550,background option 2
+06/11/2023 14:46,Paeds Account 21,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339686,550,background option 3
+06/11/2023 14:46,Paeds Account 21,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339686,550,assessment option 2
+06/11/2023 14:46,Paeds Account 21,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339686,550,assessment option 3
+06/11/2023 14:46,Paeds Account 21,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339686,550,assessment option 4
+06/11/2023 14:46,Paeds Account 21,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339686,550,recommendation option 1
+06/11/2023 14:47,Paeds Account 21,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339686,566,past medical history
+06/11/2023 14:47,Paeds Account 21,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339686,575,take pulse (peripheral)
+06/11/2023 14:47,Paeds Account 21,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339686,603,gastrointestinal & genito-urinary
+06/11/2023 14:48,Paeds Account 21,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339686,619,"ear, nose & throat"
+06/11/2023 14:48,Paeds Account 21,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339686,623,update on clinical plan
+06/11/2023 14:48,Paeds Account 21,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339686,631,repeat blood pressure
+06/11/2023 14:48,Paeds Account 21,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339686,661,insert iv access and take bloods
+06/11/2023 14:48,Paeds Account 21,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339686,676,ask for stool sample for culture
+06/11/2023 14:49,Paeds Account 21,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339686,683,check temperature (tympanic)
+06/11/2023 14:49,Paeds Account 21,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339686,703,ask for urine dip and culture
+06/11/2023 14:49,Paeds Account 21,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339686,713,ask for urine output monitoring
+06/11/2023 14:49,Paeds Account 21,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339686,728,10ml/kg 0.9% saline iv stat (max 500ml)
+06/11/2023 14:50,Paeds Account 21,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339686,746,paediatric dehydration guidelines
+06/11/2023 14:50,Paeds Account 21,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339686,761,fluid balance chart (intake/output)
+06/11/2023 14:50,Paeds Account 21,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339686,778,paediatric diabetic ketoacidosis guidelines
+06/11/2023 14:51,Paeds Account 21,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339686,799,1ml/kg/hour 0.9% saline + 40mmol/l kcl iv
+06/11/2023 14:51,Paeds Account 21,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339686,809,paediatric diabetic ketoacidosis guidelines
+06/11/2023 14:51,Paeds Account 21,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339686,828,assess consciousness level (avpu)
+06/11/2023 14:51,Paeds Account 21,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339686,837,central nervous system
+06/11/2023 14:51,Paeds Account 21,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339686,843,check pupils
+06/11/2023 14:52,Paeds Account 21,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339686,889,paediatric diabetic ketoacidosis guidelines
+06/11/2023 14:53,Paeds Account 21,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339686,923,ask for ecg
+06/11/2023 14:53,Paeds Account 21,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339686,930,ecg result #1
+06/11/2023 14:53,Paeds Account 21,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339686,945,cbg result #1
+06/11/2023 14:53,Paeds Account 21,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339686,975,diabetes team
+06/11/2023 14:54,Paeds Account 21,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339686,983,repeat blood pressure
+06/11/2023 14:54,Paeds Account 21,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339686,994,call on-call doctor
+06/11/2023 14:54,Paeds Account 21,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339686,1014,wash hands and apply ppe
+06/11/2023 14:54,Paeds Account 21,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339686,1024,ask for tips
+06/11/2023 14:38,Paeds Account 9,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339690,0,start scenario
+06/11/2023 14:38,Paeds Account 9,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339690,40,introduce yourself
+06/11/2023 14:39,Paeds Account 9,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339690,67,presenting complaint
+06/11/2023 14:39,Paeds Account 9,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339690,89,history of presenting complaint
+06/11/2023 14:40,Paeds Account 9,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339690,129,history of presenting complaint
+06/11/2023 14:40,Paeds Account 9,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339690,151,past medical history
+06/11/2023 14:40,Paeds Account 9,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339690,173,prescribed medications
+06/11/2023 14:41,Paeds Account 9,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339690,199,"feeding, growth and nutrition"
+06/11/2023 14:41,Paeds Account 9,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339690,208,cardiovascular
+06/11/2023 14:41,Paeds Account 9,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339690,215,provide reassurance
+06/11/2023 14:42,Paeds Account 9,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339690,244,home living situation
+06/11/2023 14:42,Paeds Account 9,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339690,251,school
+06/11/2023 14:42,Paeds Account 9,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339690,263,eating and drinking
+06/11/2023 14:42,Paeds Account 9,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339690,276,cardiovascular
+06/11/2023 14:42,Paeds Account 9,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339690,288,respiratory
+06/11/2023 14:43,Paeds Account 9,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339690,295,gastrointestinal & genito-urinary
+06/11/2023 14:43,Paeds Account 9,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339690,310,central nervous system
+06/11/2023 14:43,Paeds Account 9,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339690,333,provide reassurance
+06/11/2023 14:43,Paeds Account 9,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339690,342,vision and hearing
+06/11/2023 14:44,Paeds Account 9,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339690,356,"ear, nose & throat"
+06/11/2023 14:44,Paeds Account 9,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339690,374,measure blood pressure
+06/11/2023 14:44,Paeds Account 9,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339690,386,check temperature (tympanic)
+06/11/2023 14:44,Paeds Account 9,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339690,403,measure oxygen saturations & heart rate
+06/11/2023 14:45,Paeds Account 9,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339690,425,check capillary blood glucose
+06/11/2023 14:45,Paeds Account 9,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339690,457,update patient
+06/11/2023 14:45,Paeds Account 9,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339690,468,ask for urine dip and culture
+06/11/2023 14:46,Paeds Account 9,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339690,488,ask for blood ketones
+06/11/2023 14:46,Paeds Account 9,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339690,517,diabetes team
+06/11/2023 14:47,Paeds Account 9,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339690,587,situation option 1
+06/11/2023 14:47,Paeds Account 9,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339690,587,situation option 2
+06/11/2023 14:47,Paeds Account 9,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339690,587,situation option 4
+06/11/2023 14:47,Paeds Account 9,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339690,587,background option 1
+06/11/2023 14:47,Paeds Account 9,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339690,587,background option 2
+06/11/2023 14:47,Paeds Account 9,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339690,587,background option 3
+06/11/2023 14:47,Paeds Account 9,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339690,587,assessment option 1
+06/11/2023 14:47,Paeds Account 9,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339690,587,assessment option 3
+06/11/2023 14:47,Paeds Account 9,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339690,587,assessment option 4
+06/11/2023 14:47,Paeds Account 9,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339690,587,recommendation option 1
+06/11/2023 14:48,Paeds Account 9,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339690,607,capillary blood gas
+06/11/2023 14:48,Paeds Account 9,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339690,626,provide reassurance
+06/11/2023 14:48,Paeds Account 9,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339690,636,insert iv access and take bloods
+06/11/2023 14:49,Paeds Account 9,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339690,663,cbg result #1
+06/11/2023 14:49,Paeds Account 9,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339690,674,call on-call doctor
+06/11/2023 14:49,Paeds Account 9,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339690,701,fluid balance chart (intake/output)
+06/11/2023 14:50,Paeds Account 9,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339690,728,update carer
+06/11/2023 14:50,Paeds Account 9,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339690,746,fluid prescription chart
+06/11/2023 14:50,Paeds Account 9,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339690,768,fluid prescription chart
+06/11/2023 14:51,Paeds Account 9,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339690,785,10ml/kg 0.9% saline iv stat (max 500ml)
+06/11/2023 14:51,Paeds Account 9,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339690,793,fluid prescription chart
+06/11/2023 14:51,Paeds Account 9,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339690,830,1ml/kg/hour 0.9% saline + 40mmol/l kcl iv
+06/11/2023 14:52,Paeds Account 9,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339690,850,request an inpatient bed for patient
+06/11/2023 14:52,Paeds Account 9,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339690,872,ask for ecg
+06/11/2023 14:52,Paeds Account 9,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339690,878,ecg result #1
+06/11/2023 14:52,Paeds Account 9,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339690,886,cbg result #1
+06/11/2023 14:52,Paeds Account 9,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339690,890,ecg result #1
+06/11/2023 14:53,Paeds Account 9,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339690,908,request swabs for mrsa screening
+06/11/2023 14:53,Paeds Account 9,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339690,927,ask for tips
+06/11/2023 14:54,Paeds Account 9,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339690,954,20ml/kg 0.9% saline iv stat (max 500ml)
+06/11/2023 14:54,Paeds Account 9,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339690,961,fluid prescription chart
+06/11/2023 14:54,Paeds Account 9,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339690,980,observe respiratory rate and signs of respiratory distress
+06/11/2023 14:55,Paeds Account 9,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339690,1019,abdominal exam
+06/11/2023 14:55,Paeds Account 9,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339690,1067,capillary refill time (central)
+06/11/2023 14:56,Paeds Account 9,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339690,1091,capillary refill time (peripheral)
+06/11/2023 14:56,Paeds Account 9,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339690,1117,check upper body
+06/11/2023 14:56,Paeds Account 9,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339690,1131,call on-call doctor
+06/11/2023 14:57,Paeds Account 9,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339690,1154,fluid prescription chart
+06/11/2023 14:57,Paeds Account 9,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339690,1166,ask for tips
+06/11/2023 14:58,Paeds Account 9,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339690,1195,leave scenario
+06/11/2023 14:41,Paeds Account 28,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339699,0,start scenario
+06/11/2023 14:42,Paeds Account 28,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339699,39,presenting complaint
+06/11/2023 14:42,Paeds Account 28,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339699,61,history of presenting complaint
+06/11/2023 14:42,Paeds Account 28,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339699,87,ask about fever
+06/11/2023 14:42,Paeds Account 28,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339699,98,allergies
+06/11/2023 14:43,Paeds Account 28,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339699,109,past medical history
+06/11/2023 14:43,Paeds Account 28,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339699,135,observe airway and talk to patient
+06/11/2023 14:43,Paeds Account 28,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339699,150,observe respiratory rate and signs of respiratory distress
+06/11/2023 14:44,Paeds Account 28,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339699,186,auscultate lungs
+06/11/2023 14:45,Paeds Account 28,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339699,220,ask for tips
+06/11/2023 14:45,Paeds Account 28,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339699,235,measure oxygen saturations & heart rate
+06/11/2023 14:46,Paeds Account 28,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339699,283,measure blood pressure
+06/11/2023 14:46,Paeds Account 28,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339699,327,ask for blood ketones
+06/11/2023 14:46,Paeds Account 28,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339699,338,fluid balance chart (intake/output)
+06/11/2023 14:47,Paeds Account 28,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339699,343,medical history
+06/11/2023 14:47,Paeds Account 28,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339699,366,check weight & height
+06/11/2023 14:47,Paeds Account 28,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339699,377,ask for ecg
+06/11/2023 14:47,Paeds Account 28,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339699,386,ecg result #1
+06/11/2023 14:47,Paeds Account 28,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339699,394,abdominal exam
+06/11/2023 14:48,Paeds Account 28,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339699,412,request an inpatient bed for patient
+06/11/2023 14:48,Paeds Account 28,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339699,448,check capillary blood glucose
+06/11/2023 14:48,Paeds Account 28,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339699,458,insert iv access and take bloods
+06/11/2023 14:50,Paeds Account 28,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339699,520,10ml/kg 0.9% saline iv stat (max 500ml)
+06/11/2023 14:50,Paeds Account 28,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339699,556,capillary blood gas
+06/11/2023 14:50,Paeds Account 28,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339699,576,update on clinical plan
+06/11/2023 14:52,Paeds Account 28,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339699,658,situation option 1
+06/11/2023 14:52,Paeds Account 28,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339699,658,situation option 2
+06/11/2023 14:52,Paeds Account 28,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339699,658,situation option 4
+06/11/2023 14:52,Paeds Account 28,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339699,658,background option 1
+06/11/2023 14:52,Paeds Account 28,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339699,658,background option 2
+06/11/2023 14:52,Paeds Account 28,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339699,658,background option 3
+06/11/2023 14:52,Paeds Account 28,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339699,658,assessment option 2
+06/11/2023 14:52,Paeds Account 28,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339699,658,assessment option 3
+06/11/2023 14:52,Paeds Account 28,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339699,658,assessment option 4
+06/11/2023 14:52,Paeds Account 28,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339699,658,recommendation option 1
+06/11/2023 14:52,Paeds Account 28,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339699,661,cbg result #1
+06/11/2023 14:53,Paeds Account 28,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339699,701,provide reassurance
+06/11/2023 14:53,Paeds Account 28,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339699,713,capillary blood gas
+06/11/2023 14:53,Paeds Account 28,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339699,748,introduce yourself
+06/11/2023 14:42,Paeds Account 26,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339703,0,start scenario
+06/11/2023 14:42,Paeds Account 26,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339703,35,introduce yourself
+06/11/2023 14:42,Paeds Account 26,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339703,37,introduce yourself
+06/11/2023 14:42,Paeds Account 26,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339703,39,wash hands and apply ppe
+06/11/2023 14:42,Paeds Account 26,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339703,49,presenting complaint
+06/11/2023 14:43,Paeds Account 26,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339703,52,presenting complaint
+06/11/2023 14:43,Paeds Account 26,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339703,81,ask for blood ketones
+06/11/2023 14:43,Paeds Account 26,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339703,86,check capillary blood glucose
+06/11/2023 14:43,Paeds Account 26,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339703,109,history of presenting complaint
+06/11/2023 14:44,Paeds Account 26,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339703,132,check temperature (tympanic)
+06/11/2023 14:44,Paeds Account 26,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339703,150,measure blood pressure
+06/11/2023 14:44,Paeds Account 26,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339703,156,capillary blood gas
+06/11/2023 14:45,Paeds Account 26,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339703,189,paediatric dehydration guidelines
+06/11/2023 14:45,Paeds Account 26,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339703,196,paediatric diabetic ketoacidosis guidelines
+06/11/2023 14:46,Paeds Account 26,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339703,242,situation option 1
+06/11/2023 14:46,Paeds Account 26,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339703,242,situation option 2
+06/11/2023 14:46,Paeds Account 26,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339703,242,situation option 4
+06/11/2023 14:46,Paeds Account 26,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339703,242,background option 1
+06/11/2023 14:46,Paeds Account 26,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339703,242,background option 2
+06/11/2023 14:46,Paeds Account 26,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339703,242,background option 3
+06/11/2023 14:46,Paeds Account 26,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339703,242,assessment option 2
+06/11/2023 14:46,Paeds Account 26,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339703,242,assessment option 3
+06/11/2023 14:46,Paeds Account 26,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339703,242,assessment option 4
+06/11/2023 14:46,Paeds Account 26,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339703,242,recommendation option 1
+06/11/2023 14:46,Paeds Account 26,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339703,243,cbg result #1
+06/11/2023 14:46,Paeds Account 26,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339703,276,past medical history
+06/11/2023 14:46,Paeds Account 26,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339703,279,please use accpm001
+06/11/2023 14:46,Paeds Account 26,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339703,282,prescribed medications
+06/11/2023 14:47,Paeds Account 26,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339703,294,allergies
+06/11/2023 14:47,Paeds Account 26,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339703,296,family history
+06/11/2023 14:47,Paeds Account 26,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339703,320,measure oxygen saturations & heart rate
+06/11/2023 14:47,Paeds Account 26,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339703,329,ask for urine dip and culture
+06/11/2023 14:47,Paeds Account 26,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339703,331,ask for urine output monitoring
+06/11/2023 14:47,Paeds Account 26,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339703,333,update on clinical plan
+06/11/2023 14:47,Paeds Account 26,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339703,341,allergies
+06/11/2023 14:47,Paeds Account 26,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339703,348,provide reassurance
+06/11/2023 14:48,Paeds Account 26,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339703,352,update carer
+06/11/2023 14:48,Paeds Account 26,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339703,354,do you have any questions?
+06/11/2023 14:48,Paeds Account 26,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339703,357,request an inpatient bed for patient
+06/11/2023 14:48,Paeds Account 26,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339703,376,ask for peak flow
+06/11/2023 14:48,Paeds Account 26,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339703,380,observe respiratory rate and signs of respiratory distress
+06/11/2023 14:48,Paeds Account 26,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339703,389,update patient
+06/11/2023 14:48,Paeds Account 26,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339703,392,provide reassurance
+06/11/2023 14:48,Paeds Account 26,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339703,395,how are you feeling?
+06/11/2023 14:49,Paeds Account 26,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339703,446,paediatric diabetic ketoacidosis guidelines
+06/11/2023 14:49,Paeds Account 26,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339703,463,ask for cardiac monitoring
+06/11/2023 14:50,Paeds Account 26,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339703,471,diabetes team
+06/11/2023 14:50,Paeds Account 26,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339703,476,ask for ecg
+06/11/2023 14:50,Paeds Account 26,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339703,490,call on-call doctor
+06/11/2023 14:50,Paeds Account 26,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339703,527,normal
+06/11/2023 14:50,Paeds Account 26,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339703,527,20 - 30 breaths per min
+06/11/2023 14:50,Paeds Account 26,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339703,527,mild / none
+06/11/2023 14:50,Paeds Account 26,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339703,527,sp o2 >95% in air
+06/11/2023 14:50,Paeds Account 26,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339703,527,> 120 bpm
+06/11/2023 14:50,Paeds Account 26,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339703,527,yes
+06/11/2023 14:51,Paeds Account 26,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339703,539,paediatric diabetic ketoacidosis guidelines
+06/11/2023 14:51,Paeds Account 26,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339703,580,update patient
+06/11/2023 14:51,Paeds Account 26,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339703,582,ecg result #1
+06/11/2023 14:52,Paeds Account 26,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339703,603,insert iv access and take bloods
+06/11/2023 14:52,Paeds Account 26,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339703,611,fluid prescription chart
+06/11/2023 14:52,Paeds Account 26,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339703,635,fluid prescription chart
+06/11/2023 14:52,Paeds Account 26,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339703,647,10ml/kg 0.9% saline iv stat (max 500ml)
+06/11/2023 14:53,Paeds Account 26,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339703,654,fluid prescription chart
+06/11/2023 14:53,Paeds Account 26,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339703,692,1ml/kg/hour 0.9% saline + 40mmol/l kcl iv
+06/11/2023 14:53,Paeds Account 26,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339703,702,medication list
+06/11/2023 14:54,Paeds Account 26,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339703,727,provide reassurance
+06/11/2023 14:54,Paeds Account 26,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339703,732,update carer
+06/11/2023 14:54,Paeds Account 26,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339703,738,paediatric diabetic ketoacidosis guidelines
+06/11/2023 14:54,Paeds Account 26,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339703,755,ask for tips
+06/11/2023 14:55,Paeds Account 26,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339703,770,paediatric diabetic ketoacidosis guidelines
+06/11/2023 14:55,Paeds Account 26,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339703,784,call on-call doctor
+06/11/2023 15:07,Paeds Account 3,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339770,0,start scenario
+06/11/2023 15:08,Paeds Account 3,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339770,37,ask consent to examine sam
+06/11/2023 15:08,Paeds Account 3,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339770,53,wash hands and apply ppe
+06/11/2023 15:08,Paeds Account 3,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339770,68,introduce yourself
+06/11/2023 15:09,Paeds Account 3,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339770,114,observe airway and talk to patient
+06/11/2023 15:10,Paeds Account 3,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339770,152,check temperature (tympanic)
+06/11/2023 15:10,Paeds Account 3,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339770,175,presenting complaint
+06/11/2023 15:11,Paeds Account 3,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339770,197,measure oxygen saturations & heart rate
+06/11/2023 15:11,Paeds Account 3,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339770,216,non-rebreather mask (15 l/min)
+06/11/2023 15:11,Paeds Account 3,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339770,220,measure blood pressure
+06/11/2023 15:12,Paeds Account 3,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339770,270,insert iv access and take bloods
+06/11/2023 15:12,Paeds Account 3,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339770,303,history of presenting complaint
+06/11/2023 15:13,Paeds Account 3,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339770,323,family history
+06/11/2023 15:13,Paeds Account 3,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339770,353,allergies
+06/11/2023 15:13,Paeds Account 3,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339770,359,history of presenting complaint
+06/11/2023 15:13,Paeds Account 3,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339770,363,check capillary blood glucose
+06/11/2023 15:14,Paeds Account 3,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339770,405,past medical history
+06/11/2023 15:15,Paeds Account 3,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339770,450,capillary refill time (central)
+06/11/2023 15:15,Paeds Account 3,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339770,483,observe respiratory rate and signs of respiratory distress
+06/11/2023 15:16,Paeds Account 3,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339770,508,repeat blood pressure
+06/11/2023 15:16,Paeds Account 3,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339770,513,repeat blood pressure
+06/11/2023 15:16,Paeds Account 3,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339770,514,repeat blood pressure
+06/11/2023 15:16,Paeds Account 3,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339770,514,repeat blood pressure
+06/11/2023 15:16,Paeds Account 3,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339770,514,repeat blood pressure
+06/11/2023 15:16,Paeds Account 3,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339770,514,repeat blood pressure
+06/11/2023 15:16,Paeds Account 3,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339770,515,repeat blood pressure
+06/11/2023 15:16,Paeds Account 3,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339770,515,repeat blood pressure
+06/11/2023 15:17,Paeds Account 3,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339770,595,normal
+06/11/2023 15:17,Paeds Account 3,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339770,595,> 30 breaths per min
+06/11/2023 15:17,Paeds Account 3,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339770,595,mild / none
+06/11/2023 15:17,Paeds Account 3,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339770,595,sp o2 >95% with oxygen
+06/11/2023 15:17,Paeds Account 3,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339770,595,> 120 bpm
+06/11/2023 15:17,Paeds Account 3,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339770,595,yes
+06/11/2023 15:17,Paeds Account 3,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339770,607,medical history
+06/11/2023 15:18,Paeds Account 3,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339770,612,medication list
+06/11/2023 15:18,Paeds Account 3,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339770,644,medication list
+06/11/2023 15:19,Paeds Account 3,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339770,675,check hydration status
+06/11/2023 15:19,Paeds Account 3,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339770,691,20ml/kg 0.9% saline iv stat (max 500ml)
+06/11/2023 15:20,Paeds Account 3,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339770,765,situation option 1
+06/11/2023 15:20,Paeds Account 3,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339770,765,situation option 2
+06/11/2023 15:20,Paeds Account 3,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339770,765,situation option 4
+06/11/2023 15:20,Paeds Account 3,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339770,765,background option 1
+06/11/2023 15:20,Paeds Account 3,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339770,765,background option 2
+06/11/2023 15:20,Paeds Account 3,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339770,765,background option 4
+06/11/2023 15:20,Paeds Account 3,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339770,765,assessment option 2
+06/11/2023 15:20,Paeds Account 3,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339770,765,assessment option 3
+06/11/2023 15:20,Paeds Account 3,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339770,765,assessment option 4
+06/11/2023 15:20,Paeds Account 3,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339770,765,assessment option 5
+06/11/2023 15:20,Paeds Account 3,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339770,765,recommendation option 4
+06/11/2023 15:20,Paeds Account 3,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339770,786,auscultate lungs
+06/11/2023 15:08,Paeds Account 6,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339772,0,start scenario
+06/11/2023 15:08,Paeds Account 6,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339772,36,introduce yourself
+06/11/2023 15:09,Paeds Account 6,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339772,51,ask consent to examine sam
+06/11/2023 15:09,Paeds Account 6,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339772,71,wash hands and apply ppe
+06/11/2023 15:09,Paeds Account 6,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339772,107,presenting complaint
+06/11/2023 15:10,Paeds Account 6,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339772,119,history of presenting complaint
+06/11/2023 15:10,Paeds Account 6,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339772,139,past medical history
+06/11/2023 15:11,Paeds Account 6,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339772,173,observe airway and talk to patient
+06/11/2023 15:11,Paeds Account 6,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339772,206,observe respiratory rate and signs of respiratory distress
+06/11/2023 15:11,Paeds Account 6,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339772,221,update carer
+06/11/2023 15:12,Paeds Account 6,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339772,246,auscultate lungs
+06/11/2023 15:12,Paeds Account 6,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339772,277,non-rebreather mask (15 l/min)
+06/11/2023 15:12,Paeds Account 6,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339772,287,check temperature (tympanic)
+06/11/2023 15:13,Paeds Account 6,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339772,317,measure blood pressure
+06/11/2023 15:13,Paeds Account 6,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339772,321,measure oxygen saturations & heart rate
+06/11/2023 15:14,Paeds Account 6,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339772,353,ask for tips
+06/11/2023 15:15,Paeds Account 6,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339772,421,paediatric early warning score (pews) escalation chart
+06/11/2023 15:16,Paeds Account 6,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339772,472,insert iv access and take bloods
+06/11/2023 15:17,Paeds Account 6,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339772,541,situation option 1
+06/11/2023 15:17,Paeds Account 6,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339772,541,situation option 2
+06/11/2023 15:17,Paeds Account 6,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339772,541,situation option 4
+06/11/2023 15:17,Paeds Account 6,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339772,541,background option 1
+06/11/2023 15:17,Paeds Account 6,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339772,541,background option 2
+06/11/2023 15:17,Paeds Account 6,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339772,541,background option 4
+06/11/2023 15:17,Paeds Account 6,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339772,541,assessment option 2
+06/11/2023 15:17,Paeds Account 6,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339772,541,assessment option 3
+06/11/2023 15:17,Paeds Account 6,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339772,541,assessment option 4
+06/11/2023 15:17,Paeds Account 6,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339772,541,assessment option 5
+06/11/2023 15:17,Paeds Account 6,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339772,541,recommendation option 4
+06/11/2023 15:17,Paeds Account 6,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339772,550,capillary refill time (central)
+06/11/2023 15:19,Paeds Account 6,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339772,664,capillary refill time (peripheral)
+06/11/2023 15:19,Paeds Account 6,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339772,703,check hydration status
+06/11/2023 15:20,Paeds Account 6,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339772,760,repeat blood pressure
+06/11/2023 15:20,Paeds Account 6,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339772,761,repeat blood pressure
+06/11/2023 15:20,Paeds Account 6,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339772,762,repeat blood pressure
+06/11/2023 15:20,Paeds Account 6,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339772,763,repeat blood pressure
+06/11/2023 15:20,Paeds Account 6,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339772,764,repeat blood pressure
+06/11/2023 15:21,Paeds Account 6,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339772,797,repeat blood pressure
+06/11/2023 15:21,Paeds Account 6,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339772,798,repeat blood pressure
+06/11/2023 15:21,Paeds Account 6,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339772,817,rapid response team (icu outreach)
+06/11/2023 15:22,Paeds Account 6,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339772,833,call play specialist
+06/11/2023 15:22,Paeds Account 6,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339772,835,call on-call doctor
+06/11/2023 15:22,Paeds Account 6,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339772,856,ask for tips
+06/11/2023 15:23,Paeds Account 6,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339772,891,repeat blood pressure
+06/11/2023 15:23,Paeds Account 6,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339772,892,repeat blood pressure
+06/11/2023 15:23,Paeds Account 6,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339772,892,repeat blood pressure
+06/11/2023 15:08,Paeds Account 1,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339773,0,start scenario
+06/11/2023 15:09,Paeds Account 1,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339773,35,wash hands and apply ppe
+06/11/2023 15:09,Paeds Account 1,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339773,49,introduce yourself
+06/11/2023 15:09,Paeds Account 1,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339773,72,presenting complaint
+06/11/2023 15:10,Paeds Account 1,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339773,93,history of presenting complaint
+06/11/2023 15:10,Paeds Account 1,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339773,115,measure oxygen saturations & heart rate
+06/11/2023 15:10,Paeds Account 1,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339773,128,ask about pain
+06/11/2023 15:11,Paeds Account 1,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339773,146,ask about fever
+06/11/2023 15:11,Paeds Account 1,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339773,159,ask about general activity level
+06/11/2023 15:11,Paeds Account 1,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339773,178,past medical history
+06/11/2023 15:12,Paeds Account 1,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339773,210,past surgical history
+06/11/2023 15:12,Paeds Account 1,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339773,227,ask birth history
+06/11/2023 15:13,Paeds Account 1,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339773,267,developmental milestones
+06/11/2023 15:13,Paeds Account 1,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339773,277,allergies
+06/11/2023 15:13,Paeds Account 1,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339773,285,prescribed medications
+06/11/2023 15:13,Paeds Account 1,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339773,306,ask consent to examine sam
+06/11/2023 15:13,Paeds Account 1,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339773,319,measure blood pressure
+06/11/2023 15:14,Paeds Account 1,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339773,381,check temperature (tympanic)
+06/11/2023 15:15,Paeds Account 1,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339773,404,check capillary blood glucose
+06/11/2023 15:15,Paeds Account 1,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339773,440,respiratory
+06/11/2023 15:16,Paeds Account 1,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339773,455,"ear, nose & throat"
+06/11/2023 15:16,Paeds Account 1,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339773,468,eating and drinking
+06/11/2023 15:16,Paeds Account 1,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339773,490,repeat blood pressure
+06/11/2023 15:17,Paeds Account 1,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339773,509,observe respiratory rate and signs of respiratory distress
+06/11/2023 15:17,Paeds Account 1,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339773,529,respiratory
+06/11/2023 15:18,Paeds Account 1,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339773,576,normal
+06/11/2023 15:18,Paeds Account 1,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339773,576,> 30 breaths per min
+06/11/2023 15:18,Paeds Account 1,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339773,576,mild / none
+06/11/2023 15:18,Paeds Account 1,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339773,576,sp o2 >95% with oxygen
+06/11/2023 15:18,Paeds Account 1,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339773,576,> 120 bpm
+06/11/2023 15:18,Paeds Account 1,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339773,577,yes
+06/11/2023 15:18,Paeds Account 1,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339773,590,auscultate lungs
+06/11/2023 15:19,Paeds Account 1,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339773,638,look in patient's mouth with a tongue depressor
+06/11/2023 15:19,Paeds Account 1,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339773,648,ask mother to let us give child 10 puffs of salbutamol inhaler via their own spacer
+06/11/2023 15:19,Paeds Account 1,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339773,682,check hydration status
+06/11/2023 15:20,Paeds Account 1,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339773,696,capillary refill time (central)
+06/11/2023 15:20,Paeds Account 1,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339773,729,non-rebreather mask (15 l/min)
+06/11/2023 15:21,Paeds Account 1,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339773,748,leave scenario
+06/11/2023 15:09,Paeds Account 20,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339775,0,start scenario
+06/11/2023 15:09,Paeds Account 20,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339775,37,introduce yourself
+06/11/2023 15:10,Paeds Account 20,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339775,61,introduce yourself
+06/11/2023 15:10,Paeds Account 20,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339775,68,ask for peak flow
+06/11/2023 15:10,Paeds Account 20,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339775,80,measure oxygen saturations & heart rate
+06/11/2023 15:10,Paeds Account 20,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339775,94,presenting complaint
+06/11/2023 15:11,Paeds Account 20,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339775,122,non-rebreather mask (15 l/min)
+06/11/2023 15:11,Paeds Account 20,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339775,131,past medical history
+06/11/2023 15:12,Paeds Account 20,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339775,177,prescribed medications
+06/11/2023 15:12,Paeds Account 20,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339775,193,allergies
+06/11/2023 15:12,Paeds Account 20,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339775,208,social and living situation
+06/11/2023 15:13,Paeds Account 20,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339775,250,observe respiratory rate and signs of respiratory distress
+06/11/2023 15:13,Paeds Account 20,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339775,282,auscultate lungs
+06/11/2023 15:14,Paeds Account 20,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339775,309,update on clinical plan
+06/11/2023 15:14,Paeds Account 20,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339775,329,ask mother to let us give child 10 puffs of salbutamol inhaler via their own spacer
+06/11/2023 15:15,Paeds Account 20,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339775,356,provide reassurance
+06/11/2023 15:15,Paeds Account 20,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339775,363,ask patient to sit up to help their breathing
+06/11/2023 15:15,Paeds Account 20,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339775,402,observe respiratory rate and signs of respiratory distress
+06/11/2023 15:16,Paeds Account 20,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339775,427,ask for tips
+06/11/2023 15:16,Paeds Account 20,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339775,458,normal
+06/11/2023 15:16,Paeds Account 20,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339775,458,20 - 30 breaths per min
+06/11/2023 15:16,Paeds Account 20,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339775,458,severe / moderate
+06/11/2023 15:16,Paeds Account 20,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339775,458,sp o2 <95% in air and/or receiving oxygen
+06/11/2023 15:16,Paeds Account 20,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339775,458,> 120 bpm
+06/11/2023 15:16,Paeds Account 20,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339775,458,yes
+06/11/2023 15:16,Paeds Account 20,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339775,468,check temperature (tympanic)
+06/11/2023 15:17,Paeds Account 20,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339775,475,measure blood pressure
+06/11/2023 15:17,Paeds Account 20,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339775,488,capillary blood gas
+06/11/2023 15:17,Paeds Account 20,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339775,502,paediatric early warning score (pews) escalation chart
+06/11/2023 15:17,Paeds Account 20,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339775,525,paediatric early warning score (pews) escalation chart
+06/11/2023 15:18,Paeds Account 20,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339775,547,paediatric early warning score (pews) escalation chart
+06/11/2023 15:18,Paeds Account 20,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339775,553,rapid response team (icu outreach)
+06/11/2023 15:18,Paeds Account 20,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339775,567,cbg result #1
+06/11/2023 15:19,Paeds Account 20,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339775,598,paediatric asthma guidelines
+06/11/2023 15:19,Paeds Account 20,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339775,615,ask for tips
+06/11/2023 15:19,Paeds Account 20,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339775,638,wash hands and apply ppe
+06/11/2023 15:20,Paeds Account 20,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339775,657,paediatric asthma guidelines
+06/11/2023 15:21,Paeds Account 20,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339775,709,situation option 1
+06/11/2023 15:21,Paeds Account 20,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339775,709,situation option 2
+06/11/2023 15:21,Paeds Account 20,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339775,709,situation option 4
+06/11/2023 15:21,Paeds Account 20,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339775,709,background option 1
+06/11/2023 15:21,Paeds Account 20,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339775,709,background option 2
+06/11/2023 15:21,Paeds Account 20,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339775,709,background option 4
+06/11/2023 15:21,Paeds Account 20,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339775,709,assessment option 2
+06/11/2023 15:21,Paeds Account 20,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339775,709,assessment option 3
+06/11/2023 15:21,Paeds Account 20,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339775,709,assessment option 4
+06/11/2023 15:21,Paeds Account 20,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339775,709,assessment option 5
+06/11/2023 15:21,Paeds Account 20,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339775,709,recommendation option 4
+06/11/2023 15:21,Paeds Account 20,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339775,732,paediatric asthma guidelines
+06/11/2023 15:21,Paeds Account 20,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339775,760,medical history
+06/11/2023 15:21,Paeds Account 20,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339775,768,e-prescription chart
+06/11/2023 15:22,Paeds Account 20,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339775,785,through air
+06/11/2023 15:22,Paeds Account 20,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339775,815,leave scenario
+06/11/2023 15:09,Paeds Account 5,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339776,0,start scenario
+06/11/2023 15:09,Paeds Account 5,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339776,38,wash hands and apply ppe
+06/11/2023 15:10,Paeds Account 5,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339776,55,introduce yourself
+06/11/2023 15:10,Paeds Account 5,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339776,90,introduce yourself
+06/11/2023 15:11,Paeds Account 5,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339776,106,presenting complaint
+06/11/2023 15:11,Paeds Account 5,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339776,116,past medical history
+06/11/2023 15:11,Paeds Account 5,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339776,154,past surgical history
+06/11/2023 15:12,Paeds Account 5,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339776,162,prescribed medications
+06/11/2023 15:12,Paeds Account 5,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339776,182,allergies
+06/11/2023 15:12,Paeds Account 5,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339776,193,parental smoking and pets
+06/11/2023 15:12,Paeds Account 5,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339776,205,travel history
+06/11/2023 15:13,Paeds Account 5,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339776,227,ask for peak flow
+06/11/2023 15:13,Paeds Account 5,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339776,255,ask to check child's inhaler technique
+06/11/2023 15:13,Paeds Account 5,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339776,269,observe airway and talk to patient
+06/11/2023 15:14,Paeds Account 5,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339776,291,capillary refill time (peripheral)
+06/11/2023 15:15,Paeds Account 5,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339776,347,check capillary blood glucose
+06/11/2023 15:15,Paeds Account 5,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339776,367,measure blood pressure
+06/11/2023 15:15,Paeds Account 5,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339776,383,measure oxygen saturations & heart rate
+06/11/2023 15:16,Paeds Account 5,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339776,410,non-rebreather mask (15 l/min)
+06/11/2023 15:16,Paeds Account 5,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339776,420,check temperature (tympanic)
+06/11/2023 15:16,Paeds Account 5,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339776,445,check temperature (tympanic)
+06/11/2023 15:16,Paeds Account 5,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339776,456,ask for sputum cultures
+06/11/2023 15:18,Paeds Account 5,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339776,576,situation option 1
+06/11/2023 15:18,Paeds Account 5,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339776,576,situation option 2
+06/11/2023 15:18,Paeds Account 5,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339776,576,situation option 4
+06/11/2023 15:18,Paeds Account 5,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339776,576,background option 1
+06/11/2023 15:18,Paeds Account 5,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339776,576,background option 2
+06/11/2023 15:18,Paeds Account 5,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339776,576,background option 4
+06/11/2023 15:18,Paeds Account 5,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339776,576,assessment option 1
+06/11/2023 15:18,Paeds Account 5,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339776,576,assessment option 2
+06/11/2023 15:18,Paeds Account 5,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339776,576,assessment option 3
+06/11/2023 15:18,Paeds Account 5,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339776,576,assessment option 4
+06/11/2023 15:18,Paeds Account 5,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339776,576,recommendation option 4
+06/11/2023 15:19,Paeds Account 5,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339776,613,auscultate lungs
+06/11/2023 15:20,Paeds Account 5,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339776,647,observe respiratory rate and signs of respiratory distress
+06/11/2023 15:20,Paeds Account 5,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339776,678,call on-call doctor
+06/11/2023 15:21,Paeds Account 5,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339776,719,medication list
+06/11/2023 15:21,Paeds Account 5,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339776,733,leave scenario
+06/11/2023 15:09,Paeds Account 13,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339778,0,start scenario
+06/11/2023 15:10,Paeds Account 13,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339778,35,introduce yourself
+06/11/2023 15:10,Paeds Account 13,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339778,54,presenting complaint
+06/11/2023 15:10,Paeds Account 13,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339778,65,history of presenting complaint
+06/11/2023 15:11,Paeds Account 13,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339778,93,presenting complaint
+06/11/2023 15:11,Paeds Account 13,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339778,106,history of presenting complaint
+06/11/2023 15:12,Paeds Account 13,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339778,155,measure oxygen saturations & heart rate
+06/11/2023 15:12,Paeds Account 13,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339778,162,measure blood pressure
+06/11/2023 15:12,Paeds Account 13,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339778,173,check temperature (tympanic)
+06/11/2023 15:12,Paeds Account 13,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339778,195,check capillary blood glucose
+06/11/2023 15:13,Paeds Account 13,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339778,210,simple face mask (8 l /min)
+06/11/2023 15:13,Paeds Account 13,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339778,221,provide reassurance
+06/11/2023 15:13,Paeds Account 13,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339778,235,simple face mask (10 l /min)
+06/11/2023 15:13,Paeds Account 13,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339778,239,past medical history
+06/11/2023 15:14,Paeds Account 13,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339778,276,ask consent to examine sam
+06/11/2023 15:14,Paeds Account 13,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339778,294,insert iv access and take bloods
+06/11/2023 15:14,Paeds Account 13,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339778,317,ask for tips
+06/11/2023 15:15,Paeds Account 13,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339778,330,observe respiratory rate and signs of respiratory distress
+06/11/2023 15:15,Paeds Account 13,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339778,344,provide reassurance
+06/11/2023 15:15,Paeds Account 13,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339778,347,please use accpm001
+06/11/2023 15:15,Paeds Account 13,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339778,352,auscultate lungs
+06/11/2023 15:15,Paeds Account 13,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339778,373,paediatric early warning score (pews) escalation chart
+06/11/2023 15:17,Paeds Account 13,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339778,440,normal
+06/11/2023 15:17,Paeds Account 13,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339778,440,> 30 breaths per min
+06/11/2023 15:17,Paeds Account 13,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339778,440,severe / moderate
+06/11/2023 15:17,Paeds Account 13,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339778,440,sp o2 >95% with oxygen
+06/11/2023 15:17,Paeds Account 13,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339778,440,> 120 bpm
+06/11/2023 15:17,Paeds Account 13,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339778,440,yes
+06/11/2023 15:17,Paeds Account 13,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339778,446,paediatric early warning score (pews) escalation chart
+06/11/2023 15:17,Paeds Account 13,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339778,456,request an inpatient bed for patient
+06/11/2023 15:17,Paeds Account 13,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339778,482,ask for tips
+06/11/2023 15:17,Paeds Account 13,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339778,488,non-rebreather mask (15 l/min)
+06/11/2023 15:19,Paeds Account 13,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339778,558,situation option 1
+06/11/2023 15:19,Paeds Account 13,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339778,558,situation option 2
+06/11/2023 15:19,Paeds Account 13,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339778,558,situation option 4
+06/11/2023 15:19,Paeds Account 13,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339778,558,background option 1
+06/11/2023 15:19,Paeds Account 13,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339778,558,background option 2
+06/11/2023 15:19,Paeds Account 13,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339778,558,background option 4
+06/11/2023 15:19,Paeds Account 13,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339778,558,assessment option 2
+06/11/2023 15:19,Paeds Account 13,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339778,558,assessment option 3
+06/11/2023 15:19,Paeds Account 13,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339778,558,assessment option 4
+06/11/2023 15:19,Paeds Account 13,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339778,558,assessment option 5
+06/11/2023 15:19,Paeds Account 13,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339778,558,recommendation option 4
+06/11/2023 15:19,Paeds Account 13,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339778,596,e-prescription chart
+06/11/2023 15:19,Paeds Account 13,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339778,612,through air
+06/11/2023 15:20,Paeds Account 13,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339778,651,ask for tips
+06/11/2023 15:21,Paeds Account 13,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,339778,725,leave scenario
+06/11/2023 16:04,Paeds Account 24,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339870,0,start scenario
+06/11/2023 16:04,Paeds Account 24,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339870,38,introduce yourself
+06/11/2023 16:05,Paeds Account 24,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339870,60,presenting complaint
+06/11/2023 16:05,Paeds Account 24,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339870,83,introduce yourself
+06/11/2023 16:06,Paeds Account 24,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339870,109,ask consent to examine sam
+06/11/2023 16:06,Paeds Account 24,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339870,120,wash hands and apply ppe
+06/11/2023 16:06,Paeds Account 24,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339870,148,look in patient's mouth with a tongue depressor
+06/11/2023 16:07,Paeds Account 24,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339870,179,measure oxygen saturations & heart rate
+06/11/2023 16:08,Paeds Account 24,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339870,227,update carer
+06/11/2023 16:08,Paeds Account 24,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339870,241,measure blood pressure
+06/11/2023 16:08,Paeds Account 24,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339870,256,history of presenting complaint
+06/11/2023 16:09,Paeds Account 24,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339870,286,past medical history
+06/11/2023 16:09,Paeds Account 24,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339870,311,check capillary blood glucose
+06/11/2023 16:10,Paeds Account 24,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339870,348,check upper body
+06/11/2023 16:10,Paeds Account 24,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339870,361,allergies
+06/11/2023 16:10,Paeds Account 24,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339870,368,please use accpm001
+06/11/2023 16:11,Paeds Account 24,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339870,420,check temperature (tympanic)
+06/11/2023 16:11,Paeds Account 24,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339870,448,observe respiratory rate and signs of respiratory distress
+06/11/2023 16:12,Paeds Account 24,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339870,485,normal
+06/11/2023 16:12,Paeds Account 24,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339870,485,20 - 30 breaths per min
+06/11/2023 16:12,Paeds Account 24,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339870,485,mild / none
+06/11/2023 16:12,Paeds Account 24,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339870,485,sp o2 >95% in air
+06/11/2023 16:12,Paeds Account 24,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339870,485,> 120 bpm
+06/11/2023 16:12,Paeds Account 24,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339870,485,yes
+06/11/2023 16:12,Paeds Account 24,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339870,498,paediatric diabetic ketoacidosis guidelines
+06/11/2023 16:13,Paeds Account 24,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339870,572,situation option 1
+06/11/2023 16:13,Paeds Account 24,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339870,572,situation option 2
+06/11/2023 16:13,Paeds Account 24,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339870,572,situation option 4
+06/11/2023 16:13,Paeds Account 24,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339870,572,background option 1
+06/11/2023 16:13,Paeds Account 24,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339870,572,background option 2
+06/11/2023 16:13,Paeds Account 24,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339870,572,background option 3
+06/11/2023 16:13,Paeds Account 24,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339870,572,assessment option 1
+06/11/2023 16:13,Paeds Account 24,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339870,572,assessment option 3
+06/11/2023 16:13,Paeds Account 24,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339870,572,assessment option 4
+06/11/2023 16:13,Paeds Account 24,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339870,572,recommendation option 1
+06/11/2023 16:14,Paeds Account 24,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339870,609,ask for blood ketones
+06/11/2023 16:15,Paeds Account 24,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339870,643,provide reassurance
+06/11/2023 16:15,Paeds Account 24,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339870,651,provide reassurance
+06/11/2023 16:15,Paeds Account 24,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339870,670,diabetes team
+06/11/2023 16:15,Paeds Account 24,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339870,701,call play specialist
+06/11/2023 16:16,Paeds Account 24,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339870,711,call on-call doctor
+06/11/2023 16:17,Paeds Account 24,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339870,769,check capillary blood glucose
+06/11/2023 16:17,Paeds Account 24,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339870,777,capillary blood gas
+06/11/2023 16:17,Paeds Account 24,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339870,821,update on clinical plan
+06/11/2023 16:18,Paeds Account 24,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339870,832,capillary blood gas
+06/11/2023 16:18,Paeds Account 24,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339870,851,cbg result #1
+06/11/2023 16:19,Paeds Account 24,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339870,886,check hydration status
+06/11/2023 16:19,Paeds Account 24,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339870,907,insert iv access and take bloods
+06/11/2023 16:19,Paeds Account 24,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339870,922,medical history
+06/11/2023 16:20,Paeds Account 24,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339870,959,leave scenario
+06/11/2023 16:04,Paeds Account 11,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339871,0,start scenario
+06/11/2023 16:05,Paeds Account 11,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339871,34,wash hands and apply ppe
+06/11/2023 16:05,Paeds Account 11,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339871,41,introduce yourself
+06/11/2023 16:05,Paeds Account 11,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339871,51,introduce yourself
+06/11/2023 16:05,Paeds Account 11,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339871,76,presenting complaint
+06/11/2023 16:06,Paeds Account 11,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339871,94,ask about pain
+06/11/2023 16:06,Paeds Account 11,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339871,129,history of presenting complaint
+06/11/2023 16:07,Paeds Account 11,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339871,153,check capillary blood glucose
+06/11/2023 16:07,Paeds Account 11,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339871,166,ask about fever
+06/11/2023 16:07,Paeds Account 11,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339871,181,check temperature (tympanic)
+06/11/2023 16:07,Paeds Account 11,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339871,187,past medical history
+06/11/2023 16:08,Paeds Account 11,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339871,212,prescribed medications
+06/11/2023 16:08,Paeds Account 11,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339871,215,measure oxygen saturations & heart rate
+06/11/2023 16:08,Paeds Account 11,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339871,233,ask for blood ketones
+06/11/2023 16:08,Paeds Account 11,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339871,248,allergies
+06/11/2023 16:09,Paeds Account 11,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339871,298,observe respiratory rate and signs of respiratory distress
+06/11/2023 16:10,Paeds Account 11,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339871,337,normal
+06/11/2023 16:10,Paeds Account 11,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339871,337,20 - 30 breaths per min
+06/11/2023 16:10,Paeds Account 11,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339871,337,mild / none
+06/11/2023 16:10,Paeds Account 11,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339871,337,sp o2 >95% in air
+06/11/2023 16:10,Paeds Account 11,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339871,337,> 120 bpm
+06/11/2023 16:10,Paeds Account 11,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339871,337,yes
+06/11/2023 16:10,Paeds Account 11,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339871,370,measure blood pressure
+06/11/2023 16:11,Paeds Account 11,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339871,400,update on clinical plan
+06/11/2023 16:11,Paeds Account 11,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339871,410,update carer
+06/11/2023 16:12,Paeds Account 11,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339871,449,insert iv access and take bloods
+06/11/2023 16:12,Paeds Account 11,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339871,479,diabetes team
+06/11/2023 16:13,Paeds Account 11,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339871,542,situation option 1
+06/11/2023 16:13,Paeds Account 11,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339871,542,situation option 2
+06/11/2023 16:13,Paeds Account 11,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339871,542,situation option 4
+06/11/2023 16:13,Paeds Account 11,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339871,542,background option 1
+06/11/2023 16:13,Paeds Account 11,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339871,542,background option 2
+06/11/2023 16:13,Paeds Account 11,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339871,542,background option 3
+06/11/2023 16:13,Paeds Account 11,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339871,542,assessment option 2
+06/11/2023 16:13,Paeds Account 11,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339871,542,assessment option 3
+06/11/2023 16:13,Paeds Account 11,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339871,542,assessment option 4
+06/11/2023 16:13,Paeds Account 11,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339871,542,recommendation option 1
+06/11/2023 16:14,Paeds Account 11,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339871,560,capillary blood gas
+06/11/2023 16:15,Paeds Account 11,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339871,620,cbg result #1
+06/11/2023 16:15,Paeds Account 11,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339871,625,call on-call doctor
+06/11/2023 16:15,Paeds Account 11,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339871,646,paediatric diabetic ketoacidosis guidelines
+06/11/2023 16:15,Paeds Account 11,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339871,672,insulin: fixed rate soluble insulin iv 0.1 units/kg/hour
+06/11/2023 16:16,Paeds Account 11,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339871,678,1ml/kg/hour 0.9% saline + 40mmol/l kcl iv
+06/11/2023 16:16,Paeds Account 11,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339871,694,20ml/kg 0.9% saline iv stat (max 500ml)
+06/11/2023 16:16,Paeds Account 11,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339871,700,ask for tips
+06/11/2023 16:17,Paeds Account 11,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339871,781,paediatric diabetic ketoacidosis guidelines
+06/11/2023 16:18,Paeds Account 11,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339871,818,update on clinical plan
+06/11/2023 16:18,Paeds Account 11,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339871,835,leave scenario
+06/11/2023 16:04,Paeds Account 7,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339873,0,start scenario
+06/11/2023 16:05,Paeds Account 7,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339873,39,introduce yourself
+06/11/2023 16:05,Paeds Account 7,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339873,52,presenting complaint
+06/11/2023 16:06,Paeds Account 7,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339873,76,past medical history
+06/11/2023 16:06,Paeds Account 7,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339873,101,past surgical history
+06/11/2023 16:06,Paeds Account 7,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339873,112,prescribed medications
+06/11/2023 16:07,Paeds Account 7,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339873,133,allergies
+06/11/2023 16:07,Paeds Account 7,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339873,143,social and living situation
+06/11/2023 16:07,Paeds Account 7,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339873,149,wash hands and apply ppe
+06/11/2023 16:07,Paeds Account 7,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339873,162,ask consent to examine sam
+06/11/2023 16:08,Paeds Account 7,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339873,196,ask for blood ketones
+06/11/2023 16:08,Paeds Account 7,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339873,224,update carer
+06/11/2023 16:09,Paeds Account 7,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339873,246,look in patient's mouth with a tongue depressor
+06/11/2023 16:09,Paeds Account 7,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339873,287,auscultate lungs
+06/11/2023 16:10,Paeds Account 7,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339873,333,take pulse (central)
+06/11/2023 16:10,Paeds Account 7,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339873,351,measure oxygen saturations & heart rate
+06/11/2023 16:11,Paeds Account 7,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339873,366,measure blood pressure
+06/11/2023 16:11,Paeds Account 7,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339873,382,check temperature (tympanic)
+06/11/2023 16:11,Paeds Account 7,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339873,399,check capillary blood glucose
+06/11/2023 16:12,Paeds Account 7,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339873,465,observe respiratory rate and signs of respiratory distress
+06/11/2023 16:13,Paeds Account 7,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339873,506,normal
+06/11/2023 16:13,Paeds Account 7,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339873,506,20 - 30 breaths per min
+06/11/2023 16:13,Paeds Account 7,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339873,506,mild / none
+06/11/2023 16:13,Paeds Account 7,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339873,506,sp o2 >95% in air
+06/11/2023 16:13,Paeds Account 7,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339873,506,70 - 120 bpm
+06/11/2023 16:13,Paeds Account 7,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339873,506,yes
+06/11/2023 16:13,Paeds Account 7,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339873,527,medical history
+06/11/2023 16:14,Paeds Account 7,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339873,595,situation option 1
+06/11/2023 16:14,Paeds Account 7,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339873,595,situation option 2
+06/11/2023 16:14,Paeds Account 7,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339873,595,situation option 4
+06/11/2023 16:14,Paeds Account 7,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339873,595,background option 1
+06/11/2023 16:14,Paeds Account 7,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339873,595,background option 2
+06/11/2023 16:14,Paeds Account 7,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339873,595,background option 3
+06/11/2023 16:14,Paeds Account 7,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339873,595,assessment option 2
+06/11/2023 16:14,Paeds Account 7,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339873,595,assessment option 3
+06/11/2023 16:14,Paeds Account 7,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339873,595,assessment option 4
+06/11/2023 16:14,Paeds Account 7,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339873,595,recommendation option 1
+06/11/2023 16:15,Paeds Account 7,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339873,652,ask for tips
+06/11/2023 16:16,Paeds Account 7,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339873,716,capillary blood gas
+06/11/2023 16:17,Paeds Account 7,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339873,734,insert iv access and take bloods
+06/11/2023 16:17,Paeds Account 7,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339873,774,cbg result #1
+06/11/2023 16:18,Paeds Account 7,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339873,800,call on-call doctor
+06/11/2023 16:18,Paeds Account 7,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339873,831,capillary refill time (peripheral)
+06/11/2023 16:19,Paeds Account 7,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339873,851,vaccination history
+06/11/2023 16:19,Paeds Account 7,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339873,855,allergies
+06/11/2023 16:19,Paeds Account 7,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339873,866,travel history
+06/11/2023 16:19,Paeds Account 7,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339873,870,school / education
+06/11/2023 16:19,Paeds Account 7,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339873,875,family history
+06/11/2023 16:19,Paeds Account 7,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339873,890,repeat blood pressure
+06/11/2023 16:19,Paeds Account 7,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339873,895,ask for tips
+06/11/2023 16:20,Paeds Account 7,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339873,934,leave scenario
+06/11/2023 16:05,Paeds Account 23,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339874,0,start scenario
+06/11/2023 16:06,Paeds Account 23,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339874,42,introduce yourself
+06/11/2023 16:06,Paeds Account 23,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339874,53,introduce yourself
+06/11/2023 16:06,Paeds Account 23,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339874,92,presenting complaint
+06/11/2023 16:06,Paeds Account 23,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339874,95,check temperature (tympanic)
+06/11/2023 16:06,Paeds Account 23,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339874,98,measure blood pressure
+06/11/2023 16:07,Paeds Account 23,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339874,127,check capillary blood glucose
+06/11/2023 16:08,Paeds Account 23,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339874,171,ask for blood ketones
+06/11/2023 16:08,Paeds Account 23,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339874,176,measure oxygen saturations & heart rate
+06/11/2023 16:08,Paeds Account 23,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339874,213,observe respiratory rate and signs of respiratory distress
+06/11/2023 16:09,Paeds Account 23,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339874,230,provide reassurance
+06/11/2023 16:10,Paeds Account 23,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339874,288,normal
+06/11/2023 16:10,Paeds Account 23,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339874,288,20 - 30 breaths per min
+06/11/2023 16:10,Paeds Account 23,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339874,288,severe / moderate
+06/11/2023 16:10,Paeds Account 23,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339874,288,sp o2 >95% in air
+06/11/2023 16:10,Paeds Account 23,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339874,288,> 120 bpm
+06/11/2023 16:10,Paeds Account 23,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339874,288,yes
+06/11/2023 16:11,Paeds Account 23,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339874,351,situation option 1
+06/11/2023 16:11,Paeds Account 23,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339874,351,situation option 2
+06/11/2023 16:11,Paeds Account 23,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339874,351,situation option 4
+06/11/2023 16:11,Paeds Account 23,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339874,351,background option 1
+06/11/2023 16:11,Paeds Account 23,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339874,351,background option 2
+06/11/2023 16:11,Paeds Account 23,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339874,351,background option 3
+06/11/2023 16:11,Paeds Account 23,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339874,351,assessment option 2
+06/11/2023 16:11,Paeds Account 23,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339874,351,assessment option 3
+06/11/2023 16:11,Paeds Account 23,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339874,351,assessment option 4
+06/11/2023 16:11,Paeds Account 23,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339874,351,recommendation option 1
+06/11/2023 16:11,Paeds Account 23,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339874,367,history of presenting complaint
+06/11/2023 16:12,Paeds Account 23,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339874,436,insert iv access and take bloods
+06/11/2023 16:13,Paeds Account 23,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339874,490,fluid balance chart (intake/output)
+06/11/2023 16:13,Paeds Account 23,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339874,500,ask for tips
+06/11/2023 16:13,Paeds Account 23,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339874,514,past medical history
+06/11/2023 16:13,Paeds Account 23,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339874,521,capillary blood gas
+06/11/2023 16:14,Paeds Account 23,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339874,539,ask consent to examine sam
+06/11/2023 16:14,Paeds Account 23,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339874,578,observe respiratory rate and signs of respiratory distress
+06/11/2023 16:15,Paeds Account 23,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339874,603,repeat blood pressure
+06/11/2023 16:15,Paeds Account 23,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339874,614,cbg result #1
+06/11/2023 16:15,Paeds Account 23,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339874,628,call on-call doctor
+06/11/2023 16:16,Paeds Account 23,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339874,643,paediatric diabetic ketoacidosis guidelines
+06/11/2023 16:16,Paeds Account 23,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339874,671,fluid balance chart (intake/output)
+06/11/2023 16:16,Paeds Account 23,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339874,688,ask for urine output monitoring
+06/11/2023 16:16,Paeds Account 23,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339874,700,1ml/kg/hour 0.9% saline + 40mmol/l kcl iv
+06/11/2023 16:17,Paeds Account 23,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339874,727,paediatric diabetic ketoacidosis guidelines
+06/11/2023 16:18,Paeds Account 23,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339874,767,paediatric diabetic ketoacidosis guidelines
+06/11/2023 16:18,Paeds Account 23,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339874,796,cbg result #1
+06/11/2023 16:18,Paeds Account 23,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339874,812,paediatric diabetic ketoacidosis guidelines
+06/11/2023 16:19,Paeds Account 23,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339874,851,leave scenario
+06/11/2023 16:07,Paeds Account 27,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339880,0,start scenario
+06/11/2023 16:08,Paeds Account 27,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339880,36,wash hands and apply ppe
+06/11/2023 16:08,Paeds Account 27,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339880,44,introduce yourself
+06/11/2023 16:08,Paeds Account 27,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339880,54,introduce yourself
+06/11/2023 16:09,Paeds Account 27,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339880,83,history of presenting complaint
+06/11/2023 16:09,Paeds Account 27,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339880,109,history of presenting complaint
+06/11/2023 16:10,Paeds Account 27,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339880,134,aggravating / relieving factors
+06/11/2023 16:10,Paeds Account 27,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339880,156,provide reassurance
+06/11/2023 16:10,Paeds Account 27,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339880,160,please use accpm001
+06/11/2023 16:10,Paeds Account 27,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339880,170,prescribed medications
+06/11/2023 16:10,Paeds Account 27,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339880,178,past medical history
+06/11/2023 16:11,Paeds Account 27,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339880,192,allergies
+06/11/2023 16:11,Paeds Account 27,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339880,215,ask for blood ketones
+06/11/2023 16:11,Paeds Account 27,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339880,229,"feeding, growth and nutrition"
+06/11/2023 16:11,Paeds Account 27,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339880,233,provide reassurance
+06/11/2023 16:11,Paeds Account 27,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339880,248,check temperature (tympanic)
+06/11/2023 16:12,Paeds Account 27,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339880,266,update on clinical plan
+06/11/2023 16:12,Paeds Account 27,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339880,268,measure oxygen saturations & heart rate
+06/11/2023 16:12,Paeds Account 27,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339880,292,measure blood pressure
+06/11/2023 16:13,Paeds Account 27,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339880,321,check capillary blood glucose
+06/11/2023 16:14,Paeds Account 27,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339880,382,ask consent to examine sam
+06/11/2023 16:14,Paeds Account 27,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339880,407,observe airway and talk to patient
+06/11/2023 16:14,Paeds Account 27,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339880,422,look in patient's mouth with a tongue depressor
+06/11/2023 16:15,Paeds Account 27,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339880,455,observe respiratory rate and signs of respiratory distress
+06/11/2023 16:15,Paeds Account 27,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339880,487,ask for urine output monitoring
+06/11/2023 16:16,Paeds Account 27,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339880,537,situation option 1
+06/11/2023 16:16,Paeds Account 27,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339880,537,situation option 2
+06/11/2023 16:16,Paeds Account 27,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339880,537,situation option 4
+06/11/2023 16:16,Paeds Account 27,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339880,537,background option 1
+06/11/2023 16:16,Paeds Account 27,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339880,537,background option 2
+06/11/2023 16:16,Paeds Account 27,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339880,537,background option 3
+06/11/2023 16:16,Paeds Account 27,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339880,537,assessment option 1
+06/11/2023 16:16,Paeds Account 27,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339880,537,assessment option 3
+06/11/2023 16:16,Paeds Account 27,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339880,537,assessment option 4
+06/11/2023 16:16,Paeds Account 27,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339880,537,recommendation option 1
+06/11/2023 16:17,Paeds Account 27,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339880,565,capillary blood gas
+06/11/2023 16:17,Paeds Account 27,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339880,580,place nasogastric tube
+06/11/2023 16:17,Paeds Account 27,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339880,587,insert iv access and take bloods
+06/11/2023 16:18,Paeds Account 27,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339880,620,cbg result #1
+06/11/2023 16:18,Paeds Account 27,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339880,646,call on-call doctor
+06/11/2023 16:19,Paeds Account 27,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339880,697,provide reassurance
+06/11/2023 16:19,Paeds Account 27,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339880,703,update carer
+06/11/2023 16:19,Paeds Account 27,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339880,716,fluid prescription chart
+06/11/2023 16:20,Paeds Account 27,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339880,732,fluid prescription chart
+06/11/2023 16:20,Paeds Account 27,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339880,754,fluid prescription chart
+06/11/2023 16:20,Paeds Account 27,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339880,770,10ml/kg 0.9% saline iv stat (max 500ml)
+06/11/2023 16:21,Paeds Account 27,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339880,803,how are you feeling?
+06/11/2023 16:21,Paeds Account 27,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339880,813,home living situation
+06/11/2023 16:21,Paeds Account 27,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,339880,824,leave scenario

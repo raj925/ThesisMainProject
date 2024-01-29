@@ -1,0 +1,21 @@
+\item[AD] Aortic Dissection
+
+\item[GBS] Guillain-Barre Syndrome
+
+\item[MTB] Miliary Tuberculosis
+
+\item[PhEx] Physical Examination
+
+\item[PaHi] Patient History
+
+\item[TA] Temporal Arteritis
+
+\item[Te] Testing
+
+\item[TTP] Thrombotic Thrombocytopenic Purpura
+
+\item[UC] Ulcerative Colitis
+
+\item[VR] Virtual Reality: a form of technology where users wear a headset and are shown an application in a first-person view, where they embody that particular avatar.
+
+

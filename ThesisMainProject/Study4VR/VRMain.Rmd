@@ -1,0 +1,458 @@
+---
+title: "VRMain"
+output: html_document
+date: "2023-09-01"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Load Packages
+```{r, warning=FALSE, message=FALSE}
+source("./packageLoad.R")
+require(NLP)
+
+data_summary <- function(x) {
+  m <- mean(x)
+  ymin <- m-sd(x)
+  ymax <- m+sd(x)
+  return(c(y=m,ymin=ymin,ymax=ymax))
+}
+
+```
+
+```{r message=FALSE, warning=FALSE}
+
+vrData <- data.frame()
+sessionsData <- data.frame()
+actionsData <- data.frame()
+
+numOfRounds <- length(list.files(path = "./Data/Questionnaires"))
+
+for (n in 1:numOfRounds)
+{
+  # Loading and collating data files
+  vrFile <- paste("./Data/Questionnaires/VRData",n,".csv",sep = "")
+  vrFile <- read.csv(vrFile,header=TRUE,sep=",")
+  vrFile <- as.data.frame(vrFile)
+  vrFile$round <- n
+  vrData <- rbind(vrData,vrFile)
+  
+  # Load OMS actions and sessions data
+  actionsFile <- paste("./Data/Actions/actionsData",n,".csv",sep = "")
+  actionsFile <- read.csv(actionsFile,header=TRUE,sep=",")
+  actionsFile <- as.data.frame(actionsFile)
+  actionsFile$round <- n
+  actionsData <- rbind(actionsData,actionsFile)
+  
+  sessionsFile <- paste("./Data/Sessions/sessionsData",n,".csv",sep = "")
+  sessionsFile <- read.csv(sessionsFile,header=TRUE,sep=",")
+  sessionsFile <- as.data.frame(sessionsFile)
+  sessionsFile$round <- n
+  sessionsData <- rbind(sessionsData,sessionsFile)
+  
+}
+
+ids <- vrData$ParticipantID
+# Create a frequency table
+freq_table <- table(ids)
+# Identify elements with more than one occurrence
+repeatIDs <- names(freq_table[freq_table > 1])
+
+actioncategories <- read.csv("./Data/Actions/actionCategories.csv",header=TRUE,sep=",")
+
+vrData$OMSID <- as.integer(vrData$OMSID)
+
+sessionsData$NAME <- as.integer(str_remove(sessionsData$NAME, "Paeds Account "))
+actionsData$NAME <- as.integer(str_remove(actionsData$NAME, "Paeds Account "))
+
+colnames(sessionsData)[colnames(sessionsData) == "NAME"] ="OMSID"
+colnames(actionsData)[colnames(actionsData) == "NAME"] ="OMSID"
+
+vrData <- merge(vrData, sessionsData, by = c("OMSID", "round"))
+
+severitiesT1 <- c()
+severitiesT2 <- c()
+
+confidenceT1 <- c()
+confidenceT2 <- c()
+
+likelihoodsT1 <- c()
+likelihoodsT2 <- c()
+
+for (x in 1:nrow(vrData))
+{
+  ifelse(vrData$Scenario[x]=="Asthma"|vrData$Scenario[x]=="Seizure",
+         vrData$scenGroup[x]<-"AS",
+         vrData$scenGroup[x]<-"DP")
+  ifelse(vrData$Scenario[x]=="Asthma"|vrData$Scenario[x]=="DKA",
+         vrData$scenNum[x]<-1,
+         vrData$scenNum[x]<-2)
+  diagnoses1 <- str_split(vrData$t1Diagnoses[[x]],",")[[1]]
+  diagnoses2 <- str_split(vrData$t2Diagnoses[[x]],",")[[1]]
+  vrData$t1numOfDiagnoses[x] <- length(diagnoses1)
+  vrData$t2numOfDiagnoses[x] <- length(diagnoses2)
+  
+  liks1 <- as.integer(str_split(vrData$t1Likelihoods[[x]],",")[[1]])
+  liks2 <- as.integer(str_split(vrData$t2Likelihoods[[x]],",")[[1]])
+  vrData$t1HighestLikelihood[x] <- max(liks1)
+  vrData$t2HighestLikelihood[x] <- max(liks2)
+
+  vrData$severityChange[x] <- as.integer(vrData$t2Severity[[x]]) - as.integer(vrData$t1Severity[[x]])
+  vrData$confidenceChange[x] <- as.integer(vrData$t2Confidence[[x]]) - as.integer(vrData$t1Confidence[[x]])
+  vrData$t1numOfDiagnosesChange[x] <- length(diagnoses2) - length(diagnoses1)
+
+  scenario <- as.integer(vrData$Scenario)
+  
+  severitiesT1 <- c(severitiesT1, as.integer(vrData$t1Severity[[x]]))
+  severitiesT2 <- c(severitiesT2, as.integer(vrData$t2Severity[[x]]))
+  confidenceT1 <- c(confidenceT1, as.integer(vrData$t1Confidence[[x]]))
+  confidenceT2 <- c(confidenceT2, as.integer(vrData$t2Confidence[[x]]))
+  
+  likelihoodsT1 <- c(likelihoodsT1,liks1)
+  likelihoodsT2 <- c(likelihoodsT2,liks2)
+  
+}
+
+vrData$calibrationByDiff <- (vrData$OMSScore/vrData$t2Confidence)/10
+
+historyActions <- actioncategories$History
+historyActions <- historyActions[which(historyActions != "")]
+
+examActions <- actioncategories$Examination
+examActions <- examActions[which(examActions != "")]
+
+TestingActions <- actioncategories$Testing
+TestingActions <- TestingActions[which(TestingActions != "")]
+
+
+actionsMasterList <- c(historyActions, examActions, TestingActions)
+actionsMasterList <- actionsMasterList[nzchar(actionsMasterList)]
+
+for (n in 1:nrow(vrData))
+{
+
+  time <- vrData$TIME.SPENT[n]
+  timeSplit <- str_split(time, " ")[[1]]
+  timeSplit[1] <- str_remove(timeSplit[1],"m")
+  timeSplit[2] <- str_remove(timeSplit[2],"s")
+  timeSplit <- as.integer(timeSplit)
+  vrData$totalTime[n] <- timeSplit[1] + (timeSplit[2]/60)
+
+  actions <- actionsData[actionsData$OMSID == vrData$OMSID[n] & actionsData$SCENARIO == vrData$SCENARIO,]$ACTION.TITLE
+  vrData$totalActions[n] <- length(actions)
+  vrData$uniqueActions[n] <- length(unique(actions))
+
+  vrData$actionOverTime[n] <- vrData$uniqueActions[n]/vrData$totalTime[n]
+  
+  actionsVector <- c()
+  
+  for (a in 1:length(actionsMasterList))
+  {
+    if (actionsMasterList[a] %in% actions)
+    {
+      actionsVector <- c(actionsVector,1)
+    } else {
+      actionsVector <- c(actionsVector,0)
+    }
+  } 
+  
+  vrData$filteredActions[n] <- sum(actionsVector)
+  vrData$filteredActionOverTime[n] <- vrData$filteredActions[n]/vrData$totalTime[n]
+  
+  vrData$actionVector[n] <- as.String(actionsVector)
+}
+
+# Get data where participants have completed two scenarios
+
+vrCompleteData <- vrData[vrData$ParticipantID %in% repeatIDs,]
+nFullPpts <- nrow(vrCompleteData)/2
+
+
+```
+
+Analyses:
+- Distribution of confidence and severity ratings
+- Confidence with and without completing investigations t-test
+- Change of confidence against score correlation
+- Difference in score and severity/confidence change by scenario
+
+```{r, warning=FALSE, message=FALSE}
+
+title <- paste("Confidence Ratings", sep="")
+
+dat <- data.frame(c(confidenceT1,confidenceT2),c(rep("T1",length(confidenceT1)),rep("T2",length(confidenceT2))))
+colnames(dat) <- c("confidence","timepoint")
+
+# Interleaved histograms
+ggplot(dat, aes(x=confidence, color=timepoint, fill=timepoint )) +
+    geom_histogram(binwidth=1, color="#e9ecef", alpha=0.7, position="dodge") +
+    scale_fill_manual(values=c("#DDCC77", "#88CCEE")) +
+    scale_y_continuous(breaks=seq(0,11,1)) +
+    scale_x_continuous(breaks=seq(3,10,1)) +
+    theme_classic() +
+    ggtitle(title)
+
+title <- paste("Severity Ratings", sep="")
+
+dat <- data.frame(c(severitiesT1,severitiesT2),c(rep("T1",length(severitiesT1)),rep("T2",length(severitiesT2))))
+colnames(dat) <- c("severity","timepoint")
+
+# Interleaved histograms
+ggplot(dat, aes(x=severity, color=timepoint, fill=timepoint )) +
+    geom_histogram(binwidth=1, color="#e9ecef", alpha=0.7, position="dodge") +
+    scale_fill_manual(values=c("#44AA99", "#CC6677")) +
+    scale_y_continuous(breaks=seq(0,11,1)) +
+    scale_x_continuous(breaks=seq(2,10,1)) +
+    theme_classic() +
+    ggtitle(title)
+
+
+title <- paste("Likelihood Ratings", sep="")
+
+dat <- data.frame(c(likelihoodsT1,likelihoodsT2),c(rep("T1",length(likelihoodsT1)),rep("T2",length(likelihoodsT2))))
+colnames(dat) <- c("likelihood","timepoint")
+
+# Interleaved histograms
+ggplot(dat, aes(x=likelihood, color=timepoint, fill=timepoint )) +
+    geom_histogram(binwidth=1, color="#e9ecef", alpha=0.7, position="dodge") +
+    scale_fill_manual(values=c("#999933", "#882255")) +
+    theme_classic() +
+    ggtitle(title)
+
+
+
+```
+
+
+```{r, warning=FALSE, message=FALSE}
+
+se <- c(sd(vrData[vrData$t2InvestigationsComplete==0,]$t2Confidence,na.rm=T)/sqrt(length(vrData[vrData$t2InvestigationsComplete==0,]$t2Confidence)),
+        sd(vrData[vrData$t2InvestigationsComplete==1,]$t2Confidence,na.rm=T)/sqrt(length(vrData[vrData$t2InvestigationsComplete==1,]$t2Confidence)))
+xb <- c("Investigations Incomplete","Investigations Complete")
+yb <- c(mean(vrData[vrData$t2InvestigationsComplete==0,]$t2Confidence,na.rm=T),mean(vrData[vrData$t2InvestigationsComplete==1,]$t2Confidence,na.rm=T))
+df <- data.frame("InvestigationCompletion" = xb, "MeanConfidence"= yb)
+inf <- ggplot(df) +
+  geom_bar( aes(x=InvestigationCompletion, y=MeanConfidence), colour="black", stat="identity", fill="blue", alpha=0.5) +
+  geom_errorbar( aes(x=InvestigationCompletion, y=MeanConfidence, ymin=MeanConfidence-se, ymax=MeanConfidence+se), colour="orange", alpha=0.9, size=1.1, width = 0.4) + 
+  theme_classic()
+
+print(inf +
+        ggtitle("Confidence when Investigations are Complete or Incomplete") +
+        labs(x = "Investigation Completeness", y = "Confidence")) 
+
+print(t.test(vrData[vrData$t2InvestigationsComplete==0,]$t2Confidence,
+             vrData[vrData$t2InvestigationsComplete==1,]$t2Confidence))
+
+```
+
+
+```{r, warning=FALSE, message=FALSE}
+
+
+confScore <- ggplot(data = vrData, aes(x=t2Confidence, y=OMSScore)) +
+  geom_point() +
+  geom_smooth(method=lm , color="purple", fill="#69b3a2", se=TRUE) +
+  theme_classic()
+
+print(confScore + 
+        ggtitle("Confidence Against OMS Score")
+      + labs(y="OMS Score", x = "Confidence (Time 2)"))
+
+cor.test(vrData$t2Confidence,vrData$OMSScore,method="pearson")
+
+
+confScore <- ggplot(data = vrData, aes(x=t2Confidence, y=severityChange)) +
+  geom_point() +
+  geom_smooth(method=lm , color="red", fill="#69b3a2", se=TRUE) +
+  theme_classic()
+
+print(confScore + 
+        ggtitle("Confidence Against Change in Severity")
+      + labs(y="Difference in Severity", x = "Confidence (Time 2)"))
+
+cor.test(vrData$severityChange,vrData$OMSScore,method="pearson")
+
+
+seniorSev <- ggplot(data = vrData, aes(x=t2Severity, y=t2SeniorReview)) +
+  geom_point() +
+  geom_smooth(method=lm , color="orange", fill="#69b3a2", se=TRUE) +
+  theme_classic()
+
+print(seniorSev + 
+        ggtitle("Severity against Willingness to Leave Patient")
+      + labs(y="Leave Patient Prior to Senior Review", x = "Severity (Time 2)"))
+
+cor.test(vrData$t2Severity,vrData$t2SeniorReview,method="pearson")
+
+```
+
+
+```{r, warning=FALSE, message=FALSE}
+
+se <- c(sd(vrData$t1Confidence,na.rm=T)/sqrt(length(vrData$t1Confidence)),
+        sd(vrData$t2Confidence,na.rm=T)/sqrt(length(vrData$t2Confidence)))
+xb <- c("Time 1 Confidence","Time 2 Confidence")
+yb <- c(mean(vrData$t1Confidence,na.rm=T),mean(vrData$t2Confidence,na.rm=T))
+df <- data.frame("TimePoint" = xb, "MeanConfidence"= yb)
+inf <- ggplot(df) +
+  geom_bar( aes(x=TimePoint, y=MeanConfidence), colour="black", stat="identity", fill="darkgreen", alpha=0.5) +
+  geom_errorbar( aes(x=TimePoint, y=MeanConfidence, ymin=MeanConfidence-se, ymax=MeanConfidence+se), colour="orange", alpha=0.6, size=1.1, width = 0.4) + 
+  theme_classic()
+
+print(inf +
+        ggtitle("Confidence During and After the Scenario") +
+        labs(x = "Time Point", y = "Confidence")) 
+
+print(t.test(vrData$t1Confidence,
+             vrData$t2Confidence,paired=T))
+
+```
+
+
+```{r, warning=FALSE, message=FALSE}
+
+# Time in scenario
+
+timeCon <- ggplot(data = vrData, aes(x=uniqueActions, y=t2Confidence)) +
+  geom_point() +
+  geom_smooth(method=lm , color="orange", fill="#69b3a2", se=TRUE) +
+  theme_classic()
+
+print(timeCon + 
+        ggtitle("Confidence Against Actions Performed")
+      + labs(y="Confidence (Time Point 2)", x = "Actions Performed"))
+
+cor.test(vrData$uniqueActions,vrData$t2Confidence,method="pearson")
+
+
+
+timeScore <- ggplot(data = vrData, aes(x=actionOverTime, y=OMSScore)) +
+  geom_point() +
+  geom_smooth(method=lm , color="yellow", fill="#69b3a2", se=TRUE) +
+  theme_classic()
+
+print(timeScore + 
+        ggtitle("Action Over Time Against OMS Score")
+      + labs(y="OMS Score", x = "Action Over Time"))
+
+cor.test(vrData$actionOverTime,vrData$OMSScore,method="pearson")
+
+
+```
+
+```{r, warning=FALSE, message=FALSE}
+
+infoSeekingMatrixVR <- data.frame(matrix(nrow = nrow(vrData), ncol = length(actionsMasterList)))
+
+for (n in 1:nrow(vrData))
+{
+  infoSeekingMatrixVR[n,] <- str_split(vrData$actionVector[n],"\n")[[1]]
+}
+
+infoSeekingMatrixVR <- apply(infoSeekingMatrixVR, 2, as.numeric)
+
+# Use colSums to calculate the sum of each column
+sumVals <- colSums(infoSeekingMatrixVR)
+
+# Use the column sums to filter columns with at least one 1
+filtered_data <- infoSeekingMatrixVR[, sumVals > 0]
+
+distancesVR <- infoSeekingMatrixVR %>% proxy::dist(method = "Hamman") %>% as.matrix()
+
+```
+
+```{r, warning=FALSE, message=FALSE}
+
+anovaDf <- data.frame(c(vrCompleteData$t1Confidence,vrCompleteData$t2Confidence),
+                      c(vrCompleteData$t1Severity,vrCompleteData$t2Severity),
+                      c(vrCompleteData$t1numOfDiagnoses,vrCompleteData$t2numOfDiagnoses),
+                      c(rep("1",nrow(vrCompleteData)),rep("2",nrow(vrCompleteData))),
+                      c(rep(vrCompleteData$Scenario,2)),
+                       c(rep(vrCompleteData$scenGroup,2)),
+                      c(rep(vrCompleteData$ParticipantID,2)))
+
+colnames(anovaDf) <- c("Confidence","Severity","Diagnoses", 
+                       "Timepoint","Scenario","ScenarioGroup","ID")
+
+p <- ggplot(anovaDf, aes(x=Timepoint, y=Confidence, fill=Scenario)) + 
+    geom_violin() +
+    stat_summary(fun.data=data_summary, geom="crossbar", width=0.05, position=position_dodge(0.1)) +
+    facet_wrap(~Scenario) +
+    theme_classic()
+
+p
+
+
+p <- ggplot(anovaDf, aes(x=Timepoint, y=Severity, fill=Scenario)) + 
+    geom_violin() +
+    stat_summary(fun.data=data_summary, geom="crossbar", width=0.05, position=position_dodge(0.1)) +
+    facet_wrap(~Scenario) +
+    ylim(0,10) +
+    theme_classic()
+
+p
+
+p <- ggplot(anovaDf, aes(x=Timepoint, y=Diagnoses, fill=Scenario)) + 
+    geom_violin() +
+    stat_summary(fun.data=data_summary, geom="crossbar", width=0.05, position=position_dodge(0.1)) +
+    facet_wrap(~Scenario) +
+    ylim(0,8) +
+    theme_classic()
+
+p
+
+#################################################
+
+anovaDf <- data.frame(vrCompleteData$filteredActions,
+                      vrCompleteData$filteredActionOverTime,
+                      vrCompleteData$OMSScore,
+                        vrCompleteData$Scenario,
+                       vrCompleteData$scenGroup,
+                      vrCompleteData$scenNum,
+                      vrCompleteData$ParticipantID)
+
+colnames(anovaDf) <- c("Actions","FActionsOverTime","Score","Scenario","ScenarioGroup","ScenarioNumber","ID")
+
+# Convert ScenarioGroup to factor with desired order
+anovaDf$ScenarioGroup <- factor(anovaDf$ScenarioGroup, levels = c("AS", "DP"))
+
+###########################
+# Actions
+
+# Plotting
+p <- ggplot(anovaDf, aes(x = Scenario, y = Actions, fill = Scenario)) +
+  geom_violin(position = position_dodge(0.8), trim = FALSE) +
+  stat_summary(fun.data = data_summary, geom = "crossbar", width = 0.05, position = position_dodge(0.8)) +
+  facet_wrap(~ScenarioGroup,scales = "free_x") + 
+  theme_classic()
+
+p
+
+res.aov2 <- anova_test(
+  data = anovaDf, dv = Actions, wid = ID, within = ScenarioNumber, between = ScenarioGroup
+)
+
+get_anova_table(res.aov2)
+
+###########################
+# Score
+
+# Plotting
+p <- ggplot(anovaDf, aes(x = Scenario, y = Score, fill = Scenario)) +
+  geom_violin(position = position_dodge(0.8), trim = FALSE) +
+  stat_summary(fun.data = data_summary, geom = "crossbar", width = 0.05, position = position_dodge(0.8)) +
+  facet_wrap(~ScenarioGroup,scales = "free_x") + 
+  theme_classic()
+
+p
+
+res.aov2 <- anova_test(
+  data = anovaDf, dv = Score, wid = ID, within = ScenarioNumber, between = ScenarioGroup
+)
+
+get_anova_table(res.aov2)
+
+
+```

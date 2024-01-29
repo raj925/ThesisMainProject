@@ -1,0 +1,213 @@
+---
+title: "DiagnosisStudyAnalysis"
+date: '2022-11-03'
+output:
+  html_document:
+    df_print: paged
+    toc: yes
+    toc_depth: 3
+    toc_float: yes
+    code_folding: hide
+    format: readthedown
+  pdf_document: default
+  word_document: default
+  rmdformats::readthedown:
+    code_folding: hide
+    format: readthedown
+    toc_depth: 3
+---
+
+```{r setup, include=FALSE, warning=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+# Set up and aggregation of data
+
+```{r, warning=FALSE, message=FALSE }
+## Load Libraries and Python script for processing JSON files##
+source("Scripts/packageLoad.R")
+source_python("Scripts/processFile.py")
+#library(devtools)
+#install_github("vqv/ggbiplot")
+#library(ggbiplot)
+dataFolder <- "../JSONs"
+## 1. Load data from JSON files##
+## 2. Create full df with stage-wise data##
+## 3. Create aggregate dataframe with participant-wise data##
+## 4. Create dataframe for case-wise data##
+## 5. Create matrix for information seeking data by case##
+df <- data.frame(matrix(ncol = 0, nrow = 1584))
+infoStages <- c("Geography", "History & Politics", "People & Culture")
+accuracyMeasure <- "CorrectLikelihood" #CorrectLikelihood, HighestLikelihood or Accuracy
+classifyVar <- "knowledge" #knowledge, accuracy or confidence
+ids <- list.dirs(dataFolder,recursive = FALSE) 
+
+countries <-c("KOR","MON","COL","SWI", "GRE", "BOT")
+countriesShort <- c("KOR","MON","COL","SWI", "GRE", "BOT")
+
+countriesLong <- c("SOUTH KOREA","MONGOLIA","COLOMBIA","SWITZERLAND", "GREECE","BOTSWANA")
+
+easyCountryGroup <- c("MON", "COL", "KOR") 
+hardCountryGroup <- c("SWI", "GRE", "BOT") 
+
+#easyCountryGroup <- c("MON", "KOR") 
+#medCountryGroup <- c("SWI", "COL") 
+#hardCountryGroup <- c("GRE", "BOT") 
+
+source("Scripts/AggregateData.R")
+```
+
+
+```{r}
+
+count <- 0
+accDf <- data.frame(matrix(ncol = 0, nrow = nrow(df)))
+for (participantID in participantIDS)
+{
+  files <- list.files(paste(dataFolder, "/", participantID, sep="")) 
+  file <- files[1]
+  filePath <- paste(dataFolder, "/", participantID, "/", file, sep="")
+  processFile(filePath)
+  # Give the input file name to the function.
+  myData <- fromJSON(file=filePath)
+  trials <- myData$processedData$trials
+  for (x in 1:length(trials))
+  {
+    row <- x + count
+    trialSelect <- trials[x]
+    trialSelect <- trialSelect[[1]]
+    accDf$participantID[row] <- participantID
+    accDf$trialNum[row] <- trialSelect$trial
+    accDf$stage[row] <- trialSelect$subtrial
+    accDf$stageName[row] <- infoStages[trialSelect$subtrial]
+    accDf$trueCountry[row] <- toupper(trialSelect$trueCountry)
+    
+    accDf$differentials[row] <- toString(trialSelect$differentials) 
+    accDf$likelihoods[row] <- toString(trialSelect$likelihoods) 
+    
+    accDf$highestLikelihoodValue[row] <- max(trialSelect$likelihoods)
+    differentials <-  accDf$differentials[row]
+    differentials <- str_split(differentials,", ")
+    differentials <- differentials[[1]]
+    accDf$highestLikelihoodDifferential[row] <- differentials[which.max(trialSelect$likelihoods)]
+  }
+  count <- count + length(trials)
+}
+
+```
+
+```{r, echo=FALSE}
+
+# Colour coding for figures
+confidenceColour <- "#03c200"
+difficultyColour <- "#bf00c2"
+infoSeekingColour <- "#ca0600"
+differentialColour <- "skyblue"
+likelihoodColour <- "orange"
+accuracyColour <- "black"
+resolutionColour <- "yellow"
+```
+
+# Key dependent variables by stage 
+
+```{r, echo=FALSE}
+
+source("Scripts/StagewiseFigures.R")
+
+```
+
+# Key dependent variables by case
+
+```{r, echo=FALSE}
+
+source("Scripts/CountryWiseVariableFigure.R")
+
+```
+
+Information Seeking Analysis:
+```{r, echo=FALSE}
+#accs <- c("0.3", "0.5", "0.7", "0.8")
+#accs <- c("likGroup1", "likGroup2", "likGroup3", "likGroup4")
+accs <- c("geoKnowledgeGroup1", "geoKnowledgeGroup2", "geoKnowledgeGroup3", "geoKnowledgeGroup4")
+countries <-c("MON", "SWI", "KOR", "COL", "GRE", "BOT")
+
+varBoot <- function(d, i){
+	d2 <- d[i,]
+	return(sd(d2)^2)
+}
+
+numOfClusters <- 4 # 2: initial correctness, 3: case difficulty, 4: ppt accuracy, 6: case
+clusterType <- "pam"
+
+source("Scripts/InfoSeekingMDS.R")
+
+```
+
+Correlation Figures:
+
+```{r, echo=FALSE}
+
+source("Scripts/CorrelationFigures.R")
+
+```
+
+# Distributions of Likelihood and Severity Ratings:
+
+```{r, echo=FALSE}
+
+source("Scripts/LikelihoodDists.R")
+
+```
+
+# Classification of performance based on information seeking
+
+```{r, echo=FALSE}
+
+source("Scripts/BinaryClassification.R")
+
+```
+
+# Mixed Effects Modelling: Confidence and Information Seeking
+
+```{r, echo=FALSE}
+mixedConModel = lmer(confidenceChange ~ caseInformationProportion + (1 | country) + (1 | id), data = countryDf, na.action="na.exclude")
+summary(mixedConModel)
+
+# Assumption testing  
+# Linearity
+confidenceChange <- countryDf$confidenceChange
+modelLin<-plot(residuals(mixedConModel),confidenceChange)
+
+# Homogeneity of variance
+countryDf$res<- residuals(mixedConModel) #extracts the residuals 
+countryDf$res <-abs(countryDf$res) #absolute value of the residuals
+countryDf$res <- countryDf$res^2 #squares the absolute values of the residuals to provide the more robust estimate
+Levene.Model.F <- lm(res ~ id, data=countryDf) #ANOVA of the squared residuals
+anova(Levene.Model.F) #displays the results
+
+# Normal distribution of residuals
+qqmath(mixedConModel, id=0.05, na.rm=TRUE)
+
+
+```
+
+# Information Seeking and Likelihood of Correct Country:
+
+```{r, echo=FALSE}
+correctCases <- countryDf[countryDf$correct==1,]
+mixedLikModel = lmer(as.integer(likelihoodOfCorrectCountry) ~ laterInfoProp + (1 | country) + (1 | id), data = correctCases, na.action="na.exclude")
+summary(mixedLikModel)
+```
+
+# Change in Confidence against Change in Likelihood:
+
+```{r, echo=FALSE}
+mixedLikConModel = lmer(confidenceChange ~ likelihoodChange + (1 | country) + (1 | id), data = correctCases, na.action="na.exclude")
+summary(mixedLikConModel)
+```
+
+```{r, echo=FALSE}
+mixedConModel = lm(averageLikelihoodOfCorrectCountryFinal ~ proportionOfInfo + geoScore, data = aggData)
+summary(mixedConModel)
+```

@@ -1,0 +1,22 @@
+﻿ParticipantID,OMSID,Scenario,t1Diagnoses,t1Likelihoods,t1Confidence,t1Severity,t2Diagnoses,t2Likelihoods,t2Confidence,t2Severity,t2SeniorReview,t2InvestigationsComplete,OMSScore,t2ExtraInvestigations
+B28,22,Seizure,"febrile convulsion, epleptic seizure, bronchiolitis, VIW","5,5,2,2",5,9,"tonsilitis, URTI, febrile seizure, meningitis, encephalitis","5,5,5,3,2",8,2,0.68,0,74,would ask for more detail about PMHx and do ENT examination once long enough post seizure
+B27,20,Seizure,"febrile seizure, epilepsy","5,3",8,9,"febrile seizure, epilepsy, meningitis","5,3,3",8,8,0.18,1,76,
+B26,27,Pneumonia,"sepsis, chest infection/penumonia, asthma","5,4,1",7,9,"sepsis, pneumonia","5,5",8,7,0.24,1,73,
+B21,23,Seizure,"febrile convulsions, first epilepsy, tonsilitis, epiglottis, sepsis, tumour, meningitis encephalitis","4,4,4,3,2,2,4",7,7,"febrile convulsion, epilepsy, sepsis, meningitis, encephalitis","5,3,2,2,2",10,7,0.79,1,65,
+B24,24,Pneumonia,"pneumonia, asthma, pneumothorax, DKA, meningococcal septicaemia","5,2,1,1,3",7,6,"sepsis, asthma excerbation","5,4",8,7,0,0,71,immunisations
+B22,11,Pneumonia,"acute asthma attack,  pneumonia, anaphylaxis, foreign body inhalation, bronchiolits","5,5,2,2,3",8,6,"acute asthma excerbation, sepsis, pneumonia, anaphylaxis, foreign body","5,5,5,1,1",9,8,0.09,0,67,"CXR, would have liked to fully examine patient"
+B17,9,Pneumonia,"pneumonia, asthma, anaphylaxis, urti, chemical warfare","4,3,2,2,1",6,8,"pneumonia, sepsis","5,5",8,7,0,0,72,I just forgot
+B11,5,Seizure,"febrile seizure, epilepsy","5,1",6,7,"febrile seizure, epilepsy","5,2",7,7,0.29,0,,
+B20,23,Pneumonia,"sepsis, acute severe asthma attack, pneumonia","4,3,2",6,7,"sepsis, acute astham excerbation","5,3",8,7,0.16,1,65,
+B19,13,Seizure,"febrile convulsion 2nd to roseola, sepsis, viral/bacterial URTI, epilepsy","4,3,2,2",5,7,"febrile convulsion 2nd to viral cause, sepsis, viral/bacterial URTI, epilepsy","5,2,2,2",8,6,0.15,0,,"neurological examination, wait for throat culture to come back to check cause"
+B12,28,Pneumonia,"bronchiolitis, VIW, asthma, croup","3,5,2,1",8,6,"sepsis, pneumonia, VIW, bronchiolitis, asthma","5,4,5,1,1",9,7,0.91,0,50,CXR
+B9,2,Seizure,"i.e asthma, lobar pneumonia","5,4",7,4,"tonsilitis, febrile convulsion","5,5",8,3,0.71,1,,
+B6,17,Pneumonia,right lower lobar pneu -> sepsis,5,7,8,right hand side lower pneumonia -> sepsis,5,8,9,0.15,1,,
+B7,18,Seizure,febrile convulsion on background of viral urti,4,7,7,"febrile convulsion likely due to fever from viral urti, first presentation epilepsy","4,2",8,3,0.09,0,,ENT exam if safe
+B5,16,Pneumonia,"excerbation of asthma, VIW, bronchiolitis, epiglotits, croup, LRTI, sepsis","4,4,3,2,2,2,3",6,8,"sepsis, LRTI","5,4",9,9,0,0,,"need to do urine output, VBG, bloods and blood cultures, sepsis 6"
+B14,26,Pneumonia,"pneumonia, foreign body, space occ lesion","5,1,1",7,6,sepsis (background of pneumonia),5,9,9,0.22,1,72,
+B2,8,Pneumonia,"excerbation asthma, viral induced wheeze, foreign object aspiration, pneumonia, anaphylaxis","4,4,1,2,1",6,6,"pneumonia/sepsis, VIW, astham excerbation, anaphylaxis, foreign body","5,3,3,1,1",10,6,0.63,1,69,
+B18,7,Seizure,"epilepsy, febrile convulsions, meningitis, encephalopathy","4,5,2,2",6,6,"febrile convulsion, epilepsy","5,4",9,3,0.28,1,71,
+B16,15,Pneumonia,"asthma, bronchiolitis, LRTI, pneumothorax, TB","5,4,4,1,1",9,3,"LRTI -> sepsis, bronchiolitis, TB, pneumothorax, acute exacerbation of asthma","5,2,1,1,4",9,9,0,0,61,"Finish A to E, sepsis six, communicate with patient more to get history"
+B8,19,Pneumonia,"febrile seizure, tonsilitis, sepsis, meningitis","5,5,3,2",6,7,"infective excerbation of asthma, sepsis, lobar pneumonia","4,5,4",7,7,0,0,47,"take 3 (urine, lectate, bloods), fluids, o2, bloods"
+B13,25,Seizure,"epilepsy, hypoglycaemic seizures, DKA, febrile convulsion, sepsis","4,2,2,4,4",4,9,"febrile convulsion, epilepsy, meningitis, neurological insult, URTI, tonsillitis","5,2,1,1,5,4",8,6,0.51,0,77,social history

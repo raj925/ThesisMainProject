@@ -1,0 +1,29 @@
+﻿ParticipantID,OMSID,Scenario,t1Diagnoses,t1Likelihoods,t1Confidence,t1Severity,t2Diagnoses,t2Likelihoods,t2Confidence,t2Severity,t2SeniorReview,t2InvestigationsComplete,OMSScore,t2ExtraInvestigations
+C20,20,DKA,"DKA, URTI, Gastroentiritis ","5,4,2",7,8,DKA,5,9,10,0,1,60,
+C18,18,DKA,"DKA, URTI viral","5,3",7,6,"Diabetic ketoacidosis, URTI viral, sepsis","5,2,3",9,8,0.15,0,60,Didn't really examine for cerebral oedema (as per guidelines)
+C23,23,DKA,"DKA, hyperglycema hypeno strop","5,1",8,7,DKA,5,8,7,0.21,0,62,Fluid balance & U&Es 
+C21,22,DKA,"DKA, hypoglycaemia","5,5",7,7,DKA,5,9,7,0.15,0,52,"A more detailed history of SOCRATES, DMHx, FHx, SHx"
+C26,26,DKA,"DKA, abdominal infection, diabetic episode, infection throat","4,3,3,3",5,7,"DKA, episode of hypoglycem","5,4",8,7,0,1,54,
+C28,28,DKA,"DKA, viral infection","4,2",7,5,DKA precipitated by viral infection,5,9,6,0.94,1,68,
+C25,25,Asthma,"Asthma, viral wheeze","4,2",4,5,Asthma,5,9,4,0.41,0,71,"Repeated the monitoring being done (O2 sats, HR etc). Not sure completely but I didn't feel done - did ABC but not DE."
+C13,13,DKA,"DKA, infection","5,4",,,DKA,5,,,,,55,
+C27,27,Asthma,"Viral induced wheeze, bronchiolitis, asthma excerbation","4,3,4",5,7,"Asthma excerbation, viral induced wheeze","5,3",8,7,0.81,1,73,
+C29,29,Asthma,"Asthma exacerbation, pneumonia, bronchiolitis","5,3,3",6,3,Asthma excerbation,5,8,4,0.63,1,67,
+C22,21,Asthma,"Asthma exacerbation, RSV (viral induced wheeze), pneumonia, croup","4,4,2,3",2,6,Asthma excerbation (viral),5,7,7,0.65,1,65,
+C19,19,Asthma,"Asthma, allergic aumery obstruction, bronchiolitis, viral induced wheeze, epiglottis","5,2,3,4,2",3,5,"Asthma, allergic aumay obstruction, bronchiolitis, viral induced wheeze, epiglottis","5,1,1,1,1",9,7,0,0,78,Take a full parental/collateral Hx
+C17,17,Asthma,"Asthma attack, viral wheeze, bronchiolitis, foreign body, epiglottis","4,3,3,1,2",6,7,"Asthma, viral wheeze, bronchiolitis, foreign body","5,1,1,1",9,7,,1,75,
+C16,16,DKA,"DKA, viral (URTI)","5,5",8,8,"DKA, URTI","5,5",7,8,0.1,1,51,
+C11,11,DKA,"DKA, gastroenteritis","5,3",7,7,DKA,5,9,8,0,0,65,
+C15,15,DKA,"DKA, dehydration, alcohol ingestion","5,4,1",5,7,"DKA, dehydration","5,4",8,7,0.03,0,,
+C14,14,Asthma,"Asthma, pneumonia, LRTI, RSV bronchiolitis","5,4,3,1",7,7,"Asthma, pneumonia","5,3",9,8,0.72,1,68,
+C8,8,DKA,"DKA, infection","4,3",5,7,Diabetic ketoacidosis,5,8,8,0,0,56,Prescribed and administered fluids
+C10,10,Asthma,"Asthma, VIW, acute epiglottitis, anaphylaxis, croup, FBI","5,3,1,1,2,1",5,4,"Asthma, VIW, anaphylaxis, croup, FBI","5,1,1,1,1",8,3,0.22,1,,
+C6,6,DKA,"DKA, sepsis, tonsilitis, hyperglycaemic hyperosmol","5,3,2,4",6,6,"DKA, tonsilitis","5,2",9,7,0.03,1,50,
+C9,9,Asthma,"Asthma exacerbation, bronchiolitis, viral induced wheeze, epiglottitis, foreign body, lower respiratory infection","5,2,3,1,1,2",8,7,"Asthma, viral induced wheeze, bronchiolitis, epiglottitis, foreign body, URTI/LRTI","5,3,2,1,2,3",8,6,0.71,1,75,
+C4,4,DKA,"DKA, gastroenteritis, inborn errors of met, insulin non-compliance crisis, sickle cell disease","4,1,3,4,3",6,8,DKA,5,9,8,0.13,0,56,
+C2,2,DKA,"DKA, URTI","5,5",10,8,"DKA, URTI","5,5",10,8,0.18,0,46,Cardiovascular and neuro exam
+C12,12,Asthma,"Asthma excerbation, RTI, anaphylaxis, croup, epiglottitis","4,2,1,1,1",6,6,"Asthma, URTI, anaphylaxis, croup/epiglottitis, pneumothorax, PE","5,2,1,1,3,3",7,7,0.09,1,,"update nurse, full history"
+C1,1,Asthma,"URTI, bronchiolitis, asthma, hypog, DKA","4,4,3,1,1",2,8,,,,,,,,
+C7,7,Asthma,"Asthma, viral induced wheeze, bronchiolitis","4,3,3",6,5,Asthma,5,7,2,0.62,0,54,"Longer Hx, more thorough/structured exam"
+C3,3,Asthma,"Asthma exacerbation, bronchiolitis, viral induced wheeze","4,3,2",5,5,"Acute excerbation of asthma, URTI, bronchiolitis, allergy, DKA","5,2,2,1,1",5,8,0.31,0,76,I was going to provide a fluid bolus
+C5,5,Asthma,"Acute exacerbation asthma, URTI, foreign object, LRTI, sepsis/DIC, meningitis, non accidental injury","5,4,2,4,3,2,1",6,7,"Acute asthma, URTI, LRTI","5,2,2",9,7,0,0,64,Needed to asses pt fx

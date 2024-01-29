@@ -1,0 +1,57 @@
+---
+title: "DiagnosisStudyAnalysis"
+output:
+  html_document: 
+    df_print: paged
+    toc: true
+    toc_float: true
+    toc_collapsed: true
+    toc_depth: 3
+    number_sections: true
+    theme: lumen
+  pdf_document: default
+date: "2022-11-03"
+---
+
+```{r setup, include=FALSE, warning=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+## Load Packages
+```{r, warning=FALSE, message=FALSE}
+source("Scripts/packageLoad.R")
+source_python("Scripts/processFile.py")
+```
+
+## Initialise Dataframe
+
+```{r, warning=FALSE, message=FALSE}
+## Load Libraries and Python script for processing JSON files##
+dataFolder <- "./JSONs"
+## 1. Load data from JSON files##
+## 2. Create full df with stage-wise data##
+## 3. Create aggregate dataframe with participant-wise data##
+## 4. Create dataframe for case-wise data##
+## 5. Create matrix for information seeking data by case##
+df <- data.frame(matrix(ncol = 0, nrow = 288))
+infoStages <- c("Patient History", "Physical Exmination", "Testing")
+ids <- list.dirs(dataFolder,recursive = FALSE) 
+
+cases <-c("UC", "GBS", "TA", "TTP", "AD", "MTB")
+conditionsShort <- c("UC", "GBS", "TA", "TTP", "AD", "MTB")
+conditionsLong <- c("ULCERATIVE COLITIS", "GUILLAINBARRE SYNDROME", "TEMPORAL ARTERITIS", "THROMBOTIC THROMBOCYTOPENIC PURPURA", "AORTIC DISSECTION", "MILIARY TB")
+
+easyCaseGroup <- c("GBS", "UC", "TA") 
+hardCaseGroup <- c("AD", "TTP", "MTB") 
+
+easyCaseGroupLong <- c("GUILLAINBARRE SYNDROME", "ULCERATIVE COLITIS", "TEMPORAL ARTERITIS")
+hardCaseGroupLong <- c("THROMBOTIC THROMBOCYTOPENIC PURPURA", "AORTIC DISSECTION", "MILIARY TB") 
+
+source("AggregateData.R")
+
+aggData <- apply(aggData,2,as.character)
+wd <- dirname(rstudioapi::getSourceEditorContext()$path)
+path <- paste(wd, "/TADataAgg.csv", sep="")
+write.csv(aggData,path,row.names=FALSE)
+```

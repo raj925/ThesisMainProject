@@ -1,0 +1,24 @@
+﻿ParticipantID,OMSID,Scenario,t1Diagnoses,t1Likelihoods,t1Confidence,t1Severity,t2Diagnoses,t2Likelihoods,t2Confidence,t2Severity,t2SeniorReview,t2InvestigationsComplete,OMSScore,t2ExtraInvestigations
+B17,6,DKA,"DKA, infection, urti","5,1,1",9,7,"DKA, infection, urti","5,1,1",10,7,0.65,1,67,
+B24,24,DKA,"DKA, GI infection, glucogen secreting tumour","5,2,2",8,8,DKA,5,8,8,0,0,53,"systems enquiry, social services, gastro urinary catheter"
+B22,11,DKA,"DKA, gasteroenteritis, pancreatis, appendicitis, ischaemia, hyperglycemic state, abdominal trauma","5,1,2,2,1,1,3",9,7,"DKA, gasteroenteritis, pancreatis, appendicitis, ischaemia, hyperglycemic state, abdominal trauma","5,1,1,1,1,1,1",10,7,0.28,0,42,A to E
+B26,27,DKA,"DKA, gastroenteritis, trauma, urti infection, poisoning, tonsillitis, appendicitis","5,3,2,4,1,4,2",6,9,"DKA, laryngitis","5,4",9,7,0.21,0,72,"Full history including social, urinary output, continuous PEWs/obs"
+B20,23,DKA,"DKA, hypoglycaemia","5,3",7,9,"DKA, hypoglycaemia","5,3",8,8,0.38,1,66,
+B19,13,Asthma,"pneumonia/infection, Acute asthma excerbation","4,5",5,7,"Acute asthma excerbation, pneumonia/infection","5,2",9,7,0,1,57,
+B21,1,Asthma,"Acute excerbation of asthma, viral induced wheeze, bronchiolitis, pneumonia, croup, foreign object, anaphylaxis","5,2,2,2,2,3,3",9,3,"Acute excerbation of asthma, viral induced wheeze, bronchiolitis, pneumonia, croup, foreign object, anaphylaxis","5,2,2,3,2,2,2",10,7,0.71,0,68,"peak flow, nebuliser"
+B27,20,Asthma,"Asthma, VIW, Upper resp tract infection, lower resp tract infection","5,2,2,2",7,5,,,,,,,66,
+B18,7,Asthma,"Acute asthma, bronchiolitis, VIW, allergy","5,2,3,4",7,7,"Acute asthma, virally induced wheeze, allergy, bronchiolitis","5,3,4,1",7,7,0,1,55,
+B25,21,DKA,"DKA, infection","5,3",7,6,"DKA, infection","5,2",9,7,0.5,1,77,
+B12,28,DKA,"DKA, tonsilitis, gastroenteritis","5,3,3",8,7,"DKA, tonsilitis, gasterenteritis","5,3,1",10,7,0.09,1,61,
+B14,26,DKA,DKA,5,9,8,DKA,5,10,8,0.07,1,73,
+B8,19,DKA,"DKA, infective excerbation, infection/strop, pneumonia","5,2,2,2",7,6,DKA,5,10,6,0,0,51,"Resp kussmad, vbg, bgb bloodgases, urine"
+B6,17,DKA,"DKA, infection, gastro not eating","5,4,4",6,6,"DKA, infection","5,5",10,7,0,0,51,"Check the cbgs, blood utis"
+B13,25,Asthma,"asthma excerbation, allergy/anaphylaxis, viral induced wheeze, bronchiolitis, foreign body","4,2,3,3,2",6,3,"viral excerbation of asthma, viral induced wheeze, pneumonia","5,3,3",8,7,0.65,1,72,
+B10,5,Asthma,"Asthma, LRTI, sepsis, anaphylaxis, URTI, foreign body","4,1,1,1,1,1",5,5,"Asthma excerbation, pneumonia, foreign bdy inhalation","4,3,3",6,9,0.06,0,74,"check for rash, ask more about PC, PEWS, bloods/blood gas, nebs (could not find)"
+B23,3,Asthma,"Asthma, viral urti, allergy, anaphylaxis","5,3,2,3",7,7,"Asthma, bronchiolitis, anaphylaxis, foregin body, bronchitis","5,2,4,1,2",8,5,0.13,0,61,"finish history, manage airways, prescribe bronchochilators"
+B1,4,Asthma,"Pneumonia, excerbation of asthma, pneumothorax, pulmonary edemoa, VIW","1,5,1,1,1",7,5,"Asthma excerbation, pneumonia, virally induced wheeze, urti, lrti","5,2,2,3,4",8,7,0.18,1,66,
+B11,14,Asthma,"Asthma, urti, anaphylaxis, bronchiolitis","4,3,1,2",5,5,"Asthma, urti, bronchiolitis, anaphylaxis","5,3,1,1",6,6,0.28,1,74,
+B9,2,Asthma,"Asthma (excerbating), RSV (or other infection), Bronchiolitis, allergic excerbation of asthma","5,4,3,4",7,3,"Acute excerbation of asthma, infection, allergy","5,3,2",8,9,0,0,69,glucose
+B4,12,Asthma,"Acute excerbation of asthma, anaphylaxis, urti, foreign body","4,2,5,1",6,7,"Asthma, bronchiolitis, pneumonia, anaphylaxis, viral induced wheeze","5,4,4,1,5",7,7,0.25,0,68,"take bloods, a blood gas, glucose reading"
+B15,9,Asthma,"Asthma excerbation, severe infection including sepsis, cardiac problems","4,4,2",7,6,"Acute excerbation of asthma, pneumonia, aspect of foreign body","5,2,3",7,8,0.16,1,76,
+B7,18,Asthma,"infective asthma excerbation, acute asthma, viral induced wheeze, bronchiolitis, variant of cystic fibrosis","4,5,3,3,1",5,3,"Acute asthma, infection excerbation of asthma","5,4",7,7,0,0,67,would take a more thorough history about previous hospital visits. Would examine more systems (eg cardiovascular)

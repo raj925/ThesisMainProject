@@ -1,0 +1,27 @@
+﻿ParticipantID,Scenario,t1Diagnoses,t1Likelihoods,t1Confidence,t1Severity,t2Diagnoses,t2Likelihoods,t2Confidence,t2Severity,t2SeniorReview,t2InvestigationsComplete,OMSScore
+2,2,"Acute asthma exacerbation, pneumonia","3,4",6,8,"Sepsis, asthma exacerbation, pneumonia","4,3",7,9,0.15,0,63
+6,2,"asthma exacerbation, infection","5,4",3,7,"Sepsis, anaphylaxis, asthma exacerbation, pneumonia, TB, viral","5,2,4,4,1,4,",6,,0.22,1,55
+4,2,"pneumonia (lobar), asthma excerbation","4,3",9,,"sepsis from lungs, penumonia, asthma excerbation","5,5,2",10,10,0,0,76
+8,1,"febrile convulsion, epilepsy","5,2",9,,"febrile convulsion, epilepsy","5,2",9,3,0,0,64
+13,1,fever induced seizure,4,6,7,"febrile convulsion, underlying infection","5,5",7,6,0.82,1,48
+9,2,lrti,5,10,9,lrti going into sepsis,5,10,9,0,1,78
+10,1,"febrile convulsion, meningitis, epilepsy","4,4,3",5,7,"febrile convulsion, meningitis",,7,,0.26,,60
+7,1,"febrile convulsion, epilepsy, reflex anoxic seizure, breath holding","5,3,2,2",5,7,"febrile convulsion, epileptic seizure, reflex anoxic seizure","5,3,3",7,6,0.22,1,65
+11,2,"pneumonia, acute asthma excerbation, foreign body","5,4,2",7,,"pneumonia, asthma excerbation","5,3",8,8,0,1,60
+14,1,"febrile seizure, epilepsy, hypoglycaemia, raised icp/sol","4,2,1,2",8,3,"febrile seizure, epileptic seizure, raised icp, meningitis","5,3,1,2",8,2,0.75,0,59
+12,1,"febrile seizure, epilepsy","4,4",6,9,"febrile seizure (upper resp tract infection), epilepsy","5,2",8,3,0.24,1,61
+15,2,"asthma attack, respiratory tract infection, anaphylaxis","5,3,1",6,3,"sepsis, asthma attack, pneumonia, anaphylaxis","5,3,2,1",7,9,0,0,63
+16,1,"febrile convulsion, epilepsy","5,1",8,6,"febrile seizure, seizure disorder","5,1",8,4,0.53,1,61
+21,1,"febrile convulsion, epilepsy","4,4",4,8,"febrile convulsion, epileptic seizure","5,2",8,6,0.22,0,68
+17,2,"pneumonia, asthma, sepsis","4,1,4",6,6,"Sepsis, asthma exacerbation, pneumonia","5,1,3",9,5,0.68,1,61
+20,2,"sepsis, pneumonia","4,4",6,7,"pneumonia, sepsis","5,5",8,10,0,0,75
+19,2,"pnemonia (r side), bronchiditis, sepsis, acute asthma","4,3,4,1",5,7,sepsis following pnemonia,4,8,9,0,0,53
+24,1,"febrile convulsion, first epileptic seizure, urti, epiglottitis, sepsis","5,3,5,2,4",3,7,"febrile convulsion to infection, epilepsy, sepsis","5,1,1",7,5,0.63,0,60
+22,1,"febrile seizure, epilepsy, strep throat, flu","5,2,4,4",3,9,"febrile seizure, epilepsy","5,1",3,9,0,0,67
+23,2,"infective exacerbation of asthma, urti","4,4",3,3,infective exacerbation of asthma,5,7,10,0,0,72
+25,2,"acute excerbation asthma, lobar pneumonia","5,4",5,7,"asthma, pneumonia","5,5",6,7,0.24,0,66
+30,1,"febrile seizure, epileptic seizure","5,3",9,2,"febrile convulsion, epileptic seizure","5,3",9,2,0.24,1,67
+26,1,"febrile convulsion, first presentation of epileptic seizure","5,4",6,9,"febrile seizure, first presentation epilepsy","5,3",8,2,0.5,1,72
+29,1,"febrile convulsion, seizure, diabetic acidosis, sepsis","5,4,2,3",6,7,"febrile convulsion, epileptic seizure","5,3",7,5,0.35,1,55
+31,2,"asthma attack, pneumonia, viral induced wheeze, pneumothorax","4,5,2,1",7,7,"sepsis leading to respiratory tract infection, asthma attack","5,2",9,9,0,1,63
+27,2,"viral induced wheeze, acute exacerbation asthma, pneumonia, sepsis, anaphylaxis","4,5,4,3,2",7,7,"pnemonia, sepsis, acute excerbation of asthma","5,3,4",8,8,0.53,1,57

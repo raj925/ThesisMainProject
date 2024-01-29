@@ -1,0 +1,443 @@
+---
+title: "ThinkAloudAnalysis"
+output:
+  html_document: 
+    df_print: paged
+    toc: true
+    toc_float: true
+    toc_collapsed: true
+    toc_depth: 3
+    number_sections: true
+    theme: lumen
+  pdf_document: default
+date: "2024-01-19"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, warning=FALSE, message=FALSE}
+
+source("./packageLoad.R")
+
+caseFile <- paste("./ThinkAloudCodingCaseData.csv",sep = "")
+caseData <- read.csv(caseFile,header=TRUE,sep=",")
+caseData <- as.data.frame(caseData)
+
+pptFile <- paste("./ThinkAloudCodingPptData.csv",sep = "")
+pptData <- read.csv(pptFile,header=TRUE,sep=",")
+pptData <- as.data.frame(pptData)
+
+colnames(pptData)[1] <- "ID"
+
+TAData <- merge(caseData, pptData, by = "ID")
+
+```
+
+
+```{r, warning=FALSE, message=FALSE}
+
+for (p in 1:nrow(pptData))
+{
+  reasoningStrat <- c(pptData$PR[p], pptData$HD[p], pptData$SI[p])
+  stratCodes <- c("PR", "HD", "SI")
+  if (sum(reasoningStrat,na.rm=T) > 1)
+  {
+    pptData$ReasoningStratSub[p] <- "Hybrid"
+  }
+  else if (sum(reasoningStrat,na.rm=T) < 1)
+  {
+    pptData$ReasoningStratSub[p] <- "NA"
+  }
+  else 
+  {
+    pptData$ReasoningStratSub[p] <- stratCodes[!is.na(reasoningStrat)]
+  }
+  
+  cases <- caseData[caseData$ID==pptData$ID[p],]
+  
+  reasoningStrat <- c(sum(cases$PR), sum(cases$HD), sum(cases$SI))
+  
+  maxVal <- max(reasoningStrat)
+  if(sum(reasoningStrat == maxVal) > 1)
+  {
+    pptData$ReasoningStratObj[p] <- "Hybrid"
+  }
+  else if (maxVal < 1)
+  {
+    pptData$ReasoningStratObj[p] <- "NA"
+  }
+  else
+  {
+    pptData$ReasoningStratObj[p] <- stratCodes[which.max(reasoningStrat)]
+  }
+  
+  pptData$meanDiffEvals[p] <- mean(cases$DEs)
+  pptData$meanDiffsAdded[p] <- mean(cases$DE.DAs)
+  pptData$meanDiffsRemoved[p] <- mean(cases$DE.DRs)
+  pptData$meanDiffsAtEnd[p] <- mean(cases$DE.DAs) - mean(cases$DE.DRs)
+  pptData$meanIncreasedLikelihoods[p] <- mean(cases$DE.IL)
+  pptData$meanDecreasedLikelihoods[p] <- mean(cases$DE.DL)
+  
+}
+
+# Assuming df is your dataframe
+caseData <- mutate(caseData, hybridStrat = ifelse(PR+HD+SI>1,1,0))
+
+```
+
+
+```{r, warning=FALSE, message=FALSE}
+
+nCases <- nrow(caseData)
+props <- c(nrow(caseData[caseData$OverallStrat=="PR",])/nCases,
+           nrow(caseData[caseData$OverallStrat=="HD",])/nCases,
+           nrow(caseData[caseData$OverallStrat=="SI",])/nCases)
+
+temp <- data.frame(stratCodes,props)
+
+p <- ggplot(temp) +
+  geom_bar(aes(x = stratCodes, y = props,fill=stratCodes),stat="identity",alpha=0.7) +
+  scale_fill_manual(values=c("#E69F00", "#56B4E9", "#009E73")) +
+  geom_text(aes(x = stratCodes, y = props, label = round(props,2)), vjust = 1.5, colour = "black") +
+  labs(title="Breakdown of Reasoning Strategies",x="Strategy",y="Proportion of Cases") +
+  theme_minimal() +
+  theme(axis.text=element_text(size=16),
+        axis.title=element_text(size=16),
+        plot.title=element_text(size=18,face="bold"),
+        line = element_blank())
+
+p
+
+```
+
+
+```{r, warning=FALSE, message=FALSE}
+
+stratBreakdown <- caseData %>%
+  group_by(Condition, OverallStrat) %>%
+  dplyr::mutate(N = n()) %>%
+  dplyr::summarise(m_N = mean(N)/16)
+
+stratBreakdown$OverallStrat <- factor(stratBreakdown$OverallStrat, levels = c('HD', 'PR', 'SI', 'NONE'))
+
+p <- ggplot(stratBreakdown, aes(fill=OverallStrat, y=m_N, x=Condition)) + 
+    geom_bar(position="dodge", stat="identity",alpha=0.7) +
+    scale_fill_manual(values=c("#E69F00", "#56B4E9", "#009E73",  "grey")) +
+  labs(title="Breakdown of Reasoning Strategies By Case",x="Case",y="Proportion of Participants") +
+  theme_minimal() +
+    theme(axis.text=element_text(size=16),
+        axis.title=element_text(size=16),
+        plot.title=element_text(size=18,face="bold"),
+        line = element_blank())
+
+p
+
+```
+
+```{r, warning=FALSE, message=FALSE}
+
+p <- hist(caseData$DEs, breaks=20, main = "Distribution of Frequency of Differential Evaluations by Case")
+
+p
+
+# Build dataset with different distributions
+temp <- data.frame(
+  type = c( rep("Added Differentials", nrow(caseData)), rep("Removed Differentials", nrow(caseData)) ),
+  value = c(caseData$DE.DAs, caseData$DE.DRs)
+)
+
+# Represent it
+p <- temp %>%
+  ggplot( aes(x=value, fill=type)) +
+    geom_histogram(bins=10, color="#e9ecef", alpha=0.6, position = 'identity') +
+    scale_fill_manual(values=c("#69b3a2", "#404080")) +
+    labs(fill="", title = "Distribution of Addition/Removal of Differentials") +
+  theme_classic()
+
+p
+
+
+temp <- data.frame(
+  type = c( rep("Increased Likelihoods", nrow(caseData)), rep("Decreased Likelihoods", nrow(caseData)) ),
+  value = c(caseData$DE.IL, caseData$DE.DL)
+)
+
+# Represent it
+p <- temp %>%
+  ggplot( aes(x=value, fill=type)) +
+    geom_histogram(bins=10, color="#e9ecef", alpha=0.6, position = 'identity') +
+    scale_fill_manual(values=c("#69b3e9", "#620a1a")) +
+    labs(fill="", title = "Distribution of Likelihood Changes") +
+  theme_classic()
+
+p
+
+
+
+```
+
+```{r, warning=FALSE, message=FALSE}
+
+pptBreakdown <- pptData %>%
+  group_by(ReasoningStratSub) %>%
+  dplyr::mutate(N = n()) %>%
+  dplyr::summarise(m_N = mean(N),
+                  mDiffsAdded = mean(meanDiffsAdded),
+                   mDiffsRemoved = mean(meanDiffsRemoved),
+                   mDiffsEvals = mean(meanDiffEvals),
+                   infoSought = mean(proportionOfInfo),
+                   confidence = mean(meanFinalConfidence),
+                   accuracy = mean(Accuracy))
+
+pptBreakdown
+
+
+```
+
+
+```{r, warning=FALSE, message=FALSE}
+
+acc <- c("Incorrect","Correct")
+
+means <- c(mean(caseData[caseData$Correct==0,]$DEs),
+                mean(caseData[caseData$Correct==1,]$DEs))
+sds <- c(sd(caseData[caseData$Correct==0,]$DEs)/sqrt(nrow(caseData[caseData$Correct==0,])),
+              sd(caseData[caseData$Correct==1,]$DEs)/sqrt(nrow(caseData[caseData$Correct==1,])))
+
+temp <-data.frame(acc, means,sds)
+
+p <- ggplot(temp) +
+  geom_bar(aes(x = acc, y = means),stat="identity",fill="skyblue",alpha=0.7) +
+  geom_errorbar(aes(x = acc,ymin=means-sds, ymax=means+sds), width=.2, position=position_dodge(0.05),color="orange") +
+  labs(title="Accuracy on Mean Differential Evaluations",x="Correctness of Cases",y="Mean Number of Differential Evaluations") +
+  theme_classic() +
+  theme(axis.text=element_text(size=16),
+        axis.title=element_text(size=16),
+        plot.title=element_text(size=18,face="bold"),
+        line = element_blank())
+
+print(p)
+
+print(t.test(caseData[caseData$Correct==0,]$DEs,
+             caseData[caseData$Correct==1,]$DEs))
+
+```
+
+
+```{r, warning=FALSE, message=FALSE}
+
+acc <- c("HD","Non-HD")
+
+means <- c(mean(caseData[caseData$OverallStrat=="HD",]$DEs,na.rm=T),
+                mean(caseData[caseData$OverallStrat!="HD",]$DEs,na.rm=T))
+sds <- c(sd(caseData[caseData$OverallStrat=="HD",]$DEs,na.rm=T)/sqrt(nrow(caseData[caseData$OverallStrat=="HD",])),
+              sd(caseData[caseData$OverallStrat!="HD",]$DEs,na.rm=T)/sqrt(nrow(caseData[caseData$OverallStrat!="HD",])))
+
+temp <-data.frame(acc, means,sds)
+
+p <- ggplot(temp) +
+  geom_bar(aes(x = acc, y = means),stat="identity",fill="#404080",alpha=0.7) +
+  geom_errorbar(aes(x = acc,ymin=means-sds, ymax=means+sds), width=.2, position=position_dodge(0.05),color="orange") +
+  labs(title="Strategy on Mean Differential Evaluations",x="Strategy",y="Mean Number of Differential Evaluations") +
+  theme_classic() +
+  theme(axis.text=element_text(size=16),
+        axis.title=element_text(size=16),
+        plot.title=element_text(size=18,face="bold"),
+        line = element_blank())
+
+print(p)
+
+print(t.test(caseData[caseData$OverallStrat=="HD",]$DEs,
+             caseData[caseData$OverallStrat!="HD",]$DEs))
+
+```
+
+
+```{r, warning=FALSE, message=FALSE}
+
+acc <- c("HD","Non-HD")
+
+means <- c(mean(caseData[caseData$OverallStrat=="HD",]$Correct,na.rm=T),
+                mean(caseData[caseData$OverallStrat!="HD",]$Correct,na.rm=T))
+sds <- c(sd(caseData[caseData$OverallStrat=="HD",]$Correct,na.rm=T)/sqrt(nrow(caseData[caseData$OverallStrat=="HD",])),
+              sd(caseData[caseData$OverallStrat!="HD",]$Correct,na.rm=T)/sqrt(nrow(caseData[caseData$OverallStrat!="HD",])))
+
+temp <-data.frame(acc, means,sds)
+
+p <- ggplot(temp) +
+  geom_bar(aes(x = acc, y = means),stat="identity",fill="#69b3a2",alpha=0.7) +
+  geom_errorbar(aes(x = acc,ymin=means-sds, ymax=means+sds), width=.2, position=position_dodge(0.05),color="orange") +
+  labs(title="Strategy on Correctness",x="Strategy",y="Accuracy") +
+  theme_classic() +
+  theme(axis.text=element_text(size=16),
+        axis.title=element_text(size=16),
+        plot.title=element_text(size=18,face="bold"),
+        line = element_blank())
+
+print(p)
+
+print(t.test(caseData[caseData$OverallStrat=="HD",]$Correct,
+             caseData[caseData$OverallStrat!="HD",]$Correct))
+
+```
+
+
+```{r, warning=FALSE, message=FALSE}
+
+acc <- c("Hybrid","Non-Hybrid")
+
+means <- c(mean(caseData[caseData$hybridStrat==1,]$Correct),
+                mean(caseData[caseData$hybridStrat==0,]$Correct))
+sds <- c(sd(caseData[caseData$hybridStrat==1,]$Correct)/sqrt(nrow(caseData[caseData$hybridStrat==1,])),
+              sd(caseData[caseData$hybridStrat==0,]$Correct)/sqrt(nrow(caseData[caseData$hybridStrat==0,])))
+
+temp <-data.frame(acc, means,sds)
+
+p <- ggplot(temp) +
+  geom_bar(aes(x = acc, y = means),stat="identity",fill="#928aaa",alpha=0.7) +
+  geom_errorbar(aes(x = acc,ymin=means-sds, ymax=means+sds), width=.2, position=position_dodge(0.05),color="orange") +
+  labs(title="Hybrid Strategy on Accuracy",x="Strategy",y="Accuracy") +
+  theme_classic() +
+  theme(axis.text=element_text(size=16),
+        axis.title=element_text(size=16),
+        plot.title=element_text(size=18,face="bold"),
+        line = element_blank())
+
+print(p)
+
+print(t.test(caseData[caseData$hybridStrat==1,]$Correct,
+             caseData[caseData$hybridStrat==0,]$Correct))
+
+```
+
+
+```{r, warning=FALSE, message=FALSE}
+
+acc <- c("DifferentialsAdded","DifferentialsRemoved")
+
+means <- c(mean(pptData$meanDiffsAdded),
+                mean(pptData$meanDiffsRemoved))
+sds <- c(sd(pptData$meanDiffsAdded)/sqrt(nrow(pptData)),
+              sd(pptData$meanDiffsRemoved)/sqrt(nrow(pptData)))
+
+temp <-data.frame(acc, means,sds)
+
+p <- ggplot(temp) +
+  geom_bar(aes(x = acc, y = means,fill=acc),stat="identity",alpha=0.7) +
+  scale_fill_manual(values=c("#69b3a2", "#404080")) +
+  geom_errorbar(aes(x = acc,ymin=means-sds, ymax=means+sds), width=.2, position=position_dodge(0.05),color="orange") +
+  labs(title="Differential Changes",x="Strategy",y="Mean") +
+  theme_classic() +
+  theme(axis.text=element_text(size=16),
+        axis.title=element_text(size=16),
+        plot.title=element_text(size=18,face="bold"),
+        line = element_blank())
+
+print(p)
+
+print(t.test(pptData$meanDiffsAdded,
+             pptData$meanDiffsRemoved,paired=T))
+
+```
+
+```{r, warning=FALSE, message=FALSE}
+
+acc <- c("Likelihood-","Likelihood+")
+
+means <- c(mean(pptData$meanDecreasedLikelihoods),
+                mean(pptData$meanIncreasedLikelihoods))
+sds <- c(sd(pptData$meanDecreasedLikelihoods)/sqrt(nrow(pptData)),
+              sd(pptData$meanIncreasedLikelihoods)/sqrt(nrow(pptData)))
+
+temp <-data.frame(acc, means,sds)
+
+p <- ggplot(temp) +
+  geom_bar(aes(x = acc, y = means,fill=acc),stat="identity",alpha=0.7) +
+  scale_fill_manual(values=c("#69b3e9", "#620a1a")) +
+  geom_errorbar(aes(x = acc,ymin=means-sds, ymax=means+sds), width=.2, position=position_dodge(0.05),color="orange") +
+  labs(title="Likelihood Changes",x="Strategy",y="Mean") +
+  theme_classic() +
+  theme(axis.text=element_text(size=16),
+        axis.title=element_text(size=16),
+        plot.title=element_text(size=18,face="bold"),
+        line = element_blank())
+
+print(p)
+
+print(t.test(pptData$meanDecreasedLikelihoods,
+             pptData$meanIncreasedLikelihoods,paired=T))
+
+```
+
+
+```{r, warning=FALSE, message=FALSE}
+
+cor <- cor.test(pptData$proportionOfInfo,pptData$Accuracy,method="pearson")
+
+diffInfo <- ggplot(data = pptData, aes(x=proportionOfInfo, y=Accuracy)) +
+  geom_point() +
+  geom_smooth(method=lm , color="green", fill="#69b3a2", se=TRUE) +
+  theme_classic()
+
+title <- paste("Information Sought Against Accuracy: ",
+               "r(", cor$parameter, ") = ",  round(cor$estimate, 2), ", p = ",  round(cor$p.value,2), sep="")
+
+print(diffInfo +
+        ggtitle(title) +
+      labs(y="Accuracy", x = "Proportion of Possible Information Requested") +
+      theme(axis.text=element_text(size=16),
+             axis.title=element_text(size=16),
+             plot.title=element_text(size=14,face="bold")
+      ))
+
+```
+
+```{r, warning=FALSE, message=FALSE}
+
+cor <- cor.test(pptData$meanDiffEvals,pptData$Accuracy,method="pearson")
+
+diffInfo <- ggplot(data = pptData, aes(x=meanDiffEvals, y=Accuracy)) +
+  geom_point() +
+  geom_smooth(method=lm , color="skyblue", fill="#69b3a2", se=TRUE) +
+  theme_classic()
+
+title <- paste("Differential Evaluations Against Accuracy: ",
+               "r(", cor$parameter, ") = ",  round(cor$estimate, 2), ", p = ",  round(cor$p.value,2), sep="")
+
+print(diffInfo +
+        ggtitle(title) +
+      labs(y="Accuracy", x = "Number of Differential Evaluations") +
+      theme(axis.text=element_text(size=16),
+             axis.title=element_text(size=16),
+             plot.title=element_text(size=14,face="bold")
+      ))
+
+```
+
+```{r, warning=FALSE, message=FALSE}
+
+caseList <- c("AD","GBS","MTB","TA","TTP","UC")
+accs <- c()
+for (case in caseList)
+{
+  accs <- c(accs, mean(caseData[caseData$Condition==case,]$Correct))
+  
+}
+temp <- data.frame(caseList,accs)
+
+p <- ggplot(temp) +
+  geom_bar(aes(x = caseList, y = accs,fill=caseList),stat="identity",alpha=0.7) +
+  scale_fill_manual(values=c("#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")) +
+  labs(title="Accuracy by Case",x="Case Name",y="Proportion of Correct Cases") +
+  theme_classic() +
+  theme(axis.text=element_text(size=16),
+        axis.title=element_text(size=16),
+        plot.title=element_text(size=18,face="bold"),
+        line = element_blank())
+
+print(p)
+
+```
+

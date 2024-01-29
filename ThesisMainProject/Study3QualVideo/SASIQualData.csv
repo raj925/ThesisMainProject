@@ -1,0 +1,20 @@
+﻿,Scenario A - Info Flow,Scenario A - Uncertainty,Scenario A - IRR Score,Scenario B - Info Flow,Scenario B - Uncertainty,Scenario B - IRR Score,Nurse1 Confidence Q1,Nurse1 Confidence Q2,Nurse1 Confidence Q3,Nurse1 Confidence Q4,Nurse2 Confidence Q1,Nurse2 Confidence Q2,Nurse2 Confidence Q3,Nurse2 Confidence Q4,Doctor Confidence Q1,Doctor Confidence Q2,Doctor Confidence Q3,Doctor Confidence Q4,Combined Experience,Scenario Order,Doctor Experience,Scenario A Time Taken,Scenario B Time Taken,Scenario A Time Taken Minutes,Scenario B Time Taken Minutes
+Team 1,,,57.5,,,50,7,7,10,10,7,6,6,7,7,8,7,8,9,AsBn,4,30:31:00,24:40:00,30.52,24.66
+Team 2,,,70,,,65,8,8,8,10,7,8,7,7,7,8,8,6,9,BsAn,4,20:32,21:40,30.53,21.66
+Team 3,,,67.5,,,70,6,6,5,7,8,8,7,9,8,8,8,9,12,AnBs,6,27:18:00,15:38,27.3,15.63
+Team 4,,,72.5,,,80,,,,,,,,,,,,,13,AnBs,6,30:00:00,14:24,30,14.4
+Team 5,,,70,,,60,8,7,7,7,8,8,8,9,8,8,8,8,10,BnAs,2,26:31:00,24:40:00,26.52,24.66
+Team 6,,,80,,,87.5,7,9,8,8,7,7,7,8,7,8,7,7,11,AnBs,4,19:00,12:25,19,24.42
+Team 7,,,77.5,,,82.5,7,6,6,7,7,7,7,8,7,7,6,7,8,AsBn,3,20:01,11:45,20.02,11.75
+Team 8,,,85,,,80,9,8,8,9,6,5,5,7,7,8,8,8,11,BsAn,2,17:29,13:18,17.48,13.3
+Team 9,,,70,,,85,5,6,6,5,6,6,7,6,7,8,7,9,17,BsAn,6,18:08,11:49,18.13,11.82
+Team 10,,,60,,,75,6,6,6,7,9,9,9,9,7,7,6,7,6.75,AsBn,0.75,30:07:00,11:18,30.12,11.3
+Team 11,,,62.5,,,60,8,9,8,8,7,7,7,9,7,7,6,6,11.5,AnBs,9,26:29:00,07:02,26.48,7.03
+Team 12,,,77.5,,,85,7,8,7,8,7,4,4,8,6,7,7,7,5.5,BsAn,3,17:17,11:26,17.28,11.43
+Team 13,,,70,,,85,9,9,9,9,6,7,7,8,6,7,6,8,14,AnBs,6,21:38,08:51,21.63,8.85
+Team 14,,,67.5,,,60,8,8,8,9,7,4,7,8,8,7,6,6,7,BnAs,4,20:19,22:01,20.32,22.02
+Team 15,,,75,,,82.5,7,7,7,10,6,7,7,7,9,8,8,8,6,BsAn,4,20:45,07:36,20.75,7.6
+Team 16,,,70,,,67.5,7,7,7,9,7,8,8,8,8,8,8,8,6,AsBn,0.5,21:09,14:22,21.15,14.37
+Team 17,,,65,,,65,9,9,9,10,9,8,8,8,8,7,7,9,7.5,BsAn,0.5,24:52:00,17:20,24.87,17.33
+Team 18,,,80,,,62.5,7,8,7,8,7,7,7,7,7,8,9,8,8,AsBn,2,19:52,10:28,19.87,10.47
+Team 19,,,62.5,,,62.5,6,6,6,8,8,8,8,8,8,7,8,8,8,AsBn,2,18:34,12:15,18.57,12.25

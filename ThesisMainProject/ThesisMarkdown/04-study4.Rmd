@@ -1,0 +1,54 @@
+---
+#########################################
+# options for knitting a single chapter #
+#########################################
+output:
+  bookdown::pdf_document2:
+    template: templates/template.tex
+  bookdown::html_document2: default
+  bookdown::word_document2: default
+documentclass: book
+#bibliography: [bibliography/references.bib, bibliography/additional-references.bib]
+---
+
+```{r, echo=FALSE}
+
+# Colour coding for figures
+confidenceColour <- "#03c200"
+difficultyColour <- "#bf00c2"
+infoSeekingColour <- "#ca0600"
+differentialColour <- "skyblue"
+likelihoodColour <- "orange"
+accuracyColour <- "black"
+resolutionColour <- "yellow"
+```
+
+# Study 5 - Diagnostic Uncertainty and Information Seeking in Virtual Reality Paediatric Scenarios {.unnumbered}
+
+```{=tex}
+\adjustmtc
+\markboth{Introduction}{}
+```
+<!-- For PDF output, include these two LaTeX commands after unnumbered chapter headings, otherwise the mini table of contents and the running header will show the previous chapter -->
+
+A critique with the task used in Studies 1 and 4 are to do with its limits in naturalism. For a start, participants are unable to see the patient, which is important given that the visual state (or distress) of a patient can be informative for a doctor in diagnosing the patient. In addition, the task is static in time, in that the patient does not change over the course of a case (i.e. improving or deteriorating over time). The case also does not include any aspect of treatment of patients, where doctors can start managing the patient’s symptoms and even using reactions to their treatment plan in order to change their understanding of the patient. In order to address these shortcomings in realism of our task, we used a virtual reality (VR) paradigm in order to investigate questions of differential evaluation, confidence and information seeking in a more naturalistic manner.
+
+We used VR scenarios implemented by Oxford Medical Simulation (OMS), a company that uses VR for medical education and simulation, in their bespoke software. Participants in this study were medical students based in Oxford who were at the time taking part in VR-based teaching sessions as part of their medical degrees. Students performed the scenarios using Oculus Quest 2 VR headsets. Scenarios were based in paediatrics, meaning that the patients in the scenario were children who were attending the hospital with their legal guardian. Each scenario features a visual 3D implementation of a basic ward room in a hospital. Participants are shown a (child) patient, their guardian and a nurse who can help with certain treatment and testing. Participants are asked to diagnose, begin treatment and escalate the case to a senior with appropriate understanding of the patient. Whilst in the scenario, participants can learn about the patient’s medical history, check key parameters (such as temperature, pulse, blood pressure, respiratory rate etc), perform physical exams/tests and begin certain treatment actions (such as administering oxygen or prescribing medication). Compared to the previous studies, participants have more freedom in terms of what information and tests they can request, as well as being able to begin a treatment plan. 
+
+Certain data, such as what information is requested, is recorded within the OMS software. However, for our other key data points, participants are asked to answer on paper. After 5 minutes in the scenario (by which point it is expected that participants would have a history of the patient and have started some early assessment of the patient), participants are asked to pause the scenario and fill in a brief questionnaire. Multiple VR participants were performing the scenario simultaneously and were paired with another student who would watch their performance. This other student would aid with administering the questionnaire. The VR participant was asked in the questionnaire to answer the follow (this is considered time point 1):
+
+“Please say all the conditions that you are currently considering or are concerned about for this patient. For each, please rate how likely you think they are on a scale of 1 (low) to 5 (high).”
+“On a scale of 1-10, how confident are you that you understand the patient’s condition?”
+“How severe do you think the patient’s condition is on a scale of 1 to 10?”
+
+The questionnaire was kept relatively short to minimise disruption to the scenario, as well as the questionnaire being administered whilst the participant kept the VR headset on with the scenario paused. This was due to the extra time that could be expended by asking participants to take off and put on the headset again to readjust to VR. Participants were given 20 minutes to complete the scenario, but could end the scenario early if they feel that they have completed the necessary care and tests for the patient. After completing the scenario, participants completed a second questionnaire on a separate sheet (this is considered time point 2). The second questionnaire featured the same three questions as the first questionnaire (see above), as well as the following questions:
+
+“To what extent would you be prepared to leave the patient prior to a senior review” (this question was answered using a visual analogue scale)
+“Did you complete all the history, examinations and investigations necessary? If not, what else would you do if given more time?”
+
+The dependent variables that we derive are as follows:
+
+Performance: OMS implements a series of objectives for each scenario, which are tasks or actions that the participant is expected to have completed within the allotted time. This can include administering oxygen, prescribing a particular medication or calculating the Patient Early Warning Score (PEWS). The proportion of completed objectives is used as a score of the participant’s performance during the scenario. 
+Latent Knowledge: medical students who participate in the study also complete a series of questions that test their knowledge of other paediatric conditions. Questions are multiple choice, with four possible answers for each. The proportion of correct answers for this questionnaire is used to derive a measure of the participants’ latent medical knowledge that is relevant to the scenarios performed in VR.
+Confidence Change: the participants’ confidence in their understanding of the patient’s condition is recorded at two time points, with the first being after 5 minutes (out of the 20 minute time limit) and the second being after the participant has finished the scenario. Confidence at each stage is recorded on a 10 point scale (1-10). The difference between the second and the first confidence rating is taken, such that a positive value indicates that the participant has increased their confidence over the course of the scenario. 
+Number of Differentials: participants are asked to record all the diagnostic differentials that they are considering at the two aforementioned time points. Hence, the total number of differentials is recorded at each stage. 
