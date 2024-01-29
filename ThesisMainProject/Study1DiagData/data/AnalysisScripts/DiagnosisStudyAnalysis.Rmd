@@ -1,0 +1,309 @@
+---
+title: "DiagnosisStudyAnalysis"
+output:
+  html_document: 
+    df_print: paged
+    toc: true
+    toc_float: true
+    toc_collapsed: true
+    toc_depth: 3
+    number_sections: true
+    theme: lumen
+  pdf_document: default
+date: "2022-11-03"
+---
+
+```{r setup, include=FALSE, warning=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+## Load Packages
+```{r, warning=FALSE, message=FALSE}
+source("Scripts/packageLoad.R")
+source_python("Scripts/processFile.py")
+```
+
+## Initialise Dataframe
+
+```{r, warning=FALSE, message=FALSE}
+## Load Libraries and Python script for processing JSON files##
+dataFolder <- "../JSONs"
+## 1. Load data from JSON files##
+## 2. Create full df with stage-wise data##
+## 3. Create aggregate dataframe with participant-wise data##
+## 4. Create dataframe for case-wise data##
+## 5. Create matrix for information seeking data by case##
+df <- data.frame(matrix(ncol = 0, nrow = 1656))
+infoStages <- c("Patient History", "Physical Exmination", "Testing")
+ids <- list.dirs(dataFolder,recursive = FALSE) 
+experiencedIDs <- c("qj4vcw","sz5k4r","kqzd96","s8c6kp","j1bwlt", "jhym2l","gzsfhp")
+
+cases <-c("UC", "GBS", "TA", "TTP", "AD", "MTB")
+conditionsShort <- c("UC", "GBS", "TA", "TTP", "AD", "MTB")
+conditionsLong <- c("ULCERATIVE COLITIS", "GUILLAINBARRE SYNDROME", "TEMPORAL ARTERITIS", "THROMBOTIC THROMBOCYTOPENIC PURPURA", "AORTIC DISSECTION", "MILIARY TB")
+
+easyCaseGroup <- c("GBS", "UC", "TA") 
+hardCaseGroup <- c("AD", "TTP", "MTB") 
+
+
+easyCaseGroupLong <- c("GUILLAINBARRE SYNDROME", "ULCERATIVE COLITIS", "TEMPORAL ARTERITIS")
+hardCaseGroupLong <- c("THROMBOTIC THROMBOCYTOPENIC PURPURA", "AORTIC DISSECTION", "MILIARY TB") 
+
+accuracyMeasure <- "CorrectLikelihood" #HighestLikelihood, CorrectLikelihood, Differential
+classifyVar <- "accuracy" #accuracy or confidence
+runExclusions <- TRUE
+
+source("Scripts/AggregateData.R")
+```
+
+The below code is used to generate a table of differentials to be 'marked' for correctness:
+
+```{r, eval=FALSE}
+count <- 0
+wd <- dirname(rstudioapi::getSourceEditorContext()$path)
+accDf <- data.frame(matrix(ncol = 0, nrow = nrow(df)))
+for (participantID in participantIDS)
+{
+  files <- list.files(paste(wd, "/../JSONs/", participantID, sep="")) 
+  file <- files[1]
+  filePath <- paste(wd, "/../JSONs/", participantID, "/", file, sep="")
+  processFile(filePath)
+  # Give the input file name to the function.
+  myData <- fromJSON(file=filePath)
+  trials <- myData$processedData$trials
+  
+  for (x in 1:length(trials))
+  {
+    row <- x + count
+    trialSelect <- trials[x]
+    trialSelect <- trialSelect[[1]]
+    accDf$participantID[row] <- participantID
+    accDf$trialNum[row] <- trialSelect$trial
+    accDf$stage[row] <- trialSelect$subtrial
+    accDf$stageName[row] <- infoStages[trialSelect$subtrial]
+    accDf$trueCondition[row] <- toupper(trialSelect$trueCondition)
+    
+    if (length(trialSelect$diagnoses) > 0)
+    {
+      accDf$differentials[row] <- toString(trialSelect$diagnoses) 
+    }
+    else
+    {
+      accDf$differentials[row] <- toString(trialSelect$differentials) 
+    }
+    
+    liks <- trialSelect$likelihoods
+    
+    accDf$highestLikelihoodValue[row] <- max(liks)
+    differentials <-  accDf$differentials[row]
+    differentials <- str_split(differentials,", ")
+    differentials <- differentials[[1]]
+    
+    maxLik <- max(liks)
+    numOfMaxDiffs <- sum(liks==maxLik)
+    
+    if (numOfMaxDiffs == 1)
+    {
+      accDf$highestLikelihoodDifferential[row] <- differentials[which.max(trialSelect$likelihoods)]
+    }
+    else
+    {
+      accDf$highestLikelihoodDifferential[row] <- toString(paste((differentials[which(liks == maxLik)]),sep=""))
+    }
+    
+  }
+  count <- count + length(trials)
+}
+
+
+
+```
+
+
+```{r, echo=FALSE}
+
+# Colour coding for figures
+confidenceColour <- "#03c200"
+difficultyColour <- "#bf00c2"
+infoSeekingColour <- "#ca0600"
+differentialColour <- "skyblue"
+likelihoodColour <- "orange"
+accuracyColour <- "black"
+resolutionColour <- "yellow"
+```
+
+## Stagewise Figures
+
+Key dependent variables by stage: 
+
+```{r, echo=FALSE}
+
+source("Scripts/StagewiseFigures.R")
+
+```
+## Casewise Figure for DVs
+
+Key dependent variables by case: 
+
+```{r, echo=FALSE}
+
+source("Scripts/CaseWiseVariableFigure.R")
+
+```
+
+## Correlation Figures
+
+```{r, echo=FALSE}
+
+source("Scripts/CorrelationFigures.R")
+
+```
+
+## Distributions of Likelihood and Severity Ratings
+
+```{r, echo=FALSE}
+
+source("Scripts/SeverityAndLikelihoodDists.R")
+
+```
+
+## Information Seeking Analysis
+```{r, echo=FALSE, warning=FALSE}
+accs <- c("accGroup1", "accGroup2", "accGroup3", "accGroup4", "e")
+#if (classifyVar == "confidence")
+#{
+#  accs <- c("confGroup1", "confGroup2", "confGroup3", "confGroup4")
+#} else {
+#  accs <- c("accGroup1", "accGroup2", "accGroup3", "accGroup4")
+#}
+cases <-c("UC", "GBS", "TA", "TTP", "AD", "MTB")
+ppts <- c("p", "e")
+
+numOfClusters <- 4# 2: initial correctness, 3: case difficulty, 4: ppt accuracy, 6: case
+clusterType <- "pam"
+distanceMethod <- "Jaccard" # OPTIONS: Jaccard, cosine, Dice, Euclidean, Hamman
+
+source("Scripts/InfoSeekingMDS.R")
+
+######################################
+
+cor <- cor.test(infoSeekingDf$MDSDistanceVariance,infoSeekingDf$RelativeRationalism,method="pearson")
+
+diffCon <- ggplot(data = infoSeekingDf, aes(x=RelativeRationalism, y=MDSDistanceVariance)) +
+  geom_point() +
+  geom_smooth(method=lm , color=infoSeekingColour, fill="#69b3a2", se=TRUE) +
+  theme_classic()
+
+title <- paste("MSD Distance Variance against Relative Rationalism: ",
+               "r(", cor$parameter, ") = ",  round(cor$estimate, 2), ", p = ",  round(cor$p.value,2), sep="")
+
+print(diffCon + 
+        ggtitle(title)
+      + labs(y="MSD Distance Variance", x = "Relative Rationalism")
+      +theme(axis.text=element_text(size=16),
+             axis.title=element_text(size=16),
+             plot.title=element_text(size=18)
+      ))
+
+```
+
+## Classification of Performance by Information Seeking
+
+```{r, echo=FALSE, warning=FALSE}
+
+source("Scripts/BinaryClassification.R")
+
+```
+
+## Modelling
+
+Confidence and Information Seeking:
+
+```{r, echo=FALSE}
+mixedConModel = lmerTest::lmer(confidenceChange ~  caseInformationProportion + initialDifferentials + subjectiveDifficulty + likelihoodsUpdated + (1 | caseCode) + (1 | id), REML = TRUE, data = studentCaseDf, na.action="na.exclude")
+summary(mixedConModel)
+
+
+plot(mixedConModel)
+
+# Assumption testing  
+# Linearity
+confidenceChange <- studentCaseDf$confidenceChange
+modelLin<-plot(residuals(mixedConModel),confidenceChange)
+
+# Homogeneity of variance
+studentCaseDf$res<- residuals(mixedConModel) #extracts the residuals 
+studentCaseDf$res <-abs(studentCaseDf$res) #absolute value of the residuals
+studentCaseDf$res <- studentCaseDf$res^2 #squares the absolute values of the residuals to provide the more robust estimate
+Levene.Model.F <- lm(res ~ id, data=studentCaseDf) #ANOVA of the squared residuals
+anova(Levene.Model.F) #displays the results
+
+# Normal distribution of residuals
+qqmath(mixedConModel, id=0.05, na.rm=TRUE)
+
+
+```
+
+Information Seeking and Likelihood of Correct Diagnosis:
+
+```{r, echo=FALSE}
+correctCases <- studentCaseDf[studentCaseDf$correct==1,]
+mixedLikModel = lmer(as.integer(likelihoodOfCorrectDiagnosis) ~ laterInfoProp + (1 | condition) + (1 | id), data = correctCases, na.action="na.exclude")
+summary(mixedLikModel)
+```
+
+Change in Confidence against Change in Likelihood:
+
+```{r, echo=FALSE}
+mixedLikConModel = lmer(confidenceChange ~ likelihoodChange + (1 | condition) + (1 | id), data = correctCases, na.action="na.exclude")
+summary(mixedLikConModel)
+```
+
+Accuracy (as likelihood) against Change in Confidence and Information Seeking:
+
+```{r, echo=FALSE}
+mixedInfoConModel = lmer(as.integer(likelihoodOfCorrectDiagnosis) ~ finalConfidence + caseInformationProportion + (1 | condition) + (1 | id), data = correctCases, na.action="na.exclude")
+summary(mixedInfoConModel)
+```
+
+Relative Rationalism Against Information Seeking
+
+```{r, echo=FALSE}
+rationalInfoModel = lm(proportionOfInfo ~ relativeRationalism, data = aggData, na.action="na.exclude")
+summary(rationalInfoModel)
+```
+
+```{r, echo=FALSE}
+mixedCalModel = lmer(brierConfidence ~ caseInformationProportion + initialDifferentials + (1 | condition) + (1 | id), data = studentCaseDf, na.action="na.exclude")
+summary(mixedCalModel)
+```
+
+Power analysis to determine sample size for a linear model
+
+```{r, echo=FALSE}
+pwr.f2.test(u = 1, f2 = 0.15, sig.level = .05, power = .90)
+# Cohen suggests f2 values of 0.02, 0.15, and 0.35 represent small, medium, and large effect sizes.
+```
+
+Word Cloud of Qualitative Responses on Diagnostic Approaches
+
+```{r, echo=FALSE}
+
+words <- aggData$diagnosticApproach
+
+stopwords_regex = paste(stopwords('en'), collapse = '\\b|\\b')
+stopwords_regex = paste0('\\b', stopwords_regex, '\\b')
+words = stringr::str_replace_all(words, stopwords_regex, '')
+
+dtm <- TermDocumentMatrix(words) 
+matrix <- as.matrix(dtm) 
+words <- sort(rowSums(matrix),decreasing=TRUE) 
+worddf <- data.frame(word = names(words),freq=words)
+
+set.seed(1234) # for reproducibility 
+wordcloud(words = worddf$word, freq = worddf$freq, min.freq = 1, max.words=200, random.order=FALSE, rot.per=0.35, colors=brewer.pal(8, "Dark2"))
+
+```
+
+
