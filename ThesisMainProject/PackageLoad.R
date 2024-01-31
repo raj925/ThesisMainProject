@@ -1,4 +1,4 @@
-requiredPackages <- c("tibble", "psych", "ltm", "stringr", "ggsci", "ggplot2", "rjson", 
+requiredPackages <- c("tibble", "scales", "psych", "ltm", "stringr", "ggsci", "ggplot2", "rjson", 
                       "reticulate", "ggpubr", "lme4", "lmerTest",
                       "pracma", "lattice", "MASS", "apcluster", "blme", 
                       "smacof","cluster","factoextra", "pwr", 
@@ -94,7 +94,10 @@ inversionNumber <- function(x){
         }
         return (list(inversions=inv,sortedVector=x))
     }
-    r <- mergeSort(x)
+    if (!is.na(x))
+    {
+      r <- mergeSort(x)
+    }
     return (r$inversions)
 }
 

@@ -52,7 +52,7 @@ hardCaseGroupLong <- c("THROMBOTIC THROMBOCYTOPENIC PURPURA", "AORTIC DISSECTION
 
 accuracyMeasure <- "CorrectLikelihood" #HighestLikelihood, CorrectLikelihood, Differential
 classifyVar <- "accuracy" #accuracy or confidence
-runExclusions <- TRUE
+runExclusions <- FALSE
 
 source("Scripts/AggregateData.R")
 ```
@@ -182,7 +182,7 @@ ppts <- c("p", "e")
 
 numOfClusters <- 4# 2: initial correctness, 3: case difficulty, 4: ppt accuracy, 6: case
 clusterType <- "pam"
-distanceMethod <- "Jaccard" # OPTIONS: Jaccard, cosine, Dice, Euclidean, Hamman
+distanceMethod <- "Dice" # OPTIONS: Jaccard, cosine, Dice, Euclidean, Hamman
 
 source("Scripts/InfoSeekingMDS.R")
 

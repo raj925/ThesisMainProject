@@ -109,39 +109,6 @@ ggplot(sorted_coefficients, aes(x = reorder(Test,-Coefficient), y = as.double(Co
   labs(y="Regression Coefficient", x = "Test") +
   theme_classic()
 
-
-#####################################################
-# PCA Regression
-
-contClassifierData <- subset(contClassifierData, select= -c(Group))
-
-contClassifierData$Score <- as.numeric(contClassifierData$Score)
-pcr_model <- pcr(Score~., data = contClassifierData, scale = TRUE, validation = "CV")
-
-summary(pcr_model)
-
-validationplot(pcr_model)
-
-pcr_pred <- predict(pcr_model, contClassifierData, ncomp = 3)
-mean((pcr_pred - contClassifierData$Score)^2)
-# This is the average deviation between the predicted value and the observed value
-
-results <- prcomp(contClassifierData[,1:28], scale = TRUE)
-var_explained = results$sdev^2 / sum(results$sdev^2)
-
-qplot(c(1:28), var_explained) + 
-  geom_line() + 
-  xlab("Principal Component") + 
-  ylab("Variance Explained") +
-  ggtitle("Scree Plot") +
-  ylim(0, 0.3)
-
-
-pcr_model <- pcr(Score~., data = contClassifierData, scale = TRUE, validation = "CV")
-pcr_pred <- predict(pcr_model, contClassifierData[,1:28], ncomp = 4)
-
-pcaClassifierData <- data.frame(pcr_pred,infoSeekingFullMatrix$Condition)
-
 ###################################################
 # Training and testing by case ###
 # Using GLM #
@@ -510,9 +477,6 @@ p <- ggplot(varDf) +
         line = element_blank())
 
 print(p)
-
-lmvar <- lm(accDfMeans~accGroupNum, data = varDf)
-summary(lmvar)
 
 
 # Continuous

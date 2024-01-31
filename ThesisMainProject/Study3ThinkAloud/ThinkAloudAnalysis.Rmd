@@ -112,6 +112,30 @@ p
 
 ```
 
+```{r, warning=FALSE, message=FALSE}
+
+nCases <- nrow(caseData)
+props <- c(mean(caseData[caseData$OverallStrat=="PR",]$Correct),
+           mean(caseData[caseData$OverallStrat=="HD",]$Correct),
+           mean(caseData[caseData$OverallStrat=="SI",]$Correct))
+
+temp <- data.frame(stratCodes,props)
+
+p <- ggplot(temp) +
+  geom_bar(aes(x = stratCodes, y = props,fill=stratCodes),stat="identity",alpha=0.7) +
+  scale_fill_manual(values=c("#E69F00", "#56B4E9", "#009E73")) +
+  geom_text(aes(x = stratCodes, y = props, label = round(props,2)), vjust = 1.5, colour = "black") +
+  labs(title="Breakdown of Reasoning Strategies",x="Strategy",y="Proportion of Cases Correct") +
+  theme_minimal() +
+  theme(axis.text=element_text(size=16),
+        axis.title=element_text(size=16),
+        plot.title=element_text(size=18,face="bold"),
+        line = element_blank())
+
+p
+
+```
+
 
 ```{r, warning=FALSE, message=FALSE}
 

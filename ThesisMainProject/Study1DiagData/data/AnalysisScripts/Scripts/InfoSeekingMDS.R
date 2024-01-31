@@ -5,9 +5,12 @@ mds <- infoSeekingFullMatrix[,1:29] %>%
   as_tibble()
 
 
-# distances <- infoSeekingFullMatrix[,1:29] %>% stats::dist(method="euclidean") %>% as.matrix()
+distances <- infoSeekingFullMatrix[,1:29] %>% stats::dist(method="binary") %>% as.matrix()
 
-# Compute cosine similarity distance (appropriate for binary data)
+# Compute Jaccard similarity distance (appropriate for binary data)
+infoSeekingNoEmpties <- infoSeekingFullMatrix[,1:29]
+infoSeekingNoEmpties <- infoSeekingNoEmpties[rowSums(infoSeekingNoEmpties)>1,]
+
 distances <- infoSeekingFullMatrix[,1:29] %>% proxy::dist(method = distanceMethod) %>% as.matrix()
 
 infoSeekingFullMatrix$v1 <- mds$V1
@@ -18,9 +21,9 @@ hist(distances)
 #######################################
 # Use of regular PCA
 
-pca_result <- prcomp(infoSeekingFullMatrix[,1:29])
-pcs <- pca_result$x
-weights <- pca_result$rotation
+pca_result <- princomp(infoSeekingFullMatrix[,1:29])
+pcs <- pca_result$scores
+weights <- pca_result$loadings
 weights[,1]*pcs[1,1] + weights[,2]*pcs[1,2] + 
   weights[,3]*pcs[1,3] + weights[,4]*pcs[1,4] + 
   weights[,5]*pcs[1,5] + weights[,6]*pcs[1,6] + 
@@ -36,6 +39,24 @@ weights[,1]*pcs[1,1] + weights[,2]*pcs[1,2] +
   weights[,25]*pcs[1,25] + weights[,26]*pcs[1,26] +
   weights[,27]*pcs[1,27] + weights[,28]*pcs[1,28] +
   weights[,29]*pcs[1,29]
+
+pcDF <- data.frame(abs(weights[,5]),means,as.character(c(1:29)))
+colnames(pcDF) <- c("weightsPC5", "means", "test")
+
+diffInfo <- ggplot(data = pcDF, aes(x=weightsPC5, y=means, label=test)) +
+  geom_point() +
+  geom_text(hjust=0, vjust=0) +
+  geom_smooth(method=lm , color="green", fill="#69b3a2", se=TRUE) +
+  theme_classic()
+
+print(diffInfo + 
+        ggtitle("PC5 against Means")
+      + labs(y="Mean", x = "PC5 Weights")
+      +theme(axis.text=element_text(size=16),
+             axis.title=element_text(size=16),
+             plot.title=element_text(size=14,face="bold")
+      ))
+
 
 #######################################
 # Use of logistic (binary) PCA instead
@@ -124,7 +145,7 @@ brier <- c()
 confidences <- c()
 for (n in 1:nrow(studentAggData))
 {
-  ppt <- paste("p", n, sep="")
+  ppt <- paste("p", n, "-", sep="")
   
   compareColumns <- distances[grep(ppt, rownames(distances)), ]
   compareColumns <- compareColumns[,grep(ppt, colnames(compareColumns)) ]
@@ -152,7 +173,7 @@ brier <- c()
 confidences <- c()
 for (n in 1:nrow(expertAggData))
 {
-  ppt <- paste("p", n, sep="")
+  ppt <- paste("p", n, "-", sep="")
   
   compareColumns <- distances[grep(ppt, rownames(distances)), ]
   compareColumns <- compareColumns[,grep(ppt, colnames(compareColumns)) ]
@@ -185,7 +206,6 @@ title <- paste("MSD Dist. Var. Against Info Seeking Proportion: ",
 print(msdCorr + 
         ggtitle(title)
       + labs(y="Proportion of Possible Information Requested", x = "Variance in Participant's MSD Distances"))
-
 
 cor <- cor.test(infoSeekingDf$MDSDistanceVariance,infoSeekingDf$Accuracy,method="pearson")
 
@@ -1082,22 +1102,6 @@ plot(p)
 #   within = CaseDifficulty
 # )
 # print(get_anova_table(res.aov2))
-
-
-#################################
-infoseeking.pca <- prcomp(distances, center = TRUE,scale. = TRUE)
-
-summary(infoseeking.pca)
-
-infoseeking.condition <- infoSeekingFullMatrix$Condition
-infoseeking.accGroup <- as.factor(infoSeekingFullMatrix$AccuracyGroup)
-infoseeking.resGroup <- as.factor(infoSeekingFullMatrix$ResolutionGroup)
-
-ggbiplot(infoseeking.pca,ellipse=TRUE,choices=c(1,2), obs.scale = 1, var.scale = 1, var.axes=FALSE, groups=infoseeking.accGroup) +
-  ggtitle("PCA of Info Seeking Matrix")+
-  theme_minimal()+
-  theme(legend.position = "bottom")
-
 
 ############################
 # Compare clustering to objective variables

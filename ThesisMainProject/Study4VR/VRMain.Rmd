@@ -226,26 +226,6 @@ ggplot(dat, aes(x=likelihood, color=timepoint, fill=timepoint )) +
 ```
 
 
-```{r, warning=FALSE, message=FALSE}
-
-se <- c(sd(vrData[vrData$t2InvestigationsComplete==0,]$t2Confidence,na.rm=T)/sqrt(length(vrData[vrData$t2InvestigationsComplete==0,]$t2Confidence)),
-        sd(vrData[vrData$t2InvestigationsComplete==1,]$t2Confidence,na.rm=T)/sqrt(length(vrData[vrData$t2InvestigationsComplete==1,]$t2Confidence)))
-xb <- c("Investigations Incomplete","Investigations Complete")
-yb <- c(mean(vrData[vrData$t2InvestigationsComplete==0,]$t2Confidence,na.rm=T),mean(vrData[vrData$t2InvestigationsComplete==1,]$t2Confidence,na.rm=T))
-df <- data.frame("InvestigationCompletion" = xb, "MeanConfidence"= yb)
-inf <- ggplot(df) +
-  geom_bar( aes(x=InvestigationCompletion, y=MeanConfidence), colour="black", stat="identity", fill="blue", alpha=0.5) +
-  geom_errorbar( aes(x=InvestigationCompletion, y=MeanConfidence, ymin=MeanConfidence-se, ymax=MeanConfidence+se), colour="orange", alpha=0.9, size=1.1, width = 0.4) + 
-  theme_classic()
-
-print(inf +
-        ggtitle("Confidence when Investigations are Complete or Incomplete") +
-        labs(x = "Investigation Completeness", y = "Confidence")) 
-
-print(t.test(vrData[vrData$t2InvestigationsComplete==0,]$t2Confidence,
-             vrData[vrData$t2InvestigationsComplete==1,]$t2Confidence))
-
-```
 
 
 ```{r, warning=FALSE, message=FALSE}
@@ -408,12 +388,14 @@ p
 anovaDf <- data.frame(vrCompleteData$filteredActions,
                       vrCompleteData$filteredActionOverTime,
                       vrCompleteData$OMSScore,
+                      vrCompleteData$t2Confidence,
+                      vrCompleteData$t2InvestigationsComplete,
                         vrCompleteData$Scenario,
                        vrCompleteData$scenGroup,
                       vrCompleteData$scenNum,
                       vrCompleteData$ParticipantID)
 
-colnames(anovaDf) <- c("Actions","FActionsOverTime","Score","Scenario","ScenarioGroup","ScenarioNumber","ID")
+colnames(anovaDf) <- c("Actions","FActionsOverTime","Score", "Confidence", "InvestigationsComplete","Scenario","ScenarioGroup","ScenarioNumber","ID")
 
 # Convert ScenarioGroup to factor with desired order
 anovaDf$ScenarioGroup <- factor(anovaDf$ScenarioGroup, levels = c("AS", "DP"))
@@ -454,5 +436,19 @@ res.aov2 <- anova_test(
 
 get_anova_table(res.aov2)
 
+
+```
+
+```{r, warning=FALSE, message=FALSE}
+
+anovaDf$InvestigationsComplete <- factor(anovaDf$InvestigationsComplete, levels = c(0, 1))
+
+# Plotting
+p <- ggplot(anovaDf[!is.na(anovaDf$InvestigationsComplete),], aes(x = InvestigationsComplete, y = Confidence, fill = ScenarioGroup)) +
+  geom_violin(position = position_dodge(0.7), trim = FALSE) +
+  stat_summary(fun.data = data_summary, geom = "crossbar", width = 0.05, position = position_dodge(0.7)) +
+  theme_classic()
+
+p
 
 ```
