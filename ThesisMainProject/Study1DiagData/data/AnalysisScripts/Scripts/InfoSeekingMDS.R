@@ -5,13 +5,13 @@ mds <- infoSeekingFullMatrix[,1:29] %>%
   as_tibble()
 
 
-distances <- infoSeekingFullMatrix[,1:29] %>% stats::dist(method="binary") %>% as.matrix()
+% distances <- infoSeekingFullMatrix[,1:29] %>% stats::dist(method="binary") %>% as.matrix()
 
 # Compute Jaccard similarity distance (appropriate for binary data)
 infoSeekingNoEmpties <- infoSeekingFullMatrix[,1:29]
 infoSeekingNoEmpties <- infoSeekingNoEmpties[rowSums(infoSeekingNoEmpties)>1,]
 
-distances <- infoSeekingFullMatrix[,1:29] %>% proxy::dist(method = distanceMethod) %>% as.matrix()
+distances <- infoSeekingNoEmpties[,1:29] %>% proxy::dist(method = distanceMethod) %>% as.matrix()
 
 infoSeekingFullMatrix$v1 <- mds$V1
 infoSeekingFullMatrix$v2 <- mds$V2
@@ -21,41 +21,49 @@ hist(distances)
 #######################################
 # Use of regular PCA
 
-pca_result <- princomp(infoSeekingFullMatrix[,1:29])
+#pca_result <- princomp(infoSeekingFullMatrix[,1:29])
+#pcs <- pca_result$scores
+#weights <- pca_result$loadings
+
+pca_result <- principal(infoSeekingFullMatrix[,1:29], nfactors = 5, rotate = "promax")
 pcs <- pca_result$scores
 weights <- pca_result$loadings
-weights[,1]*pcs[1,1] + weights[,2]*pcs[1,2] + 
+
+weightsSum <- weights[,1]*pcs[1,1] + weights[,2]*pcs[1,2] + 
   weights[,3]*pcs[1,3] + weights[,4]*pcs[1,4] + 
-  weights[,5]*pcs[1,5] + weights[,6]*pcs[1,6] + 
-  weights[,7]*pcs[1,7] + weights[,8]*pcs[1,8] +
-  weights[,9]*pcs[1,9] + weights[,10]*pcs[1,10] +
-  weights[,11]*pcs[1,11] + weights[,12]*pcs[1,12] +
-  weights[,13]*pcs[1,13] + weights[,14]*pcs[1,14] +
-  weights[,15]*pcs[1,15] + weights[,16]*pcs[1,16] +
-  weights[,17]*pcs[1,17] + weights[,18]*pcs[1,18] +
-  weights[,19]*pcs[1,19] + weights[,20]*pcs[1,20] +
-  weights[,21]*pcs[1,21] + weights[,22]*pcs[1,22] +
-  weights[,23]*pcs[1,23] + weights[,24]*pcs[1,24] +
-  weights[,25]*pcs[1,25] + weights[,26]*pcs[1,26] +
-  weights[,27]*pcs[1,27] + weights[,28]*pcs[1,28] +
-  weights[,29]*pcs[1,29]
+  weights[,5]*pcs[1,5]
+means <- colMeans(infoSeekingFullMatrix[,1:29])
+weightsSum+means
 
-pcDF <- data.frame(abs(weights[,5]),means,as.character(c(1:29)))
-colnames(pcDF) <- c("weightsPC5", "means", "test")
 
-diffInfo <- ggplot(data = pcDF, aes(x=weightsPC5, y=means, label=test)) +
-  geom_point() +
-  geom_text(hjust=0, vjust=0) +
-  geom_smooth(method=lm , color="green", fill="#69b3a2", se=TRUE) +
-  theme_classic()
+topVars <- lapply(1:ncol(pcs), function(x) {names(sort(weights[,x], decreasing = T)[1:5])})
+topVarsIdx <- unique(unlist(lapply(top_vars, function(vars) {as.numeric(match(vars, rownames(weights)))})))
+topPCS <- weights[unlist(topVarsIdx),]
 
-print(diffInfo + 
-        ggtitle("PC5 against Means")
-      + labs(y="Mean", x = "PC5 Weights")
-      +theme(axis.text=element_text(size=16),
-             axis.title=element_text(size=16),
-             plot.title=element_text(size=14,face="bold")
-      ))
+testCodes <- c("ILLHIST","PASTHIST","MEDS","ALLER","FAMHIST","SOCHIST",
+               "PULSE", "BP", "RESP", "LUNG", "HEART", "EYES", "TEMP",
+               "ABDEX", "REC", "NECK", "HEAD", "NEURO", "EXTR",
+               "URINE", "ECG", "ABCT", "VBG", "ELEC", "CRP", "CLOT", "FBC",
+               "BIOCH", "CHXR")
+
+rownames(topPCS) <- testCodes[as.numeric(rownames(topPCS))]
+
+# Perform hierarchical clustering
+hClust <- hclust(dist(topPCS, method = "euclidean"))
+# Create a dendrogram
+dendrogram <- as.dendrogram(hClust)
+# Plot the dendrogram
+plot(dendrogram, main = "Hierarchical Clustering of Variables Based on Loadings")
+
+
+# Sort the columns alphabetically
+topPCS <- topPCS[, order(colnames(topPCS))]
+
+apcluster::heatmap(topPCS,
+                   main = "Variable Loadings Clustered by PC",
+                   xlab = "PCs", ylab = "Test",
+                   col = heat.colors(20), scale = "column" , Colv = NA)
+
 
 
 #######################################
@@ -122,7 +130,7 @@ distanceTable <- data.frame(vals,information,val1,val2)
 colnames(distanceTable) <- c("Variance","InformationProportion","Info1","Info2")
 
 distanceTable <- distanceTable[distanceTable$Info1>0&distanceTable$Info2>0,]
-
+###
 disInfo <- ggplot(data = distanceTable, aes(x=InformationProportion, y=Variance)) +
   geom_point() +
   theme_classic()
@@ -130,6 +138,18 @@ disInfo <- ggplot(data = distanceTable, aes(x=InformationProportion, y=Variance)
 title <- paste("Info Seeking Variance Against Amount of Information - ", distanceMethod)
 print(disInfo + 
         ggtitle(title))
+###
+# Create a scatter plot
+ggplot(distanceTable, aes(x = Info1, y = Info2, color = Variance)) +
+  geom_point() +
+  scale_color_gradient(low = "blue", high = "red") +  # Adjust color scale as needed
+  labs(
+    title = "Distance by Information Seeking Amount",
+    x = "Info1",
+    y = "Info2",
+    color = "DistanceValue"
+  ) +
+  theme_classic()
 
 
 
