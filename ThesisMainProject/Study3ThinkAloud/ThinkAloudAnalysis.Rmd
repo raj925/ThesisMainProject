@@ -465,3 +465,26 @@ print(p)
 
 ```
 
+```{r, warning=FALSE, message=FALSE}
+
+
+cor <- cor.test(pptData$proportionOfInfo,pptData$TAWordCount,method="pearson")
+
+tacon <- ggplot(data = pptData, aes(x=TAWordCount, y=proportionOfInfo)) +
+  geom_point() +
+  geom_smooth(method=lm , color="orange", fill="#69b3a2", se=TRUE) +
+  theme_classic()
+
+title <- paste("Thinking Aloud Against Info Seeking: ",
+               "r(", cor$parameter, ") = ",  round(cor$estimate, 2), ", p = ",  round(cor$p.value,2), sep="")
+
+print(tacon +
+        ggtitle(title) +
+      labs(y="Information Sought", x = "Amount of Thinking Aloud") +
+      theme(axis.text=element_text(size=16),
+             axis.title=element_text(size=16),
+             plot.title=element_text(size=14,face="bold")
+      ))
+
+
+```

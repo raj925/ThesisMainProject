@@ -212,6 +212,8 @@ print(diffCon +
 
 ```{r, echo=FALSE, warning=FALSE}
 
+usePCs <- TRUE
+
 source("Scripts/BinaryClassification.R")
 
 ```

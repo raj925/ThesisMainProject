@@ -167,6 +167,13 @@ for (n in 1:nrow(vrData))
 # Get data where participants have completed two scenarios
 
 vrCompleteData <- vrData[vrData$ParticipantID %in% repeatIDs,]
+vrCompleteData <- vrCompleteData[!is.na(vrCompleteData$t2Confidence),]
+ids <- vrCompleteData$ParticipantID
+# Create a frequency table
+freq_table <- table(ids)
+# Identify elements with more than one occurrence
+repeatIDs <- names(freq_table[freq_table > 1])
+vrCompleteData <-  vrCompleteData[vrCompleteData$ParticipantID %in% repeatIDs,]
 nFullPpts <- nrow(vrCompleteData)/2
 
 
@@ -231,7 +238,7 @@ ggplot(dat, aes(x=likelihood, color=timepoint, fill=timepoint )) +
 ```{r, warning=FALSE, message=FALSE}
 
 
-confScore <- ggplot(data = vrData, aes(x=t2Confidence, y=OMSScore)) +
+confScore <- ggplot(data = vrCompleteData, aes(x=t2Confidence, y=OMSScore)) +
   geom_point() +
   geom_smooth(method=lm , color="purple", fill="#69b3a2", se=TRUE) +
   theme_classic()
@@ -240,10 +247,10 @@ print(confScore +
         ggtitle("Confidence Against OMS Score")
       + labs(y="OMS Score", x = "Confidence (Time 2)"))
 
-cor.test(vrData$t2Confidence,vrData$OMSScore,method="pearson")
+cor.test(vrCompleteData$t2Confidence,vrCompleteData$OMSScore,method="pearson")
 
 
-confScore <- ggplot(data = vrData, aes(x=t2Confidence, y=severityChange)) +
+confScore <- ggplot(data = vrCompleteData, aes(x=t2Confidence, y=severityChange)) +
   geom_point() +
   geom_smooth(method=lm , color="red", fill="#69b3a2", se=TRUE) +
   theme_classic()
@@ -252,10 +259,10 @@ print(confScore +
         ggtitle("Confidence Against Change in Severity")
       + labs(y="Difference in Severity", x = "Confidence (Time 2)"))
 
-cor.test(vrData$severityChange,vrData$OMSScore,method="pearson")
+cor.test(vrCompleteData$severityChange,vrCompleteData$OMSScore,method="pearson")
 
 
-seniorSev <- ggplot(data = vrData, aes(x=t2Severity, y=t2SeniorReview)) +
+seniorSev <- ggplot(data = vrCompleteData, aes(x=t2Severity, y=t2SeniorReview)) +
   geom_point() +
   geom_smooth(method=lm , color="orange", fill="#69b3a2", se=TRUE) +
   theme_classic()
@@ -264,7 +271,7 @@ print(seniorSev +
         ggtitle("Severity against Willingness to Leave Patient")
       + labs(y="Leave Patient Prior to Senior Review", x = "Severity (Time 2)"))
 
-cor.test(vrData$t2Severity,vrData$t2SeniorReview,method="pearson")
+cor.test(vrCompleteData$t2Severity,vrCompleteData$t2SeniorReview,method="pearson")
 
 ```
 
@@ -445,10 +452,16 @@ anovaDf$InvestigationsComplete <- factor(anovaDf$InvestigationsComplete, levels 
 
 # Plotting
 p <- ggplot(anovaDf[!is.na(anovaDf$InvestigationsComplete),], aes(x = InvestigationsComplete, y = Confidence, fill = ScenarioGroup)) +
-  geom_violin(position = position_dodge(0.7), trim = FALSE) +
+  geom_violin(position = position_dodge(0.7), trim = T) +
   stat_summary(fun.data = data_summary, geom = "crossbar", width = 0.05, position = position_dodge(0.7)) +
   theme_classic()
 
 p
+
+res.aov2 <- anova_test(
+  data = anovaDf, dv = Score, wid = ID, between = c(InvestigationsComplete, ScenarioGroup)
+)
+
+get_anova_table(res.aov2)
 
 ```

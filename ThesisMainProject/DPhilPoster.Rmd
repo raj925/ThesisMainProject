@@ -1,0 +1,146 @@
+---
+title: "Information Seeking, Confidence and Hypothesis Generation in Medical Diagnoses"
+date: "2024-02-08"
+author:
+  - name: Sriraj Aiyer
+    affil: 1
+    orcid: '0000-0002-1755-948X'
+affiliation:
+  - num: 1
+    address: Department of Experimental Psychology, University of Oxford
+column_numbers: 3
+logoright_name: https&#58;//acclab.psy.ox.ac.uk/~saiyer/assets/acclab.jpg
+logoleft_name: https&#58;//acclab.psy.ox.ac.uk/~saiyer/assets/oxstar.png
+primary_colour: "#001c54"
+font_family: Raleway
+titletext_fontfamily: Raleway
+output: 
+  posterdown::posterdown_html:
+    self_contained: TRUE
+knit: pagedown::chrome_print
+bibliography: packages.bib
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+options(repos="https://cran.rstudio.com" )
+```
+
+```{r pkg, include=FALSE}
+
+install.packages("posterdown")
+library(posterdown)
+source("./PackageLoad.R")
+source_python("./Study1DiagData/data/AnalysisScripts/Scripts/processFile.py")
+
+```
+
+```{r, warning=FALSE, message=FALSE, include=FALSE}
+## Load Libraries and Python script for processing JSON files##
+dataFolder <- "./Study1DiagData/data/JSONs"
+## 1. Load data from JSON files##
+## 2. Create full df with stage-wise data##
+## 3. Create aggregate dataframe with participant-wise data##
+## 4. Create dataframe for case-wise data##
+## 5. Create matrix for information seeking data by case##
+df <- data.frame(matrix(ncol = 0, nrow = 1656))
+infoStages <- c("Patient History", "Physical Exmination", "Testing")
+ids <- list.dirs(dataFolder,recursive = FALSE) 
+experiencedIDs <- c("qj4vcw","sz5k4r","kqzd96","s8c6kp","j1bwlt", "jhym2l","gzsfhp")
+
+cases <-c("UC", "GBS", "TA", "TTP", "AD", "MTB")
+conditionsShort <- c("UC", "GBS", "TA", "TTP", "AD", "MTB")
+conditionsLong <- c("ULCERATIVE COLITIS", "GUILLAINBARRE SYNDROME", "TEMPORAL ARTERITIS", "THROMBOTIC THROMBOCYTOPENIC PURPURA", "AORTIC DISSECTION", "MILIARY TB")
+
+easyCaseGroup <- c("GBS", "UC", "TA") 
+hardCaseGroup <- c("AD", "TTP", "MTB") 
+easyCaseGroupLong <- c("GUILLAINBARRE SYNDROME", "ULCERATIVE COLITIS", "TEMPORAL ARTERITIS")
+hardCaseGroupLong <- c("THROMBOTIC THROMBOCYTOPENIC PURPURA", "AORTIC DISSECTION", "MILIARY TB") 
+
+accuracyMeasure <- "CorrectLikelihood" #HighestLikelihood, CorrectLikelihood, Differential
+classifyVar <- "accuracy" #accuracy or confidence
+runExclusions <- FALSE
+
+source("./Study1DiagData/data/AnalysisScripts/Scripts/AggregateData.R")
+```
+
+```{r, echo=FALSE, include=FALSE}
+
+# Colour coding for figures
+confidenceColour <- "#03c200"
+difficultyColour <- "#bf00c2"
+infoSeekingColour <- "#ca0600"
+differentialColour <- "skyblue"
+likelihoodColour <- "orange"
+accuracyColour <- "black"
+resolutionColour <- "yellow"
+```
+
+# Abstract
+
+- Diagnostic errors could be linked to cognitive biases (eg confirmation, overconfidence).
+- Past work shows a gap between confidence and competence during diagnosis (Meyer et al, 2013).
+- Overconfidence linked to insufficient patient management (Kovacs, Lagarde \& Cairns, 2020). 
+
+We aim to understand the psychological mechanisms of the diagnostic process and how information seeking could impact decision confidence and hypothesis evaluation.
+
+# Introduction
+
+1. What are the properties of the diagnostic process with regards to information seeking and confidence?
+2. Are information seeking patterns different for high vs low ability clinicians?
+3. How do clinicians vary in their reasoning process when generating differentials/hypotheses?
+
+# Methods
+
+This study used 6 patient vignettes adapted from real patient cases (Friedman, 2004). UK Medical Students (N = 85) gathered information in three stages: Patient History, Physical Examination and Testing. At each stage, they updated the possible diagnoses/differentials under consideration for that patient case, as well as their confidence in treating the patient. For each differential, students report how severe the condition would be for the patient (Low, Medium, High or Emergency) and how likely that differential is (on a scale of 1-10).
+
+# Results
+
+- Accuracy and confidence were fairly well calibrated across the information stages.
+- Medical students did not narrow their differentials but rather broadened their considered differentials with more information.
+- Higher accuracy participants sought more relevant information and more similar information per case.
+- Accuracy is not associated with the amount of information seeking, but confidence is.
+
+```{r mytable, out.width='80%'}
+knitr::kable(iris[1:10, 1:4], caption = 'Table caption.',align = 'c',"html")
+```
+
+Or with figures: Figure \@ref(fig:standard-plot), or Figure \@ref(fig:morefigs).
+
+```{r morefigs, out.width='100%', echo=FALSE, message=FALSE, fig.cap='Amazing, right?!', fig.height=5}
+data <- studentAggData
+
+### Correlation between initial differentials and later information proportion
+
+cor <- cor.test(studentAggData$meanInitialDiffs,studentAggData$proportionOfInfo,method="pearson")
+
+diffInfo <- ggplot(data = studentAggData, aes(x=meanInitialDiffs, y=proportionOfInfo)) +
+  geom_point() +
+  geom_smooth(method=lm , color=differentialColour, fill="#69b3a2", se=TRUE) +
+  theme_classic()
+
+title <- paste("Initial Diffs against % of Information Sought: ",
+               "r(", cor$parameter, ") = ",  round(cor$estimate, 2), ", p = ",  round(cor$p.value,2), sep="")
+
+print(diffInfo + 
+        ggtitle(title)
+      + labs(y="Proportion of Possible Information Requested", x = "Number of Initial Differentials")
+      +theme(axis.text=element_text(size=16),
+             axis.title=element_text(size=16),
+             plot.title=element_text(size=14,face="bold")
+      ))
+
+```
+
+# References
+
+1. Friedman, C. P., Gatti, G. G., Franz, T. M., Murphy, G. C., Wolf, F. M., Heckerling, P. S., ... \& Elstein, A. S. (2005). Do physicians know when their diagnoses are correct? Implications for decision support and error reduction. Journal of General Internal Medicine, 20, 334-339.
+2. Kovacs, R. J., Lagarde, M., \& Cairns, J. (2020). Overconfident health workers provide lower quality healthcare. Journal of Economic Psychology, 76, 102213.
+3. Lawton, R., Robinson, O., Harrison, R., Mason, S., Conner, M., \& Wilson, B. (2019). Are more experienced clinicians better able to tolerate uncertainty and manage risks? A vignette study of doctors in three NHS emergency departments in England. BMJ Quality \& Safety, 28(5), 382-388.
+4. Meyer, A. N., Payne, V. L., Meeks, D. W., Rao, R., \& Singh, H. (2013). Physicians’ diagnostic accuracy, confidence, and resource requests: a vignette study. JAMA internal medicine, 173(21), 1952-1958.
+5. Wears, R. L. (2015). Standardisation and its discontents. Cognition, technology \& work, 17, 89-94.
+
+# Acknowledgements
+
+Thank you to my wonderful supervisors Nick Yeung and Helen Higham!                
+

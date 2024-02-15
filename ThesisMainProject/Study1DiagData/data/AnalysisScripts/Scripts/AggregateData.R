@@ -104,7 +104,7 @@ studentsPpts <- length(studentIDs)
 #########
 # Add correctness labels from external file
 
-markedAccFile <- "./DifferentialsForAccuracy.csv"
+markedAccFile <- paste(dataFolder, "/../DifferentialsForAccuracy.csv", sep="")
 accValues <- read.csv(markedAccFile, header=TRUE, sep=",")
 for (x in 1:nrow(accValues))
 {
@@ -681,6 +681,7 @@ for (n in 1:nrow(studentCaseDf))
   infoSeekingFullMatrix$sevOfHighestLikelihood[n] <- studentCaseDf$sevOfHighestLikelihoodFinal[n]
   medBrier <- median(aggData$finalBrierScore)
   infoSeekingFullMatrix$ResolutionGroup[n] <- ifelse(studentAggData[studentAggData$participantID==studentCaseDf$id[n],]$finalBrierScore>medBrier,1,0)
+  infoSeekingFullMatrix$likAccuracy[n] <- studentCaseDf$likelihoodOfCorrectDiagnosis[n]
   rowName <- paste("p", match(studentCaseDf$id[n],studentIDs), "-accGroup", infoSeekingFullMatrix$accuracyGroup[n] , "-", conditionsShort[idx], "-sev", studentCaseDf$sevOfHighestLikelihoodInitial[n], "-resGroup", infoSeekingFullMatrix$ResolutionGroup[n], sep="")
   rownames(infoSeekingFullMatrix)[n] <- rowName
   rownames(confidenceMatrix)[n] <- rowName
@@ -744,6 +745,7 @@ for (m in 1:nrow(expertCaseDf))
   infoSeekingFullMatrix$sevOfHighestLikelihood[m+offset] <- expertCaseDf$sevOfHighestLikelihoodInitial[m]
   medBrier <- median(aggData$finalBrierScore)
   infoSeekingFullMatrix$ResolutionGroup[m+offset] <- ifelse(expertAggData[expertAggData$participantID==expertCaseDf$id[n],]$finalBrierScore>medBrier,1,0)
+  infoSeekingFullMatrix$likAccuracy[m+offset] <- expertCaseDf$likelihoodOfCorrectDiagnosis[m+offset]
   rowName <- paste("e", ceil(m/6), "-accGroup", infoSeekingFullMatrix$accuracyGroup[m+offset] , "-confGroup", infoSeekingFullMatrix$confidenceGroup[m+offset] , "-", conditionsShort[idx], "-sev", expertCaseDf$sevOfHighestLikelihoodInitial[m], "-exp", sep="")
   rownames(infoSeekingFullMatrix)[m+offset] <- rowName
   rownames(confidenceMatrix)[m+offset] <- rowName
@@ -763,3 +765,4 @@ colnames(infoSeekingFullMatrix)[39] <- "ConfidenceScore"
 colnames(infoSeekingFullMatrix)[40] <- "ConfidenceGroup"
 colnames(infoSeekingFullMatrix)[41] <- "sevOfHighestLikelihood"
 colnames(infoSeekingFullMatrix)[42] <- "ResolutionGroup"
+colnames(infoSeekingFullMatrix)[43] <- "LikelihoodAcc"

@@ -5,7 +5,7 @@ mds <- infoSeekingFullMatrix[,1:29] %>%
   as_tibble()
 
 
-% distances <- infoSeekingFullMatrix[,1:29] %>% stats::dist(method="binary") %>% as.matrix()
+# distances <- infoSeekingFullMatrix[,1:29] %>% stats::dist(method="binary") %>% as.matrix()
 
 # Compute Jaccard similarity distance (appropriate for binary data)
 infoSeekingNoEmpties <- infoSeekingFullMatrix[,1:29]
@@ -37,8 +37,9 @@ weightsSum+means
 
 
 topVars <- lapply(1:ncol(pcs), function(x) {names(sort(weights[,x], decreasing = T)[1:5])})
-topVarsIdx <- unique(unlist(lapply(top_vars, function(vars) {as.numeric(match(vars, rownames(weights)))})))
+topVarsIdx <- unique(unlist(lapply(topVars, function(vars) {as.numeric(match(vars, rownames(weights)))})))
 topPCS <- weights[unlist(topVarsIdx),]
+topPCS <- weights
 
 testCodes <- c("ILLHIST","PASTHIST","MEDS","ALLER","FAMHIST","SOCHIST",
                "PULSE", "BP", "RESP", "LUNG", "HEART", "EYES", "TEMP",
@@ -49,22 +50,99 @@ testCodes <- c("ILLHIST","PASTHIST","MEDS","ALLER","FAMHIST","SOCHIST",
 rownames(topPCS) <- testCodes[as.numeric(rownames(topPCS))]
 
 # Perform hierarchical clustering
-hClust <- hclust(dist(topPCS, method = "euclidean"))
+#hClust <- hclust(dist(topPCS, method = "euclidean"))
 # Create a dendrogram
-dendrogram <- as.dendrogram(hClust)
+#dendrogram <- as.dendrogram(hClust)
 # Plot the dendrogram
-plot(dendrogram, main = "Hierarchical Clustering of Variables Based on Loadings")
+#plot(dendrogram, main = "Hierarchical Clustering of Variables Based on Loadings")
 
 
 # Sort the columns alphabetically
 topPCS <- topPCS[, order(colnames(topPCS))]
 
-apcluster::heatmap(topPCS,
-                   main = "Variable Loadings Clustered by PC",
+
+# Determine the maximum absolute value in the loadings matrix
+max_abs <- max(abs(c(min(topPCS), max(topPCS))))
+# Normalize the data to the range [-1, 1]
+normalized_topPCS <- topPCS / max_abs
+# Define a custom color palette with clear differentiation between negative, zero, and positive values
+n_colors <- 20
+color_palette <- colorRampPalette(c("blue", "white", "red"))(n_colors)
+
+apcluster::heatmap(normalized_topPCS,
+                   main = "Variable Weights (Normalised) Clustered by PC",
                    xlab = "PCs", ylab = "Test",
-                   col = heat.colors(20), scale = "column" , Colv = NA)
+                   col = color_palette, scale = "none", breaks = seq(-1, 1, length.out = n_colors + 1), Colv = NA)
 
+# Define colors for legend
+legend_colors <- c("blue", "white", "red")
 
+# Add color key
+legend("topleft", legend = c("Negative", "Zero", "Positive"),
+       fill = legend_colors, title = "Color Key", cex = 0.8)
+
+########
+
+pcs <- pcs[, order(colnames(pcs))]
+pcDF <- data.frame(pcs[,1],pcs[,2],pcs[,3],pcs[,4],pcs[,5])
+colnames(pcDF) <- c("PC1","PC2","PC3","PC4","PC5")
+pcDF$pid <- infoSeekingFullMatrix$ID
+pcDF$condition <- infoSeekingFullMatrix$Condition
+pcDF$correct <- infoSeekingFullMatrix$LikelihoodAcc
+pcDF$AccuracyGroup <- as.integer(as.logical(infoSeekingFullMatrix$AccuracyGroup>2))
+pcDF$AccuracyGroup <- as.factor(pcDF$AccuracyGroup)
+
+mixedPCModel = lmer(correct ~ PC1 + PC2 + PC3 + PC4 + PC5 + condition + (1 | pid), data = pcDF)
+summary(mixedPCModel)
+
+#############
+PCdistances <- pcDF[,1:5] %>% proxy::dist(method = "cosine") %>% as.matrix()
+distanceVars <- c()
+accuracies <- c()
+meanPC1 <- c()
+meanPC2 <- c()
+meanPC3 <- c()
+meanPC4 <- c()
+meanPC5 <- c()
+for (n in 1:nrow(studentAggData))
+{
+  ppt <- paste("p", n, "-a", sep="")
+  
+  compareColumns <- PCdistances[grep(ppt, rownames(PCdistances)), ]
+  compareColumns <- compareColumns[,grep(ppt, colnames(compareColumns)) ]
+  distanceVars[n] <- mean(compareColumns)
+  
+  compareColumns <- pcDF[grep(ppt, rownames(pcDF)), ]
+  meanPC1[n] <- mean(compareColumns$PC1)
+  meanPC2[n] <- mean(compareColumns$PC2)
+  meanPC3[n] <- mean(compareColumns$PC3)
+  meanPC4[n] <- mean(compareColumns$PC4)
+  meanPC5[n] <- mean(compareColumns$PC5)
+
+  accuracies[n] <- studentAggData$meanFinalAccuracy[n]
+}
+infoSeekingDf <- data.frame(distanceVars,accuracies,meanPC1,meanPC2,meanPC3,meanPC4,meanPC5)
+colnames(infoSeekingDf) <- c("DistanceVariance", "Accuracy","MeanPC1","MeanPC2","MeanPC3","MeanPC4", "MeanPC5")
+
+cor <- cor.test(infoSeekingDf$DistanceVariance,infoSeekingDf$Accuracy,method="pearson")
+
+msdAcc <- ggplot(data = infoSeekingDf, aes(x=DistanceVariance, y=Accuracy)) +
+  geom_point() +
+  geom_smooth(method=lm , color=accuracyColour, fill="#69b3a2", se=TRUE) +
+  theme_classic()
+
+title <- paste("Info Seeking Variance Against Accuracy: ",
+               "r(", cor$parameter, ") = ",  round(cor$estimate, 2), ", p = ",  round(cor$p.value,2), sep="")
+
+print(msdAcc + 
+        ggtitle(title) +
+        labs(y="Accuracy", x = "Variance in Information Seeking Across Cases - Euclidean") +
+        ylim(0,1) +
+        theme(axis.text=element_text(size=16),
+              axis.title=element_text(size=16),
+              plot.title=element_text(size=18,face="bold")))
+
+res2 <- rcorr(as.matrix(infoSeekingDf))
 
 #######################################
 # Use of logistic (binary) PCA instead
@@ -83,15 +161,14 @@ qplot(c(1:29), pca_result$eig[,2]) +
 #  we will fit the parameters assuming two-dimensional representation
 # For logistic PCA, we want to first decide which m to use with cross validation. 
 # We are assuming k = 5 and trying different ms from 1 to 10.
-logpca_cv = cv.lpca(infoSeekingFullMatrix[,1:29], ks = 8, ms = 1:10)
+logpca_cv = cv.lpca(infoSeekingFullMatrix[,1:29], ks = 5, ms = 1:10)
 
 # Seems like 4 is optimal m
 # plot(logpca_cv)
 
-logpca_model = logisticPCA(infoSeekingFullMatrix[,1:29], k = 8, m = which.min(logpca_cv))
-clogpca_model = convexLogisticPCA(infoSeekingFullMatrix[,1:29], k = 8, m = which.min(logpca_cv))
+logpca_model = logisticPCA(infoSeekingFullMatrix[,1:29], k = 5, m = which.min(logpca_cv))
+clogpca_model = convexLogisticPCA(infoSeekingFullMatrix[,1:29], k = 5, m = which.min(logpca_cv))
 
-head(fitted(logpca_model, type = "response"))
 
 ######################################
 colnames(confidenceMatrix) <- c("1","2","3")
@@ -165,7 +242,7 @@ brier <- c()
 confidences <- c()
 for (n in 1:nrow(studentAggData))
 {
-  ppt <- paste("p", n, "-", sep="")
+  ppt <- paste("p", n, "-a", sep="")
   
   compareColumns <- distances[grep(ppt, rownames(distances)), ]
   compareColumns <- compareColumns[,grep(ppt, colnames(compareColumns)) ]
@@ -193,7 +270,7 @@ brier <- c()
 confidences <- c()
 for (n in 1:nrow(expertAggData))
 {
-  ppt <- paste("p", n, "-", sep="")
+  ppt <- paste("p", n, "-a", sep="")
   
   compareColumns <- distances[grep(ppt, rownames(distances)), ]
   compareColumns <- compareColumns[,grep(ppt, colnames(compareColumns)) ]

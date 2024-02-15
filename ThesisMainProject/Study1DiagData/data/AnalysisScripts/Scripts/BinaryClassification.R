@@ -33,6 +33,11 @@ if (classifyVar == "confidence")
   colnames(contClassifierData)[30] <- "Score"
 }
 
+if (usePCs)
+{
+  classifierData <- pcDF
+}
+
 thresh<-seq(0,1,0.001)
 #specify the cross-validation method
 ctrl <- trainControl(method = "LOOCV", number = 100, savePredictions = TRUE)
@@ -63,15 +68,28 @@ set.seed(1000)
 
 # Shuffle rows in case there are order biases
 classifierData <- classifierData[sample(1:nrow(classifierData)),]
-modelglm<-train(Group ~ T2 + T3 + T4 + T5 + T6 + T7 + T8 + T9 + T10 +
-                T11 + T12 + T13 + T14 + T15 + T16 + T17 +  T18 + T19 + T20 +
-                T21 + T22 + T23 + T24 + T25 + T26 + T27 + T28 + T29, method = "glm", family = binomial(link=probit), data = classifierData, trControl = ctrl)
-prediglm<-predict(modelglm,type = "prob")[2]
 
-modelrpart<-train(Group ~ T2 + T3 + T4 + T5 + T6 + T7 + T8 + T9 + T10 +
-                  T11 + T12 + T13 + T14 + T15 + T16 + T17 +  T18 + T19 + T20 +
-                  T21 + T22 + T23 + T24 + T25 + T26 + T27 + T28 + T29, method = "rpart", data = classifierData, trControl = ctrl)
-predirpart<-predict(modelrpart,type = "prob")[2]
+if (usePCs)
+{
+  colnames(classifierData)<- c("PC1","PC2","PC3","PC4","PC5","PC6","PC7","PC8","ID","Condition","LikCorrect","Group")
+  modelglm<-train(Group ~ PC1 + PC2 + PC3 + PC4 + PC5 + PC6 + PC7 + PC8, method = "glm", family = binomial(link=probit), data = classifierData, trControl = ctrl)
+  prediglm<-predict(modelglm,type = "prob")[2]
+  
+  modelrpart<-train(Group ~ PC1 + PC2 + PC3 + PC4 + PC5 + PC6 + PC7 + PC8, method = "rpart", data = classifierData, trControl = ctrl)
+  predirpart<-predict(modelrpart,type = "prob")[2]
+} else
+{
+  modelglm<-train(Group ~ T2 + T3 + T4 + T5 + T6 + T7 + T8 + T9 + T10 +
+                    T11 + T12 + T13 + T14 + T15 + T16 + T17 +  T18 + T19 + T20 +
+                    T21 + T22 + T23 + T24 + T25 + T26 + T27 + T28 + T29, method = "glm", family = binomial(link=probit), data = classifierData, trControl = ctrl)
+  prediglm<-predict(modelglm,type = "prob")[2]
+  
+  modelrpart<-train(Group ~ T2 + T3 + T4 + T5 + T6 + T7 + T8 + T9 + T10 +
+                      T11 + T12 + T13 + T14 + T15 + T16 + T17 +  T18 + T19 + T20 +
+                      T21 + T22 + T23 + T24 + T25 + T26 + T27 + T28 + T29, method = "rpart", data = classifierData, trControl = ctrl)
+  predirpart<-predict(modelrpart,type = "prob")[2]
+}
+
 
 thresh<-seq(0,1,0.001)
 # Plot all test results on one ROC curve
