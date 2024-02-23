@@ -25,6 +25,9 @@ if (classifyVar == "confidence")
   classifierData <- classifierData[,c(2:29,38)]
   classifierData$AccuracyGroup <- as.integer(as.logical(classifierData$AccuracyGroup>2))
   classifierData$AccuracyGroup <- as.factor(classifierData$AccuracyGroup)
+  classifierData$Case <- infoSeekingFullMatrix[infoSeekingFullMatrix$ParticipantType=="p",]$Condition
+  classifierData$CaseDifficulty <- as.integer(as.logical(classifierData$Case %in% hardCaseGroup))
+  classifierData$CaseDifficulty <- as.factor(classifierData$CaseDifficulty)
   colnames(classifierData)[1:29] <- c("T2",  "T3",  "T4",  "T5",  "T6",  "T7",  
                                       "T8",  "T9", "T10", "T11", "T12", "T13", "T14", 
                                       "T15", "T16", "T17", "T18", "T19", "T20", "T21", "T22", 
@@ -79,12 +82,12 @@ if (usePCs)
   predirpart<-predict(modelrpart,type = "prob")[2]
 } else
 {
-  modelglm<-train(Group ~ T2 + T3 + T4 + T5 + T6 + T7 + T8 + T9 + T10 +
+  modelglm<-train(CaseDifficulty ~ T2 + T3 + T4 + T5 + T6 + T7 + T8 + T9 + T10 +
                     T11 + T12 + T13 + T14 + T15 + T16 + T17 +  T18 + T19 + T20 +
                     T21 + T22 + T23 + T24 + T25 + T26 + T27 + T28 + T29, method = "glm", family = binomial(link=probit), data = classifierData, trControl = ctrl)
   prediglm<-predict(modelglm,type = "prob")[2]
   
-  modelrpart<-train(Group ~ T2 + T3 + T4 + T5 + T6 + T7 + T8 + T9 + T10 +
+  modelrpart<-train(CaseDifficulty ~ T2 + T3 + T4 + T5 + T6 + T7 + T8 + T9 + T10 +
                       T11 + T12 + T13 + T14 + T15 + T16 + T17 +  T18 + T19 + T20 +
                       T21 + T22 + T23 + T24 + T25 + T26 + T27 + T28 + T29, method = "rpart", data = classifierData, trControl = ctrl)
   predirpart<-predict(modelrpart,type = "prob")[2]

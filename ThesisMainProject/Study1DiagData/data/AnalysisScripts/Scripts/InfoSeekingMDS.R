@@ -21,24 +21,16 @@ hist(distances)
 #######################################
 # Use of regular PCA
 
-#pca_result <- princomp(infoSeekingFullMatrix[,1:29])
-#pcs <- pca_result$scores
-#weights <- pca_result$loadings
-
 pca_result <- principal(infoSeekingFullMatrix[,1:29], nfactors = 5, rotate = "promax")
 pcs <- pca_result$scores
 weights <- pca_result$loadings
 
-weightsSum <- weights[,1]*pcs[1,1] + weights[,2]*pcs[1,2] + 
-  weights[,3]*pcs[1,3] + weights[,4]*pcs[1,4] + 
-  weights[,5]*pcs[1,5]
-means <- colMeans(infoSeekingFullMatrix[,1:29])
-weightsSum+means
+#weightsSum <- weights[,1]*pcs[1,1] + weights[,2]*pcs[1,2] + 
+#  weights[,3]*pcs[1,3] + weights[,4]*pcs[1,4] + 
+ # weights[,5]*pcs[1,5]
+#means <- colMeans(infoSeekingFullMatrix[,1:29])
+#weightsSum+means
 
-
-topVars <- lapply(1:ncol(pcs), function(x) {names(sort(weights[,x], decreasing = T)[1:5])})
-topVarsIdx <- unique(unlist(lapply(topVars, function(vars) {as.numeric(match(vars, rownames(weights)))})))
-topPCS <- weights[unlist(topVarsIdx),]
 topPCS <- weights
 
 testCodes <- c("ILLHIST","PASTHIST","MEDS","ALLER","FAMHIST","SOCHIST",
@@ -47,18 +39,37 @@ testCodes <- c("ILLHIST","PASTHIST","MEDS","ALLER","FAMHIST","SOCHIST",
                "URINE", "ECG", "ABCT", "VBG", "ELEC", "CRP", "CLOT", "FBC",
                "BIOCH", "CHXR")
 
-rownames(topPCS) <- testCodes[as.numeric(rownames(topPCS))]
-
-# Perform hierarchical clustering
-#hClust <- hclust(dist(topPCS, method = "euclidean"))
-# Create a dendrogram
-#dendrogram <- as.dendrogram(hClust)
-# Plot the dendrogram
-#plot(dendrogram, main = "Hierarchical Clustering of Variables Based on Loadings")
-
+rownames(topPCS) <- c(1:29)
+rownames(topPCS) <- testCodes[as.numeric(rownames(topPCS))] 
 
 # Sort the columns alphabetically
+colnames(topPCS) <- c("RC1", "RC2", "RC3", "RC4", "RC5")
 topPCS <- topPCS[, order(colnames(topPCS))]
+
+#######################################
+# Use of logistic (binary) PCA instead
+
+# Perform PCA on binary data
+pca_result <- PCA(infoSeekingFullMatrix[,1:29], graph = FALSE)
+
+# Scree plot shows elbow around 5
+qplot(c(1:29), pca_result$eig[,2]) + 
+  geom_line() + 
+  xlab("Principal Component") + 
+  ylab("Variance Explained") +
+  ggtitle("Scree Plot") +
+  theme_classic()
+
+#  we will fit the parameters assuming two-dimensional representation
+# For logistic PCA, we want to first decide which m to use with cross validation. 
+# We are assuming k = 5 and trying different ms from 1 to 10.
+logpca_cv = cv.lpca(infoSeekingFullMatrix[,1:29], ks = 5, ms = 1:10)
+
+# Seems like 4 is optimal m
+# plot(logpca_cv)
+
+logpca_model = logisticPCA(infoSeekingFullMatrix[,1:29], k = 5, m = which.min(logpca_cv))
+clogpca_model = convexLogisticPCA(infoSeekingFullMatrix[,1:29], k = 5, m = which.min(logpca_cv))
 
 
 # Determine the maximum absolute value in the loadings matrix
@@ -141,34 +152,6 @@ print(msdAcc +
         theme(axis.text=element_text(size=16),
               axis.title=element_text(size=16),
               plot.title=element_text(size=18,face="bold")))
-
-res2 <- rcorr(as.matrix(infoSeekingDf))
-
-#######################################
-# Use of logistic (binary) PCA instead
-
-# Perform PCA on binary data
-pca_result <- PCA(infoSeekingFullMatrix[,1:29], graph = FALSE)
-
-# Scree plot shows elbow around 5
-qplot(c(1:29), pca_result$eig[,2]) + 
-  geom_line() + 
-  xlab("Principal Component") + 
-  ylab("Variance Explained") +
-  ggtitle("Scree Plot") +
-  theme_classic()
-
-#  we will fit the parameters assuming two-dimensional representation
-# For logistic PCA, we want to first decide which m to use with cross validation. 
-# We are assuming k = 5 and trying different ms from 1 to 10.
-logpca_cv = cv.lpca(infoSeekingFullMatrix[,1:29], ks = 5, ms = 1:10)
-
-# Seems like 4 is optimal m
-# plot(logpca_cv)
-
-logpca_model = logisticPCA(infoSeekingFullMatrix[,1:29], k = 5, m = which.min(logpca_cv))
-clogpca_model = convexLogisticPCA(infoSeekingFullMatrix[,1:29], k = 5, m = which.min(logpca_cv))
-
 
 ######################################
 colnames(confidenceMatrix) <- c("1","2","3")
@@ -499,7 +482,7 @@ varsPlot <- ggplot(dataB,aes(x=condition, y=variance, fill=accGroup)) +
 print(varsPlot +
         scale_x_discrete(limits=conditionsShort) +
         ggtitle("Variance in Information Seeking by Accuracy and Condition") +
-        labs(x = "Condition (ordered by accuracy in decreasing order)", y = "Variance in MDS Distances") +
+        labs(x = "Condition (ordered by accuracy in descending order)", y = "Average Dice Distance") +
         theme_classic() +
         theme(axis.text=element_text(size=16),
                axis.title=element_text(size=16),

@@ -144,11 +144,25 @@ stratBreakdown <- caseData %>%
   dplyr::mutate(N = n()) %>%
   dplyr::summarise(m_N = mean(N)/16)
 
+nCases <- nrow(caseData)
+props <- c(nrow(caseData[caseData$OverallStrat=="PR",])/nCases,
+           nrow(caseData[caseData$OverallStrat=="HD",])/nCases,
+           nrow(caseData[caseData$OverallStrat=="SI",])/nCases,
+           nrow(caseData[caseData$OverallStrat=="NONE",])/nCases)
+
+temp <- data.frame(c("Overall","Overall","Overall","Overall"),
+                   c("PR","HD","SI","NONE"),
+                   props)
+colnames(temp) <- c("Condition","OverallStrat","m_N")
+
+stratBreakdown <- rbind(stratBreakdown,temp)
+
 stratBreakdown$OverallStrat <- factor(stratBreakdown$OverallStrat, levels = c('HD', 'PR', 'SI', 'NONE'))
 
 p <- ggplot(stratBreakdown, aes(fill=OverallStrat, y=m_N, x=Condition)) + 
     geom_bar(position="dodge", stat="identity",alpha=0.7) +
     scale_fill_manual(values=c("#E69F00", "#56B4E9", "#009E73",  "grey")) +
+  scale_x_discrete(limits = c("AD","GBS","MTB","TA","TTP","UC","Overall")) +
   labs(title="Breakdown of Reasoning Strategies By Case",x="Case",y="Proportion of Participants") +
   theme_minimal() +
     theme(axis.text=element_text(size=16),

@@ -5,10 +5,19 @@ author:
   - name: Sriraj Aiyer
     affil: 1
     orcid: '0000-0002-1755-948X'
+  - name: Nick Yeung
+    affil: 1
+  - name: Helen Higham
+    affil: 2
 affiliation:
   - num: 1
     address: Department of Experimental Psychology, University of Oxford
+  - num: 2
+    address: Nuffield Department of Clinical Neurosciences, University of Oxford
 column_numbers: 3
+sectitle_textsize: 50
+poster_height:	"46.8in"
+poster_width:	"33.1in"
 logoright_name: https&#58;//acclab.psy.ox.ac.uk/~saiyer/assets/acclab.jpg
 logoleft_name: https&#58;//acclab.psy.ox.ac.uk/~saiyer/assets/oxstar.png
 primary_colour: "#001c54"
@@ -76,71 +85,87 @@ accuracyColour <- "black"
 resolutionColour <- "yellow"
 ```
 
-# Abstract
-
-- Diagnostic errors could be linked to cognitive biases (eg confirmation, overconfidence).
-- Past work shows a gap between confidence and competence during diagnosis (Meyer et al, 2013).
-- Overconfidence linked to insufficient patient management (Kovacs, Lagarde \& Cairns, 2020). 
-
-We aim to understand the psychological mechanisms of the diagnostic process and how information seeking could impact decision confidence and hypothesis evaluation.
-
-# Introduction
+# Research Questions
 
 1. What are the properties of the diagnostic process with regards to information seeking and confidence?
-2. Are information seeking patterns different for high vs low ability clinicians?
-3. How do clinicians vary in their reasoning process when generating differentials/hypotheses?
+2. Are information seeking patterns different for high vs low accuracy clinicians?
+3. How do medical students vary in their reasoning process when generating differentials/hypotheses?
 
-# Methods
+# Paradigm
 
-This study used 6 patient vignettes adapted from real patient cases (Friedman, 2004). UK Medical Students (N = 85) gathered information in three stages: Patient History, Physical Examination and Testing. At each stage, they updated the possible diagnoses/differentials under consideration for that patient case, as well as their confidence in treating the patient. For each differential, students report how severe the condition would be for the patient (Low, Medium, High or Emergency) and how likely that differential is (on a scale of 1-10).
+```{r para, echo=FALSE,out.width='100%', message=FALSE, fig.height=5}
+knitr::include_graphics("assets/para.png")
+```
 
-# Results
+# Results (N = 85)
 
-- Accuracy and confidence were fairly well calibrated across the information stages.
-- Medical students did not narrow their differentials but rather broadened their considered differentials with more information.
-- Higher accuracy participants sought more relevant information and more similar information per case.
+- Accuracy and confidence were well calibrated across the information stages.
+- Higher accuracy participants sought more relevant information and more similar information per case, speaking to benefits in standardisation (Wears, 2015).
 - Accuracy is not associated with the amount of information seeking, but confidence is.
 
-```{r mytable, out.width='80%'}
-knitr::kable(iris[1:10, 1:4], caption = 'Table caption.',align = 'c',"html")
+```{r diffInf, echo=FALSE,out.width='100%', message=FALSE, fig.height=5}
+knitr::include_graphics("assets/diffInf.png")
 ```
 
-Or with figures: Figure \@ref(fig:standard-plot), or Figure \@ref(fig:morefigs).
-
-```{r morefigs, out.width='100%', echo=FALSE, message=FALSE, fig.cap='Amazing, right?!', fig.height=5}
-data <- studentAggData
-
-### Correlation between initial differentials and later information proportion
-
-cor <- cor.test(studentAggData$meanInitialDiffs,studentAggData$proportionOfInfo,method="pearson")
-
-diffInfo <- ggplot(data = studentAggData, aes(x=meanInitialDiffs, y=proportionOfInfo)) +
-  geom_point() +
-  geom_smooth(method=lm , color=differentialColour, fill="#69b3a2", se=TRUE) +
-  theme_classic()
-
-title <- paste("Initial Diffs against % of Information Sought: ",
-               "r(", cor$parameter, ") = ",  round(cor$estimate, 2), ", p = ",  round(cor$p.value,2), sep="")
-
-print(diffInfo + 
-        ggtitle(title)
-      + labs(y="Proportion of Possible Information Requested", x = "Number of Initial Differentials")
-      +theme(axis.text=element_text(size=16),
-             axis.title=element_text(size=16),
-             plot.title=element_text(size=14,face="bold")
-      ))
-
+```{r roc, echo=FALSE, out.width='100%', message=FALSE, fig.height=5}
+knitr::include_graphics("assets/roc.png")
 ```
 
-# References
+```{r confInf, echo=FALSE, out.width='100%', message=FALSE, fig.height=5}
+knitr::include_graphics("assets/confInf.png")
+```
 
-1. Friedman, C. P., Gatti, G. G., Franz, T. M., Murphy, G. C., Wolf, F. M., Heckerling, P. S., ... \& Elstein, A. S. (2005). Do physicians know when their diagnoses are correct? Implications for decision support and error reduction. Journal of General Internal Medicine, 20, 334-339.
-2. Kovacs, R. J., Lagarde, M., \& Cairns, J. (2020). Overconfident health workers provide lower quality healthcare. Journal of Economic Psychology, 76, 102213.
-3. Lawton, R., Robinson, O., Harrison, R., Mason, S., Conner, M., \& Wilson, B. (2019). Are more experienced clinicians better able to tolerate uncertainty and manage risks? A vignette study of doctors in three NHS emergency departments in England. BMJ Quality \& Safety, 28(5), 382-388.
-4. Meyer, A. N., Payne, V. L., Meeks, D. W., Rao, R., \& Singh, H. (2013). Physicians’ diagnostic accuracy, confidence, and resource requests: a vignette study. JAMA internal medicine, 173(21), 1952-1958.
-5. Wears, R. L. (2015). Standardisation and its discontents. Cognition, technology \& work, 17, 89-94.
+```{r varAcc, echo=FALSE, out.width='100%', message=FALSE, fig.height=5}
+knitr::include_graphics("assets/varAcc.png")
+```
 
-# Acknowledgements
+
+
+
+
+
+# Think-Aloud Follow-Up
+
+Medical students (N = 16) were asked to think aloud whilst going through the same patient vignettes, with all utterances recorded, transcribed and analysed as follows:
+
+- Code utterances for information seeking, uncertainty and differential evaluation (adding, removing, increase/decrease likelihood)
+- Code each case as per Coderre et al (2003) for reasoning strategy: hypothetico-deductive, scheme inductive or pattern recognition
+- Mark each case for ‘correctness’ (if correct differential is mentioned)
+- Thematic analysis on key themes that emerge from debrief questions
+
+
+```{r diffEvals, echo=FALSE, out.width='100%', message=FALSE, fig.height=5}
+knitr::include_graphics("assets/diffEvals.png")
+```
+
+```{r strats, echo=FALSE, out.width='100%', message=FALSE, fig.height=5}
+knitr::include_graphics("assets/stratBreakdown.png")
+```
+
+Reasoning Strategies (Coderre et al, 2003):
+
+- Hypothetico-deductive Reasoning: prior to selecting the most likely diagnosis, the participant analysed more than one alternative and engaged in a process of elimination. 
+- Scheme Inductive Reasoning: participant considers pathophysiological systems for determining root causes of patient symptoms rather than specific conditions (e.g infective vs cardiovascular)
+- Pattern Recognition: participant considered a single diagnosis with only perfunctory attention to the alternatives, or makes reference to pattern matching one condition at a time (e.g these symptoms sound like X)
+
+
+
+
+
+
+# Debrief Quotes
+
+*"I think it's called anchor bias where...you can leap onto one thing early on, and then you want other things to fit that. I think we are all vulnerable to it to an extent."*
+
+*"I often get fixated like 'I think this is this'. And...I'm not that good at like thinking, oh, what else could it be?”*
+
+*“I find it more stressful to have...a weird way of remembering a list of all potential differentials, I'd rather use the information I've given to slowly build up a picture.”*
+
+# Conclusion
+
+**Different reasoning strategies may affect how diagnostic differentials are evaluated, in turn affecting information seeking during diagnostic decisions. Future work should hence focus on interventions for prompting suitable reasoning strategies to improve diagnostic accuracy.**
+
+# Thanks
 
 Thank you to my wonderful supervisors Nick Yeung and Helen Higham!                
 

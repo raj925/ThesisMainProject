@@ -390,6 +390,12 @@ p <- ggplot(anovaDf, aes(x=Timepoint, y=Diagnoses, fill=Scenario)) +
 
 p
 
+res.aov2 <- anova_test(
+  data = anovaDf, dv = Diagnoses, wid = ID, within = Timepoint, between = Scenario
+)
+
+get_anova_table(res.aov2)
+
 #################################################
 
 anovaDf <- data.frame(vrCompleteData$filteredActions,
