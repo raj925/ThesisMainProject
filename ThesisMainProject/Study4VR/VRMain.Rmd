@@ -418,7 +418,7 @@ anovaDf$ScenarioGroup <- factor(anovaDf$ScenarioGroup, levels = c("AS", "DP"))
 
 # Plotting
 p <- ggplot(anovaDf, aes(x = Scenario, y = Actions, fill = Scenario)) +
-  geom_violin(position = position_dodge(0.8), trim = FALSE) +
+  geom_violin(position = position_dodge(0.8), trim = T) +
   stat_summary(fun.data = data_summary, geom = "crossbar", width = 0.05, position = position_dodge(0.8)) +
   facet_wrap(~ScenarioGroup,scales = "free_x") + 
   theme_classic()
@@ -436,7 +436,7 @@ get_anova_table(res.aov2)
 
 # Plotting
 p <- ggplot(anovaDf, aes(x = Scenario, y = Score, fill = Scenario)) +
-  geom_violin(position = position_dodge(0.8), trim = FALSE) +
+  geom_violin(position = position_dodge(0.8), trim = T) +
   stat_summary(fun.data = data_summary, geom = "crossbar", width = 0.05, position = position_dodge(0.8)) +
   facet_wrap(~ScenarioGroup,scales = "free_x") + 
   theme_classic()

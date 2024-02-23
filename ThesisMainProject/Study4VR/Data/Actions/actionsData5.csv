@@ -270,83 +270,83 @@ SESSION START,NAME,SCENARIO,CURRENT SCENARIO VERSION,SCENARIO VERSION PLAYED,SES
 08/01/2024 13:52,Paeds Account 9,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367208,1130,repeat blood pressure
 08/01/2024 13:52,Paeds Account 9,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367208,1131,repeat blood pressure
 08/01/2024 13:52,Paeds Account 9,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367208,1133,check temperature (tympanic)
-08/01/2024 13:34,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,0,start scenario
-08/01/2024 13:35,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,38,introduce yourself
-08/01/2024 13:35,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,62,presenting complaint
-08/01/2024 13:36,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,75,presenting complaint
-08/01/2024 13:36,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,94,wash hands and apply ppe
-08/01/2024 13:36,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,109,ask consent to examine sam
-08/01/2024 13:37,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,134,observe airway and talk to patient
-08/01/2024 13:37,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,151,look in patient's mouth with a tongue depressor
-08/01/2024 13:37,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,171,take pulse (central)
-08/01/2024 13:37,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,186,ask for peak flow
-08/01/2024 13:38,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,225,update carer
-08/01/2024 13:38,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,237,capillary refill time (central)
-08/01/2024 13:39,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,265,auscultate heart sounds
-08/01/2024 13:39,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,280,past medical history
-08/01/2024 13:39,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,285,history of presenting complaint
-08/01/2024 13:40,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,332,abdominal exam
-08/01/2024 13:40,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,364,ask about pain
-08/01/2024 13:41,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,384,measure oxygen saturations & heart rate
-08/01/2024 13:41,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,385,measure blood pressure
-08/01/2024 13:41,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,385,repeat blood pressure
-08/01/2024 13:41,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,385,repeat blood pressure
-08/01/2024 13:41,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,386,repeat blood pressure
-08/01/2024 13:41,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,394,ask about fever
-08/01/2024 13:41,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,395,repeat blood pressure
-08/01/2024 13:41,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,396,repeat blood pressure
-08/01/2024 13:41,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,406,non-rebreather mask (15 l/min)
-08/01/2024 13:41,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,416,check temperature (tympanic)
-08/01/2024 13:42,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,434,presenting complaint
-08/01/2024 13:42,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,450,take pulse (central)
-08/01/2024 13:43,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,490,check hydration status
-08/01/2024 13:43,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,522,insert iv access and take bloods
-08/01/2024 13:43,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,534,assess consciousness level (avpu)
-08/01/2024 13:43,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,544,check pupils
-08/01/2024 13:44,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,559,allergies
-08/01/2024 13:44,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,570,check upper body
-08/01/2024 13:44,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,585,family history
-08/01/2024 13:46,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,687,situation option 1
-08/01/2024 13:46,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,687,situation option 2
-08/01/2024 13:46,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,687,situation option 4
-08/01/2024 13:46,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,687,background option 1
-08/01/2024 13:46,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,687,background option 2
-08/01/2024 13:46,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,687,background option 4
-08/01/2024 13:46,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,687,assessment option 2
-08/01/2024 13:46,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,687,assessment option 3
-08/01/2024 13:46,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,687,assessment option 4
-08/01/2024 13:46,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,687,assessment option 5
-08/01/2024 13:46,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,687,recommendation option 4
-08/01/2024 13:46,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,695,prescribed medications
-08/01/2024 13:46,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,709,auscultate lungs
-08/01/2024 13:47,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,780,ask for tips
-08/01/2024 13:48,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,797,observe respiratory rate and signs of respiratory distress
-08/01/2024 13:48,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,816,call on-call doctor
-08/01/2024 13:49,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,876,ask for tips
-08/01/2024 13:50,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,908,observe respiratory rate and signs of respiratory distress
-08/01/2024 13:50,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,956,take pulse (central)
-08/01/2024 13:50,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,966,normal
-08/01/2024 13:50,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,966,20 - 30 breaths per min
-08/01/2024 13:50,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,966,mild / none
-08/01/2024 13:50,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,966,sp o2 <95% in air and/or receiving oxygen
-08/01/2024 13:50,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,966,> 120 bpm
-08/01/2024 13:50,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,966,yes
-08/01/2024 13:51,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,981,ask for tips
-08/01/2024 13:51,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,990,history of presenting complaint
-08/01/2024 13:51,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,1018,past medical history
-08/01/2024 13:52,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,1060,do you have any questions?
-08/01/2024 13:52,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,1065,offer a patient information leaflet
-08/01/2024 13:52,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,1067,wash hands and apply ppe
-08/01/2024 13:53,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,1128,age
-08/01/2024 13:53,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,1128,acute onset of symptoms
-08/01/2024 13:53,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,1128,metformin
-08/01/2024 13:53,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,1128,gliclazide
-08/01/2024 13:53,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,1128,insulin
-08/01/2024 13:53,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,1128,6 months
-08/01/2024 13:53,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,1128,12 months
-08/01/2024 13:53,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,1128,day team on ward
-08/01/2024 13:53,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,1128,day surgical team
-08/01/2024 13:53,Paeds Account 222,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,1132,leave scenario
+08/01/2024 13:34,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,0,start scenario
+08/01/2024 13:35,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,38,introduce yourself
+08/01/2024 13:35,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,62,presenting complaint
+08/01/2024 13:36,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,75,presenting complaint
+08/01/2024 13:36,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,94,wash hands and apply ppe
+08/01/2024 13:36,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,109,ask consent to examine sam
+08/01/2024 13:37,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,134,observe airway and talk to patient
+08/01/2024 13:37,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,151,look in patient's mouth with a tongue depressor
+08/01/2024 13:37,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,171,take pulse (central)
+08/01/2024 13:37,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,186,ask for peak flow
+08/01/2024 13:38,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,225,update carer
+08/01/2024 13:38,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,237,capillary refill time (central)
+08/01/2024 13:39,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,265,auscultate heart sounds
+08/01/2024 13:39,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,280,past medical history
+08/01/2024 13:39,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,285,history of presenting complaint
+08/01/2024 13:40,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,332,abdominal exam
+08/01/2024 13:40,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,364,ask about pain
+08/01/2024 13:41,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,384,measure oxygen saturations & heart rate
+08/01/2024 13:41,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,385,measure blood pressure
+08/01/2024 13:41,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,385,repeat blood pressure
+08/01/2024 13:41,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,385,repeat blood pressure
+08/01/2024 13:41,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,386,repeat blood pressure
+08/01/2024 13:41,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,394,ask about fever
+08/01/2024 13:41,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,395,repeat blood pressure
+08/01/2024 13:41,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,396,repeat blood pressure
+08/01/2024 13:41,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,406,non-rebreather mask (15 l/min)
+08/01/2024 13:41,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,416,check temperature (tympanic)
+08/01/2024 13:42,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,434,presenting complaint
+08/01/2024 13:42,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,450,take pulse (central)
+08/01/2024 13:43,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,490,check hydration status
+08/01/2024 13:43,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,522,insert iv access and take bloods
+08/01/2024 13:43,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,534,assess consciousness level (avpu)
+08/01/2024 13:43,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,544,check pupils
+08/01/2024 13:44,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,559,allergies
+08/01/2024 13:44,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,570,check upper body
+08/01/2024 13:44,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,585,family history
+08/01/2024 13:46,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,687,situation option 1
+08/01/2024 13:46,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,687,situation option 2
+08/01/2024 13:46,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,687,situation option 4
+08/01/2024 13:46,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,687,background option 1
+08/01/2024 13:46,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,687,background option 2
+08/01/2024 13:46,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,687,background option 4
+08/01/2024 13:46,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,687,assessment option 2
+08/01/2024 13:46,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,687,assessment option 3
+08/01/2024 13:46,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,687,assessment option 4
+08/01/2024 13:46,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,687,assessment option 5
+08/01/2024 13:46,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,687,recommendation option 4
+08/01/2024 13:46,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,695,prescribed medications
+08/01/2024 13:46,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,709,auscultate lungs
+08/01/2024 13:47,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,780,ask for tips
+08/01/2024 13:48,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,797,observe respiratory rate and signs of respiratory distress
+08/01/2024 13:48,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,816,call on-call doctor
+08/01/2024 13:49,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,876,ask for tips
+08/01/2024 13:50,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,908,observe respiratory rate and signs of respiratory distress
+08/01/2024 13:50,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,956,take pulse (central)
+08/01/2024 13:50,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,966,normal
+08/01/2024 13:50,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,966,20 - 30 breaths per min
+08/01/2024 13:50,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,966,mild / none
+08/01/2024 13:50,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,966,sp o2 <95% in air and/or receiving oxygen
+08/01/2024 13:50,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,966,> 120 bpm
+08/01/2024 13:50,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,966,yes
+08/01/2024 13:51,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,981,ask for tips
+08/01/2024 13:51,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,990,history of presenting complaint
+08/01/2024 13:51,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,1018,past medical history
+08/01/2024 13:52,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,1060,do you have any questions?
+08/01/2024 13:52,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,1065,offer a patient information leaflet
+08/01/2024 13:52,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,1067,wash hands and apply ppe
+08/01/2024 13:53,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,1128,age
+08/01/2024 13:53,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,1128,acute onset of symptoms
+08/01/2024 13:53,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,1128,metformin
+08/01/2024 13:53,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,1128,gliclazide
+08/01/2024 13:53,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,1128,insulin
+08/01/2024 13:53,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,1128,6 months
+08/01/2024 13:53,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,1128,12 months
+08/01/2024 13:53,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,1128,day team on ward
+08/01/2024 13:53,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,1128,day surgical team
+08/01/2024 13:53,Paeds Account 22,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367210,1132,leave scenario
 08/01/2024 13:36,Paeds Account 14,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367215,0,start scenario
 08/01/2024 13:36,Paeds Account 14,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367215,41,introduce yourself
 08/01/2024 13:37,Paeds Account 14,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,367215,57,history of presenting complaint

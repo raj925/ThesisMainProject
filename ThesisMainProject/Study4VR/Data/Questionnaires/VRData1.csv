@@ -15,7 +15,7 @@ A10,11,DKA,"DKA, infection (causing DKA?)","5,2",8,9,DKA,5,9,9,0,0,55,Give fluid
 A19,5,Asthma,"Pneumonia, asthma, anaphylaxis, viral induced wheeze, epiglottitis, croup, pneumothorax","3,5,4,4,2,2,2",6,7,"Asthma, pneumonia, viral induced wheeze, epiglottitis, pneumothorax","5,5,4,3,1",8,7,0.19,0,58,Respiratory percussion
 A21,16,Asthma,"Respiratory infection, sepsis, pneumonia, PE, DKA","5,5,4,1,3",6,9,"Acute asthma excerbation, infection respiratory","5,3",9,6,0.1,1,64,
 A20,12,DKA,"Diabetic Ketoacidosis, appendicitis, stomach bug","5,2,3",3,7,"DKA, strep throat, appendicitis, stomach bug","5,2,2,2",9,7,0.25,0,46,"Full history, cardiac exam, neuro exam"
-A17,1,Asthma,"Asthma excerbation, virus, atopic allergies, VIW","5,4,3,1",7,7,"Acute asthma excerbation second to allergies, VIEW, respiratory virus","5,2,2",7,7,0.25,0,69,"More full history, ECG"
+A17,16,DKA,"DKA, viral (URTI)","5,5",8,8,"DKA, URTI","5,5",7,8,0.1,1,51,
 A7,3,Asthma,"Asthma, anaphylaxis, viral-induced wheeze, obstruction","5,2,4,3",6,7,"Anaphylaxis, asthma, pneumothorax","1,5,3",7,6,0.24,0,69,"Percussion (chest), chest expansion"
 A15,7,DKA,"DKA, Gastroenteritis, URTI","5,2,2",7,7,DKA,5,9,9,0.13,0,74,"ENT, CNS exam, abdo exam, social history"
 A18,2,DKA,"DKA, Gastroenteritis, UTI","5,3,2",6,7,DKA,5,9,8,0,0,70,"CBG earlies, full history"
