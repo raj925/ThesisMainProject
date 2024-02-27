@@ -3,17 +3,31 @@ past medical history,observe airway and talk to patient,ask for peak flow
 prescribed medications,auscultate lungs,capillary blood gas
 allergies,measure oxygen saturations & heart rate,ask for sputum cultures
 medication list,capillary refill time (central),ask for ecg
-paediatric asthma guidelines,capillary refill time (peripheral),ask for urine dip and culture
-paediatric diabetic ketoacidosis guidelines,check temperature (tympanic),ask for urine output monitoring
-medical history,measure blood pressure,insert iv access and take bloods
-aggravating / relieving factors,check hydration status,ask for blood ketones
-ask about pain,respiratory,fluid balance chart (intake/output)
-ask about general activity level,"ear, nose & throat",ask for cardiac monitoring
-history of presenting complaint,look in patient's mouth with a tongue depressor,observe respiratory rate and signs of respiratory distress
-social and living situation,take pulse (central),
-parental smoking and pets,auscultate heart sounds,
-vaccination history,check capillary blood glucose,
-"feeding, growth and nutrition",check pupils,
-cardiovascular,assess consciousness level (avpu),
-central nervous system,check upper body,
-,check lower body,
+medical history,capillary refill time (peripheral),ask for urine dip and culture
+aggravating / relieving factors,check temperature (tympanic),ask for urine output monitoring
+ask about pain,measure blood pressure,insert iv access and take bloods
+ask about general activity level,check hydration status,ask for blood ketones
+history of presenting complaint,respiratory,fluid balance chart (intake/output)
+social and living situation,"ear, nose & throat",ask for cardiac monitoring
+parental smoking and pets,look in patient's mouth with a tongue depressor,observe respiratory rate and signs of respiratory distress
+vaccination history,take pulse (central),ask for stool sample for culture
+"feeding, growth and nutrition",auscultate heart sounds,urine results
+cardiovascular,check capillary blood glucose,cbg result #1
+central nervous system,check pupils,cbg result #2
+past surgical history,assess consciousness level (avpu),ecg result #1
+ask birth history,check upper body,take blood cultures
+parental employment,check lower body,request swabs for mrsa screening
+travel history,take pulse (peripheral),
+e-prescription chart,abdominal exam,
+presenting complaint,skin assessment chart,
+check weight & height,take throat swab,
+developmental milestones,ask about fever,
+ethnic origin,gastrointestinal & genito-urinary,
+antenatal history and scans,repeat blood pressure,
+school / education,examine for lymph nodes,
+social worker / child protection plan status,examine throat,
+fluid prescription chart,ent exam,
+home living situation,abdominal auscultation,
+school,,
+progress at school,,
+family history,,
