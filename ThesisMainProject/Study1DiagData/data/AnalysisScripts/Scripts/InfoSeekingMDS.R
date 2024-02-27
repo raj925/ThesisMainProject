@@ -231,18 +231,14 @@ for (n in 1:nrow(studentAggData))
   compareColumns <- compareColumns[,grep(ppt, colnames(compareColumns)) ]
   distanceVars[n] <- mean(compareColumns)
   
-  compareColumns <- confDistances[grep(ppt, rownames(confDistances)), ]
-  compareColumns <- compareColumns[,grep(ppt, colnames(compareColumns)) ]
-  confidenceVars[n] <- mean(compareColumns)
-  
   infoProps[n] <- studentAggData$proportionOfInfo[n]
   accuracies[n] <- studentAggData$meanFinalAccuracy[n]
   relRat[n] <- studentAggData$relativeRationalism[n]
   brier[n] <- studentAggData$finalBrierScore[n]
   confidences[n] <- studentAggData$meanFinalConfidence[n]
 }
-infoSeekingDf <- data.frame(distanceVars,confidenceVars,infoProps,accuracies,relRat,brier,confidences)
-colnames(infoSeekingDf) <- c("MDSDistanceVariance", "ConfidenceVariance", "InformationSeekingProportion","Accuracy","RelativeRationalism","BrierScore","Confidence")
+infoSeekingDf <- data.frame(distanceVars,infoProps,accuracies,relRat,brier,confidences)
+colnames(infoSeekingDf) <- c("MDSDistanceVariance", "InformationSeekingProportion","Accuracy","RelativeRationalism","BrierScore","Confidence")
 
 distanceVars <- c()
 confidenceVars <- c()
@@ -259,18 +255,14 @@ for (n in 1:nrow(expertAggData))
   compareColumns <- compareColumns[,grep(ppt, colnames(compareColumns)) ]
   distanceVars[n] <- (mean(compareColumns))
   
-  compareColumns <- confDistances[grep(ppt, rownames(confDistances)), ]
-  compareColumns <- compareColumns[,grep(ppt, colnames(compareColumns)) ]
-  confidenceVars[n] <- mean(compareColumns)
-  
   infoProps[n] <- expertAggData$proportionOfInfo[n]
   accuracies[n] <- expertAggData$meanFinalAccuracy[n]
   relRat[n] <- expertAggData$relativeRationalism[n]
   brier[n] <- expertAggData$finalBrierScore[n]
   confidences[n] <- expertAggData$meanFinalConfidence[n]
 }
-infoSeekingDfExp <- data.frame(distanceVars,confidenceVars,infoProps,accuracies,relRat,brier,confidences)
-colnames(infoSeekingDfExp) <- c("MDSDistanceVariance", "ConfidenceVariance", "InformationSeekingProportion","Accuracy","RelativeRationalism","BrierScore","Confidence")
+infoSeekingDfExp <- data.frame(distanceVars,infoProps,accuracies,relRat,brier,confidences)
+colnames(infoSeekingDfExp) <- c("MDSDistanceVariance", "InformationSeekingProportion","Accuracy","RelativeRationalism","BrierScore","Confidence")
 
 
 cor <- cor.test(infoSeekingDf$MDSDistanceVariance,infoSeekingDf$InformationSeekingProportion,method="pearson")
@@ -482,7 +474,7 @@ varsPlot <- ggplot(dataB,aes(x=condition, y=variance, fill=accGroup)) +
 print(varsPlot +
         scale_x_discrete(limits=conditionsShort) +
         ggtitle("Variance in Information Seeking by Accuracy and Condition") +
-        labs(x = "Condition (ordered by accuracy in descending order)", y = "Average Dice Distance") +
+        labs(x = "Condition (ordered by accuracy in descending order)", y = "Average Distance") +
         theme_classic() +
         theme(axis.text=element_text(size=16),
                axis.title=element_text(size=16),

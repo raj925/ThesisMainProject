@@ -471,3 +471,17 @@ res.aov2 <- anova_test(
 get_anova_table(res.aov2)
 
 ```
+
+```{r, warning=FALSE, message=FALSE}
+
+asthData <- vrData[vrData$Scenario=="Asthma",]
+dkaData <- vrData[vrData$Scenario=="DKA",]
+pneuData <- vrData[vrData$Scenario=="Pneumonia",]
+seizData <- vrData[vrData$Scenario=="Seizure",]
+
+corrs <- c(cor.test(asthData$t1numOfDiagnoses,asthData$filteredActions)$estimate,
+           cor.test(dkaData$t1numOfDiagnoses,dkaData$filteredActions)$estimate,
+           cor.test(pneuData$t1numOfDiagnoses,pneuData$filteredActions)$estimate,
+           cor.test(seizData$t1numOfDiagnoses,seizData$filteredActions)$estimate)
+
+```

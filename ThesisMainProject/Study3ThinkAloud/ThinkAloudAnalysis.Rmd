@@ -31,12 +31,6 @@ pptData <- as.data.frame(pptData)
 
 colnames(pptData)[1] <- "ID"
 
-TAData <- merge(caseData, pptData, by = "ID")
-
-```
-
-
-```{r, warning=FALSE, message=FALSE}
 
 for (p in 1:nrow(pptData))
 {
@@ -82,8 +76,17 @@ for (p in 1:nrow(pptData))
   
 }
 
-# Assuming df is your dataframe
 caseData <- mutate(caseData, hybridStrat = ifelse(PR+HD+SI>1,1,0))
+
+
+TAData <- merge(caseData, pptData, by = "ID")
+
+source("AggregateData.R")
+
+colnames(caseDfTA)[1] <- "ID"
+colnames(caseDfTA)[3] <- "Condition"
+
+TAData <- merge(TAData, caseDfTA, by = c("ID","Condition"))
 
 ```
 
