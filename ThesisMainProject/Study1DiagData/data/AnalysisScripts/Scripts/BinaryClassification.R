@@ -612,8 +612,9 @@ for (testNum in 7:29)
 }
 
 infoPropDf <- infoPropDf[infoPropDf$accGroupL<5,]
+infoPropDfPLOT <- infoPropDf[infoPropDf$tests %in% c("URINE","CLOT","ELEC","VBG","BIOCH","ABCT"),]
 
-ggplot(infoPropDf, aes(x = as.numeric(accGroupL), y = as.double(infoPropValues), fill = tests, group=ranks)) +
+ggplot(infoPropDfPLOT, aes(x = as.numeric(accGroupL), y = as.double(infoPropValues), fill = tests, group=ranks)) +
   geom_bar(position="dodge", stat="identity") +
   #scale_fill_viridis(discrete=T) +
   geom_text(aes(label = tests),position = position_dodge(0.9), size = 2, angle = 90, hjust = 1) +

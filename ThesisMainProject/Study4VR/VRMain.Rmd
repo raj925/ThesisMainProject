@@ -140,7 +140,7 @@ for (n in 1:nrow(vrData))
   timeSplit <- as.integer(timeSplit)
   vrData$totalTime[n] <- timeSplit[1] + (timeSplit[2]/60)
 
-  actions <- actionsData[actionsData$OMSID == vrData$OMSID[n] & actionsData$SCENARIO == vrData$SCENARIO,]$ACTION.TITLE
+  actions <- actionsData[actionsData$OMSID == vrData$OMSID[n] & actionsData$SCENARIO == vrData$SCENARIO[n],]$ACTION.TITLE
   vrData$totalActions[n] <- length(actions)
   vrData$uniqueActions[n] <- length(unique(actions))
 
@@ -352,13 +352,13 @@ distancesVR <- infoSeekingMatrixVR %>% proxy::dist(method = "Hamman") %>% as.mat
 
 ```{r, warning=FALSE, message=FALSE}
 
-anovaDf <- data.frame(c(vrCompleteData$t1Confidence,vrCompleteData$t2Confidence),
-                      c(vrCompleteData$t1Severity,vrCompleteData$t2Severity),
-                      c(vrCompleteData$t1numOfDiagnoses,vrCompleteData$t2numOfDiagnoses),
-                      c(rep("1",nrow(vrCompleteData)),rep("2",nrow(vrCompleteData))),
-                      c(rep(vrCompleteData$Scenario,2)),
-                       c(rep(vrCompleteData$scenGroup,2)),
-                      c(rep(vrCompleteData$ParticipantID,2)))
+anovaDf <- data.frame(c(vrData$t1Confidence,vrData$t2Confidence),
+                      c(vrData$t1Severity,vrData$t2Severity),
+                      c(vrData$t1numOfDiagnoses,vrData$t2numOfDiagnoses),
+                      c(rep("1",nrow(vrData)),rep("2",nrow(vrData))),
+                      c(rep(vrData$Scenario,2)),
+                       c(rep(vrData$scenGroup,2)),
+                      c(rep(vrData$ParticipantID,2)))
 
 colnames(anovaDf) <- c("Confidence","Severity","Diagnoses", 
                        "Timepoint","Scenario","ScenarioGroup","ID")
@@ -390,23 +390,25 @@ p <- ggplot(anovaDf, aes(x=Timepoint, y=Diagnoses, fill=Scenario)) +
 
 p
 
+completeAnovaDF <- anovaDf[anovaDf$ID %in% vrCompleteData$ParticipantID,]
+
 res.aov2 <- anova_test(
-  data = anovaDf, dv = Diagnoses, wid = ID, within = Timepoint, between = Scenario
+  data = completeAnovaDF, dv = Diagnoses, wid = ID, within = Timepoint, between = Scenario
 )
 
 get_anova_table(res.aov2)
 
 #################################################
 
-anovaDf <- data.frame(vrCompleteData$filteredActions,
-                      vrCompleteData$filteredActionOverTime,
-                      vrCompleteData$OMSScore,
-                      vrCompleteData$t2Confidence,
-                      vrCompleteData$t2InvestigationsComplete,
-                        vrCompleteData$Scenario,
-                       vrCompleteData$scenGroup,
-                      vrCompleteData$scenNum,
-                      vrCompleteData$ParticipantID)
+anovaDf <- data.frame(vrData$filteredActions,
+                      vrData$filteredActionOverTime,
+                      vrData$OMSScore,
+                      vrData$t2Confidence,
+                      vrData$t2InvestigationsComplete,
+                        vrData$Scenario,
+                       vrData$scenGroup,
+                      vrData$scenNum,
+                      vrData$ParticipantID)
 
 colnames(anovaDf) <- c("Actions","FActionsOverTime","Score", "Confidence", "InvestigationsComplete","Scenario","ScenarioGroup","ScenarioNumber","ID")
 
@@ -425,8 +427,10 @@ p <- ggplot(anovaDf, aes(x = Scenario, y = Actions, fill = Scenario)) +
 
 p
 
+completeAnovaDF <- anovaDf[anovaDf$ID %in% vrCompleteData$ParticipantID,]
+
 res.aov2 <- anova_test(
-  data = anovaDf, dv = Actions, wid = ID, within = ScenarioNumber, between = ScenarioGroup
+  data = completeAnovaDF, dv = Actions, wid = ID, within = ScenarioNumber, between = ScenarioGroup
 )
 
 get_anova_table(res.aov2)
@@ -444,7 +448,7 @@ p <- ggplot(anovaDf, aes(x = Scenario, y = Score, fill = Scenario)) +
 p
 
 res.aov2 <- anova_test(
-  data = anovaDf, dv = Score, wid = ID, within = ScenarioNumber, between = ScenarioGroup
+  data = completeAnovaDF, dv = Score, wid = ID, within = ScenarioNumber, between = ScenarioGroup
 )
 
 get_anova_table(res.aov2)
@@ -465,10 +469,11 @@ p <- ggplot(anovaDf[!is.na(anovaDf$InvestigationsComplete),], aes(x = Investigat
 p
 
 res.aov2 <- anova_test(
-  data = anovaDf, dv = Score, wid = ID, between = c(InvestigationsComplete, ScenarioGroup)
+  data = completeAnovaDF, dv = Score, wid = ID, between = c(InvestigationsComplete, ScenarioGroup)
 )
 
 get_anova_table(res.aov2)
+
 
 ```
 
@@ -483,5 +488,10 @@ corrs <- c(cor.test(asthData$t1numOfDiagnoses,asthData$filteredActions)$estimate
            cor.test(dkaData$t1numOfDiagnoses,dkaData$filteredActions)$estimate,
            cor.test(pneuData$t1numOfDiagnoses,pneuData$filteredActions)$estimate,
            cor.test(seizData$t1numOfDiagnoses,seizData$filteredActions)$estimate)
+
+corrs
+
+mixedModel <- lmer(filteredActions ~ t1Confidence + OMSScore + Scenario + (1|ParticipantID),data=vrData)
+summary(mixedModel)
 
 ```

@@ -505,3 +505,137 @@ print(tacon +
 
 
 ```
+
+```{r, warning=FALSE, message=FALSE}
+
+library(stringr)
+library(tidyselect)
+library(dplyr)
+library(tidyr)
+library(tibble)
+
+infoSeekingMatrixTA <- data.frame()
+
+for (p in 1:nrow(TAData))
+{
+  infoVector <- TAData$reqTestArray[p]
+  infoVector <- str_split(infoVector,", ")[[1]]
+  infoVector <- as.numeric(infoVector)
+  condition <- TAData$Condition[p]
+  
+  infoValues <- studentInfoDf[rownames(studentInfoDf) == condition,]
+
+  valueVector <- infoVector
+  # Iterate through each element in infoVector
+  for (i in 1:length(valueVector)) {
+   # Check if the current element is 1
+    if (valueVector[i] == 1) {
+      # If it is, replace it with the corresponding value from infoValues
+      valueVector[i] <- as.double(infoValues[i])
+    }
+  }
+  
+  TAData$infoValue[p] <- sum(valueVector)
+  
+  infoSeekingMatrixTA <- rbind(infoSeekingMatrixTA, infoVector)
+  rownames(infoSeekingMatrixTA)[p] <- paste(TAData$ID[p],
+                                            "-",
+                                            TAData$OverallStrat[p],
+                                            "-",
+                                            TAData$Condition[p],
+                                            "-Correct",
+                                            TAData$Correct[p],
+                                            sep="")
+  
+}
+
+colnames(infoSeekingMatrixTA) <- c(1:29)
+infoSeekingMatrixTA$Condition <- TAData$Condition
+infoSeekingMatrixTA$ID <- TAData$ID
+infoSeekingMatrixTA$Correct <- TAData$Correct
+infoSeekingMatrixTA$Strat <- TAData$OverallStrat
+
+distancesTA <- infoSeekingMatrixTA[,1:29] %>% proxy::dist(method = "Dice") %>% as.matrix()
+
+stratVarBreakdown <- TAData %>%
+  group_by(OverallStrat) %>%
+  dplyr::mutate(N = n()) %>%
+  dplyr::summarise(mDiffsAdded = mean(meanDiffsAdded),
+                   mDiffsRemoved = mean(meanDiffsRemoved),
+                   mDiffsEvals = mean(meanDiffEvals),
+                   infoSought = mean(proportionOfInfo),
+                   infoValue = mean(infoValue),
+                   accuracy = mean(Correct))
+
+
+for (i in 1:nrow(stratVarBreakdown))
+{
+  strat <- stratVarBreakdown$OverallStrat[i]
+  result <- distancesTA %>%
+    as.data.frame() %>%
+    rownames_to_column() %>%
+    pivot_longer(-1) %>%
+    filter(str_detect(name, strat) & str_detect(rowname, strat)) %>%
+    pivot_wider(names_from = name, values_from = value) %>%
+  column_to_rownames("rowname")
+  
+  stratVarBreakdown$infoVariance[i] <- mean(as.matrix(result))
+  
+}
+
+stratVarBreakdown
+
+```
+
+```{r, warning=FALSE, message=FALSE}
+
+# Define a function to handle ties
+handle_ties <- function(frequencies) {
+  max_frequency <- max(frequencies)
+  ties <- names(frequencies[frequencies == max_frequency])
+  if (length(ties) > 1) {
+    return(c("Hybrid", paste(sort(ties), collapse = ", ")))
+  } else {
+    return(c(names(frequencies)[which.max(frequencies)], ""))
+  }
+}
+
+# Group by ID, calculate frequency of each strat, identify most common, count occurrences
+result <- TAData %>%
+  group_by(ID) %>%
+  summarise(most_common_strat = handle_ties(table(OverallStrat))[1],
+            tied_strats = handle_ties(table(OverallStrat))[2],
+            frequency = max(table(OverallStrat))) %>%
+  ungroup()
+
+# Print the result
+print(result)
+
+# Merge the summarized result with the original dataframe
+TAData <- merge(TAData, result, by = "ID", all.x = TRUE)
+# Replicate the most_common_strat value to each group of rows in the original dataframe
+TAData <- TAData %>%
+  mutate(DominantStrat = rep(result$most_common_strat, each = 6))
+
+# Remove unnecessary columns
+TAData <- select(TAData, -most_common_strat, -tied_strats, -frequency)
+
+TAData$usingDominantStrat <- ifelse(TAData$OverallStrat==TAData$DominantStrat,1,0)
+
+```
+
+```{r, warning=FALSE, message=FALSE}
+
+stratDominantBreakdown <- TAData %>%
+  group_by(OverallStrat,usingDominantStrat) %>%
+  dplyr::mutate(N = n()) %>%
+  dplyr::summarise(n = mean(N),
+                  mDiffsAdded = mean(meanDiffsAdded),
+                   mDiffsRemoved = mean(meanDiffsRemoved),
+                   mDiffsEvals = mean(meanDiffEvals),
+                   infoSought = mean(proportionOfInfo),
+                   infoValue = mean(infoValue),
+                   accuracy = mean(Correct))
+stratDominantBreakdown
+
+```

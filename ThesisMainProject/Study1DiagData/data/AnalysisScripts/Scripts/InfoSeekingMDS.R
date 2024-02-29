@@ -31,7 +31,9 @@ weights <- pca_result$loadings
 #means <- colMeans(infoSeekingFullMatrix[,1:29])
 #weightsSum+means
 
-topPCS <- weights
+topVars <- lapply(1:ncol(pcs), function(x) {names(sort(weights[,x], decreasing = T)[1:5])})
+topVarsIdx <- unique(unlist(lapply(topVars, function(vars) {as.numeric(match(vars, rownames(weights)))})))
+topPCS <- weights[unlist(topVarsIdx),]
 
 testCodes <- c("ILLHIST","PASTHIST","MEDS","ALLER","FAMHIST","SOCHIST",
                "PULSE", "BP", "RESP", "LUNG", "HEART", "EYES", "TEMP",
