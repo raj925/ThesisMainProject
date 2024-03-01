@@ -4,6 +4,11 @@ dfTA <- data.frame(matrix(ncol = 0, nrow = 288))
 
 participantIDS <- c()
 ids <- list.dirs(dataFolder,recursive = FALSE) 
+
+infoStages <- c("Patient History", "Physical Exmination", "Testing")
+cases <-c("UC", "GBS", "TA", "TTP", "AD", "MTB")
+conditionsShort <- c("UC", "GBS", "TA", "TTP", "AD", "MTB")
+conditionsLong <- c("ULCERATIVE COLITIS", "GUILLAINBARRE SYNDROME", "TEMPORAL ARTERITIS", "THROMBOTIC THROMBOCYTOPENIC PURPURA", "AORTIC DISSECTION", "MILIARY TB")
 ################################################
 # Main df for stage wise data from JSON files
 
