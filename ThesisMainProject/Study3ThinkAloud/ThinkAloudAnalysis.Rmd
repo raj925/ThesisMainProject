@@ -591,16 +591,18 @@ stratVarBreakdown
 
 ```{r, warning=FALSE, message=FALSE}
 
-# Define a function to handle ties
-handle_ties <- function(frequencies) {
-  max_frequency <- max(frequencies)
-  ties <- names(frequencies[frequencies == max_frequency])
-  if (length(ties) > 1) {
-    return(c("Hybrid", paste(sort(ties), collapse = ", ")))
-  } else {
-    return(c(names(frequencies)[which.max(frequencies)], ""))
-  }
-}
+# Group by Condition, calculate frequency of each strat, identify most common, count occurrences
+result <- TAData %>%
+  group_by(Condition) %>%
+  summarise(caseDominantStrat = handle_ties(table(OverallStrat))[1],
+            frequency = max(table(OverallStrat))) %>%
+  ungroup()
+
+# Merge the summarized result with the original dataframe
+TAData <- merge(TAData, result, by = "Condition", all.x = TRUE)
+
+# Remove unnecessary columns
+TAData <- select(TAData, -frequency)
 
 # Group by ID, calculate frequency of each strat, identify most common, count occurrences
 result <- TAData %>%
@@ -610,57 +612,41 @@ result <- TAData %>%
             frequency = max(table(OverallStrat))) %>%
   ungroup()
 
-# Print the result
 print(result)
+
 
 # Merge the summarized result with the original dataframe
 TAData <- merge(TAData, result, by = "ID", all.x = TRUE)
 # Replicate the most_common_strat value to each group of rows in the original dataframe
 TAData <- TAData %>%
-  mutate(DominantStrat = rep(result$most_common_strat, each = 6))
+  mutate(IndividualDominantStrat = rep(result$most_common_strat, each = 6))
 
 # Remove unnecessary columns
-TAData <- select(TAData, -most_common_strat, -tied_strats, -frequency)
+TAData <- select(TAData, -most_common_strat, -frequency)
 
-TAData$usingDominantStrat <- ifelse(TAData$OverallStrat==TAData$DominantStrat,1,0)
+TAData$usingCaseDominantStrat <- ifelse(TAData$OverallStrat==TAData$caseDominantStrat,
+                                        1,
+                                        0)
 
 ```
 
 ```{r, warning=FALSE, message=FALSE}
 
-stratDominantBreakdown <- TAData %>%
-  group_by(OverallStrat,usingDominantStrat) %>%
+stratIndDominantBreakdown <- TAData %>%
+  group_by(ID) %>%
   dplyr::mutate(N = n()) %>%
   dplyr::summarise(n = mean(N),
+                  infoSought = mean(proportionOfInfo),
+                   infoValue = mean(infoValue),
+                   accuracy = mean(Correct),
                   mDiffsAdded = mean(meanDiffsAdded),
                    mDiffsRemoved = mean(meanDiffsRemoved),
-                   mDiffsEvals = mean(meanDiffEvals),
-                   infoSought = mean(proportionOfInfo),
-                   infoValue = mean(infoValue),
-                   accuracy = mean(Correct))
-stratDominantBreakdown
+                   mDiffsEvals = mean(meanDiffEvals))
+stratIndDominantBreakdown
 
 ```
 
 ```{r, warning=FALSE, message=FALSE}
-
-# Group by Condition, calculate frequency of each strat, identify most common, count occurrences
-result <- TAData %>%
-  group_by(Condition) %>%
-  summarise(caseDominantStrat = handle_ties(table(OverallStrat))[1],
-            frequency = max(table(OverallStrat))) %>%
-  ungroup()
-
-# Print the result
-print(result)
-
-# Merge the summarized result with the original dataframe
-TAData <- merge(TAData, result, by = "Condition", all.x = TRUE)
-
-# Remove unnecessary columns
-TAData <- select(TAData, -frequency)
-
-TAData$usingCaseDominantStrat <- ifelse(TAData$OverallStrat==TAData$caseDominantStrat,1,0)
 
 stratCaseDominantBreakdown <- TAData %>%
   group_by(caseDominantStrat,usingCaseDominantStrat) %>%
@@ -675,3 +661,25 @@ stratCaseDominantBreakdown <- TAData %>%
 stratCaseDominantBreakdown
 
 ```
+```{r, warning=FALSE, message=FALSE}
+
+TAData[TAData$tied_strats=="",]$tied_strats <- "NA"
+
+TAData$matchingIndividualDominantStrat <-
+  ifelse(TAData$IndividualDominantStrat=="Hybrid"&)
+  ifelse(TAData$caseDominantStrat==TAData$IndividualDominantStrat,1,0)
+
+stratIndCaseDominantBreakdown <- TAData %>%
+  group_by(caseDominantStrat,matchingIndividualDominantStrat) %>%
+  dplyr::mutate(N = n()) %>%
+  dplyr::summarise(n = mean(N),
+                  infoSought = mean(proportionOfInfo),
+                   infoValue = mean(infoValue),
+                   accuracy = mean(Correct),
+                  mDiffsAdded = mean(meanDiffsAdded),
+                   mDiffsRemoved = mean(meanDiffsRemoved),
+                   mDiffsEvals = mean(meanDiffEvals))
+stratIndCaseDominantBreakdown
+
+```
+
