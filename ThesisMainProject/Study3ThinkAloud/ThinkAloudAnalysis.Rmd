@@ -165,8 +165,8 @@ stratBreakdown$OverallStrat <- factor(stratBreakdown$OverallStrat, levels = c('H
 p <- ggplot(stratBreakdown, aes(fill=OverallStrat, y=m_N, x=Condition)) + 
     geom_bar(position="dodge", stat="identity",alpha=0.7) +
     scale_fill_manual(values=c("#E69F00", "#56B4E9", "#009E73",  "grey")) +
-  scale_x_discrete(limits = c("AD","GBS","MTB","TA","TTP","UC","Overall")) +
-  labs(title="Breakdown of Reasoning Strategies By Case",x="Case",y="Proportion of Participants") +
+  scale_x_discrete(limits = c("GBS","TTP","UC","AD","TA","MTB","Overall")) +
+  labs(title="Breakdown of Reasoning Strategies By Case",x="Case (Decreasing Accuracy)",y="Proportion of Participants") +
   theme_minimal() +
     theme(axis.text=element_text(size=16),
         axis.title=element_text(size=16),
@@ -459,7 +459,7 @@ print(diffInfo +
 
 ```{r, warning=FALSE, message=FALSE}
 
-caseList <- c("AD","GBS","MTB","TA","TTP","UC")
+caseList <- c("GBS","TTP","UC","AD","TA","MTB")
 accs <- c()
 for (case in caseList)
 {
@@ -471,12 +471,14 @@ temp <- data.frame(caseList,accs)
 p <- ggplot(temp) +
   geom_bar(aes(x = caseList, y = accs,fill=caseList),stat="identity",alpha=0.7) +
   scale_fill_manual(values=c("#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")) +
-  labs(title="Accuracy by Case",x="Case Name",y="Proportion of Correct Cases") +
+  labs(title="Accuracy by Case",x="Case Name (Decreasing Accuracy)",y="Proportion of Correct Cases") +
   theme_classic() +
+  scale_x_discrete(limits = caseList) + 
   theme(axis.text=element_text(size=16),
         axis.title=element_text(size=16),
         plot.title=element_text(size=18,face="bold"),
-        line = element_blank())
+        line = element_blank()) +
+  scale_fill_discrete(breaks=caseList)
 
 print(p)
 
@@ -637,5 +639,39 @@ stratDominantBreakdown <- TAData %>%
                    infoValue = mean(infoValue),
                    accuracy = mean(Correct))
 stratDominantBreakdown
+
+```
+
+```{r, warning=FALSE, message=FALSE}
+
+# Group by Condition, calculate frequency of each strat, identify most common, count occurrences
+result <- TAData %>%
+  group_by(Condition) %>%
+  summarise(caseDominantStrat = handle_ties(table(OverallStrat))[1],
+            frequency = max(table(OverallStrat))) %>%
+  ungroup()
+
+# Print the result
+print(result)
+
+# Merge the summarized result with the original dataframe
+TAData <- merge(TAData, result, by = "Condition", all.x = TRUE)
+
+# Remove unnecessary columns
+TAData <- select(TAData, -frequency)
+
+TAData$usingCaseDominantStrat <- ifelse(TAData$OverallStrat==TAData$caseDominantStrat,1,0)
+
+stratCaseDominantBreakdown <- TAData %>%
+  group_by(caseDominantStrat,usingCaseDominantStrat) %>%
+  dplyr::mutate(N = n()) %>%
+  dplyr::summarise(n = mean(N),
+                  infoSought = mean(proportionOfInfo),
+                   infoValue = mean(infoValue),
+                   accuracy = mean(Correct),
+                  mDiffsAdded = mean(meanDiffsAdded),
+                   mDiffsRemoved = mean(meanDiffsRemoved),
+                   mDiffsEvals = mean(meanDiffEvals))
+stratCaseDominantBreakdown
 
 ```
