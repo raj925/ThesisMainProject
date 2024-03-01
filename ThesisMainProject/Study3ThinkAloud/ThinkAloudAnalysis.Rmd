@@ -665,9 +665,24 @@ stratCaseDominantBreakdown
 
 TAData[TAData$tied_strats=="",]$tied_strats <- "NA"
 
-TAData$matchingIndividualDominantStrat <-
-  ifelse(TAData$IndividualDominantStrat=="Hybrid"&)
-  ifelse(TAData$caseDominantStrat==TAData$IndividualDominantStrat,1,0)
+for (ppt in 1:nrow(TAData))
+{
+  if (grepl(TAData$caseDominantStrat[ppt], TAData$tied_strats[ppt])) 
+  {
+    TAData$matchingIndividualDominantStrat[ppt] <- 1
+  } else
+  {
+    if (TAData$caseDominantStrat[ppt]==TAData$IndividualDominantStrat[ppt])
+    {
+      TAData$matchingIndividualDominantStrat[ppt] <- 1
+    }
+    else
+    {
+      TAData$matchingIndividualDominantStrat[ppt] <- 0
+    }
+  }
+}
+
 
 stratIndCaseDominantBreakdown <- TAData %>%
   group_by(caseDominantStrat,matchingIndividualDominantStrat) %>%
