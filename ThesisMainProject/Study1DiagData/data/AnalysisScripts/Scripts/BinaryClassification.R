@@ -393,7 +393,7 @@ temp$ID <- infoSeekingFullMatrix$ID
 
 temp <- temp[!grepl("e1|e2|e3|e4|e5|e6", rownames(temp)),]
 
-standard <- "expert" #student/expert
+standard <- "student" #student/expert
 if (standard == "student")
 {
   infoValueDf <- infoValueDf[!grepl("e1|e2|e3|e4|e5|e6", rownames(infoValueDf)),]
@@ -432,8 +432,8 @@ for (n in 1:nrow(temp)) #row
 temp = subset(temp, select = -c(Condition,ID))
 
 
-temp$infoValue <- rowMeans(temp,na.rm = TRUE)
-#temp$infoValue <- rowSums(temp,na.rm = TRUE)
+#temp$infoValue <- rowMeans(temp,na.rm = TRUE)
+temp$infoValue <- rowSums(temp,na.rm = TRUE)
 
 ################
 

@@ -686,6 +686,7 @@ stratIndDominantBreakdown <- TAData %>%
                   infoSought = mean(proportionOfInfo),
                    infoValue = mean(infoValue),
                    accuracy = mean(Correct),
+                  confidenceC = mean(confidenceChange),
                   mDiffsAdded = mean(meanDiffsAdded),
                    mDiffsRemoved = mean(meanDiffsRemoved),
                    mDiffsEvals = mean(meanDiffEvals))
@@ -704,6 +705,7 @@ stratCaseDominantBreakdown <- TAData %>%
                   infoSought = mean(proportionOfInfo),
                    infoValue = mean(infoValue),
                    accuracy = mean(Correct),
+                  confidenceC = mean(confidenceChange),
                   mDiffsAdded = mean(meanDiffsAdded),
                    mDiffsRemoved = mean(meanDiffsRemoved),
                    mDiffsEvals = mean(meanDiffEvals))
@@ -727,6 +729,7 @@ for (i in 1:nrow(stratCaseDominantBreakdown))
 stratCaseDominantBreakdown
 
 ```
+
 ```{r, warning=FALSE, message=FALSE}
 
 stratIndCaseDominantBreakdown <- TAData %>%
@@ -736,6 +739,7 @@ stratIndCaseDominantBreakdown <- TAData %>%
                   infoSought = mean(proportionOfInfo),
                    infoValue = mean(infoValue),
                    accuracy = mean(Correct),
+                  confidenceC = mean(confidenceChange),
                   mDiffsAdded = mean(meanDiffsAdded),
                    mDiffsRemoved = mean(meanDiffsRemoved),
                    mDiffsEvals = mean(meanDiffEvals))
