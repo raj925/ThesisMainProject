@@ -1,6 +1,15 @@
 ---
 title: "VRMain"
-output: html_document
+output:
+  html_document: 
+    df_print: paged
+    toc: true
+    toc_float: true
+    toc_collapsed: true
+    toc_depth: 3
+    number_sections: false
+    theme: lumen
+  pdf_document: default
 date: "2023-09-01"
 ---
 
@@ -8,11 +17,14 @@ date: "2023-09-01"
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Load Packages
+## Load Packages + Retrieve Data
+
 ```{r, warning=FALSE, message=FALSE}
 source("../packageLoad.R")
 require(NLP)
 
+# Function used to plot box plots within violins
+# Plots means +/-1 standard deviation
 data_summary <- function(x) {
   m <- mean(x)
   ymin <- m-sd(x)
@@ -22,13 +34,32 @@ data_summary <- function(x) {
 
 ```
 
+```{r, echo=FALSE}
+
+# Colour coding for figures
+confidenceColour <- "#03c200"
+difficultyColour <- "#bf00c2"
+infoSeekingColour <- "#ca0600"
+differentialColour <- "skyblue"
+likelihoodColour <- "orange"
+accuracyColour <- "black"
+resolutionColour <- "yellow"
+```
+
 ```{r message=FALSE, warning=FALSE}
 
 vrData <- data.frame()
 sessionsData <- data.frame()
 actionsData <- data.frame()
 
+# Each round is a session where each participant did one of the scenarios
+# So rounds 1 and 2 are the same set of participants doing one of the two scenarios.
+# And order is fixed so in sessions 1,3,5 they do Asthma and DKA
+# In sessions 2,4,6 they did Pneumonia and Seizure
 numOfRounds <- length(list.files(path = "./Data/Questionnaires"))
+
+# These are scenarios in the order they were performed across the two sessions
+scens <- c("Asthma","DKA","Pneumonia","Seizure")
 
 for (n in 1:numOfRounds)
 {
@@ -58,10 +89,14 @@ ids <- vrData$ParticipantID
 # Create a frequency table
 freq_table <- table(ids)
 # Identify elements with more than one occurrence
+# This gives us participant IDs who performed two scenarios
+# As some only performed one and did not attend the other session.
 repeatIDs <- names(freq_table[freq_table > 1])
 
 actioncategories <- read.csv("./Data/Actions/actionCategories.csv",header=TRUE,sep=",")
 
+# OMS ID is the ID used to get the OMS data.
+# OMS IDs and their accounts were reused by each set of participants.
 vrData$OMSID <- as.integer(vrData$OMSID)
 
 sessionsData$NAME <- as.integer(str_remove(sessionsData$NAME, "Paeds Account "))
@@ -70,6 +105,7 @@ actionsData$NAME <- as.integer(str_remove(actionsData$NAME, "Paeds Account "))
 colnames(sessionsData)[colnames(sessionsData) == "NAME"] ="OMSID"
 colnames(actionsData)[colnames(actionsData) == "NAME"] ="OMSID"
 
+# Merge questionnaire data and OMS session data.
 vrData <- merge(vrData, sessionsData, by = c("OMSID", "round"))
 
 severitiesT1 <- c()
@@ -83,40 +119,59 @@ likelihoodsT2 <- c()
 
 for (x in 1:nrow(vrData))
 {
+  # Participants are split into two groups where each group does a particular
+  # pair of scenarios in a fixed order:
+  # AS - Asthma in session one, Seizure in session two
+  # DP - DKA in session one, Pneumonia in session two
   ifelse(vrData$Scenario[x]=="Asthma"|vrData$Scenario[x]=="Seizure",
          vrData$scenGroup[x]<-"AS",
          vrData$scenGroup[x]<-"DP")
+  # Asthma and DKA are always done first in session one.
+  # So check for order effects.
   ifelse(vrData$Scenario[x]=="Asthma"|vrData$Scenario[x]=="DKA",
          vrData$scenNum[x]<-1,
          vrData$scenNum[x]<-2)
+  # Is this the 1st, 2nd, 3rd or 4th scenario?
+  vrData$orderNum[x] <- match(vrData$Scenario[x],scens)
+  
+  # Diagnoses reported as a comma seperated list so needs to be split by commas
+  # to create an array in R.
   diagnoses1 <- str_split(vrData$t1Diagnoses[[x]],",")[[1]]
   diagnoses2 <- str_split(vrData$t2Diagnoses[[x]],",")[[1]]
   vrData$t1numOfDiagnoses[x] <- length(diagnoses1)
   vrData$t2numOfDiagnoses[x] <- length(diagnoses2)
   
+  # Similar for the likelihoods for each diagnosis.
   liks1 <- as.integer(str_split(vrData$t1Likelihoods[[x]],",")[[1]])
   liks2 <- as.integer(str_split(vrData$t2Likelihoods[[x]],",")[[1]])
   vrData$t1HighestLikelihood[x] <- max(liks1)
   vrData$t2HighestLikelihood[x] <- max(liks2)
 
+  # Calculate how the key variables severity, confidence and the number of 
+  # diagnoses changes between timepoint 1 and timepoint 2.
   vrData$severityChange[x] <- as.integer(vrData$t2Severity[[x]]) - as.integer(vrData$t1Severity[[x]])
   vrData$confidenceChange[x] <- as.integer(vrData$t2Confidence[[x]]) - as.integer(vrData$t1Confidence[[x]])
   vrData$t1numOfDiagnosesChange[x] <- length(diagnoses2) - length(diagnoses1)
-
-  scenario <- as.integer(vrData$Scenario)
   
+  # Combine measure of how the overall diagnosis has changed. 
+  vrData$diagnosticChange[x] <- abs(vrData$severityChange[x]) + abs(vrData$confidenceChange[x]) + abs(vrData$t1numOfDiagnosesChange[x])
+  
+  # Get arrays of all severities, confidence ratings and likelihood ratings
+  # in each timepoint so can plot the distributions later on.
   severitiesT1 <- c(severitiesT1, as.integer(vrData$t1Severity[[x]]))
   severitiesT2 <- c(severitiesT2, as.integer(vrData$t2Severity[[x]]))
   confidenceT1 <- c(confidenceT1, as.integer(vrData$t1Confidence[[x]]))
   confidenceT2 <- c(confidenceT2, as.integer(vrData$t2Confidence[[x]]))
-  
   likelihoodsT1 <- c(likelihoodsT1,liks1)
   likelihoodsT2 <- c(likelihoodsT2,liks2)
   
 }
 
+# Imperfect measure of calibration by comparing OMS Score relative to confidence
 vrData$calibrationByDiff <- (vrData$OMSScore/vrData$t2Confidence)/10
 
+# Get set of actions categorised under History, Exams or Testing
+# From external file actioncategories
 historyActions <- actioncategories$History
 historyActions <- historyActions[which(historyActions != "")]
 
@@ -126,28 +181,53 @@ examActions <- examActions[which(examActions != "")]
 TestingActions <- actioncategories$Testing
 TestingActions <- TestingActions[which(TestingActions != "")]
 
-
+# All actions considered here are combination of these three
 actionsMasterList <- c(historyActions, examActions, TestingActions)
 actionsMasterList <- actionsMasterList[nzchar(actionsMasterList)]
 
+# PEWs actions categorised so PEWs score generated by the participant
+# can be calculated here. 
+pewsActions <- actioncategories$PEWS
+pewsActions <- pewsActions[which(pewsActions != "")]
+
+# Scoring chart for PEWs score.
+pewsTable <- read.csv("./Data/Actions/pewsActionsTable.csv",header=FALSE,sep=",")
+colnames(pewsTable) <- c("1","0","1")
+
+
+#################
+# Attach information seeking data recorded in OMSs
 for (n in 1:nrow(vrData))
 {
+  # Get actions (clicks) for this participant for this scenario
+  # Actions for all scenarios/participants are stored together in actionsData
+  actions <- actionsData[actionsData$OMSID == vrData$OMSID[n] & actionsData$SCENARIO == vrData$SCENARIO[n] & actionsData$round == vrData$round[n],]$ACTION.TITLE
+  
+  # usedHistoryActions <- historyActions[historyActions %in% actionsData[actionsData$SCENARIO == vrData$SCENARIO[n],]$ACTION.TITLE]
+  
+  # Tricky thing here is to get the last thing clicked on for the PEWs chart
+  pewsResps <- unique(actions[which(actions %in% pewsActions)])
+  pewsVal <- 0
+  
+  for (row in 1:nrow(pewsTable))
+  {
+    pew <- pewsTable[row,] # Chart with the PEWs scoring criteria
+    pewIdxs <- which(pewsResps %in% pew) # All PEWs clicks
+    pewAns <- pewsResps[pewIdxs[which.max(pewIdxs)]] # Get the latest PEWs click
+    pewsVal <- sum(c(pewsVal,as.numeric(colnames(pewsTable)[which(pew %in% pewAns)])))
+  }
+  vrData$pewsScore[n] <- pewsVal
 
-  time <- vrData$TIME.SPENT[n]
-  timeSplit <- str_split(time, " ")[[1]]
-  timeSplit[1] <- str_remove(timeSplit[1],"m")
-  timeSplit[2] <- str_remove(timeSplit[2],"s")
-  timeSplit <- as.integer(timeSplit)
-  vrData$totalTime[n] <- timeSplit[1] + (timeSplit[2]/60)
-
-  actions <- actionsData[actionsData$OMSID == vrData$OMSID[n] & actionsData$SCENARIO == vrData$SCENARIO[n],]$ACTION.TITLE
+  # How many clicks do participants make?
   vrData$totalActions[n] <- length(actions)
-  vrData$uniqueActions[n] <- length(unique(actions))
+  vrData$uniqueActions[n] <- length(unique(actions)) 
 
-  vrData$actionOverTime[n] <- vrData$uniqueActions[n]/vrData$totalTime[n]
-  
   actionsVector <- c()
-  
+    
+  # Generate a binary vector where each click is recorded
+  # So for each action in the list of all actions,
+  # which actions are clicked on in this scenario? 
+  # Clicked on / sought = 1, not clicked on / sought = 0
   for (a in 1:length(actionsMasterList))
   {
     if (actionsMasterList[a] %in% actions)
@@ -158,24 +238,54 @@ for (n in 1:nrow(vrData))
     }
   } 
   
-  vrData$filteredActions[n] <- sum(actionsVector)
-  vrData$filteredActionOverTime[n] <- vrData$filteredActions[n]/vrData$totalTime[n]
+  # Number of actions belonging to History, Exams or Testing
+  vrData$filteredActions[n] <- sum(actionsVector) 
   
+  # Store actions vector as a string to retrieve later. 
   vrData$actionVector[n] <- as.String(actionsVector)
+  
+  # Same process for History, Exams and Testing information/actions separately.
+  historyActionsVector <- c()
+  examActionsVector <- c()
+  testingActionsVector <- c()
+  
+  for (a in 1:length(historyActions))
+  {
+    if (historyActions[a] %in% actions)
+    {
+      historyActionsVector <- c(historyActionsVector,1)
+    } else {
+      historyActionsVector <- c(historyActionsVector,0)
+    }
+  }
+  for (a in 1:length(examActions))
+  {
+    if (examActions[a] %in% actions)
+    {
+      examActionsVector <- c(examActionsVector,1)
+    } else {
+      examActionsVector <- c(examActionsVector,0)
+    }
+    } 
+  for (a in 1:length(TestingActions))
+  {
+    if (TestingActions[a] %in% actions)
+    {
+      testingActionsVector <- c(testingActionsVector,1)
+    } else {
+      testingActionsVector <- c(testingActionsVector,0)
+    }
+  }
+  vrData$historyActionsVector[n] <- as.String(historyActionsVector)
+  vrData$examsActionsVector[n] <- as.String(examActionsVector)
+  vrData$testingActionsVector[n] <- as.String(testingActionsVector)
+  
+  vrData$numOfHistoryActions[n] <- sum(historyActionsVector)
+  vrData$numOfExamActions[n] <- sum(examActionsVector)
+  vrData$numOfTestingActions[n] <- sum(testingActionsVector)
 }
 
-# Get data where participants have completed two scenarios
-
-vrCompleteData <- vrData[vrData$ParticipantID %in% repeatIDs,]
-vrCompleteData <- vrCompleteData[!is.na(vrCompleteData$t2Confidence),]
-ids <- vrCompleteData$ParticipantID
-# Create a frequency table
-freq_table <- table(ids)
-# Identify elements with more than one occurrence
-repeatIDs <- names(freq_table[freq_table > 1])
-vrCompleteData <-  vrCompleteData[vrCompleteData$ParticipantID %in% repeatIDs,]
-nFullPpts <- nrow(vrCompleteData)/2
-
+vrDataNoNAs <- vrData[!is.na(vrData$diagnosticChange),]
 
 ```
 
@@ -185,7 +295,10 @@ Analyses:
 - Change of confidence against score correlation
 - Difference in score and severity/confidence change by scenario
 
+## Distributions of Confidence, Severity and Likelihoods
+
 ```{r, warning=FALSE, message=FALSE}
+
 
 title <- paste("Confidence Ratings", sep="")
 
@@ -232,8 +345,7 @@ ggplot(dat, aes(x=likelihood, color=timepoint, fill=timepoint )) +
 
 ```
 
-
-
+## Initial Correlations
 
 ```{r, warning=FALSE, message=FALSE}
 
@@ -275,6 +387,7 @@ cor.test(vrCompleteData$t2Severity,vrCompleteData$t2SeniorReview,method="pearson
 
 ```
 
+## Confidence by Timepoint
 
 ```{r, warning=FALSE, message=FALSE}
 
@@ -297,42 +410,33 @@ print(t.test(vrData$t1Confidence,
 
 ```
 
+## Actions against Diagnostic Change
 
 ```{r, warning=FALSE, message=FALSE}
 
-# Time in scenario
 
-timeCon <- ggplot(data = vrData, aes(x=uniqueActions, y=t2Confidence)) +
+actCon <- ggplot(data = vrData, aes(x=filteredActions, y=diagnosticChange)) +
   geom_point() +
   geom_smooth(method=lm , color="orange", fill="#69b3a2", se=TRUE) +
   theme_classic()
 
-print(timeCon + 
+print(actCon + 
         ggtitle("Confidence Against Actions Performed")
-      + labs(y="Confidence (Time Point 2)", x = "Actions Performed"))
+      + labs(y="Diagnostic Change", x = "Actions Performed"))
 
-cor.test(vrData$uniqueActions,vrData$t2Confidence,method="pearson")
+cor.test(vrData$filteredActions,vrData$diagnosticChange,method="pearson")
 
-
-
-timeScore <- ggplot(data = vrData, aes(x=actionOverTime, y=OMSScore)) +
-  geom_point() +
-  geom_smooth(method=lm , color="yellow", fill="#69b3a2", se=TRUE) +
-  theme_classic()
-
-print(timeScore + 
-        ggtitle("Action Over Time Against OMS Score")
-      + labs(y="OMS Score", x = "Action Over Time"))
-
-cor.test(vrData$actionOverTime,vrData$OMSScore,method="pearson")
 
 
 ```
+
+## Get information seeking matrix
 
 ```{r, warning=FALSE, message=FALSE}
 
 infoSeekingMatrixVR <- data.frame(matrix(nrow = nrow(vrData), ncol = length(actionsMasterList)))
 
+# Add to matrix from vectors stored as strings in vrData so we get a binary matrix.
 for (n in 1:nrow(vrData))
 {
   infoSeekingMatrixVR[n,] <- str_split(vrData$actionVector[n],"\n")[[1]]
@@ -340,15 +444,86 @@ for (n in 1:nrow(vrData))
 
 infoSeekingMatrixVR <- apply(infoSeekingMatrixVR, 2, as.numeric)
 
+infoSeekingMatrixVR <- as.data.frame(infoSeekingMatrixVR)
+colnames(infoSeekingMatrixVR) <- actionsMasterList
+
 # Use colSums to calculate the sum of each column
 sumVals <- colSums(infoSeekingMatrixVR)
 
 # Use the column sums to filter columns with at least one 1
 filtered_data <- infoSeekingMatrixVR[, sumVals > 0]
 
+# Get pairwise distances/dissimilarity
 distancesVR <- infoSeekingMatrixVR %>% proxy::dist(method = "Hamman") %>% as.matrix()
 
 ```
+
+```{r, warning=FALSE, message=FALSE}
+
+infoSeekingMatrixVR$scenario <- vrData$Scenario
+infoSeekingMatrixVR$OMSScore <- vrData$OMSScore
+
+# Derive information values
+
+valueDf <- data.frame(matrix(nrow=length(actionsMasterList),ncol=4))
+rownames(valueDf) <- actionsMasterList
+colnames(valueDf) <- scens
+
+for (x in 1:nrow(valueDf))
+{
+  for (y in 1:ncol(valueDf))
+  {
+    act <- actionsMasterList[x]
+    sce <- scens[y]
+    
+    scenActs <- infoSeekingMatrixVR[infoSeekingMatrixVR$scenario==sce,]
+    
+    soughtScens <- scenActs[scenActs[[act]]==1,]$OMSScore
+    notSoughtScens <- scenActs[scenActs[[act]]==0,]$OMSScore
+    
+    if (length(soughtScens)<1 | length(notSoughtScens)<1)
+    {
+      valueDf[x,y] <- 0
+    } else {
+          valueDf[x,y] <- mean(soughtScens,na.rm=T) - mean(notSoughtScens,na.rm=T)
+    }
+  }
+}
+
+for (x in 1:nrow(vrData))
+{
+  vector <- infoSeekingMatrixVR[x,]
+  vector <- vector[1:(length(vector)-2)] 
+  
+  sce <- vrData$Scenario[x]
+  sceVals <- valueDf[[sce]]
+  
+  soughtVals <- vector + sceVals
+  
+  vrData$infoVal[x] <- sum(soughtVals)
+}
+
+vrData$infoVal <- vrData$infoVal-mean(vrData$infoVal)
+
+
+```
+
+```{r, warning=FALSE, message=FALSE}
+# Get data where participants have completed two scenarios
+
+vrCompleteData <- vrData[vrData$ParticipantID %in% repeatIDs,]
+vrCompleteData <- vrCompleteData[!is.na(vrCompleteData$t2Confidence),]
+ids <- vrCompleteData$ParticipantID
+# Create a frequency table
+freq_table <- table(ids)
+# Identify elements with more than one occurrence
+repeatIDs <- names(freq_table[freq_table > 1])
+vrCompleteData <-  vrCompleteData[vrCompleteData$ParticipantID %in% repeatIDs,]
+nFullPpts <- nrow(vrCompleteData)/2
+
+```
+
+## 2 x 2 Plots
 
 ```{r, warning=FALSE, message=FALSE}
 
@@ -401,7 +576,6 @@ get_anova_table(res.aov2)
 #################################################
 
 anovaDf <- data.frame(vrData$filteredActions,
-                      vrData$filteredActionOverTime,
                       vrData$OMSScore,
                       vrData$t2Confidence,
                       vrData$t2InvestigationsComplete,
@@ -410,7 +584,7 @@ anovaDf <- data.frame(vrData$filteredActions,
                       vrData$scenNum,
                       vrData$ParticipantID)
 
-colnames(anovaDf) <- c("Actions","FActionsOverTime","Score", "Confidence", "InvestigationsComplete","Scenario","ScenarioGroup","ScenarioNumber","ID")
+colnames(anovaDf) <- c("Actions","Score","Confidence", "InvestigationsComplete","Scenario","ScenarioGroup","ScenarioNumber","ID")
 
 # Convert ScenarioGroup to factor with desired order
 anovaDf$ScenarioGroup <- factor(anovaDf$ScenarioGroup, levels = c("AS", "DP"))
@@ -456,6 +630,8 @@ get_anova_table(res.aov2)
 
 ```
 
+## Effect of Completing Investigations
+
 ```{r, warning=FALSE, message=FALSE}
 
 anovaDf$InvestigationsComplete <- factor(anovaDf$InvestigationsComplete, levels = c(0, 1))
@@ -477,21 +653,169 @@ get_anova_table(res.aov2)
 
 ```
 
+## Calculate mean distances
+
 ```{r, warning=FALSE, message=FALSE}
 
-asthData <- vrData[vrData$Scenario=="Asthma",]
-dkaData <- vrData[vrData$Scenario=="DKA",]
-pneuData <- vrData[vrData$Scenario=="Pneumonia",]
-seizData <- vrData[vrData$Scenario=="Seizure",]
+ids <- unique(vrCompleteData$ParticipantID)
+distTable <- data.frame(ids)
+for (n in 1:nrow(distTable))
+{
+  id <- distTable$ids[n]
+  # History
+  vectors <- str_split(vrCompleteData[vrCompleteData$ParticipantID==id,]$historyActionsVector,"\n")
+  vectors <- rbind(as.numeric(vectors[[1]]),as.numeric(vectors[[2]]))
+  distTable$infoSeekingDistanceHistory[n] <- vectors  %>% proxy::dist(method = "Hamman")
+  
+  # Physical Exams
+  vectors <- str_split(vrCompleteData[vrCompleteData$ParticipantID==id,]$examsActionsVector,"\n")
+  vectors <- rbind(as.numeric(vectors[[1]]),as.numeric(vectors[[2]]))
+  distTable$infoSeekingDistanceExams[n] <- vectors  %>% proxy::dist(method = "Hamman")
+  
+  # Testing
+  vectors <- str_split(vrCompleteData[vrCompleteData$ParticipantID==id,]$testingActionsVector,"\n")
+  vectors <- rbind(as.numeric(vectors[[1]]),as.numeric(vectors[[2]]))
+  distTable$infoSeekingDistanceTesting[n] <- vectors  %>% proxy::dist(method = "Hamman")
 
-corrs <- c(cor.test(asthData$t1numOfDiagnoses,asthData$filteredActions)$estimate,
-           cor.test(dkaData$t1numOfDiagnoses,dkaData$filteredActions)$estimate,
-           cor.test(pneuData$t1numOfDiagnoses,pneuData$filteredActions)$estimate,
-           cor.test(seizData$t1numOfDiagnoses,seizData$filteredActions)$estimate)
+}
 
-corrs
+distTable$meanDistanceAllInfo <- rowMeans(distTable[2:4])
+hist(distTable$meanDistanceAllInfo)
 
-mixedModel <- lmer(filteredActions ~ t1Confidence + OMSScore + Scenario + (1|ParticipantID),data=vrData)
-summary(mixedModel)
+distTableScens <- data.frame(scens)
+for (scen in scens)
+{
+  n <- match(scen,scens)
+  
+  vectors <- str_split(vrData[vrData$Scenario==scen,]$historyActionsVector,"\n")
+  numVector <- c()
+  for (v in 1:length(vectors))
+  {
+      numVector <- rbind(numVector,as.numeric(vectors[[v]]))
+  }
+  distTableScens$infoSeekingDistanceHistory[n] <- mean(numVector  %>% proxy::dist(method = "Hamman")%>% as.matrix)
+  
+    # Physical Exams
+  vectors <- str_split(vrData[vrData$Scenario==scen,]$examsActionsVector,"\n")
+  numVector <- c()
+  for (v in 1:length(vectors))
+  {
+      numVector <- rbind(numVector,as.numeric(vectors[[v]]))
+  }
+  distTableScens$infoSeekingDistanceExams[n] <- mean(vectors  %>% proxy::dist(method = "Dice") %>% as.matrix)
+  
+  # Testing
+  vectors <- str_split(vrData[vrData$Scenario==scen,]$testingActionsVector,"\n")
+  numVector <- c()
+  for (v in 1:length(vectors))
+  {
+      numVector <- rbind(numVector,as.numeric(vectors[[v]]))
+  }
+  distTableScens$infoSeekingDistanceTesting[n] <- mean(vectors  %>% proxy::dist(method = "Dice") %>% as.matrix)
+}
+
+```
+
+## Low and High Number of Diagnoses
+
+### Confidence
+
+```{r, warning=FALSE, message=FALSE}
+
+hist(vrData$t1numOfDiagnoses)
+
+# If diagnoses are less than 4, they are considered a 'low' number
+# This roughly splits observations into equally sized groups
+vrData$numOfDiagnosesLabel <- ifelse(vrData$t1numOfDiagnoses<4,"low","high")
+
+lowDiags <- vrData[vrData$numOfDiagnosesLabel=="low",]$confidenceChange
+highDiags <- vrData[vrData$numOfDiagnosesLabel=="high",]$confidenceChange
+
+se <- c(sd(lowDiags,na.rm=T)/sqrt(length(lowDiags)),
+        sd(lowDiags,na.rm=T)/sqrt(length(highDiags)))
+xb <- c("Low Num. of Diagnoses (<4)","High Num. of Diagnoses")
+yb <- c(mean(lowDiags,na.rm=T),mean(highDiags,na.rm=T))
+df <- data.frame("DiagnosticBreadth" = xb, "MeanConfidence"= yb)
+inf <- ggplot(df) +
+  geom_bar( aes(x=DiagnosticBreadth, y=MeanConfidence), colour="black", stat="identity", fill=confidenceColour, alpha=0.5) +
+  geom_errorbar( aes(x=DiagnosticBreadth, y=MeanConfidence, ymin=MeanConfidence-se, ymax=MeanConfidence+se), colour="orange", alpha=0.6, size=1.1, width = 0.4) + 
+  scale_x_discrete(limits = xb) +
+  theme_classic()
+
+print(inf +
+        ggtitle("Confidence by Diagnoses") +
+        labs(x = "Num of Diagnoses", y = "Change in Confidence (T2-T1)")) 
+
+print(t.test(lowDiags,highDiags))
+
+
+```
+
+### Information Seeking
+
+```{r, warning=FALSE, message=FALSE}
+
+hist(vrData$filteredActions)
+
+lowDiags <- vrData[vrData$numOfDiagnosesLabel=="low",]$filteredActions
+highDiags <- vrData[vrData$numOfDiagnosesLabel=="high",]$filteredActions
+
+se <- c(sd(lowDiags,na.rm=T)/sqrt(length(lowDiags)),
+        sd(lowDiags,na.rm=T)/sqrt(length(highDiags)))
+xb <- c("Low Num. of Diagnoses (<4)","High Num. of Diagnoses")
+yb <- c(mean(lowDiags,na.rm=T),mean(highDiags,na.rm=T))
+df <- data.frame("DiagnosticBreadth" = xb, "InformationSeeking"= yb)
+inf <- ggplot(df) +
+  geom_bar( aes(x=DiagnosticBreadth, y=InformationSeeking), colour="black", stat="identity", fill=infoSeekingColour, alpha=0.5) +
+  geom_errorbar( aes(x=DiagnosticBreadth, y=InformationSeeking, ymin=InformationSeeking-se, ymax=InformationSeeking+se), colour="orange", alpha=0.6, size=1.1, width = 0.4) + 
+  theme_classic()
+
+print(inf +
+        ggtitle("Information Seeking by Diagnoses") +
+        labs(x = "Num of Diagnoses", y = "Information Seeking")) 
+
+print(t.test(lowDiags,highDiags))
+
+```
+
+## Linear Modelling
+
+```{r, warning=FALSE, message=FALSE}
+
+hist(vrData$diagnosticChange)
+
+model <- lmerTest::lmer(infoVal ~ t1Confidence + Scenario + (1 | ParticipantID), data=vrData)
+summary(model)
+
+
+summary(lm(t1numOfDiagnoses ~ orderNum, data=vrData))
+
+
+ctrl <- trainControl(method = "LOOCV", number = 1000, savePredictions = TRUE)
+
+
+```
+
+## Completed Participants Table
+
+```{r, warning=FALSE, message=FALSE}
+
+compTable <- vrCompleteData %>%
+  group_by(ParticipantID) %>%
+  summarise(infoVal = mean(infoVal),
+            diagChange = mean(diagnosticChange),
+            filteredActions = mean(filteredActions),
+            initialConfidence = mean(t1Confidence),
+            initialDiagnoses = mean(t1numOfDiagnoses),
+            confidenceChange = mean(confidenceChange)) %>%
+  ungroup()
+
+colnames(distTable) <- "ParticipantID"
+compTable <- merge(compTable, distTable, by = "ParticipantID")
+colnames(compTable) <- c("ID", "InformationValue","DiagnosticChange","InformationAmount","InitialConfidence","InitialDiagnoses","ConfidenceChange","HistoryVariance","ExamVariance","TestingVariance","InformationVariance")
+
+print(compTable)
+
+#########
 
 ```

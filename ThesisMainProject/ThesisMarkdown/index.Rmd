@@ -27,7 +27,7 @@ university-logo-width: 5cm
 submitted-text: A thesis submitted for the degree of
 degree: Doctor of Philosophy
 degreedate: Michaelmas 2024
-dedication: For my family
+dedication: For my family, paatis and thathas
 acknowledgements: |
   `r paste(readLines("front-and-back-matter/_acknowledgements.Rmd"), collapse = '\n  ')`
 show-acknowledgements-in-toc: false
@@ -42,7 +42,7 @@ abbreviations: |
 #######################
 ## bibliography path ##
 #######################
-bibliography: [bibliography/references.bib, bibliography/additional-references.bib]
+bibliography: [bibliography/MainThesisRefs.bib]
 
 ########################
 ## PDF layout options ###
@@ -193,15 +193,12 @@ always_allow_html: true #this allows html stuff in word (.docx) output
 source('scripts_and_filters/install_packages_if_missing.R')
 ```
 
-```{r create_chunk_options, include=FALSE, eval=knitr::is_latex_output()}
-source('scripts_and_filters/create_chunk_options.R')
-```
-
 
 <!--
 Set up dataset for Study 1 Analysis
 -->
 ```{r AggregateData1, include=FALSE, eval=knitr::is_latex_output()}
+df <- as.data.frame(read.csv("./study1.csv",header=TRUE))
 source('scripts_and_filters/Study1/AggregateData.R')
 ```
 
@@ -209,9 +206,75 @@ source('scripts_and_filters/Study1/AggregateData.R')
 Set up dataset for Study 2 Analysis
 -->
 ```{r AggregateData2, include=FALSE, eval=knitr::is_latex_output()}
-source('scripts_and_filters/Study2/AggregateData.R')
+TAData <- as.data.frame(read.csv("./study2.csv",header=TRUE))
+
+###### Info Seeking Variance and Value
+
+infoSeekingMatrixTA <- data.frame()
+studentInfoDf <- as.data.frame(read.csv("./studentInfoDf.csv",row.names = 1,header=TRUE))
+
+for (p in 1:nrow(TAData))
+{
+  infoVector <- TAData$reqTestArray[p]
+  infoVector <- str_split(infoVector,", ")[[1]]
+  infoVector <- as.numeric(infoVector)
+  condition <- TAData$Condition[p]
+  
+  infoValues <- studentInfoDf[rownames(studentInfoDf) == condition,]
+
+  valueVector <- infoVector
+  # Iterate through each element in infoVector
+  for (i in 1:length(valueVector)) {
+   # Check if the current element is 1
+    if (valueVector[i] == 1) {
+      # If it is, replace it with the corresponding value from infoValues
+      valueVector[i] <- as.double(infoValues[i])
+    }
+  }
+  
+  TAData$infoValue[p] <- sum(valueVector)
+  
+  infoSeekingMatrixTA <- rbind(infoSeekingMatrixTA, infoVector)
+  rownames(infoSeekingMatrixTA)[p] <- paste(TAData$ID[p],
+                                            "-OverallStrat",
+                                            TAData$OverallStrat[p],
+                                            "-CaseDominantStrat",
+                                            TAData$caseDominantStrat[p],
+                                            "-usingCaseDominantStrat",
+                                            TAData$usingCaseDominantStrat[p],
+                                            "-matchingIndividualDominantStrat",
+                                            TAData$matchingIndividualDominantStrat[p],
+                                            "-",
+                                            TAData$Condition[p],
+                                            "-Correct",
+                                            TAData$Correct[p],
+                                            sep="")
+  
+  
+  
+}
+
+colnames(infoSeekingMatrixTA) <- c(1:29)
+infoSeekingMatrixTA$Condition <- TAData$Condition
+infoSeekingMatrixTA$ID <- TAData$ID
+infoSeekingMatrixTA$Correct <- TAData$Correct
+infoSeekingMatrixTA$Strat <- TAData$OverallStrat
+infoSeekingMatrixTA$caseDominantStrat <- TAData$caseDominantStrat
+infoSeekingMatrixTA$usingCaseDominantStrat <- TAData$usingCaseDominantStrat
+infoSeekingMatrixTA$matchingIndividualDominantStrat <- TAData$matchingIndividualDominantStrat
+
+distancesTA <- infoSeekingMatrixTA[,1:29] %>% proxy::dist(method = "Dice") %>% as.matrix()
+colnames(distancesTA) <- rownames(distancesTA)
+
 ```
 
+```{r AggregateData3, include=FALSE, eval=knitr::is_latex_output()}
+vrData <- as.data.frame(read.csv("./study3.csv",header=TRUE))
+```
+
+```{r create_chunk_options, include=FALSE, eval=knitr::is_latex_output()}
+source('scripts_and_filters/create_chunk_options.R')
+```
 
 <!--
 Include the create_chunk_options chunk above at the top of your index.Rmd file

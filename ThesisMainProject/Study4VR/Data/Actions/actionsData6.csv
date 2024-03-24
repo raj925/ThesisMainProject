@@ -1225,64 +1225,64 @@ SESSION START,NAME,SCENARIO,CURRENT SCENARIO VERSION,SCENARIO VERSION PLAYED,SES
 14/02/2024 15:09,Paeds Account 27,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388750,1048,repeat blood pressure
 14/02/2024 15:09,Paeds Account 27,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388750,1058,ask for tips
 14/02/2024 15:10,Paeds Account 27,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388750,1092,leave scenario
-14/02/2024 14:52,Paeds Account 27,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,0,start scenario
-14/02/2024 14:53,Paeds Account 27,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,49,introduce yourself
-14/02/2024 14:53,Paeds Account 27,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,79,presenting complaint
-14/02/2024 14:53,Paeds Account 27,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,93,history of presenting complaint
-14/02/2024 14:54,Paeds Account 27,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,100,time triggered seizure
-14/02/2024 14:54,Paeds Account 27,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,138,check for hazards
-14/02/2024 14:54,Paeds Account 27,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,155,look in patient's mouth with a tongue depressor
-14/02/2024 14:55,Paeds Account 27,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,179,update carer
-14/02/2024 14:55,Paeds Account 27,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,189,ask for tips
-14/02/2024 14:56,Paeds Account 27,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,226,non-rebreather mask (15 l/min)
-14/02/2024 14:56,Paeds Account 27,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,236,past medical history
-14/02/2024 14:56,Paeds Account 27,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,245,check capillary blood glucose
-14/02/2024 14:56,Paeds Account 27,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,252,measure blood pressure
-14/02/2024 14:56,Paeds Account 27,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,267,check temperature (tympanic)
-14/02/2024 14:56,Paeds Account 27,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,276,insert iv access and take bloods
-14/02/2024 14:57,Paeds Account 27,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,283,check capillary blood glucose
-14/02/2024 14:57,Paeds Account 27,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,321,paediatric seizure guidelines
-14/02/2024 14:58,Paeds Account 27,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,380,end of time triggered seizure
-14/02/2024 14:59,Paeds Account 27,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,409,situation option 1
-14/02/2024 14:59,Paeds Account 27,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,409,situation option 2
-14/02/2024 14:59,Paeds Account 27,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,409,situation option 4
-14/02/2024 14:59,Paeds Account 27,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,409,background option 1
-14/02/2024 14:59,Paeds Account 27,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,409,background option 2
-14/02/2024 14:59,Paeds Account 27,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,409,background option 4
-14/02/2024 14:59,Paeds Account 27,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,409,assessment option 5
-14/02/2024 14:59,Paeds Account 27,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,409,recommendation option 4
-14/02/2024 14:59,Paeds Account 27,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,444,check temperature (tympanic)
-14/02/2024 15:00,Paeds Account 27,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,463,insert iv access and take bloods
-14/02/2024 15:00,Paeds Account 27,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,484,how are you feeling?
-14/02/2024 15:00,Paeds Account 27,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,491,measure oxygen saturations & heart rate
-14/02/2024 15:00,Paeds Account 27,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,511,allergies
-14/02/2024 15:01,Paeds Account 27,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,521,family history
-14/02/2024 15:01,Paeds Account 27,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,553,ask about pain
-14/02/2024 15:02,Paeds Account 27,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,599,ask for tips
-14/02/2024 15:02,Paeds Account 27,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,620,observe respiratory rate and signs of respiratory distress
-14/02/2024 15:03,Paeds Account 27,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,659,check upper body
-14/02/2024 15:03,Paeds Account 27,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,691,check lower body
-14/02/2024 15:05,Paeds Account 27,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,757,check weight & height
-14/02/2024 15:06,Paeds Account 27,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,817,repeat blood pressure
-14/02/2024 15:06,Paeds Account 27,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,843,examine for lymph nodes
-14/02/2024 15:06,Paeds Account 27,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,858,examine throat
-14/02/2024 15:07,Paeds Account 27,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,918,update on clinical plan
-14/02/2024 15:08,Paeds Account 27,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,964,ask for tips
-14/02/2024 15:09,Paeds Account 27,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,1014,normal
-14/02/2024 15:09,Paeds Account 27,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,1014,20 - 30 breaths per min
-14/02/2024 15:09,Paeds Account 27,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,1014,mild / none
-14/02/2024 15:09,Paeds Account 27,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,1014,sp o2 <95% in air and/or receiving oxygen
-14/02/2024 15:09,Paeds Account 27,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,1014,70 - 120 bpm
-14/02/2024 15:09,Paeds Account 27,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,1014,yes
-14/02/2024 15:09,Paeds Account 27,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,1028,paediatric early warning score (pews) escalation chart
-14/02/2024 15:09,Paeds Account 27,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,1038,update on clinical plan
-14/02/2024 15:10,Paeds Account 27,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,1060,paediatric anaphylaxis guidelines
-14/02/2024 15:10,Paeds Account 27,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,1070,paediatric resuscitation (apls) guidelines
-14/02/2024 15:10,Paeds Account 27,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,1089,call on-call doctor
-14/02/2024 15:11,Paeds Account 27,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,1129,check capillary blood glucose
-14/02/2024 15:11,Paeds Account 27,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,1150,repeat blood pressure
-14/02/2024 15:12,Paeds Account 27,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,1178,how are you feeling?
-14/02/2024 15:12,Paeds Account 27,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,1198,update carer
+14/02/2024 14:52,Paeds Account 29,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,0,start scenario
+14/02/2024 14:53,Paeds Account 29,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,49,introduce yourself
+14/02/2024 14:53,Paeds Account 29,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,79,presenting complaint
+14/02/2024 14:53,Paeds Account 29,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,93,history of presenting complaint
+14/02/2024 14:54,Paeds Account 29,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,100,time triggered seizure
+14/02/2024 14:54,Paeds Account 29,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,138,check for hazards
+14/02/2024 14:54,Paeds Account 29,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,155,look in patient's mouth with a tongue depressor
+14/02/2024 14:55,Paeds Account 29,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,179,update carer
+14/02/2024 14:55,Paeds Account 29,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,189,ask for tips
+14/02/2024 14:56,Paeds Account 29,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,226,non-rebreather mask (15 l/min)
+14/02/2024 14:56,Paeds Account 29,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,236,past medical history
+14/02/2024 14:56,Paeds Account 29,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,245,check capillary blood glucose
+14/02/2024 14:56,Paeds Account 29,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,252,measure blood pressure
+14/02/2024 14:56,Paeds Account 29,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,267,check temperature (tympanic)
+14/02/2024 14:56,Paeds Account 29,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,276,insert iv access and take bloods
+14/02/2024 14:57,Paeds Account 29,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,283,check capillary blood glucose
+14/02/2024 14:57,Paeds Account 29,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,321,paediatric seizure guidelines
+14/02/2024 14:58,Paeds Account 29,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,380,end of time triggered seizure
+14/02/2024 14:59,Paeds Account 29,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,409,situation option 1
+14/02/2024 14:59,Paeds Account 29,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,409,situation option 2
+14/02/2024 14:59,Paeds Account 29,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,409,situation option 4
+14/02/2024 14:59,Paeds Account 29,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,409,background option 1
+14/02/2024 14:59,Paeds Account 29,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,409,background option 2
+14/02/2024 14:59,Paeds Account 29,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,409,background option 4
+14/02/2024 14:59,Paeds Account 29,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,409,assessment option 5
+14/02/2024 14:59,Paeds Account 29,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,409,recommendation option 4
+14/02/2024 14:59,Paeds Account 29,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,444,check temperature (tympanic)
+14/02/2024 15:00,Paeds Account 29,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,463,insert iv access and take bloods
+14/02/2024 15:00,Paeds Account 29,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,484,how are you feeling?
+14/02/2024 15:00,Paeds Account 29,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,491,measure oxygen saturations & heart rate
+14/02/2024 15:00,Paeds Account 29,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,511,allergies
+14/02/2024 15:01,Paeds Account 29,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,521,family history
+14/02/2024 15:01,Paeds Account 29,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,553,ask about pain
+14/02/2024 15:02,Paeds Account 29,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,599,ask for tips
+14/02/2024 15:02,Paeds Account 29,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,620,observe respiratory rate and signs of respiratory distress
+14/02/2024 15:03,Paeds Account 29,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,659,check upper body
+14/02/2024 15:03,Paeds Account 29,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,691,check lower body
+14/02/2024 15:05,Paeds Account 29,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,757,check weight & height
+14/02/2024 15:06,Paeds Account 29,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,817,repeat blood pressure
+14/02/2024 15:06,Paeds Account 29,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,843,examine for lymph nodes
+14/02/2024 15:06,Paeds Account 29,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,858,examine throat
+14/02/2024 15:07,Paeds Account 29,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,918,update on clinical plan
+14/02/2024 15:08,Paeds Account 29,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,964,ask for tips
+14/02/2024 15:09,Paeds Account 29,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,1014,normal
+14/02/2024 15:09,Paeds Account 29,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,1014,20 - 30 breaths per min
+14/02/2024 15:09,Paeds Account 29,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,1014,mild / none
+14/02/2024 15:09,Paeds Account 29,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,1014,sp o2 <95% in air and/or receiving oxygen
+14/02/2024 15:09,Paeds Account 29,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,1014,70 - 120 bpm
+14/02/2024 15:09,Paeds Account 29,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,1014,yes
+14/02/2024 15:09,Paeds Account 29,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,1028,paediatric early warning score (pews) escalation chart
+14/02/2024 15:09,Paeds Account 29,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,1038,update on clinical plan
+14/02/2024 15:10,Paeds Account 29,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,1060,paediatric anaphylaxis guidelines
+14/02/2024 15:10,Paeds Account 29,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,1070,paediatric resuscitation (apls) guidelines
+14/02/2024 15:10,Paeds Account 29,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,1089,call on-call doctor
+14/02/2024 15:11,Paeds Account 29,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,1129,check capillary blood glucose
+14/02/2024 15:11,Paeds Account 29,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,1150,repeat blood pressure
+14/02/2024 15:12,Paeds Account 29,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,1178,how are you feeling?
+14/02/2024 15:12,Paeds Account 29,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388751,1198,update carer
 14/02/2024 15:17,Paeds Account 25,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388766,0,start scenario
 14/02/2024 15:18,Paeds Account 25,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388766,42,introduce yourself
 14/02/2024 15:18,Paeds Account 25,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388766,57,history of presenting complaint
@@ -1326,77 +1326,77 @@ SESSION START,NAME,SCENARIO,CURRENT SCENARIO VERSION,SCENARIO VERSION PLAYED,SES
 14/02/2024 15:31,Paeds Account 25,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388766,816,call on-call doctor
 14/02/2024 15:32,Paeds Account 25,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388766,848,check capillary blood glucose
 14/02/2024 15:33,Paeds Account 25,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,388766,954,leave scenario
-14/02/2024 15:21,Paeds Account 25,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,0,start scenario
-14/02/2024 15:22,Paeds Account 25,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,45,introduce yourself
-14/02/2024 15:22,Paeds Account 25,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,51,presenting complaint
-14/02/2024 15:22,Paeds Account 25,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,52,wash hands and apply ppe
-14/02/2024 15:22,Paeds Account 25,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,70,ask consent to examine sam
-14/02/2024 15:22,Paeds Account 25,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,75,history of presenting complaint
-14/02/2024 15:23,Paeds Account 25,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,111,ask about pain
-14/02/2024 15:23,Paeds Account 25,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,116,ask about fever
-14/02/2024 15:23,Paeds Account 25,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,119,ask about general activity level
-14/02/2024 15:23,Paeds Account 25,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,138,presenting complaint
-14/02/2024 15:24,Paeds Account 25,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,150,measure blood pressure
-14/02/2024 15:24,Paeds Account 25,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,154,check capillary blood glucose
-14/02/2024 15:24,Paeds Account 25,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,156,measure oxygen saturations & heart rate
-14/02/2024 15:25,Paeds Account 25,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,204,check capillary blood glucose
-14/02/2024 15:25,Paeds Account 25,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,216,observe airway and talk to patient
-14/02/2024 15:25,Paeds Account 25,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,238,non-rebreather mask (15 l/min)
-14/02/2024 15:25,Paeds Account 25,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,244,provide reassurance
-14/02/2024 15:25,Paeds Account 25,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,250,check weight & height
-14/02/2024 15:26,Paeds Account 25,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,267,observe respiratory rate and signs of respiratory distress
-14/02/2024 15:26,Paeds Account 25,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,299,auscultate lungs
-14/02/2024 15:27,Paeds Account 25,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,351,provide reassurance
-14/02/2024 15:28,Paeds Account 25,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,380,allergies
-14/02/2024 15:28,Paeds Account 25,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,386,past medical history
-14/02/2024 15:28,Paeds Account 25,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,419,past surgical history
-14/02/2024 15:28,Paeds Account 25,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,425,prescribed medications
-14/02/2024 15:29,Paeds Account 25,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,441,do you have any questions?
-14/02/2024 15:29,Paeds Account 25,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,452,normal
-14/02/2024 15:29,Paeds Account 25,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,452,> 30 breaths per min
-14/02/2024 15:29,Paeds Account 25,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,452,mild / none
-14/02/2024 15:29,Paeds Account 25,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,452,sp o2 <95% in air and/or receiving oxygen
-14/02/2024 15:29,Paeds Account 25,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,452,> 120 bpm
-14/02/2024 15:29,Paeds Account 25,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,452,yes
-14/02/2024 15:29,Paeds Account 25,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,469,take pulse (central)
-14/02/2024 15:30,Paeds Account 25,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,499,auscultate heart sounds
-14/02/2024 15:30,Paeds Account 25,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,526,capillary blood gas
-14/02/2024 15:30,Paeds Account 25,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,538,update on clinical plan
-14/02/2024 15:32,Paeds Account 25,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,650,situation option 1
-14/02/2024 15:32,Paeds Account 25,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,650,situation option 2
-14/02/2024 15:32,Paeds Account 25,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,650,situation option 4
-14/02/2024 15:32,Paeds Account 25,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,650,background option 1
-14/02/2024 15:32,Paeds Account 25,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,650,background option 2
-14/02/2024 15:32,Paeds Account 25,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,650,background option 3
-14/02/2024 15:32,Paeds Account 25,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,650,assessment option 2
-14/02/2024 15:32,Paeds Account 25,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,650,assessment option 3
-14/02/2024 15:32,Paeds Account 25,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,650,assessment option 4
-14/02/2024 15:32,Paeds Account 25,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,650,assessment option 5
-14/02/2024 15:32,Paeds Account 25,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,650,recommendation option 2
-14/02/2024 15:32,Paeds Account 25,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,666,cbg result #1
-14/02/2024 15:32,Paeds Account 25,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,674,check temperature (tympanic)
-14/02/2024 15:32,Paeds Account 25,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,677,call on-call doctor
-14/02/2024 15:33,Paeds Account 25,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,707,insert iv access and take bloods
-14/02/2024 15:34,Paeds Account 25,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,761,fluid prescription chart
-14/02/2024 15:34,Paeds Account 25,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,765,fluid prescription chart
-14/02/2024 15:34,Paeds Account 25,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,773,20ml/kg 0.9% saline iv stat (max 500ml)
-14/02/2024 15:34,Paeds Account 25,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,796,family history
-14/02/2024 15:35,Paeds Account 25,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,804,parental smoking and pets
-14/02/2024 15:35,Paeds Account 25,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,815,cbg result #1
-14/02/2024 15:35,Paeds Account 25,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,831,repeat blood pressure
-14/02/2024 15:35,Paeds Account 25,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,832,repeat blood pressure
-14/02/2024 15:35,Paeds Account 25,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,833,repeat blood pressure
-14/02/2024 15:35,Paeds Account 25,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,833,repeat blood pressure
-14/02/2024 15:35,Paeds Account 25,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,833,repeat blood pressure
-14/02/2024 15:35,Paeds Account 25,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,833,repeat blood pressure
-14/02/2024 15:35,Paeds Account 25,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,834,repeat blood pressure
-14/02/2024 15:35,Paeds Account 25,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,840,check upper body
-14/02/2024 15:36,Paeds Account 25,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,871,call on-call doctor
-14/02/2024 15:36,Paeds Account 25,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,887,repeat blood pressure
-14/02/2024 15:36,Paeds Account 25,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,887,repeat blood pressure
-14/02/2024 15:36,Paeds Account 25,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,898,update on clinical plan
-14/02/2024 15:36,Paeds Account 25,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,900,ask for tips
-14/02/2024 15:37,Paeds Account 25,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,928,leave scenario
+14/02/2024 15:21,Paeds Account 28,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,0,start scenario
+14/02/2024 15:22,Paeds Account 28,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,45,introduce yourself
+14/02/2024 15:22,Paeds Account 28,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,51,presenting complaint
+14/02/2024 15:22,Paeds Account 28,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,52,wash hands and apply ppe
+14/02/2024 15:22,Paeds Account 28,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,70,ask consent to examine sam
+14/02/2024 15:22,Paeds Account 28,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,75,history of presenting complaint
+14/02/2024 15:23,Paeds Account 28,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,111,ask about pain
+14/02/2024 15:23,Paeds Account 28,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,116,ask about fever
+14/02/2024 15:23,Paeds Account 28,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,119,ask about general activity level
+14/02/2024 15:23,Paeds Account 28,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,138,presenting complaint
+14/02/2024 15:24,Paeds Account 28,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,150,measure blood pressure
+14/02/2024 15:24,Paeds Account 28,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,154,check capillary blood glucose
+14/02/2024 15:24,Paeds Account 28,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,156,measure oxygen saturations & heart rate
+14/02/2024 15:25,Paeds Account 28,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,204,check capillary blood glucose
+14/02/2024 15:25,Paeds Account 28,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,216,observe airway and talk to patient
+14/02/2024 15:25,Paeds Account 28,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,238,non-rebreather mask (15 l/min)
+14/02/2024 15:25,Paeds Account 28,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,244,provide reassurance
+14/02/2024 15:25,Paeds Account 28,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,250,check weight & height
+14/02/2024 15:26,Paeds Account 28,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,267,observe respiratory rate and signs of respiratory distress
+14/02/2024 15:26,Paeds Account 28,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,299,auscultate lungs
+14/02/2024 15:27,Paeds Account 28,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,351,provide reassurance
+14/02/2024 15:28,Paeds Account 28,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,380,allergies
+14/02/2024 15:28,Paeds Account 28,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,386,past medical history
+14/02/2024 15:28,Paeds Account 28,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,419,past surgical history
+14/02/2024 15:28,Paeds Account 28,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,425,prescribed medications
+14/02/2024 15:29,Paeds Account 28,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,441,do you have any questions?
+14/02/2024 15:29,Paeds Account 28,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,452,normal
+14/02/2024 15:29,Paeds Account 28,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,452,> 30 breaths per min
+14/02/2024 15:29,Paeds Account 28,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,452,mild / none
+14/02/2024 15:29,Paeds Account 28,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,452,sp o2 <95% in air and/or receiving oxygen
+14/02/2024 15:29,Paeds Account 28,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,452,> 120 bpm
+14/02/2024 15:29,Paeds Account 28,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,452,yes
+14/02/2024 15:29,Paeds Account 28,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,469,take pulse (central)
+14/02/2024 15:30,Paeds Account 28,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,499,auscultate heart sounds
+14/02/2024 15:30,Paeds Account 28,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,526,capillary blood gas
+14/02/2024 15:30,Paeds Account 28,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,538,update on clinical plan
+14/02/2024 15:32,Paeds Account 28,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,650,situation option 1
+14/02/2024 15:32,Paeds Account 28,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,650,situation option 2
+14/02/2024 15:32,Paeds Account 28,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,650,situation option 4
+14/02/2024 15:32,Paeds Account 28,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,650,background option 1
+14/02/2024 15:32,Paeds Account 28,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,650,background option 2
+14/02/2024 15:32,Paeds Account 28,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,650,background option 3
+14/02/2024 15:32,Paeds Account 28,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,650,assessment option 2
+14/02/2024 15:32,Paeds Account 28,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,650,assessment option 3
+14/02/2024 15:32,Paeds Account 28,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,650,assessment option 4
+14/02/2024 15:32,Paeds Account 28,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,650,assessment option 5
+14/02/2024 15:32,Paeds Account 28,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,650,recommendation option 2
+14/02/2024 15:32,Paeds Account 28,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,666,cbg result #1
+14/02/2024 15:32,Paeds Account 28,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,674,check temperature (tympanic)
+14/02/2024 15:32,Paeds Account 28,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,677,call on-call doctor
+14/02/2024 15:33,Paeds Account 28,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,707,insert iv access and take bloods
+14/02/2024 15:34,Paeds Account 28,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,761,fluid prescription chart
+14/02/2024 15:34,Paeds Account 28,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,765,fluid prescription chart
+14/02/2024 15:34,Paeds Account 28,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,773,20ml/kg 0.9% saline iv stat (max 500ml)
+14/02/2024 15:34,Paeds Account 28,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,796,family history
+14/02/2024 15:35,Paeds Account 28,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,804,parental smoking and pets
+14/02/2024 15:35,Paeds Account 28,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,815,cbg result #1
+14/02/2024 15:35,Paeds Account 28,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,831,repeat blood pressure
+14/02/2024 15:35,Paeds Account 28,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,832,repeat blood pressure
+14/02/2024 15:35,Paeds Account 28,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,833,repeat blood pressure
+14/02/2024 15:35,Paeds Account 28,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,833,repeat blood pressure
+14/02/2024 15:35,Paeds Account 28,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,833,repeat blood pressure
+14/02/2024 15:35,Paeds Account 28,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,833,repeat blood pressure
+14/02/2024 15:35,Paeds Account 28,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,834,repeat blood pressure
+14/02/2024 15:35,Paeds Account 28,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,840,check upper body
+14/02/2024 15:36,Paeds Account 28,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,871,call on-call doctor
+14/02/2024 15:36,Paeds Account 28,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,887,repeat blood pressure
+14/02/2024 15:36,Paeds Account 28,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,887,repeat blood pressure
+14/02/2024 15:36,Paeds Account 28,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,898,update on clinical plan
+14/02/2024 15:36,Paeds Account 28,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,900,ask for tips
+14/02/2024 15:37,Paeds Account 28,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388769,928,leave scenario
 14/02/2024 15:33,Paeds Account 23,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388775,0,start scenario
 14/02/2024 15:34,Paeds Account 23,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388775,48,introduce yourself
 14/02/2024 15:34,Paeds Account 23,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,388775,59,ask consent to examine sam

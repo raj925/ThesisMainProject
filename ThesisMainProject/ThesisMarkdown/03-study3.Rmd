@@ -23,26 +23,24 @@ accuracyColour <- "black"
 resolutionColour <- "yellow"
 ```
 
-# Study 3 - Think-Aloud Study on Diagnostic Decisions {.unnumbered}
+```{r completedata, echo=FALSE}
+# Get data where participants have completed two scenarios
+
+vrCompleteData <- vrData[vrData$ParticipantID %in% repeatIDs,]
+vrCompleteData <- vrCompleteData[!is.na(vrCompleteData$t2Confidence),]
+ids <- vrCompleteData$ParticipantID
+# Create a frequency table
+freq_table <- table(ids)
+# Identify elements with more than one occurrence
+repeatIDs <- names(freq_table[freq_table > 1])
+vrCompleteData <-  vrCompleteData[vrCompleteData$ParticipantID %in% repeatIDs,]
+nFullPpts <- nrow(vrCompleteData)/2
+```
+
+# Study 3 - VR Study on Paediatric Diagnostic Scenarios {.unnumbered}
 
 ```{=tex}
 \adjustmtc
 \markboth{Introduction}{}
 ```
 <!-- For PDF output, include these two LaTeX commands after unnumbered chapter headings, otherwise the mini table of contents and the running header will show the previous chapter -->
-
-The main results from Study 1 were better diagnosis on our task was characterised by more standardised information seeking and that participants were increasing the number of differentials they were considering with more information. Both of these results were surprising and hence it had to be considered that the results were due to the nature of our specific task. When creating a task that emulates diagnosis, we in a sense conceptualise what diagnosis looks like in a fairly static manner, when really diagnosis is a more fluid and nebulous structure in medicine. For example, a doctor’s approach to a patient is not always going to fit within the idealised structure of taking a patient history, conducting physical examinations and then requesting tests in this order. There are environmental or even patient factors that necessitate information being processed out of order, as well as different diagnostic approaches by doctors. This taken together brings up the question of whether the observed results on reduced variance in information seeking being associated with accuracy was a result of our strict task structure. In addition, it was indeed striking that participants in our study rarely removed differentials from their list of suspected conditions despite having the ability to do so. This lack of removing differentials was what drove our observed effect of the number of differentials increasing with more information. We wanted to hence see if signs of these results would be evident in the thought process of medical students. Are doctors seeking information to confirm their existing set of differentials, to rule out differentials or to expand their set of considered possibilities? And are these different approaches interleaving or are they more dependent on individual diagnostic decision making styles? In order to provide more context to the results from study 1, we ran the same study (see that section for more information on the experimental procedure). However, we removed the screen where participants record their list of differentials. Instead, the experiment was run in-person so that participants could think aloud as they were doing the task. Participants were given the following instructions:
-
-“Whilst you are doing the task, you will be asked to think aloud. This means that you verbalise what you are thinking about, especially how you interpret the information you receive and what conditions or diagnoses you are considering or are concerned about for each patient case. If you have nothing to say or nothing on your mind, there’s no need to say anything but do say whatever is on your mind once it pops up. If you are unsure about anything you see or do not know about what something means, you will not receive any help but verbalise when you are unsure about anything during the task. Please make sure that you speak clearly ‘to the room’.”
-
-The researcher in the room was to remain mostly silent, aside from asking the participant “can you tell me what you are thinking?” if there is a period of long silence and asking the participant “can you tell me more?” if the participant says something vague but interesting. The audio of the participant’s verbalisations was recorded and then transcribed. The screen of the experimental interface was also recorded, such that the audio could be corresponded to specific actions within the task. 
-
-The transcripts were coded for the following utterances:
-
-Differential evaluation: any time that the participant mentions a condition (or set of conditions) that they are considering, ruling out or updating their likelihood of for a patient.
-Information Seeking Strategies: any time the participant expresses why they may or may not request a particular piece of information in relation to ruling out or confirming a condition. 
-Uncertainty Expression: any time the participant expresses being unsure about their diagnosis or surprised by a piece of information (if it doesn’t fit their existing account of the patient’s condition).
-
-Although we do not record differentials in the same way as in Study 1 (in a list with corresponding likelihood and severity ratings), we do obtain the other variables from Study 1. Namely, we record confidence at each stage of information seeking and data around the information sought by participants. Due to the richness of the qualitative data (and time required for transcription and coding), we recruited a smaller sample of participants (N = 10). Participants had to be 5th or 6th year medical students based in Oxford in order to participate. 
-
-

@@ -1,13 +1,14 @@
 
-dataFolder <- "../Study1DiagData/data/JSONs"
-## 1. Load data from JSON files##
-## 2. Create full df with stage-wise data##
-## 3. Create aggregate dataframe with participant-wise data##
-## 4. Create dataframe for case-wise data##
-## 5. Create matrix for information seeking data by case##
-df <- data.frame(matrix(ncol = 0, nrow = 1638))
+###############################################
+
+dfPath <- "./study1.csv"
+df <- read.csv(dfPath, header=TRUE, sep=",")
+
+# Get student ids
+studentIDs <- unique(df$participantID)
+studentsPpts <- length(studentIDs)
+
 infoStages <- c("Patient History", "Physical Exmination", "Testing")
-ids <- list.dirs(dataFolder,recursive = FALSE) 
 experiencedIDs <- c("qj4vcw","sz5k4r","kqzd96","s8c6kp","j1bwlt", "jhym2l")
 
 cases <-c("UC", "GBS", "TA", "TTP", "AD", "MTB")
@@ -25,151 +26,6 @@ accuracyMeasure <- "CorrectLikelihood" #HighestLikelihood, CorrectLikelihood, Di
 classifyVar <- "accuracy" #accuracy or confidence
 
 participantIDS <- c()
-
-################################################
-# Main df for stage wise data from JSON files
-
-count <- 0
-for (id in ids)
-{
-  participantID <- str_split(id, "/", simplify = TRUE)
-  participantID <- participantID[length(participantID)]
-  participantIDS <- c(participantIDS, participantID)
-  files <- list.files(paste(dataFolder, "/", participantID, sep="")) 
-  file <- files[1]
-  filePath <- paste(dataFolder, "/", participantID, "/", file, sep="")
-  #processFile(filePath)
-  # Give the input file name to the function.
-  myData <- fromJSON(file=filePath)
-  trials <- myData$processedData$trials
-  
-  infoSet <- myData$rawData$scenarioObject[[1]]
-  totalInfo <- length(infoSet$`Patient History`) + length(infoSet$`Physical Examination`) + length(infoSet$Testing)
-  testSet1 <- names(infoSet$`Patient History`)
-  testSet2 <- names(infoSet$`Physical Examination`)
-  testSet3 <- names(infoSet$Testing)
-  concernLabels <- c("Low", "Medium", "High", "Emergency")
-  
-  for (x in 1:length(trials))
-  {
-    row <- x + count
-    trialSelect <- trials[x]
-    trialSelect <- trialSelect[[1]]
-    df$participantID[row] <- participantID
-    df$trialNum[row] <- trialSelect$trial
-    df$stage[row] <- trialSelect$subtrial
-    df$stageName[row] <- infoStages[trialSelect$subtrial]
-    df$trueCondition[row] <- str_replace((toupper(trialSelect$trueCondition)),"-","")
-    df$requestedTests[row] <- trialSelect$numOfRequestedTests
-    
-    currentTests <- c()
-    possibleTests <- 0
-    if (trialSelect$subtrial == 1)
-    {
-      currentTests <- testSet1
-      possibleTests <- length(testSet1)
-      df$likelihoodChange[row] <- 0
-    }
-    if (trialSelect$subtrial == 2)
-    {
-      currentTests <- testSet2
-      possibleTests <- length(testSet2)
-      previousTrialSelect <- trials[x-1]
-      previousTrialSelect <- previousTrialSelect[[1]]
-    }
-    if (trialSelect$subtrial == 3)
-    {
-      currentTests <- testSet3
-      possibleTests <- length(testSet3)
-    }
-    
-    df$uniqueTests[row] <- length(unique(trialSelect$requestedTestsText)) # this only captures unique across the subtrial NOT the trial
-    
-    df$pastTests[row] <- length(setdiff(trialSelect$requestedTestsText, currentTests))
-    df$currentTests[row] <- df$uniqueTests[row] - df$pastTests[row]
-    df$possibleTest[row] <- possibleTests
-    df$proportionOfInfo[row] <- df$currentTests[row]/possibleTests
-    df$testNames[row] <- toString(unique(trialSelect$requestedTestsText))
-    
-    df$numOfDifferentials[row] <- length(trialSelect$severities) 
-    df$confidence[row] <- trialSelect$confidence
-    if (is.null(trialSelect$diagnoses))
-    {
-      df$correctDiagnosis[row] <- toupper(trialSelect$trueCondition) %in% trialSelect$differentials
-    }
-    else
-    {
-      df$correctDiagnosis[row] <- toupper(trialSelect$trueCondition) %in% trialSelect$diagnoses
-    }
-    df$perceivedDifficulty[row] <- myData$rawData$difficulties[trialSelect$trial]
-    df$highestSeverity[row] <- max(trialSelect$severities)
-    df$hasHighSeverity[row] <- max(trialSelect$severities) > 2
-    df$highestLikelihood[row] <- max(trialSelect$likelihoods)
-    df$likelihoods[row] <- toString(trialSelect$likelihoods)
-    df$severities[row] <- toString(trialSelect$severities)
-    df$sevOfHighestLikelihood[row] <- trialSelect$severities[which.max(trialSelect$likelihoods)]
-    df$competingDifferentials[row] <- sum(trialSelect$likelihoods>4, na.rm = TRUE)
-    df$hasCompetingDifferentials[row] <- sum(trialSelect$likelihoods>4, na.rm = TRUE) > 2
-    df$treatmentPlan[row] <- trialSelect$treatmentPlan
-    df$infoSeekingTime[row] <- (trialSelect$totalInfoSeekingTime)/60000
-    
-    df$remoteDifferentials[row] <- sum(trialSelect$likelihoods<2, na.rm = TRUE)
-    df$nonRemoteDifferentials[row] <- sum(trialSelect$likelihoods>1, na.rm = TRUE)
-    
-  }
-  count <- count + length(trials)
-}
-
-# Get student ids
-studentIDs <- setdiff(participantIDS, experiencedIDs)
-studentsPpts <- length(studentIDs)
-
-###############################################
-
-#########
-# Add correctness labels from external file
-
-markedAccFile <- "../Study1DiagData/data/DifferentialsForAccuracy.csv"
-accValues <- read.csv(markedAccFile, header=TRUE, sep=",")
-for (x in 1:nrow(accValues))
-{
-  df$correct[x] <- as.integer(accValues$correct[x])
-  df$brierConfidence[x] <- ((df$confidence[x]/100) - df$correct[x])^2
-  liks<-strsplit(df$likelihoods[x], ", ")
-  liks <- liks[[1]]
-  sevs<-strsplit(df$severities[x], ", ")
-  sevs <- sevs[[1]]
-  if (df$numOfDifferentials[x] > 0)
-  {
-    if (df$correct[x] == 0)
-    {
-      df$differentialAccuracy[x] <- -1/df$numOfDifferentials[x]
-      df$correctDiagnosisIdx[x] <- 0
-      df$likelihoodOfCorrectDiagnosis[x] <- 0
-      df$sevOfCorrectDiagnosis[x] <- 0
-    }
-    if (df$correct[x] == 1)
-    {
-      df$differentialAccuracy[x] <- 1/df$numOfDifferentials[x]
-      df$correctDiagnosisIdx[x] <- as.integer(accValues$correct[x])
-      df$likelihoodOfCorrectDiagnosis[x] <- as.integer(liks[accValues[x,]$correctDiagnosisIdx])
-      df$sevOfCorrectDiagnosis[x] <- as.integer(sevs[accValues[x,]$correctDiagnosisIdx])+1
-    }
-    df$highestLikelihoodCorrect[x] <- accValues$highestLikelihoodCorrect[x]
-    if (df$highestLikelihoodCorrect[x] == 0)
-    {
-      df$highestLikelihoodCorrectValue[x] <- 0
-    }
-    else
-    {
-      df$highestLikelihoodCorrectValue[x] <- accValues$highestLikelihoodValue[x]
-    }
-  }
-  else
-  {
-    df$differentialAccuracy[x] <- 0
-  }
-}
 
 ################################################
 # Aggregate df for participant wise data
