@@ -78,26 +78,40 @@ if (usePCs)
   modelglm<-train(Group ~ PC1 + PC2 + PC3 + PC4 + PC5 + PC6 + PC7 + PC8, method = "glm", family = binomial(link=probit), data = classifierData, trControl = ctrl)
   prediglm<-predict(modelglm,type = "prob")[2]
   
-  modelrpart<-train(Group ~ PC1 + PC2 + PC3 + PC4 + PC5 + PC6 + PC7 + PC8, method = "rpart", data = classifierData, trControl = ctrl)
-  predirpart<-predict(modelrpart,type = "prob")[2]
 } else
 {
-  modelglm<-train(CaseDifficulty ~ T2 + T3 + T4 + T5 + T6 + T7 + T8 + T9 + T10 +
+  modelglm<-train(Group ~ T2 + T3 + T4 + T5 + T6 + T7 + T8 + T9 + T10 +
                     T11 + T12 + T13 + T14 + T15 + T16 + T17 +  T18 + T19 + T20 +
                     T21 + T22 + T23 + T24 + T25 + T26 + T27 + T28 + T29, method = "glm", family = binomial(link=probit), data = classifierData, trControl = ctrl)
   prediglm<-predict(modelglm,type = "prob")[2]
   
-  modelrpart<-train(CaseDifficulty ~ T2 + T3 + T4 + T5 + T6 + T7 + T8 + T9 + T10 +
-                      T11 + T12 + T13 + T14 + T15 + T16 + T17 +  T18 + T19 + T20 +
-                      T21 + T22 + T23 + T24 + T25 + T26 + T27 + T28 + T29, method = "rpart", data = classifierData, trControl = ctrl)
-  predirpart<-predict(modelrpart,type = "prob")[2]
 }
 
 
 thresh<-seq(0,1,0.001)
 # Plot all test results on one ROC curve
-rocPlot <- roc.plot(x=classifierData$Group=="1",pred=cbind(prediglm,predirpart),legend = T,
-                    leg.text = c("GLM","ClassificationTree"),thresholds = thresh)$roc.vol
+rocPlot <- roc.plot(x=classifierData$Group=="1",pred=cbind(prediglm),legend = T,
+                    leg.text = c("GLM"),thresholds = thresh)$roc.vol
+
+
+nullBootstraps <- 1000
+aucs <- c()
+nullLabels <- c(rep(0,nrow(classifierData)/2),rep(1,nrow(classifierData)/2))
+for (i in 1:nullBootstraps)
+{
+  set.seed(i)
+  nullLabels <- sample(nullLabels)
+  classifierData$shuffledGroup <- as.factor(nullLabels)
+  modelglm<-train(shuffledGroup ~ T2 + T3 + T4 + T5 + T6 + T7 + T8 + T9 + T10 +
+                    T11 + T12 + T13 + T14 + T15 + T16 + T17 +  T18 + T19 + T20 +
+                    T21 + T22 + T23 + T24 + T25 + T26 + T27 + T28 + T29, method = "glm", family = binomial(link=probit), data = classifierData, trControl = ctrl)
+  prediglm<-predict(modelglm,type = "prob")[2]
+  rocPlot <- roc.plot(x=classifierData$Group=="1",pred=cbind(prediglm),legend = T,
+                      leg.text = c("GLM"),thresholds = thresh)$roc.vol
+  aucs[i] <- rocPlot$Area
+}
+mean(aucs)
+
 
 
 
@@ -133,69 +147,69 @@ ggplot(sorted_coefficients, aes(x = reorder(Test,-Coefficient), y = as.double(Co
 ###################################################
 # Training and testing by case ###
 # Using GLM #
-
-classifierDataUC <- classifierData[grep("UC", rownames(classifierData)), ]
-classifierDataGBS <- classifierData[grep("GBS", rownames(classifierData)), ]
-classifierDataTA <- classifierData[grep("TA", rownames(classifierData)), ]
-classifierDataTTP <- classifierData[grep("TTP", rownames(classifierData)), ]
-classifierDataAD <- classifierData[grep("AD", rownames(classifierData)), ]
-classifierDataMTB <- classifierData[grep("MTB", rownames(classifierData)), ]
-
-#Order by difficulty
-classifierDataDfs <- c()
-classifierDataDfs[[1]] <- classifierDataUC
-classifierDataDfs[[2]] <- classifierDataGBS
-classifierDataDfs[[3]] <- classifierDataTA
-classifierDataDfs[[4]] <- classifierDataTTP
-classifierDataDfs[[5]] <- classifierDataAD
-classifierDataDfs[[6]] <- classifierDataMTB
-
-models <- list()
-
-for (dfn in 1:6)
-{
-  models[[dfn]]<-train(Group~., method = "glm", family = binomial(link=probit), data = classifierDataDfs[[dfn]], trControl = ctrl)
-}
-
-questionClassificationROCTable <- data.frame(matrix(nrow = 6, ncol = 6))
-rownames(questionClassificationROCTable) <- c("UC","GBS","TA","TTP", "AD", "MTB")
-colnames(questionClassificationROCTable) <- c("UC","GBS","TA","TTP", "AD", "MTB")
-for (x in 1:6)
-{
-  for (y in 1:6)
-  {
-    if (x == y)
-    {
-      questionClassificationROCTable[x,y] <- 0
-    }
-    else
-    {
-      currentTrainingModel <- models[[x]]
-      q <- colnames(questionClassificationROCTable)[y]
-      currentTestData <- classifierData[grep(q, rownames(classifierData)), ]
-      testpred <-predict(currentTrainingModel,type="prob")[2]
-      rocCurve <- roc.plot(x=currentTestData$Group=="1",pred=testpred,thresholds = thresh,plot=NULL)$roc.vol
-      questionClassificationROCTable[x,y] <- rocCurve$Area
-    }
-  }
-}
-# Train on rows, test on columns
-
-df2 <- questionClassificationROCTable %>%
-  rownames_to_column() %>%
-  gather(colname, value, -rowname)
-print(ggplot(df2, aes(x = colname, y = rowname, fill = value)) +
-        geom_tile(colour="white",lwd=1.5,linetype=1) +
-        geom_text(aes(label=round(value,2)),colour="black",size=6) +
-        scale_fill_gradient2(low = "#075AFF",
-                             mid = "#FFFFCC",
-                             high = "#FF0000", limits=c(0,1))+
-        theme_classic()+
-        theme(axis.text=element_text(size=16),
-              axis.title=element_text(size=16),
-              plot.title=element_text(size=18,face="bold"),
-              line = element_blank()
-        ))
+# 
+# classifierDataUC <- classifierData[grep("UC", rownames(classifierData)), ]
+# classifierDataGBS <- classifierData[grep("GBS", rownames(classifierData)), ]
+# classifierDataTA <- classifierData[grep("TA", rownames(classifierData)), ]
+# classifierDataTTP <- classifierData[grep("TTP", rownames(classifierData)), ]
+# classifierDataAD <- classifierData[grep("AD", rownames(classifierData)), ]
+# classifierDataMTB <- classifierData[grep("MTB", rownames(classifierData)), ]
+# 
+# #Order by difficulty
+# classifierDataDfs <- c()
+# classifierDataDfs[[1]] <- classifierDataUC
+# classifierDataDfs[[2]] <- classifierDataGBS
+# classifierDataDfs[[3]] <- classifierDataTA
+# classifierDataDfs[[4]] <- classifierDataTTP
+# classifierDataDfs[[5]] <- classifierDataAD
+# classifierDataDfs[[6]] <- classifierDataMTB
+# 
+# models <- list()
+# 
+# for (dfn in 1:6)
+# {
+#   models[[dfn]]<-train(Group~., method = "glm", family = binomial(link=probit), data = classifierDataDfs[[dfn]], trControl = ctrl)
+# }
+# 
+# questionClassificationROCTable <- data.frame(matrix(nrow = 6, ncol = 6))
+# rownames(questionClassificationROCTable) <- c("UC","GBS","TA","TTP", "AD", "MTB")
+# colnames(questionClassificationROCTable) <- c("UC","GBS","TA","TTP", "AD", "MTB")
+# for (x in 1:6)
+# {
+#   for (y in 1:6)
+#   {
+#     if (x == y)
+#     {
+#       questionClassificationROCTable[x,y] <- 0
+#     }
+#     else
+#     {
+#       currentTrainingModel <- models[[x]]
+#       q <- colnames(questionClassificationROCTable)[y]
+#       currentTestData <- classifierData[grep(q, rownames(classifierData)), ]
+#       testpred <-predict(currentTrainingModel,type="prob")[2]
+#       rocCurve <- roc.plot(x=currentTestData$Group=="1",pred=testpred,thresholds = thresh,plot=NULL)$roc.vol
+#       questionClassificationROCTable[x,y] <- rocCurve$Area
+#     }
+#   }
+# }
+# # Train on rows, test on columns
+# 
+# df2 <- questionClassificationROCTable %>%
+#   rownames_to_column() %>%
+#   gather(colname, value, -rowname)
+# print(ggplot(df2, aes(x = colname, y = rowname, fill = value)) +
+#         geom_tile(colour="white",lwd=1.5,linetype=1) +
+#         geom_text(aes(label=round(value,2)),colour="black",size=6) +
+#         scale_fill_gradient2(low = "#075AFF",
+#                              mid = "#FFFFCC",
+#                              high = "#FF0000", limits=c(0,1))+
+#         theme_classic()+
+#         theme(axis.text=element_text(size=16),
+#               axis.title=element_text(size=16),
+#               plot.title=element_text(size=18,face="bold"),
+#               line = element_blank()
+#         ))
 
 ########################
 ########################
@@ -434,6 +448,7 @@ temp = subset(temp, select = -c(Condition,ID))
 
 #temp$infoValue <- rowMeans(temp,na.rm = TRUE)
 temp$infoValue <- rowSums(temp,na.rm = TRUE)
+temp$infoValueAfterHistory <- rowSums(temp[,7:29],na.rm=T)
 
 ################
 
@@ -455,6 +470,8 @@ rownames(studentInfoDf) <- cases
 # temp$meanValue <- rowMeans(replace(temp, temp == 0, NA),na.rm = TRUE)
 
 #######################
+
+classifyVar <- "accuracy"
 
 pptMeans <- c()
 group <- c()
@@ -503,9 +520,9 @@ print(p)
 # Continuous
 cor <- cor.test(accGroupInfoDf$value,accGroupInfoDf$pptMeans,method="pearson")
 
-diffCon <- ggplot(data = accGroupInfoDf, aes(x=value, y=pptMeans)) +
+diffCon <- ggplot(data = accGroupInfoDf, aes(x=pptMeans, y=value)) +
   geom_point() +
-  geom_smooth(method=lm , color=accuracyColour, fill="#69b3a2", se=TRUE) +
+  geom_smooth(method=lm , color=confidenceColour, fill="#69b3a2", se=TRUE) +
   theme_classic()
 
 title <- paste("Participant ", classifyVar ,"/ Info Value: ",
@@ -513,7 +530,7 @@ title <- paste("Participant ", classifyVar ,"/ Info Value: ",
 
 print(diffCon + 
         ggtitle(title)
-      + labs(y="Information Value", x = paste("Participant ", classifyVar, sep=""))
+      + labs(y=paste("Participant ", classifyVar, sep=""), x ="Information Value")
       +theme(axis.text=element_text(size=16),
              axis.title=element_text(size=16),
              plot.title=element_text(size=14,face="bold")
@@ -558,88 +575,88 @@ universalTests <- allTests[order(infoVector,decreasing=TRUE)[1:5]+6]
 ####################
 # How much is each info sought by acc group?
 
-infoSeekingProps <- data.frame(matrix(ncol=23,nrow =5))
-setStr <- ""
-if (classifyVar == "confidence")
-{
-  setStr <- "conf"
-} else {
-  setStr <- "acc"
-}
-for (accG in 1:4)
-{
-  infoValueTable <- infoSeekingFullMatrix[,7:29]
-  infoValueTable <- infoValueTable[grepl(paste(setStr, "Group", accG, sep=""), rownames(infoValueTable)),]
-  infoSeekingProps[accG,] <- colMeans(infoValueTable)
-  rownames(infoSeekingProps)[accG] <- paste("accGroup", accG, sep="")
-}
-colnames(infoSeekingProps) <- c("T7",  "T8",  "T9", "T10", "T11", "T12", "T13", "T14", 
-                             "T15", "T16", "T17", "T18", "T19", "T20", "T21", "T22", 
-                             "T23", "T24", "T25", "T26", "T27", "T28", "T29")
-
-infoValueTable <- infoValueTable[grepl(paste("-exp", sep=""), rownames(infoValueTable)),]
-infoSeekingProps[5,] <- colMeans(infoValueTable)
-rownames(infoSeekingProps)[5] <- "exp"
-
-
-
-infoPropValues <- as.array(c(sort(infoSeekingProps[1,],decreasing=TRUE),
-                             sort(infoSeekingProps[2,],decreasing=TRUE),
-                             sort(infoSeekingProps[3,],decreasing=TRUE),
-                             sort(infoSeekingProps[4,],decreasing=TRUE),
-                             sort(infoSeekingProps[5,],decreasing=TRUE)))
-repN <- ncol(infoSeekingProps)
-accGroupL <- c(rep(1, repN),rep(2, repN),rep(3, repN),rep(4, repN),rep(5, repN))
-tests <- c(colnames(sort(infoSeekingProps[1,],decreasing=TRUE)),
-           colnames(sort(infoSeekingProps[2,],decreasing=TRUE)),
-           colnames(sort(infoSeekingProps[3,],decreasing=TRUE)),
-           colnames(sort(infoSeekingProps[4,],decreasing=TRUE)),
-           colnames(sort(infoSeekingProps[5,],decreasing=TRUE)))
-ranks <- c(rep(c(1:repN),5))
-testIdx <- c(rep(0,length(repN*5)))
-infoPropDf <- data.frame(infoPropValues,accGroupL,tests,ranks,testIdx)
-
-testCodes <- c("PULSE", "BP", "RESP", "LUNG", "HEART", "EYES", "TEMP",
-               "ABDEX", "REC", "NECK", "HEAD", "NEURO", "EXTR",
-               "URINE", "ECG", "ABCT", "VBG", "ELEC", "CRP", "CLOT", "FBC",
-               "BIOCH", "CHXR")
-
-for (testNum in 7:29)
-{
-  testStr <- paste("T", testNum, sep="")
-  infoPropDf[infoPropDf$tests==testStr,]$testIdx <- testNum-6
-  infoPropDf[infoPropDf$tests==testStr,]$tests <- testCodes[testNum-6]
-}
-
-infoPropDf <- infoPropDf[infoPropDf$accGroupL<5,]
-infoPropDfPLOT <- infoPropDf[infoPropDf$tests %in% c("URINE","CLOT","ELEC","VBG","BIOCH","ABCT"),]
-
-ggplot(infoPropDfPLOT, aes(x = as.numeric(accGroupL), y = as.double(infoPropValues), fill = tests, group=ranks)) +
-  geom_bar(position="dodge", stat="identity") +
-  #scale_fill_viridis(discrete=T) +
-  geom_text(aes(label = tests),position = position_dodge(0.9), size = 2, angle = 90, hjust = 1) +
-  labs(y="Information Seeking Proportion", x = paste("Participant ", classifyVar, sep="")) +
-  theme_classic()
-
-# Compute similarity of order of tests
-
-testSimAcc <- data.frame(matrix(ncol=5,nrow=5))
-colnames(testSimAcc) <- c("accGroup1","accGroup2","accGroup3","accGroup4","exp")
-rownames(testSimAcc) <- c("accGroup1","accGroup2","accGroup3","accGroup4","exp")
-
-for (x in 1:5)
-{
-  for (y in 1:5)
-  {
-    if (x == y)
-    {
-      testSimAcc[x,y] <- 0
-    }
-    else 
-    {
-      testSimAcc[x,y] <- kendallTauDistance(infoPropDf[infoPropDf$accGroupL==x,]$testIdx,
-                                            infoPropDf[infoPropDf$accGroupL==y,]$testIdx)
-    }
-  }
-}
+# infoSeekingProps <- data.frame(matrix(ncol=23,nrow =5))
+# setStr <- ""
+# if (classifyVar == "confidence")
+# {
+#   setStr <- "conf"
+# } else {
+#   setStr <- "acc"
+# }
+# for (accG in 1:4)
+# {
+#   infoValueTable <- infoSeekingFullMatrix[,7:29]
+#   infoValueTable <- infoValueTable[grepl(paste(setStr, "Group", accG, sep=""), rownames(infoValueTable)),]
+#   infoSeekingProps[accG,] <- colMeans(infoValueTable)
+#   rownames(infoSeekingProps)[accG] <- paste("accGroup", accG, sep="")
+# }
+# colnames(infoSeekingProps) <- c("T7", "T8",  "T9", "T10", "T11", "T12", "T13", "T14", 
+#                              "T15", "T16", "T17", "T18", "T19", "T20", "T21", "T22", 
+#                              "T23", "T24", "T25", "T26", "T27", "T28", "T29")
+# 
+# infoValueTable <- infoValueTable[grepl(paste("-exp", sep=""), rownames(infoValueTable)),]
+# infoSeekingProps[5,] <- colMeans(infoValueTable)
+# rownames(infoSeekingProps)[5] <- "exp"
+# 
+# 
+# 
+# infoPropValues <- as.array(c(sort(infoSeekingProps[1,],decreasing=TRUE),
+#                              sort(infoSeekingProps[2,],decreasing=TRUE),
+#                              sort(infoSeekingProps[3,],decreasing=TRUE),
+#                              sort(infoSeekingProps[4,],decreasing=TRUE),
+#                              sort(infoSeekingProps[5,],decreasing=TRUE)))
+# repN <- ncol(infoSeekingProps)
+# accGroupL <- c(rep(1, repN),rep(2, repN),rep(3, repN),rep(4, repN),rep(5, repN))
+# tests <- c(colnames(sort(infoSeekingProps[1,],decreasing=TRUE)),
+#            colnames(sort(infoSeekingProps[2,],decreasing=TRUE)),
+#            colnames(sort(infoSeekingProps[3,],decreasing=TRUE)),
+#            colnames(sort(infoSeekingProps[4,],decreasing=TRUE)),
+#            colnames(sort(infoSeekingProps[5,],decreasing=TRUE)))
+# ranks <- c(rep(c(1:repN),5))
+# testIdx <- c(rep(0,length(repN*5)))
+# infoPropDf <- data.frame(infoPropValues,accGroupL,tests,ranks,testIdx)
+# 
+# testCodes <- c("PULSE", "BP", "RESP", "LUNG", "HEART", "EYES", "TEMP",
+#                "ABDEX", "REC", "NECK", "HEAD", "NEURO", "EXTR",
+#                "URINE", "ECG", "ABCT", "VBG", "ELEC", "CRP", "CLOT", "FBC",
+#                "BIOCH", "CHXR")
+# 
+# for (testNum in 7:29)
+# {
+#   testStr <- paste("T", testNum, sep="")
+#   infoPropDf[infoPropDf$tests==testStr,]$testIdx <- testNum-6
+#   infoPropDf[infoPropDf$tests==testStr,]$tests <- testCodes[testNum-6]
+# }
+# 
+# infoPropDf <- infoPropDf[infoPropDf$accGroupL<5,]
+# infoPropDfPLOT <- infoPropDf[infoPropDf$tests %in% c("URINE","CLOT","ELEC","VBG","BIOCH","ABCT"),]
+# 
+# ggplot(infoPropDfPLOT, aes(x = as.numeric(accGroupL), y = as.double(infoPropValues), fill = tests, group=ranks)) +
+#   geom_bar(position="dodge", stat="identity") +
+#   #scale_fill_viridis(discrete=T) +
+#   geom_text(aes(label = tests),position = position_dodge(0.9), size = 2, angle = 90, hjust = 1) +
+#   labs(y="Information Seeking Proportion", x = paste("Participant ", classifyVar, sep="")) +
+#   theme_classic()
+# 
+# # Compute similarity of order of tests
+# 
+# testSimAcc <- data.frame(matrix(ncol=5,nrow=5))
+# colnames(testSimAcc) <- c("accGroup1","accGroup2","accGroup3","accGroup4","exp")
+# rownames(testSimAcc) <- c("accGroup1","accGroup2","accGroup3","accGroup4","exp")
+# 
+# for (x in 1:5)
+# {
+#   for (y in 1:5)
+#   {
+#     if (x == y)
+#     {
+#       testSimAcc[x,y] <- 0
+#     }
+#     else 
+#     {
+#       testSimAcc[x,y] <- kendallTauDistance(infoPropDf[infoPropDf$accGroupL==x,]$testIdx,
+#                                             infoPropDf[infoPropDf$accGroupL==y,]$testIdx)
+#     }
+#   }
+# }
 

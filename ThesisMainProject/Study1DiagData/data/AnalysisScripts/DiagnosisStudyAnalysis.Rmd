@@ -171,12 +171,7 @@ source("Scripts/SeverityAndLikelihoodDists.R")
 ## Information Seeking Analysis
 ```{r, echo=FALSE, warning=FALSE}
 accs <- c("accGroup1", "accGroup2", "accGroup3", "accGroup4", "e")
-#if (classifyVar == "confidence")
-#{
-#  accs <- c("confGroup1", "confGroup2", "confGroup3", "confGroup4")
-#} else {
-#  accs <- c("accGroup1", "accGroup2", "accGroup3", "accGroup4")
-#}
+
 cases <-c("UC", "GBS", "TA", "TTP", "AD", "MTB")
 ppts <- c("p", "e")
 
@@ -186,33 +181,13 @@ distanceMethod <- "Dice" # OPTIONS: Jaccard, cosine, Dice, Euclidean, Hamman
 
 source("Scripts/InfoSeekingMDS.R")
 
-######################################
-
-cor <- cor.test(infoSeekingDf$MDSDistanceVariance,infoSeekingDf$RelativeRationalism,method="pearson")
-
-diffCon <- ggplot(data = infoSeekingDf, aes(x=RelativeRationalism, y=MDSDistanceVariance)) +
-  geom_point() +
-  geom_smooth(method=lm , color=infoSeekingColour, fill="#69b3a2", se=TRUE) +
-  theme_classic()
-
-title <- paste("MSD Distance Variance against Relative Rationalism: ",
-               "r(", cor$parameter, ") = ",  round(cor$estimate, 2), ", p = ",  round(cor$p.value,2), sep="")
-
-print(diffCon + 
-        ggtitle(title)
-      + labs(y="MSD Distance Variance", x = "Relative Rationalism")
-      +theme(axis.text=element_text(size=16),
-             axis.title=element_text(size=16),
-             plot.title=element_text(size=18)
-      ))
-
 ```
 
 ## Classification of Performance by Information Seeking
 
 ```{r, echo=FALSE, warning=FALSE}
 
-usePCs <- TRUE
+usePCs <- FALSE
 
 source("Scripts/BinaryClassification.R")
 

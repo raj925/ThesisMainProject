@@ -7,7 +7,7 @@ mds <- infoSeekingFullMatrix[,1:29] %>%
 
 # distances <- infoSeekingFullMatrix[,1:29] %>% stats::dist(method="binary") %>% as.matrix()
 
-# Compute Jaccard similarity distance (appropriate for binary data)
+# Compute  similarity distance (appropriate for binary data)
 infoSeekingNoEmpties <- infoSeekingFullMatrix[,1:29]
 infoSeekingNoEmpties <- infoSeekingNoEmpties[rowSums(infoSeekingNoEmpties)>1,]
 
@@ -18,6 +18,7 @@ infoSeekingFullMatrix$v2 <- mds$V2
 
 hist(distances)
 
+
 #######################################
 # Use of regular PCA
 
@@ -25,15 +26,7 @@ pca_result <- principal(infoSeekingFullMatrix[,1:29], nfactors = 5, rotate = "pr
 pcs <- pca_result$scores
 weights <- pca_result$loadings
 
-#weightsSum <- weights[,1]*pcs[1,1] + weights[,2]*pcs[1,2] + 
-#  weights[,3]*pcs[1,3] + weights[,4]*pcs[1,4] + 
- # weights[,5]*pcs[1,5]
-#means <- colMeans(infoSeekingFullMatrix[,1:29])
-#weightsSum+means
-
-topVars <- lapply(1:ncol(pcs), function(x) {names(sort(weights[,x], decreasing = T)[1:5])})
-topVarsIdx <- unique(unlist(lapply(topVars, function(vars) {as.numeric(match(vars, rownames(weights)))})))
-topPCS <- weights[unlist(topVarsIdx),]
+topPCS <- weights
 
 testCodes <- c("ILLHIST","PASTHIST","MEDS","ALLER","FAMHIST","SOCHIST",
                "PULSE", "BP", "RESP", "LUNG", "HEART", "EYES", "TEMP",
@@ -108,6 +101,31 @@ pcDF$AccuracyGroup <- as.factor(pcDF$AccuracyGroup)
 mixedPCModel = lmer(correct ~ PC1 + PC2 + PC3 + PC4 + PC5 + condition + (1 | pid), data = pcDF)
 summary(mixedPCModel)
 
+#######################################
+# Latent Profile Analysis on Information Seeking
+
+
+infoSeekingMatrixByPptPCs <- pcDF[1:5]
+infoSeekingMatrixByPptPCs <- apply(infoSeekingMatrixByPptPCs,2,
+                                   function(x) cut(x, breaks = 5, labels=FALSE))
+
+infoSeekingMatrixByPptPCs <- as.data.frame(infoSeekingMatrixByPptPCs)
+
+require(poLCA)
+f <- with(infoSeekingMatrixByPptPCs, cbind(PC1,PC2,PC3,PC4,PC5)~1)
+
+minBIC <- 100000
+for (n in 2:10)
+{
+  lp <- poLCA::poLCA(f, data = infoSeekingMatrixByPptPCs, nclass=n, maxiter=3000)
+  if(lp$bic < minBIC) {
+    minBIC <- lp$bic
+    bestModel <- lp
+  }
+}
+summary(bestModel)
+latentProfile <- bestModel$predclass
+
 #############
 PCdistances <- pcDF[,1:5] %>% proxy::dist(method = "cosine") %>% as.matrix()
 distanceVars <- c()
@@ -136,24 +154,6 @@ for (n in 1:nrow(studentAggData))
 }
 infoSeekingDf <- data.frame(distanceVars,accuracies,meanPC1,meanPC2,meanPC3,meanPC4,meanPC5)
 colnames(infoSeekingDf) <- c("DistanceVariance", "Accuracy","MeanPC1","MeanPC2","MeanPC3","MeanPC4", "MeanPC5")
-
-cor <- cor.test(infoSeekingDf$DistanceVariance,infoSeekingDf$Accuracy,method="pearson")
-
-msdAcc <- ggplot(data = infoSeekingDf, aes(x=DistanceVariance, y=Accuracy)) +
-  geom_point() +
-  geom_smooth(method=lm , color=accuracyColour, fill="#69b3a2", se=TRUE) +
-  theme_classic()
-
-title <- paste("Info Seeking Variance Against Accuracy: ",
-               "r(", cor$parameter, ") = ",  round(cor$estimate, 2), ", p = ",  round(cor$p.value,2), sep="")
-
-print(msdAcc + 
-        ggtitle(title) +
-        labs(y="Accuracy", x = "Variance in Information Seeking Across Cases - Euclidean") +
-        ylim(0,1) +
-        theme(axis.text=element_text(size=16),
-              axis.title=element_text(size=16),
-              plot.title=element_text(size=18,face="bold")))
 
 ######################################
 colnames(confidenceMatrix) <- c("1","2","3")
@@ -237,10 +237,10 @@ for (n in 1:nrow(studentAggData))
   accuracies[n] <- studentAggData$meanFinalAccuracy[n]
   relRat[n] <- studentAggData$relativeRationalism[n]
   brier[n] <- studentAggData$finalBrierScore[n]
-  confidences[n] <- studentAggData$meanFinalConfidence[n]
+  confidences[n] <- studentAggData$meanFinalConfidence[n] - studentAggData$meanInitialConfidence[n]
 }
 infoSeekingDf <- data.frame(distanceVars,infoProps,accuracies,relRat,brier,confidences)
-colnames(infoSeekingDf) <- c("MDSDistanceVariance", "InformationSeekingProportion","Accuracy","RelativeRationalism","BrierScore","Confidence")
+colnames(infoSeekingDf) <- c("MDSDistanceVariance", "InformationSeekingProportion","Accuracy","RelativeRationalism","BrierScore","ConfidenceChange")
 
 distanceVars <- c()
 confidenceVars <- c()
@@ -261,25 +261,11 @@ for (n in 1:nrow(expertAggData))
   accuracies[n] <- expertAggData$meanFinalAccuracy[n]
   relRat[n] <- expertAggData$relativeRationalism[n]
   brier[n] <- expertAggData$finalBrierScore[n]
-  confidences[n] <- expertAggData$meanFinalConfidence[n]
+  confidences[n] <- expertAggData$meanFinalConfidence[n] - expertAggData$meanInitialConfidence[n]
 }
 infoSeekingDfExp <- data.frame(distanceVars,infoProps,accuracies,relRat,brier,confidences)
-colnames(infoSeekingDfExp) <- c("MDSDistanceVariance", "InformationSeekingProportion","Accuracy","RelativeRationalism","BrierScore","Confidence")
+colnames(infoSeekingDfExp) <- c("MDSDistanceVariance", "InformationSeekingProportion","Accuracy","RelativeRationalism","BrierScore","ConfidenceChange")
 
-
-cor <- cor.test(infoSeekingDf$MDSDistanceVariance,infoSeekingDf$InformationSeekingProportion,method="pearson")
-
-msdCorr <- ggplot(data = infoSeekingDf, aes(x=MDSDistanceVariance, y=InformationSeekingProportion)) +
-  geom_point() +
-  geom_smooth(method=lm , color=infoSeekingColour, fill="#69b3a2", se=TRUE) +
-  theme_classic()
-
-title <- paste("MSD Dist. Var. Against Info Seeking Proportion: ",
-               "r(", cor$parameter, ") = ",  round(cor$estimate, 2), ", p = ",  round(cor$p.value,2), sep="")
-
-print(msdCorr + 
-        ggtitle(title)
-      + labs(y="Proportion of Possible Information Requested", x = "Variance in Participant's MSD Distances"))
 
 cor <- cor.test(infoSeekingDf$MDSDistanceVariance,infoSeekingDf$Accuracy,method="pearson")
 
@@ -299,41 +285,22 @@ print(msdAcc +
             axis.title=element_text(size=16),
             plot.title=element_text(size=18,face="bold")))
 
-cor <- cor.test(infoSeekingDf$MDSDistanceVariance,infoSeekingDf$ConfidenceVariance,method="pearson")
+cor <- cor.test(infoSeekingDf$MDSDistanceVariance,infoSeekingDf$ConfidenceChange,method="pearson")
 
-msdConf <- ggplot(data = infoSeekingDf, aes(x=MDSDistanceVariance, y=ConfidenceVariance)) +
+msdConf <- ggplot(data = infoSeekingDf, aes(x=MDSDistanceVariance, y=ConfidenceChange)) +
   geom_point() +
   geom_smooth(method=lm , color=confidenceColour, fill="#69b3a2", se=TRUE) +
   theme_classic()
 
-title <- paste("Info Seeking Variance Against Confidence Variance: ",
+title <- paste("Info Seeking Variance Against Change in Confidence: ",
                "r(", cor$parameter, ") = ",  round(cor$estimate, 2), ", p = ",  round(cor$p.value,2), sep="")
 
 print(msdConf + 
         ggtitle(title) +
-        labs(y="Confidence Variance", x = "Variance in Information Seeking Across Cases") +
+        labs(y="Change in Confidence", x = "Variance in Information Seeking Across Cases") +
         theme(axis.text=element_text(size=16),
               axis.title=element_text(size=16),
               plot.title=element_text(size=18,face="bold")))
-
-
-cor <- cor.test(infoSeekingDf$ConfidenceVariance,infoSeekingDf$Accuracy,method="pearson")
-
-
-conVarAcc <- ggplot(data = infoSeekingDf, aes(x=ConfidenceVariance, y=Accuracy)) +
-  geom_point() +
-  geom_smooth(method=lm , color=confidenceColour, fill="#69b3a2", se=TRUE) +
-  theme_classic() +
-  theme(axis.text=element_text(size=16),
-        axis.title=element_text(size=16),
-        plot.title=element_text(size=18,face="bold"))
-
-title <- paste("Confidence Dist. Var Against Accuracy: ",
-               "r(", cor$parameter, ") = ",  round(cor$estimate, 2), ", p = ",  round(cor$p.value,2), sep="")
-
-print(conVarAcc + 
-        ggtitle(title)
-      + labs(y="Accuracy", x = "Variance in Confidence"))
 
 
 
@@ -419,24 +386,6 @@ print(p)
 lmvar <- lm(varVector~accGroups, data = varDfTemp)
 print(summary(lmvar))
 
-p <- ggplot(varMedDf) +
-  geom_bar(aes(x = accMedGroupNum, y = varMedMeans),stat="identity",fill="black",alpha=0.7) +
-  geom_errorbar(aes(x = accMedGroupNum,ymin=varMedMeans-varMedSds, ymax=varMedMeans+varMedSds), width=.2, position=position_dodge(0.05),color="orange") +
-  labs(title="Mean of Individual Variance Across Cases",x=paste(classifyVar," Group (Median Split)",sep=""),y="Participant Variance Across Cases") +
-  theme_classic() +
-  theme(axis.text=element_text(size=16),
-        axis.title=element_text(size=16),
-        plot.title=element_text(size=18,face="bold"),
-        line = element_blank())
-
-print(p)
-
-print(t.test(varDfTemp[varDfTemp$accGroups==1,]$varVector,varDfTemp[varDfTemp$accGroups==4,]$varVector))
-
-print(t.test(varDfTemp[varDfTemp$accMedGroups==1,]$varVector,varDfTemp[varDfTemp$accMedGroups==2,]$varVector))
-
-
-
 ######################################
 # Bar chart that breaks down variance by case and accuracy
 
@@ -484,45 +433,8 @@ print(varsPlot +
               line = element_blank()
         )) 
 
-print(t.test(dataB[dataB$accGroup=="low",]$variance,dataB[dataB$accGroup=="high",]$variance))
-
-
-
-######################################
-# Distance heat plot by case
-
-distanceMatrix <- data.frame(matrix(ncol = 6, nrow = 6))
-for (x in 1:length(cases))
-{
-  case <- cases[x]
-  for (y in 1:length(cases))
-  {
-    if (y == x)
-    {
-      distanceMatrix[x,y] <- 0
-      colnames(distanceMatrix)[y] <- paste(y, ". ", case)
-    }
-    else
-    {
-      comparisonCase <- cases[y]
-      compareColumns <- distances[grep(comparisonCase, rownames(distances)), ]
-      compareColumns <- compareColumns[,grep(case, colnames(compareColumns)) ]
-      meanDist <- mean(compareColumns)
-      distanceMatrix[x,y] <- meanDist-3
-      colnames(distanceMatrix)[y] <- paste(y, ". ", comparisonCase)
-    }
-  }
-  rownames(distanceMatrix)[x] <- paste(x, ". ", case)
-}
-
-dt2 <- distanceMatrix %>%
-  rownames_to_column() %>%
-  gather(colname, value, -rowname)
-print(ggplot(dt2, aes(x = colname, y = rowname, fill = value)) +
-  geom_tile() +
-  scale_fill_gradient2(low = "#075AFF",
-                       mid = "#FFFFCC",
-                       high = "#FF0000"))
+print(t.test(variance ~ accGroup,data = dataB))
+cohensD(variance ~ accGroup, data=dataB)
 
 ##########
 
@@ -893,15 +805,7 @@ if (clusterType == "kmeans")
     mutate(groups = clust)
   infoSeekingFullMatrix$cluster <- clust
 }
-# Plot and color by groups
-print(ggscatter(mds, x = "V1", y = "V2", 
-          label = rownames(infoSeekingFullMatrix),
-          color = "groups",
-          palette = "jco",
-          size = 1, 
-          ellipse = TRUE,
-          ellipse.type = "convex",
-          repel = TRUE))
+
 
 if (numOfClusters == 2)
 {
@@ -1005,368 +909,3 @@ if (numOfClusters == 6)
 
 
 ##############
-
-# Look at variance in information seeking varies as a function
-# of case difficulty and ability 
-
-pptIds <- c()
-pptAcc <- c()
-pptRes <- c()
-pptInfoEasy <- c()
-pptInfoHard <- c()
-distanceVars <- c()
-distanceVarsEasyCases <- c()
-distanceVarsHardCases <- c()
-difficultyVariances <- c()
-confidenceEasy <- c()
-confidenceHard <- c()
-relRational <- c()
-
-for (n in 1:nrow(studentAggData))
-{
-  ppt <- paste("p", n, sep="")
-  pptIds[n] <- ppt
-  pptAcc[n] <- round(studentAggData$meanFinalAccuracy[n],1)
-  pptInfoEasy[n] <- studentAggData$propOfInfoEasy[n]
-  pptInfoHard[n] <- studentAggData$propOfInfoHard[n]
-  if (is.nan(studentAggData$finalResolution[n]))
-  {
-    pptRes[n] <- 0
-  } else {
-    if (studentAggData$finalResolution[n] < 0)
-    {
-      pptRes[n] <- 1
-    } else {
-      pptRes[n] <- 2
-    }
-  }
-  
-  compareColumns <- distances[grep(ppt, rownames(distances)), ]
-  compareColumns <- compareColumns[,grep(ppt, colnames(compareColumns)) ]
-  distanceVars[n] <- (mean(compareColumns))
-  
-  
-  compareColumns <- distances[grep(ppt, rownames(distances)), ]
-  compareColumns <- compareColumns[,grep(ppt, colnames(compareColumns)) ]
-  
-  compareColumns <- compareColumns[grep(paste(easyCaseGroup, collapse="|"), rownames(compareColumns)), ]
-  compareColumns <- compareColumns[,grep(paste(easyCaseGroup, collapse="|"), colnames(compareColumns)) ]
-  distanceVarsEasyCases[n] <- (mean(compareColumns))
-  
-  compareColumns <- distances[grep(ppt, rownames(distances)), ]
-  compareColumns <- compareColumns[,grep(ppt, colnames(compareColumns)) ]
-  
-  compareColumns <- compareColumns[grep(paste(hardCaseGroup, collapse="|"), rownames(compareColumns)), ]
-  compareColumns <- compareColumns[,grep(paste(hardCaseGroup, collapse="|"), colnames(compareColumns)) ]
-  distanceVarsHardCases[n] <- (mean(compareColumns))
-  
-  difficultyVariances[n] <- distanceVarsHardCases[n] - distanceVarsEasyCases[n]
-  
-  confidenceEasy[n] <- mean(abs(caseDf[caseDf$id==aggData$participantID[n]&caseDf$caseCode %in% easyCaseGroup,]$confidenceChange))
-  confidenceHard[n] <- mean(abs(caseDf[caseDf$id==aggData$participantID[n]&caseDf$caseCode %in% hardCaseGroup,]$confidenceChange))
-  
-  relRational[n] <- studentAggData$relativeRationalism[n]
-}
-distVarByDiff <- data.frame(pptIds, pptAcc, pptInfoEasy,  pptInfoHard, pptRes,distanceVars,distanceVarsEasyCases,distanceVarsHardCases,difficultyVariances, confidenceEasy, confidenceHard,relRational)
-colnames(distVarByDiff) <- c("ParticipantID","ParticipantAccuracy", "InfoSeekingEasy", "InfoSeekingHard", "ResolutionGroup", "DistanceVariance", "EasyDistanceVariance","HardDistanceVariance","DifficultyVariance", "ConfidenceEasy", "ConfidenceHard","RelativeRationalism")
-
-medAcc <- median(studentAggData$meanFinalAccuracy)
-
-easyLow <- distVarByDiff[distVarByDiff$ParticipantAccuracy<=medAcc,]$EasyDistanceVariance
-easyHigh <- distVarByDiff[distVarByDiff$ParticipantAccuracy>medAcc,]$EasyDistanceVariance
-hardLow <- distVarByDiff[distVarByDiff$ParticipantAccuracy<=medAcc,]$HardDistanceVariance
-hardHigh <- distVarByDiff[distVarByDiff$ParticipantAccuracy>medAcc,]$HardDistanceVariance
-
-anovaDf <- c(easyLow, easyHigh, hardLow, hardHigh)
-anovaDf <- as.data.frame(anovaDf)
-anovaDf <- cbind(anovaDf,c(rep("easy",nrow(studentAggData)),c(rep("hard",nrow(studentAggData)))))
-anovaDf <- cbind(anovaDf,c(rep("low",length(easyLow)),rep("high",length(easyHigh)),rep("low",length(hardLow)),rep("high",length(hardHigh))))
-anovaDf <- cbind(anovaDf,c(rep(distVarByDiff$ParticipantID,2)))
-names(anovaDf)[1] <- "DistanceVariance"
-names(anovaDf)[2] <- "CaseDifficulty"
-names(anovaDf)[3] <- "ParticipantAccuracy"
-names(anovaDf)[4] <- "ID"
-
-
-p <- ggboxplot(anovaDf, x = "CaseDifficulty", y = "DistanceVariance", color = "ParticipantAccuracy",
-               palette = c("#00AFBB", "#E7B800")) +
-  scale_x_discrete(limit = c("easy", "hard")) + ggtitle("MDS Distance Variance Across Accuracy and Difficulty") +
-  theme(axis.text=element_text(size=16),
-        axis.title=element_text(size=16),
-        plot.title=element_text(size=14),
-        line = element_blank()
-  )
-
-plot(p)
-
-# res.aov2 <- anova_test(
-#   data = anovaDf, dv = DistanceVariance, wid = ID, between = ParticipantAccuracy,
-#   within = CaseDifficulty
-# )
-# print(get_anova_table(res.aov2))
-###########################
-# Variance by resolution and difficulty
-
-easyNegativeRes <- distVarByDiff[distVarByDiff$ResolutionGroup==1,]$EasyDistanceVariance
-easyPositiveRes <- distVarByDiff[distVarByDiff$ResolutionGroup==2,]$EasyDistanceVariance
-hardNegativeRes <- distVarByDiff[distVarByDiff$ResolutionGroup==1,]$HardDistanceVariance
-hardPositiveRes <- distVarByDiff[distVarByDiff$ResolutionGroup==2,]$HardDistanceVariance
-
-rows <- sum(!is.nan(studentAggData$finalResolution))
-
-anovaDf <- c(easyNegativeRes, easyPositiveRes, hardNegativeRes, hardPositiveRes)
-anovaDf <- as.data.frame(anovaDf)
-anovaDf <- cbind(anovaDf,c(rep("easy",rows),c(rep("hard",rows))))
-anovaDf <- cbind(anovaDf,c(rep("negative",length(easyNegativeRes)),rep("positive",length(easyPositiveRes)),rep("negative",length(hardNegativeRes)),rep("positive",length(hardPositiveRes))))
-anovaDf <- cbind(anovaDf,c(rep(distVarByDiff[distVarByDiff$ResolutionGroup!=0,]$ParticipantID,2)))
-names(anovaDf)[1] <- "DistanceVariance"
-names(anovaDf)[2] <- "CaseDifficulty"
-names(anovaDf)[3] <- "ParticipantResolution"
-names(anovaDf)[4] <- "ID"
-
-
-p <- ggboxplot(anovaDf, x = "CaseDifficulty", y = "DistanceVariance", color = "ParticipantResolution",
-               palette = c("#00AFBB", "#E7B800")) +
-  scale_x_discrete(limit = c("easy", "hard")) + ggtitle("MDS Distance Variance Across Resolution and Difficulty") +
-  theme(axis.text=element_text(size=16),
-        axis.title=element_text(size=16),
-        plot.title=element_text(size=18),
-        line = element_blank()
-  )
-
-plot(p)
-
-# res.aov2 <- anova_test(
-#   data = anovaDf, dv = DistanceVariance, wid = ID, between = ParticipantResolution,
-#   within = CaseDifficulty
-# )
-# print(get_anova_table(res.aov2))
-
-#################################
-
-easyLow <- distVarByDiff[distVarByDiff$ParticipantAccuracy<=medAcc,]$EasyDistanceVariance
-easyHigh <- distVarByDiff[distVarByDiff$ParticipantAccuracy>medAcc,]$EasyDistanceVariance
-hardLow <- distVarByDiff[distVarByDiff$ParticipantAccuracy<=medAcc,]$HardDistanceVariance
-hardHigh <- distVarByDiff[distVarByDiff$ParticipantAccuracy>medAcc,]$HardDistanceVariance
-
-anovaDf <- c(easyLow, easyHigh, hardLow, hardHigh)
-anovaDf <- as.data.frame(anovaDf)
-anovaDf <- cbind(anovaDf,c(rep("easy",nrow(studentAggData)),c(rep("hard",nrow(studentAggData)))))
-anovaDf <- cbind(anovaDf,c(rep("low",length(easyLow)),rep("high",length(easyHigh)),rep("low",length(hardLow)),rep("high",length(hardHigh))))
-anovaDf <- cbind(anovaDf,c(rep(distVarByDiff$ParticipantID,2)))
-names(anovaDf)[1] <- "DistanceVariance"
-names(anovaDf)[2] <- "CaseDifficulty"
-names(anovaDf)[3] <- "ParticipantAccuracy"
-names(anovaDf)[4] <- "ID"
-
-
-p <- ggboxplot(anovaDf, x = "CaseDifficulty", y = "DistanceVariance", color = "ParticipantAccuracy",
-               palette = c("#00AFBB", "#E7B800")) +
-  scale_x_discrete(limit = c("easy", "hard")) + ggtitle("MDS Distance Variance Across Accuracy and Difficulty") +
-  theme(axis.text=element_text(size=16),
-        axis.title=element_text(size=16),
-        plot.title=element_text(size=18,face="bold"),
-        line = element_blank()
-  )
-
-plot(p)
-
-# res.aov2 <- anova_test(
-#   data = anovaDf, dv = DistanceVariance, wid = ID, between = ParticipantAccuracy,
-#   within = CaseDifficulty
-# )
-# print(get_anova_table(res.aov2))
-
-############################
-# Compare clustering to objective variables
-
-# By Jaccard Index
-if (numOfClusters == 6)
-{
-  cond <- as.numeric(as.factor(infoSeekingFullMatrix$Condition))
-  adj.rand.index(cond, infoSeekingFullMatrix$cluster)
-}
-if (numOfClusters == 4)
-{
-  cond <- as.numeric(as.factor(infoSeekingFullMatrix$AccuracyGroup))
-  adj.rand.index(cond, infoSeekingFullMatrix$cluster)
-}
-
-####################################
-# Info seeking proportion by severity
-
-p <- ggboxplot(caseDf, x = "sevOfHighestLikelihoodInitial", y = "laterInfoProp",
-               palette = c("#00AFBB", "#E7B800")) +
-  scale_x_discrete(limit = c("0","1", "2", "3")) + ggtitle("Information Seeking by Severity")
-
-plot(p)
-
-
-compareColumns <- distances[grep("sev0", rownames(distances)), ]
-compareColumns <- compareColumns[,grep("sev0", colnames(compareColumns)) ]
-
-distanceVarsLowSev <- mean(compareColumns)
-
-compareColumns <- distances[grep("sev1", rownames(distances)), ]
-compareColumns <- compareColumns[,grep("sev1", colnames(compareColumns)) ]
-
-distanceVarsMedSev <- mean(compareColumns)
-
-compareColumns <- distances[grep("sev2", rownames(distances)), ]
-compareColumns <- compareColumns[,grep("sev2", colnames(compareColumns)) ]
-
-distanceVarsHighSev <- mean(compareColumns)
-
-compareColumns <- distances[grep("sev3", rownames(distances)), ]
-compareColumns <- compareColumns[,grep("sev3", colnames(compareColumns)) ]
-
-distanceVarsEmergSev <- mean(compareColumns)
-
-distVarBySev <- c(distanceVarsLowSev, distanceVarsMedSev, distanceVarsHighSev, distanceVarsEmergSev)
-sevGroups <- c("Low", "Medium", "High", 'Emergency')
-dataB <- data.frame(distVarBySev,sevGroups)
-colnames(dataB) <- c("Variance", "Severity")
-
-varsPlot <- ggplot(dataB,aes(x=Severity, y=Variance)) +
-  geom_bar(stat="identity", alpha=0.8)
-
-print(varsPlot +
-        scale_x_discrete(limits=sevGroups) +
-        ggtitle("Variance in Information Seeking by Severity") +
-        labs(x = "Severity Rating of Likeliest Diagnosis", y = "Variance in MDS Distances") +
-        theme_classic()) 
-
-
-###################################
-# Info Seeking Proportion by Difficulty and Accuracy
-
-medAcc <- median(studentAggData$meanFinalAccuracy)
-
-easyLow <- distVarByDiff[distVarByDiff$ParticipantAccuracy<=medAcc,]$InfoSeekingEasy
-easyHigh <- distVarByDiff[distVarByDiff$ParticipantAccuracy>medAcc,]$InfoSeekingEasy
-hardLow <- distVarByDiff[distVarByDiff$ParticipantAccuracy<=medAcc,]$InfoSeekingHard
-hardHigh <- distVarByDiff[distVarByDiff$ParticipantAccuracy>medAcc,]$InfoSeekingHard
-
-anovaDf <- c(easyLow, easyHigh, hardLow, hardHigh)
-anovaDf <- as.data.frame(anovaDf)
-anovaDf <- cbind(anovaDf,c(rep("easy",nrow(studentAggData)),c(rep("hard",nrow(studentAggData)))))
-anovaDf <- cbind(anovaDf,c(rep("low",length(easyLow)),rep("high",length(easyHigh)),rep("low",length(hardLow)),rep("high",length(hardHigh))))
-anovaDf <- cbind(anovaDf,c(rep(distVarByDiff$ParticipantID,2)))
-names(anovaDf)[1] <- "InfoSeekingProportion"
-names(anovaDf)[2] <- "CaseDifficulty"
-names(anovaDf)[3] <- "ParticipantAccuracy"
-names(anovaDf)[4] <- "ID"
-
-
-p <- ggboxplot(anovaDf, x = "CaseDifficulty", y = "InfoSeekingProportion", color = "ParticipantAccuracy",
-               palette = c("#00AFBB", "#E7B800")) +
-  scale_x_discrete(limit = c("easy","hard")) + ggtitle("Info Seeking Proportion Against Across Accuracy and Difficulty") +
-  theme(axis.text=element_text(size=16),
-        axis.title=element_text(size=16),
-        plot.title=element_text(size=14,face="bold"),
-        line = element_blank()
-  )
-
-plot(p, ylim = c(0,1))
-
-# res.aov2 <- anova_test(
-#   data = anovaDf, dv = InfoSeekingProportion, wid = ID, between = ParticipantAccuracy,
-#   within = CaseDifficulty
-# )
-# print(get_anova_table(res.aov2))
-
-
-################################################
-# Change in Confidence by Ability and Difficulty
-
-easyLow <- distVarByDiff[distVarByDiff$ParticipantAccuracy<=medAcc,]$ConfidenceEasy
-easyHigh <- distVarByDiff[distVarByDiff$ParticipantAccuracy>medAcc,]$ConfidenceEasy
-hardLow <- distVarByDiff[distVarByDiff$ParticipantAccuracy<=medAcc,]$ConfidenceHard
-hardHigh <- distVarByDiff[distVarByDiff$ParticipantAccuracy>medAcc,]$ConfidenceHard
-
-anovaDf <- c(easyLow, easyHigh, hardLow, hardHigh)
-anovaDf <- as.data.frame(anovaDf)
-anovaDf <- cbind(anovaDf,c(rep("easy",nrow(studentAggData)),c(rep("hard",nrow(studentAggData)))))
-anovaDf <- cbind(anovaDf,c(rep("low",length(easyLow)),rep("high",length(easyHigh)),rep("low",length(hardLow)),rep("high",length(hardHigh))))
-anovaDf <- cbind(anovaDf,c(rep(distVarByDiff$ParticipantID,2)))
-names(anovaDf)[1] <- "ConfidenceChange"
-names(anovaDf)[2] <- "CaseDifficulty"
-names(anovaDf)[3] <- "ParticipantAccuracy"
-names(anovaDf)[4] <- "ID"
-
-
-p <- ggboxplot(anovaDf, x = "CaseDifficulty", y = "ConfidenceChange", color = "ParticipantAccuracy",
-               palette = c("#00AFBB", "#E7B800")) +
-  scale_x_discrete(limit = c("easy","hard")) + ggtitle("Absolute Confidence Change Across Participant Accuracy and Difficulty") +
-  theme(axis.text=element_text(size=16),
-        axis.title=element_text(size=16),
-        plot.title=element_text(size=14,face="bold"),
-        line = element_blank()
-  )
-
-plot(p)
-
-# res.aov2 <- anova_test(
-#   data = anovaDf, dv = ConfidenceChange, wid = ID, between = ParticipantAccuracy,
-#   within = CaseDifficulty
-# )
-# print(get_anova_table(res.aov2))
-
-#####################
-# Information Seeking Variance by Stage
-
-stagewiseDistanceDf <- data.frame(matrix(ncol = 2, nrow = length(ids)*3))
-colnames(stagewiseDistanceDf) <- c("Stage","Variance")
-count <- 0
-for (id in ids)
-{
-  pptTrials <- as.data.frame(caseDf[caseDf$id==id,]$reqTestArray)
-  stage1InfoDf <- data.frame()
-  stage2InfoDf <- data.frame()
-  stage3InfoDf <- data.frame()
-  for (trial in 1:6)
-  {
-    trialSelect <- pptTrials[trial,]
-    trialSelect <- as.integer(str_split(trialSelect,",")[[1]])
-    stage1InfoDf <- rbind(stage1InfoDf, trialSelect[1:6])
-    stage2InfoDf <- rbind(stage2InfoDf, trialSelect[7:19])
-    stage3InfoDf <- rbind(stage3InfoDf, trialSelect[20:29])
-  }
-  
-  #stage1mds <- stage1InfoDf %>%
-  #  dist() %>%          
-  #  cmdscale() %>%
-  #  as_tibble()
-  
-  stage1distances <- stage1InfoDf %>% dist() %>% as.matrix()
-  stage2distances <- stage2InfoDf %>% dist() %>% as.matrix()
-  stage3distances <- stage3InfoDf %>% dist() %>% as.matrix()
-  
-  count <- count + 1
-  stagewiseDistanceDf[count,1] <- 1
-  stagewiseDistanceDf[count,2] <- mean(stage1distances)
-  
-  count <- count + 1
-  stagewiseDistanceDf[count,1] <- 2
-  stagewiseDistanceDf[count,2] <- mean(stage2distances)
-  
-  count <- count + 1
-  stagewiseDistanceDf[count,1] <- 3
-  stagewiseDistanceDf[count,2] <- mean(stage3distances)
-  
-}
-
-stagewiseDistanceDf$Stage <- as.factor(stagewiseDistanceDf$Stage)
-inf <- ggplot(stagewiseDistanceDf, aes(x=Stage, y=Variance)) +
-  geom_violin(colour="black", fill=infoSeekingColour, alpha=1, trim=FALSE) + 
-  geom_jitter(shape=16, position=position_jitter(0.1), colour="black") +
-  stat_summary(fun.data=data_summary, colour="white")
-
-print(inf +
-        ggtitle("Variance by Information Seeking Stage") +
-        labs(x = "Stage", y = "Information Seeking Variance") +
-        theme_classic() +
-        theme(axis.text=element_text(size=16),
-              axis.title=element_text(size=16),
-              plot.title=element_text(size=18,face="bold")
-        )) 

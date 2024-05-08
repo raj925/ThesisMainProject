@@ -67,7 +67,7 @@ for (id in ids)
     df$testNames[row] <- toString(unique(trialSelect$requestedTestsText))
     
     df$numOfDifferentials[row] <- length(trialSelect$severities) 
-    df$confidence[row] <- trialSelect$confidence
+    df$confidence[row] <- (trialSelect$confidence)/100
     if (is.null(trialSelect$diagnoses))
     {
       df$correctDiagnosis[row] <- toupper(trialSelect$trueCondition) %in% trialSelect$differentials
@@ -249,10 +249,10 @@ for (n in 1:length(participantIDS))
   
   if (accuracyMeasure == "CorrectLikelihood")
   {
-    aggData$accuracy[n] <- (aggData$averageLikelihoodOfCorrectDiagnosis[n]/10)
-    aggData$meanInitialAccuracy[n] <- (aggData$averageLikelihoodOfCorrectDiagnosisInitial[n]/10)
-    aggData$meanMiddleAccuracy[n] <- (aggData$averageLikelihoodOfCorrectDiagnosisMiddle[n]/10)
-    aggData$meanFinalAccuracy[n] <- (aggData$averageLikelihoodOfCorrectDiagnosisFinal[n]/10)
+    aggData$accuracy[n] <- aggData$averageLikelihoodOfCorrectDiagnosis[n]/10
+    aggData$meanInitialAccuracy[n] <- aggData$averageLikelihoodOfCorrectDiagnosisInitial[n]/10
+    aggData$meanMiddleAccuracy[n] <- aggData$averageLikelihoodOfCorrectDiagnosisMiddle[n]/10
+    aggData$meanFinalAccuracy[n] <- aggData$averageLikelihoodOfCorrectDiagnosisFinal[n]/10
     
   } else if (accuracyMeasure == "HighestLikelihood")
   {
@@ -646,7 +646,7 @@ for (n in 1:nrow(studentCaseDf))
   accuracyVal <- studentAggData[studentAggData$participantID==studentCaseDf$id[n],]$meanFinalAccuracy 
   
   confidenceQuantiles <- quantile(studentAggData$meanFinalConfidence)
-  confidenceVal <- studentAggData[studentAggData$participantID==studentCaseDf$id[n],]$meanFinalConfidence 
+  confidenceVal <- studentAggData[studentAggData$participantID==studentCaseDf$id[n],]$meanFinalConfidence - studentAggData[studentAggData$participantID==studentCaseDf$id[n],]$meanInitialConfidence
   
   infoSeekingFullMatrix$accuracyScore[n] <- accuracyVal
   if (accuracyVal > accuracyQuantiles[4])
@@ -710,7 +710,7 @@ for (m in 1:nrow(expertCaseDf))
   accuracyVal <- expertAggData[expertAggData$participantID==expertCaseDf$id[m],]$meanFinalAccuracy 
   
   confidenceQuantiles <- quantile(expertAggData$meanFinalConfidence)
-  confidenceVal <- expertAggData[expertAggData$participantID==expertCaseDf$id[m],]$meanFinalConfidence 
+  confidenceVal <- expertAggData[expertAggData$participantID==expertCaseDf$id[m],]$meanFinalConfidence - expertAggData[expertAggData$participantID==expertCaseDf$id[m],]$meanInitialConfidence 
   
   infoSeekingFullMatrix$accuracyScore[m+offset] <- accuracyVal
   if (accuracyVal > accuracyQuantiles[4])

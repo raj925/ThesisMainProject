@@ -37,7 +37,7 @@ handle_ties <- function(frequencies) {
   max_frequency <- max(frequencies)
   ties <- names(frequencies[frequencies == max_frequency])
   if (length(ties) > 1) {
-    return(c("Hybrid", paste(sort(ties), collapse = ", ")))
+    return(c("PR", paste(sort(ties), collapse = ", ")))
   } else {
     return(c(names(frequencies)[which.max(frequencies)], ""))
   }
@@ -102,8 +102,8 @@ TAData <- merge(TAData, caseDfTA, by = c("ID","Condition"))
 
 result <- TAData %>%
   group_by(Condition) %>%
-  summarise(caseDominantStrat = handle_ties(table(OverallStrat))[1],
-            frequency = max(table(OverallStrat))) %>%
+  summarise(caseDominantStrat = handle_ties(table(InterraterStrat))[1],
+            frequency = max(table(InterraterStrat))) %>%
   ungroup()
 
 # Merge the summarized result with the original dataframe
@@ -115,9 +115,9 @@ TAData <- select(TAData, -frequency)
 # Group by ID, calculate frequency of each strat, identify most common, count occurrences
 result <- TAData %>%
   group_by(ID) %>%
-  summarise(most_common_strat = handle_ties(table(OverallStrat))[1],
-            tied_strats = handle_ties(table(OverallStrat))[2],
-            frequency = max(table(OverallStrat))) %>%
+  summarise(most_common_strat = handle_ties(table(InterraterStrat))[1],
+            tied_strats = handle_ties(table(InterraterStrat))[2],
+            frequency = max(table(InterraterStrat))) %>%
   ungroup()
 
 print(result)
@@ -132,7 +132,7 @@ TAData <- TAData %>%
 # Remove unnecessary columns
 TAData <- select(TAData, -most_common_strat, -frequency)
 
-TAData$usingCaseDominantStrat <- ifelse(TAData$OverallStrat==TAData$caseDominantStrat,
+TAData$usingCaseDominantStrat <- ifelse(TAData$InterraterStrat==TAData$caseDominantStrat,
                                         1,
                                         0)
 
@@ -184,8 +184,8 @@ for (p in 1:nrow(TAData))
   
   infoSeekingMatrixTA <- rbind(infoSeekingMatrixTA, infoVector)
   rownames(infoSeekingMatrixTA)[p] <- paste(TAData$ID[p],
-                                            "-OverallStrat",
-                                            TAData$OverallStrat[p],
+                                            "-InterraterStrat",
+                                            TAData$InterraterStrat[p],
                                             "-CaseDominantStrat",
                                             TAData$caseDominantStrat[p],
                                             "-usingCaseDominantStrat",
@@ -194,8 +194,8 @@ for (p in 1:nrow(TAData))
                                             TAData$matchingIndividualDominantStrat[p],
                                             "-",
                                             TAData$Condition[p],
-                                            "-Correct",
-                                            TAData$Correct[p],
+                                            "-InterraterCorrect",
+                                            TAData$InterraterCorrect[p],
                                             sep="")
   
   
@@ -205,8 +205,8 @@ for (p in 1:nrow(TAData))
 colnames(infoSeekingMatrixTA) <- c(1:29)
 infoSeekingMatrixTA$Condition <- TAData$Condition
 infoSeekingMatrixTA$ID <- TAData$ID
-infoSeekingMatrixTA$Correct <- TAData$Correct
-infoSeekingMatrixTA$Strat <- TAData$OverallStrat
+infoSeekingMatrixTA$InterraterCorrect <- TAData$InterraterCorrect
+infoSeekingMatrixTA$Strat <- TAData$InterraterStrat
 infoSeekingMatrixTA$caseDominantStrat <- TAData$caseDominantStrat
 infoSeekingMatrixTA$usingCaseDominantStrat <- TAData$usingCaseDominantStrat
 infoSeekingMatrixTA$matchingIndividualDominantStrat <- TAData$matchingIndividualDominantStrat
@@ -221,9 +221,9 @@ colnames(distancesTA) <- rownames(distancesTA)
 ```{r, warning=FALSE, message=FALSE}
 
 nCases <- nrow(caseData)
-props <- c(nrow(caseData[caseData$OverallStrat=="PR",])/nCases,
-           nrow(caseData[caseData$OverallStrat=="HD",])/nCases,
-           nrow(caseData[caseData$OverallStrat=="SI",])/nCases)
+props <- c(nrow(caseData[caseData$InterraterStrat=="PR",])/nCases,
+           nrow(caseData[caseData$InterraterStrat=="HD",])/nCases,
+           nrow(caseData[caseData$InterraterStrat=="SI",])/nCases)
 
 temp <- data.frame(stratCodes,props)
 
@@ -245,9 +245,9 @@ p
 ```{r, warning=FALSE, message=FALSE}
 
 nCases <- nrow(caseData)
-props <- c(mean(caseData[caseData$OverallStrat=="PR",]$Correct),
-           mean(caseData[caseData$OverallStrat=="HD",]$Correct),
-           mean(caseData[caseData$OverallStrat=="SI",]$Correct))
+props <- c(mean(caseData[caseData$InterraterStrat=="PR",]$InterraterCorrect,na.rm=T),
+           mean(caseData[caseData$InterraterStrat=="HD",]$InterraterCorrect,na.rm=T),
+           mean(caseData[caseData$InterraterStrat=="SI",]$InterraterCorrect,na.rm=T))
 
 temp <- data.frame(stratCodes,props)
 
@@ -270,29 +270,29 @@ p
 ```{r, warning=FALSE, message=FALSE}
 
 stratBreakdown <- caseData %>%
-  group_by(Condition, OverallStrat) %>%
+  group_by(Condition, InterraterStrat) %>%
   dplyr::mutate(N = n()) %>%
   dplyr::summarise(m_N = mean(N)/16)
 
 nCases <- nrow(caseData)
-props <- c(nrow(caseData[caseData$OverallStrat=="PR",])/nCases,
-           nrow(caseData[caseData$OverallStrat=="HD",])/nCases,
-           nrow(caseData[caseData$OverallStrat=="SI",])/nCases,
-           nrow(caseData[caseData$OverallStrat=="NONE",])/nCases)
+props <- c(nrow(caseData[caseData$InterraterStrat=="PR",])/nCases,
+           nrow(caseData[caseData$InterraterStrat=="HD",])/nCases,
+           nrow(caseData[caseData$InterraterStrat=="SI",])/nCases,
+           nrow(caseData[caseData$InterraterStrat=="NONE",])/nCases)
 
 temp <- data.frame(c("Overall","Overall","Overall","Overall"),
                    c("PR","HD","SI","NONE"),
                    props)
-colnames(temp) <- c("Condition","OverallStrat","m_N")
+colnames(temp) <- c("Condition","InterraterStrat","m_N")
 
 stratBreakdown <- rbind(stratBreakdown,temp)
 
-stratBreakdown$OverallStrat <- factor(stratBreakdown$OverallStrat, levels = c('HD', 'PR', 'SI', 'NONE'))
+stratBreakdown$InterraterStrat <- factor(stratBreakdown$InterraterStrat, levels = c('HD', 'PR', 'SI', 'NONE'))
 
-p <- ggplot(stratBreakdown, aes(fill=OverallStrat, y=m_N, x=Condition)) + 
+p <- ggplot(stratBreakdown, aes(fill=InterraterStrat, y=m_N, x=Condition)) + 
     geom_bar(position="dodge", stat="identity",alpha=0.7) +
     scale_fill_manual(values=c("#E69F00", "#56B4E9", "#009E73",  "grey")) +
-  scale_x_discrete(limits = c("GBS","TTP","UC","AD","TA","MTB","Overall")) +
+  scale_x_discrete(limits = c("UC","GBS","TTP","AD","TA","MTB","Overall")) +
   labs(title="Breakdown of Reasoning Strategies By Case",x="Case (Decreasing Accuracy)",y="Proportion of Participants") +
   theme_minimal() +
     theme(axis.text=element_text(size=16),
@@ -352,11 +352,9 @@ pptBreakdown <- pptData %>%
   group_by(ReasoningStratSub) %>%
   dplyr::mutate(N = n()) %>%
   dplyr::summarise(m_N = mean(N),
-                  mDiffsAdded = mean(meanDiffsAdded),
-                   mDiffsRemoved = mean(meanDiffsRemoved),
                    mDiffsEvals = mean(meanDiffEvals),
+                   confidence = mean(meanConfidenceOverallChange),
                    infoSought = mean(proportionOfInfo),
-                   confidence = mean(meanFinalConfidence),
                    accuracy = mean(Accuracy))
 
 pptBreakdown
@@ -369,10 +367,10 @@ pptBreakdown
 
 acc <- c("Incorrect","Correct")
 
-means <- c(mean(caseData[caseData$Correct==0,]$DEs),
-                mean(caseData[caseData$Correct==1,]$DEs))
-sds <- c(sd(caseData[caseData$Correct==0,]$DEs)/sqrt(nrow(caseData[caseData$Correct==0,])),
-              sd(caseData[caseData$Correct==1,]$DEs)/sqrt(nrow(caseData[caseData$Correct==1,])))
+means <- c(mean(caseData[caseData$InterraterCorrect==0,]$DEs),
+                mean(caseData[caseData$InterraterCorrect==1,]$DEs))
+sds <- c(sd(caseData[caseData$InterraterCorrect==0,]$DEs)/sqrt(nrow(caseData[caseData$Correct==0,])),
+              sd(caseData[caseData$InterraterCorrect==1,]$DEs)/sqrt(nrow(caseData[caseData$InterraterCorrect==1,])))
 
 temp <-data.frame(acc, means,sds)
 
@@ -388,8 +386,8 @@ p <- ggplot(temp) +
 
 print(p)
 
-print(t.test(caseData[caseData$Correct==0,]$DEs,
-             caseData[caseData$Correct==1,]$DEs))
+print(t.test(caseData[caseData$InterraterCorrect==0,]$DEs,
+             caseData[caseData$InterraterCorrect==1,]$DEs))
 
 ```
 
@@ -398,10 +396,10 @@ print(t.test(caseData[caseData$Correct==0,]$DEs,
 
 acc <- c("HD","Non-HD")
 
-means <- c(mean(caseData[caseData$OverallStrat=="HD",]$DEs,na.rm=T),
-                mean(caseData[caseData$OverallStrat!="HD",]$DEs,na.rm=T))
-sds <- c(sd(caseData[caseData$OverallStrat=="HD",]$DEs,na.rm=T)/sqrt(nrow(caseData[caseData$OverallStrat=="HD",])),
-              sd(caseData[caseData$OverallStrat!="HD",]$DEs,na.rm=T)/sqrt(nrow(caseData[caseData$OverallStrat!="HD",])))
+means <- c(mean(caseData[caseData$InterraterStrat=="HD",]$DEs,na.rm=T),
+                mean(caseData[caseData$InterraterStrat!="HD",]$DEs,na.rm=T))
+sds <- c(sd(caseData[caseData$InterraterStrat=="HD",]$DEs,na.rm=T)/sqrt(nrow(caseData[caseData$InterraterStrat=="HD",])),
+              sd(caseData[caseData$InterraterStrat!="HD",]$DEs,na.rm=T)/sqrt(nrow(caseData[caseData$InterraterStrat!="HD",])))
 
 temp <-data.frame(acc, means,sds)
 
@@ -417,8 +415,8 @@ p <- ggplot(temp) +
 
 print(p)
 
-print(t.test(caseData[caseData$OverallStrat=="HD",]$DEs,
-             caseData[caseData$OverallStrat!="HD",]$DEs))
+print(t.test(caseData[caseData$InterraterStrat=="HD",]$DEs,
+             caseData[caseData$InterraterStrat!="HD",]$DEs))
 
 ```
 
@@ -427,10 +425,10 @@ print(t.test(caseData[caseData$OverallStrat=="HD",]$DEs,
 
 acc <- c("HD","Non-HD")
 
-means <- c(mean(caseData[caseData$OverallStrat=="HD",]$Correct,na.rm=T),
-                mean(caseData[caseData$OverallStrat!="HD",]$Correct,na.rm=T))
-sds <- c(sd(caseData[caseData$OverallStrat=="HD",]$Correct,na.rm=T)/sqrt(nrow(caseData[caseData$OverallStrat=="HD",])),
-              sd(caseData[caseData$OverallStrat!="HD",]$Correct,na.rm=T)/sqrt(nrow(caseData[caseData$OverallStrat!="HD",])))
+means <- c(mean(caseData[caseData$InterraterStrat=="HD",]$InterraterCorrect,na.rm=T),
+                mean(caseData[caseData$InterraterStrat!="HD",]$InterraterCorrect,na.rm=T))
+sds <- c(sd(caseData[caseData$InterraterStrat=="HD",]$InterraterCorrect,na.rm=T)/sqrt(nrow(caseData[caseData$InterraterStrat=="HD",])),
+              sd(caseData[caseData$InterraterStrat!="HD",]$InterraterCorrect,na.rm=T)/sqrt(nrow(caseData[caseData$InterraterStrat!="HD",])))
 
 temp <-data.frame(acc, means,sds)
 
@@ -446,8 +444,8 @@ p <- ggplot(temp) +
 
 print(p)
 
-print(t.test(caseData[caseData$OverallStrat=="HD",]$Correct,
-             caseData[caseData$OverallStrat!="HD",]$Correct))
+print(t.test(caseData[caseData$InterraterStrat=="HD",]$InterraterCorrect,
+             caseData[caseData$InterraterStrat!="HD",]$InterraterCorrect))
 
 ```
 
@@ -456,10 +454,10 @@ print(t.test(caseData[caseData$OverallStrat=="HD",]$Correct,
 
 acc <- c("Hybrid","Non-Hybrid")
 
-means <- c(mean(caseData[caseData$hybridStrat==1,]$Correct),
-                mean(caseData[caseData$hybridStrat==0,]$Correct))
-sds <- c(sd(caseData[caseData$hybridStrat==1,]$Correct)/sqrt(nrow(caseData[caseData$hybridStrat==1,])),
-              sd(caseData[caseData$hybridStrat==0,]$Correct)/sqrt(nrow(caseData[caseData$hybridStrat==0,])))
+means <- c(mean(caseData[caseData$hybridStrat==1,]$InterraterCorrect),
+                mean(caseData[caseData$hybridStrat==0,]$InterraterCorrect))
+sds <- c(sd(caseData[caseData$hybridStrat==1,]$InterraterCorrect)/sqrt(nrow(caseData[caseData$hybridStrat==1,])),
+              sd(caseData[caseData$hybridStrat==0,]$InterraterCorrect)/sqrt(nrow(caseData[caseData$hybridStrat==0,])))
 
 temp <-data.frame(acc, means,sds)
 
@@ -475,8 +473,8 @@ p <- ggplot(temp) +
 
 print(p)
 
-print(t.test(caseData[caseData$hybridStrat==1,]$Correct,
-             caseData[caseData$hybridStrat==0,]$Correct))
+print(t.test(caseData[caseData$hybridStrat==1,]$InterraterCorrect,
+             caseData[caseData$hybridStrat==0,]$InterraterCorrect))
 
 ```
 
@@ -586,11 +584,11 @@ print(diffInfo +
 
 ```{r, warning=FALSE, message=FALSE}
 
-caseList <- c("GBS","TTP","UC","AD","TA","MTB")
+caseList <- c("UC","GBS","TTP","AD","TA","MTB")
 accs <- c()
 for (case in caseList)
 {
-  accs <- c(accs, mean(caseData[caseData$Condition==case,]$Correct))
+  accs <- c(accs, mean(caseData[caseData$Condition==case,]$InterraterCorrect))
   
 }
 temp <- data.frame(caseList,accs)
@@ -647,20 +645,19 @@ library(tibble)
 
 ```{r, warning=FALSE, message=FALSE}
 stratVarBreakdown <- TAData %>%
-  group_by(OverallStrat) %>%
+  group_by(InterraterStrat) %>%
   dplyr::mutate(N = n()) %>%
-  dplyr::summarise(mDiffsAdded = mean(meanDiffsAdded),
-                   mDiffsRemoved = mean(meanDiffsRemoved),
-                   mDiffsEvals = mean(meanDiffEvals),
+  dplyr::summarise(mDiffsEvals = mean(meanDiffEvals),
+                   confidenceChange = mean(confidenceChange),
                    infoSought = mean(proportionOfInfo),
                    infoValue = mean(infoValue),
-                   accuracy = mean(Correct))
+                   accuracy = mean(InterraterCorrect))
 
 
 for (i in 1:nrow(stratVarBreakdown))
 {
-  strat <- stratVarBreakdown$OverallStrat[i]
-  searchstring <- paste("OverallStrat", strat, sep="")
+  strat <- stratVarBreakdown$InterraterStrat[i]
+  searchstring <- paste("InterraterStrat", strat, sep="")
   result <- distancesTA %>%
     as.data.frame() %>%
     rownames_to_column() %>%
@@ -684,9 +681,9 @@ stratIndDominantBreakdown <- TAData %>%
   dplyr::mutate(N = n()) %>%
   dplyr::summarise(n = mean(N),
                   infoSought = mean(proportionOfInfo),
-                   infoValue = mean(infoValue),
-                   accuracy = mean(Correct),
                   confidenceC = mean(confidenceChange),
+                   infoValue = mean(infoValue),
+                   accuracy = mean(InterraterCorrect),
                   mDiffsAdded = mean(meanDiffsAdded),
                    mDiffsRemoved = mean(meanDiffsRemoved),
                    mDiffsEvals = mean(meanDiffEvals))
@@ -704,7 +701,7 @@ stratCaseDominantBreakdown <- TAData %>%
   dplyr::summarise(n = mean(N),
                   infoSought = mean(proportionOfInfo),
                    infoValue = mean(infoValue),
-                   accuracy = mean(Correct),
+                   accuracy = mean(InterraterCorrect),
                   confidenceC = mean(confidenceChange),
                   mDiffsAdded = mean(meanDiffsAdded),
                    mDiffsRemoved = mean(meanDiffsRemoved),
@@ -738,7 +735,7 @@ stratIndCaseDominantBreakdown <- TAData %>%
   dplyr::summarise(n = mean(N),
                   infoSought = mean(proportionOfInfo),
                    infoValue = mean(infoValue),
-                   accuracy = mean(Correct),
+                   accuracy = mean(InterraterCorrect),
                   confidenceC = mean(confidenceChange),
                   mDiffsAdded = mean(meanDiffsAdded),
                    mDiffsRemoved = mean(meanDiffsRemoved),
@@ -763,6 +760,67 @@ for (i in 1:nrow(stratIndCaseDominantBreakdown))
   
 }
 stratIndCaseDominantBreakdown
+
+```
+
+
+```{r, eval=FALSE}
+
+
+classifierDataTA <- infoSeekingMatrixTA
+classifierDataTA$CaseStrat <- as.factor(as.integer(as.logical(classifierDataTA$caseDominantStrat=="PR")))
+classifierDataTA$usingCaseDominantStrat <- as.factor(classifierDataTA$usingCaseDominantStrat)
+colnames(classifierDataTA)[1:29] <- c("T1", "T2",  "T3",  "T4",  "T5",  "T6",  "T7",  
+                                      "T8",  "T9", "T10", "T11", "T12", "T13", "T14", 
+                                      "T15", "T16", "T17", "T18", "T19", "T20", "T21", "T22",
+                                      "T23", "T24", "T25", "T26", "T27", "T28", "T29")
+
+
+
+
+
+thresh<-seq(0,1,0.001)
+#specify the cross-validation method
+ctrl <- trainControl(method = "LOOCV", number = 100, savePredictions = TRUE)
+
+######################################
+# Models using LOOCV
+
+set.seed(1000)
+
+# Shuffle rows in case there are order biases
+classifierDataTA <- classifierDataTA[sample(1:nrow(classifierDataTA)),]
+
+modelglm<-train(usingCaseDominantStrat ~ T8 + T9 + T10 +
+                    T11 + T12 + T13 + T14 + T15 + T16 + T17 +  T18 + T19 + T20 +
+                    T21 + T22 + T23 + T24 + T25 + T26 + T27 + T28 + T29, method = "glm", family = binomial(link=probit), data = classifierDataTA, trControl = ctrl)
+prediglm<-predict(modelglm,type = "prob")[2]
+
+
+# Plot all test results on one ROC curve
+rocPlot <- roc.plot(x=classifierDataTA$usingCaseDominantStrat=="1",pred=cbind(prediglm),legend = T,
+                    leg.text = c("GLM"),thresholds = thresh)$roc.vol
+
+
+classifierData$CaseStratPosthoc <- ifelse(classifierData$Case %in% c("MTB","TTP","TA"),1,0)
+classifierData$CaseStratPosthoc <- as.factor(classifierData$CaseStratPosthoc)
+
+modelglm<-train(CaseStratPosthoc ~ T2 + T3 + T4 + T5 + T6 + T7 + T8 + T9 + T10 +
+                    T11 + T12 + T13 + T14 + T15 + T16 + T17 +  T18 + T19 + T20 +
+                    T21 + T22 + T23 + T24 + T25 + T26 + T27 + T28 + T29, method = "glm", family = binomial(link=probit), data = classifierData, trControl = ctrl)
+  prediglm<-predict(modelglm,type = "prob")[2]
+  
+  # Plot all test results on one ROC curve
+rocPlot <- roc.plot(x=classifierData$CaseStratPosthoc=="1",pred=cbind(prediglm),legend = T,
+                    leg.text = c("GLM"),thresholds = thresh)$roc.vol
+
+######
+
+infoValByStrat <- temp[1:510,]
+infoValByStrat$CaseStrat <- classifierData$CaseStratPosthoc
+
+t.test(infoValByStrat[infoValByStrat$CaseStrat==0,]$infoValue,
+       infoValByStrat[infoValByStrat$CaseStrat==1,]$infoValue)
 
 ```
 

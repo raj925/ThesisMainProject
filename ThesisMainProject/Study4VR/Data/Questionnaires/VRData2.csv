@@ -1,17 +1,17 @@
-﻿ParticipantID,OMSID,Scenario,t1Diagnoses,t1Likelihoods,t1Confidence,t1Severity,t2Diagnoses,t2Likelihoods,t2Confidence,t2Severity,t2SeniorReview,t2InvestigationsComplete,OMSScore,t2ExtraInvestigations
-A22,10,Pneumonia,"Sepsis, Viral infection, Bacterial infection","4,2,4",6,7,,,,,,,,
-A15,7,Pneumonia,"Sepsis, Asthma attack, URTI, pneumonia","4,4,3,3",6,8,"Sepsis, URTI, asthma attack","5,4,3",8,8,0.21,0,70,would have liked to get more drugs and need catheter and full sepsis six
-A25,18,Pneumonia,infective excerbation of asthma,5,8,7,"VIW, sepsis","4,4",6,8,0.47,1,67,
-A17,1,Pneumonia,"Asthma excerbation, pneumonia, sepsis","4,3,5",8,7,"Asthma, infectious asthma excerbation, pneumonia","4,4,4",7,7,0,0,74,
-A21,16,Seizure,"Generalised seizure, atypical febrile convulsion, meningitis, hypoglycaemia","3,1,3,1",4,6,Febrile convulsion,5,8,4,0.12,0,,
-A10,11,Pneumonia,"Acute asthma excerbation, concomitant infection, foreign body","5,4,2",8,7,"Sepsis, acute asthma excerbation, pneumonia","5,1,4",8,9,0.12,0,51,"full history of travel, examine peripheral cardio signs, view output"
-A18,2,Pneumonia,"Excerbation of asthma, viral induced wheeze, resp infection, anaphylaxis, sepsis","4,4,4,3,3",5,8,"Sepsis, resp infection","5,3",9,9,0,0,,"lmms, travel history, reassess circulation after fluids"
-A13,24,Seizure,"Seizure, infection, sepsis, epilepsy","5,4,2,3",5,7,"Seizure, infectio, sepsis","5,4,3",6,7,0.18,0,70,"investigate source of infection further, maybe blood cultures"
-A14,13,Pneumonia,"Acute asthma excerbation, viral infection, sepsis, anaphylaxis","5,3,4,1",7,9,"Sepsis, acute asthma","4,4",7,9,0.18,1,58,
-A5,25,Seizure,"Febrile convulsions, infantile seizures, epilepsy, psychogenic seizures, head trauma","5,4,3,1,3",5,4,Febrile convulsion,5,7,4,,1,73,
-A3,22,Seizure,"Febrile seizure, viral urti, epilepsy, reflex anoxic seizure","5,5,1,1",8,3,"Febrile seizure, viral urti, epilepsy, uti, pnemonia, gasteroenteritis","5,5,1,1,1,1",9,3,0.49,1,63,
-A7,3,Pneumonia,"excerbation of asthma due to infection, sepsis, pneumonia","5,2,2",7,7,"Sepsis, chest infection","5,5",9,9,0.12,1,,
-A19,5,Seizure,"Febrile seizure, meningitis, epilepsy","5,4,2",6,7,"Febrile seizure, meningitis, epilepsy","5,3,1",9,1,0.35,0,50,
-A8,15,Seizure,"Febrile convulsion, new epilepsy, viral infection","5,3,5",5,9,"Febrile convulsions, new epilepsy, viral infection ","5,1,5",7,5,0.1,0,38,"Neuro exam, look tonsils/ENT exam, localising signs of infection"
-A24,4,Seizure,"Epilepsy, sepsis, meningitis","4,4,4",5,7,"Febrile seizure, sepsis, croup a strep, epilepsy","4,3,3,2",5,9,0.21,0,,PMH
-A6,27,Pneumonia,"Asthma acute excerbation, anaphylaxis, chest infection","5,4,4",3,7,,,,,,,61,
+﻿ParticipantID,OMSID,Scenario,t1Diagnoses,t1DiagnosisScore,t1Likelihoods,t1Confidence,t1Severity,t2Diagnoses,t2Likelihoods,t2Confidence,t2Severity,t2SeniorReview,t2InvestigationsComplete,OMSScore,t2ExtraInvestigations
+A22,10,Pneumonia,"Sepsis, Viral infection, Bacterial infection",0.14,"4,2,4",6,7,,,,,,,,
+A15,7,Pneumonia,"Sepsis, Asthma attack, URTI, pneumonia",0.59,"4,4,3,3",6,8,"Sepsis, URTI, asthma attack","5,4,3",8,8,0.21,0,70,would have liked to get more drugs and need catheter and full sepsis six
+A25,18,Pneumonia,infective excerbation of asthma,0.23,5,8,7,"VIW, sepsis","4,4",6,8,0.47,1,67,
+A17,1,Pneumonia,"Asthma excerbation, pneumonia, sepsis",0.44,"4,3,5",8,7,"Asthma, infectious asthma excerbation, pneumonia","4,4,4",7,7,0,0,74,
+A21,16,Seizure,"Generalised seizure, atypical febrile convulsion, meningitis, hypoglycaemia",0.73,"3,1,3,1",4,6,Febrile convulsion,5,8,4,0.12,0,,
+A10,11,Pneumonia,"Acute asthma excerbation, concomitant infection, foreign body",0.37,"5,4,2",8,7,"Sepsis, acute asthma excerbation, pneumonia","5,1,4",8,9,0.12,0,51,"full history of travel, examine peripheral cardio signs, view output"
+A18,2,Pneumonia,"Excerbation of asthma, viral induced wheeze, resp infection, anaphylaxis, sepsis",0.2,"4,4,4,3,3",5,8,"Sepsis, resp infection","5,3",9,9,0,0,,"lmms, travel history, reassess circulation after fluids"
+A13,24,Seizure,"Seizure, infection, sepsis, epilepsy",0.47,"5,4,2,3",5,7,"Seizure, infectio, sepsis","5,4,3",6,7,0.18,0,70,"investigate source of infection further, maybe blood cultures"
+A14,13,Pneumonia,"Acute asthma excerbation, viral infection, sepsis, anaphylaxis",0.27,"5,3,4,1",7,9,"Sepsis, acute asthma","4,4",7,9,0.18,1,58,
+A5,25,Seizure,"Febrile convulsions, infantile seizures, epilepsy, psychogenic seizures, head trauma",0.61,"5,4,3,1,3",5,4,Febrile convulsion,5,7,4,,1,73,
+A3,22,Seizure,"Febrile seizure, viral urti, epilepsy, reflex anoxic seizure",0.4,"5,5,1,1",8,3,"Febrile seizure, viral urti, epilepsy, uti, pnemonia, gasteroenteritis","5,5,1,1,1,1",9,3,0.49,1,63,
+A7,3,Pneumonia,"excerbation of asthma due to infection, sepsis, pneumonia",0.54,"5,2,2",7,7,"Sepsis, chest infection","5,5",9,9,0.12,1,,
+A19,5,Seizure,"Febrile seizure, meningitis, epilepsy",0.73,"5,4,2",6,7,"Febrile seizure, meningitis, epilepsy","5,3,1",9,1,0.35,0,50,
+A8,15,Seizure,"Febrile convulsion, new epilepsy, viral infection",0.47,"5,3,5",5,9,"Febrile convulsions, new epilepsy, viral infection ","5,1,5",7,5,0.1,0,38,"Neuro exam, look tonsils/ENT exam, localising signs of infection"
+A24,4,Seizure,"Epilepsy, sepsis, meningitis",0.25,"4,4,4",5,7,"Febrile seizure, sepsis, croup a strep, epilepsy","4,3,3,2",5,9,0.21,0,,PMH
+A6,27,Pneumonia,"Asthma acute excerbation, anaphylaxis, chest infection",0.41,"5,4,4",3,7,,,,,,,61,

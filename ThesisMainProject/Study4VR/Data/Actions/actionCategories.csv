@@ -1,36 +1,36 @@
-﻿History,Examination,Testing,Guidelines,Treatment,PEWS
-past medical history,observe airway and talk to patient,ask for peak flow,paediatric asthma guidelines,non-rebreather mask (15 l/min),normal
-prescribed medications,auscultate lungs,capillary blood gas,paediatric diabetic ketoacidosis guidelines,ask mother to let us give child 10 puffs of salbutamol inhaler via their own spacer,> 30 breaths per min
-allergies,measure oxygen saturations & heart rate,ask for sputum cultures,paediatric seizure guidelines,simple face mask (10 l /min),mild / none
-medication list,capillary refill time (central),ask for ecg,paediatric resuscitation (apls) guidelines,nasal cannulae (2 l/min),sp o2 <95% in air and/or receiving oxygen
-medical history,capillary refill time (peripheral),ask for urine dip and culture,paediatric sepsis guidelines,nasal cannulae (4 l/min),> 120 bpm
-aggravating / relieving factors,check temperature (tympanic),ask for urine output monitoring,paediatric anaphylaxis guidelines,ask patient to sit up to help their breathing,yes
-ask about pain,measure blood pressure,insert iv access and take bloods,paediatric dehydration guidelines,20ml/kg 0.9% saline iv stat (max 500ml),sp o2 >95% with oxygen
-ask about general activity level,check hydration status,ask for blood ketones,paediatric oxygen therapy guidelines,10ml/kg 0.9% saline iv stat (max 500ml),severe / moderate
-history of presenting complaint,respiratory,fluid balance chart (intake/output),paediatric early warning score (pews) escalation chart,simple face mask (8 l /min),20 - 30 breaths per min
-social and living situation,"ear, nose & throat",ask for cardiac monitoring,wetflag calculations,simple face mask (6 l /min),sp o2 >95% in air
-parental smoking and pets,look in patient's mouth with a tongue depressor,observe respiratory rate and signs of respiratory distress,,nasal cannulae (0.5 l/min),decreased
-vaccination history,take pulse (central),ask for stool sample for culture,,insulin: fixed rate soluble insulin iv 0.1 units/kg/hour,no
-"feeding, growth and nutrition",auscultate heart sounds,urine results,,paracetamol 240mg po (4 - 5 years),< 20 breaths per min
-cardiovascular,check capillary blood glucose,cbg result #1,,lorazepam 0.1mg/ kg iv/ io (max dose 4mg) (over 1 month),< 70 bpm
-central nervous system,check pupils,cbg result #2,,insulin: rapid-acting insulin 1-5 units subcutaneous,70 - 120 bpm
-past surgical history,assess consciousness level (avpu),ecg result #1,,insulin: long-acting insulin 1-20 units subcutaneous,
-ask birth history,check upper body,take blood cultures,,,
-parental employment,check lower body,request swabs for mrsa screening,,,
-travel history,take pulse (peripheral),,,,
-e-prescription chart,abdominal exam,,,,
-presenting complaint,skin assessment chart,,,,
-check weight & height,take throat swab,,,,
-developmental milestones,ask about fever,,,,
-ethnic origin,gastrointestinal & genito-urinary,,,,
-antenatal history and scans,repeat blood pressure,,,,
-school / education,examine for lymph nodes,,,,
-social worker / child protection plan status,examine throat,,,,
-fluid prescription chart,ent exam,,,,
-home living situation,abdominal auscultation,,,,
-school,,,,,
-progress at school,,,,,
-family history,,,,,
-gastrointestinal,,,,,
-vision and hearing,,,,,
-ask about head injury,,,,,
+﻿History,Examination,Testing,Guidelines,Treatment,PEWS,Help,SBAR
+past medical history,observe airway and talk to patient,ask for peak flow,paediatric asthma guidelines,non-rebreather mask (15 l/min),normal,call on-call doctor,situation option 1
+prescribed medications,auscultate lungs,capillary blood gas,paediatric diabetic ketoacidosis guidelines,ask mother to let us give child 10 puffs of salbutamol inhaler via their own spacer,> 30 breaths per min,day team on ward,situation option 2
+allergies,measure oxygen saturations & heart rate,ask for sputum cultures,paediatric seizure guidelines,simple face mask (10 l /min),mild / none,rapid response team (icu outreach),situation option 3
+medication list,capillary refill time (central),ask for ecg,paediatric resuscitation (apls) guidelines,nasal cannulae (2 l/min),sp o2 <95% in air and/or receiving oxygen,crash team,situation option 4
+medical history,capillary refill time (peripheral),ask for urine dip and culture,paediatric sepsis guidelines,nasal cannulae (4 l/min),> 120 bpm,day surgical team,
+aggravating / relieving factors,check temperature (tympanic),ask for urine output monitoring,paediatric anaphylaxis guidelines,ask patient to sit up to help their breathing,yes,diabetes team,
+ask about pain,measure blood pressure,insert iv access and take bloods,paediatric dehydration guidelines,20ml/kg 0.9% saline iv stat (max 500ml),sp o2 >95% with oxygen,push emergency button,
+ask about general activity level,check hydration status,ask for blood ketones,paediatric oxygen therapy guidelines,10ml/kg 0.9% saline iv stat (max 500ml),severe / moderate,,
+history of presenting complaint,respiratory,fluid balance chart (intake/output),paediatric early warning score (pews) escalation chart,simple face mask (8 l /min),20 - 30 breaths per min,,
+social and living situation,"ear, nose & throat",ask for cardiac monitoring,wetflag calculations,simple face mask (6 l /min),sp o2 >95% in air,,
+parental smoking and pets,look in patient's mouth with a tongue depressor,observe respiratory rate and signs of respiratory distress,,nasal cannulae (0.5 l/min),decreased,,
+vaccination history,take pulse (central),ask for stool sample for culture,,insulin: fixed rate soluble insulin iv 0.1 units/kg/hour,no,,
+"feeding, growth and nutrition",auscultate heart sounds,urine results,,paracetamol 240mg po (4 - 5 years),< 20 breaths per min,,
+cardiovascular,check capillary blood glucose,cbg result #1,,lorazepam 0.1mg/ kg iv/ io (max dose 4mg) (over 1 month),< 70 bpm,,
+central nervous system,check pupils,cbg result #2,,insulin: rapid-acting insulin 1-5 units subcutaneous,70 - 120 bpm,,
+past surgical history,assess consciousness level (avpu),ecg result #1,,insulin: long-acting insulin 1-20 units subcutaneous,,,
+ask birth history,check upper body,take blood cultures,,,,,
+parental employment,check lower body,request swabs for mrsa screening,,,,,
+travel history,take pulse (peripheral),,,,,,
+e-prescription chart,abdominal exam,,,,,,
+presenting complaint,skin assessment chart,,,,,,
+check weight & height,take throat swab,,,,,,
+developmental milestones,ask about fever,,,,,,
+ethnic origin,gastrointestinal & genito-urinary,,,,,,
+antenatal history and scans,repeat blood pressure,,,,,,
+school / education,examine for lymph nodes,,,,,,
+social worker / child protection plan status,examine throat,,,,,,
+fluid prescription chart,ent exam,,,,,,
+home living situation,abdominal auscultation,,,,,,
+school,,,,,,,
+progress at school,,,,,,,
+family history,,,,,,,
+gastrointestinal,,,,,,,
+vision and hearing,,,,,,,
+ask about head injury,,,,,,,

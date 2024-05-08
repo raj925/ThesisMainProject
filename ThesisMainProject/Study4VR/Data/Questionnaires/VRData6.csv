@@ -1,28 +1,28 @@
-﻿ParticipantID,OMSID,Scenario,t1Diagnoses,t1Likelihoods,t1Confidence,t1Severity,t2Diagnoses,t2Likelihoods,t2Confidence,t2Severity,t2SeniorReview,t2InvestigationsComplete,OMSScore,t2ExtraInvestigations
-C12,12,Seizure,"Febrile convulsions, epilepsy, infection","4,2,4",4,7,"Febrile seizure, epilepsy","5,1",9,6,0.35,0,48,looked in the mouth - ent assessment
-C11,11,Pneumonia,"Pneumonia, URTI, croup, pleural effusion","4,3,3,2",7,6,"Pneumonia, sepsis, exacerbation asthma, URTI","4,5,4,3",7,8,0.34,0,55,"Abdo exam, exposure, ENT"
-C23,23,Pneumonia,"Asthma exacerbation, anaphylaxis, sepsis","4,2,5",7,8,Sepsis,5,7,8,0.07,1,59,
-C28,28,Pneumonia,"Viral URTI, bronchiolitis, bacterial infection, sepsis (CNS involvement)","4,2,4,4",4,9,"Acute asthma exacerbation, viral URTI, sepsis","5,4,2",9,7,0.59,1,64,
-C25,25,Seizure,"Febrile convulsion, epilepsy","4,3",6,5,Febrile convulsion,5,7,3,0.51,1,55,
-C27,27,Seizure,"Febrile convulsion, viral URTI, croup, bronchiolitis, VIW","5,4,2,1,2",7,5,"Febrile seizure, viral URTI, VIW, bronchiolitis, croup","5,4,3,2,1",7,5,0.85,1,66,
-C29,29,Seizure,"Febrile seizure, epilepsy, infection","4,2,5",5,9,"Febrile convulsion, tonsillitis, epilepsy","5,5,1",8,1,0.56,1,64,
-C24,24,Pneumonia,"VIW, pneumonia, cold/flu","2,3,4",3,3,"Asthma exacerbation, viral induced wheeze, pneumonia, sepsis","5,3,1,2",4,7,0,0,68,Blood cultures
-C7,7,Seizure,"Febrile convulsion, tonic clonic seizure","5,3",7,9,"Febrile convulsion, sepsis","5,2",7,9,0.62,0,59,"ENT exam, not sure if it was offered as an option. Infebrile chill, want to check tympanic membrane + throat"
-C22,22,Seizure,"Febrile seizure, epilepsy","5,4",8,8,"Febrile convulsion, epilepsy, meningitis, DKA, brain bleed","5,2,1,1,1",8,7,0.24,0,64,"CT head, feraPAIN score, neuro exam"
-C20,20,Pneumonia,"Acute exacerbation of asthma, URTI, pneumonia","4,2,2",3,3,,,,,,,,
-C18,18,Pneumonia,"Asthma excerbation, LRTI, viral induced wheeze","5,3,2",6,7,"Infectious excerbation of asthma, pneumonia","4,5",7,6,0.25,0,60,"I would like to re-listen to lungs, I would probably not take bloods right now but consider it - IV access too. Sepsis screen"
-C19 ,19,Seizure,"Febrile convulsions, epilepsy, bronchiolitis, meningitis","4,3,1,2",1,9,,,,,,,,
-C13,13,Pneumonia,"Asthma exacerbation, viral induced wheeze/infection","5,4",7,7,"Pneumonia, sepsis","5,5",7,8,0.38,1,73,
-C15,15,Seizure,"Epilepsy, febrile convulsion","4,1",2,8,"Febrile seizure, epilepsy","5,1",10,7,0.79,1,,
-C16,16,Seizure,"Febrile convulsion, epilepsy, CNS infection","5,3,3",6,5,"Febrile convulsions, epilepsy, meningitis, space occupying lesion","5,2,1,1",9,6,0.65,1,70,
-C17,17,Seizure,"Seizure, epilepsy, febrile convulsion","5,3,3",3,9,"Febrile convulsion, epilepsy, seizure","5,2,1",8,7,0.12,0,64,Better examination to determine cause of infection
-C6,6,Pneumonia,"Asthma exacerbation, pneumonia, inhaled FB, pneumothorax, DKA","5,2,1,1,1",8,3,"Asthma, pneumonia","5,3",9,3,0.31,1,58,
-C21,21,Pneumonia,"Acute asthma exacerbation, viral infection, any infection, pneumonia","5,3,2,2",8,7,"Asthma exacerbation, viral infection, chest infection, sepsis","5,3,3,4",7,8,0.13,1,62,
-C8,8,Pneumonia,"Bronchiolitis, infective exacerbation of asthma, pneumonia with pleural effusion","3,4,4",6,5,"Sepsis, Pneumonia/LRTI,, infective excerbation asthma","5,4,4",7,7,0.34,1,61,
-C4,4,Pneumonia,"Asthma exacerbation, LRTI, URTI","4,5,3",4,7,"Pneumonia, asthma exacerbation","5,1",7,8,0.22,0,65,"Maybe sputum sample, check cap refill/glucose. Request chest x-ray"
-C9,9,Seizure,"Febrile convulsion, epilepstic seizure, hypoglycaemia","5,2,1",6,9,"Febrile convulsion, epilepsy, hypoglycaemic seizure, tonsillitis, URTI","5,2,1,4,3",6,9,0.81,1,70,
-C10,10,Seizure,"Febrile convulsions, meningitis, first epilepsy/seizure, tumour","5,2,1,1",8,5,"Febrile convulsion, epilepsy, enceph/meningitis, brain tumour","5,3,2,1",9,5,0.12,0,,Look at tonsils
-C5,5,Seizure,"Seizure, hypo, epilepsy, febrile convulsion, NEA, SOL, encephalitis","5,3,3,4,2,2,2",6,9,Febrile convulsion,5,10,7,0,1,,
-C2,2,Pneumonia,"Pneumonia, asthma exacerbation, foreign body","5,1,1",6,7,"Pneumonia, asthma exacerbation, viral pneumonisis","5,5,1",10,7,0.54,0,60,"CXR, Sputumblood cultures, viral throat swab and examine throat and ears"
-C1,1,Seizure,"Febrile Seizure, pneumonitis v/b, RSV (high fever), epilepsy, hypoglycaemic seizure","5,4,1,3,1",3,7,"Febrile seizure, URTI, epilepsy","5,5,2",9,7,0.26,0,70,Ask mum what meds she was given
-C3,3,Seizure,"Febrile convulsion, epilepsy, hypoglycaemia","5,3,1",7,4,"Febrile convulsions, epilepsy, hypoglycaemia","5,2,1",7,3,0.57,1,53,
+﻿ParticipantID,OMSID,Scenario,t1Diagnoses,t1DiagnosisScore,t1Likelihoods,t1Confidence,t1Severity,t2Diagnoses,t2Likelihoods,t2Confidence,t2Severity,t2SeniorReview,t2InvestigationsComplete,OMSScore,t2ExtraInvestigations
+C12,12,Seizure,"Febrile convulsions, epilepsy, infection",0.43,"4,2,4",4,7,"Febrile seizure, epilepsy","5,1",9,6,0.35,0,48,looked in the mouth - ent assessment
+C11,11,Pneumonia,"Pneumonia, URTI, croup, pleural effusion",0.53,"4,3,3,2",7,6,"Pneumonia, sepsis, exacerbation asthma, URTI","4,5,4,3",7,8,0.34,0,55,"Abdo exam, exposure, ENT"
+C23,23,Pneumonia,"Asthma exacerbation, anaphylaxis, sepsis",0.4,"4,2,5",7,8,Sepsis,5,7,8,0.07,1,59,
+C28,28,Pneumonia,"Viral URTI, bronchiolitis, bacterial infection, sepsis (CNS involvement)",0.24,"4,2,4,4",4,9,"Acute asthma exacerbation, viral URTI, sepsis","5,4,2",9,7,0.59,1,64,
+C25,25,Seizure,"Febrile convulsion, epilepsy",0.58,"4,3",6,5,Febrile convulsion,5,7,3,0.51,1,55,
+C27,27,Seizure,"Febrile convulsion, viral URTI, croup, bronchiolitis, VIW",0.56,"5,4,2,1,2",7,5,"Febrile seizure, viral URTI, VIW, bronchiolitis, croup","5,4,3,2,1",7,5,0.85,1,66,
+C29,29,Seizure,"Febrile seizure, epilepsy, infection",0.4,"4,2,5",5,9,"Febrile convulsion, tonsillitis, epilepsy","5,5,1",8,1,0.56,1,64,
+C24,24,Pneumonia,"VIW, pneumonia, cold/flu",0.54,"2,3,4",3,3,"Asthma exacerbation, viral induced wheeze, pneumonia, sepsis","5,3,1,2",4,7,0,0,68,Blood cultures
+C7,7,Seizure,"Febrile convulsion, tonic clonic seizure",0.38,"5,3",7,9,"Febrile convulsion, sepsis","5,2",7,9,0.62,0,59,"ENT exam, not sure if it was offered as an option. Infebrile chill, want to check tympanic membrane + throat"
+C22,22,Seizure,"Febrile seizure, epilepsy",0.64,"5,4",8,8,"Febrile convulsion, epilepsy, meningitis, DKA, brain bleed","5,2,1,1,1",8,7,0.24,0,64,"CT head, feraPAIN score, neuro exam"
+C20,20,Pneumonia,"Acute exacerbation of asthma, URTI, pneumonia",0.67,"4,2,2",3,3,,,,,,,,
+C18,18,Pneumonia,"Asthma excerbation, LRTI, viral induced wheeze",0.29,"5,3,2",6,7,"Infectious excerbation of asthma, pneumonia","4,5",7,6,0.25,0,60,"I would like to re-listen to lungs, I would probably not take bloods right now but consider it - IV access too. Sepsis screen"
+C19 ,19,Seizure,"Febrile convulsions, epilepsy, bronchiolitis, meningitis",0.69,"4,3,1,2",1,9,,,,,,,,
+C13,13,Pneumonia,"Asthma exacerbation, viral induced wheeze/infection",0.18,"5,4",7,7,"Pneumonia, sepsis","5,5",7,8,0.38,1,73,
+C15,15,Seizure,"Epilepsy, febrile convulsion",0.5,"4,1",2,8,"Febrile seizure, epilepsy","5,1",10,7,0.79,1,,
+C16,16,Seizure,"Febrile convulsion, epilepsy, CNS infection",0.73,"5,3,3",6,5,"Febrile convulsions, epilepsy, meningitis, space occupying lesion","5,2,1,1",9,6,0.65,1,70,
+C17,17,Seizure,"Seizure, epilepsy, febrile convulsion",0.73,"5,3,3",3,9,"Febrile convulsion, epilepsy, seizure","5,2,1",8,7,0.12,0,64,Better examination to determine cause of infection
+C6,6,Pneumonia,"Asthma exacerbation, pneumonia, inhaled FB, pneumothorax, DKA",0.71,"5,2,1,1,1",8,3,"Asthma, pneumonia","5,3",9,3,0.31,1,58,
+C21,21,Pneumonia,"Acute asthma exacerbation, viral infection, any infection, pneumonia",0.67,"5,3,2,2",8,7,"Asthma exacerbation, viral infection, chest infection, sepsis","5,3,3,4",7,8,0.13,1,62,
+C8,8,Pneumonia,"Bronchiolitis, infective exacerbation of asthma, pneumonia with pleural effusion",0.67,"3,4,4",6,5,"Sepsis, Pneumonia/LRTI,, infective excerbation asthma","5,4,4",7,7,0.34,1,61,
+C4,4,Pneumonia,"Asthma exacerbation, LRTI, URTI",0.75,"4,5,3",4,7,"Pneumonia, asthma exacerbation","5,1",7,8,0.22,0,65,"Maybe sputum sample, check cap refill/glucose. Request chest x-ray"
+C9,9,Seizure,"Febrile convulsion, epilepstic seizure, hypoglycaemia",0.67,"5,2,1",6,9,"Febrile convulsion, epilepsy, hypoglycaemic seizure, tonsillitis, URTI","5,2,1,4,3",6,9,0.81,1,70,
+C10,10,Seizure,"Febrile convulsions, meningitis, first epilepsy/seizure, tumour",0.75,"5,2,1,1",8,5,"Febrile convulsion, epilepsy, enceph/meningitis, brain tumour","5,3,2,1",9,5,0.12,0,,Look at tonsils
+C5,5,Seizure,"Seizure, hypo, epilepsy, febrile convulsion, NEA, SOL, encephalitis",1,"5,3,3,4,2,2,2",6,9,Febrile convulsion,5,10,7,0,1,,
+C2,2,Pneumonia,"Pneumonia, asthma exacerbation, foreign body",0.64,"5,1,1",6,7,"Pneumonia, asthma exacerbation, viral pneumonisis","5,5,1",10,7,0.54,0,60,"CXR, Sputumblood cultures, viral throat swab and examine throat and ears"
+C1,1,Seizure,"Febrile Seizure, pneumonitis v/b, RSV (high fever), epilepsy, hypoglycaemic seizure",0.56,"5,4,1,3,1",3,7,"Febrile seizure, URTI, epilepsy","5,5,2",9,7,0.26,0,70,Ask mum what meds she was given
+C3,3,Seizure,"Febrile convulsion, epilepsy, hypoglycaemia",0.69,"5,3,1",7,4,"Febrile convulsions, epilepsy, hypoglycaemia","5,2,1",7,3,0.57,1,53,

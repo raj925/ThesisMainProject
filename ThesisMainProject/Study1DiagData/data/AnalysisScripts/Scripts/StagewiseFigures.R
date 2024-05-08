@@ -251,18 +251,16 @@ nPpts <- nrow(studentAggData)
 rootN <- sqrt(nPpts)
 
 xb <- c("Patient History","Physical Exams", "Testing")
-yb <- c(mean(studentAggData$meanInitialConfidence)/100, mean(studentAggData$meanMiddleConfidence)/100, mean(studentAggData$meanFinalConfidence)/100)
-zb <- c(mean(studentAggData$meanInitialCorrect), mean(studentAggData$meanMiddleCorrect), mean(studentAggData$meanFinalCorrect))
-zb2 <- c(mean(studentAggData$meanInitialAccuracy), mean(studentAggData$meanMiddleAccuracy), mean(studentAggData$meanFinalAccuracy))
+yb <- c(mean(studentAggData$meanInitialConfidence), mean(studentAggData$meanMiddleConfidence), mean(studentAggData$meanFinalConfidence))
+zb <- c(mean(studentAggData$meanInitialAccuracy), mean(studentAggData$meanMiddleAccuracy), mean(studentAggData$meanFinalAccuracy))
 
-val <- c(yb,zb,zb2)
-typ <- c(rep("Confidence",3),rep("Differential Accuracy",3),rep("Accuracy",3))
+val <- c(yb,zb)
+typ <- c(rep("Confidence",3),rep("Accuracy",3))
 
-secon <- c(sd(studentAggData$meanInitialConfidence/100)/rootN, sd(studentAggData$meanMiddleConfidence/100)/rootN, sd(studentAggData$meanFinalConfidence/100)/rootN)
-seacc <- c(sd(studentAggData$meanInitialCorrect)/rootN, sd(studentAggData$meanMiddleCorrect)/rootN, sd(studentAggData$meanFinalCorrect)/rootN)
-selik <- c(sd(studentAggData$meanInitialAccuracy)/rootN, sd(studentAggData$meanMiddleAccuracy)/rootN, sd(studentAggData$meanFinalAccuracy)/rootN)
+secon <- c(sd(studentAggData$meanInitialConfidence)/rootN, sd(studentAggData$meanMiddleConfidence)/rootN, sd(studentAggData$meanFinalConfidence)/rootN)
+seacc <- c(sd(studentAggData$meanInitialAccuracy)/rootN, sd(studentAggData$meanMiddleAccuracy)/rootN, sd(studentAggData$meanFinalAccuracy)/rootN)
 
-ses <- c(secon, seacc, selik)
+ses <- c(secon, seacc)
 
 dataV <- data.frame("Stage" = xb, "Value"= val, "Type"= typ, "se" = ses)
 
@@ -272,21 +270,13 @@ p <- ggplot(dataV, aes(x = Stage, y = Value, group = Type, color = Type )) +
   geom_errorbar(aes(ymin=Value-se, ymax=Value+se), width=.2, position=position_dodge(0.05)) +
   labs(title="   ",x="Stage",y="% Value") +
   theme_classic() +
-  scale_color_manual(values = c(accuracyColour,confidenceColour,infoSeekingColour)) +
+  scale_color_manual(values = c(accuracyColour,confidenceColour)) +
   theme(axis.text=element_text(size=16),
                              axis.title=element_text(size=18),
                              plot.title=element_text(size=20,face="bold"),
                              legend.text = element_text(size = 18))
 
 print(p)
-
-xb <- c(rep("PH",nPpts),rep("PE",nPpts), rep("T",nPpts))
-yb <- c(studentAggData$meanInitialConfidence/100, studentAggData$meanMiddleConfidence/100, studentAggData$meanFinalConfidence/100)
-zb <- c(studentAggData$meanInitialCorrect, studentAggData$meanMiddleCorrect, studentAggData$meanFinalCorrect)
-
-allDataDf <- data.frame("Stage" = xb, "Confidence"= yb, "Accuracy"= zb)
-
-print(t.test(allDataDf[allDataDf$Stage=="T",]$Confidence,allDataDf[allDataDf$Stage=="T",]$Accuracy,paired = T))
 
 ######################
 

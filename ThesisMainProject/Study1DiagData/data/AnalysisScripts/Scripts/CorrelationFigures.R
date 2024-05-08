@@ -67,7 +67,7 @@ cor <- cor.test(studentAggData$proportionOfInfo,studentAggData$meanConfidenceOve
 
 diffCon <- ggplot(data = studentAggData, aes(x=proportionOfInfo, y=meanConfidenceOverallChange)) +
   geom_point() +
-  geom_smooth(method=lm , color=infoSeekingColour, fill="#69b3a2", se=TRUE) +
+  geom_smooth(method=lm , color=confidenceColour, fill="#69b3a2", se=TRUE) +
   theme_classic()
 
 title <- paste("Info Seeking % against Change in Confidence: ",

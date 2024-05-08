@@ -110,7 +110,7 @@ kendallTauDistance <- function(x,y){
 requiredPackages <- c("rpart", "caret", "tidyverse", "data.table", "verification", "glmnet",
                       "GGally", "corrplot", "verification", "ROCR", "maptree",
                       "glmnet", "gridExtra", "randomForest", "mgcv", "nnet", "pROC",
-                      "gbm", "e1071", "xgboost", "DT", "NeuralNetTools", "rpart.plot")
+                      "gbm", "e1071", "xgboost", "DT", "NeuralNetTools", "rpart.plot", "interactions")
 new.packages <- requiredPackages[!(requiredPackages %in% installed.packages()[,"Package"])]
 if(length(new.packages)) install.packages(new.packages, repos = "http://cran.us.r-project.org")
 lapply(requiredPackages, require, character.only = TRUE)
