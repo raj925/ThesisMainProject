@@ -647,7 +647,7 @@ library(tibble)
 stratVarBreakdown <- TAData %>%
   group_by(InterraterStrat) %>%
   dplyr::mutate(N = n()) %>%
-  dplyr::summarise(mDiffsEvals = mean(meanDiffEvals),
+  dplyr::summarise(n = mean(N),
                    confidenceChange = mean(confidenceChange),
                    infoSought = mean(proportionOfInfo),
                    infoValue = mean(infoValue),
@@ -696,7 +696,7 @@ stratIndDominantBreakdown
 ```{r, warning=FALSE, message=FALSE}
 
 stratCaseDominantBreakdown <- TAData %>%
-  group_by(caseDominantStrat,usingCaseDominantStrat) %>%
+  group_by(InterraterStrat) %>%
   dplyr::mutate(N = n()) %>%
   dplyr::summarise(n = mean(N),
                   infoSought = mean(proportionOfInfo),

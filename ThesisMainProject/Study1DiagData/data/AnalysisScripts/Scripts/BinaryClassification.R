@@ -471,7 +471,7 @@ rownames(studentInfoDf) <- cases
 
 #######################
 
-classifyVar <- "accuracy"
+classifyVar <- "confidence"
 
 pptMeans <- c()
 group <- c()

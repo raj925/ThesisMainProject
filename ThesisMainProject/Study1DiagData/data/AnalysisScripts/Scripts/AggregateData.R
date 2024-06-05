@@ -502,6 +502,7 @@ for (y in 1:nCase)
   caseDf$initialCorrect[y] <- df$correct[(3*y)-2]
   caseDf$caseInformationProportion[y] <- (df$currentTests[(3*y)-2] + df$currentTests[(3*y)-1] + df$currentTests[(3*y)])/(df$possibleTest[(3*y)-2] + df$possibleTest[(3*y)-1] + df$possibleTest[(3*y)])
   caseDf$laterInfoProp[y] <- (df$currentTests[(3*y)-1] + df$currentTests[(3*y)])/(df$possibleTest[(3*y)-1] + df$possibleTest[(3*y)])
+  caseDf$initialConfidence[y] <- df$confidence[(3*y)-2]
   caseDf$finalConfidence[y] <-df$confidence[(3*y)]
   caseDf$confidenceChange[y] <-df$confidence[(3*y)] - df$confidence[(3*y)-2]
   caseDf$brierConfidence[y] <- df$brierConfidence[(3*y)]

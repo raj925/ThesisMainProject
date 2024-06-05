@@ -4,6 +4,7 @@ testingDataStrats <- infoSeekingFullMatrix[infoSeekingFullMatrix$ParticipantType
 testingDataStrats$initialDiagnoses <- studentCaseDf$initialDifferentials
 testingDataStrats$confidenceChange <- studentCaseDf$confidenceChange
 testingDataStrats$differentialChange <- studentCaseDf$differentialChange
+testingDataStrats$initialConfidence <- studentCaseDf$initialConfidence
 
 trainingDataStrats <- trainingDataStrats[trainingDataStrats$Strat!="NONE",]
 
@@ -46,6 +47,16 @@ predictions <- predict(model, newdata = testingDataStrats)
 
 testingDataStrats$classifiedStrat <- predictions
 
+
+predictionsMatrix <- model$pred
+
+# Count the number of times each class label is predicted
+classCounts <- table(predictions)
+
+# Compute the proportion of classifiers that predicted each class label
+classProportions <- prop.table(classCounts)
+
+
 ############################
 testingDataStratsExp <- infoSeekingFullMatrix[infoSeekingFullMatrix$ParticipantType=="e",]
 
@@ -67,10 +78,9 @@ predictions <- predict(model, newdata = testingDataStratsExp)
 testingDataStratsExp$classifiedStrat <- predictions
 
 classifiedStratBreakdownExp  <- testingDataStratsExp %>%
-  group_by(classifiedStrat) %>%
+  group_by(Condition,classifiedStrat) %>%
   dplyr::mutate(N = n()) %>%
   dplyr::summarise(n = mean(N),
-                   Correct = mean(Correct),
                    Accuracy = mean(LikelihoodAcc),
                    InfoAmount = mean(infoProp),
                    InitialDiagnoses = mean(initialDiagnoses),
@@ -78,7 +88,7 @@ classifiedStratBreakdownExp  <- testingDataStratsExp %>%
 
 ######################################
 
-testingDataStrats$value <- temp$infoValueAfterHistory[1:510]
+testingDataStrats$value <- temp$infoValue[1:510]
 testingDataStrats$infoAmount <- rowSums(testingDataStrats[,c(1:29)])/29
 
 testingPptBreakdown <- testingDataStrats %>%
@@ -89,14 +99,21 @@ testingPptBreakdown <- testingDataStrats %>%
                    InfoAmount = mean(infoAmount),
                    initialConfidence = mean(initialConfidence),
                    confidenceChange = mean(confidenceChange),
+                   InitialDiagnoses = mean(initialDiagnoses),
                    differentialChange = mean(differentialChange))
 
 
-model <- lm(LikelihoodAcc ~ classifiedStrat*initialDiagnoses + Condition,data=testingDataStrats) 
+model <- lm(LikelihoodAcc ~ classifiedStrat*initialDiagnoses,data=testingDataStrats) 
 summary(model)
 
 library(interactions) 
-interact_plot(model, pred = initialDiagnoses, modx = classifiedStrat)
+intplot <- interact_plot(model, pred = initialDiagnoses, modx = classifiedStrat) +
+  labs(y="Accuracy", x = "Number of Initial Diagnoses", colour = "Reasoning Strategy") +
+  theme(axis.text=element_text(size=16),
+        axis.title=element_text(size=16),
+        legend.title=element_text(size=16),
+        legend.text=element_text(size=16))
+print(intplot)
 ########################################
 
 classifiedStratBreakdown  <- testingDataStrats %>%
