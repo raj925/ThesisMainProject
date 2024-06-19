@@ -310,6 +310,10 @@ for (n in 1:nrow(vrData))
   
   vrData$numOfHistoryActionsBeforePause[n] <- sum(unique(actions)[times<300] %in% historyActions)
   vrData$percentageHistory[n] <- vrData$numOfHistoryActionsBeforePause[n]/vrData$numOfHistoryActions[n]
+  
+    vrData$numOfTestingActionsAfterPause[n] <- sum(unique(actions)[times>300] %in% TestingActions)
+  vrData$percentageTesting[n] <- vrData$numOfTestingActionsAfterPause[n]/vrData$numOfTestingActions[n]
+  
   vrData$historyVectorBeforePause[n] <- as.String(historyActions[historyActions %in% actions[times<300]])
   vrData$numOfActionsBeforePause[n] <- length(actions[times<300])
   vrData$numOfActionsAfterPause[n] <- length(actions[times>=300])
@@ -352,6 +356,7 @@ distancesVR <- infoSeekingMatrixVR %>% proxy::dist(method = "Hamman") %>% as.mat
 infoSeekingMatrixVR$scenario <- vrData$Scenario
 infoSeekingMatrixVR$OMSScore <- vrData$OMSScore
 infoSeekingMatrixVR$t1Confidence <- vrData$t1Confidence
+infoSeekingMatrixVR$t1DiagnosisScore <- vrData$t1DiagnosisScore
 
 ```
 
@@ -363,6 +368,7 @@ valueDf <- data.frame(matrix(nrow=length(actionsMasterList),ncol=4))
 rownames(valueDf) <- actionsMasterList
 colnames(valueDf) <- scens
 
+
 for (x in 1:nrow(valueDf))
 {
   for (y in 1:ncol(valueDf))
@@ -373,7 +379,10 @@ for (x in 1:nrow(valueDf))
     scenActs <- infoSeekingMatrixVR[infoSeekingMatrixVR$scenario==sce,]
     
     soughtScens <- scenActs[scenActs[[act]]==1,]$OMSScore
-    notSoughtScens <- scenActs[scenActs[[act]]==0,]$OMSScore
+    notSoughtScens <- scenActs[scenActs[[act]]==0,]$OMSScore 
+    
+    #soughtScens <- scenActs[scenActs[[act]]==1,]$t1DiagnosisScore
+    #notSoughtScens <- scenActs[scenActs[[act]]==0,]$t1DiagnosisScore 
     
     if (length(soughtScens)<1 | length(notSoughtScens)<1)
     {
@@ -881,59 +890,34 @@ inf <- ggplot(numDiagCon) +
 
 ```{r, warning=FALSE, message=FALSE}
 
-hist(vrData$numOfHistoryActions)
+# t1Confidence, infoVal, numOfActions, scenario, numOfDiagnoses
+# diagnosticChange, percentageHistory
 
-model <- lmerTest::lmer(infoValAfterHistory ~ infoValHistory + Scenario + (1 | ParticipantID), data=vrDataNoNAs)
+model <- lmerTest::lmer(confidenceChange ~ t1numOfDiagnoses + infoVal + filteredActions + Scenario + (1 | ParticipantID), data=vrDataNoNAs)
 summary(model)
 
-model <- lm(filteredActions ~ t1numOfDiagnoses + Scenario, data=vrData)
-summary(model)
+model <- lm(t1DiagnosisScore ~ t1numOfDiagnoses + filteredActions, data=vrDataNoNAs)
 
-histCon <- ggplot(data = vrData, aes(x=t1Confidence, y=infoValHistory)) +
+library(interactions)
+intplot <- interact_plot(model, pred = t1numOfDiagnosesChange, modx = filteredActions) +
+  labs(y="Change in Confidence", x = "Change in Diagnoses", colour = "Information Seeking") +
+  theme(axis.text=element_text(size=16),
+        axis.title=element_text(size=16),
+        legend.title=element_text(size=16),
+        legend.text=element_text(size=16))
+print(intplot)
+
+histCon <- ggplot(data = vrData, aes(x=numOfHistoryActionsBeforePause, y=t1numOfDiagnoses)) +
   geom_point() +
-  geom_smooth(method=lm , color=confidenceColour, fill="#69b3a2", se=TRUE) +
+  geom_smooth(method=lm , color=confidenceColour, fill="green", se=TRUE) +
   theme_classic()
 
 print(histCon + 
-        ggtitle("Early Confidence against History Taking") +
-      labs(y="Value of History Taking", x = "Confidence (Timepoint 1)"))
+        ggtitle("Amount of History Taking Against Number of Initial Diagnoses") +
+      labs(y="Number of Diagnoses (T1)", x = "Amount of History Taking"))
 
-cor <- cor.test(vrData$t1Confidence,vrData$numOfHistoryActions)
+cor <- cor.test(vrData$percentageTesting,vrData$confidenceChange)
 
-
-########
-
-histCon <- ggplot(data = vrData, aes(x=t1DiagnosisScore, y=infoValAfterHistory)) +
-  geom_point() +
-  geom_smooth(method=lm , color=confidenceColour, fill="#69b3a2", se=TRUE) +
-  theme_classic()
-
-print(histCon + 
-        scale_x_continuous(breaks = c(1,2,3,4,5,6,7,8,9,10)) +
-      labs(y="Diagnostic Appropriateness (Timepoint 1)", x = "Confidence (Timepoint 1)") +
-        theme(axis.text=element_text(size=16),
-             axis.title=element_text(size=16),
-             plot.title=element_text(size=14,face="bold")
-      ))
-
-cor <- cor.test(vrData$t1DiagnosisScore,vrData$infoValAfterHistory)
-
-########
-
-histCon <- ggplot(data = vrData, aes(x=t1numOfDiagnoses, y=infoValAfterPause)) +
-  geom_point() +
-  geom_smooth(method=lm , color="black", fill="grey", se=TRUE) +
-  theme_minimal()
-
-print(histCon + 
-        scale_x_continuous(breaks = c(1,2,3,4,5,6,7,8,9,10)) +
-      labs(x="Number of Diagnoses (Timepoint 1)", y = "Information Value After Pause") +
-        theme(axis.text=element_text(size=16),
-             axis.title=element_text(size=16),
-             plot.title=element_text(size=14,face="bold")
-      ))
-
-cor <- cor.test(vrData$t1confidence,vrData$numOfActionsBeforePause)
 
 ```
 
@@ -1025,10 +1009,12 @@ colnames(pcDF) <- c("PC1","PC2","PC3","PC4")
 pcDF$pid <- vrData$ParticipantID
 pcDF$condition <- vrData$Scenario
 pcDF$diagChange <- vrData$diagnosticChange
+pcDF$confidenceChange <- vrData$confidenceChange
+pcDF$OMSScore <- vrData$OMSScore
+pcDF$diagScore <- vrData$t1DiagnosisScore
 
-mixedPCModel = lm(diagChange ~ PC1 + PC2 + PC3 + PC4 + condition, data = pcDF)
+mixedPCModel = lm(diagScore ~ PC1 + PC2 + PC3 + PC4 + condition, data = pcDF)
 summary(mixedPCModel)
-
 
 ```
 
@@ -1074,111 +1060,6 @@ rocPlot <- roc.plot(x=classifierDataVR$ConfidenceGroup=="1",pred=cbind(prediglm)
 
 
 ```{r}
-
-histCon <- ggplot(data = vrData, aes(x=infoValBeforePause, y=t1DiagnosisScore)) +
-  geom_point() +
-  geom_smooth(method=lm , color=differentialColour, fill="lightblue", se=TRUE) +
-  theme_minimal()
-
-print(histCon + 
-      labs(y="Diagnostic Appropriateness (Timepoint 1)", x = "History Taking Value") +
-        theme(axis.text=element_text(size=16),
-             axis.title=element_text(size=16),
-             plot.title=element_text(size=14,face="bold")
-      ))
-
-cor <- cor.test(vrData$t1DiagnosisScore,vrData$infoValBeforePause)
-
-
-###################
-
-histCon <- ggplot(data = vrData, aes(x=numOfActionsBeforePause, y=confidenceChange)) +
-  geom_point() +
-  geom_smooth(method=lm , color="black", fill="grey", se=TRUE) +
-  theme_minimal()
-
-print(histCon + 
-      labs(y="Change in Confidence", x = "History Taking Amount (Before Pause)") +
-        theme(axis.text=element_text(size=16),
-             axis.title=element_text(size=16),
-             plot.title=element_text(size=14,face="bold")
-      ))
-
-cor <- cor.test(vrData$numOfActionsBeforePause,vrData$confidenceChange)
-
-###################
-###################
-###################
-
-histCon <- ggplot(data = vrData, aes(x=t1numOfDiagnoses, y=infoValHistory)) +
-  geom_point() +
-  geom_smooth(method=lm , color=confidenceColour, fill="green", se=TRUE) +
-  theme_minimal()
-
-print(histCon + 
-      labs(y="History Taking Amount", x = "Number of Differentials (Timepoint 1)") +
-        scale_x_continuous(breaks = c(1,2,3,4,5,6,7,8)) +
-        theme(axis.text=element_text(size=16),
-             axis.title=element_text(size=16),
-             plot.title=element_text(size=14,face="bold")
-      ))
-
-cor <- cor.test(vrData$t1numOfDiagnoses,vrData$infoValHistory)
-
-###################
-###################
-###################
-histCon <- ggplot(data = vrData, aes(x=t1numOfDiagnoses, y=infoValAfterHistory)) +
-  geom_point() +
-  geom_smooth(method=lm , color=infoSeekingColour, fill="red", se=TRUE) +
-  theme_minimal()
-
-print(histCon + 
-      labs(y="Exams and Testing Value", x = "Number of Differentials (Timepoint 1)") +
-        scale_x_continuous(breaks = c(1,2,3,4,5,6,7,8)) +
-        theme(axis.text=element_text(size=16),
-             axis.title=element_text(size=16),
-             plot.title=element_text(size=14,face="bold")
-      ))
-
-cor <- cor.test(vrData$t1numOfDiagnoses,vrData$infoValAfterHistory)
-
-
-########################
-
-histCon <- ggplot(data = vrData, aes(x=t1Confidence, y=infoValHistoryBeforePause)) +
-  geom_point() +
-  geom_smooth(method=lm , color=infoSeekingColour, fill="red", se=TRUE) +
-  theme_minimal()
-
-print(histCon + 
-      labs(y="History Taking Value", x = "Confidence (Timepoint 1)") +
-        scale_x_continuous(breaks = c(1,2,3,4,5,6,7,8,9,10)) +
-        theme(axis.text=element_text(size=16),
-             axis.title=element_text(size=16),
-             plot.title=element_text(size=14,face="bold")
-      ))
-
-cor <- cor.test(vrData$t1Confidence,vrData$infoValHistoryBeforePause)
-
-
-########################
-
-histCon <- ggplot(data = vrData, aes(x=numOfHistoryActionsBeforePause, y=t1numOfDiagnoses)) +
-  geom_point() +
-  geom_smooth(method=lm , color=confidenceColour, fill="green", se=TRUE) +
-  theme_minimal()
-
-print(histCon + 
-      labs(y="Number of Initial Diagnoses", x = "History Taking Amount (Before Pause)") +
-        theme(axis.text=element_text(size=16),
-             axis.title=element_text(size=16),
-             plot.title=element_text(size=14,face="bold")
-      ))
-
-cor <- cor.test(vrData$numOfHistoryActionsBeforePause,vrData$t1numOfDiagnoses)
-
-
 ########################
 
 histCon <- ggplot(data = vrData[vrData$totalHelpStart<9999,], aes(x=t1Confidence, y=totalHelpStart)) +

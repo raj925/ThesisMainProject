@@ -38,7 +38,7 @@ library(nnet)
 
 trainingDataStrats$stratLabel <- as.factor(trainingDataStrats$Strat)
 
-model <- train(stratLabel ~ Condition + T2 + T3 + T4 + T5 + T6 + T7 + T8 + T9 + T10 +
+model <- train(stratLabel ~ T2 + T3 + T4 + T5 + T6 + T7 + T8 + T9 + T10 +
                     T11 + T12 + T13 + T14 + T15 + T16 + T17 +  T18 + T19 + T20 +
                     T21 + T22 + T23 + T24 + T25 + T26 + T27 + T28 + T29, method = "multinom", data = trainingDataStrats, trControl = ctrl)
 
@@ -108,7 +108,7 @@ summary(model)
 
 library(interactions) 
 intplot <- interact_plot(model, pred = initialDiagnoses, modx = classifiedStrat) +
-  labs(y="Accuracy", x = "Number of Initial Diagnoses", colour = "Reasoning Strategy") +
+  labs(y="Accuracy", x = "Diagnoses", colour = "Reasoning Strategy") +
   theme(axis.text=element_text(size=16),
         axis.title=element_text(size=16),
         legend.title=element_text(size=16),

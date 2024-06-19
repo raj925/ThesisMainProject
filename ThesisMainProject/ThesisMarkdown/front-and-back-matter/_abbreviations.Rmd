@@ -1,12 +1,26 @@
 \item[AD] Aortic Dissection
 
+\item[DKA] Diabetic Ketoacidosis
+
 \item[GBS] Guillain-Barre Syndrome
 
+\item[HD] Hypothetico-Deductive Reasoning
+
+\item[ICU] Intensive Care Unit
+
 \item[MTB] Miliary Tuberculosis
+
+\item[OMS] Oxford Medical Simulation
+
+\item[OSF] Open Science Framework
 
 \item[PhEx] Physical Examination
 
 \item[PaHi] Patient History
+
+\item[PR] Pattern Recognition
+
+\item[SI] Scheme-Induced Reasoning
 
 \item[TA] Temporal Arteritis
 
@@ -16,6 +30,6 @@
 
 \item[UC] Ulcerative Colitis
 
-\item[VR] Virtual Reality: a form of technology where users wear a headset and are shown an application in a first-person view, where they embody that particular avatar.
+\item[VR] Virtual Reality
 
 

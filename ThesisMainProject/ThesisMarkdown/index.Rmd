@@ -195,18 +195,18 @@ source('scripts_and_filters/install_packages_if_missing.R')
 
 
 <!--
-Set up dataset for Study 1 Analysis
+Set up dataset for Study 2 Analysis
 -->
 ```{r AggregateData1, include=FALSE, eval=knitr::is_latex_output()}
-df <- as.data.frame(read.csv("./study1.csv",header=TRUE))
-source('scripts_and_filters/Study1/AggregateData.R')
+df <- as.data.frame(read.csv("./study2data.csv",header=TRUE))
+source('scripts_and_filters/Study2/AggregateData.R')
 ```
 
 <!--
-Set up dataset for Study 2 Analysis
+Set up dataset for Study 3 Analysis
 -->
 ```{r AggregateData2, include=FALSE, eval=knitr::is_latex_output()}
-TAData <- as.data.frame(read.csv("./study2.csv",header=TRUE))
+TAData <- as.data.frame(read.csv("./study3data.csv",header=TRUE))
 
 ###### Info Seeking Variance and Value
 
@@ -269,7 +269,7 @@ colnames(distancesTA) <- rownames(distancesTA)
 ```
 
 ```{r AggregateData3, include=FALSE, eval=knitr::is_latex_output()}
-vrData <- as.data.frame(read.csv("./study3.csv",header=TRUE))
+vrData <- as.data.frame(read.csv("./study4data.csv",header=TRUE))
 ```
 
 ```{r create_chunk_options, include=FALSE, eval=knitr::is_latex_output()}
