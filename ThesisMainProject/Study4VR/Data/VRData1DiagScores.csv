@@ -1,0 +1,21 @@
+﻿ParticipantID,OMSID,Scenario,t1Diagnoses,t1DiagnosisScore,t1DiagnosisScoreObj,t1Likelihoods,t1Confidence,t1Severity,t2Diagnoses,t2Likelihoods,t2Confidence,t2Severity,t2SeniorReview,t2InvestigationsComplete,OMSScore,t2ExtraInvestigations
+A12,19,DKA,"Diabetic Ketoacidosis, Dehydration",0.38,0.63,"5,3",5,7,DKA,5,4,7,0,0,47,I need to SBAR and manage
+A22,10,DKA,"DKA, Anaphylaxis, Gastroenteritis, Hypoglycaemia",0.53,0.67,"5,2,3,2",9,7,DKA,5,9,7,0.1,0,46,Fluids + VBG
+A24,4,Asthma,"Acute asthma attack, pneumonia, croup, epiglottitis, viral infection/viral seizure, inhaled foreign body",0.85,0.66,"5,2,2,1,4,2",6,6,Asthma,5,8,7,0.29,0,67,"More general assessment of symptoms, social history"
+A5,25,Asthma,"Acute asthma, FB inhalation, viral induced wheeze, lung cancer, bronchitis, epiglottitis",0.73,0.76,"5,4,4,1,2,3",6,5,"Acute excerbation of asthma, viral induced wheeze, inhaled foreign body","5,4,2",8,7,0.19,0,72,"Disability and Exposure, spent most of time doing B. Would give salbutamol"
+A3,22,Asthma,"Asthma, septic pneumonia, bronchiolitis",0.54,0.78,"4,3,2",4,7,"Asthma, VIW, Pneumonia/sepsis","5,1,1",8,6,0.22,1,62,
+A1,17,Asthma,"Asthma, viral-induced wheeze, foreign body inhalation",0.75,1,"5,4,3",2,5,"Asthma, Anaphylaxis, viral-induced wheeze","5,1,2",8,,,0,71,
+A11,14,Asthma,"Asthma excerbation, pneumonia, allergic reaction",0.56,0.75,"4,5,3",5,7,"Asthma, pneumonia, allergy","5,4,1",6,9,0.03,0,65,"Blood gas, bloods, steroids, senior"
+A9,26,Asthma,"Acute asthma excerbation, viral URTI, LRTI, bronchiolitis, croup/epiglottitis, viral induced wheeze (VIW)",0.85,0.91,"5,3,4,1,1,2",7,7,"Acute asthma excerbation, viral illness, viral induced wheeze, bronchiolitis, croup/epiglottitis","5,5,2,1,1",9,7,0,0,79,I would have given 10 puffs of salbutamol again and then call a senior doctor for SBAR
+A2,20,DKA,DKA,0.45,0.5,5,9,8,DKA,5,10,7,0.03,0,45,"Deeper history, cardioresp exam"
+A4,23,DKA,"DKA, Gastroenteritis, Tonsilitis",0.71,1,"5,3,2",7,6,"DKA, Gastroenteritis, Tonsilitis","5,2,1",8,7,0.16,1,39,
+A6,27,DKA,"DKA, Gastroenteritis, Appendicitis",0.53,0.73,"5,3,3",8,8,DKA,5,8,8,0.09,1,,
+A13,24,Asthma,"Asthma excerbation, sepsis, bronchiolitis, VIW, F. Body",0.55,0.63,"5,4,2,3,2",6,9,"Excerbation of asthma, sepsis, viral induced wheeze, bronchiolitis, inhalation of foreign body","5,4,2,2,1",6,9,0.12,0,62,"Cardiac examination, more detailed history including past surgical history, allergies etc"
+A10,11,DKA,"DKA, infection (causing DKA?)",0.38,0.71,"5,2",8,9,DKA,5,9,9,0,0,55,Give fluids
+A19,5,Asthma,"Pneumonia, asthma, anaphylaxis, viral induced wheeze, epiglottitis, croup, pneumothorax",0.81,0.82,"3,5,4,4,2,2,2",6,7,"Asthma, pneumonia, viral induced wheeze, epiglottitis, pneumothorax","5,5,4,3,1",8,7,0.19,0,58,Respiratory percussion
+A21,16,Asthma,"Respiratory infection, sepsis, pneumonia, PE, DKA",0.24,0.25,"5,5,4,1,3",6,9,"Acute asthma excerbation, infection respiratory","5,3",9,6,0.1,1,64,
+A20,12,DKA,"Diabetic Ketoacidosis, appendicitis, stomach bug",0.36,0.5,"5,2,3",3,7,"DKA, strep throat, appendicitis, stomach bug","5,2,2,2",9,7,0.25,0,46,"Full history, cardiac exam, neuro exam"
+A17,16,DKA,"DKA, viral (URTI)",0.66,1,"5,5",8,8,"DKA, URTI","5,5",7,8,0.1,1,51,
+A7,3,Asthma,"Asthma, anaphylaxis, viral-induced wheeze, obstruction",0.65,0.79,"5,2,4,3",6,7,"Anaphylaxis, asthma, pneumothorax","1,5,3",7,6,0.24,0,69,"Percussion (chest), chest expansion"
+A15,7,DKA,"DKA, Gastroenteritis, URTI",0.69,1,"5,2,2",7,7,DKA,5,9,9,0.13,0,74,"ENT, CNS exam, abdo exam, social history"
+A18,2,DKA,"DKA, Gastroenteritis, UTI",0.71,1,"5,3,2",6,7,DKA,5,9,8,0,0,70,"CBG earlies, full history"

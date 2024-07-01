@@ -181,6 +181,9 @@ examActions <- examActions[which(examActions != "")]
 TestingActions <- actioncategories$Testing
 TestingActions <- TestingActions[which(TestingActions != "")]
 
+treatmentActions <- actioncategories$Treatment
+treatmentActions <- treatmentActions[which(treatmentActions != "")]
+
 # All actions considered here are combination of these three
 actionsMasterList <- c(historyActions, examActions, TestingActions)
 actionsMasterList <- actionsMasterList[nzchar(actionsMasterList)]
@@ -271,6 +274,8 @@ for (n in 1:nrow(vrData))
   examActionsVector <- c()
   testingActionsVector <- c()
   
+  treatmentActionsVector <- c()
+  
   for (a in 1:length(historyActions))
   {
     if (historyActions[a] %in% actions)
@@ -298,19 +303,34 @@ for (n in 1:nrow(vrData))
       testingActionsVector <- c(testingActionsVector,0)
     }
   }
+  for (a in 1:length(treatmentActions))
+  {
+    if (treatmentActions[a] %in% actions)
+    {
+      treatmentActionsVector <- c(treatmentActionsVector,1)
+    } else {
+      treatmentActionsVector <- c(treatmentActionsVector,0)
+    }
+  }
   vrData$historyActionsVector[n] <- as.String(historyActionsVector)
   vrData$examsActionsVector[n] <- as.String(examActionsVector)
   vrData$testingActionsVector[n] <- as.String(testingActionsVector)
+  vrData$treatmentActionsVector[n] <- as.String(treatmentActionsVector)
   
   vrData$numOfHistoryActions[n] <- sum(historyActionsVector)
   vrData$numOfExamActions[n] <- sum(examActionsVector)
   vrData$numOfTestingActions[n] <- sum(testingActionsVector)
+  vrData$numOfTreatmentActions[n] <- sum(treatmentActionsVector)
   
   vrData$numOfActionsAfterHistory[n] <- vrData$numOfExamActions[n] + vrData$numOfTestingActions[n] 
   
   vrData$numOfHistoryActionsBeforePause[n] <- sum(unique(actions)[times<300] %in% historyActions)
+    vrData$numOfHistoryActionsAfterPause[n] <- sum(unique(actions)[times>300] %in% historyActions)
+    vrData$numOfExamActionsBeforePause[n] <- sum(unique(actions)[times<300] %in% examActions)
+    vrData$numOfExamActionsAfterPause[n] <- sum(unique(actions)[times>300] %in% examActions)
   vrData$percentageHistory[n] <- vrData$numOfHistoryActionsBeforePause[n]/vrData$numOfHistoryActions[n]
   
+    vrData$numOfTestingActionsBeforePause[n] <- sum(unique(actions)[times<300] %in% TestingActions)
     vrData$numOfTestingActionsAfterPause[n] <- sum(unique(actions)[times>300] %in% TestingActions)
   vrData$percentageTesting[n] <- vrData$numOfTestingActionsAfterPause[n]/vrData$numOfTestingActions[n]
   
@@ -407,8 +427,12 @@ for (x in 1:nrow(vrData))
   vrData$infoVal[x] <- sum(soughtVals,na.rm=T)
   
   historyVals <- soughtVals[1:length(historyActions)]
+  examVals <- soughtVals[(length(historyActions)+1):(length(historyActions)+length(examActions))]
+  testVals <- soughtVals[(length(historyActions)+length(examActions)+1):length(soughtVals)]
   #vrData$infoValHistory[x] <- mean(historyVals[historyVals!=0],na.rm = T)
   vrData$infoValHistory[x] <- sum(historyVals,na.rm = T)
+  vrData$infoValExams[x] <- sum(examVals,na.rm = T)
+  vrData$infoValTesting[x] <- sum(testVals,na.rm = T)
   
   pptTimes <- str_split(vrData$actTimesVector[n],"\n")[[1]]
   pptTimes <- as.numeric(pptTimes)
@@ -441,7 +465,7 @@ repeatIDs <- names(freq_table[freq_table > 1])
 vrCompleteData <-  vrCompleteData[vrCompleteData$ParticipantID %in% repeatIDs,]
 nFullPpts <- nrow(vrCompleteData)/2
 
-vrDataNoNAs <- vrData[!is.na(vrData$diagnosticChange),]
+vrDataNoNAs <- vrData[!is.na(vrData$confidenceChange),]
 
 
 ```
@@ -893,10 +917,11 @@ inf <- ggplot(numDiagCon) +
 # t1Confidence, infoVal, numOfActions, scenario, numOfDiagnoses
 # diagnosticChange, percentageHistory
 
-model <- lmerTest::lmer(confidenceChange ~ t1numOfDiagnoses + infoVal + filteredActions + Scenario + (1 | ParticipantID), data=vrDataNoNAs)
+
+model <- lmerTest::lmer(filteredActions ~ t1numOfDiagnoses + (1|Scenario) + (1 | ParticipantID), data=vrData)
 summary(model)
 
-model <- lm(t1DiagnosisScore ~ t1numOfDiagnoses + filteredActions, data=vrDataNoNAs)
+model <- lm(t1DiagnosisScore ~ t1numOfDiagnoses*filteredActions, data=vrDataNoNAs)
 
 library(interactions)
 intplot <- interact_plot(model, pred = t1numOfDiagnosesChange, modx = filteredActions) +
@@ -907,16 +932,23 @@ intplot <- interact_plot(model, pred = t1numOfDiagnosesChange, modx = filteredAc
         legend.text=element_text(size=16))
 print(intplot)
 
-histCon <- ggplot(data = vrData, aes(x=numOfHistoryActionsBeforePause, y=t1numOfDiagnoses)) +
+###################
+
+model <- lmerTest::lmer(t2Confidence ~ numOfHistoryActionsAfterPause + numOfExamActionsAfterPause + numOfTestingActionsAfterPause + (1|Scenario) + (1 | ParticipantID), data=vrData)
+summary(model)
+
+model <- lmerTest::lmer(t1DiagnosisScore ~ numOfHistoryActions + numOfExamActions + numOfTestingActions + (1|Scenario) + (1 | ParticipantID), data=vrData)
+summary(model)
+
+histCon <- ggplot(data = vrData, aes(x=t2Confidence, y=t1DiagnosisScore)) +
   geom_point() +
-  geom_smooth(method=lm , color=confidenceColour, fill="green", se=TRUE) +
+  geom_smooth(method=lm , color=accuracyColour, fill="grey", se=TRUE) +
   theme_classic()
 
 print(histCon + 
-        ggtitle("Amount of History Taking Against Number of Initial Diagnoses") +
-      labs(y="Number of Diagnoses (T1)", x = "Amount of History Taking"))
+        ggtitle("Confidence Against Diagnostic Score") +
+      labs(y="Diagnostic Score", x = "Final Confidence"))
 
-cor <- cor.test(vrData$percentageTesting,vrData$confidenceChange)
 
 
 ```
@@ -1016,6 +1048,21 @@ pcDF$diagScore <- vrData$t1DiagnosisScore
 mixedPCModel = lm(diagScore ~ PC1 + PC2 + PC3 + PC4 + condition, data = pcDF)
 summary(mixedPCModel)
 
+pcDF$diagGroup <- ifelse(pcDF$diagScore < median(pcDF$diagScore),0,1)
+pcDF$diagGroup <- as.factor(pcDF$diagGroup)
+pcDF$conditionFactor <- as.factor(pcDF$condition)
+
+
+modelglmVR<-train(diagGroup ~ PC1 + PC2 + PC3 + PC4, method = "glm", family = binomial(link=probit), data = pcDF, trControl = ctrl)
+prediglmVR<-predict(modelglmVR,type = "prob")[2]
+  
+thresh<-seq(0,1,0.001)
+#specify the cross-validation method
+ctrl <- trainControl(method = "LOOCV", savePredictions = TRUE)
+# Plot all test results on one ROC curve
+rocPlot <- roc.plot(x=pcDF$diagGroup=="1",pred=cbind(prediglmVR),legend = T,
+                    leg.text = c("GLM"),thresholds = thresh)$roc.vol
+
 ```
 
 ```{r}
@@ -1094,5 +1141,11 @@ print(histCon +
       ))
 
 cor <- cor.test(vrData[vrData$totalHelpStart<9999,]$numOfHistoryActionsBeforePause,vrData[vrData$totalHelpStart<9999,]$totalHelpStart)
+
+##################
+
+vrDataHelped <- vrData[vrData$totalHelpStart<9999,]
+model <- lmer(totalHelpStart ~ t1Severity + t1Confidence + (1|Scenario) + (1 | ParticipantID), data=vrDataHelped)
+summary(model)
 
 ```

@@ -82,6 +82,58 @@
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
  
 % allow us to include code blocks in shaded environments
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+
+% set white space before and after code blocks
+
+
+\renewenvironment{Shaded}
+{
+  \vspace{10pt}%
+  \begin{snugshade}%
+}{%
+  \end{snugshade}%
+  \vspace{8pt}%
+}
 
 % User-included things with header_includes or in_header will appear here
 % kableExtra packages will appear here if you use library(kableExtra)
@@ -346,13 +398,33 @@ in Medical Decision Making}
 
 Aortic Dissection
 
+\item[DKA]
+
+Diabetic Ketoacidosis
+
 \item[GBS]
 
 Guillain-Barre Syndrome
 
+\item[HD]
+
+Hypothetico-Deductive Reasoning
+
+\item[ICU]
+
+Intensive Care Unit
+
 \item[MTB]
 
 Miliary Tuberculosis
+
+\item[OMS]
+
+Oxford Medical Simulation
+
+\item[OSF]
+
+Open Science Framework
 
 \item[PhEx]
 
@@ -361,6 +433,14 @@ Physical Examination
 \item[PaHi]
 
 Patient History
+
+\item[PR]
+
+Pattern Recognition
+
+\item[SI]
+
+Scheme-Induced Reasoning
 
 \item[TA]
 
@@ -380,7 +460,7 @@ Ulcerative Colitis
 
 \item[VR]
 
-Virtual Reality: a form of technology where users wear a headset and are shown an application in a first-person view, where they embody that particular avatar.
+Virtual Reality
 
 \end{mclistof} 
 
@@ -393,13 +473,15 @@ Virtual Reality: a form of technology where users wear a headset and are shown a
 \flushbottom
 
 % all your chapters and appendices will appear here
-\chapter*{Introduction}\label{introduction}
+\hypertarget{introduction}{%
+\chapter*{Introduction}\label{introduction}}
 \addcontentsline{toc}{chapter}{Introduction}
 
 \adjustmtc
 \markboth{Introduction}{}
 
-\section*{Diagnosis}\label{diagnosis}
+\hypertarget{diagnosis}{%
+\section*{Diagnosis}\label{diagnosis}}
 \addcontentsline{toc}{section}{Diagnosis}
 
 ``Problems in diagnosis have\ldots been heavily dominated by physicians with little input from the cognitive sciences. What is missing\ldots is foundational work aimed at understanding how clinicians in actual situations take a complex, tangled stream of phenomena\ldots to create an understanding of them as a problem.'' (Wears, 2014)
@@ -425,7 +507,8 @@ A report from the US Institute of Medicine (McGlynn, McDonald \& Cassel, 2015) c
 
 Diagnostic error is by no means the sole cause of medical incidents. There are a number of factors tied to the wider work environment, culture and technology that can contribute to incidents and errors. A lot of these factors are challenging to isolate and emulate in an experimental setting. By understanding the individual psychological factors of the diagnostic process however, we better understand how sociotechnical and environmental factors interact with and amplify individual contributors to diagnostic error. Gaining a greater understanding of the causes of diagnostic error can have important implications for future interventions within healthcare settings.
 
-\section*{Cognitive Biases and Overconfidence in Diagnoses}\label{cognitive-biases-and-overconfidence-in-diagnoses}
+\hypertarget{cognitive-biases-and-overconfidence-in-diagnoses}{%
+\section*{Cognitive Biases and Overconfidence in Diagnoses}\label{cognitive-biases-and-overconfidence-in-diagnoses}}
 \addcontentsline{toc}{section}{Cognitive Biases and Overconfidence in Diagnoses}
 
 Diagnostic error can stem from cognitive biases during the diagnostic decision making process, such as primacy (Frotvedt et al., 2020) or recency (Chapman, Bergus \& Elstein, 1996) biases. While it seems intuitive that classical decision making biases affect those in healthcare too (Restrepo et al., 2020), the empirical evidence of impact for medical decision making is scant, (van den Berge \& Mamede, 2013). One example from dermatology looked found examples of satisficing bias (premature closure) and anchoring were found, but few examples of others such as availability and representative biases (Crowley et al., 2012). One type of bias that has manifested in more experimental findings is overconfidence (Berner \& Graber, 2008, Meyer et al.., 2013).
@@ -440,7 +523,8 @@ In a task that involved diagnosing ultrasound scans, it was found that overconfi
 
 We would argue that building on the current research landscape of diagnostic confidence is important. If there is an assumption that others will calibrate their confidence to their true accuracy, this would mean that heeding high confidence advice or judgements would be an optimal strategy for maximising accuracy. However, this can be a serious issue when high confidence errors lead others astray. This is important, as in addition to seniority and speciality experience, a clinician's confidence is one of the only markers available for other clinicians and for patients when making key medical decisions. One underexplored avenue in current research is the role that information seeking during the diagnostic process affects confidence.
 
-\section*{Information Seeking}\label{information-seeking}
+\hypertarget{information-seeking}{%
+\section*{Information Seeking}\label{information-seeking}}
 \addcontentsline{toc}{section}{Information Seeking}
 
 Clinicians generate hypotheses and then gather information to reduce the space of hypotheses. They should ideally eliminate hypotheses from consideration only when it makes sense given the incoming evidence. By the same token, they should also not continue attaching themselves to a hypothesis when there is overwhelming evidence to the contrary. One conclusion of Wason (1960) was that individuals struggle to remove a hypothesis from consideration even if they receive evidence against it. Understanding how individuals generally reason about a possible space of hypotheses is interesting for understanding how the reasoning process works differentially for novices and experts, especially in a specialised domain such as medicine. One question that is worth investigating is how the `process of elimination' affects confidence.
@@ -451,40 +535,48 @@ There is also evidence to assume that information seeking is important within me
 
 Diagnostic decisions have been thought of as `ideal' when using the hypothetico-deductive process (Kuipers \& Kassirer, 1984), whereby hypotheses are formulated based on specific features of a patient and are then linked to established criteria for a diagnosis, with further information gathering to test these hypotheses (Higgs et al., 2008) or eliminate others. This account was challenged by Coderre et al.~(2003), who found that diagnosis can based more on pattern recognition, especially for more experienced clinicians. Either way, the bridge between confidence and information seeking is the reasoning strategy utilised by clinicians. Diagnostic reasoning is currently taught using cognitive frameworks such as the surgical sieve and the ABCDE pneumonic. However, current education does not account for differences in reasoning strategies, whether strategies may meaningful vary by case and by clinician and how these strategies have a downstream influence on the diagnostic process in terms of seeking information, generating differentials and formulating confidence.
 
-\section*{Current Work}\label{current-work}
+\hypertarget{current-work}{%
+\section*{Current Work}\label{current-work}}
 \addcontentsline{toc}{section}{Current Work}
 
 There is a need for the teaching and assessment of non-technical skills and human factors in healthcare (Higham et al., 2019), which is currently not addressed in a widespread standardised manner in speciality curricula (Grieg, Higham \& Vaux, 2015). Curricula within medicine also place little emphasis on how uncertainty is communicated and approached in medical decision making (Hall, 2002). In addition, there is little work that informs how information seeking is taught within medical reasoning other the use of cognitive frameworks (such as the `surgical sieve') and pneumonics (such as Airway, Breathing, Circulation, Disability, Exposure). Clinical experience may also be connected to risk aversion and further information seeking behaviour (Lawton et al., 2019), which offers an important avenue for future medical education. Hence, this research informs medical education of non-technical skills such as diagnostic reasoning, especially around evaluating diagnostic differentials and seeking information during the diagnosis process.
 
 The following sections are structured as follows. Firstly, I will present a scoping review of the medical and psychological literature in which confidence or certainty has been studied within diagnostic studies. This review will map out the broad findings from this extant literature and identify gaps in our current understanding, some of which this DPhil aims to fill. Next, I will present an online behavioural study with medical students where participants freely sought information and provided diagnostic differentials at different stages during a series of patient vignettes. This study allows us to study how diagnostic differentials and confidence are affected by patterns of information seeking. The following section then details an in-person using a similar paradigm where medical think aloud as they are making these diagnoses, with the aim to use these think aloud utterances to classify different diagnostic reasoning strategies. These different strategies can be used to reanalyse the online study to investigate how reasoning strategies affect confidence and information seeking. The third empirical study seeks to look at diagnostic decisions in a more naturalistic manner by using virtual scenario paediatric scenarios to investigate differences in information seeking and confidence. Finally, I present a reflective chapter based on observations in Intensive Care, whereby the findings from this DPhil are contextualised within the decisions made during actual medical practice.
 
-\chapter{Study 1 - Scoping Review of Literature on Confidence and Certainty in Diagnoses}\label{study-1---scoping-review-of-literature-on-confidence-and-certainty-in-diagnoses}
+\hypertarget{study-1---scoping-review-of-literature-on-confidence-and-certainty-in-diagnoses}{%
+\chapter*{Study 1 - Scoping Review of Literature on Confidence and Certainty in Diagnoses}\label{study-1---scoping-review-of-literature-on-confidence-and-certainty-in-diagnoses}}
+\addcontentsline{toc}{chapter}{Study 1 - Scoping Review of Literature on Confidence and Certainty in Diagnoses}
 
 \adjustmtc
 \markboth{Scoping Review}{}
 
-\chapter*{Study 2 - Information Seeking and Confidence in Diagnosis}\label{study-2---information-seeking-and-confidence-in-diagnosis}
+\hypertarget{study-2---information-seeking-and-confidence-in-diagnosis}{%
+\chapter*{Study 2 - Information Seeking and Confidence in Diagnosis}\label{study-2---information-seeking-and-confidence-in-diagnosis}}
 \addcontentsline{toc}{chapter}{Study 2 - Information Seeking and Confidence in Diagnosis}
 
 \adjustmtc
 \markboth{Online Study}{}
 
-\section*{Methods}\label{methods}
+\hypertarget{methods}{%
+\section*{Methods}\label{methods}}
 \addcontentsline{toc}{section}{Methods}
 
-\subsection*{Participants}\label{participants}
+\hypertarget{participants}{%
+\subsection*{Participants}\label{participants}}
 \addcontentsline{toc}{subsection}{Participants}
 
 Participants were recruited between July 11th 2022 and April 6th 2023. 85 medical students were recruited for this study, including 32 males, 52 females and 1 participant who self-reported as non-binary. The age ranged between 22-34 (M = 24.2). The study was conducted online, with participants able to run the experiment in their browser. The experiment was coded using JSPsych, which is a Javascript plugin used specifically for psychology experiments. We recruited fifth or sixth (foundation) year medical students using a mailing list that those within OxSTAR have access to in order to recruit medical students based in Oxford. In order to recruit from further afield, we were assisted by the Medical Schools Council, who distributed the study to students in other medical schools across the UK. Participants were emailed with a study information sheet and a link to access the experiment, where they first provided consent via an anonymous online form. After doing so, the participant provided demographic information (age, gender and years of medical experience).
 
-\subsection*{Materials}\label{materials}
+\hypertarget{materials}{%
+\subsection*{Materials}\label{materials}}
 \addcontentsline{toc}{subsection}{Materials}
 
 Our first study involved the usage of patient vignettes. These are simulated patient cases that have been adapted from actual past cases. We used the bank of patient scenarios from Friedman's (2004) study as a foundation for our scenarios. However, it should be noted that these vignettes could not be used straight away as they were provided. These vignettes were developed by a team of researchers based in the US, meaning that certain medical terms (eg medication, tests etc) had to be `translated' into the vernacular used by doctors based in the UK. This was done via consultation with researchers working with the OxSTAR Centre who were also practising medical staff and students within the NHS. There also may have been differences in vernacular based on time, given that the original vignettes were developed for a paper published in 2004. Cases made occasional references to specific years in the patient's history where they have experienced previous medical conditions. These years were updated to make sense for a contemporary patient. Whilst a sizable bank of vignettes were kindly provided to us by Friedman, certain conditions were considered too rare (either for the current time or for the UK) to be used. Our goal was to test the clinicians' ability to deal with diagnostic uncertainty, rather than testing their declarative knowledge of obscure medical conditions. We therefore chose cases that involved medical conditions that medical students would be expected to know.
 
 Our study involved 6 patient cases, each with a true underlying condition. These conditions were : Aortic Dissection (AD), Guillain-Barre Syndrome (GBS), Miliary TB (MTB), Temporal Arteritis (TA), Thrombotic Thrombocytopenic Purpura (TTP) and Ulcerative Colitis (UC). The order in which the cases were presented was randomised for each participant. We also included a practice case to familiarise the participants with the experimental procedure and the interface.
 
-\subsection*{Procedure}\label{procedure}
+\hypertarget{procedure}{%
+\subsection*{Procedure}\label{procedure}}
 \addcontentsline{toc}{subsection}{Procedure}
 
 The procedure of a single case (or `trial') is as follows. The participant is asked to imagine that they are working in a busy district hospital and they encounter patients in a similar way to how they would in their real medical practice. At the start of each, the participant is shown a presenting complaint for a patient, which includes the patient's age and their main symptoms. An example of this is as follows: ``patient is a 68 year old male presenting with fever and arthralgia''. This information remains on screen throughout the entire case. Each case is split into three information stages: Patient History, Physical Examination and Testing. This order of stages is fixed for all participants. At each stage, the participant sees pieces of information or tests that they can request. Participants can view information from a previous stage but cannot see information for a future stage (e.g.~if a participant is at the Physical Examination stage, they will be able to see information pertaining to Patient History and Physical Examination, but not information pertaining to Testing). The set of information requests for each stage is the same for all cases. The Patient History stage includes information on ``Allergies'', ``History of the Presenting Complaint'', ``Past Medical History'' and ``Family History''. The Physical Examination stage includes `actions' that a doctor may take when examining a patient, such as ``auscultate the lungs'', ``abdomen examination'', ``take pulse'' and ``measure temperature''. Finally, the Testing stage involves information on any bedside tests or tests they may request from another department. This includes ``Chest X-Ray'', ``Venous Blood Gas'', ``Urine Dipstick'' and ``Clotting Test''. There is a total of 29 possible tests that can be requested across the three information stages. When a participant clicks on any of these tests, the screen shows a loading icon for 3 seconds before showing the information for that test on screen. During this loading time, other tests cannot be requested. When any subsequent test is requested, the previous test result is removed from the screen such that participants can only view one piece of information at a time. The time delay for receiving information was added after piloting the study, where the lack of time delay meant that participants were likely to request most information without being selective. We also emphasised during the instructions that participants should only request information that they believe will help them with diagnosing the patient. The information shown for each test is pre-defined as per the medical vignettes and is the same for all participants. Participants are free to request the same piece of information multiple times in order to remind themselves, including information from a previous information stage.
@@ -493,7 +585,8 @@ At any point, the participant can choose to stop gathering information for that 
 
 After recording their differentials, participants are then asked to report their confidence that they are ``ready to start treating the patient'' on a 100 point scale, ranging from fully unconfident to fully confident. This is different to previous papers as it takes the focus away from merely their confidence that they have the correct answer. Participants are also able to indicate using a checkbox that they are ready to start treating the patient, at which a text box appears for them to report what further tests they would perform, any escalations they would make to other medical staff and treatments they would start administering for the patient. Once all three stages are complete, participants report how difficult they found it to determine a diagnosis for that case, on a scale from 1 (trivial) to 10 (impossible). At the end of all six patient cases, participants are told the true underlying conditions for all the patients.
 
-\subsection*{Data Analysis}\label{data-analysis}
+\hypertarget{data-analysis}{%
+\subsection*{Data Analysis}\label{data-analysis}}
 \addcontentsline{toc}{subsection}{Data Analysis}
 
 There are a number of key dependent variables that we are able to derive from our data:
@@ -511,7 +604,8 @@ There are a number of key dependent variables that we are able to derive from ou
 * \emph{Information Seeking Variance}: We compute a vector of length 29 (as this is the maximum number of unique pieces of information that one can request during each case), which is made up of 0s and 1s where for each of the pieces of information available for a case, a value of 1 is assigned if that information is requested and 0 is assigned if that information is not requested during the case. The normalised vectors for all cases for a given participant are combined to produce a 29 x 6 matrix. We calculate the Euclidean distance between each row of the matrix (trial) using R's dist function (in the proxy package). The computation of all pairwise distances produces a 6 x 6 matrix where each trial is given a Euclidean distance value relative to every other trial. A lower distance value between two trials indicates that the information sought on those trials are similar to one another. In order to look at the similarity of information seeking across all six trials, we compute the variance (the standard deviation squared) of the participant's Euclidean distances. A lower variance value indicates that participants seek similar information across the cases whilst a higher value indicates that information seeking is varied more by case.
 * \emph{Information Seeking Value}: We take each of the 29 pieces of information in turn and split all participant trials into two groups: those trials where that information was sought and trials where that information was not sought. For each group, we compute the proportion of trials where participants included a correct differential, and we then take the difference between these two values. A positive value difference would indicate that participants were likely to identify the correct condition with that information rather than without that information. This difference can be considered that information's value. For each of the participants' trials, we calculate the sum of information values for all information that the participant did seek based on these values and we then take the mean of these sums across trials. This gives an overall measure of how useful the information was that participants tended to seek. We avoid circularity in this measure via cross validation. As such, each participant's information values are derived by looking at differences in accuracy for all other participants.
 
-\section*{Results}\label{results}
+\hypertarget{results}{%
+\section*{Results}\label{results}}
 \addcontentsline{toc}{section}{Results}
 
 Firstly, we can look at how our dependent variables change over the course of a case by comparing at each of the three stages. We fit a linear model by using the stage as our independent variable and our key dependent variables. A key finding is that the number of differentials increases over the course of the stages. This indicates that students do not tend to narrow their differentials with more information, rather they broaden their differentials. Participants rarely used the option of removing differentials from their consideration, which could be attributed to how they have been taught to make diagnostic decisions. We found that accuracy and confidence increased across the stages in a manner that was well calibrated, unlike previous papers. When conducting a Pearson's Correlation test, we found evidence for a positive correlation between the change in confidence (the difference in confidence in the first and last stages) and the proportion of information sought (r(83) = 0.24, p = .03), such that seeking more information was associated with higher gains in confidence.
@@ -524,7 +618,8 @@ We then look at how ability on the task relates to information seeking behaviour
 
 To further investigate the differences in information seeking, we also trained a binary classification algorithm using a generalised logistic regression model. To do this, we first split all trials into high and low ability participant trials with a median split of participants by their average accuracy across the six cases. We train the classifier by treating the 29 binary variables for each information as predictors (with a 1 signifying that the information was sought for that case and 0 when the information was not sought) to predict the binary outcome of whether the participant is a low or high accuracy participant. For this, we do not take into account the specific case. We used Leave One Out Cross Validation, such that each trial is predicted by training the algorithm on all other trials. By plotting an ROC curve of our classifier, we find an area under the curve (AUC) value of 0.727 (with p \textless{} .001 when comparing the ROC curve to AUC = 0.5). This indicates that differences in information are indeed predictive of a difference in participant ability.
 
-\section*{Discussion}\label{discussion}
+\hypertarget{discussion}{%
+\section*{Discussion}\label{discussion}}
 \addcontentsline{toc}{section}{Discussion}
 
 There are a few limitations with our study. We did not use more naturalistic stimuli, such as images of scans/test results or audio cues (such as the sound of lung auscultation) and instead used solely textual results for all tests. While this may make the experiment more ecologically valid, it takes away the interpretation of complex stimuli which could affect information seeking. For example, if two participants requested a chest X-ray, they may interpret the X-ray image in different ways. While this difference in perception may be interesting, it adds a potential confound for the purposes of this study. That is why, for this study, if a participant requested a chest X-ray, they instead see a result that reads something like ``no abnormalities found'', such that the interpretation of the image has already been done for the participant.
@@ -537,7 +632,8 @@ Another aspect of note is the manner in which participants reported their differ
 
 We should also note the manner in which accuracy was coded manually for each case. This depended on the nature of the case, as a case may sometimes have a vague set of information such that determining the exact correct diagnosis was considered too challenging. For example, for the TTP case, making a diagnosis of TTP (even with all information requested by the participant) was seen as too difficult given that the information provided was not discriminant enough. This ties into one of the main challenges of designing these vignettes and this study: the set of information available for participants to request were chosen such that they were reasonable to be requested in any of the cases. The participants may have wanted to request more specialised, discriminant tests (e.g.~lumbar puncture, biopsy), but including these could clue participants into the nature of the patient's condition. In addition, these types of highly specialised tests that target a specific type of diagnosis tend to take much longer to come back to doctors with results after they request them in a real healthcare setting. Hence, having results available at the touch of a button for these may seem unrealistic unless we alter the design to have patient cases unfold over a longer time period.
 
-\chapter*{Study 3 - Diagnostic Reasoning Strategies via a Think-Aloud Paradigm}\label{study-3---diagnostic-reasoning-strategies-via-a-think-aloud-paradigm}
+\hypertarget{study-3---diagnostic-reasoning-strategies-via-a-think-aloud-paradigm}{%
+\chapter*{Study 3 - Diagnostic Reasoning Strategies via a Think-Aloud Paradigm}\label{study-3---diagnostic-reasoning-strategies-via-a-think-aloud-paradigm}}
 \addcontentsline{toc}{chapter}{Study 3 - Diagnostic Reasoning Strategies via a Think-Aloud Paradigm}
 
 \adjustmtc
@@ -547,20 +643,24 @@ We aimed to replicate the finding of considered differentials increasing with mo
 
 Think-aloud methodologies are useful for directly accessing ongoing thought processes during decisions (van Someren, Barnard \& Sandberg, 1994). The use of thinking aloud (or verbal protocols) in research is useful for being able to access the information attended to participants in short term memory (Payne, 1994) and can be treated as the ongoing behavioural state of a participant's knowledge (Newell \& Simon, 1972). Think-aloud protocols have historically been used to study problem solving, particularly for comparing how novices and experts solve problems such as finding the best move in chess (de Groot, 1946, Bilalić, McLeod \& Gobet, 2008). Diagnosis is a decisional process that develops over time and allowing participants to think aloud reflects this by providing a time-ordered sequence of how thought processes develop (Payne, 1994). This is especially well-suited to our task where the information available to participants is controlled with time, allowing us to investigate how diagnostic thinking develops with more information. A think-aloud methodology has previously been used to study the differences between novice and expert clinicians during diagnostic reasoning (Coderre et al., 2003). This study found a general trend that experts tend to use a `pattern recognition' approach to diagnosis more than novices, who tended to use a `hypothetico-deductive' process (which is aforementioned to be the `textbook' description of the diagnostic process), but this was highly dependent on the case presented. We build on the work of Coderre et al.~(2003) here to further investigate how reasoning strategies contribute to accuracy and why certain cases result in differing strategies.
 
-\section*{Methods}\label{methods-1}
+\hypertarget{methods-1}{%
+\section*{Methods}\label{methods-1}}
 \addcontentsline{toc}{section}{Methods}
 
-\subsection*{Participants}\label{participants-1}
+\hypertarget{participants-1}{%
+\subsection*{Participants}\label{participants-1}}
 \addcontentsline{toc}{subsection}{Participants}
 
 16 participants were recruited for this study. Participants were 5th or 6th year medical students at Oxford University (including 2nd year Oxford University Graduate Entry Medical students) recruited via posters in the John Radcliffe Hospital in Oxford and via a mailing list for students managed by the Medical Sciences Division at the University of Oxford. The study was conducted onsite at John Radcliffe hospital. Participants were recruited between July 5th 2023 and December 1st 2023. Data was reviewed on an ongoing basis to cease recruitment when emerging themes were exhausted. This study was reviewed and granted ethical approval as an amendment to our existing protocol to allow for audio recordings by the Oxford Medical Sciences Interdivisional Research Ethics Committee under reference R81158/RE004.
 
-\subsection*{Materials}\label{materials-1}
+\hypertarget{materials-1}{%
+\subsection*{Materials}\label{materials-1}}
 \addcontentsline{toc}{subsection}{Materials}
 
 The same set of cases and a similar computer interface from Study 1 were used for this study, with the exception that participants no longer recorded their differentials in a specific screen at the end of each information gathering stage. Instead, participants' differentials were recorded as a more naturalistic part of their diagnostic process as they reported aloud their thoughts as they worked through each diagnostic case. The study was conducted onsite using a laptop, with actions on screen recorded on video and the audio of participants' thinking aloud recorded via a microphone. Informed consent was obtained anonymously using an online electronic information sheet and consent form. Information, including experimental data and audio recordings, collected during the study were stored under anonymised IDs with no linkages to participants. Data was kept on a password-protected computer and hard drive.
 
-\subsection*{Procedure}\label{procedure-1}
+\hypertarget{procedure-1}{%
+\subsection*{Procedure}\label{procedure-1}}
 \addcontentsline{toc}{subsection}{Procedure}
 
 The general procedure was very similar to that of Study 1, except that participants were given the following instructions at the start of the study:
@@ -569,7 +669,8 @@ The general procedure was very similar to that of Study 1, except that participa
 
 The experimenter occasionally prompted participants with content-neutral probes: ``can you tell me what you are thinking?'' in cases of periods of long silence, and ``can you tell me more?'' when the participant said something vague that may warrant further detail. We emphasise that these are non-leading questions. The audio of the participants' verbalisations was recorded and then transcribed. An initial transcript was generated using Microsoft Office's transcription feature, but the transcript was checked and modified for accuracy by listening through the audio recordings again. The screen of the experimental interface was also recorded, such that the audio could be linked to specific actions within the task. The focus of this study is on verbal utterances rather than any non-verbal or inferential aspects of the participants' qualitative data. At the end of the experiment, the researcher administered a semi-structured interview to better understand what the participants feel their diagnostic reasoning approach tends to be. These questions are provided in the Supplemental Materials.
 
-\subsection*{Data Analysis}\label{data-analysis-1}
+\hypertarget{data-analysis-1}{%
+\subsection*{Data Analysis}\label{data-analysis-1}}
 \addcontentsline{toc}{subsection}{Data Analysis}
 
 We conducted a theory-driven semantic thematic analysis (as per definitions detailed by Braun and Clarke, 2006) to code utterances under specific categories. This kind of thematic analysis is suitable given that our qualitative data is from a structured experiment, rather than a dataset with a looser structure (e.g.~interview recordings). As a result, we apply deductive analysis using predetermined codes for think-aloud utterances and for a debrief interview where we administer a semi-structured interview with specific questions of interest.
@@ -612,14 +713,16 @@ Coding of utterances and case-wise reasoning strategies were conducted with a se
 
 Although we do not record differentials in the same way as in Study 1 (in a list with corresponding likelihood and severity ratings), we do obtain the other variables from Study 1. Namely, we record confidence at each stage of information seeking and data around the information sought by participants. As we do not explicitly record differentials in the same manner as in Study 1, accuracy is operationalised differently. We code each case as `correct' if a correct differential is mentioned at some point by the participant (using the same marking scheme in table S1).
 
-\section*{Results}\label{results-1}
+\hypertarget{results-1}{%
+\section*{Results}\label{results-1}}
 \addcontentsline{toc}{section}{Results}
 
 First, we look at overall quantitative characteristics of the think aloud statements. When looking at accuracy (the proportion of cases where a correct differential was mentioned by the participant), accuracy was 0.57 across all cases. This varied considerably by condition however, with accuracy across participants for each condition being as follows: AD = 0.63, GBS = 0.88, MTB = 0.19, TA = 0.44, TTP = 0.69, UC = 0.63. For utterances coded as Differential Evaluations, participants on average made 5.21 such utterances per case (SD = 2.80). The mean number of Differential Evaluations was relatively constant by condition except for the AD case: AD = 8.18, GBS = 4.63, MTB = 4.81, TA = 4.75, TTP = 4.25, UC = 4.63. Participants varied in how much they spoke during the study, uttering 1038-7730 words (M = 4194) across the scenarios. Part of this range is driven by participants repeating information they see during the task, but participants also varied in terms of how much they externalised their thought process.
 
 As previously mentioned, Differential Evaluations can be further categorised into one of four subcodes: Differential Added, Differential Removed, Likelihood Increased and Likelihood Decreased. As found in the previous study, there is a general reticence to disregard differentials completely. Participants expressed significantly more statements adding differentials (M = 3.14, SD = 0.89) than removing differentials (M = 0.27, SD = 0.28) (t(15) = 14.14, MDiff = 2.86, p \textless{} .001). Participants expressed more statements of decreasing likelihoods (M = 0.99, SD = 0.62) rather than increasing likelihoods (M = 0.93, SD = 0.46) but we did not find evidence of a significant difference (t(15) = 0.34, MDiff = 0.06, p = .73).
 
-\subsection*{Reasoning Strategies}\label{reasoning-strategies}
+\hypertarget{reasoning-strategies}{%
+\subsection*{Reasoning Strategies}\label{reasoning-strategies}}
 \addcontentsline{toc}{subsection}{Reasoning Strategies}
 
 Next we look at our coding of reasoning strategies at a case level. As mentioned, our criteria for each code was applied to each individual case based on the transcribed utterances. When looking at reasoning strategies by case, 43 cases were coded as Hypothetico-Deductive, 29 were coded as Pattern Recognition and 18 were coded as Scheme Inductive (the remainder of cases did not contain enough clear utterances to classify under one of these strategies). Accuracy was higher for cases coded as Hypothetico-Deductive (71\%) compared to both Pattern Recognition cases (64\%) and Scheme Inductive (39\%). It is worth noting here that accuracy was solely based on participants mentioning differentials during their thinking aloud, which is naturally not facilitated by Scheme Inductive reasoning due to its focus on identifying pathophysiological systems acting as sources of patient symptoms rather than specific conditions. This can hence explain the lower `accuracy' for Scheme Inductive cases. We also note that the types of reasoning strategy used varies by condition (see Figure 13 below), with the MTB and TTP cases in particular exhibiting higher usage of Pattern Recognition than others. This could be because this case was considered harder than others and hence participants could not generate a larger set of candidate differentials due to its difficulty.
@@ -628,7 +731,8 @@ We note, rather unsurprisingly, that we observe a higher number of average Diffe
 
 To connect the results of this study to those of Study 1, we break down the same dependent variables (as operationalised in that study) by reasoning strategy. We do not apply statistics to this study due to the lower sample size. We first categorise each of the 6 cases as having a `dominant' reasoning strategy based on which was utilised the most across participants. Through this process, we categorise three conditions as HD (AD, UC, GBS), three conditions as PR (MTB, TTP, TA). The proportions of participants who use each reasoning strategy for each condition can be viewed in Figure 10. We then compare the individual case classifications of strategy to this reasoning strategy that is most commonly used for that medical condition. Table 2 shows how dependent variables are affected by reasoning strategy. We find that the amount of information seeking was fairly consistent across reasoning strategy, but that PR cases were associated with higher value in information seeking. In order to derive informational value, we used the same values of each piece of information for each case that were derived in Study 1. This higher informational value does not translate into higher accuracy for PR cases, though we should note that the manner in which accuracy was defined for this study limits the analysis only to statements made out loud of specific conditions rather than formally recorded differentials as we did in Study 1. In order to formally replicate this finding with the larger dataset, we use the cases from this study and the coding of strategies to apply the same coding to our online dataset from Study 1.
 
-\subsection*{Reasoning Strategies in Study 1 Dataset}\label{reasoning-strategies-in-study-1-dataset}
+\hypertarget{reasoning-strategies-in-study-1-dataset}{%
+\subsection*{Reasoning Strategies in Study 1 Dataset}\label{reasoning-strategies-in-study-1-dataset}}
 \addcontentsline{toc}{subsection}{Reasoning Strategies in Study 1 Dataset}
 
 In order to apply reasoning strategies to the data from Study 1, we train a classifier using penalised multinomial regression to classify cases as HD, PR or SI using the cases from the think aloud study (with Leave One Out Cross Validation). The input parameters for the classifier are the 29 pieces of information as binary predictors (similar to the approach depicted in Figure 7) and the cases' condition. In other words, the cases from the think-aloud study make up the training data for the classifier whilst the cases from the larger online study is the test dataset. The classifier was implemented using R's nnet package (version 7.3-19). The testing data is then labelled with predicted testing strategies using R's predict function. We note that the training data was initially labelled with reasoning strategies using the think-aloud utterances and thus is separated from the information sought during the case.
@@ -637,7 +741,8 @@ We show a breakdown of cases by their coded reasoning strategy in Table 4. We no
 
 We hypothesised that an interaction with reasoning strategy is associated with accuracy on the task. This is because a single reasoning strategy is considered unlikely to be more accurate for all cases. As indicated by Figure 10, different patient conditions seem to result in varying reasoning strategies being utilised, which begs the question of what properties of a condition contribute to changes in strategy and in accuracy. One possibility is that reasoning strategy interacts with the diagnostic uncertainty of a case (i.e.~the breadth of conditions that a patient could have given their current symptoms and history, with some conditions presenting in a more apparent way than others), as captured by the number of initial differentials reported by participants. To test this hypothesis, we fit a linear model to predict accuracy with an interaction between the number of initial diagnoses and reasoning strategy. The interaction regression lines are plotted below in Figure 11.
 
-\section*{Discussion}\label{discussion-1}
+\hypertarget{discussion-1}{%
+\section*{Discussion}\label{discussion-1}}
 \addcontentsline{toc}{section}{Discussion}
 
 In the quantitative results shown in Table 4, we firstly find that in our think-aloud study, PR cases were associated with the highest informational value (despite fairly constant amounts of information seeking across reasoning strategies). SI cases were associated with the highest increase in confidence across the information stages. Whilst the latter finding was similar in the online study, PR cases saw higher informational value than HD cases in this dataset. In accordance with our definitions of reasoning strategies, we find that PR cases were associated the fewest differentials of the three strategies. These findings indicate that different reasoning strategies result in behavioural differences when performing diagnoses, both in terms of information seeking and weighing up differentials.
@@ -654,24 +759,28 @@ Coderre et al.~(2003) found the pattern recognition was utilised more as clinici
 
 We can also observe that reasoning strategies may in turn bring with them differences in information seeking patterns. The choice of information or tests within the diagnostic has been understudied to date given its role in real-world clinical settings. Our results in Study 1 indicate that information seeking patterns are associated with accuracy, specifically around greater selectivity and less variability in information seeking. This relates well to real-world clinical decisions where information and tests can require sizeable time and even other staff or technology to request, as mentioned earlier. Hence, in a setting where all possible information is not always readily available to clinicians, being selective is advantageous. In addition, being more standardised in information seeking can also make comparisons between patients easier given that the information being compared is more similar. We can assume that a big part of gaining medical experience is by using past patient cases personally experienced by the clinician and then drawing upon that experience for a new incoming patient. This may explain the findings of Coderre et al.~(2003) that pattern recognition was utilised more with experience: because experienced clinicians have more past patients to draw patterns from.
 
-\subsection*{Study Strengths}\label{study-strengths}
+\hypertarget{study-strengths}{%
+\subsection*{Study Strengths}\label{study-strengths}}
 \addcontentsline{toc}{subsection}{Study Strengths}
 
 We note a number of strengths of both of these studies. To our knowledge, this is the first research of this kind to use both a mixed-methods approach to understand the cognitive underpinnings of diagnosis as a decisional process. Our paradigm also emulates diagnosis in a manner that is not simply a single decision. When creating a task that emulates diagnosis, we in a sense conceptualise what diagnosis looks like in a fairly static manner, when really diagnosis is a more fluid and nebulous process in medicine. In our study, diagnosis is modelled as a process that develops over time with more information and is constantly shifting doctors' thought processes. In particular, we note linking diagnostic accuracy, confidence, information seeking and differential generation has not been attempted in prior work and should be considered for future work to consider a more complete study of diagnostic decisions. Future work could build upon on this work to investigate more flexible and open information seeking by emulating naturalistic decision making processes. This can be used to investigate how contextual limitations on information seeking impact confidence and accuracy (such as time pressures or testing being unavailable). The use of a think-aloud paradigm also brings a number of strengths by allowing for an ongoing recording of medical students' thought processes, again showing the dynamic, evolving nature of the diagnoses. While participants varied in terms of their ability to verbalise their thoughts, it provides a clear access to how they approaching their decisions that would otherwise be difficult to determine in real-time. We therefore encourage future researchers to consider think-aloud methodologies in their work.
 
-\subsection*{Limitations}\label{limitations}
+\hypertarget{limitations}{%
+\subsection*{Limitations}\label{limitations}}
 \addcontentsline{toc}{subsection}{Limitations}
 
 We note that the use of a think-aloud methodology brings with it a couple of limitations. Firstly, participants may behave differently to how they otherwise would, given that they are being observed and recorded by a researcher. Hence, there may be a tendency toward medical students behaving in a manner that they believe to be judged as better by others, such as being thorough in their information seeking and differential evaluation. Relatedly, we found that medical students naturally differed from one another in terms of the amount of verbalising they did during the task, which could be related to differences in verbalisation skills (van Somersen, Barnard \& Sandberg, 1994). By not explicitly asking students for their diagnostic differentials as we did in Study 1 (and minimising the amount of input that the researcher had during the task), we are constrained to analysing only what students say out loud. Given that some students do not verbalise their thoughts as naturally, we may not aware of the aspects of their thought process that they did not verbalise. For example, participants may not explicitly say out loud that a differential is no longer under consideration when in actual fact it has been dropped from their thought process, leading to a lower number of removed differentials as we observed in the data. Similarly, participants may have multiple differentials in mind but some may be subconsciously considered too unlikely to be even worth mentioning. This would then contribute to fewer overt instances of a hypotethico-deductive reasoning process as differentials are underreported. Future work should utilise more structured methods for eliciting clinicians' thought process during diagnoses in order to ensure accurate reporting of differentials in a more naturalistic, evolving manner. We also could have recruited a larger sample in order to gain a better range of participants and reasoning strategies, increasing the power of our analyses, as well as participants from differing experience levels.
 
-\subsection*{Implications for Medical Practice and Education}\label{implications-for-medical-practice-and-education}
+\hypertarget{implications-for-medical-practice-and-education}{%
+\subsection*{Implications for Medical Practice and Education}\label{implications-for-medical-practice-and-education}}
 \addcontentsline{toc}{subsection}{Implications for Medical Practice and Education}
 
 There is real value in teaching metacognition and uncertainty within medical education (Royce, Hayes, \& Schwartzstein, 2019), such as with the use of cognitive aids (Chew, Durning \& Van Merriënboer, 2016, Ely, Graber \& Croskerry, 2011), especially given that doctors can be reticent to express their uncertainty (Katz, 1984). A more structured aid is needed, as simply looking at a case for a second time may not be sufficient to improve diagnostic accuracy (Monteiro et al., 2015) and current cognitive forcing strategies have not been found to be effective enough (Sherbino et al., 2014). The reason for this might that past distinction between System 1 (automatic, quick) and System 2 (deliberate, slow) thinking for prompting diagnostic reasoning may be overly simplistic, in that one solution may not fit all possible cases and all clinicians. Future work should focus on understanding when certain reasoning styles and which cognitive aids may be more useful for a given clinical situation. In particular, our findings indicate that cognitive aids should prompt reasoning strategies based on how clear a patient presentation is. This can be thought of as whether the patient's initial symptoms suggest a narrow or wide range of differentials, which is likely a combination of the clinician's knowledge and case's complexity.
 
 Past work on cognitive interventions have not tended to focus on prompting appropriate information seeking, and we show here that different facets of information seeking contribute uniquely to both confidence and accuracy. While the most relevant information that should be afforded to clinicians will differ depending on the medical discipline, interventions can focus on standardising which is the most valuable information to be presented to clinicians in the first place. This could not only improve diagnostic accuracy but ensure more appropriate expressions of confidence and uncertainty by reducing a tendency toward overtesting. We emphasise that such recommendations are highly dependent and variable depending on the specific medical context, but this acts an important facet for medical education to consider around how seeking information relates to reasoning styles and how important these non-technical skills are to integrate into the educational context of medicine.
 
-\chapter*{Study 4 - Diagnostic Uncertainty and Information Seeking in Virtual Reality Paediatric Scenarios}\label{study-4---diagnostic-uncertainty-and-information-seeking-in-virtual-reality-paediatric-scenarios}
+\hypertarget{study-4---diagnostic-uncertainty-and-information-seeking-in-virtual-reality-paediatric-scenarios}{%
+\chapter*{Study 4 - Diagnostic Uncertainty and Information Seeking in Virtual Reality Paediatric Scenarios}\label{study-4---diagnostic-uncertainty-and-information-seeking-in-virtual-reality-paediatric-scenarios}}
 \addcontentsline{toc}{chapter}{Study 4 - Diagnostic Uncertainty and Information Seeking in Virtual Reality Paediatric Scenarios}
 
 \adjustmtc
@@ -729,7 +838,8 @@ History Taking: this is the number of History actions for a given scenario that 
 Total Information Seeking: this is the number of actions classified under History, Examination and Testing across the scenario.
 Information Value: to calculate the value of each information sought across these categories, we calculate the difference in OMS performance score for participants with or without that information. We then sum all sought information values for each participant within each of the information categories (History, Examination, Testing).
 
-\chapter*{Reflective Based on Observations in Intensive Care}\label{reflective-based-on-observations-in-intensive-care}
+\hypertarget{reflective-based-on-observations-in-intensive-care}{%
+\chapter*{Reflective Based on Observations in Intensive Care}\label{reflective-based-on-observations-in-intensive-care}}
 \addcontentsline{toc}{chapter}{Reflective Based on Observations in Intensive Care}
 
 \adjustmtc
@@ -774,23 +884,38 @@ What is not covered,
 
 \startappendices
 
-\chapter{The First Appendix}\label{the-first-appendix}
+\hypertarget{r-environment-and-packages}{%
+\chapter{R Environment and Packages}\label{r-environment-and-packages}}
 
-This first appendix includes an R chunk that was hidden in the document (using \texttt{echo\ =\ FALSE}) to help with readibility:
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# print("R version:")}
+\CommentTok{\# version$version.string}
+\CommentTok{\# }
+\CommentTok{\# print("Rstudio version:")}
+\CommentTok{\# rstudioversion \textless{}{-} rstudioapi::versionInfo()}
+\CommentTok{\# rstudioversion$version}
+\CommentTok{\# }
+\CommentTok{\# print("Citations for packages used:")}
+\CommentTok{\# get\_pkgs\_info(pkgs = required\_packages, out.dir = getwd())}
+\CommentTok{\# pkgs \textless{}{-} scan\_packages()}
+\CommentTok{\# get\_citations(pkgs$pkg, out.dir = getwd(), include.RStudio = TRUE)}
+\CommentTok{\# cite\_packages(pkgs = required\_packages, output = "table", out.format = "Rmd", out.dir = getwd())}
+\CommentTok{\# }
+\CommentTok{\# required\_packages \%\textgreater{}\%}
+\CommentTok{\#   map(citation) \%\textgreater{}\%}
+\CommentTok{\#   print(style = "text")}
+\end{Highlighting}
+\end{Shaded}
 
-\textbf{In 02-rmd-basics-code.Rmd}
-
-\textbf{And here's another one from the same chapter, i.e.~Chapter \ref{code}:}
-
-\chapter{The Second Appendix, for Fun}\label{the-second-appendix-for-fun}
-
-\chapter*{References}\label{references}
+\hypertarget{references}{%
+\chapter*{References}\label{references}}
 \addcontentsline{toc}{chapter}{References}
 
 \markboth{References}{}
 
-\phantomsection\label{refs}
-\begin{CSLReferences}{0}{1}
+\hypertarget{refs}{}
+\begin{CSLReferences}{0}{0}
 \end{CSLReferences}
 
 %%%%% REFERENCES

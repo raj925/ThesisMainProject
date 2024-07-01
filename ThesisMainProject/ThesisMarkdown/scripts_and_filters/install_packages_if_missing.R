@@ -4,11 +4,11 @@ required_packages <- c("rmarkdown", "bookdown", "knitr", "kableExtra", "tidyvers
                       "pracma", "lattice", "MASS", "apcluster", "blme", 
                       "smacof","cluster","factoextra", "pwr", 
                       "magrittr", "tidyr", "dplyr", "boot", "rstatix", 
-                      "devtools",  "fossil", "plotly","viridis","padr",
-                      "rpart", "caret", "data.table", "verification", "glmnet",
+                      "devtools",  "fossil", "plotly","viridis","padr", "FactoMineR",
+                      "rpart", "caret", "data.table", "verification", "glmnet", "NLP",
                       "GGally", "corrplot", "verification", "ROCR", "maptree",
-                      "glmnet", "gridExtra", "randomForest", "mgcv", "nnet", "pROC",
-                      "gbm", "e1071", "xgboost", "DT", "NeuralNetTools", "rpart.plot")
+                      "glmnet", "gridExtra", "randomForest", "mgcv", "nnet", "pROC", "pracma",
+                      "gbm", "e1071", "xgboost", "DT", "NeuralNetTools", "rpart.plot","grateful")
 
 for (package in required_packages) {
   print(paste0("checking for install of ", package))

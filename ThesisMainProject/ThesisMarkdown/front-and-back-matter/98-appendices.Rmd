@@ -7,22 +7,23 @@
 # R Environment and Packages
 
 ```{r}
-print("R version:")
-version$version.string
 
-print("Rstudio version:")
-rstudioversion <- rstudioapi::versionInfo()
-rstudioversion$version
-
-print("Citations for packages used:")
-get_pkgs_info(pkgs = required_packages, out.dir = getwd())
-pkgs <- scan_packages()
-get_citations(pkgs$pkg, out.dir = getwd(), include.RStudio = TRUE)
-cite_packages(pkgs = required_packages, output = "table", out.format = "Rmd", out.dir = getwd())
-
-required_packages %>%
-  map(citation) %>%
-  print(style = "text")
+# print("R version:")
+# version$version.string
+# 
+# print("Rstudio version:")
+# rstudioversion <- rstudioapi::versionInfo()
+# rstudioversion$version
+# 
+# print("Citations for packages used:")
+# get_pkgs_info(pkgs = required_packages, out.dir = getwd())
+# pkgs <- scan_packages()
+# get_citations(pkgs$pkg, out.dir = getwd(), include.RStudio = TRUE)
+# cite_packages(pkgs = required_packages, output = "table", out.format = "Rmd", out.dir = getwd())
+# 
+# required_packages %>%
+#   map(citation) %>%
+#   print(style = "text")
 
 ```
 

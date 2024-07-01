@@ -4,7 +4,7 @@ testingDataStrats <- infoSeekingFullMatrix[infoSeekingFullMatrix$ParticipantType
 testingDataStrats$initialDiagnoses <- studentCaseDf$initialDifferentials
 testingDataStrats$confidenceChange <- studentCaseDf$confidenceChange
 testingDataStrats$differentialChange <- studentCaseDf$differentialChange
-testingDataStrats$initialConfidence <- studentCaseDf$initialConfidence
+testingDataStrats$likelihoodAcc <- studentCaseDf$likelihoodOfCorrectDiagnosis
 
 trainingDataStrats <- trainingDataStrats[trainingDataStrats$Strat!="NONE",]
 
@@ -38,7 +38,7 @@ library(nnet)
 
 trainingDataStrats$stratLabel <- as.factor(trainingDataStrats$Strat)
 
-model <- train(stratLabel ~ T2 + T3 + T4 + T5 + T6 + T7 + T8 + T9 + T10 +
+model <- train(stratLabel ~ Condition + T2 + T3 + T4 + T5 + T6 + T7 + T8 + T9 + T10 +
                     T11 + T12 + T13 + T14 + T15 + T16 + T17 +  T18 + T19 + T20 +
                     T21 + T22 + T23 + T24 + T25 + T26 + T27 + T28 + T29, method = "multinom", data = trainingDataStrats, trControl = ctrl)
 
@@ -88,32 +88,53 @@ classifiedStratBreakdownExp  <- testingDataStratsExp %>%
 
 ######################################
 
-testingDataStrats$value <- temp$infoValue[1:510]
+testingDataStrats$value <- temp$infoValue
 testingDataStrats$infoAmount <- rowSums(testingDataStrats[,c(1:29)])/29
 
 testingPptBreakdown <- testingDataStrats %>%
   group_by(classifiedStrat) %>%
   dplyr::mutate(N = n()) %>%
   dplyr::summarise(n = mean(N),
-                   Accuracy = mean(LikelihoodAcc),
+                   Accuracy = mean(likelihoodAcc),
                    InfoAmount = mean(infoAmount),
-                   initialConfidence = mean(initialConfidence),
+                   InfoValue = mean(value),
                    confidenceChange = mean(confidenceChange),
                    InitialDiagnoses = mean(initialDiagnoses),
                    differentialChange = mean(differentialChange))
 
 
-model <- lm(LikelihoodAcc ~ classifiedStrat*initialDiagnoses,data=testingDataStrats) 
+model <- lm(likelihoodAcc ~ classifiedStrat*initialDiagnoses,data=testingDataStrats) 
 summary(model)
 
 library(interactions) 
 intplot <- interact_plot(model, pred = initialDiagnoses, modx = classifiedStrat) +
-  labs(y="Accuracy", x = "Diagnoses", colour = "Reasoning Strategy") +
+  labs(y="Accuracy", x = "Initial Diagnoses", colour = "Reasoning Strategy") +
   theme(axis.text=element_text(size=16),
         axis.title=element_text(size=16),
         legend.title=element_text(size=16),
         legend.text=element_text(size=16))
 print(intplot)
+
+
+# Mixed effect models
+
+# HD
+modelData <- testingDataStrats[testingDataStrats$classifiedStrat=="HD",]
+model <- lmerTest::lmer(confidenceChange ~ initialDiagnoses + infoAmount + (1 | Condition) + (1 | ID), data=modelData)
+summary(model)
+
+# PR - initial diagnoses
+
+modelData <- testingDataStrats[testingDataStrats$classifiedStrat=="PR",]
+model <- lmerTest::lmer(confidenceChange ~ initialDiagnoses + infoAmount + (1 | Condition) + (1 | ID), data=modelData)
+summary(model)
+
+# SI - information seeking
+
+modelData <- testingDataStrats[testingDataStrats$classifiedStrat=="SI",]
+model <- lmerTest::lmer(confidenceChange ~ initialDiagnoses + infoAmount + (1 | Condition) + (1 | ID), data=modelData)
+summary(model)
+
 ########################################
 
 classifiedStratBreakdown  <- testingDataStrats %>%
@@ -161,12 +182,14 @@ stratConsistency <- testingDataStrats %>%
   dplyr::summarise(n = max(c(sum(classifiedStrat=="HD"),sum(classifiedStrat=="PR"),sum(classifiedStrat=="SI"))),
                    MostUsedStrat = strats[which.max(c(sum(classifiedStrat=="HD"),sum(classifiedStrat=="PR"),sum(classifiedStrat=="SI")))],
                   MeanCorrect = mean(Correct),
-                   Accuracy = mean(LikelihoodAcc),
+                   Accuracy = mean(likelihoodAcc),
                   InitialDiagnoses = mean(initialDiagnoses),
                    Value = mean(value))
 
 stratConsistency$consistentStrat <- ifelse(stratConsistency$n<4,"Inconsistent",
-                                           ifelse(stratConsistency$MostUsedStrat=="HD","HD","Hybrid"))
+                                           ifelse(stratConsistency$MostUsedStrat=="HD","HD",
+                                                  ifelse(stratConsistency$MostUsedStrat=="PR","PR",
+                                                         ifelse(stratConsistency$MostUsedStrat=="SI","SI","Inconsistent"))))
 
 
 stratConsistency$Variance <- infoSeekingDf$MDSDistanceVariance

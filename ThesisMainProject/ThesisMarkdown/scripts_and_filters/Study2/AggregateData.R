@@ -439,7 +439,7 @@ for (y in 1:nCase)
 studentCaseDf <- caseDf[!(caseDf$id %in% experiencedIDs),]
 expertCaseDf <- caseDf[caseDf$id %in% experiencedIDs,]
 
-studentIDs <- caseDf$id
+studentIDs <- studentCaseDf$id
 
 ################################################
 ## Generate matrix for information seeking data analysis
