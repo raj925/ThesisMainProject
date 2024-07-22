@@ -2,6 +2,7 @@ trainingDataStrats <- infoSeekingMatrixTA
 testingDataStrats <- infoSeekingFullMatrix[infoSeekingFullMatrix$ParticipantType=="p",]
 
 testingDataStrats$initialDiagnoses <- studentCaseDf$initialDifferentials
+testingDataStrats$initalConfidence <- studentCaseDf$initialConfidence
 testingDataStrats$confidenceChange <- studentCaseDf$confidenceChange
 testingDataStrats$differentialChange <- studentCaseDf$differentialChange
 testingDataStrats$likelihoodAcc <- studentCaseDf$likelihoodOfCorrectDiagnosis
@@ -97,14 +98,17 @@ testingPptBreakdown <- testingDataStrats %>%
   dplyr::summarise(n = mean(N),
                    Accuracy = mean(likelihoodAcc),
                    InfoAmount = mean(infoAmount),
-                   InfoValue = mean(value),
+                   value = mean(value),
+                   initialConfidence = mean(initalConfidence),
                    confidenceChange = mean(confidenceChange),
                    InitialDiagnoses = mean(initialDiagnoses),
                    differentialChange = mean(differentialChange))
 
-
-model <- lm(likelihoodAcc ~ classifiedStrat*initialDiagnoses,data=testingDataStrats) 
+contrasts(testingDataStrats$classifiedStrat) <- contr.treatment(levels(testingDataStrats$classifiedStrat), base = which(levels(testingDataStrats$classifiedStrat) == "PR"))
+model <- lm(LikelihoodAcc ~ classifiedStrat*initialDiagnoses,data=testingDataStrats) 
 summary(model)
+
+# Chi squared comparing model with or without interaction
 
 library(interactions) 
 intplot <- interact_plot(model, pred = initialDiagnoses, modx = classifiedStrat) +
@@ -116,24 +120,46 @@ intplot <- interact_plot(model, pred = initialDiagnoses, modx = classifiedStrat)
 print(intplot)
 
 
+contrasts(testingDataStrats$classifiedStrat) <- contr.treatment(levels(testingDataStrats$classifiedStrat), base = which(levels(testingDataStrats$classifiedStrat) == "SI"))
+model <- lm(confidenceChange ~ classifiedStrat*infoAmount,data=testingDataStrats) 
+summary(model)
+
+library(interactions) 
+intplot <- interact_plot(model, pred = infoAmount, modx = classifiedStrat) +
+  labs(y="Confidence Change", x = "Info Seeking", colour = "Reasoning Strategy") +
+  theme(axis.text=element_text(size=16),
+        axis.title=element_text(size=16),
+        legend.title=element_text(size=16),
+        legend.text=element_text(size=16))
+print(intplot)
+
 # Mixed effect models
 
 # HD
 modelData <- testingDataStrats[testingDataStrats$classifiedStrat=="HD",]
 model <- lmerTest::lmer(confidenceChange ~ initialDiagnoses + infoAmount + (1 | Condition) + (1 | ID), data=modelData)
+pcaModel <- rePCA(model)
+model2 <- lmerTest::lmer(confidenceChange ~ initialDiagnoses + infoAmount + (1 | ID), data=modelData)
+anova(model2,model)
 summary(model)
-
 # PR - initial diagnoses
 
 modelData <- testingDataStrats[testingDataStrats$classifiedStrat=="PR",]
 model <- lmerTest::lmer(confidenceChange ~ initialDiagnoses + infoAmount + (1 | Condition) + (1 | ID), data=modelData)
-summary(model)
+pcaModel <- rePCA(model)
+model2 <- lmerTest::lmer(confidenceChange ~ initialDiagnoses + infoAmount + (1 | Condition), data=modelData)
+anova(model2,model)
+summary(model2)
 
 # SI - information seeking
 
 modelData <- testingDataStrats[testingDataStrats$classifiedStrat=="SI",]
 model <- lmerTest::lmer(confidenceChange ~ initialDiagnoses + infoAmount + (1 | Condition) + (1 | ID), data=modelData)
+pcaModel <- rePCA(model)
+model2 <- lmerTest::lmer(confidenceChange ~ initialDiagnoses + infoAmount + (1 | ID), data=modelData)
+anova(model2,model)
 summary(model)
+
 
 ########################################
 

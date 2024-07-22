@@ -4,6 +4,12 @@
 
 <!-- If you feel it necessary to include an appendix, it goes here. The first appendix should include the commands above. -->
 
+# Vignette Marking Scheme (Studies 1 and 2)
+
+# Think Aloud Study - Debrief Questionnaire
+
+# Diagnostic Appropriateness Marking Scheme (Study 3)
+
 # R Environment and Packages
 
 ```{r}

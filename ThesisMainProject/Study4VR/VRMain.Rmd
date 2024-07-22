@@ -934,11 +934,107 @@ print(intplot)
 
 ###################
 
-model <- lmerTest::lmer(t2Confidence ~ numOfHistoryActionsAfterPause + numOfExamActionsAfterPause + numOfTestingActionsAfterPause + (1|Scenario) + (1 | ParticipantID), data=vrData)
+### Predictors of initial confidence
+
+model <- lmerTest::lmer(t1Confidence ~ numOfHistoryActionsBeforePause + numOfExamActionsBeforePause + numOfTestingActionsBeforePause + (1|Scenario) + (1 | ParticipantID), data=vrData)
+
+pcaModel <- rePCA(model)
+model2 <- lmerTest::lmer(t1Confidence ~ numOfHistoryActionsBeforePause + numOfExamActionsBeforePause + numOfTestingActionsBeforePause + (1|Scenario), data=vrData)
+anova(model2,model)
+summary(model2)
+
+# Get the fitted values from the model
+fittedValues <- fitted(model2)
+
+# Get the actual observed values
+obsValues <- vrData[!is.na(vrData$t1Confidence),]$t1Confidence
+
+# Create a data frame for plotting
+plotDf <- data.frame(
+  observedConfidence = obsValues,
+  fittedConfidence = fittedValues
+)
+
+# Plot using ggplot2
+ggplot(plotDf, aes(x = observedConfidence, y = fittedConfidence)) +
+  geom_point() +
+  geom_abline(slope = 1, intercept = 0, color = "red") +
+    geom_smooth(method = "lm", se = TRUE, color = "blue") + 
+  labs(x = "Observed Confidence", y = "Fitted Confidence (mixed effects model)") +
+  theme_classic()
+
+
+
+### Initial confidence predicting subsequent information seeking
+
+model <- lmerTest::lmer(numOfHistoryActionsAfterPause ~ t1Confidence + (1|Scenario) + (1 | ParticipantID), data=vrData)
+pcaModel <- rePCA(model)
+model2 <- lmerTest::lmer(numOfHistoryActionsAfterPause ~ t1Confidence + (1 | ParticipantID), data=vrData)
+anova(model2,model)
+summary(model2)
+
+model <- lmerTest::lmer(numOfExamActionsAfterPause ~ t1Confidence + (1|Scenario) + (1 | ParticipantID), data=vrData)
+pcaModel <- rePCA(model)
+model2 <- lmerTest::lmer(numOfExamActionsAfterPause ~ t1Confidence + (1|Scenario), data=vrData)
+anova(model2,model)
+summary(model2)
+
+model <- lmerTest::lmer(numOfTestingActionsAfterPause ~ t1Confidence + (1|Scenario) + (1 | ParticipantID), data=vrData)
+pcaModel <- rePCA(model)
+model2 <- lmerTest::lmer(numOfTestingActionsAfterPause ~ t1Confidence + (1|Scenario), data=vrData)
+summary(model2)
+
+# Get the fitted values from the model
+fittedValues <- fitted(model2)
+
+# Get the actual observed values
+obsValues <- vrData[!is.na(vrData$t1Confidence),]$numOfTestingActionsAfterPause
+
+# Create a data frame for plotting
+plotDf <- data.frame(
+  observedTestingActions = obsValues,
+  fittedTestingActions = fittedValues
+)
+
+# Plot using ggplot2
+ggplot(plotDf, aes(x = observedTestingActions, y = fittedTestingActions)) +
+  geom_point() +
+  geom_abline(slope = 1, intercept = 0, color = "red") +
+    geom_smooth(method = "lm", se = TRUE, color = "blue") + 
+  labs(x = "Observed Testing Actions", y = "Fitted Testing Actions (mixed effects model)") +
+  theme_classic()
+
+
+
+helpedData <- vrData[vrData$totalHelpStart<9999,]
+
+model <- lmerTest::lmer(t2Confidence ~ numOfTreatmentActions + totalHelpStart + (1|Scenario) + (1 | ParticipantID), data=helpedData)
+pcaModel <- rePCA(model)
+model2 <- lmerTest::lmer(t2Confidence ~ numOfTreatmentActions + totalHelpStart + (1 | ParticipantID), data=helpedData)
+anova(model2,model)
 summary(model)
 
-model <- lmerTest::lmer(t1DiagnosisScore ~ numOfHistoryActions + numOfExamActions + numOfTestingActions + (1|Scenario) + (1 | ParticipantID), data=vrData)
-summary(model)
+# Get the fitted values from the model
+fittedValues <- fitted(model)
+
+# Get the actual observed values
+obsValues <- helpedData[!is.na(helpedData$t2Confidence),]$t2Confidence
+
+# Create a data frame for plotting
+plotDf <- data.frame(
+  observedConfidence = obsValues,
+  fittedConfidence = fittedValues
+)
+
+# Plot using ggplot2
+ggplot(plotDf, aes(x = observedConfidence, y = fittedConfidence)) +
+  geom_point() +
+  geom_abline(slope = 1, intercept = 0, color = "red") +
+    geom_smooth(method = "lm", se = TRUE, color = "blue") + 
+  labs(x = "Observed Final Confidence", y = "Fitted Final Confidence (mixed effects model)") +
+  theme_classic(base_size = 20)
+
+#####################
 
 histCon <- ggplot(data = vrData, aes(x=t2Confidence, y=t1DiagnosisScore)) +
   geom_point() +

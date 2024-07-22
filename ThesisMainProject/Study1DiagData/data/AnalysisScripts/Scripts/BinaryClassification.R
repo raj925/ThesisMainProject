@@ -405,15 +405,15 @@ colnames(temp)[1:29] <- c("T1","T2","T3","T4","T5","T6","T7", "T8",  "T9", "T10"
 temp$Condition <- infoSeekingFullMatrix$Condition
 temp$ID <- infoSeekingFullMatrix$ID
 
-temp <- temp[!grepl("e1|e2|e3|e4|e5|e6", rownames(temp)),]
+temp <- temp[!grepl("e1|e2|e3|e4|e5|e6|e7", rownames(temp)),]
 
 standard <- "student" #student/expert
 if (standard == "student")
 {
-  infoValueDf <- infoValueDf[!grepl("e1|e2|e3|e4|e5|e6", rownames(infoValueDf)),]
+  infoValueDf <- infoValueDf[!grepl("e1|e2|e3|e4|e5|e6|e7", rownames(infoValueDf)),]
 } else
 {
-  infoValueDf <- infoValueDf[grepl("e1|e2|e3|e4|e5|e6", rownames(infoValueDf)),]
+  infoValueDf <- infoValueDf[grepl("e1|e2|e3|e4|e5|e6|e7", rownames(infoValueDf)),]
 }
 
 
