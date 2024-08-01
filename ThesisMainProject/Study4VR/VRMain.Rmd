@@ -961,7 +961,7 @@ ggplot(plotDf, aes(x = observedConfidence, y = fittedConfidence)) +
   geom_abline(slope = 1, intercept = 0, color = "red") +
     geom_smooth(method = "lm", se = TRUE, color = "blue") + 
   labs(x = "Observed Confidence", y = "Fitted Confidence (mixed effects model)") +
-  theme_classic()
+  theme_classic(base_size = 20)
 
 
 
@@ -1002,7 +1002,7 @@ ggplot(plotDf, aes(x = observedTestingActions, y = fittedTestingActions)) +
   geom_abline(slope = 1, intercept = 0, color = "red") +
     geom_smooth(method = "lm", se = TRUE, color = "blue") + 
   labs(x = "Observed Testing Actions", y = "Fitted Testing Actions (mixed effects model)") +
-  theme_classic()
+  theme_classic(base_size = 20)
 
 
 

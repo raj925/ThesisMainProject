@@ -58,6 +58,15 @@ classCounts <- table(predictions)
 classProportions <- prop.table(classCounts)
 
 
+# Properties of the training dataset by participant and case
+############################
+
+trainingStratBreakdown  <- trainingDataStrats %>%
+  group_by(ID,Condition) %>%
+  dplyr::summarise(strat = stratLabel) %>%
+  pivot_wider(names_from = Condition, values_from = strat)
+
+
 ############################
 testingDataStratsExp <- infoSeekingFullMatrix[infoSeekingFullMatrix$ParticipantType=="e",]
 
@@ -137,26 +146,27 @@ print(intplot)
 
 # HD
 modelData <- testingDataStrats[testingDataStrats$classifiedStrat=="HD",]
-model <- lmerTest::lmer(confidenceChange ~ initialDiagnoses + infoAmount + (1 | Condition) + (1 | ID), data=modelData)
+model <- lmerTest::lmer(confidenceChange ~ differentialChange + (1 | Condition) + (1 | ID), data=modelData)
 pcaModel <- rePCA(model)
-model2 <- lmerTest::lmer(confidenceChange ~ initialDiagnoses + infoAmount + (1 | ID), data=modelData)
+model2 <- lmerTest::lmer(confidenceChange ~ differentialChange + (1 | ID), data=modelData)
 anova(model2,model)
-summary(model)
+summary(model2)
+
 # PR - initial diagnoses
 
 modelData <- testingDataStrats[testingDataStrats$classifiedStrat=="PR",]
-model <- lmerTest::lmer(confidenceChange ~ initialDiagnoses + infoAmount + (1 | Condition) + (1 | ID), data=modelData)
+model <- lmerTest::lmer(confidenceChange ~ initialDiagnoses + infoAmount + differentialChange +  (1 | Condition) + (1 | ID), data=modelData)
 pcaModel <- rePCA(model)
-model2 <- lmerTest::lmer(confidenceChange ~ initialDiagnoses + infoAmount + (1 | Condition), data=modelData)
+model2 <- lmerTest::lmer(confidenceChange ~ initialDiagnoses + infoAmount + differentialChange +  (1 | Condition), data=modelData)
 anova(model2,model)
 summary(model2)
 
 # SI - information seeking
 
 modelData <- testingDataStrats[testingDataStrats$classifiedStrat=="SI",]
-model <- lmerTest::lmer(confidenceChange ~ initialDiagnoses + infoAmount + (1 | Condition) + (1 | ID), data=modelData)
+model <- lmerTest::lmer(confidenceChange ~ initialDiagnoses + infoAmount + differentialChange + (1 | Condition) + (1 | ID), data=modelData)
 pcaModel <- rePCA(model)
-model2 <- lmerTest::lmer(confidenceChange ~ initialDiagnoses + infoAmount + (1 | ID), data=modelData)
+model2 <- lmerTest::lmer(confidenceChange ~ initialDiagnoses + infoAmount + differentialChange + (1 | ID), data=modelData)
 anova(model2,model)
 summary(model)
 
