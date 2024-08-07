@@ -31,70 +31,99 @@ resolutionColour <- "yellow"
 ```
 <!-- For PDF output, include these two LaTeX commands after unnumbered chapter headings, otherwise the mini table of contents and the running header will show the previous chapter -->
 
-We sought in this study to better understand how information seeking, confidence and differential generation interact within the diagnosis process. In particular, we investigated whether information seeking patterns were associated with diagnostic accuracy and confidence. We conducted a vignette-based diagnosis study with medical students to inform future work on how diagnostic reasoning is taught to students, especially when it comes to weighing up competing differentials. Data is openly available on OSF: [https://osf.io/kb54u/](https://osf.io/kb54u/). 
+
 
 ## Methods {.unnumbered}
 
+This study was designed to understand how information seeking, confidence and differential generation interact within the diagnosis process. Specifically, we investigated whether information seeking patterns were associated with diagnostic accuracy and confidence. We conducted a vignette-based diagnosis study with medical students to inform future work on how diagnostic reasoning is taught to students, especially when it comes to weighing up competing differentials. Data is openly available on OSF: [https://osf.io/kb54u/](https://osf.io/kb54u/). 
+
 ### Participants {.unnumbered}
 
-We recruited medical students within the UK who were in the year of study before their foundation programme. 85 medical students completed the study, including 32 males, 52 females and 1 participant who reported as non-binary. Their ages ranged between 22-34 years (M = 24.2). Participants were recruited between July 11th 2022 and April 6th 2023. The UK Medical Schools Council distributed the study to UK medical students using a mailing list. Participants were emailed with a study information sheet and a link to access the experiment, where they first provided consent via an anonymous online form. After doing so, the participant provided demographic information (age, gender and years of medical experience). The study was conducted online, with participants able to run the experiment in a browser on a desktop computer or laptop. Participants were not able to run the experiment on their phone or tablet. The experiment was coded using the JSPsych Javascript plugin. The code is publicly available on Github: [https://github.com/raj925/DiagnosisParadigm](https://github.com/raj925/DiagnosisParadigm). This study was reviewed and granted ethical approval by the Oxford Medical Sciences Interdivisional Research Ethics Committee under reference R81158/RE001. Informed consent was obtained anonymously using an online electronic information sheet and consent form.
+We recruited final year medical students within the UK. 85 medical students completed the study, including 32 males, 52 females and 1 participant who identified as non-binary. Their ages ranged between 22-34 years (M = 24.2). Participants were recruited between July 11th 2022 and April 6th 2023 via email sent to UK medical students via a UK Medical Schools Council mailing list. Participants were emailed with a study information sheet and a link to access the experiment, where they first provided consent via an anonymous online form. After doing so, the participant provided demographic information (age, gender and years of medical experience). The study was conducted online, with participants able to run the experiment in a browser on a desktop computer or laptop (and not a phone or tablet) in a location of their choice. The experiment was coded using the JSPsych Javascript plugin. The code is publicly available on Github: [https://github.com/raj925/DiagnosisParadigm](https://github.com/raj925/DiagnosisParadigm). Ethical approval was granted by the Oxford Medical Sciences Interdivisional Research Ethics Committee under reference R81158/RE001. 
 
 ### Materials {.unnumbered}
 
-This study involved patient vignettes that have been adapted from actual past cases. We adapted scenarios from a bank of patient cases from Friedman (2004). Our study involved 6 patient cases, each designed to indicate a specific underlying condition that the real patient had. These conditions were: Aortic Dissection (AD), Guillain-Barre Syndrome (GBS), Miliary TB (MTB), Temporal Arteritis (TA), Thrombotic Thrombocytopenic Purpura (TTP) and Ulcerative Colitis (UC). The order in which the cases were presented was randomised for each participant. We also included a practice case (Colon Cancer) to familiarise the participants with the experimental procedure and the interface. 
+This study involved patient vignettes that we adapted from anonymised past cases used by Friedman (2004). Six cases were chosen, each designed to indicate a specific underlying condition  the patient had: Aortic Dissection (AD), Guillain-Barre Syndrome (GBS), Miliary TB (MTB), Temporal Arteritis (TA), Thrombotic Thrombocytopenic Purpura (TTP) and Ulcerative Colitis (UC). The order in which the cases were presented was randomised for each participant. We also included a practice case (Colon Cancer) to familiarise the participants with the experimental procedure and the interface. Cases were chosen to reflect a variety of affected pathophysiological systems and to test medical students on medical conditions that they were expected to know given their level of education/training.
 
-A panel of 3 subject matter experts (practising medical staff and researchers within the NHS) who work in collaboration with the OxSTaR Centre (Oxford Simulation, teaching and Research Centre, based at Oxford’s John Radcliffe Hospital) were recruited to design the vignettes used in this study. These medical professionals were at differing experience levels, with their medical roles at the time of this study as follows: Speciality trainee (ST6) in Anaesthetics, Foundation (F1) Doctor and Gastroenterology Consultant. The panel assisted with translating terms (e.g., medication names, tests etc.) from US to UK doctors’ vernacular and updated patient details to be more current. The panel also crucially gave input on which medical conditions to choose from the provided bank of vignettes that medical students would be expected to know, whilst having some variance in both difficulty and the affected pathophysiological system. 
+A panel of 3 subject matter experts (practising doctors and researchers within the NHS and the OxSTaR centre www.oxstar.ox.ac.uk ) were recruited to design the vignettes used in this study. These medical professionals were at differing experience levels, with their medical roles at the time of this study as follows: Speciality trainee (ST7) in Anaesthetics, Foundation (F1) Doctor and Gastroenterology Consultant. The panel assisted with translating terms (e.g., medication names, tests etc.) from US to UK doctors’ vernacular, updated patient details to be more current and provided input on the choice and complexity of the cases chosen. 
 
 ### Procedure {.unnumbered}
 
-The goal of the task was to determine a diagnosis, or set of diagnoses, for each presented patient (Figure 1). Information on the patient is split into a series of discrete stages so that the researchers are able to control what information the clinicians have access to at any given point in the experiment. We can call each point of new information an “information stage”. Participants are able to seek information freely until they are ready to move on, similar to the paradigm adopted by Kämmer et al. (2019).
+The goal of the task was to determine a diagnosis, or diagnoses, for each presented patient (Figure 1). Information on the patient was split into a series of discrete stages to control what information the participants had access to at any given point in the experiment. each point of new information was termed an “information stage”. Participants were able to seek information freely until they were ready to move on.
 
-The procedure of a single case is as follows. The participant is asked to imagine that they are working in a busy district hospital and they encounter patients in a similar way to how they would in their real medical practice. At the start of each case, the participant is shown a description of a patient, which includes the patient’s gender, age and their presenting complaint. An example of this is: “patient is a 68 year old male presenting with fever and arthralgia”. Each case is split into three information stages: Patient History, Physical Examination and Testing (in this order). The set of information requests for each stage is the same for all cases. The Patient History stage includes information on “Allergies”, “History of the Presenting Complaint”, “Past Medical History” and “Family History”. The Physical Examination stage includes ‘actions’ that a doctor may take when examining a patient, such as “auscultate the lungs”, “abdomen examination”, “take pulse” and “measure temperature”. Finally, the Testing stage involves information on any bedside tests or tests they may request from another department. This includes “Chest X-Ray”, “Venous Blood Gas”, “Urine Dipstick” and “Clotting Test”. In total, 29 possible tests that can be requested across the three information stages. 
+The procedure of a single case is as follows. The participant is asked to imagine that they are working in a busy district hospital and they encounter patients in a similar way to how they would in their real medical practice. At the start of each case, the participant is shown a description of a patient, which includes the patient’s gender, age and their presenting complaint. An example of this is: “patient is a 68 year old male presenting with fever and arthralgia”. Each case is split into three information stages: Patient History, Physical Examination and Testing (in this order). The set of information requests for each stage is the same for all cases. The Patient History stage includes information on “Allergies”, “History of the Presenting Complaint”, “Past Medical History” and “Family History”. The Physical Examination stage includes ‘actions’ that a doctor may take when examining a patient, such as “auscultate the lungs”, “abdomen examination”, “take pulse” and “measure temperature”. Finally, the Testing stage involves information on any bedside tests or tests they may request from another department. This includes “Chest X-Ray”, “Venous Blood Gas”, “Urine Dipstick” and “Clotting Test”. In total, there are 29 possible information requests across the three stages. 
 
-When a participant clicks on any of these tests, the information for that test is shown on screen after a 3 second delay. It was emphasised during the task instructions that participants should only request information that they believe will help them with diagnosing the patient for that specific case. Participants are free to request the same piece of information multiple times, including information from a previous stage. At any point, they can choose to stop gathering information for that stage. They are then taken to a new screen where they report a list of all differential diagnoses that they are considering for that patient at that stage. For each differential, participants report a “level of concern” for that differential, which is how concerned they would be for that patient if this differential really was the patient’s underlying condition. This is reported on a 4 point scale, with labels of “Low”, “Medium”, “High” and “Emergency”. Participants also reported a likelihood rating for each differential, ranging from 1 (very unlikely) to 10 (certain). In subsequent stages, the list from the previous stages is available for participants to update concern/likelihood ratings, or to add/remove differentials from the list. Even at the last information stage, participants can report multiple differentials.
+When a participant clicks on any of these request, the information for that request is shown on screen after a 3 second delay. It was emphasised during the task instructions that participants should only request information that they believe will help them with diagnosing the patient for that specific case. Participants are free to request the same piece of information multiple times, including information from a previous stage. At any point, they can choose to stop gathering information for that stage. They are then taken to a new screen where they report a list of all differential diagnoses that they are considering for that patient at that stage. For each differential, participants report a “level of concern” for that differential, which is how concerned they would be for that patient if this differential really was the patient’s underlying condition. This is reported on a 4 point scale, with labels of “Low”, “Medium”, “High” and “Emergency”. Participants also reported a likelihood rating for each differential, ranging from 1 (very unlikely) to 10 (certain). In subsequent stages, the list from the previous stages is available for participants to update concern/likelihood ratings, or to add/remove differentials from the list. Even at the last information stage, participants can report multiple differentials.
 
-After recording their differentials, participants are then asked to report their confidence that they are “ready to start treating the patient” on a 100 point scale, ranging from fully unconfident to fully confident. Participants also indicate using a checkbox whether they are ready to start treating the patient, at which point a text box appears for them to report what further tests they would perform, any escalations they would make to other medical staff and treatments they would start administering for the patient. Once all three stages are complete, participants report how difficult they found it to determine a diagnosis for that case, on a scale from 1 (trivial) to 10 (impossible). At the end of all six patient cases, participants are told the ‘true’ conditions for all the patients. 
+After recording their differentials, participants are then asked to report their confidence that they are “ready to start treating the patient” on a 100 point scale, ranging from fully unconfident to fully confident. Participants also indicate using a checkbox whether they are ready to start treating the patient, at which point a text box appears for them to report what further tests they would perform, any escalations they would make to other medical staff and treatments they would start administering for the patient. Once all three stages are complete, participants report how difficult they found it to determine a diagnosis for that case, on a scale from 1 (trivial) to 10 (impossible). At the end of all six patient cases, participants are told the ‘true’ conditions for all the patients. The session took approximately 40-60 minutes to complete.
 
 ### Data Analysis {.unnumbered}
 
 Responses were coded for correctness manually with help from a medical consultant, who looked at all the information available for each case and determined which diagnoses could be valid answers. All lists of differentials were ‘marked’ for correctness manually using the criteria found in Table S1 of the Supplemental Materials. 
 
-We test for correlations between our dependent variables using Pearson’s product moment correlation tests, and interpret an alpha value of less than 0.05 as indicative of a statistically significant effect. Our sample of 85 participants is calculated have 80.4% power to detect a medium effect size of r = 0.3 (using an approximate arctangh transformation correlation power calculation). Our key dependent variables are as follows:
+correlations between our dependent variables were tested using Pearson’s product moment correlation tests (an alpha value of less than 0.05 was regarded as statistically significant). Our sample of 85 participants is calculated have 80.4% power to detect a medium effect size of r = 0.3 (using an approximate arctangh transformation correlation power calculation). Our key dependent variables are as follows:
 
 #### Case-Wise Measures
 
-* _Accuracy_: For a case to be considered ‘correct’, the participant should have reported the correct condition for that case within their list of differentials regardless of the number of differentials provided. Given that differentials are provided via free text, cases are manually coded as correct or incorrect using the aforementioned criteria. Our main accuracy measure is computed by the taking the likelihood value assigned to the correct differential if it is included in the list of differentials. This means that likelihoods range from 1-10 when a correct differential is included and has a value of 0 when a correct differentials is not included. The value is then rescaled to range from 0 and 1, where 1 corresponds to a correct differential assigned maximum likelihood. If multiple differentials that are considered correct were provided, then the likelihood value of closest differential to the true condition was used.
+* _Accuracy_: Our main accuracy measure is computed as the likelihood value assigned to the correct differential for the case (and scored as 0 if this differential is not listed). For a case to be considered ‘correct’, the participant should have reported the correct condition for that case within their list of differentials regardless of the number of differentials provided. Likelihoods range from 1-10 when a correct differential is included and has a value of 0 when a correct differentials is not included. The value is then rescaled to range from 0 and 1, where 1 corresponds to a correct differential assigned maximum likelihood. If multiple differentials that are considered correct were provided, then the likelihood value of closest differential to the true condition was used.
 
-* _Confidence_: Participants reported confidence at each information stage. Initial Confidence refers to the reported confidence after the first stage of information seeking (Patient History), whilst Final Confidence refers to the reported confidence after the third and last stage of information seeking (Testing). As for accuracy, confidence is rescaled to fall between 0 and 1 to allow for direct comparison between the two variables. We can then use these two variables to calculate Confidence Change, by subtracting the participants' Initial Confidence from their Final Confidence. Hence, a positive value for Confidence Change means that the participant has gained confidence over the course of the patient case. 
+* _Confidence_: Participants reported their confidence that they are ready to start treatment at each information stage. Initial Confidence refers to the reported confidence after the first stage of information seeking (Patient History), whilst Final Confidence refers to the reported confidence after the third and last stage of information seeking (Testing). As with accuracy, confidence is rescaled to fall between 0 and 1 to allow for direct comparison between the two variables. We can then use these two variables to calculate Confidence Change, by subtracting the participants' Initial Confidence from their Final Confidence. Hence, a positive value for Confidence Change means that the participant has gained confidence over the course of the patient case. 
 
-* _Number of Differentials_: We record the number of items in the list of differentials at each stage. Initial Differentials refer to the number of differentials after the first stage of information seeking (Patient History), whilst Final Differentials refer to the number of differentials after the third and last stage of information seeking (Testing).
+* _Number of Differentials_: The number of items in the list of differentials was recorded at each stage. Initial Differentials refer to the number of differentials after the first stage of information seeking (Patient History), whilst Final Differentials refer to the number of differentials after the third and last stage of information seeking (Testing).
 
 * _Perceived Difficulty_: The subjective rating by participants at the end of each case for how difficult they found it to determine a diagnosis for that patient case. This is reported subjectively by each participant on a scale from 1 (trivial) to 10 (impossible).
 
 #### Derived Information Seeking Measures Across Cases
 
-* _Amount of Information Seeking_: We take the number of unique tests requested at a given information stage (i.e. not including any tests from a previous stage or including tests that had been requested before during that stage) and divide this by the number of possible tests available.
+* _Amount of Information Seeking_: We take the number of unique tests requested at a given information stage (i.e. not including any tests from a previous stage, tests that had been requested before that stage and excluding repeat tests) and divide this by the number of possible tests available.
 
-* _Information Seeking Value_: We compute the average value of sought information across cases. To do this, we take each of the 29 pieces of information in turn by case and split trials into two groups: trials of that case where that information was sought and trials of that case where that information was not sought. For each group, we compute the proportion of trials where the students included a correct differential, and then take the difference between these two values. A positive value would indicate that students were more likely to identify the correct condition with that information rather than without that information. This difference can be considered that information’s ‘value’. For each of the participants’ cases, we compute this difference for each piece of information that the participant sought (for information they did not seek, the informational ‘value’ would be 0) and then calculate the sum of all information values for each case. We then take the mean information value across all cases for each participant. This gives an overall measure of, on average, how useful the information was that participants sought on each case.
+* _Information Seeking Value_: We calculate a measure of information value to capture how appropriate the information sought for a case is for the given patient condition. We compute the average value of sought information across cases. To do this, we take each of the 29 pieces of information in turn by case and split all cases completed across participants into two groups: cases where that information was sought and cases where that information was not sought. For each group, we compute the proportion of trials where the students included a correct differential, and then take the difference between these two values. A positive value would indicate that students were more likely to identify the correct condition with that information rather than without that information. This difference can be considered that information’s ‘value’. We then calculate the sum of all information values for each case. This gives an overall measure of, on average, how useful the information was that participants sought on each case.
 
 ## Results {.unnumbered}
 
 ### Overall Performance {.unnumbered}
 
-Across cases, the proportion of trials where participants include a correct differential within their set of differentials increased with each stage of information gathering. (F(2, 128) = 59.52, η^2^G = .08, p < .001). Participants included a correct differential on fewer trials during the Patient History stage (M = 0.54, SD = 0.23) than during the Physical Examination (M = 0.66, SD = 0.22) and Testing stages (M = 0.69, SD = 0.21). Table 2 shows overall performance by case, indicating that there was variability in performance due to cases varying in difficulty. 
+```{r accanova, include=FALSE, echo=FALSE}
+
+accdf <- studentDf %>%
+  group_by(stage,participantID) %>%
+  dplyr::summarise(Accuracy = mean(likelihoodOfCorrectDiagnosis))
+
+model <- summary(aov(Accuracy ~ stage, data=accdf))
+print(model)
+model <- model[[1]]
+colnames(model) <- c("DF", "SumSq", "MeanSq", "F", "p")
+etasq <- round(etaSquared(aov(Accuracy ~ stage, data=accdf))[1],2)
+
+```
+
+Across cases, accuracy increased with each stage of information gathering as per our Accuracy measure (F(`r model$DF[1]`, `r model$DF[2]`) = `r round(model$F[1],2)`, η^2^G = `r etasq`, p = `r round(model$p[1],3)`). Participants had lower accuracy during the Patient History stage (M = `r round(mean(accdf[accdf$stage==1,]$Accuracy)/10,2)`, SD = `r round(sd(accdf[accdf$stage==1,]$Accuracy)/10,2)`) than during the Physical Examination (M = `r round(mean(accdf[accdf$stage==2,]$Accuracy)/10,2)`, SD = `r round(sd(accdf[accdf$stage==2,]$Accuracy)/10,2)`) and Testing stages (M = `r round(mean(accdf[accdf$stage==3,]$Accuracy)/10,2)`, SD = `r round(sd(accdf[accdf$stage==3,]$Accuracy)/10,2)`). Table 2 shows overall accuracy (at the Testing stage) by case, indicating that there was variability in performance due to cases varying in difficulty. 
 
 ### Calibration of Confidence to Accuracy {.unnumbered}
 
-Confidence also increased as participants received more information (F(1, 123) = 75.45, η^2^G = .15, p < .001). Participants reported lower confidence during the Patient History stage (M = 0.30, SD = 0.15) than during the Physical Examination (M = 0.41, SD = 0.17) and Testing stages (M = 0.47, SD = 0.19). We note here that confidence was on average below 50% even at the end of each case, which may indicate that participants were not highly confident to start treatment.
+```{r accanova, include=FALSE, echo=FALSE}
+
+condf <- studentDf %>%
+  group_by(stage,participantID) %>%
+  dplyr::summarise(Confidence = mean(confidence))
+
+model <- summary(aov(Confidence ~ stage, data=condf))
+print(model)
+model <- model[[1]]
+colnames(model) <- c("DF", "SumSq", "MeanSq", "F", "p")
+etasq <- round(etaSquared(aov(Confidence ~ stage, data=condf))[1],2)
+```
+
+Confidence also increased as participants received more information (F(`r model$DF[1]`, `r model$DF[2]`) = `r round(model$F[1],2)`, η^2^G = `r etasq`, p = `r round(model$p[1],3)`). Participants reported lower confidence during the Patient History stage (M = `r round(mean(condf[condf$stage==1,]$Confidence)/100,2)`, SD = `r round(sd(condf[condf$stage==1,]$Confidence)/100,2)`) than during the Physical Examination (M = `r round(mean(condf[condf$stage==2,]$Confidence)/100,2)`, SD = `r round(sd(condf[condf$stage==2,]$Confidence)/100,2)`) and Testing stages (M = `r round(mean(condf[condf$stage==3,]$Confidence)/100,2)`, SD = `r round(mean(condf[condf$stage==3,]$Confidence)/100,2)`). We note here that confidence was on average below 50% even at the end of each case, which indicates that participants were not highly confident to start treatment.
 
 ```{r casewiseStatsTable, include=TRUE, echo=FALSE}
 
 caseBreakdown <- studentCaseDf %>%
   group_by(caseCode) %>%
-  dplyr::summarise(`Proportion of Participants who Included a Correct Differential` = mean(correct),
-                   Accuracy = mean(likelihoodOfCorrectDiagnosis)/10,
-                   `Perceived Difficulty` = mean(subjectiveDifficulty,na.rm=T),
-                   `Mean Final Confidence` = mean(finalConfidence)/100)
+  dplyr::summarise(`Proportion of Participants who Included a Correct Differential` = round(mean(correct),2),
+                   Accuracy = round((mean(likelihoodOfCorrectDiagnosis)/10),2),
+                   `Perceived Difficulty` = round(mean(subjectiveDifficulty,na.rm=T),1),
+                   `Mean Final Confidence` = round((mean(finalConfidence)/100),2))
 
 caseBreakdown
 
@@ -102,15 +131,26 @@ caseBreakdown
 
 _Table 1: Showing statistics across participants for each case (leftmost column). Accuracy refers to the average likelihood (on a 1-10 scale) assigned to a correct differential if included. Both of these measures, as well as Final Confidence, are calculated at the final information stage of each case (i.e. the Testing stage)._
 
-When comparing Accuracy (taking into the likelihood assigned to correct differentials) to Confidence, we find, across stages, participants’ Confidence was fairly well aligned to their Accuracy (see Figure 1). To determine whether confident participants tended to be more accurate, we compared a paired t-test between Average Confidence and Average Accuracy (across cases) at each stage. We did not evidence of a difference between the two at the Patient History (t(84) = 0.32, MDiff = 0.01, p = .75) and Physical Examination stages (t(84) = 0.75, MDiff = 0.01, p = .45), but we do see evidence of a difference between the two at the Testing stage (t(84) = 2.40, MDiff = 0.06, p = .02). This indicated well-calibrated confidence after Patient History and Physical Examination, but a slight overconfidence across participants after Testing. 
+```{r calibrationttests, include=TRUE, echo=FALSE}
+
+accdf$Accuracy <- accdf$Accuracy/10
+condf$Confidence <- condf$Confidence/100
+
+histtest <- t.test(accdf[accdf$stage==1,]$Accuracy,condf[condf$stage==1,]$Confidence,paired=T)
+exattest <- t.test(condf[condf$stage==2,]$Confidence,accdf[accdf$stage==2,]$Accuracy,paired=T)
+testtest <- t.test(condf[condf$stage==3,]$Confidence,accdf[accdf$stage==3,]$Accuracy,paired=T)
+
+```
+
+When comparing Accuracy (taking into account the likelihood assigned to correct differentials) to Confidence, we find, across stages, participants’ Confidence was fairly well aligned to their Accuracy (see Figure 4). To determine whether confident participants tended to be more accurate, we compared a paired t-test between Average Confidence and Average Accuracy (across cases) at each stage. There was no evidence of a difference between the two at the Patient History (t(`r histtest$parameter`) = `r round(histtest$statistic,2)`, MDiff = `r round(histtest$estimate,3)`, p = `r round(histtest$p.value,2)`) and Physical Examination stages (t(`r exattest$parameter`) = `r round(exattest$statistic,2)`, MDiff = `r round(exattest$estimate,2)`, p = `r round(exattest$p.value,2)`), but there was a statistically significant difference between the two at the Testing stage (t(`r testtest$parameter`) = `r round(testtest$statistic,2)`, MDiff = `r round(testtest$estimate,2)`, p = `r round(testtest$p.value,2)`). This indicated well-calibrated confidence after Patient History and Physical Examination, but a slight overconfidence across participants after Testing. 
 
 
-```{r meyerGraph, include=TRUE, echo=FALSE}
+```{r meyerGraph, include=TRUE, echo=FALSE, out.width='100%', fig.align='center'}
 
 nPpts <- nrow(studentAggData)
 rootN <- sqrt(nPpts)
 
-xb <- c("Patient History","Physical Exams", "Testing")
+xb <- c("PaH","PhE", "Te")
 yb <- c(mean(studentAggData$meanInitialConfidence)/100, mean(studentAggData$meanMiddleConfidence)/100, mean(studentAggData$meanFinalConfidence)/100)
 zb <- c(mean(studentAggData$meanInitialAccuracy), mean(studentAggData$meanMiddleAccuracy), mean(studentAggData$meanFinalAccuracy))
 
@@ -141,13 +181,26 @@ print(p)
 
 ```
 
-_Figure 1: Graph showing Accuracy (black) and Confidence (green) at each of the three information stages._
+_Figure 1: Graph showing Accuracy (black) and Confidence (green) at each of the three information stages (PaH = Patient History, PhE = Physical Examinations, Te = Testing)._
 
 ### Differentials {.unnumbered}
 
-We first look at the number of differentials that participants report at each stage. Participants overall increased the number of the differentials they reported as they received more information (F(1, 107) = 94.02, η^2^G = .08, p < .001). Participants reported fewer differentials during the Patient History stage (M = 3.20, SD = 1.11) than during the Physical Examination (M = 3.88, SD = 1.33) and Testing stages (M = 4.12, SD = 1.43). The majority (74/85) did not decrease the number of differentials between Patient History and Testing on any case. 
+```{r diffanova, include=FALSE, echo=FALSE}
 
-```{r diffsOverStages, include=TRUE, echo=FALSE}
+diffdf <- studentDf %>%
+  group_by(stage,participantID) %>%
+  dplyr::summarise(Differentials = mean(numOfDifferentials))
+
+model <- summary(aov(Differentials ~ stage, data=diffdf))
+print(model)
+model <- model[[1]]
+colnames(model) <- c("DF", "SumSq", "MeanSq", "F", "p")
+etasq <- round(etaSquared(aov(Differentials ~ stage, data=diffdf))[1],2)
+```
+
+We first look at the number of differentials that participants report at each stage. Participants overall increased the number of the differentials they reported as they received more information (F(`r model$DF[1]`, `r model$DF[2]`) = `r round(model$F[1],2)`, η^2^G = `r etasq`, p < .001). Participants reported fewer differentials during the Patient History stage (M = `r round(mean(diffdf[diffdf$stage==1,]$Differentials),2)`, SD = `r round(sd(diffdf[diffdf$stage==1,]$Differentials),2)`) than during the Physical Examination (M = `r round(mean(diffdf[diffdf$stage==2,]$Differentials),2)`, SD = `r round(sd(diffdf[diffdf$stage==2,]$Differentials),2)`) and Testing stages (M = `r round(mean(diffdf[diffdf$stage==3,]$Differentials),2)`, SD = `r round(sd(diffdf[diffdf$stage==3,]$Differentials),2)`). The majority (74/85) did not decrease the number of differentials between Patient History and Testing on any case. 
+
+```{r diffsOverStages, include=TRUE, echo=FALSE, out.width='100%', fig.align='center'}
 
 nPpts <- nrow(studentAggData)
 
@@ -177,14 +230,18 @@ print(diffs +
 ```
 _Figure 2: The average number of differentials after each stage of information seeking._
 
-To look at whether the number of initial differentials generated the amount of information sought, we conducted a Pearson’s Correlation test on individual differences. We find an association (see Figure 3) between the average number of differentials generated from the Patient History and the average amount of information sought during cases (r(83) = 0.30, 95% CI = [.10, .49], p = .005). As previously discussed, participants rarely seem to remove differentials from consideration. Therefore, one can surmise here that higher information seeking is associated with the consideration of more diagnostic differentials. 
 
-
-```{r initialDiffsAgainstInfoSeeking, include=TRUE, echo=FALSE}
+```{r initialDiffsAgainstInfoSeeking, include=TRUE, echo=FALSE, out.width='100%', fig.align='center'}
 
 ### Correlation between initial differentials and overall confidence change
 
 cor <- cor.test(studentAggData$meanInitialDiffs,studentAggData$proportionOfInfo,method="pearson")
+
+```
+
+To look at whether the number of initial differentials generated the amount of information sought, we conducted a Pearson’s Correlation test on individual differences. We find an association (see Figure 3) between the average number of differentials generated from the Patient History and the average amount of information sought during cases (r(`r cor$parameter`) = `r round(cor$estimate,2)`, 95% CI = [`r round(cor$conf.int[1],2)`, `r round(cor$conf.int[2],2)`], p = `r round(cor$p.value,3)`). As previously discussed, participants rarely seem to remove differentials from consideration. Therefore, one can surmise here that higher information seeking is associated with the consideration of more diagnostic differentials. 
+
+```{r initialDiffsAgainstInfoSeekingPlot, include=TRUE, echo=FALSE, out.width='100%', fig.align='center'}
 
 diffCon <- ggplot(data = studentAggData, aes(x=meanInitialDiffs, y=proportionOfInfo)) +
   geom_point() +
@@ -204,12 +261,25 @@ _Figure 3: Scatter plot showing the relationship between the number of initial d
 
 ### Information Seeking {.unnumbered}
 
-The Proportion of Information Seeking decreased with each information stage (F(2, 151) = 122.0, η^2^G = .30, p < .001). Participants sought more of the available information during the Patient History stage (M = 0.85, SD = 0.20) than during both during the Physical Examination (M = 0.59, SD = 0.24) and Testing stages (M = 0.50, SD = 0.22). 
+```{r infoanova, include=FALSE, echo=FALSE}
+
+infodf <- studentDf %>%
+  group_by(stage,participantID) %>%
+  dplyr::summarise(InfoSeeking = mean(proportionOfInfo))
+
+model <- summary(aov(InfoSeeking ~ stage, data=infodf))
+print(model)
+model <- model[[1]]
+colnames(model) <- c("DF", "SumSq", "MeanSq", "F", "p")
+etasq <- round(etaSquared(aov(InfoSeeking ~ stage, data=infodf))[1],2)
+```
+
+The Proportion of Information Seeking decreased with each information stage (F(`r model$DF[1]`, `r model$DF[2]`) = `r round(model$F[1],2)`, η^2^G = `r etasq`, p < .001). Participants sought more of the available information during the Patient History stage (M = `r round(mean(infodf[infodf$stage==1,]$Differentials),2)`, SD = `r round(sd(infodf[infodf$stage==1,]$Differentials),2))` than during both during the Physical Examination (M = `r round(mean(infodf[infodf$stage==2,]$Differentials),2)`, SD = `r round(sd(infodf[infodf$stage==2,]$Differentials),2)`) and Testing stages (M = `r round(mean(infodf[infodf$stage==3,]$Differentials),2)`, SD = `r round(sd(infodf[infodf$stage==3,]$Differentials),2)`). 
 
 When conducting a Pearson’s Product Correlation test, we do not find that participants who sought more information across cases were also more accurate in their diagnoses (r(83) = 0.17, 95% CI = [-.04, .37], p = .11). However, participants who sought more information did tend to increase their confidence more (r(83) = 0.24, 95% CI = [.02, .43], p = .03). This is distinct from their final confidence, for which we did not find evidence of an association with the amount of information sought (r(83) = 0.11, 95% CI = [-.11, .31], p = .33). While seeking more information may imbue students with a greater level of confidence, it does not necessarily translate into more accurate diagnoses. This links to the results presented in Figure 1, in which confidence and accuracy were related to one another but imperfectly (especially during the Testing stage). 
 
 
-```{r initialDiffsAgainstConfidence, include=TRUE, echo=FALSE}
+```{r initialDiffsAgainstConfidencePlot, include=TRUE, echo=FALSE}
 
 ### Correlation between initial differentials and overall confidence change
 

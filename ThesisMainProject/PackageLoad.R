@@ -8,7 +8,7 @@ requiredPackages <- c("tibble", "scales", "psych", "ltm", "stringr", "ggsci", "g
                       "rpart", "caret", "tidyverse", "data.table", "verification", "glmnet",
                       "GGally", "corrplot", "verification", "ROCR", "maptree",
                       "glmnet", "gridExtra", "randomForest", "mgcv", "nnet", "pROC", "pls",
-                      "gbm", "e1071", "xgboost", "DT", "NeuralNetTools", "rpart.plot", "poLCA", "mclust")
+                      "gbm", "e1071", "xgboost", "DT", "NeuralNetTools", "rpart.plot", "poLCA", "mclust", "lsr")
 
 new.packages <- requiredPackages[!(requiredPackages %in% installed.packages()[,"Package"])]
 if(length(new.packages)) install.packages(new.packages, repos = "http://cran.us.r-project.org")
