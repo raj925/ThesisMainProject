@@ -1,14 +1,11 @@
 requiredPackages <- c("tibble", "scales", "psych", "ltm", "stringr", "ggsci", "ggplot2", "rjson", 
-                      "reticulate", "ggpubr", "lme4", "lmerTest",
-                      "pracma", "lattice", "MASS", "apcluster", "blme", 
-                      "smacof","cluster","factoextra", "pwr", 
-                      "magrittr", "tidyr", "dplyr", "boot", "rstatix", 
-                      "devtools",  "fossil", "tidyverse", "proxy",
-                      "plotly","viridis","padr", "wordcloud", "RColorBrewer", "tm", "logisticPCA", "rARPACK", "FactoMineR",
-                      "rpart", "caret", "tidyverse", "data.table", "verification", "glmnet",
-                      "GGally", "corrplot", "verification", "ROCR", "maptree",
-                      "glmnet", "gridExtra", "randomForest", "mgcv", "nnet", "pROC", "pls",
-                      "gbm", "e1071", "xgboost", "DT", "NeuralNetTools", "rpart.plot", "poLCA", "mclust", "lsr")
+                      "reticulate", "ggpubr", "lme4", "lmerTest", "pracma", "lattice", "MASS", "apcluster", "blme", 
+                      "smacof","cluster","factoextra", "pwr", "magrittr", "tidyr", "dplyr", "boot", "rstatix", 
+                      "devtools",  "fossil", "tidyverse", "proxy", "plotly","viridis","padr", 
+                      "RColorBrewer", "tm", "logisticPCA", "rARPACK", "FactoMineR", "verification","interactions",
+                      "rpart", "caret", "data.table", "GGally", "ROCR", "maptree",
+                      "glmnet", "gridExtra", "mgcv", "nnet", "pROC", "pls",
+                      "gbm", "xgboost", "DT", "NeuralNetTools", "rpart.plot", "poLCA", "mclust", "lsr", "cowplot")
 
 new.packages <- requiredPackages[!(requiredPackages %in% installed.packages()[,"Package"])]
 if(length(new.packages)) install.packages(new.packages, repos = "http://cran.us.r-project.org")
@@ -106,12 +103,4 @@ kendallTauDistance <- function(x,y){
     ub <- (0.5*n)*(n-1)
     return(1-(inversionNumber(order(x)[rank(y)])/ub))
 }
-
-requiredPackages <- c("rpart", "caret", "tidyverse", "data.table", "verification", "glmnet",
-                      "GGally", "corrplot", "verification", "ROCR", "maptree",
-                      "glmnet", "gridExtra", "randomForest", "mgcv", "nnet", "pROC",
-                      "gbm", "e1071", "xgboost", "DT", "NeuralNetTools", "rpart.plot", "interactions")
-new.packages <- requiredPackages[!(requiredPackages %in% installed.packages()[,"Package"])]
-if(length(new.packages)) install.packages(new.packages, repos = "http://cran.us.r-project.org")
-lapply(requiredPackages, require, character.only = TRUE)
 

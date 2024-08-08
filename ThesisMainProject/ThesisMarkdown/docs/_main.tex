@@ -137,20 +137,6 @@
 
 % User-included things with header_includes or in_header will appear here
 % kableExtra packages will appear here if you use library(kableExtra)
-\usepackage{booktabs}
-\usepackage{longtable}
-\usepackage{array}
-\usepackage{multirow}
-\usepackage{wrapfig}
-\usepackage{float}
-\usepackage{colortbl}
-\usepackage{pdflscape}
-\usepackage{tabu}
-\usepackage{threeparttable}
-\usepackage{threeparttablex}
-\usepackage[normalem]{ulem}
-\usepackage{makecell}
-\usepackage{xcolor}
 
 
 %UL set section header spacing
@@ -473,15 +459,13 @@ Virtual Reality
 \flushbottom
 
 % all your chapters and appendices will appear here
-\hypertarget{introduction}{%
-\chapter*{Introduction}\label{introduction}}
+\chapter*{Introduction}\label{introduction}
 \addcontentsline{toc}{chapter}{Introduction}
 
 \adjustmtc
 \markboth{Introduction}{}
 
-\hypertarget{diagnosis}{%
-\section*{Diagnosis}\label{diagnosis}}
+\section*{Diagnosis}\label{diagnosis}
 \addcontentsline{toc}{section}{Diagnosis}
 
 ``Problems in diagnosis have\ldots been heavily dominated by physicians with little input from the cognitive sciences. What is missing\ldots is foundational work aimed at understanding how clinicians in actual situations take a complex, tangled stream of phenomena\ldots to create an understanding of them as a problem.'' (Wears, 2014)
@@ -507,8 +491,7 @@ A report from the US Institute of Medicine (McGlynn, McDonald \& Cassel, 2015) c
 
 Diagnostic error is by no means the sole cause of medical incidents. There are a number of factors tied to the wider work environment, culture and technology that can contribute to incidents and errors. A lot of these factors are challenging to isolate and emulate in an experimental setting. By understanding the individual psychological factors of the diagnostic process however, we better understand how sociotechnical and environmental factors interact with and amplify individual contributors to diagnostic error. Gaining a greater understanding of the causes of diagnostic error can have important implications for future interventions within healthcare settings.
 
-\hypertarget{cognitive-biases-and-overconfidence-in-diagnoses}{%
-\section*{Cognitive Biases and Overconfidence in Diagnoses}\label{cognitive-biases-and-overconfidence-in-diagnoses}}
+\section*{Cognitive Biases and Overconfidence in Diagnoses}\label{cognitive-biases-and-overconfidence-in-diagnoses}
 \addcontentsline{toc}{section}{Cognitive Biases and Overconfidence in Diagnoses}
 
 Diagnostic error can stem from cognitive biases during the diagnostic decision making process, such as primacy (Frotvedt et al., 2020) or recency (Chapman, Bergus \& Elstein, 1996) biases. While it seems intuitive that classical decision making biases affect those in healthcare too (Restrepo et al., 2020), the empirical evidence of impact for medical decision making is scant, (van den Berge \& Mamede, 2013). One example from dermatology looked found examples of satisficing bias (premature closure) and anchoring were found, but few examples of others such as availability and representative biases (Crowley et al., 2012). One type of bias that has manifested in more experimental findings is overconfidence (Berner \& Graber, 2008, Meyer et al.., 2013).
@@ -523,8 +506,7 @@ In a task that involved diagnosing ultrasound scans, it was found that overconfi
 
 We would argue that building on the current research landscape of diagnostic confidence is important. If there is an assumption that others will calibrate their confidence to their true accuracy, this would mean that heeding high confidence advice or judgements would be an optimal strategy for maximising accuracy. However, this can be a serious issue when high confidence errors lead others astray. This is important, as in addition to seniority and speciality experience, a clinician's confidence is one of the only markers available for other clinicians and for patients when making key medical decisions. One underexplored avenue in current research is the role that information seeking during the diagnostic process affects confidence.
 
-\hypertarget{information-seeking}{%
-\section*{Information Seeking}\label{information-seeking}}
+\section*{Information Seeking}\label{information-seeking}
 \addcontentsline{toc}{section}{Information Seeking}
 
 Clinicians generate hypotheses and then gather information to reduce the space of hypotheses. They should ideally eliminate hypotheses from consideration only when it makes sense given the incoming evidence. By the same token, they should also not continue attaching themselves to a hypothesis when there is overwhelming evidence to the contrary. One conclusion of Wason (1960) was that individuals struggle to remove a hypothesis from consideration even if they receive evidence against it. Understanding how individuals generally reason about a possible space of hypotheses is interesting for understanding how the reasoning process works differentially for novices and experts, especially in a specialised domain such as medicine. One question that is worth investigating is how the `process of elimination' affects confidence.
@@ -535,335 +517,177 @@ There is also evidence to assume that information seeking is important within me
 
 Diagnostic decisions have been thought of as `ideal' when using the hypothetico-deductive process (Kuipers \& Kassirer, 1984), whereby hypotheses are formulated based on specific features of a patient and are then linked to established criteria for a diagnosis, with further information gathering to test these hypotheses (Higgs et al., 2008) or eliminate others. This account was challenged by Coderre et al.~(2003), who found that diagnosis can based more on pattern recognition, especially for more experienced clinicians. Either way, the bridge between confidence and information seeking is the reasoning strategy utilised by clinicians. Diagnostic reasoning is currently taught using cognitive frameworks such as the surgical sieve and the ABCDE pneumonic. However, current education does not account for differences in reasoning strategies, whether strategies may meaningful vary by case and by clinician and how these strategies have a downstream influence on the diagnostic process in terms of seeking information, generating differentials and formulating confidence.
 
-\hypertarget{current-work}{%
-\section*{Current Work}\label{current-work}}
+\section*{Current Work}\label{current-work}
 \addcontentsline{toc}{section}{Current Work}
 
 There is a need for the teaching and assessment of non-technical skills and human factors in healthcare (Higham et al., 2019), which is currently not addressed in a widespread standardised manner in speciality curricula (Grieg, Higham \& Vaux, 2015). Curricula within medicine also place little emphasis on how uncertainty is communicated and approached in medical decision making (Hall, 2002). In addition, there is little work that informs how information seeking is taught within medical reasoning other the use of cognitive frameworks (such as the `surgical sieve') and pneumonics (such as Airway, Breathing, Circulation, Disability, Exposure). Clinical experience may also be connected to risk aversion and further information seeking behaviour (Lawton et al., 2019), which offers an important avenue for future medical education. Hence, this research informs medical education of non-technical skills such as diagnostic reasoning, especially around evaluating diagnostic differentials and seeking information during the diagnosis process.
 
 The following sections are structured as follows. Firstly, I will present a scoping review of the medical and psychological literature in which confidence or certainty has been studied within diagnostic studies. This review will map out the broad findings from this extant literature and identify gaps in our current understanding, some of which this DPhil aims to fill. Next, I will present an online behavioural study with medical students where participants freely sought information and provided diagnostic differentials at different stages during a series of patient vignettes. This study allows us to study how diagnostic differentials and confidence are affected by patterns of information seeking. The following section then details an in-person using a similar paradigm where medical think aloud as they are making these diagnoses, with the aim to use these think aloud utterances to classify different diagnostic reasoning strategies. These different strategies can be used to reanalyse the online study to investigate how reasoning strategies affect confidence and information seeking. The third empirical study seeks to look at diagnostic decisions in a more naturalistic manner by using virtual scenario paediatric scenarios to investigate differences in information seeking and confidence. Finally, I present a reflective chapter based on observations in Intensive Care, whereby the findings from this DPhil are contextualised within the decisions made during actual medical practice.
 
-\hypertarget{study-1---scoping-review-of-literature-on-confidence-and-certainty-in-diagnoses}{%
-\chapter*{Study 1 - Scoping Review of Literature on Confidence and Certainty in Diagnoses}\label{study-1---scoping-review-of-literature-on-confidence-and-certainty-in-diagnoses}}
+\chapter*{Study 1 - Scoping Review of Literature on Confidence and Certainty in Diagnoses}\label{study-1---scoping-review-of-literature-on-confidence-and-certainty-in-diagnoses}
 \addcontentsline{toc}{chapter}{Study 1 - Scoping Review of Literature on Confidence and Certainty in Diagnoses}
 
 \adjustmtc
 \markboth{Scoping Review}{}
 
-\hypertarget{study-2---information-seeking-and-confidence-in-diagnosis}{%
-\chapter*{Study 2 - Information Seeking and Confidence in Diagnosis}\label{study-2---information-seeking-and-confidence-in-diagnosis}}
+\chapter*{Study 2 - Information Seeking and Confidence in Diagnosis}\label{study-2---information-seeking-and-confidence-in-diagnosis}
 \addcontentsline{toc}{chapter}{Study 2 - Information Seeking and Confidence in Diagnosis}
 
 \adjustmtc
 \markboth{Online Study}{}
 
-We sought in this study to better understand how information seeking, confidence and differential generation interact within the diagnosis process. In particular, we investigated whether information seeking patterns were associated with diagnostic accuracy and confidence. We conducted a vignette-based diagnosis study with medical students to inform future work on how diagnostic reasoning is taught to students, especially when it comes to weighing up competing differentials. Data is openly available on OSF: \url{https://osf.io/kb54u/}.
-
-\hypertarget{methods}{%
-\section*{Methods}\label{methods}}
+\section*{Methods}\label{methods}
 \addcontentsline{toc}{section}{Methods}
 
-\hypertarget{participants}{%
-\subsection*{Participants}\label{participants}}
+This study was designed to understand how information seeking, confidence and differential generation interact within the diagnosis process. Specifically, we investigated whether information seeking patterns were associated with diagnostic accuracy and confidence. We conducted a vignette-based diagnosis study with medical students to inform future work on how diagnostic reasoning is taught to students, especially when it comes to weighing up competing differentials. Data is openly available on OSF: \url{https://osf.io/kb54u/}.
+
+\subsection*{Participants}\label{participants}
 \addcontentsline{toc}{subsection}{Participants}
 
-We recruited medical students within the UK who were in the year of study before their foundation programme. 85 medical students completed the study, including 32 males, 52 females and 1 participant who reported as non-binary. Their ages ranged between 22-34 years (M = 24.2). Participants were recruited between July 11th 2022 and April 6th 2023. The UK Medical Schools Council distributed the study to UK medical students using a mailing list. Participants were emailed with a study information sheet and a link to access the experiment, where they first provided consent via an anonymous online form. After doing so, the participant provided demographic information (age, gender and years of medical experience). The study was conducted online, with participants able to run the experiment in a browser on a desktop computer or laptop. Participants were not able to run the experiment on their phone or tablet. The experiment was coded using the JSPsych Javascript plugin. The code is publicly available on Github: \url{https://github.com/raj925/DiagnosisParadigm}. This study was reviewed and granted ethical approval by the Oxford Medical Sciences Interdivisional Research Ethics Committee under reference R81158/RE001. Informed consent was obtained anonymously using an online electronic information sheet and consent form.
+We recruited final year medical students within the UK. 85 medical students completed the study, including 32 males, 52 females and 1 participant who identified as non-binary. Their ages ranged between 22-34 years (M = 24.2). Participants were recruited between July 11th 2022 and April 6th 2023 via email sent to UK medical students via a UK Medical Schools Council mailing list. Participants were emailed with a study information sheet and a link to access the experiment, where they first provided consent via an anonymous online form. After doing so, the participant provided demographic information (age, gender and years of medical experience). The study was conducted online, with participants able to run the experiment in a browser on a desktop computer or laptop (and not a phone or tablet) in a location of their choice. The experiment was coded using the JSPsych Javascript plugin. The code is publicly available on Github: \url{https://github.com/raj925/DiagnosisParadigm}. Ethical approval was granted by the Oxford Medical Sciences Interdivisional Research Ethics Committee under reference R81158/RE001.
 
-\hypertarget{materials}{%
-\subsection*{Materials}\label{materials}}
+\subsection*{Materials}\label{materials}
 \addcontentsline{toc}{subsection}{Materials}
 
-This study involved patient vignettes that have been adapted from actual past cases. We adapted scenarios from a bank of patient cases from Friedman (2004). Our study involved 6 patient cases, each designed to indicate a specific underlying condition that the real patient had. These conditions were: Aortic Dissection (AD), Guillain-Barre Syndrome (GBS), Miliary TB (MTB), Temporal Arteritis (TA), Thrombotic Thrombocytopenic Purpura (TTP) and Ulcerative Colitis (UC). The order in which the cases were presented was randomised for each participant. We also included a practice case (Colon Cancer) to familiarise the participants with the experimental procedure and the interface.
+This study involved patient vignettes that we adapted from anonymised past cases used by Friedman (2004). Six cases were chosen, each designed to indicate a specific underlying condition the patient had: Aortic Dissection (AD), Guillain-Barre Syndrome (GBS), Miliary TB (MTB), Temporal Arteritis (TA), Thrombotic Thrombocytopenic Purpura (TTP) and Ulcerative Colitis (UC). The order in which the cases were presented was randomised for each participant. We also included a practice case (Colon Cancer) to familiarise the participants with the experimental procedure and the interface. Cases were chosen to reflect a variety of affected pathophysiological systems and to test medical students on medical conditions that they were expected to know given their level of education/training.
 
-A panel of 3 subject matter experts (practising medical staff and researchers within the NHS) who work in collaboration with the OxSTaR Centre (Oxford Simulation, teaching and Research Centre, based at Oxford's John Radcliffe Hospital) were recruited to design the vignettes used in this study. These medical professionals were at differing experience levels, with their medical roles at the time of this study as follows: Speciality trainee (ST6) in Anaesthetics, Foundation (F1) Doctor and Gastroenterology Consultant. The panel assisted with translating terms (e.g., medication names, tests etc.) from US to UK doctors' vernacular and updated patient details to be more current. The panel also crucially gave input on which medical conditions to choose from the provided bank of vignettes that medical students would be expected to know, whilst having some variance in both difficulty and the affected pathophysiological system.
+A panel of 3 subject matter experts (practising doctors and researchers within the NHS and the OxSTaR centre www.oxstar.ox.ac.uk ) were recruited to design the vignettes used in this study. These medical professionals were at differing experience levels, with their medical roles at the time of this study as follows: Speciality trainee (ST7) in Anaesthetics, Foundation (F1) Doctor and Gastroenterology Consultant. The panel assisted with translating terms (e.g., medication names, tests etc.) from US to UK doctors' vernacular, updated patient details to be more current and provided input on the choice and complexity of the cases chosen.
 
-\hypertarget{procedure}{%
-\subsection*{Procedure}\label{procedure}}
+\subsection*{Procedure}\label{procedure}
 \addcontentsline{toc}{subsection}{Procedure}
 
-The goal of the task was to determine a diagnosis, or set of diagnoses, for each presented patient (Figure 1). Information on the patient is split into a series of discrete stages so that the researchers are able to control what information the clinicians have access to at any given point in the experiment. We can call each point of new information an ``information stage''. Participants are able to seek information freely until they are ready to move on, similar to the paradigm adopted by Kämmer et al.~(2019).
+The goal of the task was to determine a diagnosis, or diagnoses, for each presented patient (Figure 1). Information on the patient was split into a series of discrete stages to control what information the participants had access to at any given point in the experiment. each point of new information was termed an ``information stage''. Participants were able to seek information freely until they were ready to move on.
 
-The procedure of a single case is as follows. The participant is asked to imagine that they are working in a busy district hospital and they encounter patients in a similar way to how they would in their real medical practice. At the start of each case, the participant is shown a description of a patient, which includes the patient's gender, age and their presenting complaint. An example of this is: ``patient is a 68 year old male presenting with fever and arthralgia''. Each case is split into three information stages: Patient History, Physical Examination and Testing (in this order). The set of information requests for each stage is the same for all cases. The Patient History stage includes information on ``Allergies'', ``History of the Presenting Complaint'', ``Past Medical History'' and ``Family History''. The Physical Examination stage includes `actions' that a doctor may take when examining a patient, such as ``auscultate the lungs'', ``abdomen examination'', ``take pulse'' and ``measure temperature''. Finally, the Testing stage involves information on any bedside tests or tests they may request from another department. This includes ``Chest X-Ray'', ``Venous Blood Gas'', ``Urine Dipstick'' and ``Clotting Test''. In total, 29 possible tests that can be requested across the three information stages.
+The procedure of a single case is as follows. The participant is asked to imagine that they are working in a busy district hospital and they encounter patients in a similar way to how they would in their real medical practice. At the start of each case, the participant is shown a description of a patient, which includes the patient's gender, age and their presenting complaint. An example of this is: ``patient is a 68 year old male presenting with fever and arthralgia''. Each case is split into three information stages: Patient History, Physical Examination and Testing (in this order). The set of information requests for each stage is the same for all cases. The Patient History stage includes information on ``Allergies'', ``History of the Presenting Complaint'', ``Past Medical History'' and ``Family History''. The Physical Examination stage includes `actions' that a doctor may take when examining a patient, such as ``auscultate the lungs'', ``abdomen examination'', ``take pulse'' and ``measure temperature''. Finally, the Testing stage involves information on any bedside tests or tests they may request from another department. This includes ``Chest X-Ray'', ``Venous Blood Gas'', ``Urine Dipstick'' and ``Clotting Test''. In total, there are 29 possible information requests across the three stages.
 
-When a participant clicks on any of these tests, the information for that test is shown on screen after a 3 second delay. It was emphasised during the task instructions that participants should only request information that they believe will help them with diagnosing the patient for that specific case. Participants are free to request the same piece of information multiple times, including information from a previous stage. At any point, they can choose to stop gathering information for that stage. They are then taken to a new screen where they report a list of all differential diagnoses that they are considering for that patient at that stage. For each differential, participants report a ``level of concern'' for that differential, which is how concerned they would be for that patient if this differential really was the patient's underlying condition. This is reported on a 4 point scale, with labels of ``Low'', ``Medium'', ``High'' and ``Emergency''. Participants also reported a likelihood rating for each differential, ranging from 1 (very unlikely) to 10 (certain). In subsequent stages, the list from the previous stages is available for participants to update concern/likelihood ratings, or to add/remove differentials from the list. Even at the last information stage, participants can report multiple differentials.
+When a participant clicks on any of these requests, the information for that request is shown on screen after a 3 second delay. It was emphasised during the task instructions that participants should only request information that they believe will help them with diagnosing the patient for that specific case. Participants are free to request the same piece of information multiple times, including information from a previous stage. At any point, they can choose to stop gathering information for that stage. They are then taken to a new screen where they report a list of all differential diagnoses that they are considering for that patient at that stage. For each differential, participants report a ``level of concern'' for that differential, which is how concerned they would be for that patient if this differential really was the patient's underlying condition. This is reported on a 4 point scale, with labels of ``Low'', ``Medium'', ``High'' and ``Emergency''. Participants also reported a likelihood rating for each differential, ranging from 1 (very unlikely) to 10 (certain). In subsequent stages, the list from the previous stages is available for participants to update concern/likelihood ratings, or to add/remove differentials from the list. Even at the last information stage, participants can report multiple differentials.
 
-After recording their differentials, participants are then asked to report their confidence that they are ``ready to start treating the patient'' on a 100 point scale, ranging from fully unconfident to fully confident. Participants also indicate using a checkbox whether they are ready to start treating the patient, at which point a text box appears for them to report what further tests they would perform, any escalations they would make to other medical staff and treatments they would start administering for the patient. Once all three stages are complete, participants report how difficult they found it to determine a diagnosis for that case, on a scale from 1 (trivial) to 10 (impossible). At the end of all six patient cases, participants are told the `true' conditions for all the patients.
+After recording their differentials, participants are then asked to report their confidence that they are ``ready to start treating the patient'' on a 100 point scale, ranging from fully unconfident to fully confident. Participants also indicate using a checkbox whether they are ready to start treating the patient, at which point a text box appears for them to report what further tests they would perform, any escalations they would make to other medical staff and treatments they would start administering for the patient. Once all three stages are complete, participants report how difficult they found it to determine a diagnosis for that case, on a scale from 1 (trivial) to 10 (impossible). At the end of all six patient cases, participants are told the `true' conditions for all the patients. The session took approximately 40-60 minutes to complete.
 
-\hypertarget{data-analysis}{%
-\subsection*{Data Analysis}\label{data-analysis}}
+\subsection*{Data Analysis}\label{data-analysis}
 \addcontentsline{toc}{subsection}{Data Analysis}
 
 Responses were coded for correctness manually with help from a medical consultant, who looked at all the information available for each case and determined which diagnoses could be valid answers. All lists of differentials were `marked' for correctness manually using the criteria found in Table S1 of the Supplemental Materials.
 
-We test for correlations between our dependent variables using Pearson's product moment correlation tests, and interpret an alpha value of less than 0.05 as indicative of a statistically significant effect. Our sample of 85 participants is calculated have 80.4\% power to detect a medium effect size of r = 0.3 (using an approximate arctangh transformation correlation power calculation). Our key dependent variables are as follows:
+correlations between our dependent variables were tested using Pearson's product moment correlation tests (an alpha value of less than 0.05 was regarded as statistically significant). Our sample of 85 participants is calculated have 80.4\% power to detect a medium effect size of r = 0.3 (using an approximate arctangh transformation correlation power calculation). Our key dependent variables are as follows:
 
-\hypertarget{case-wise-measures}{%
-\subsubsection{Case-Wise Measures}\label{case-wise-measures}}
+\subsubsection{Case-Wise Measures}\label{case-wise-measures}
 
 \begin{itemize}
 \item
-  \emph{Accuracy}: For a case to be considered `correct', the participant should have reported the correct condition for that case within their list of differentials regardless of the number of differentials provided. Given that differentials are provided via free text, cases are manually coded as correct or incorrect using the aforementioned criteria. Our main accuracy measure is computed by the taking the likelihood value assigned to the correct differential if it is included in the list of differentials. This means that likelihoods range from 1-10 when a correct differential is included and has a value of 0 when a correct differentials is not included. The value is then rescaled to range from 0 and 1, where 1 corresponds to a correct differential assigned maximum likelihood. If multiple differentials that are considered correct were provided, then the likelihood value of closest differential to the true condition was used.
+  \emph{Accuracy}: Our main measure of diagnostic accuracy is computed as the likelihood value assigned to the correct differential for the case (and scored as 0 if this differential is not listed). For a case to be considered `correct', the participant should have reported the correct condition for that case within their list of differentials regardless of the number of differentials provided. Likelihoods range from 1-10 when a correct differential is included and has a value of 0 when a correct differentials is not included. The value is then rescaled to range from 0 and 1, where 1 corresponds to a correct differential assigned maximum likelihood. If multiple differentials that are considered correct were provided, then the likelihood value of closest differential to the true condition was used.
 \item
-  \emph{Confidence}: Participants reported confidence at each information stage. Initial Confidence refers to the reported confidence after the first stage of information seeking (Patient History), whilst Final Confidence refers to the reported confidence after the third and last stage of information seeking (Testing). As for accuracy, confidence is rescaled to fall between 0 and 1 to allow for direct comparison between the two variables. We can then use these two variables to calculate Confidence Change, by subtracting the participants' Initial Confidence from their Final Confidence. Hence, a positive value for Confidence Change means that the participant has gained confidence over the course of the patient case.
+  \emph{Confidence}: Participants reported their confidence that they are ready to start treatment at each information stage. Initial Confidence refers to the reported confidence after the first stage of information seeking (Patient History), whilst Final Confidence refers to the reported confidence after the third and last stage of information seeking (Testing). As with accuracy, confidence is rescaled to fall between 0 and 1 to allow for direct comparison between the two variables. We can then use these two variables to calculate Confidence Change, by subtracting the participants' Initial Confidence from their Final Confidence. Hence, a positive value for Confidence Change means that the participant has gained confidence over the course of the patient case.
 \item
-  \emph{Number of Differentials}: We record the number of items in the list of differentials at each stage. Initial Differentials refer to the number of differentials after the first stage of information seeking (Patient History), whilst Final Differentials refer to the number of differentials after the third and last stage of information seeking (Testing).
+  \emph{Number of Differentials}: This measure captures the breadth of diagnoses considered by participants. The number of items in the list of differentials was recorded at each stage. Initial Differentials refer to the number of differentials after the first stage of information seeking (Patient History), whilst Final Differentials refer to the number of differentials after the third and last stage of information seeking (Testing).
 \item
   \emph{Perceived Difficulty}: The subjective rating by participants at the end of each case for how difficult they found it to determine a diagnosis for that patient case. This is reported subjectively by each participant on a scale from 1 (trivial) to 10 (impossible).
 \end{itemize}
 
-\hypertarget{derived-information-seeking-measures-across-cases}{%
-\subsubsection{Derived Information Seeking Measures Across Cases}\label{derived-information-seeking-measures-across-cases}}
+\subsubsection{Derived Information Seeking Measures Across Cases}\label{derived-information-seeking-measures-across-cases}
 
 \begin{itemize}
 \item
-  \emph{Amount of Information Seeking}: We take the number of unique tests requested at a given information stage (i.e.~not including any tests from a previous stage or including tests that had been requested before during that stage) and divide this by the number of possible tests available.
+  \emph{Proportion of Information Seeking}: This measure captures the amount of information that participants seek on cases relative to how much they could have sought if seeking all avilable information. We take the number of unique tests requested at a given information stage (i.e.~not including any tests from a previous stage, tests that had been requested before that stage and excluding repeat tests) and divide this by the number of possible tests available.
 \item
-  \emph{Information Seeking Value}: We compute the average value of sought information across cases. To do this, we take each of the 29 pieces of information in turn by case and split trials into two groups: trials of that case where that information was sought and trials of that case where that information was not sought. For each group, we compute the proportion of trials where the students included a correct differential, and then take the difference between these two values. A positive value would indicate that students were more likely to identify the correct condition with that information rather than without that information. This difference can be considered that information's `value'. For each of the participants' cases, we compute this difference for each piece of information that the participant sought (for information they did not seek, the informational `value' would be 0) and then calculate the sum of all information values for each case. We then take the mean information value across all cases for each participant. This gives an overall measure of, on average, how useful the information was that participants sought on each case.
+  \emph{Information Seeking Value}: We calculate a measure of information value to capture how appropriate the information sought for a case is for the given patient condition. We compute the average value of sought information across cases. To do this, we take each of the 29 pieces of information in turn by case and split all cases completed across participants into two groups: cases where that information was sought and cases where that information was not sought. For each group, we compute the proportion of trials where the students included a correct differential, and then take the difference between these two values. A positive value would indicate that students were more likely to identify the correct condition with that information rather than without that information. This difference can be considered that information's `value'. We then calculate the sum of all information values for each case. This gives an overall measure of, on average, how useful the information was that participants sought on each case.
 \end{itemize}
 
-\hypertarget{results}{%
-\section*{Results}\label{results}}
+\section*{Results}\label{results}
 \addcontentsline{toc}{section}{Results}
 
-\hypertarget{overall-performance}{%
-\subsection{Overall Performance}\label{overall-performance}}
+\subsection*{Overall Performance}\label{overall-performance}
+\addcontentsline{toc}{subsection}{Overall Performance}
 
-Across cases, the proportion of trials where participants include a correct differential within their set of differentials increased with each stage of information gathering. (F(2, 128) = 59.52, η\textsuperscript{2}G = .08, p \textless{} .001). Participants included a correct differential on fewer trials during the Patient History stage (M = 0.54, SD = 0.23) than during the Physical Examination (M = 0.66, SD = 0.22) and Testing stages (M = 0.69, SD = 0.21). Table 2 shows overall performance by case, indicating that there was variability in performance due to cases varying in difficulty.
+Across cases, accuracy increased with each stage of information gathering as per our Accuracy measure (F(1, 254) = 8.52, \texttt{\$\textbackslash{}Eta\$}\textsuperscript{2}G = 0.03, p = 0.004). Participants had lower accuracy during the Patient History stage (M = 0.31, SD = 0.14) than during the Physical Examination (M = 0.4, SD = 0.16) and Testing stages (M = 0.41, SD = 0.15). Table 2 shows overall accuracy (at the Testing stage) by case, indicating that there was variability in performance due to cases varying in difficulty.
 
-\hypertarget{calibration-of-confidence-to-accuracy}{%
-\subsection{Calibration of Confidence to Accuracy}\label{calibration-of-confidence-to-accuracy}}
+\subsection*{Calibration of Confidence to Accuracy}\label{calibration-of-confidence-to-accuracy}
+\addcontentsline{toc}{subsection}{Calibration of Confidence to Accuracy}
 
-Confidence also increased as participants received more information (F(1, 123) = 75.45, η\textsuperscript{2}G = .15, p \textless{} .001). Participants reported lower confidence during the Patient History stage (M = 0.30, SD = 0.15) than during the Physical Examination (M = 0.41, SD = 0.17) and Testing stages (M = 0.47, SD = 0.19). We note here that confidence was on average below 50\% even at the end of each case, which may indicate that participants were not highly confident to start treatment.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{caseBreakdown }\OtherTok{\textless{}{-}}\NormalTok{ studentCaseDf }\SpecialCharTok{\%\textgreater{}\%}
-  \FunctionTok{group\_by}\NormalTok{(caseCode) }\SpecialCharTok{\%\textgreater{}\%}
-\NormalTok{  dplyr}\SpecialCharTok{::}\FunctionTok{summarise}\NormalTok{(}\StringTok{\textasciigrave{}}\AttributeTok{Proportion of Participants who Included a Correct Differential}\StringTok{\textasciigrave{}} \OtherTok{=} \FunctionTok{mean}\NormalTok{(correct),}
-                   \AttributeTok{Accuracy =} \FunctionTok{mean}\NormalTok{(likelihoodOfCorrectDiagnosis)}\SpecialCharTok{/}\DecValTok{10}\NormalTok{,}
-                   \StringTok{\textasciigrave{}}\AttributeTok{Perceived Difficulty}\StringTok{\textasciigrave{}} \OtherTok{=} \FunctionTok{mean}\NormalTok{(subjectiveDifficulty,}\AttributeTok{na.rm=}\NormalTok{T),}
-                   \StringTok{\textasciigrave{}}\AttributeTok{Mean Final Confidence}\StringTok{\textasciigrave{}} \OtherTok{=} \FunctionTok{mean}\NormalTok{(finalConfidence)}\SpecialCharTok{/}\DecValTok{100}\NormalTok{)}
-
-\NormalTok{caseBreakdown}
-\end{Highlighting}
-\end{Shaded}
+Confidence also increased as participants received more information (F(1, 254) = 7.93, \texttt{\$\textbackslash{}Eta\$}\textsuperscript{2}G = 0.03, p = 0.005). Participants reported lower confidence during the Patient History stage (M = 0.3, SD = 0.15) than during the Physical Examination (M = 0.41, SD = 0.17) and Testing stages (M = 0.47, SD = 0.47). We note here that confidence was on average below 50\% even at the end of each case, which indicates that participants were not highly confident to start treatment.
 
 \begin{verbatim}
 ## # A tibble: 6 x 5
 ##   caseCode Proportion of Participants who Incl~1 Accuracy `Perceived Difficulty`
 ##   <chr>                                    <dbl>    <dbl>                  <dbl>
-## 1 AD                                       0.605    0.278                   5.93
-## 2 GBS                                      0.756    0.407                   6.87
-## 3 MTB                                      0.419    0.237                   6.64
-## 4 TA                                       0.744    0.492                   6.14
-## 5 TTP                                      0.616    0.341                   6.81
-## 6 UC                                       0.988    0.724                   5.28
+## 1 AD                                        0.6      0.28                    5.9
+## 2 GBS                                       0.75     0.41                    6.9
+## 3 MTB                                       0.42     0.24                    6.7
+## 4 TA                                        0.74     0.5                     6.2
+## 5 TTP                                       0.61     0.34                    6.8
+## 6 UC                                        0.99     0.72                    5.3
 ## # i abbreviated name:
 ## #   1: `Proportion of Participants who Included a Correct Differential`
 ## # i 1 more variable: `Mean Final Confidence` <dbl>
 \end{verbatim}
 
-\emph{Table 1: Showing statistics across participants for each case (leftmost column). Accuracy refers to the average likelihood (on a 1-10 scale) assigned to a correct differential if included. Both of these measures, as well as Final Confidence, are calculated at the final information stage of each case (i.e.~the Testing stage).}
+\emph{Table 1: Showing statistics across participants for each case (leftmost column, AD = Aortic Dissection, GBS = Guillain Barré Syndrme, MTB = Miliary Tuberculosis, TA = Temporal Arteritis, TTP = Thrombotic Thrombocytopenia Purpura, UC = Ulcerative Colitis). Accuracy refers to the average likelihood (on a 1-10 scale) assigned to a correct differential if included. Both of these measures, as well as Final Confidence, are calculated at the final information stage of each case (i.e.~the Testing stage).}
 
-When comparing Accuracy (taking into the likelihood assigned to correct differentials) to Confidence, we find, across stages, participants' Confidence was fairly well aligned to their Accuracy (see Figure 1). To determine whether confident participants tended to be more accurate, we compared a paired t-test between Average Confidence and Average Accuracy (across cases) at each stage. We did not evidence of a difference between the two at the Patient History (t(84) = 0.32, MDiff = 0.01, p = .75) and Physical Examination stages (t(84) = 0.75, MDiff = 0.01, p = .45), but we do see evidence of a difference between the two at the Testing stage (t(84) = 2.40, MDiff = 0.06, p = .02). This indicated well-calibrated confidence after Patient History and Physical Examination, but a slight overconfidence across participants after Testing.
+When comparing Accuracy (taking into account the likelihood assigned to correct differentials) to Confidence, we find, across stages, participants' Confidence was fairly well aligned to their Accuracy (see Figure 4). To determine whether confident participants tended to be more accurate, we compared a paired t-test between Average Confidence and Average Accuracy (across cases) at each stage. There was no evidence of a difference between the two at the Patient History (t(84) = 0.32, MDiff = 0.006, p = 0.75) and Physical Examination stages (t(84) = 0.75, MDiff = 0.01, p = 0.45), but there was a statistically significant difference between the two at the Testing stage (t(84) = 2.4, MDiff = 0.06, p = 0.02). This indicated well-calibrated confidence after Patient History and Physical Examination, but a slight overconfidence across participants after Testing.
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{nPpts }\OtherTok{\textless{}{-}} \FunctionTok{nrow}\NormalTok{(studentAggData)}
-\NormalTok{rootN }\OtherTok{\textless{}{-}} \FunctionTok{sqrt}\NormalTok{(nPpts)}
+\begin{center}\includegraphics[width=1\linewidth]{_main_files/figure-latex/meyerGraph-1} \end{center}
 
-\NormalTok{xb }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"Patient History"}\NormalTok{,}\StringTok{"Physical Exams"}\NormalTok{, }\StringTok{"Testing"}\NormalTok{)}
-\NormalTok{yb }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\FunctionTok{mean}\NormalTok{(studentAggData}\SpecialCharTok{$}\NormalTok{meanInitialConfidence)}\SpecialCharTok{/}\DecValTok{100}\NormalTok{, }\FunctionTok{mean}\NormalTok{(studentAggData}\SpecialCharTok{$}\NormalTok{meanMiddleConfidence)}\SpecialCharTok{/}\DecValTok{100}\NormalTok{, }\FunctionTok{mean}\NormalTok{(studentAggData}\SpecialCharTok{$}\NormalTok{meanFinalConfidence)}\SpecialCharTok{/}\DecValTok{100}\NormalTok{)}
-\NormalTok{zb }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\FunctionTok{mean}\NormalTok{(studentAggData}\SpecialCharTok{$}\NormalTok{meanInitialAccuracy), }\FunctionTok{mean}\NormalTok{(studentAggData}\SpecialCharTok{$}\NormalTok{meanMiddleAccuracy), }\FunctionTok{mean}\NormalTok{(studentAggData}\SpecialCharTok{$}\NormalTok{meanFinalAccuracy))}
+\emph{Figure 1: Graph showing Accuracy (black) and Confidence (green) at each of the three information stages (PaH = Patient History, PhE = Physical Examinations, Te = Testing).}
 
-\NormalTok{val }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(yb,zb)}
-\NormalTok{typ }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\FunctionTok{rep}\NormalTok{(}\StringTok{"Confidence"}\NormalTok{,}\DecValTok{3}\NormalTok{),}\FunctionTok{rep}\NormalTok{(}\StringTok{"Accuracy"}\NormalTok{,}\DecValTok{3}\NormalTok{))}
+\subsection*{Differentials}\label{differentials}
+\addcontentsline{toc}{subsection}{Differentials}
 
-\NormalTok{secon }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\FunctionTok{sd}\NormalTok{(studentAggData}\SpecialCharTok{$}\NormalTok{meanInitialConfidence}\SpecialCharTok{/}\DecValTok{100}\NormalTok{)}\SpecialCharTok{/}\NormalTok{rootN, }\FunctionTok{sd}\NormalTok{(studentAggData}\SpecialCharTok{$}\NormalTok{meanMiddleConfidence}\SpecialCharTok{/}\DecValTok{100}\NormalTok{)}\SpecialCharTok{/}\NormalTok{rootN, }\FunctionTok{sd}\NormalTok{(studentAggData}\SpecialCharTok{$}\NormalTok{meanFinalConfidence}\SpecialCharTok{/}\DecValTok{100}\NormalTok{)}\SpecialCharTok{/}\NormalTok{rootN)}
-\NormalTok{selik }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\FunctionTok{sd}\NormalTok{(studentAggData}\SpecialCharTok{$}\NormalTok{meanInitialAccuracy)}\SpecialCharTok{/}\NormalTok{rootN, }\FunctionTok{sd}\NormalTok{(studentAggData}\SpecialCharTok{$}\NormalTok{meanMiddleAccuracy)}\SpecialCharTok{/}\NormalTok{rootN, }\FunctionTok{sd}\NormalTok{(studentAggData}\SpecialCharTok{$}\NormalTok{meanFinalAccuracy)}\SpecialCharTok{/}\NormalTok{rootN)}
+Analysis of the number of differentials considered by participants at each stage provides little evidence for an overall strategy of deductive narrowing towards a single differential. Instead, participants overall increased the number of the differentials they reported as they received more information (F(1, 254) = 25.29, \texttt{\$\textbackslash{}Eta\$}\textsuperscript{2}G = 0.09, p \textless{} .001). Participants reported fewer differentials during the Patient History stage (M = 3.2, SD = 1.11) than during the Physical Examination (M = 3.88, SD = 1.33) and Testing stages (M = 4.12, SD = 1.43). The majority (74/85) did not decrease the number of differentials between Patient History and Testing on any case, indicating a tendency to widen rather than narrow the set of considered diagnoses through the evolving decision process (even while, on average, growing increasingly certain of the correct diagnosis).
 
-\NormalTok{ses }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(secon,selik)}
-
-\NormalTok{dataV }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\StringTok{"Stage"} \OtherTok{=}\NormalTok{ xb, }\StringTok{"Value"}\OtherTok{=}\NormalTok{ val, }\StringTok{"Type"}\OtherTok{=}\NormalTok{ typ, }\StringTok{"se"} \OtherTok{=}\NormalTok{ ses)}
-
-\NormalTok{p }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{(dataV, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Stage, }\AttributeTok{y =}\NormalTok{ Value, }\AttributeTok{group =}\NormalTok{ Type, }\AttributeTok{color =}\NormalTok{ Type )) }\SpecialCharTok{+}
-  \FunctionTok{geom\_line}\NormalTok{() }\SpecialCharTok{+}
-  \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+}
-  \FunctionTok{geom\_errorbar}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{ymin=}\NormalTok{Value}\SpecialCharTok{{-}}\NormalTok{se, }\AttributeTok{ymax=}\NormalTok{Value}\SpecialCharTok{+}\NormalTok{se), }\AttributeTok{width=}\NormalTok{.}\DecValTok{2}\NormalTok{, }\AttributeTok{position=}\FunctionTok{position\_dodge}\NormalTok{(}\FloatTok{0.05}\NormalTok{)) }\SpecialCharTok{+}
-  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title=}\StringTok{"   "}\NormalTok{,}\AttributeTok{x=}\StringTok{"Stage"}\NormalTok{,}\AttributeTok{y=}\StringTok{"\% Value"}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{theme\_classic}\NormalTok{() }\SpecialCharTok{+}
-  \FunctionTok{scale\_color\_manual}\NormalTok{(}\AttributeTok{values =} \FunctionTok{c}\NormalTok{(accuracyColour,confidenceColour)) }\SpecialCharTok{+}
-  \FunctionTok{theme}\NormalTok{(}\AttributeTok{axis.text=}\FunctionTok{element\_text}\NormalTok{(}\AttributeTok{size=}\DecValTok{16}\NormalTok{),}
-                             \AttributeTok{axis.title=}\FunctionTok{element\_text}\NormalTok{(}\AttributeTok{size=}\DecValTok{18}\NormalTok{),}
-                             \AttributeTok{plot.title=}\FunctionTok{element\_text}\NormalTok{(}\AttributeTok{size=}\DecValTok{20}\NormalTok{,}\AttributeTok{face=}\StringTok{"bold"}\NormalTok{),}
-                             \AttributeTok{legend.text =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{size =} \DecValTok{18}\NormalTok{),}
-                             \AttributeTok{line =} \FunctionTok{element\_blank}\NormalTok{())}
-
-\FunctionTok{print}\NormalTok{(p)}
-\end{Highlighting}
-\end{Shaded}
-
-\includegraphics{_main_files/figure-latex/meyerGraph-1.pdf}
-
-\emph{Figure 1: Graph showing Accuracy (black) and Confidence (green) at each of the three information stages.}
-
-\hypertarget{differentials}{%
-\subsection{Differentials}\label{differentials}}
-
-We first look at the number of differentials that participants report at each stage. Participants overall increased the number of the differentials they reported as they received more information (F(1, 107) = 94.02, η\textsuperscript{2}G = .08, p \textless{} .001). Participants reported fewer differentials during the Patient History stage (M = 3.20, SD = 1.11) than during the Physical Examination (M = 3.88, SD = 1.33) and Testing stages (M = 4.12, SD = 1.43). The majority (74/85) did not decrease the number of differentials between Patient History and Testing on any case.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{nPpts }\OtherTok{\textless{}{-}} \FunctionTok{nrow}\NormalTok{(studentAggData)}
-
-\NormalTok{xb }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\FunctionTok{rep}\NormalTok{(}\StringTok{"Patient History"}\NormalTok{,nPpts),}\FunctionTok{rep}\NormalTok{(}\StringTok{"Physical Examination"}\NormalTok{,nPpts), }\FunctionTok{rep}\NormalTok{(}\StringTok{"Testing"}\NormalTok{,nPpts))}
-\NormalTok{yb }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(studentAggData}\SpecialCharTok{$}\NormalTok{meanInitialDiffs, studentAggData}\SpecialCharTok{$}\NormalTok{meanMiddleDiffs, studentAggData}\SpecialCharTok{$}\NormalTok{meanFinalDiffs)}
-\NormalTok{dataV }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\StringTok{"Stage"} \OtherTok{=}\NormalTok{ xb, }\StringTok{"Mean"}\OtherTok{=}\NormalTok{ yb)}
-\NormalTok{dataV}\SpecialCharTok{$}\NormalTok{Stage }\OtherTok{\textless{}{-}} \FunctionTok{as.factor}\NormalTok{(dataV}\SpecialCharTok{$}\NormalTok{Stage)}
-\NormalTok{diffs }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{(dataV, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{Stage, }\AttributeTok{y=}\NormalTok{Mean)) }\SpecialCharTok{+}
-  \FunctionTok{geom\_violin}\NormalTok{(}\AttributeTok{colour=}\StringTok{"black"}\NormalTok{, }\AttributeTok{fill=}\NormalTok{differentialColour, }\AttributeTok{alpha=}\FloatTok{0.8}\NormalTok{, }\AttributeTok{trim=}\ConstantTok{FALSE}\NormalTok{) }\SpecialCharTok{+} 
-  \CommentTok{\# geom\_dotplot(binaxis=\textquotesingle{}y\textquotesingle{}, stackdir=\textquotesingle{}center\textquotesingle{}, dotsize=0.5,colour="white") +}
-  \FunctionTok{stat\_summary}\NormalTok{(}\AttributeTok{fun.data=}\NormalTok{data\_summary, }\AttributeTok{colour=}\StringTok{"red"}\NormalTok{)}
-
-\FunctionTok{print}\NormalTok{(diffs }\SpecialCharTok{+}
-        \FunctionTok{labs}\NormalTok{(}\AttributeTok{x =} \StringTok{"Stage"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Average Differentials"}\NormalTok{) }\SpecialCharTok{+}
-        \FunctionTok{theme\_classic}\NormalTok{() }\SpecialCharTok{+}
-        \FunctionTok{theme}\NormalTok{(}\AttributeTok{axis.text=}\FunctionTok{element\_text}\NormalTok{(}\AttributeTok{size=}\DecValTok{16}\NormalTok{),}
-               \AttributeTok{axis.title=}\FunctionTok{element\_text}\NormalTok{(}\AttributeTok{size=}\DecValTok{18}\NormalTok{),}
-               \AttributeTok{plot.title=}\FunctionTok{element\_text}\NormalTok{(}\AttributeTok{size=}\DecValTok{18}\NormalTok{,}\AttributeTok{face=}\StringTok{"bold"}\NormalTok{),}
-              \AttributeTok{line =} \FunctionTok{element\_blank}\NormalTok{()}
-\NormalTok{        )}
-\NormalTok{      ) }
-\end{Highlighting}
-\end{Shaded}
-
-\includegraphics{_main_files/figure-latex/diffsOverStages-1.pdf}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\DocumentationTok{\#\#\#dataV$Stage \textless{}{-} as.numeric(dataV$Stage)}
-\DocumentationTok{\#\#\#model \textless{}{-} lm(Mean \textasciitilde{} Stage, data=dataV)}
-\DocumentationTok{\#\#\#print(summary(model))}
-\end{Highlighting}
-\end{Shaded}
+\begin{center}\includegraphics[width=1\linewidth]{_main_files/figure-latex/diffsOverStages-1} \end{center}
 
 \emph{Figure 2: The average number of differentials after each stage of information seeking.}
 
-To look at whether the number of initial differentials generated the amount of information sought, we conducted a Pearson's Correlation test on individual differences. We find an association (see Figure 3) between the average number of differentials generated from the Patient History and the average amount of information sought during cases (r(83) = 0.30, 95\% CI = {[}.10, .49{]}, p = .005). As previously discussed, participants rarely seem to remove differentials from consideration. Therefore, one can surmise here that higher information seeking is associated with the consideration of more diagnostic differentials.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\DocumentationTok{\#\#\# Correlation between initial differentials and overall confidence change}
-
-\NormalTok{cor }\OtherTok{\textless{}{-}} \FunctionTok{cor.test}\NormalTok{(studentAggData}\SpecialCharTok{$}\NormalTok{meanInitialDiffs,studentAggData}\SpecialCharTok{$}\NormalTok{proportionOfInfo,}\AttributeTok{method=}\StringTok{"pearson"}\NormalTok{)}
-
-\NormalTok{diffCon }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ studentAggData, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{meanInitialDiffs, }\AttributeTok{y=}\NormalTok{proportionOfInfo)) }\SpecialCharTok{+}
-  \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+}
-  \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{method=}\NormalTok{lm , }\AttributeTok{color=}\NormalTok{confidenceColour, }\AttributeTok{fill=}\StringTok{"\#69b3a2"}\NormalTok{, }\AttributeTok{se=}\ConstantTok{TRUE}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{theme\_classic}\NormalTok{()}
-
-\FunctionTok{print}\NormalTok{(diffCon }\SpecialCharTok{+} 
-      \FunctionTok{labs}\NormalTok{(}\AttributeTok{y=}\StringTok{"Proportion of Possible Information Requested"}\NormalTok{, }\AttributeTok{x =} \StringTok{"Number of Initial Differentials"}\NormalTok{) }\SpecialCharTok{+}
-      \FunctionTok{theme}\NormalTok{(}\AttributeTok{axis.text=}\FunctionTok{element\_text}\NormalTok{(}\AttributeTok{size=}\DecValTok{16}\NormalTok{),}
-             \AttributeTok{axis.title=}\FunctionTok{element\_text}\NormalTok{(}\AttributeTok{size=}\DecValTok{16}\NormalTok{),}
-             \AttributeTok{plot.title=}\FunctionTok{element\_text}\NormalTok{(}\AttributeTok{size=}\DecValTok{14}\NormalTok{,}\AttributeTok{face=}\StringTok{"bold"}\NormalTok{)}
-\NormalTok{      ))}
-\end{Highlighting}
-\end{Shaded}
+We then ask if participants who generate more differentials early in the diagnostic process go on to seek more information by conducting a Pearson's Correlation test on individual differences. We find an association (see Figure 3) between the average number of differentials generated from the Patient History and the average amount of information sought during cases (r(83) = 0.3, 95\% CI = {[}0.1, 0.49{]}, p = 0.005). As previously discussed, participants rarely seem to remove differentials from consideration. Therefore, one can surmise here that higher information seeking is associated with the consideration of more diagnostic differentials. We also find evidence for a positive association between the number of initial differentials and the change in confidence (i.e.~the difference in confidence reported during the Patient History stage and the Testing stage) (r(83) = 0.24, 95\% CI = {[}0.03, 0.43{]}, p = 0.03)
 
 \begin{verbatim}
 ## `geom_smooth()` using formula = 'y ~ x'
-\end{verbatim}
-
-\includegraphics{_main_files/figure-latex/initialDiffsAgainstInfoSeeking-1.pdf}
-
-\emph{Figure 3: Scatter plot showing the relationship between the number of initial differentials (x-axis) and the proportion of available information sought (y-axis). Each point represents a single student with both variables average across the six cases that each student performs. The x-axis refers to the average number of differentials that participants report in their list at the Patient History stage. The y-axis refers to the average proportion of available information sought, with each case containing 29 pieces of information across the Patient History, Physical Examination and Testing stages. The line of best fit is plotted using the geom\_smooth function in R with a linear model. The shaded region shows the 95\% confidence interval of the correlation.}
-
-\hypertarget{information-seeking-1}{%
-\subsection{Information Seeking}\label{information-seeking-1}}
-
-The Proportion of Information Seeking decreased with each information stage (F(2, 151) = 122.0, η\textsuperscript{2}G = .30, p \textless{} .001). Participants sought more of the available information during the Patient History stage (M = 0.85, SD = 0.20) than during both during the Physical Examination (M = 0.59, SD = 0.24) and Testing stages (M = 0.50, SD = 0.22).
-
-When conducting a Pearson's Product Correlation test, we do not find that participants who sought more information across cases were also more accurate in their diagnoses (r(83) = 0.17, 95\% CI = {[}-.04, .37{]}, p = .11). However, participants who sought more information did tend to increase their confidence more (r(83) = 0.24, 95\% CI = {[}.02, .43{]}, p = .03). This is distinct from their final confidence, for which we did not find evidence of an association with the amount of information sought (r(83) = 0.11, 95\% CI = {[}-.11, .31{]}, p = .33). While seeking more information may imbue students with a greater level of confidence, it does not necessarily translate into more accurate diagnoses. This links to the results presented in Figure 1, in which confidence and accuracy were related to one another but imperfectly (especially during the Testing stage).
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\DocumentationTok{\#\#\# Correlation between initial differentials and overall confidence change}
-
-\NormalTok{cor }\OtherTok{\textless{}{-}} \FunctionTok{cor.test}\NormalTok{(studentAggData}\SpecialCharTok{$}\NormalTok{meanInitialDiffs,studentAggData}\SpecialCharTok{$}\NormalTok{meanConfidenceOverallChange,}\AttributeTok{method=}\StringTok{"pearson"}\NormalTok{)}
-
-\NormalTok{diffCon }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data =}\NormalTok{ studentAggData, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{meanInitialDiffs, }\AttributeTok{y=}\NormalTok{meanConfidenceOverallChange)) }\SpecialCharTok{+}
-  \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+}
-  \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{method=}\NormalTok{lm , }\AttributeTok{color=}\NormalTok{confidenceColour, }\AttributeTok{fill=}\StringTok{"\#69b3a2"}\NormalTok{, }\AttributeTok{se=}\ConstantTok{TRUE}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{theme\_classic}\NormalTok{()}
-
-\FunctionTok{print}\NormalTok{(diffCon }\SpecialCharTok{+} 
-      \FunctionTok{labs}\NormalTok{(}\AttributeTok{y=}\StringTok{"Final Confidence {-} Initial Confidence"}\NormalTok{, }\AttributeTok{x =} \StringTok{"Number of Initial Differentials"}\NormalTok{) }\SpecialCharTok{+}
-      \FunctionTok{theme}\NormalTok{(}\AttributeTok{axis.text=}\FunctionTok{element\_text}\NormalTok{(}\AttributeTok{size=}\DecValTok{16}\NormalTok{),}
-             \AttributeTok{axis.title=}\FunctionTok{element\_text}\NormalTok{(}\AttributeTok{size=}\DecValTok{16}\NormalTok{),}
-             \AttributeTok{plot.title=}\FunctionTok{element\_text}\NormalTok{(}\AttributeTok{size=}\DecValTok{14}\NormalTok{,}\AttributeTok{face=}\StringTok{"bold"}\NormalTok{)}
-\NormalTok{      ))}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
 ## `geom_smooth()` using formula = 'y ~ x'
 \end{verbatim}
 
-\includegraphics{_main_files/figure-latex/initialDiffsAgainstConfidence-1.pdf}
+\begin{center}\includegraphics[width=1\linewidth]{_main_files/figure-latex/initialDiffsPlot-1} \end{center}
 
-\emph{Figure 4: Scatter plot showing the relationship between the number of initial differentials (x-axis) and the proportion of available information sought (y-axis). Each point represents a single student with both variables average across the six cases that each student performs. The x-axis refers to the average number of differentials that participants report in their list at the Patient History stage. The y-axis refers to the difference in confidence between the final stage (Testing) and the first stage (Patient History). The line of best fit is plotted using the geom\_smooth function in R with a linear model. The shaded region shows the 95\% confidence interval of the correlation.}
+\emph{Figure 3: Scatter plot showing the relationship between the number of initial differentials reported at the Patient History stage (x-axis) and both the proportion of available information sought (y-axis, figure 3A) and change in confidence (y-axis, figure 3B). Each point represents a single participant with all three variables averaged across the six cases that each participant performs. The x-axis refers to the average number of differentials that participants report in their list at the Patient History stage. The y-axis in 3A refers to the average proportion of available information sought, with each case containing 29 pieces of information across the Patient History, Physical Examination and Testing stages. The y-axis in 3B refers to the difference in confidence reported at the Patient History and Testing stages, such that a positive represents that the participant on average increased in their confidence over the course of the cases. The line of best fit is plotted using the geom\_smooth function in R with a linear model. The shaded region shows the 95\% confidence interval of the correlation.}
 
-The amount of information sought does not seem to be predictive of accuracy. However, it may be the case that patterns of information sought are instead predictive of differences in accuracy on this task. In order to test this, we investigate whether information seeking is predictive of participants who are higher or lower in their diagnostic accuracy using binary classification and receiver operating characteristic (ROC) analysis. We trained a binary classification algorithm using a generalised logistic regression model to identify if participants of high or low accuracy based on the information they sought. We split all cases by whether they performed by a high and low Accuracy participant using a median split of participants by their average Accuracy across the six cases. We train the classifier using a Generalised Linear Model (GLM) by treating the 29 binary variables for each information as predictors (with a 1 signifying that the information was sought for that case and 0 when the information was not sought) to predict the binary outcome of whether the participant is a low or high accuracy participant. We used Leave One Out Cross Validation, such that each case is predicted by training the algorithm on all other cases. By plotting an ROC curve of our classifier, we find an area under the curve (AUC) value of 0.72 (plotted in Figure 5). When conducting a DeLong test, to test the null hypothesis that the AUC is equal is 0.5 (i.e.~that the classifier is completely unable to predict high and low accuracy participants), we find p \textless{} .001, indicating that the AUC differs significantly from 0.5 and that the classifier is able to reliably predict high and low accuracy participants.
+\subsection*{Information Seeking}\label{information-seeking-1}
+\addcontentsline{toc}{subsection}{Information Seeking}
 
-This indicates overall that differences in information seeking are indeed predictive of a difference in participant ability at above chance at a broad level. Essentially, information seeking patterns separate high and low accuracy participants, but this analysis does not tell us what aspects of information seeking in particular are predictive of accuracy. We next seek to identify and better characterise these specific differences in information seeking that contribute to this relationship with diagnostic ability by correlating behavioural information seeking variables with accuracy.
+When investigating whether participants became more selective in their information seeking over the course of cases, we find that the Proportion of Information Seeking decreased with each information stage (F(1, 253) = 100.12, \texttt{\$\textbackslash{}Eta\$}\textsuperscript{2}G = 0.28, p \textless{} .001). Participants sought more of the available information during the Patient History stage (M = 0.85, SD = 0.2 than during both during the Physical Examination (M = 0.59, SD = 0.24) and Testing stages (M = 0.5, SD = 0.22).
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{set.seed}\NormalTok{(}\DecValTok{1000}\NormalTok{)}
+\begin{center}\includegraphics[width=1\linewidth]{_main_files/figure-latex/confAccPlot-1} \end{center}
 
-\NormalTok{classifierData }\OtherTok{\textless{}{-}}\NormalTok{ infoSeekingFullMatrix[,}\FunctionTok{c}\NormalTok{(}\DecValTok{2}\SpecialCharTok{:}\DecValTok{29}\NormalTok{,}\DecValTok{38}\NormalTok{)]}
-\NormalTok{classifierData}\SpecialCharTok{$}\NormalTok{AccuracyGroup }\OtherTok{\textless{}{-}} \FunctionTok{as.integer}\NormalTok{(}\FunctionTok{as.logical}\NormalTok{(classifierData}\SpecialCharTok{$}\NormalTok{AccuracyGroup}\SpecialCharTok{\textgreater{}}\DecValTok{2}\NormalTok{))}
-\NormalTok{classifierData}\SpecialCharTok{$}\NormalTok{AccuracyGroup }\OtherTok{\textless{}{-}} \FunctionTok{as.factor}\NormalTok{(classifierData}\SpecialCharTok{$}\NormalTok{AccuracyGroup)}
-\FunctionTok{colnames}\NormalTok{(classifierData)[}\DecValTok{1}\SpecialCharTok{:}\DecValTok{29}\NormalTok{] }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"T2"}\NormalTok{,  }\StringTok{"T3"}\NormalTok{,  }\StringTok{"T4"}\NormalTok{,  }\StringTok{"T5"}\NormalTok{,  }\StringTok{"T6"}\NormalTok{,  }\StringTok{"T7"}\NormalTok{,  }
-                                      \StringTok{"T8"}\NormalTok{,  }\StringTok{"T9"}\NormalTok{, }\StringTok{"T10"}\NormalTok{, }\StringTok{"T11"}\NormalTok{, }\StringTok{"T12"}\NormalTok{, }\StringTok{"T13"}\NormalTok{, }\StringTok{"T14"}\NormalTok{, }
-                                      \StringTok{"T15"}\NormalTok{, }\StringTok{"T16"}\NormalTok{, }\StringTok{"T17"}\NormalTok{, }\StringTok{"T18"}\NormalTok{, }\StringTok{"T19"}\NormalTok{, }\StringTok{"T20"}\NormalTok{, }\StringTok{"T21"}\NormalTok{, }\StringTok{"T22"}\NormalTok{, }
-                                      \StringTok{"T23"}\NormalTok{, }\StringTok{"T24"}\NormalTok{, }\StringTok{"T25"}\NormalTok{, }\StringTok{"T26"}\NormalTok{, }\StringTok{"T27"}\NormalTok{, }\StringTok{"T28"}\NormalTok{, }\StringTok{"T29"}\NormalTok{,}\StringTok{"Group"}\NormalTok{)}
+\emph{Figure 4: Scatter plots showing our information seeking variables (amount in figures 4A \& 4C and value in 4B \& 4D) against our key dependent variables of change in confidence (difference between final confidence and initial confidence, figures 4A \& 4B) and accuracy (the likelihood assigned to a correct differential if provided, figures 4C \& 4D). Information Sought refers to the proportion of available information sought across cases. Information Value refers to the sum of all mean information values across all 6 cases for a given participant. All data points are for a single participant where variables are averaged across all 6 cases they completed.}
 
+We do not find that participants who sought more information across cases were also more accurate in their diagnoses (r(83) = 0.17, 95\% CI = {[}-0.04, 0.37{]}, p = 0.11). However, participants who sought more information did tend to increase their confidence more over the course of a case on average (r(83) = 0.24, 95\% CI = {[}0.02, 0.43{]}, p = 0.03). While seeking more information may imbue students with a greater level of confidence, it does not necessarily translate into more accurate diagnoses. This links to the results presented in Figure 1, in which confidence and accuracy were related to one another but imperfectly (especially during the Testing stage).
 
-\NormalTok{thresh}\OtherTok{\textless{}{-}}\FunctionTok{seq}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{,}\FloatTok{0.001}\NormalTok{)}
-\CommentTok{\#specify the cross{-}validation method}
-\NormalTok{ctrl }\OtherTok{\textless{}{-}} \FunctionTok{trainControl}\NormalTok{(}\AttributeTok{method =} \StringTok{"LOOCV"}\NormalTok{, }\AttributeTok{savePredictions =} \ConstantTok{TRUE}\NormalTok{)}
+In order to examine more specifically what differences in information seeking are driving differences in both accuracy and confidence, we look at their relationship with informational value. We assess the degree to which each participant's accuracy is predicted by the quality of the information they sought and find evidence for a positive relationship between accuracy and information value (r(83) = 0.25, 95\% CI = {[}0.04, 0.44{]}, p = 0.02), as well as between confidence and information value (r(83) = 0.28, 95\% CI = {[}0.07, 0.47{]}, p = 0.01).
 
-\CommentTok{\# Shuffle rows in case there are order biases}
-\NormalTok{classifierData }\OtherTok{\textless{}{-}}\NormalTok{ classifierData[}\FunctionTok{sample}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\FunctionTok{nrow}\NormalTok{(classifierData)),]}
-\NormalTok{modelglm}\OtherTok{\textless{}{-}}\FunctionTok{train}\NormalTok{(Group }\SpecialCharTok{\textasciitilde{}}\NormalTok{ T2 }\SpecialCharTok{+}\NormalTok{ T3 }\SpecialCharTok{+}\NormalTok{ T4 }\SpecialCharTok{+}\NormalTok{ T5 }\SpecialCharTok{+}\NormalTok{ T6 }\SpecialCharTok{+}\NormalTok{ T7 }\SpecialCharTok{+}\NormalTok{ T8 }\SpecialCharTok{+}\NormalTok{ T9 }\SpecialCharTok{+}\NormalTok{ T10 }\SpecialCharTok{+}
-\NormalTok{                T11 }\SpecialCharTok{+}\NormalTok{ T12 }\SpecialCharTok{+}\NormalTok{ T13 }\SpecialCharTok{+}\NormalTok{ T14 }\SpecialCharTok{+}\NormalTok{ T15 }\SpecialCharTok{+}\NormalTok{ T16 }\SpecialCharTok{+}\NormalTok{ T17 }\SpecialCharTok{+}\NormalTok{  T18 }\SpecialCharTok{+}\NormalTok{ T19 }\SpecialCharTok{+}\NormalTok{ T20 }\SpecialCharTok{+}
-\NormalTok{                T21 }\SpecialCharTok{+}\NormalTok{ T22 }\SpecialCharTok{+}\NormalTok{ T23 }\SpecialCharTok{+}\NormalTok{ T24 }\SpecialCharTok{+}\NormalTok{ T25 }\SpecialCharTok{+}\NormalTok{ T26 }\SpecialCharTok{+}\NormalTok{ T27 }\SpecialCharTok{+}\NormalTok{ T28 }\SpecialCharTok{+}\NormalTok{ T29, }\AttributeTok{method =} \StringTok{"glm"}\NormalTok{, }\AttributeTok{family =} \FunctionTok{binomial}\NormalTok{(}\AttributeTok{link=}\NormalTok{probit), }\AttributeTok{data =}\NormalTok{ classifierData, }\AttributeTok{trControl =}\NormalTok{ ctrl)}
-\NormalTok{prediglm}\OtherTok{\textless{}{-}}\FunctionTok{predict}\NormalTok{(modelglm,}\AttributeTok{type =} \StringTok{"prob"}\NormalTok{)[}\DecValTok{2}\NormalTok{]}
+The amount of information sought does not seem to be predictive of accuracy. However, it may be that there are identifiable `fingerprints' reflected in information seeking patterns that differentiate between high and low accuracy diagnosticians. If this is the case, participants who are high and low accuracy participants could be predicted based on their information seeking patterns.
 
-\CommentTok{\# Plot all test results on one ROC curve}
-\NormalTok{rocPlot }\OtherTok{\textless{}{-}} \FunctionTok{roc.plot}\NormalTok{(}\AttributeTok{x=}\NormalTok{classifierData}\SpecialCharTok{$}\NormalTok{Group}\SpecialCharTok{==}\StringTok{"1"}\NormalTok{,}\AttributeTok{pred=}\FunctionTok{cbind}\NormalTok{(prediglm),}\AttributeTok{legend =}\NormalTok{ T,}
-                    \AttributeTok{leg.text =} \FunctionTok{c}\NormalTok{(}\StringTok{"GLM"}\NormalTok{),}\AttributeTok{thresholds =}\NormalTok{ thresh)}\SpecialCharTok{$}\NormalTok{roc.vol}
-\end{Highlighting}
-\end{Shaded}
+In order to test this, we investigate whether information seeking is predictive of participants who are higher or lower in their diagnostic accuracy using binary classification and receiver operating characteristic (ROC) analysis. ROC is a form of analysis that assess how well a model performs at predicting a binary outcome (in this case, whether a case was performed by a high or low performing participant). We trained a binary classification algorithm using a generalised logistic regression (GLM) model to identify if participants exhibited high or low accuracy based on the information they sought. We first split all cases into two groups by whether they were performed by a high and low Accuracy participant. This was done using a median split by participants' average Accuracy across the six cases. By doing this, we can look at whether participants who perform better at diagnoses seek information in a markedly different way to participants who performed worse.
 
-\includegraphics{_main_files/figure-latex/accuracyClassifier-1.pdf}
+We train the classifier using a Generalised Linear Model (GLM) by treating the 29 binary variables for each information as predictors (with a 1 signifying that the information was sought for that case and 0 when the information was not sought) to predict the binary outcome of whether the participant is a low or high accuracy participant. We used Leave One Out Cross Validation, such that each case is predicted by training the algorithm on all other cases. When plotting an ROC curve, the area under the curve (AUC) is indicative of how well a model performs at correctly categorising cases. An AUC of 0.5 would signify that our model is performing at chance and is not able to predict participant accuracy in any meaningful way. By plotting an ROC curve for our model, we find an AUC value of 0.72 (plotted in Figure 5). When conducting a DeLong test, to test the null hypothesis that the AUC is equal is 0.5 (i.e.~that the classifier is completely unable to predict high and low accuracy participants), we find p \textless{} .001, indicating that the AUC differs significantly from 0.5 and that the classifier is able to reliably predict high and low accuracy participants.
 
-\emph{Figure 5: Receiver-Operator Characteristic (ROC) curve using a Generalised Linear Model to classify individual cases as being performed by either high or low accuracy participants. The models are trained on the raw binary predictor variables for each of the 29 available pieces of information, with 0 indicating that the information was not sought for the case and 1 indicating that the information was sought. Participants were sorted as high and low accuracy based on a median split on their average Accuracy value across the six cases.}
+\begin{center}\includegraphics[width=1\linewidth]{_main_files/figure-latex/accuracyClassifier-1} \end{center}
 
-In order to examine more specifically what differences in information seeking are driving differences in both accuracy and confidence, we look at the relationship between accuracy and informational value. We assess the degree to which each participant's accuracy is predicted by the quality of the information they sought and find evidence for a positive relationship between accuracy and information value (r(83) = 0.25, 95\% CI = {[}.04, .44{]}, p = .02), as well as between confidence and information value (r(83) = 0.28, 95\% CI = {[}.07, .47{]}, p = .01).
+\emph{Figure 5: Receiver-Operator Characteristic (ROC) curve using a Generalised Linear Model to classify individual cases as being performed by either high or low accuracy participants. The models are trained on the raw binary predictor variables for each of the 29 available pieces of information, with 0 indicating that the information was not sought for the case and 1 indicating that the information was sought. Participants were sorted as high or low accuracy based on a median split on their average Accuracy value across the six cases.}
 
-\hypertarget{discussion}{%
-\section*{Discussion}\label{discussion}}
+This result indicates overall that differences in information seeking are indeed predictive of a difference in participant ability at above chance at a broad level. Essentially, information seeking patterns separate high and low accuracy participants, but this analysis does not tell us what aspects of information seeking in particular are predictive of accuracy. We next seek to characterise the specific differences in information seeking that contribute to higher diagnostic performance.
+
+\section*{Discussion}\label{discussion}
 \addcontentsline{toc}{section}{Discussion}
 
-This study of 85 medical students found that accuracy and confidence are well calibrated. Previous work (e.g.~Meyer et al., 2011) have noted a gap between subjective confidence and objective accuracy. In particular, there has been demonstrated to be a general tendency for less experienced medical trainees to be underconfident and for more experienced medical professionals to be overconfident (Yang and Thompson, 2010). Part of this discrepancy between our findings and past findings could stem from the diagnostic uncertainty expressed by students in this study, which they do in two ways. Firstly, students broaden, rather than narrow, their considered diagnostic differentials with more information and still report a broad range of differentials after receiving all available information for a given case. There is a general adage in healthcare that medical students come across which says that ``history is 80\% of the diagnosis''. It is therefore worth considering whether there is a specific facet of diagnostic decisions whereby students are taught not to disregard diagnostic possibilities easily. Secondly, students reported fairly low confidence overall to treat patients, with an average confidence of below 50\% even after receiving all available information. This may indicate that part of ensuring appropriate confidence, or expressions of uncertainty could be related to properly evaluating all possible diagnostic differentials rather than forcing decisions to focus on a single diagnosis, which has been cited previously as a problematic tendency (Redelmeier \& Shafir, 2023).
+This study of 85 medical students explored the interplay between confidence and information seeking in a novel medical diagnosis task. Using a novel online interface, we explored how medical students work through diagnostic scenarios via information seeking to develop and test sets of possible differentials.
+
+We found that participants become more accurate as they received more information, though cases varied in difficulty as reflected in participant accuracy. In particular, the AD and MTB cases were more difficult based on lower observed accuracy across participants. Using our measure of accuracy, which is obtained by using the likelihood values assigned to correct differentials (if included), we find that accuracy tracks confidence quite closely at each information stage. Participants exhibited a general pattern of broadening the differentials they were considering as they received more information. The initial breadth of diagnoses considered from the patients' history was seen to be predictive of subsequent information seeking and changes in confidence. Relatedly, information seeking and confidence was associated, such that participants who sought more information tended to increase their confidence more over the course of the diagnoses. However, the amount of information sought was not predictive of diagnostic accuracy, which was instead associated with seeking more valuable/appropriate information for a given patient condition.
+
+Previous work (e.g.~Meyer et al., 2011) have noted a gap between subjective confidence and objective accuracy. In particular, there has been demonstrated to be a general tendency for less experienced medical trainees to be underconfident and for more experienced medical professionals to be overconfident (Yang and Thompson, 2010). Part of this discrepancy between our findings and past findings could stem from the diagnostic uncertainty expressed by students in this study, which they do in two ways. Firstly, students broaden, rather than narrow, their considered diagnostic differentials with more information and still report a broad range of differentials after receiving all available information for a given case. There is a general adage in healthcare that medical students come across which says that ``history is 80\% of the diagnosis''. It is therefore worth considering whether there is a specific facet of diagnostic decisions whereby students are taught not to disregard diagnostic possibilities easily. Secondly, students reported fairly low confidence overall to treat patients, with an average confidence of below 50\% even after receiving all available information. This may indicate that part of ensuring appropriate confidence, or expressions of uncertainty could be related to properly evaluating all possible diagnostic differentials rather than forcing decisions to focus on a single diagnosis, which has been cited previously as a problematic tendency (Redelmeier \& Shafir, 2023).
+
+The main strength of this study's paradigm is in allowing us to investigate the diagnostic process as an evolving process over time and with more information, rather than as a single decision at a single point in time. By tracking how both confidence and the diagnoses considered by participants changes over time, we gain a better understanding of how the manner in which information sought is key to the diagnostic process.
 
 We find the amount of information sought informed confidence, whilst accuracy was associated with seeking more useful information on each case. This hints at the richness of this dataset in picking on information seeking and differential generation behaviour. We note however that whilst predictors of diagnostic by information seeking behaviour were found, they do not tell us how overarching differences in such behaviour arise. One possibility is that these differences stem from reasoning strategies that we cannot infer from this current dataset. In order to ascertain these strategies, we conduct a follow-up study using a similar diagnostic paradigm conducted in-person where students think out loud as they make diagnoses. We use criteria taken from Coderre et al.~(2003) to code case by the reasoning strategy employed. We hypothesise that different reasoning strategies for generating differentials are useful for some cases more than others and that information seeking varies as a function of strategy. This coding of reasoning strategies is then subsequently used to classify the same reasoning strategies in the online dataset from study 1 (where we do not have access to the participants' thought process) by using the information they sought.
 
-\hypertarget{study-3---diagnostic-reasoning-strategies-via-a-think-aloud-paradigm}{%
-\chapter*{Study 3 - Diagnostic Reasoning Strategies via a Think-Aloud Paradigm}\label{study-3---diagnostic-reasoning-strategies-via-a-think-aloud-paradigm}}
+\chapter*{Study 3 - Diagnostic Reasoning Strategies via a Think-Aloud Paradigm}\label{study-3---diagnostic-reasoning-strategies-via-a-think-aloud-paradigm}
 \addcontentsline{toc}{chapter}{Study 3 - Diagnostic Reasoning Strategies via a Think-Aloud Paradigm}
 
 \adjustmtc
@@ -873,24 +697,20 @@ We aimed to replicate the finding of considered differentials increasing with mo
 
 Think-aloud methodologies are useful for directly accessing ongoing thought processes during decisions (van Someren, Barnard \& Sandberg, 1994). The use of thinking aloud (or verbal protocols) in research is useful for being able to access the information attended to participants in short term memory (Payne, 1994) and can be treated as the ongoing behavioural state of a participant's knowledge (Newell \& Simon, 1972). Think-aloud protocols have historically been used to study problem solving, particularly for comparing how novices and experts solve problems such as finding the best move in chess (de Groot, 1946, Bilalić, McLeod \& Gobet, 2008). Diagnosis is a decisional process that develops over time and allowing participants to think aloud reflects this by providing a time-ordered sequence of how thought processes develop (Payne, 1994). This is especially well-suited to our task where the information available to participants is controlled with time, allowing us to investigate how diagnostic thinking develops with more information. A think-aloud methodology has previously been used to study the differences between novice and expert clinicians during diagnostic reasoning (Coderre et al., 2003). This study found a general trend that experts tend to use a `pattern recognition' approach to diagnosis more than novices, who tended to use a `hypothetico-deductive' process (which is aforementioned to be the `textbook' description of the diagnostic process), but this was highly dependent on the case presented. We build on the work of Coderre et al.~(2003) here to further investigate how reasoning strategies contribute to accuracy and why certain cases result in differing strategies.
 
-\hypertarget{methods-1}{%
-\section*{Methods}\label{methods-1}}
+\section*{Methods}\label{methods-1}
 \addcontentsline{toc}{section}{Methods}
 
-\hypertarget{participants-1}{%
-\subsection*{Participants}\label{participants-1}}
+\subsection*{Participants}\label{participants-1}
 \addcontentsline{toc}{subsection}{Participants}
 
 16 participants were recruited for this study. Participants were 5th or 6th year medical students at Oxford University (including 2nd year Oxford University Graduate Entry Medical students) recruited via posters in the John Radcliffe Hospital in Oxford and via a mailing list for students managed by the Medical Sciences Division at the University of Oxford. The study was conducted onsite at John Radcliffe hospital. Participants were recruited between July 5th 2023 and December 1st 2023. Data was reviewed on an ongoing basis to cease recruitment when emerging themes were exhausted. This study was reviewed and granted ethical approval as an amendment to our existing protocol to allow for audio recordings by the Oxford Medical Sciences Interdivisional Research Ethics Committee under reference R81158/RE004.
 
-\hypertarget{materials-1}{%
-\subsection*{Materials}\label{materials-1}}
+\subsection*{Materials}\label{materials-1}
 \addcontentsline{toc}{subsection}{Materials}
 
 The same set of cases and a similar computer interface from Study 1 were used for this study, with the exception that participants no longer recorded their differentials in a specific screen at the end of each information gathering stage. Instead, participants' differentials were recorded as a more naturalistic part of their diagnostic process as they reported aloud their thoughts as they worked through each diagnostic case. The study was conducted onsite using a laptop, with actions on screen recorded on video and the audio of participants' thinking aloud recorded via a microphone. Informed consent was obtained anonymously using an online electronic information sheet and consent form. Information, including experimental data and audio recordings, collected during the study were stored under anonymised IDs with no linkages to participants. Data was kept on a password-protected computer and hard drive.
 
-\hypertarget{procedure-1}{%
-\subsection*{Procedure}\label{procedure-1}}
+\subsection*{Procedure}\label{procedure-1}
 \addcontentsline{toc}{subsection}{Procedure}
 
 The general procedure was very similar to that of Study 1, except that participants were given the following instructions at the start of the study:
@@ -899,8 +719,7 @@ The general procedure was very similar to that of Study 1, except that participa
 
 The experimenter occasionally prompted participants with content-neutral probes: \emph{``can you tell me what you are thinking?''} in cases of periods of long silence, and \emph{``can you tell me more?''} when the participant said something vague that may warrant further detail. We emphasise that these are non-leading questions. The audio of the participants' verbalisations was recorded and then transcribed. An initial transcript was generated using Microsoft Office's transcription feature, but the transcript was checked and modified for accuracy by listening through the audio recordings again. The screen of the experimental interface was also recorded, such that the audio could be linked to specific actions within the task. The focus of this study is on verbal utterances rather than any non-verbal or inferential aspects of the participants' qualitative data. At the end of the experiment, the researcher administered a semi-structured interview to better understand what the participants feel their diagnostic reasoning approach tends to be. These questions are provided in the Appendices.
 
-\hypertarget{data-analysis-1}{%
-\subsection*{Data Analysis}\label{data-analysis-1}}
+\subsection*{Data Analysis}\label{data-analysis-1}
 \addcontentsline{toc}{subsection}{Data Analysis}
 
 We conducted a theory-driven semantic thematic analysis (as per definitions detailed by Braun and Clarke, 2006) to code utterances under specific categories. This kind of thematic analysis is suitable given that our qualitative data is from a structured experiment, rather than a dataset with a looser structure (e.g.~interview recordings). As a result, we apply deductive analysis using predetermined codes for think-aloud utterances and for a debrief interview where we administer a semi-structured interview with specific questions of interest.
@@ -908,6 +727,7 @@ We conducted a theory-driven semantic thematic analysis (as per definitions deta
 Firstly, we code all utterances related to the main research areas of interest in this project, namely information seeking, confidence and differential/hypothesis generation. Respectively, we define the following codes:
 
 \begin{itemize}
+\tightlist
 \item
   \textbf{Differential Evaluation}: any time that the participant (each of the following is considered a separate subcode):
 \item
@@ -956,16 +776,14 @@ Coding of utterances and case-wise reasoning strategies were conducted with a se
 
 Although we do not record differentials in the same way as in Study 1 (in a list with corresponding likelihood and severity ratings), we do obtain the other variables. Namely, we record confidence at each stage of information seeking and data around the information sought by participants. As we do not explicitly record differentials in the same manner as in Study 1, accuracy is operationalised differently. We code each case as `correct' if a correct differential is mentioned at some point by the participant (using the same marking scheme, found in the Appendices).
 
-\hypertarget{results-1}{%
-\section*{Results}\label{results-1}}
+\section*{Results}\label{results-1}
 \addcontentsline{toc}{section}{Results}
 
 First, we look at overall quantitative characteristics of the think aloud statements. When looking at accuracy (the proportion of cases where a correct differential was mentioned by the participant), accuracy was 0.57 across all cases. This varied considerably by condition however, with accuracy across participants for each condition being as follows: AD = 0.63, GBS = 0.88, MTB = 0.19, TA = 0.44, TTP = 0.69, UC = 0.63. For utterances coded as Differential Evaluations, participants on average made 5.21 such utterances per case (SD = 2.80). The mean number of Differential Evaluations was relatively constant by condition except for the AD case: AD = 8.18, GBS = 4.63, MTB = 4.81, TA = 4.75, TTP = 4.25, UC = 4.63. Participants varied in how much they spoke during the study, uttering 1038-7730 words (M = 4194) across the scenarios. Part of this range is driven by participants repeating information they see during the task, but participants also varied in terms of how much they externalised their thought process.
 
 As previously mentioned, Differential Evaluations can be further categorised into one of four subcodes: Differential Added, Differential Removed, Likelihood Increased and Likelihood Decreased. As found in the previous study, there is a general reticence to disregard differentials completely. Participants expressed significantly more statements adding differentials (M = 3.14, SD = 0.89) than removing differentials (M = 0.27, SD = 0.28) (t(15) = 14.14, MDiff = 2.86, p \textless{} .001). Participants expressed more statements of decreasing likelihoods (M = 0.99, SD = 0.62) rather than increasing likelihoods (M = 0.93, SD = 0.46) but we did not find evidence of a significant difference (t(15) = 0.34, MDiff = 0.06, p = .73).
 
-\hypertarget{reasoning-strategies}{%
-\subsection*{Reasoning Strategies}\label{reasoning-strategies}}
+\subsection*{Reasoning Strategies}\label{reasoning-strategies}
 \addcontentsline{toc}{subsection}{Reasoning Strategies}
 
 Next we look at our coding of reasoning strategies at a case level. As mentioned, our criteria for each code was applied to each individual case based on the transcribed utterances. When looking at reasoning strategies by case, 43 cases were coded as Hypothetico-Deductive, 29 were coded as Pattern Recognition and 18 were coded as Scheme Inductive (the remainder of cases did not contain enough clear utterances to classify under one of these strategies). Accuracy was higher for cases coded as Hypothetico-Deductive (71\%) compared to both Pattern Recognition cases (64\%) and Scheme Inductive (39\%). It is worth noting here that accuracy was solely based on participants mentioning differentials during their thinking aloud, which is naturally not facilitated by Scheme Inductive reasoning due to its focus on identifying pathophysiological systems acting as sources of patient symptoms rather than specific conditions. This can hence explain the lower `accuracy' for Scheme Inductive cases. We also note that the types of reasoning strategy used varies by condition (see Figure 13 below), with the MTB and TTP cases in particular exhibiting higher usage of Pattern Recognition than others. This could be because this case was considered harder than others and hence participants could not generate a larger set of candidate differentials due to its difficulty.
@@ -974,18 +792,2965 @@ We note, rather unsurprisingly, that we observe a higher number of average Diffe
 
 To connect the results of this study to those of Study 1, we break down the same dependent variables (as operationalised in that study) by reasoning strategy. We do not apply statistics to this study due to the lower sample size. We first categorise each of the 6 cases as having a `dominant' reasoning strategy based on which was utilised the most across participants. Through this process, we categorise three conditions as HD (AD, UC, GBS), three conditions as PR (MTB, TTP, TA). The proportions of participants who use each reasoning strategy for each condition can be viewed in Figure 10. We then compare the individual case classifications of strategy to this reasoning strategy that is most commonly used for that medical condition. Table 2 shows how dependent variables are affected by reasoning strategy. We find that the amount of information seeking was fairly consistent across reasoning strategy, but that PR cases were associated with higher value in information seeking. In order to derive informational value, we used the same values of each piece of information for each case that were derived in Study 1. This higher informational value does not translate into higher accuracy for PR cases, though we should note that the manner in which accuracy was defined for this study limits the analysis only to statements made out loud of specific conditions rather than formally recorded differentials as we did in Study 1. In order to formally replicate this finding with the larger dataset, we use the cases from this study and the coding of strategies to apply the same coding to our online dataset from Study 1.
 
-\hypertarget{reasoning-strategies-in-study-1-dataset}{%
-\subsection*{Reasoning Strategies in Study 1 Dataset}\label{reasoning-strategies-in-study-1-dataset}}
+\subsection*{Reasoning Strategies in Study 1 Dataset}\label{reasoning-strategies-in-study-1-dataset}
 \addcontentsline{toc}{subsection}{Reasoning Strategies in Study 1 Dataset}
 
 In order to apply reasoning strategies to the data from Study 1, we train a classifier using penalised multinomial regression to classify cases as HD, PR or SI using the cases from the think aloud study (with Leave One Out Cross Validation). The input parameters for the classifier are the 29 pieces of information as binary predictors (similar to the approach depicted in Figure 7) and the cases' condition. In other words, the cases from the think-aloud study make up the training data for the classifier whilst the cases from the larger online study is the test dataset. The classifier was implemented using R's nnet package (version 7.3-19). The testing data is then labelled with predicted testing strategies using R's predict function. We note that the training data was initially labelled with reasoning strategies using the think-aloud utterances and thus is separated from the information sought during the case.
 
 We show a breakdown of cases by their coded reasoning strategy in Table 4. We now look to compare our key dependent variables by strategy, in particular comparing PR and HD cases. In line with our expectations based on the definitions of HD and PR reasoning approaches, we find that HD cases are associated with more differentials being considered (M = 3.37, SD = 1.64) average when compared to PR cases (M = 2.84, SD = 1.58) and find evidence of a difference between the two via a Welch Two Sample t-test (t = 2.89, MDiff = 0.53, p = .004). We find that PR cases are associated with higher informational value (M = 2.35, SD = 1.07) when compared to HD cases (M = 2.15, SD = 1.32) (t = 1.48, MDiff = 0.20, p = .14). However we do find evidence of higher amounts of information seeking for HD cases (M = 0.63, SD = 0.21) when compared to PR cases (M = 0.50, SD = 0.21), (t = 5.28, MDiff = 0.13, p \textless{} .001). Overall, this indicates that PR reasoning were associated with lower but more selective information seeking when compared to HD reasoning.
 
-We hypothesised that an interaction with reasoning strategy is associated with accuracy on the task. This is because a single reasoning strategy is considered unlikely to be more accurate for all cases. As indicated by Figure 10, different patient conditions seem to result in varying reasoning strategies being utilised, which begs the question of what properties of a condition contribute to changes in strategy and in accuracy. One possibility is that reasoning strategy interacts with the diagnostic uncertainty of a case (i.e.~the breadth of conditions that a patient could have given their current symptoms and history, with some conditions presenting in a more apparent way than others), as captured by the number of initial differentials reported by participants. To test this hypothesis, we fit a linear model to predict accuracy with an interaction between the number of initial diagnoses and reasoning strategy.
+We hypothesised that an interaction with reasoning strategy is associated with accuracy on the task. This is because a single reasoning strategy is considered unlikely to be more accurate for all cases. Different patient conditions seem to result in varying reasoning strategies being utilised, which begs the question of what properties of a condition contribute to changes in strategy and in accuracy. One possibility is that reasoning strategy interacts with the diagnostic uncertainty of a case (i.e.~the breadth of conditions that a patient could have given their current symptoms and history, with some conditions presenting in a more apparent way than others), as captured by the number of initial differentials reported by participants. To test this hypothesis, we fit a linear model to predict accuracy with an interaction between the number of initial diagnoses and reasoning strategy.
 
-\hypertarget{study-4---diagnostic-uncertainty-and-information-seeking-in-virtual-reality-paediatric-scenarios}{%
-\chapter*{Study 4 - Diagnostic Uncertainty and Information Seeking in Virtual Reality Paediatric Scenarios}\label{study-4---diagnostic-uncertainty-and-information-seeking-in-virtual-reality-paediatric-scenarios}}
+\begin{verbatim}
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 51.435914
+## iter  20 value 44.389160
+## iter  30 value 43.959750
+## iter  40 value 43.812891
+## iter  50 value 43.803561
+## iter  60 value 43.796968
+## iter  70 value 43.795407
+## iter  80 value 43.794890
+## iter  90 value 43.794593
+## final  value 43.794581 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 60.366864
+## iter  20 value 59.774704
+## final  value 59.773899 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 51.456702
+## iter  20 value 44.456759
+## iter  30 value 44.061658
+## iter  40 value 43.949224
+## iter  50 value 43.942374
+## iter  60 value 43.939107
+## iter  70 value 43.938473
+## iter  80 value 43.937787
+## iter  90 value 43.937598
+## iter 100 value 43.937451
+## final  value 43.937451 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 52.552216
+## iter  20 value 46.495608
+## iter  30 value 46.042515
+## iter  40 value 45.980287
+## iter  50 value 45.969939
+## iter  60 value 45.961864
+## iter  70 value 45.960326
+## iter  80 value 45.959511
+## iter  90 value 45.959473
+## final  value 45.959472 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 60.509793
+## iter  20 value 59.952647
+## final  value 59.950470 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 52.571133
+## iter  20 value 46.546470
+## iter  30 value 46.120751
+## iter  40 value 46.073701
+## iter  50 value 46.068530
+## iter  60 value 46.067520
+## iter  70 value 46.067334
+## iter  80 value 46.067184
+## iter  90 value 46.067080
+## iter 100 value 46.067049
+## final  value 46.067049 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 54.123620
+## iter  20 value 47.152300
+## iter  30 value 46.654980
+## iter  40 value 46.592174
+## iter  50 value 46.580052
+## iter  60 value 46.572224
+## iter  70 value 46.571008
+## iter  80 value 46.570459
+## iter  90 value 46.569774
+## final  value 46.569749 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 61.559753
+## iter  20 value 60.712774
+## iter  30 value 60.706386
+## iter  30 value 60.706385
+## iter  30 value 60.706385
+## final  value 60.706385 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 54.140870
+## iter  20 value 47.202692
+## iter  30 value 46.735397
+## iter  40 value 46.687407
+## iter  50 value 46.680731
+## iter  60 value 46.679641
+## iter  70 value 46.679401
+## iter  80 value 46.679235
+## iter  90 value 46.679157
+## iter 100 value 46.679123
+## final  value 46.679123 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 48.953531
+## iter  20 value 42.369082
+## iter  30 value 41.820962
+## iter  40 value 41.685165
+## iter  50 value 41.663221
+## iter  60 value 41.652297
+## iter  70 value 41.647424
+## iter  80 value 41.647231
+## iter  90 value 41.645783
+## iter 100 value 41.645557
+## final  value 41.645557 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 57.848956
+## iter  20 value 57.373801
+## final  value 57.373498 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 48.972519
+## iter  20 value 42.433298
+## iter  30 value 41.918697
+## iter  40 value 41.802107
+## iter  50 value 41.786009
+## iter  60 value 41.779972
+## iter  70 value 41.778926
+## iter  80 value 41.778390
+## iter  90 value 41.778240
+## iter 100 value 41.778031
+## final  value 41.778031 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 50.926410
+## iter  20 value 45.386345
+## iter  30 value 44.992947
+## iter  40 value 44.949914
+## iter  50 value 44.936941
+## iter  60 value 44.929640
+## iter  70 value 44.928135
+## iter  80 value 44.927663
+## iter  90 value 44.927445
+## final  value 44.927434 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 59.724578
+## iter  20 value 59.237378
+## final  value 59.235678 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 50.947224
+## iter  20 value 45.437970
+## iter  30 value 45.072107
+## iter  40 value 45.039917
+## iter  50 value 45.033117
+## iter  60 value 45.032305
+## iter  70 value 45.032171
+## iter  80 value 45.032074
+## iter  90 value 45.031941
+## final  value 45.031913 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 53.690756
+## iter  20 value 46.847229
+## iter  30 value 46.323538
+## iter  40 value 46.250692
+## iter  50 value 46.232911
+## iter  60 value 46.225731
+## iter  70 value 46.222659
+## iter  80 value 46.222296
+## iter  90 value 46.222026
+## final  value 46.222013 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 61.119229
+## iter  20 value 60.600517
+## final  value 60.599103 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 53.707782
+## iter  20 value 46.899888
+## iter  30 value 46.402741
+## iter  40 value 46.345190
+## iter  50 value 46.335030
+## iter  60 value 46.333415
+## iter  70 value 46.333270
+## iter  80 value 46.333106
+## iter  90 value 46.333088
+## iter 100 value 46.333008
+## final  value 46.333008 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 53.976804
+## iter  20 value 46.908763
+## iter  30 value 46.460341
+## iter  40 value 46.393210
+## iter  50 value 46.381212
+## iter  60 value 46.372359
+## iter  70 value 46.370968
+## iter  80 value 46.370309
+## iter  90 value 46.370278
+## iter  90 value 46.370278
+## iter  90 value 46.370278
+## final  value 46.370278 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 61.172235
+## iter  20 value 60.642517
+## final  value 60.641695 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 53.994786
+## iter  20 value 46.961089
+## iter  30 value 46.538406
+## iter  40 value 46.486954
+## iter  50 value 46.480629
+## iter  60 value 46.479569
+## iter  70 value 46.479454
+## iter  80 value 46.479390
+## iter  90 value 46.479281
+## iter 100 value 46.479249
+## final  value 46.479249 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 52.542284
+## iter  20 value 46.359381
+## iter  30 value 45.926977
+## iter  40 value 45.854234
+## iter  50 value 45.842263
+## iter  60 value 45.834062
+## iter  70 value 45.832774
+## iter  80 value 45.832046
+## iter  90 value 45.831948
+## final  value 45.831944 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 60.386154
+## iter  20 value 59.880907
+## final  value 59.879629 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 52.560200
+## iter  20 value 46.409336
+## iter  30 value 46.001702
+## iter  40 value 45.945624
+## iter  50 value 45.939680
+## iter  60 value 45.938697
+## iter  70 value 45.938398
+## iter  80 value 45.938211
+## iter  90 value 45.938092
+## iter 100 value 45.938061
+## final  value 45.938061 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 51.508092
+## iter  20 value 43.842565
+## iter  30 value 42.915950
+## iter  40 value 42.694426
+## iter  50 value 42.661805
+## iter  60 value 42.658207
+## iter  70 value 42.654149
+## iter  80 value 42.653619
+## iter  90 value 42.653591
+## iter 100 value 42.653083
+## final  value 42.653083 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 60.248742
+## iter  20 value 59.475746
+## final  value 59.473695 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 51.527542
+## iter  20 value 43.919233
+## iter  30 value 43.056537
+## iter  40 value 42.876634
+## iter  50 value 42.854293
+## iter  60 value 42.849184
+## iter  70 value 42.845956
+## iter  80 value 42.845119
+## iter  90 value 42.843755
+## iter 100 value 42.843472
+## final  value 42.843472 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 53.191503
+## iter  20 value 47.170292
+## iter  30 value 46.679208
+## iter  40 value 46.617095
+## iter  50 value 46.606483
+## iter  60 value 46.598510
+## iter  70 value 46.597403
+## iter  80 value 46.596804
+## iter  90 value 46.596394
+## final  value 46.596390 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 61.151621
+## iter  20 value 60.664571
+## final  value 60.663882 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 53.209805
+## iter  20 value 47.221218
+## iter  30 value 46.759835
+## iter  40 value 46.712824
+## iter  50 value 46.707102
+## iter  60 value 46.705973
+## iter  70 value 46.705724
+## iter  80 value 46.705565
+## iter  90 value 46.705495
+## iter 100 value 46.705422
+## final  value 46.705422 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 52.302955
+## iter  20 value 46.645747
+## iter  30 value 45.952671
+## iter  40 value 45.847146
+## iter  50 value 45.838022
+## iter  60 value 45.829943
+## iter  70 value 45.829530
+## iter  80 value 45.828740
+## iter  90 value 45.828001
+## iter 100 value 45.827969
+## final  value 45.827969 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 60.245226
+## iter  20 value 59.744808
+## iter  30 value 59.740647
+## iter  30 value 59.740647
+## iter  30 value 59.740647
+## final  value 59.740647 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 52.321349
+## iter  20 value 46.696154
+## iter  30 value 46.048141
+## iter  40 value 45.966910
+## iter  50 value 45.959665
+## iter  60 value 45.956610
+## iter  70 value 45.954957
+## iter  80 value 45.954347
+## iter  90 value 45.954054
+## iter 100 value 45.953996
+## final  value 45.953996 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 54.055959
+## iter  20 value 47.117169
+## iter  30 value 46.623285
+## iter  40 value 46.566545
+## iter  50 value 46.555280
+## iter  60 value 46.547296
+## iter  70 value 46.546235
+## iter  80 value 46.545661
+## iter  90 value 46.545626
+## final  value 46.545626 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 61.165378
+## iter  20 value 60.645939
+## final  value 60.645142 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 54.073229
+## iter  20 value 47.167230
+## iter  30 value 46.703932
+## iter  40 value 46.661623
+## iter  50 value 46.655949
+## iter  60 value 46.655013
+## iter  70 value 46.654807
+## iter  80 value 46.654691
+## iter  90 value 46.654623
+## iter 100 value 46.654576
+## final  value 46.654576 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 53.548306
+## iter  20 value 47.067573
+## iter  30 value 46.598189
+## iter  40 value 46.524027
+## iter  50 value 46.511854
+## iter  60 value 46.503436
+## iter  70 value 46.501585
+## iter  80 value 46.500868
+## iter  90 value 46.500410
+## final  value 46.500392 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 61.112899
+## iter  20 value 60.602686
+## final  value 60.600995 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 53.564809
+## iter  20 value 47.118636
+## iter  30 value 46.675958
+## iter  40 value 46.617751
+## iter  50 value 46.610931
+## iter  60 value 46.609648
+## iter  70 value 46.609422
+## iter  80 value 46.609274
+## iter  90 value 46.609176
+## iter 100 value 46.609149
+## final  value 46.609149 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 53.217843
+## iter  20 value 47.132859
+## iter  30 value 46.670130
+## iter  40 value 46.606079
+## iter  50 value 46.595230
+## iter  60 value 46.587794
+## iter  70 value 46.586648
+## iter  80 value 46.585669
+## iter  90 value 46.585463
+## final  value 46.585454 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 61.213800
+## iter  20 value 60.670612
+## final  value 60.670121 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 53.231691
+## iter  20 value 47.184137
+## iter  30 value 46.750042
+## iter  40 value 46.701447
+## iter  50 value 46.695873
+## iter  60 value 46.695010
+## iter  70 value 46.694825
+## iter  80 value 46.694736
+## iter  90 value 46.694660
+## iter 100 value 46.694631
+## final  value 46.694631 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 51.202871
+## iter  20 value 45.953295
+## iter  30 value 45.072026
+## iter  40 value 44.864517
+## iter  50 value 44.846527
+## iter  60 value 44.841955
+## iter  70 value 44.838416
+## iter  80 value 44.838181
+## iter  90 value 44.838073
+## iter 100 value 44.837608
+## final  value 44.837608 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 60.576698
+## iter  20 value 59.951357
+## iter  30 value 59.947882
+## iter  30 value 59.947882
+## iter  30 value 59.947882
+## final  value 59.947882 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 51.221964
+## iter  20 value 46.007318
+## iter  30 value 45.201476
+## iter  40 value 45.049001
+## iter  50 value 45.034530
+## iter  60 value 45.025179
+## iter  70 value 45.022907
+## iter  80 value 45.018036
+## iter  90 value 45.015810
+## iter 100 value 45.013941
+## final  value 45.013941 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 52.418900
+## iter  20 value 45.266599
+## iter  30 value 44.684137
+## iter  40 value 44.606531
+## iter  50 value 44.591216
+## iter  60 value 44.583007
+## iter  70 value 44.580747
+## iter  80 value 44.580287
+## iter  90 value 44.579960
+## final  value 44.579940 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 60.134588
+## iter  20 value 59.619128
+## final  value 59.618251 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 52.437710
+## iter  20 value 45.324828
+## iter  30 value 44.773706
+## iter  40 value 44.713693
+## iter  50 value 44.705177
+## iter  60 value 44.703657
+## iter  70 value 44.703516
+## iter  80 value 44.703163
+## iter  90 value 44.703142
+## iter 100 value 44.703063
+## final  value 44.703063 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 49.703119
+## iter  20 value 39.038355
+## iter  30 value 37.890893
+## iter  40 value 37.819211
+## iter  50 value 37.794509
+## iter  60 value 37.786738
+## iter  70 value 37.784927
+## iter  80 value 37.782368
+## iter  90 value 37.781255
+## iter 100 value 37.781184
+## final  value 37.781184 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 59.431370
+## iter  20 value 58.492636
+## iter  30 value 58.488417
+## iter  30 value 58.488417
+## iter  30 value 58.488417
+## final  value 58.488417 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 49.726713
+## iter  20 value 39.169040
+## iter  30 value 38.103858
+## iter  40 value 38.046742
+## iter  50 value 38.032914
+## iter  60 value 38.029163
+## iter  70 value 38.027951
+## iter  80 value 38.027110
+## iter  90 value 38.026590
+## iter 100 value 38.026394
+## final  value 38.026394 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 52.793733
+## iter  20 value 46.896328
+## iter  30 value 46.441471
+## iter  40 value 46.387453
+## iter  50 value 46.375004
+## iter  60 value 46.366538
+## iter  70 value 46.365183
+## iter  80 value 46.364299
+## iter  90 value 46.364058
+## final  value 46.364052 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 60.857657
+## iter  20 value 60.382157
+## final  value 60.381045 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 52.812195
+## iter  20 value 46.947972
+## iter  30 value 46.521868
+## iter  40 value 46.480138
+## iter  50 value 46.473851
+## iter  60 value 46.472798
+## iter  70 value 46.472535
+## iter  80 value 46.472428
+## iter  90 value 46.472329
+## iter 100 value 46.472292
+## final  value 46.472292 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 53.229629
+## iter  20 value 47.078192
+## iter  30 value 46.682748
+## iter  40 value 46.620826
+## iter  50 value 46.606775
+## iter  60 value 46.602045
+## iter  70 value 46.600477
+## iter  80 value 46.597842
+## iter  90 value 46.597689
+## final  value 46.597688 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 60.626420
+## iter  20 value 60.132439
+## final  value 60.131885 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 53.247240
+## iter  20 value 47.123155
+## iter  30 value 46.751489
+## iter  40 value 46.701604
+## iter  50 value 46.692741
+## iter  60 value 46.692039
+## iter  70 value 46.691846
+## iter  80 value 46.691801
+## iter  90 value 46.691653
+## final  value 46.691642 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 53.846915
+## iter  20 value 46.373978
+## iter  30 value 45.574578
+## iter  40 value 45.528911
+## iter  50 value 45.513287
+## iter  60 value 45.507113
+## iter  70 value 45.506604
+## iter  80 value 45.506490
+## final  value 45.506487 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 61.220073
+## iter  20 value 60.367680
+## iter  30 value 60.354221
+## final  value 60.354220 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 53.864466
+## iter  20 value 46.429860
+## iter  30 value 45.686236
+## iter  40 value 45.655395
+## iter  50 value 45.650662
+## iter  60 value 45.649673
+## iter  70 value 45.648548
+## iter  80 value 45.648312
+## iter  90 value 45.648061
+## iter 100 value 45.647828
+## final  value 45.647828 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 54.436284
+## iter  20 value 47.149000
+## iter  30 value 46.674410
+## iter  40 value 46.611740
+## iter  50 value 46.600423
+## iter  60 value 46.592348
+## iter  70 value 46.591131
+## iter  80 value 46.590251
+## iter  90 value 46.590149
+## final  value 46.590145 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 61.568010
+## iter  20 value 60.793221
+## final  value 60.788618 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 54.453017
+## iter  20 value 47.200207
+## iter  30 value 46.754314
+## iter  40 value 46.706708
+## iter  50 value 46.700826
+## iter  60 value 46.699843
+## iter  70 value 46.699662
+## iter  80 value 46.699552
+## iter  90 value 46.699465
+## iter 100 value 46.699408
+## final  value 46.699408 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 51.851414
+## iter  20 value 43.815958
+## iter  30 value 42.732208
+## iter  40 value 42.433495
+## iter  50 value 42.392775
+## iter  60 value 42.381304
+## iter  70 value 42.370231
+## iter  80 value 42.365159
+## iter  90 value 42.364641
+## final  value 42.364612 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 60.358643
+## iter  20 value 59.513195
+## final  value 59.512345 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 51.871098
+## iter  20 value 43.886740
+## iter  30 value 42.880757
+## iter  40 value 42.673636
+## iter  50 value 42.649967
+## iter  60 value 42.639264
+## iter  70 value 42.630052
+## iter  80 value 42.627262
+## iter  90 value 42.623039
+## iter 100 value 42.620282
+## final  value 42.620282 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 51.323079
+## iter  20 value 44.744989
+## iter  30 value 44.071597
+## iter  40 value 44.020394
+## iter  50 value 44.008591
+## iter  60 value 44.000506
+## iter  70 value 43.998298
+## iter  80 value 43.998125
+## iter  90 value 43.998107
+## iter 100 value 43.998063
+## final  value 43.998063 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 59.185291
+## iter  20 value 58.705629
+## final  value 58.703924 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 51.344089
+## iter  20 value 44.801370
+## iter  30 value 44.163603
+## iter  40 value 44.124851
+## iter  50 value 44.117982
+## iter  60 value 44.115506
+## iter  70 value 44.115269
+## iter  80 value 44.115080
+## iter  90 value 44.114958
+## iter 100 value 44.114842
+## final  value 44.114842 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 51.535796
+## iter  20 value 43.946938
+## iter  30 value 43.545070
+## iter  40 value 43.453531
+## iter  50 value 43.439808
+## iter  60 value 43.431737
+## iter  70 value 43.430265
+## iter  80 value 43.430194
+## iter  90 value 43.430169
+## final  value 43.430168 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 60.259534
+## iter  20 value 59.669629
+## final  value 59.669046 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 51.556897
+## iter  20 value 44.016751
+## iter  30 value 43.634102
+## iter  40 value 43.560597
+## iter  50 value 43.555753
+## iter  60 value 43.554995
+## iter  70 value 43.554577
+## iter  80 value 43.554229
+## iter  90 value 43.554191
+## iter 100 value 43.554136
+## final  value 43.554136 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 52.994440
+## iter  20 value 45.665106
+## iter  30 value 45.195415
+## iter  40 value 45.129345
+## iter  50 value 45.117502
+## iter  60 value 45.110289
+## iter  70 value 45.109042
+## iter  80 value 45.108483
+## iter  90 value 45.107925
+## final  value 45.107903 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 60.441586
+## iter  20 value 59.883079
+## final  value 59.881116 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 53.012891
+## iter  20 value 45.718889
+## iter  30 value 45.275993
+## iter  40 value 45.226002
+## iter  50 value 45.219759
+## iter  60 value 45.218916
+## iter  70 value 45.218784
+## iter  80 value 45.218639
+## iter  90 value 45.218544
+## iter 100 value 45.218518
+## final  value 45.218518 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 51.416639
+## iter  20 value 46.185359
+## iter  30 value 45.744501
+## iter  40 value 45.690549
+## iter  50 value 45.679936
+## iter  60 value 45.672326
+## iter  70 value 45.671235
+## iter  80 value 45.670793
+## iter  90 value 45.669844
+## iter 100 value 45.669778
+## final  value 45.669778 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 60.696442
+## iter  20 value 59.846238
+## iter  30 value 59.833533
+## final  value 59.833532 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 51.437773
+## iter  20 value 46.236562
+## iter  30 value 45.826906
+## iter  40 value 45.785703
+## iter  50 value 45.780268
+## iter  60 value 45.779304
+## iter  70 value 45.779074
+## iter  80 value 45.778957
+## iter  90 value 45.778858
+## iter 100 value 45.778834
+## final  value 45.778834 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 54.201327
+## iter  20 value 47.109576
+## iter  30 value 46.674028
+## iter  40 value 46.618462
+## iter  50 value 46.607382
+## iter  60 value 46.598614
+## iter  70 value 46.597188
+## iter  80 value 46.596564
+## iter  90 value 46.596447
+## final  value 46.596443 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 61.475621
+## iter  20 value 60.648409
+## iter  30 value 60.625232
+## final  value 60.625231 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 54.217703
+## iter  20 value 47.160260
+## iter  30 value 46.751954
+## iter  40 value 46.710304
+## iter  50 value 46.704762
+## iter  60 value 46.703699
+## iter  70 value 46.703458
+## iter  80 value 46.703336
+## iter  90 value 46.703197
+## iter 100 value 46.703159
+## final  value 46.703159 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 54.204178
+## iter  20 value 45.483339
+## iter  30 value 44.929582
+## iter  40 value 44.851225
+## iter  50 value 44.835668
+## iter  60 value 44.827595
+## iter  70 value 44.825237
+## iter  80 value 44.825008
+## iter  90 value 44.824025
+## iter 100 value 44.823725
+## final  value 44.823725 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 59.843136
+## iter  20 value 59.283840
+## final  value 59.283413 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 54.229896
+## iter  20 value 45.536217
+## iter  30 value 45.014837
+## iter  40 value 44.952367
+## iter  50 value 44.942220
+## iter  60 value 44.940094
+## iter  70 value 44.939901
+## iter  80 value 44.939535
+## iter  90 value 44.939488
+## iter 100 value 44.939416
+## final  value 44.939416 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 53.610516
+## iter  20 value 47.047410
+## iter  30 value 46.591808
+## iter  40 value 46.519221
+## iter  50 value 46.506215
+## iter  60 value 46.498894
+## iter  70 value 46.497059
+## iter  80 value 46.496419
+## iter  90 value 46.495751
+## final  value 46.495725 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 61.167998
+## iter  20 value 60.648685
+## final  value 60.647185 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 53.627687
+## iter  20 value 47.098070
+## iter  30 value 46.669613
+## iter  40 value 46.612452
+## iter  50 value 46.605319
+## iter  60 value 46.604335
+## iter  70 value 46.604092
+## iter  80 value 46.603919
+## iter  90 value 46.603803
+## iter 100 value 46.603775
+## final  value 46.603775 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 52.799396
+## iter  20 value 45.748699
+## iter  30 value 45.279397
+## iter  40 value 45.209265
+## iter  50 value 45.192274
+## iter  60 value 45.184719
+## iter  70 value 45.182022
+## iter  80 value 45.181578
+## iter  90 value 45.181163
+## final  value 45.181112 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 60.441578
+## iter  20 value 59.897440
+## final  value 59.896305 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 52.817587
+## iter  20 value 45.805727
+## iter  30 value 45.363057
+## iter  40 value 45.308213
+## iter  50 value 45.298086
+## iter  60 value 45.296546
+## iter  70 value 45.296453
+## iter  80 value 45.296312
+## iter  90 value 45.296274
+## iter 100 value 45.296219
+## final  value 45.296219 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 54.389819
+## iter  20 value 47.154073
+## iter  30 value 46.679712
+## iter  40 value 46.618292
+## iter  50 value 46.607291
+## iter  60 value 46.599219
+## iter  70 value 46.598083
+## iter  80 value 46.597245
+## iter  90 value 46.597072
+## final  value 46.597066 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 61.683377
+## iter  20 value 60.872547
+## final  value 60.866360 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 54.407229
+## iter  20 value 47.205365
+## iter  30 value 46.759913
+## iter  40 value 46.713515
+## iter  50 value 46.707847
+## iter  60 value 46.706850
+## iter  70 value 46.706654
+## iter  80 value 46.706525
+## iter  90 value 46.706441
+## iter 100 value 46.706360
+## final  value 46.706360 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 53.192303
+## iter  20 value 46.446839
+## iter  30 value 45.962141
+## iter  40 value 45.885933
+## iter  50 value 45.874724
+## iter  60 value 45.866049
+## iter  70 value 45.864883
+## iter  80 value 45.863632
+## iter  90 value 45.863107
+## iter 100 value 45.863084
+## final  value 45.863084 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 60.767634
+## iter  20 value 60.268797
+## final  value 60.267161 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 53.210214
+## iter  20 value 46.499474
+## iter  30 value 46.044962
+## iter  40 value 45.984602
+## iter  50 value 45.977939
+## iter  60 value 45.976421
+## iter  70 value 45.976129
+## iter  80 value 45.975952
+## iter  90 value 45.975846
+## iter 100 value 45.975821
+## final  value 45.975821 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 51.835669
+## iter  20 value 44.702684
+## iter  30 value 44.103668
+## iter  40 value 44.013381
+## iter  50 value 43.993363
+## iter  60 value 43.987475
+## iter  70 value 43.983179
+## iter  80 value 43.982582
+## iter  90 value 43.982024
+## iter 100 value 43.981817
+## final  value 43.981817 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 59.907132
+## iter  20 value 59.348878
+## final  value 59.347468 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 51.853376
+## iter  20 value 44.764983
+## iter  30 value 44.198925
+## iter  40 value 44.128893
+## iter  50 value 44.116930
+## iter  60 value 44.115085
+## iter  70 value 44.114765
+## iter  80 value 44.114329
+## iter  90 value 44.114251
+## iter 100 value 44.114197
+## final  value 44.114197 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 55.499979
+## iter  20 value 46.494338
+## iter  30 value 46.004690
+## iter  40 value 45.941601
+## iter  50 value 45.928824
+## iter  60 value 45.920753
+## iter  70 value 45.919455
+## iter  80 value 45.918553
+## iter  90 value 45.917915
+## iter 100 value 45.917892
+## final  value 45.917892 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 60.556171
+## iter  20 value 60.030083
+## final  value 60.029364 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 52.848583
+## iter  20 value 46.543849
+## iter  30 value 46.082304
+## iter  40 value 46.037568
+## iter  50 value 46.031061
+## iter  60 value 46.029871
+## iter  70 value 46.029221
+## iter  80 value 46.028908
+## iter  90 value 46.028800
+## iter 100 value 46.028762
+## final  value 46.028762 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 52.736780
+## iter  20 value 45.446294
+## iter  30 value 45.000260
+## iter  40 value 44.932078
+## iter  50 value 44.920070
+## iter  60 value 44.911290
+## iter  70 value 44.908980
+## iter  80 value 44.908539
+## iter  90 value 44.908500
+## iter  90 value 44.908499
+## iter  90 value 44.908499
+## final  value 44.908499 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 60.568426
+## iter  20 value 59.817544
+## final  value 59.816070 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 52.754645
+## iter  20 value 45.502661
+## iter  30 value 45.079535
+## iter  40 value 45.027920
+## iter  50 value 45.021594
+## iter  60 value 45.020185
+## iter  70 value 45.020071
+## iter  80 value 45.019939
+## iter  90 value 45.019887
+## iter 100 value 45.019869
+## final  value 45.019869 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 53.741642
+## iter  20 value 47.113503
+## iter  30 value 46.640256
+## iter  40 value 46.579200
+## iter  50 value 46.568004
+## iter  60 value 46.559852
+## iter  70 value 46.558795
+## iter  80 value 46.557918
+## iter  90 value 46.557883
+## iter  90 value 46.557882
+## iter  90 value 46.557882
+## final  value 46.557882 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 61.216948
+## iter  20 value 60.695099
+## final  value 60.694274 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 53.759124
+## iter  20 value 47.164649
+## iter  30 value 46.720202
+## iter  40 value 46.674043
+## iter  50 value 46.668302
+## iter  60 value 46.667318
+## iter  70 value 46.667122
+## iter  80 value 46.667008
+## iter  90 value 46.666935
+## iter 100 value 46.666903
+## final  value 46.666903 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 54.371138
+## iter  20 value 47.152537
+## iter  30 value 46.679243
+## iter  40 value 46.618756
+## iter  50 value 46.607836
+## iter  60 value 46.599765
+## iter  70 value 46.598674
+## iter  80 value 46.597837
+## iter  90 value 46.597652
+## final  value 46.597644 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 61.680269
+## iter  20 value 60.871158
+## final  value 60.865556 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 54.388340
+## iter  20 value 47.203818
+## iter  30 value 46.759774
+## iter  40 value 46.714043
+## iter  50 value 46.708399
+## iter  60 value 46.707408
+## iter  70 value 46.707211
+## iter  80 value 46.707087
+## iter  90 value 46.707003
+## iter 100 value 46.706943
+## final  value 46.706943 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 52.914159
+## iter  20 value 47.071689
+## iter  30 value 46.604820
+## iter  40 value 46.537153
+## iter  50 value 46.524866
+## iter  60 value 46.517139
+## iter  70 value 46.514907
+## iter  80 value 46.514145
+## iter  90 value 46.513999
+## final  value 46.513995 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 61.475940
+## iter  20 value 60.603951
+## iter  30 value 60.587817
+## final  value 60.587816 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 52.932922
+## iter  20 value 47.123008
+## iter  30 value 46.684111
+## iter  40 value 46.632388
+## iter  50 value 46.625474
+## iter  60 value 46.624244
+## iter  70 value 46.624070
+## iter  80 value 46.623898
+## iter  90 value 46.623824
+## iter 100 value 46.623801
+## final  value 46.623801 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 50.690271
+## iter  20 value 43.040095
+## iter  30 value 42.680921
+## iter  40 value 42.615188
+## iter  50 value 42.597284
+## iter  60 value 42.591098
+## iter  70 value 42.589955
+## iter  80 value 42.589623
+## iter  90 value 42.589493
+## final  value 42.589481 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 59.726329
+## iter  20 value 59.071935
+## final  value 59.069881 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 50.721642
+## iter  20 value 43.109827
+## iter  30 value 42.772888
+## iter  40 value 42.721515
+## iter  50 value 42.715445
+## iter  60 value 42.714772
+## iter  70 value 42.714419
+## iter  80 value 42.714270
+## iter  90 value 42.714135
+## iter 100 value 42.714091
+## final  value 42.714091 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 52.775703
+## iter  20 value 44.268155
+## iter  30 value 42.767136
+## iter  40 value 42.184238
+## iter  50 value 42.087749
+## iter  60 value 42.079423
+## iter  70 value 42.077640
+## iter  80 value 42.077379
+## iter  90 value 42.077291
+## final  value 42.077285 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 59.547167
+## iter  20 value 58.918532
+## final  value 58.917678 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 52.800598
+## iter  20 value 44.331982
+## iter  30 value 43.002690
+## iter  40 value 42.606672
+## iter  50 value 42.545851
+## iter  60 value 42.535772
+## iter  70 value 42.502109
+## iter  80 value 42.492248
+## iter  90 value 42.480709
+## iter 100 value 42.474606
+## final  value 42.474606 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 51.268892
+## iter  20 value 45.891117
+## iter  30 value 45.422380
+## iter  40 value 45.368701
+## iter  50 value 45.357187
+## iter  60 value 45.349559
+## iter  70 value 45.348559
+## iter  80 value 45.348371
+## final  value 45.348343 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 59.778303
+## iter  20 value 58.978347
+## iter  30 value 58.969963
+## iter  30 value 58.969962
+## iter  30 value 58.969962
+## final  value 58.969962 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 51.288482
+## iter  20 value 45.938805
+## iter  30 value 45.495538
+## iter  40 value 45.455028
+## iter  50 value 45.450569
+## iter  60 value 45.449743
+## iter  70 value 45.449270
+## iter  80 value 45.449076
+## iter  90 value 45.449016
+## iter 100 value 45.448997
+## final  value 45.448997 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 53.423381
+## iter  20 value 46.726334
+## iter  30 value 46.244628
+## iter  40 value 46.165390
+## iter  50 value 46.152826
+## iter  60 value 46.145021
+## iter  70 value 46.143244
+## iter  80 value 46.142753
+## iter  90 value 46.141748
+## iter 100 value 46.141639
+## final  value 46.141639 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 60.970503
+## iter  20 value 60.453982
+## final  value 60.450069 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 53.440619
+## iter  20 value 46.777502
+## iter  30 value 46.322994
+## iter  40 value 46.260946
+## iter  50 value 46.253555
+## iter  60 value 46.252176
+## iter  70 value 46.251908
+## iter  80 value 46.251673
+## iter  90 value 46.251589
+## iter 100 value 46.251566
+## final  value 46.251566 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 52.136683
+## iter  20 value 46.568424
+## iter  30 value 46.132852
+## iter  40 value 46.069627
+## iter  50 value 46.058234
+## iter  60 value 46.049845
+## iter  70 value 46.048370
+## iter  80 value 46.047757
+## iter  90 value 46.047665
+## final  value 46.047664 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 60.886858
+## iter  20 value 60.072401
+## iter  30 value 60.066850
+## iter  30 value 60.066850
+## iter  30 value 60.066850
+## final  value 60.066850 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 52.154110
+## iter  20 value 46.618443
+## iter  30 value 46.210136
+## iter  40 value 46.161982
+## iter  50 value 46.156228
+## iter  60 value 46.155128
+## iter  70 value 46.154813
+## iter  80 value 46.154635
+## iter  90 value 46.154540
+## iter 100 value 46.154506
+## final  value 46.154506 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 54.304835
+## iter  20 value 47.143112
+## iter  30 value 46.677832
+## iter  40 value 46.617856
+## iter  50 value 46.606998
+## iter  60 value 46.599302
+## iter  70 value 46.598115
+## iter  80 value 46.597320
+## iter  90 value 46.597196
+## final  value 46.597191 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 61.588706
+## iter  20 value 60.806579
+## final  value 60.802688 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 54.322008
+## iter  20 value 47.194247
+## iter  30 value 46.757996
+## iter  40 value 46.712912
+## iter  50 value 46.707425
+## iter  60 value 46.706532
+## iter  70 value 46.706338
+## iter  80 value 46.706231
+## iter  90 value 46.706156
+## iter 100 value 46.706065
+## final  value 46.706065 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 53.953862
+## iter  20 value 46.809219
+## iter  30 value 46.365375
+## iter  40 value 46.306093
+## iter  50 value 46.292044
+## iter  60 value 46.284219
+## iter  70 value 46.282808
+## iter  80 value 46.282424
+## iter  90 value 46.282336
+## final  value 46.282335 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 61.074434
+## iter  20 value 60.346850
+## final  value 60.345410 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 53.976342
+## iter  20 value 46.859412
+## iter  30 value 46.442107
+## iter  40 value 46.396675
+## iter  50 value 46.389710
+## iter  60 value 46.388823
+## iter  70 value 46.388547
+## iter  80 value 46.388337
+## iter  90 value 46.388251
+## iter 100 value 46.388210
+## final  value 46.388210 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 52.082937
+## iter  20 value 47.101711
+## iter  30 value 46.656230
+## iter  40 value 46.597455
+## iter  50 value 46.586487
+## iter  60 value 46.578476
+## iter  70 value 46.577052
+## iter  80 value 46.576411
+## iter  90 value 46.576289
+## final  value 46.576285 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 61.090461
+## iter  20 value 60.652194
+## final  value 60.650584 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 52.102297
+## iter  20 value 47.152975
+## iter  30 value 46.734785
+## iter  40 value 46.690840
+## iter  50 value 46.685350
+## iter  60 value 46.684437
+## iter  70 value 46.684244
+## iter  80 value 46.684126
+## iter  90 value 46.684036
+## iter 100 value 46.683994
+## final  value 46.683994 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 50.034412
+## iter  20 value 43.932010
+## iter  30 value 43.365014
+## iter  40 value 43.218425
+## iter  50 value 43.196705
+## iter  60 value 43.187857
+## iter  70 value 43.185777
+## iter  80 value 43.184968
+## iter  90 value 43.184150
+## iter 100 value 43.182907
+## final  value 43.182907 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 59.625903
+## iter  20 value 59.116244
+## final  value 59.114909 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 50.055583
+## iter  20 value 44.004058
+## iter  30 value 43.473884
+## iter  40 value 43.353228
+## iter  50 value 43.337915
+## iter  60 value 43.334978
+## iter  70 value 43.334420
+## iter  80 value 43.333423
+## iter  90 value 43.333340
+## iter 100 value 43.333247
+## final  value 43.333247 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 52.415979
+## iter  20 value 47.076505
+## iter  30 value 46.664827
+## iter  40 value 46.615771
+## iter  50 value 46.606743
+## iter  60 value 46.599924
+## iter  70 value 46.598191
+## iter  80 value 46.597754
+## iter  90 value 46.597687
+## final  value 46.597686 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 60.865601
+## iter  20 value 60.385851
+## iter  30 value 60.382821
+## iter  30 value 60.382820
+## iter  30 value 60.382820
+## final  value 60.382820 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 52.434725
+## iter  20 value 47.128108
+## iter  30 value 46.740484
+## iter  40 value 46.703241
+## iter  50 value 46.699235
+## iter  60 value 46.698533
+## iter  70 value 46.698259
+## iter  80 value 46.698175
+## iter  90 value 46.698094
+## final  value 46.698091 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 51.224852
+## iter  20 value 46.547082
+## iter  30 value 46.133185
+## iter  40 value 46.077108
+## iter  50 value 46.064916
+## iter  60 value 46.058652
+## iter  70 value 46.057802
+## iter  80 value 46.057523
+## iter  90 value 46.057442
+## final  value 46.057439 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 60.456705
+## iter  20 value 59.787770
+## final  value 59.786273 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 51.245462
+## iter  20 value 46.597014
+## iter  30 value 46.209927
+## iter  40 value 46.168888
+## iter  50 value 46.163521
+## iter  60 value 46.162951
+## iter  70 value 46.162828
+## iter  80 value 46.162737
+## final  value 46.162715 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 54.244682
+## iter  20 value 47.120610
+## iter  30 value 46.654539
+## iter  40 value 46.582494
+## iter  50 value 46.570516
+## iter  60 value 46.562588
+## iter  70 value 46.560722
+## iter  80 value 46.559883
+## iter  90 value 46.559483
+## final  value 46.559468 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 61.285732
+## iter  20 value 60.776126
+## final  value 60.774006 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 54.261227
+## iter  20 value 47.171642
+## iter  30 value 46.732959
+## iter  40 value 46.676753
+## iter  50 value 46.670147
+## iter  60 value 46.669019
+## iter  70 value 46.668828
+## iter  80 value 46.668688
+## iter  90 value 46.668578
+## iter 100 value 46.668553
+## final  value 46.668553 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 54.117230
+## iter  20 value 47.081443
+## iter  30 value 46.626980
+## iter  40 value 46.556807
+## iter  50 value 46.545437
+## iter  60 value 46.537328
+## iter  70 value 46.535672
+## iter  80 value 46.534736
+## iter  90 value 46.534620
+## final  value 46.534617 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 61.177153
+## iter  20 value 60.652080
+## final  value 60.651319 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 54.132917
+## iter  20 value 47.132456
+## iter  30 value 46.705726
+## iter  40 value 46.651624
+## iter  50 value 46.645388
+## iter  60 value 46.644238
+## iter  70 value 46.644000
+## iter  80 value 46.643866
+## iter  90 value 46.643770
+## iter 100 value 46.643738
+## final  value 46.643738 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 51.744033
+## iter  20 value 46.552057
+## iter  30 value 46.092033
+## iter  40 value 46.021301
+## iter  50 value 46.009084
+## iter  60 value 45.999700
+## iter  70 value 45.997103
+## iter  80 value 45.996838
+## iter  90 value 45.996801
+## final  value 45.996799 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 61.154000
+## iter  20 value 60.420445
+## final  value 60.418747 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 51.762384
+## iter  20 value 46.607263
+## iter  30 value 46.170781
+## iter  40 value 46.115603
+## iter  50 value 46.109398
+## iter  60 value 46.107857
+## iter  70 value 46.107755
+## iter  80 value 46.107567
+## iter  90 value 46.107455
+## iter 100 value 46.107353
+## final  value 46.107353 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 52.457865
+## iter  20 value 44.987822
+## iter  30 value 44.556056
+## iter  40 value 44.488047
+## iter  50 value 44.473957
+## iter  60 value 44.466310
+## iter  70 value 44.463753
+## iter  80 value 44.463065
+## iter  90 value 44.462791
+## final  value 44.462779 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 59.419143
+## iter  20 value 58.886981
+## final  value 58.886049 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 52.474845
+## iter  20 value 45.040278
+## iter  30 value 44.633738
+## iter  40 value 44.580306
+## iter  50 value 44.572394
+## iter  60 value 44.571287
+## iter  70 value 44.571161
+## iter  80 value 44.571070
+## iter  90 value 44.570969
+## iter 100 value 44.570946
+## final  value 44.570946 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 51.624022
+## iter  20 value 44.848870
+## iter  30 value 43.355109
+## iter  40 value 39.830936
+## iter  50 value 28.602304
+## iter  60 value 27.530065
+## iter  70 value 27.477207
+## iter  80 value 27.475911
+## final  value 27.475902 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 60.410300
+## iter  20 value 59.764310
+## iter  30 value 59.753115
+## final  value 59.753114 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 51.643883
+## iter  20 value 44.918314
+## iter  30 value 43.581928
+## iter  40 value 42.646652
+## iter  50 value 42.608595
+## iter  60 value 42.528049
+## iter  70 value 42.452688
+## iter  80 value 42.416660
+## iter  90 value 42.378773
+## iter 100 value 42.307066
+## final  value 42.307066 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 52.732434
+## iter  20 value 46.611140
+## iter  30 value 46.157392
+## iter  40 value 46.102623
+## iter  50 value 46.091466
+## iter  60 value 46.084206
+## iter  70 value 46.082743
+## iter  80 value 46.082111
+## iter  90 value 46.082055
+## iter  90 value 46.082055
+## iter  90 value 46.082055
+## final  value 46.082055 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 60.681082
+## iter  20 value 60.144273
+## final  value 60.143290 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 52.752018
+## iter  20 value 46.663416
+## iter  30 value 46.238160
+## iter  40 value 46.197189
+## iter  50 value 46.191751
+## iter  60 value 46.190944
+## iter  70 value 46.190753
+## iter  80 value 46.190656
+## iter  90 value 46.190569
+## iter 100 value 46.190531
+## final  value 46.190531 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 49.859874
+## iter  20 value 41.149065
+## iter  30 value 38.298405
+## iter  40 value 36.352118
+## iter  50 value 33.660459
+## iter  60 value 27.385430
+## iter  70 value 26.115330
+## iter  80 value 26.089935
+## iter  90 value 26.089610
+## final  value 26.089608 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 58.841643
+## iter  20 value 58.208302
+## final  value 58.202046 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 49.883836
+## iter  20 value 41.245903
+## iter  30 value 38.761988
+## iter  40 value 37.666051
+## iter  50 value 37.311145
+## iter  60 value 36.999811
+## iter  70 value 36.844250
+## iter  80 value 36.805730
+## iter  90 value 36.684064
+## iter 100 value 36.636176
+## final  value 36.636176 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 52.600199
+## iter  20 value 44.311757
+## iter  30 value 43.218344
+## iter  40 value 43.102786
+## iter  50 value 43.069486
+## iter  60 value 43.054396
+## iter  70 value 43.053406
+## iter  80 value 43.053317
+## iter  90 value 43.053272
+## final  value 43.053272 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 60.541432
+## iter  20 value 60.024106
+## final  value 60.020102 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 52.619665
+## iter  20 value 44.389037
+## iter  30 value 43.367452
+## iter  40 value 43.284812
+## iter  50 value 43.269196
+## iter  60 value 43.265798
+## iter  70 value 43.264385
+## iter  80 value 43.263618
+## iter  90 value 43.263168
+## iter 100 value 43.263021
+## final  value 43.263021 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 54.062036
+## iter  20 value 47.166682
+## iter  30 value 46.681703
+## iter  40 value 46.618369
+## iter  50 value 46.608332
+## iter  60 value 46.599589
+## iter  70 value 46.598305
+## iter  80 value 46.597729
+## iter  90 value 46.597687
+## final  value 46.597686 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 61.491143
+## iter  20 value 60.751023
+## final  value 60.749709 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 54.078569
+## iter  20 value 47.217470
+## iter  30 value 46.760948
+## iter  40 value 46.713156
+## iter  50 value 46.708302
+## iter  60 value 46.707253
+## iter  70 value 46.706953
+## iter  80 value 46.706822
+## iter  90 value 46.706730
+## iter 100 value 46.706661
+## final  value 46.706661 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 53.844108
+## iter  20 value 47.158530
+## iter  30 value 46.656401
+## iter  40 value 46.572045
+## iter  50 value 46.558097
+## iter  60 value 46.549453
+## iter  70 value 46.547191
+## iter  80 value 46.546461
+## iter  90 value 46.546175
+## final  value 46.546164 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 60.907504
+## iter  20 value 60.426970
+## final  value 60.424129 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 53.860489
+## iter  20 value 47.207440
+## iter  30 value 46.731231
+## iter  40 value 46.664086
+## iter  50 value 46.656065
+## iter  60 value 46.654652
+## iter  70 value 46.654487
+## iter  80 value 46.654323
+## iter  90 value 46.654240
+## iter 100 value 46.654208
+## final  value 46.654208 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 51.839900
+## iter  20 value 44.416549
+## iter  30 value 43.943054
+## iter  40 value 43.813267
+## iter  50 value 43.803801
+## iter  60 value 43.797003
+## iter  70 value 43.795032
+## iter  80 value 43.794689
+## iter  90 value 43.794586
+## final  value 43.794581 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 59.022433
+## iter  20 value 58.078425
+## final  value 58.073609 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 51.865062
+## iter  20 value 44.471307
+## iter  30 value 44.024823
+## iter  40 value 43.921456
+## iter  50 value 43.917404
+## iter  60 value 43.916280
+## iter  70 value 43.915927
+## iter  80 value 43.915550
+## iter  90 value 43.915504
+## iter 100 value 43.915442
+## final  value 43.915442 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 52.701448
+## iter  20 value 47.095273
+## iter  30 value 46.628696
+## iter  40 value 46.574128
+## iter  50 value 46.564608
+## iter  60 value 46.557223
+## iter  70 value 46.556226
+## iter  80 value 46.555418
+## iter  90 value 46.555219
+## final  value 46.555215 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 61.581435
+## iter  20 value 60.726084
+## iter  30 value 60.725135
+## iter  30 value 60.725135
+## iter  30 value 60.725135
+## final  value 60.725135 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 52.722058
+## iter  20 value 47.147129
+## iter  30 value 46.711015
+## iter  40 value 46.670445
+## iter  50 value 46.665865
+## iter  60 value 46.665075
+## iter  70 value 46.664858
+## iter  80 value 46.664753
+## iter  90 value 46.664663
+## iter 100 value 46.664627
+## final  value 46.664627 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 51.260129
+## iter  20 value 46.051431
+## iter  30 value 45.616165
+## iter  40 value 45.575435
+## iter  50 value 45.565746
+## iter  60 value 45.558447
+## iter  70 value 45.557086
+## iter  80 value 45.556803
+## final  value 45.556789 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 60.690334
+## iter  20 value 59.931367
+## iter  30 value 59.928535
+## iter  30 value 59.928535
+## iter  30 value 59.928535
+## final  value 59.928535 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 51.281463
+## iter  20 value 46.104542
+## iter  30 value 45.698375
+## iter  40 value 45.669677
+## iter  50 value 45.665325
+## iter  60 value 45.664540
+## iter  70 value 45.664260
+## iter  80 value 45.664109
+## iter  90 value 45.664013
+## iter 100 value 45.663951
+## final  value 45.663951 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 54.074565
+## iter  20 value 46.599121
+## iter  30 value 45.692561
+## iter  40 value 45.484600
+## iter  50 value 45.471133
+## iter  60 value 45.464832
+## iter  70 value 45.462356
+## iter  80 value 45.462173
+## iter  90 value 45.461785
+## iter 100 value 45.461250
+## final  value 45.461250 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 60.934319
+## iter  20 value 60.388353
+## final  value 60.386942 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 54.092014
+## iter  20 value 46.652746
+## iter  30 value 45.812048
+## iter  40 value 45.664798
+## iter  50 value 45.652155
+## iter  60 value 45.642534
+## iter  70 value 45.640500
+## iter  80 value 45.635692
+## iter  90 value 45.634430
+## iter 100 value 45.632763
+## final  value 45.632763 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 53.221163
+## iter  20 value 45.459362
+## iter  30 value 44.824944
+## iter  40 value 44.701191
+## iter  50 value 44.684302
+## iter  60 value 44.680074
+## iter  70 value 44.679412
+## iter  80 value 44.678222
+## iter  90 value 44.676982
+## iter 100 value 44.676938
+## final  value 44.676938 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 60.745584
+## iter  20 value 59.848151
+## iter  30 value 59.841119
+## iter  30 value 59.841119
+## iter  30 value 59.841119
+## final  value 59.841119 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 53.238798
+## iter  20 value 45.519225
+## iter  30 value 44.926068
+## iter  40 value 44.825638
+## iter  50 value 44.816292
+## iter  60 value 44.815451
+## iter  70 value 44.814819
+## iter  80 value 44.814670
+## iter  90 value 44.814459
+## iter 100 value 44.814443
+## final  value 44.814443 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 52.986793
+## iter  20 value 46.623744
+## iter  30 value 46.193309
+## iter  40 value 46.121548
+## iter  50 value 46.108498
+## iter  60 value 46.100792
+## iter  70 value 46.098778
+## iter  80 value 46.097800
+## iter  90 value 46.097393
+## final  value 46.097380 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 60.861175
+## iter  20 value 60.343867
+## final  value 60.342808 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 53.004375
+## iter  20 value 46.675257
+## iter  30 value 46.270592
+## iter  40 value 46.213990
+## iter  50 value 46.206871
+## iter  60 value 46.205903
+## iter  70 value 46.205713
+## iter  80 value 46.205643
+## iter  90 value 46.205515
+## iter 100 value 46.205482
+## final  value 46.205482 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 53.845679
+## iter  20 value 47.114294
+## iter  30 value 46.645347
+## iter  40 value 46.609597
+## iter  50 value 46.604268
+## iter  60 value 46.598552
+## iter  70 value 46.597766
+## iter  80 value 46.597692
+## final  value 46.597686 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 61.292134
+## iter  20 value 60.771256
+## final  value 60.768715 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 53.863642
+## iter  20 value 47.165632
+## iter  30 value 46.730160
+## iter  40 value 46.706370
+## iter  50 value 46.703932
+## iter  60 value 46.701524
+## iter  70 value 46.700449
+## iter  80 value 46.700163
+## iter  90 value 46.699579
+## iter 100 value 46.699557
+## final  value 46.699557 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 53.618200
+## iter  20 value 47.197520
+## iter  30 value 46.657086
+## iter  40 value 46.610150
+## iter  50 value 46.604695
+## iter  60 value 46.599139
+## iter  70 value 46.597769
+## iter  80 value 46.597702
+## final  value 46.597685 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 60.789755
+## iter  20 value 60.316316
+## final  value 60.315094 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 53.634147
+## iter  20 value 47.244250
+## iter  30 value 46.736872
+## iter  40 value 46.702747
+## iter  50 value 46.699628
+## iter  60 value 46.697017
+## iter  70 value 46.696463
+## iter  80 value 46.696238
+## iter  90 value 46.696110
+## iter 100 value 46.696048
+## final  value 46.696048 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 52.243924
+## iter  20 value 46.173255
+## iter  30 value 45.647553
+## iter  40 value 45.581500
+## iter  50 value 45.569200
+## iter  60 value 45.561424
+## iter  70 value 45.558656
+## iter  80 value 45.558527
+## iter  90 value 45.558491
+## final  value 45.558489 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 60.930709
+## iter  20 value 60.367820
+## final  value 60.366670 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 52.265504
+## iter  20 value 46.231035
+## iter  30 value 45.729834
+## iter  40 value 45.679628
+## iter  50 value 45.674022
+## iter  60 value 45.672637
+## iter  70 value 45.672542
+## iter  80 value 45.672437
+## iter  90 value 45.672400
+## iter 100 value 45.672332
+## final  value 45.672332 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 52.790575
+## iter  20 value 46.256788
+## iter  30 value 45.430395
+## iter  40 value 45.303484
+## iter  50 value 45.288001
+## iter  60 value 45.282025
+## iter  70 value 45.279416
+## iter  80 value 45.279326
+## iter  90 value 45.278796
+## iter 100 value 45.278419
+## final  value 45.278419 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 60.360952
+## iter  20 value 59.864884
+## final  value 59.864318 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 52.814889
+## iter  20 value 46.310216
+## iter  30 value 45.542394
+## iter  40 value 45.444703
+## iter  50 value 45.433167
+## iter  60 value 45.428062
+## iter  70 value 45.426935
+## iter  80 value 45.424103
+## iter  90 value 45.423702
+## iter 100 value 45.423435
+## final  value 45.423435 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 51.643278
+## iter  20 value 45.977157
+## iter  30 value 45.550151
+## iter  40 value 45.520947
+## iter  50 value 45.511636
+## iter  60 value 45.507213
+## iter  70 value 45.506608
+## iter  80 value 45.506492
+## final  value 45.506486 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 59.194947
+## iter  20 value 58.692000
+## final  value 58.691336 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 51.657929
+## iter  20 value 46.024732
+## iter  30 value 45.632964
+## iter  40 value 45.611187
+## iter  50 value 45.606713
+## iter  60 value 45.605919
+## iter  70 value 45.605392
+## iter  80 value 45.605192
+## iter  90 value 45.604951
+## iter 100 value 45.604877
+## final  value 45.604877 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 54.034322
+## iter  20 value 47.060669
+## iter  30 value 46.584044
+## iter  40 value 46.522464
+## iter  50 value 46.511135
+## iter  60 value 46.503104
+## iter  70 value 46.501736
+## iter  80 value 46.501134
+## iter  90 value 46.500974
+## final  value 46.500971 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 61.110061
+## iter  20 value 60.577946
+## final  value 60.577005 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 54.051451
+## iter  20 value 47.111090
+## iter  30 value 46.662643
+## iter  40 value 46.615886
+## iter  50 value 46.610244
+## iter  60 value 46.609306
+## iter  70 value 46.609122
+## iter  80 value 46.609011
+## iter  90 value 46.608935
+## iter 100 value 46.608911
+## final  value 46.608911 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 53.411951
+## iter  20 value 46.663564
+## iter  30 value 46.198040
+## iter  40 value 46.135350
+## iter  50 value 46.124284
+## iter  60 value 46.116740
+## iter  70 value 46.115647
+## iter  80 value 46.114656
+## iter  90 value 46.114138
+## final  value 46.114127 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 60.730981
+## iter  20 value 60.238426
+## final  value 60.237041 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 53.430296
+## iter  20 value 46.712976
+## iter  30 value 46.276276
+## iter  40 value 46.228202
+## iter  50 value 46.222591
+## iter  60 value 46.221705
+## iter  70 value 46.221430
+## iter  80 value 46.221326
+## iter  90 value 46.221248
+## iter 100 value 46.221218
+## final  value 46.221218 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 53.082398
+## iter  20 value 46.986305
+## iter  30 value 46.566125
+## iter  40 value 46.502109
+## iter  50 value 46.489435
+## iter  60 value 46.481574
+## iter  70 value 46.480316
+## iter  80 value 46.479578
+## iter  90 value 46.478911
+## iter 100 value 46.478894
+## final  value 46.478894 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 60.713561
+## iter  20 value 60.205161
+## iter  30 value 60.203281
+## iter  30 value 60.203281
+## iter  30 value 60.203281
+## final  value 60.203281 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 53.096711
+## iter  20 value 47.038008
+## iter  30 value 46.644833
+## iter  40 value 46.595411
+## iter  50 value 46.588674
+## iter  60 value 46.587652
+## iter  70 value 46.587355
+## iter  80 value 46.587229
+## iter  90 value 46.587135
+## iter 100 value 46.587107
+## final  value 46.587107 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 51.717957
+## iter  20 value 41.973429
+## iter  30 value 40.711742
+## iter  40 value 40.220924
+## iter  50 value 40.148952
+## iter  60 value 40.142405
+## iter  70 value 40.138483
+## iter  80 value 40.135945
+## iter  90 value 40.135663
+## iter 100 value 40.134324
+## final  value 40.134324 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 58.971276
+## iter  20 value 58.404209
+## final  value 58.402795 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 51.737079
+## iter  20 value 42.057098
+## iter  30 value 40.902616
+## iter  40 value 40.569384
+## iter  50 value 40.526291
+## iter  60 value 40.509309
+## iter  70 value 40.477838
+## iter  80 value 40.458930
+## iter  90 value 40.449550
+## iter 100 value 40.443519
+## final  value 40.443519 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 53.105613
+## iter  20 value 45.544986
+## iter  30 value 45.101112
+## iter  40 value 45.041493
+## iter  50 value 45.027645
+## iter  60 value 45.019305
+## iter  70 value 45.017112
+## iter  80 value 45.016651
+## iter  90 value 45.016529
+## final  value 45.016522 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 60.262951
+## iter  20 value 59.747834
+## final  value 59.746502 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 53.128597
+## iter  20 value 45.599721
+## iter  30 value 45.181913
+## iter  40 value 45.135410
+## iter  50 value 45.128333
+## iter  60 value 45.127339
+## iter  70 value 45.127154
+## iter  80 value 45.127000
+## iter  90 value 45.126955
+## final  value 45.126938 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 51.899790
+## iter  20 value 46.256793
+## iter  30 value 45.395360
+## iter  40 value 45.213996
+## iter  50 value 45.198679
+## iter  60 value 45.192446
+## iter  70 value 45.190332
+## iter  80 value 45.190219
+## iter  90 value 45.189827
+## iter 100 value 45.189259
+## final  value 45.189259 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 61.154871
+## iter  20 value 60.382753
+## final  value 60.379042 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 51.922095
+## iter  20 value 46.314990
+## iter  30 value 45.533726
+## iter  40 value 45.407727
+## iter  50 value 45.393426
+## iter  60 value 45.383980
+## iter  70 value 45.381826
+## iter  80 value 45.374273
+## iter  90 value 45.373113
+## iter 100 value 45.371359
+## final  value 45.371359 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 52.552216
+## iter  20 value 46.495608
+## iter  30 value 46.042515
+## iter  40 value 45.980287
+## iter  50 value 45.969939
+## iter  60 value 45.961864
+## iter  70 value 45.960326
+## iter  80 value 45.959511
+## iter  90 value 45.959473
+## final  value 45.959472 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 60.509793
+## iter  20 value 59.952647
+## final  value 59.950470 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 52.571133
+## iter  20 value 46.546470
+## iter  30 value 46.120751
+## iter  40 value 46.073701
+## iter  50 value 46.068530
+## iter  60 value 46.067520
+## iter  70 value 46.067334
+## iter  80 value 46.067184
+## iter  90 value 46.067080
+## iter 100 value 46.067049
+## final  value 46.067049 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 54.309988
+## iter  20 value 47.152730
+## iter  30 value 46.682424
+## iter  40 value 46.617740
+## iter  50 value 46.606481
+## iter  60 value 46.598214
+## iter  70 value 46.597043
+## iter  80 value 46.596256
+## iter  90 value 46.596049
+## final  value 46.596042 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 61.732859
+## iter  20 value 60.867102
+## iter  30 value 60.860077
+## final  value 60.860076 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 54.327707
+## iter  20 value 47.204030
+## iter  30 value 46.762094
+## iter  40 value 46.712823
+## iter  50 value 46.706907
+## iter  60 value 46.705829
+## iter  70 value 46.705638
+## iter  80 value 46.705494
+## iter  90 value 46.705412
+## iter 100 value 46.705329
+## final  value 46.705329 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 54.291921
+## iter  20 value 47.150159
+## iter  30 value 46.691230
+## iter  40 value 46.617696
+## iter  50 value 46.605584
+## iter  60 value 46.597532
+## iter  70 value 46.595592
+## iter  80 value 46.594729
+## iter  90 value 46.594510
+## final  value 46.594498 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 61.343880
+## iter  20 value 60.830885
+## final  value 60.829003 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 54.308680
+## iter  20 value 47.201557
+## iter  30 value 46.769636
+## iter  40 value 46.712194
+## iter  50 value 46.705413
+## iter  60 value 46.704244
+## iter  70 value 46.704067
+## iter  80 value 46.703932
+## iter  90 value 46.703826
+## iter 100 value 46.703802
+## final  value 46.703802 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 53.334385
+## iter  20 value 47.022717
+## iter  30 value 46.580777
+## iter  40 value 46.520980
+## iter  50 value 46.511227
+## iter  60 value 46.503711
+## iter  70 value 46.502374
+## iter  80 value 46.501319
+## iter  90 value 46.501243
+## final  value 46.501240 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 61.036593
+## iter  20 value 60.489663
+## final  value 60.488327 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 53.352012
+## iter  20 value 47.074196
+## iter  30 value 46.661181
+## iter  40 value 46.616164
+## iter  50 value 46.611533
+## iter  60 value 46.610661
+## iter  70 value 46.610403
+## iter  80 value 46.610272
+## iter  90 value 46.610168
+## iter 100 value 46.610138
+## final  value 46.610138 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 52.488040
+## iter  20 value 46.188781
+## iter  30 value 45.641911
+## iter  40 value 45.573296
+## iter  50 value 45.560442
+## iter  60 value 45.554137
+## iter  70 value 45.553526
+## iter  80 value 45.552277
+## iter  90 value 45.551439
+## iter 100 value 45.551400
+## final  value 45.551400 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 60.818427
+## iter  20 value 60.082314
+## final  value 60.077941 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 52.506648
+## iter  20 value 46.242829
+## iter  30 value 45.734695
+## iter  40 value 45.681712
+## iter  50 value 45.674061
+## iter  60 value 45.672851
+## iter  70 value 45.672452
+## iter  80 value 45.672119
+## iter  90 value 45.672073
+## final  value 45.672004 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 50.229995
+## iter  20 value 43.834125
+## iter  30 value 43.461887
+## iter  40 value 43.382523
+## iter  50 value 43.367046
+## iter  60 value 43.360039
+## iter  70 value 43.356227
+## iter  80 value 43.356079
+## final  value 43.356066 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 59.011126
+## iter  20 value 58.492038
+## final  value 58.490712 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 50.249441
+## iter  20 value 43.896266
+## iter  30 value 43.545889
+## iter  40 value 43.484861
+## iter  50 value 43.476720
+## iter  60 value 43.475418
+## iter  70 value 43.475244
+## iter  80 value 43.474958
+## iter  90 value 43.474937
+## iter 100 value 43.474914
+## final  value 43.474914 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 52.668453
+## iter  20 value 47.124455
+## iter  30 value 46.671185
+## iter  40 value 46.614034
+## iter  50 value 46.603764
+## iter  60 value 46.596108
+## iter  70 value 46.595153
+## iter  80 value 46.594586
+## iter  90 value 46.593919
+## iter 100 value 46.593892
+## final  value 46.593892 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 61.049110
+## iter  20 value 60.586272
+## final  value 60.584570 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 52.687097
+## iter  20 value 47.175846
+## iter  30 value 46.752395
+## iter  40 value 46.709304
+## iter  50 value 46.704142
+## iter  60 value 46.703202
+## iter  70 value 46.702934
+## iter  80 value 46.702809
+## iter  90 value 46.702719
+## iter 100 value 46.702690
+## final  value 46.702690 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 51.127323
+## iter  20 value 43.652095
+## iter  30 value 42.699968
+## iter  40 value 42.613951
+## iter  50 value 42.591795
+## iter  60 value 42.586128
+## iter  70 value 42.581728
+## iter  80 value 42.580373
+## iter  90 value 42.579691
+## iter 100 value 42.578766
+## final  value 42.578766 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 58.611359
+## iter  20 value 57.780278
+## iter  30 value 57.771657
+## iter  30 value 57.771656
+## iter  30 value 57.771656
+## final  value 57.771656 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 51.143270
+## iter  20 value 43.709518
+## iter  30 value 42.805831
+## iter  40 value 42.738049
+## iter  50 value 42.723021
+## iter  60 value 42.720694
+## iter  70 value 42.720054
+## iter  80 value 42.719821
+## iter  90 value 42.719576
+## iter 100 value 42.719547
+## final  value 42.719547 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 52.507580
+## iter  20 value 44.948806
+## iter  30 value 44.534866
+## iter  40 value 44.470420
+## iter  50 value 44.458392
+## iter  60 value 44.450609
+## iter  70 value 44.447511
+## iter  80 value 44.446968
+## iter  90 value 44.446740
+## final  value 44.446729 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 60.381270
+## iter  20 value 59.844478
+## final  value 59.842362 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 52.526767
+## iter  20 value 45.009239
+## iter  30 value 44.622207
+## iter  40 value 44.573221
+## iter  50 value 44.565987
+## iter  60 value 44.564315
+## iter  70 value 44.564087
+## iter  80 value 44.563898
+## iter  90 value 44.563848
+## iter 100 value 44.563823
+## final  value 44.563823 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 54.347064
+## iter  20 value 47.144255
+## iter  30 value 46.680585
+## iter  40 value 46.609616
+## iter  50 value 46.598016
+## iter  60 value 46.589800
+## iter  70 value 46.587970
+## iter  80 value 46.587277
+## iter  90 value 46.586997
+## final  value 46.586988 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 61.171317
+## iter  20 value 60.673446
+## final  value 60.669912 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 54.364102
+## iter  20 value 47.195468
+## iter  30 value 46.759350
+## iter  40 value 46.704196
+## iter  50 value 46.697781
+## iter  60 value 46.696597
+## iter  70 value 46.696408
+## iter  80 value 46.696256
+## iter  90 value 46.696149
+## iter 100 value 46.696122
+## final  value 46.696122 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 53.977843
+## iter  20 value 46.968695
+## iter  30 value 46.478320
+## iter  40 value 46.419016
+## iter  50 value 46.408214
+## iter  60 value 46.400168
+## iter  70 value 46.399073
+## iter  80 value 46.398448
+## final  value 46.398428 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 61.210329
+## iter  20 value 60.687660
+## final  value 60.686488 
+## converged
+## # weights:  105 (68 variable)
+## initial  value 94.480657 
+## iter  10 value 53.995129
+## iter  20 value 47.020037
+## iter  30 value 46.560118
+## iter  40 value 46.515883
+## iter  50 value 46.510541
+## iter  60 value 46.509584
+## iter  70 value 46.509332
+## iter  80 value 46.509200
+## iter  90 value 46.509131
+## iter 100 value 46.509069
+## final  value 46.509069 
+## stopped after 100 iterations
+## # weights:  105 (68 variable)
+## initial  value 95.579269 
+## iter  10 value 61.778450
+## iter  20 value 60.907094
+## iter  30 value 60.888317
+## final  value 60.888315 
+## converged
+\end{verbatim}
+
+\begin{verbatim}
+## # A tibble: 3 x 6
+##   classifiedStrat `Number of Cases` Accuracy `Information Amount`
+##   <fct>                       <dbl>    <dbl>                <dbl>
+## 1 HD                            187     4.98                0.577
+## 2 PR                            100     3.99                0.539
+## 3 SI                            223     3.50                0.673
+## # i 2 more variables: `Change in Confidence` <dbl>, `Initial Diagnoses` <dbl>
+\end{verbatim}
+
+\includegraphics{_main_files/figure-latex/stratInteractionModel-1.pdf}
+
+\chapter*{Study 4 - Diagnostic Uncertainty and Information Seeking in Virtual Reality Paediatric Scenarios}\label{study-4---diagnostic-uncertainty-and-information-seeking-in-virtual-reality-paediatric-scenarios}
 \addcontentsline{toc}{chapter}{Study 4 - Diagnostic Uncertainty and Information Seeking in Virtual Reality Paediatric Scenarios}
 
 \adjustmtc
@@ -993,16 +3758,13 @@ We hypothesised that an interaction with reasoning strategy is associated with a
 
 A critique with the vignette task used in the previous studies is its lack of naturalism. For a start, participants are unable to see the patient, which is important given that the visual state (or distress) of a patient can be informative for a doctor in diagnosing the patient. In addition, the task is static in time, in that the patient does not change over the course of a case (i.e.~improving or deteriorating over time). The case also does not include any aspect of treatment of patients, where doctors can start managing the patient's symptoms and even using reactions to their treatment plan in order to change their understanding of the patient. In order to address these shortcomings in realism of our task, we used a virtual reality (VR) paradigm in order to investigate questions of differential evaluation, confidence and information seeking in a more naturalistic manner.
 
-\hypertarget{methods-2}{%
-\section*{Methods}\label{methods-2}}
+\section*{Methods}\label{methods-2}
 \addcontentsline{toc}{section}{Methods}
 
-\hypertarget{participants-2}{%
-\subsection*{Participants}\label{participants-2}}
+\subsection*{Participants}\label{participants-2}
 \addcontentsline{toc}{subsection}{Participants}
 
-\hypertarget{materials-2}{%
-\subsection*{Materials}\label{materials-2}}
+\subsection*{Materials}\label{materials-2}
 \addcontentsline{toc}{subsection}{Materials}
 
 We used VR scenarios implemented by Oxford Medical Simulation (OMS), a company that uses VR for medical education and simulation, in their bespoke software. Participants in this study were medical students based in Oxford who were at the time taking part in VR-based teaching sessions as part of their medical degrees. Students performed the scenarios using Oculus Quest 2 VR headsets. Scenarios were based in paediatrics, meaning that the patients in the scenario were children who were attending the hospital with their legal guardian. Each scenario features a visual 3D implementation of a basic ward room in a hospital. Participants are shown a (child) patient, their guardian and a nurse who can help with certain treatment and testing. All of the `avatars' in the scenario can be questioned by the participant using a predefined set of requests/actions (e.g.~asking the nurse to check blood pressure, asking the patient/child about if they are in pain). The scenarios have full sound (e.g.~being able to hear the patient's lung auscultation) and the avatars are voiced.
@@ -1017,8 +3779,7 @@ Session Two:
 * Group A: patient/child is a 5-year-old boy presenting with shortness of breath and drowsiness (True Condition: Chest Sepsis/Pneumonia)
 * Group B: patient/child is a 5-year-old girl with a 1 day history of sore throat and fever. She starts having a generalised tonic clonic seizure during the scenario. (True Condition: Febrile seizure on background of tonsillitis)
 
-\hypertarget{procedure-2}{%
-\subsection*{Procedure}\label{procedure-2}}
+\subsection*{Procedure}\label{procedure-2}
 \addcontentsline{toc}{subsection}{Procedure}
 
 The aim for students in the scenarios was to diagnose the patient, begin treatment and hand over the case to a senior with appropriate understanding of the patient (handovers were conducted using a standardised framework known as SBAR, meaning that clinicians have to brief the senior on the Situation, Background, Assessment and Recommendation for the patient). Whilst in the scenario, participants can learn about the patient's medical history, check key parameters (such as temperature, pulse, blood pressure, respiratory rate etc), perform physical exams/tests and begin certain treatment actions (such as administering oxygen or prescribing medication). Compared to the previous studies, participants have a much wider array in terms of the information and tests they can request, as well as being able to begin a treatment plan.
@@ -1045,8 +3806,7 @@ The questionnaire was kept relatively short to minimise disruption to the scenar
   ``Did you complete all the history, examinations and investigations necessary? If not, what else would you do if given more time?''
 \end{itemize}
 
-\hypertarget{data-analysis-2}{%
-\subsection*{Data Analysis}\label{data-analysis-2}}
+\subsection*{Data Analysis}\label{data-analysis-2}
 \addcontentsline{toc}{subsection}{Data Analysis}
 
 The dependent variables that we derive are as follows:
@@ -1081,28 +3841,22 @@ We also derived measures of information seeking similar to previous studies. The
 
 As all actions are recorded with timestamps in the output dataset, we categorise whether actions occurred before or after the pause point (5 minutes in). Hence, we can investigate information seeking before and after the pause point where participants record their initial diagnoses and confidence.
 
-\hypertarget{results-2}{%
-\section*{Results}\label{results-2}}
+\section*{Results}\label{results-2}
 \addcontentsline{toc}{section}{Results}
 
-\hypertarget{overall-performance-1}{%
-\subsection*{Overall Performance}\label{overall-performance-1}}
+\subsection*{Overall Performance}\label{overall-performance-1}
 \addcontentsline{toc}{subsection}{Overall Performance}
 
-\hypertarget{initial-diagnostic-breadth}{%
-\subsection*{Initial Diagnostic Breadth}\label{initial-diagnostic-breadth}}
+\subsection*{Initial Diagnostic Breadth}\label{initial-diagnostic-breadth}
 \addcontentsline{toc}{subsection}{Initial Diagnostic Breadth}
 
-\hypertarget{predictors-of-confidence}{%
-\subsection*{Predictors of Confidence}\label{predictors-of-confidence}}
+\subsection*{Predictors of Confidence}\label{predictors-of-confidence}
 \addcontentsline{toc}{subsection}{Predictors of Confidence}
 
-\hypertarget{information-seeking-2}{%
-\subsection*{Information Seeking}\label{information-seeking-2}}
+\subsection*{Information Seeking}\label{information-seeking-2}
 \addcontentsline{toc}{subsection}{Information Seeking}
 
-\hypertarget{reflective-based-on-observations-in-intensive-care}{%
-\chapter*{Reflective Based on Observations in Intensive Care}\label{reflective-based-on-observations-in-intensive-care}}
+\chapter*{Reflective Based on Observations in Intensive Care}\label{reflective-based-on-observations-in-intensive-care}
 \addcontentsline{toc}{chapter}{Reflective Based on Observations in Intensive Care}
 
 \adjustmtc
@@ -1147,14 +3901,13 @@ What is not covered,
 
 \startappendices
 
-\hypertarget{vignette-marking-scheme-studies-1-and-2}{%
-\chapter{Vignette Marking Scheme (Studies 1 and 2)}\label{vignette-marking-scheme-studies-1-and-2}}
+\chapter{Vignette Marking Scheme (Studies 1 and 2)}\label{vignette-marking-scheme-studies-1-and-2}
 
-\hypertarget{think-aloud-study---debrief-questionnaire}{%
-\chapter{Think Aloud Study - Debrief Questionnaire}\label{think-aloud-study---debrief-questionnaire}}
+\chapter{Think Aloud Study - Debrief Questionnaire}\label{think-aloud-study---debrief-questionnaire}
 
-\hypertarget{r-environment-and-packages}{%
-\chapter{R Environment and Packages}\label{r-environment-and-packages}}
+\chapter{Diagnostic Appropriateness Marking Scheme (Study 3)}\label{diagnostic-appropriateness-marking-scheme-study-3}
+
+\chapter{R Environment and Packages}\label{r-environment-and-packages}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1177,14 +3930,13 @@ What is not covered,
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{references}{%
-\chapter*{References}\label{references}}
+\chapter*{References}\label{references}
 \addcontentsline{toc}{chapter}{References}
 
 \markboth{References}{}
 
-\hypertarget{refs}{}
-\begin{CSLReferences}{0}{0}
+\phantomsection\label{refs}
+\begin{CSLReferences}{0}{1}
 \end{CSLReferences}
 
 %%%%% REFERENCES

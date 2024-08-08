@@ -5,7 +5,7 @@ dfPath <- "./study2data.csv"
 df <- read.csv(dfPath, header=TRUE, sep=",")
 
 infoStages <- c("Patient History", "Physical Exmination", "Testing")
-experiencedIDs <- c("qj4vcw","sz5k4r","kqzd96","s8c6kp","j1bwlt", "jhym2l")
+experiencedIDs <- c("qj4vcw","sz5k4r","kqzd96","s8c6kp","j1bwlt", "jhym2l","gzsfhp")
 
 cases <-c("UC", "GBS", "TA", "TTP", "AD", "MTB")
 conditionsShort <- c("UC", "GBS", "TA", "TTP", "AD", "MTB")
@@ -493,6 +493,7 @@ for (n in 1:nrow(studentCaseDf))
   infoSeekingFullMatrix$correct[n] <- studentCaseDf$correct[n]
   infoSeekingFullMatrix$pptAccuracy[n] <- round(studentAggData[studentAggData$participantID==studentCaseDf$id[n],]$meanFinalAccuracy, digits = 1)
   infoSeekingFullMatrix$initialCorrect[n] <- studentCaseDf$initialCorrect[n]
+  infoSeekingFullMatrix$likelihoodOfCorrectDiagnosis[n] <- studentCaseDf$likelihoodOfCorrectDiagnosis[n]
   infoSeekingFullMatrix$participantType[n] <- "p"
   
   accuracyQuantiles <- quantile(studentAggData$meanFinalAccuracy)
@@ -530,11 +531,8 @@ for (n in 1:nrow(studentCaseDf))
   {
     infoSeekingFullMatrix$confidenceGroup[n] <- 1
   }
-  
-  infoSeekingFullMatrix$sevOfHighestLikelihood[n] <- studentCaseDf$sevOfHighestLikelihoodFinal[n]
-  medBrier <- median(aggData$finalBrierScore)
-  infoSeekingFullMatrix$ResolutionGroup[n] <- ifelse(studentAggData[studentAggData$participantID==studentCaseDf$id[n],]$finalBrierScore>medBrier,1,0)
-  rowName <- paste("p", match(studentCaseDf$id[n],studentIDs), "-accGroup", infoSeekingFullMatrix$accuracyGroup[n] , "-", conditionsShort[idx], "-sev", studentCaseDf$sevOfHighestLikelihoodInitial[n], "-resGroup", infoSeekingFullMatrix$ResolutionGroup[n], sep="")
+
+  rowName <- paste("p", ceil(match(studentCaseDf$id[n],studentIDs)/6), "-accGroup", infoSeekingFullMatrix$accuracyGroup[n] , "-confGroup", infoSeekingFullMatrix$confidenceGroup[n], "-", conditionsShort[idx] , sep="")
   rownames(infoSeekingFullMatrix)[n] <- rowName
   rownames(confidenceMatrix)[n] <- rowName
 }
@@ -556,6 +554,7 @@ for (m in 1:nrow(expertCaseDf))
   infoSeekingFullMatrix$correct[m+offset] <- expertCaseDf$correct[m]
   infoSeekingFullMatrix$pptAccuracy[m+offset] <- round(expertAggData[expertAggData$participantID==expertCaseDf$id[m],]$meanFinalAccuracy, digits = 1)
   infoSeekingFullMatrix$initialCorrect[m+offset] <- expertCaseDf$initialCorrect[m]
+  infoSeekingFullMatrix$likelihoodOfCorrectDiagnosis[m+offset] <- expertCaseDf$likelihoodOfCorrectDiagnosis[m]
   infoSeekingFullMatrix$participantType[m+offset] <- "e"
   
   accuracyQuantiles <- quantile(expertAggData$meanFinalAccuracy)
@@ -594,10 +593,7 @@ for (m in 1:nrow(expertCaseDf))
     infoSeekingFullMatrix$confidenceGroup[m+offset] <- 1
   }
   
-  infoSeekingFullMatrix$sevOfHighestLikelihood[m+offset] <- expertCaseDf$sevOfHighestLikelihoodInitial[m]
-  medBrier <- median(aggData$finalBrierScore)
-  infoSeekingFullMatrix$ResolutionGroup[m+offset] <- ifelse(expertAggData[expertAggData$participantID==expertCaseDf$id[n],]$finalBrierScore>medBrier,1,0)
-  rowName <- paste("e", ceil(m/6), "-accGroup", infoSeekingFullMatrix$accuracyGroup[m+offset] , "-confGroup", infoSeekingFullMatrix$confidenceGroup[m+offset] , "-", conditionsShort[idx], "-sev", expertCaseDf$sevOfHighestLikelihoodInitial[m], "-exp", sep="")
+  rowName <- paste("e", ceil(m/6), "-accGroup", infoSeekingFullMatrix$accuracyGroup[m+offset] , "-confGroup", infoSeekingFullMatrix$confidenceGroup[m+offset] , "-", conditionsShort[idx], "-exp", sep="")
   rownames(infoSeekingFullMatrix)[m+offset] <- rowName
   rownames(confidenceMatrix)[m+offset] <- rowName
 }
@@ -609,10 +605,9 @@ colnames(infoSeekingFullMatrix)[32] <- "CaseDifficultyGroup"
 colnames(infoSeekingFullMatrix)[33] <- "Correct"
 colnames(infoSeekingFullMatrix)[34] <- "ParticipantAccuracy"
 colnames(infoSeekingFullMatrix)[35] <- "InitialCorrect"
-colnames(infoSeekingFullMatrix)[36] <- "ParticipantType"
-colnames(infoSeekingFullMatrix)[37] <- "AccuracyScore"
-colnames(infoSeekingFullMatrix)[38] <- "AccuracyGroup"
-colnames(infoSeekingFullMatrix)[39] <- "ConfidenceScore"
-colnames(infoSeekingFullMatrix)[40] <- "ConfidenceGroup"
-colnames(infoSeekingFullMatrix)[41] <- "sevOfHighestLikelihood"
-colnames(infoSeekingFullMatrix)[42] <- "ResolutionGroup"
+colnames(infoSeekingFullMatrix)[36] <- "likelihoodOfCorrectDiagnosis"
+colnames(infoSeekingFullMatrix)[37] <- "ParticipantType"
+colnames(infoSeekingFullMatrix)[38] <- "AccuracyScore"
+colnames(infoSeekingFullMatrix)[39] <- "AccuracyGroup"
+colnames(infoSeekingFullMatrix)[40] <- "ConfidenceScore"
+colnames(infoSeekingFullMatrix)[41] <- "ConfidenceGroup"

@@ -1,21 +1,15 @@
-required_packages <- c("rmarkdown", "bookdown", "knitr", "kableExtra", "tidyverse", "here",
-						          "tibble", "psych", "ltm", "stringr", "ggsci", "ggplot2", "rjson", 
-                      "reticulate", "ggpubr", "lme4", "lmerTest",
-                      "pracma", "lattice", "MASS", "apcluster", "blme", 
-                      "smacof","cluster","factoextra", "pwr", 
-                      "magrittr", "tidyr", "dplyr", "boot", "rstatix", 
-                      "devtools",  "fossil", "plotly","viridis","padr", "FactoMineR",
-                      "rpart", "caret", "data.table", "verification", "glmnet", "NLP",
-                      "GGally", "corrplot", "verification", "ROCR", "maptree",
-                      "glmnet", "gridExtra", "randomForest", "mgcv", "nnet", "pROC", "pracma",
-                      "gbm", "e1071", "xgboost", "DT", "NeuralNetTools", "rpart.plot","grateful")
+requiredPackages <- c("tibble", "scales", "psych", "ltm", "stringr", "ggsci", "ggplot2", "rjson", 
+                      "reticulate", "ggpubr", "lme4", "lmerTest", "pracma", "lattice", "MASS", "apcluster", "blme", 
+                      "smacof","cluster","factoextra", "pwr", "magrittr", "tidyr", "dplyr", "boot", "rstatix", 
+                      "devtools",  "fossil", "tidyverse", "proxy", "plotly","viridis","padr", 
+                      "RColorBrewer", "tm", "logisticPCA", "rARPACK", "FactoMineR", "verification","interactions",
+                      "rpart", "caret", "data.table", "GGally", "ROCR", "maptree",
+                      "glmnet", "gridExtra", "mgcv", "nnet", "pROC", "pls", "stats",
+                      "gbm", "xgboost", "DT", "NeuralNetTools", "rpart.plot", "poLCA", "lsr", "cowplot")
 
-for (package in required_packages) {
-  print(paste0("checking for install of ", package))
-  if (!requireNamespace(package)) install.packages(package, repos = "http://cran.rstudio.com")
-}
-
-lapply(required_packages, require, character.only = TRUE)
+new.packages <- requiredPackages[!(requiredPackages %in% installed.packages()[,"Package"])]
+if(length(new.packages)) install.packages(new.packages, repos = "http://cran.us.r-project.org")
+lapply(requiredPackages, require, character.only = TRUE)
 
 meanFun <- function(data, i){
   d <- data[i, ]
@@ -69,40 +63,43 @@ data_summary <- function(x) {
 
 
 inversionNumber <- function(x){
-    mergeSort <- function(x){
-        if(length(x) == 1){
-            inv <- 0
-            #printind(' base case')
+  mergeSort <- function(x){
+    if(length(x) == 1){
+      inv <- 0
+      #printind(' base case')
+    } else {
+      n <- length(x)
+      n1 <- ceiling(n/2)
+      n2 <- n-n1
+      y1 <- mergeSort(x[1:n1])
+      y2 <- mergeSort(x[n1+1:n2])
+      inv <- y1$inversions + y2$inversions
+      x1 <- y1$sortedVector
+      x2 <- y2$sortedVector
+      i1 <- 1
+      i2 <- 1
+      while(i1+i2 <= n1+n2+1){
+        if(i2 > n2 || (i1 <= n1 && x1[i1] <= x2[i2])){ # ***
+          x[i1+i2-1] <- x1[i1]
+          i1 <- i1 + 1
         } else {
-            n <- length(x)
-            n1 <- ceiling(n/2)
-            n2 <- n-n1
-            y1 <- mergeSort(x[1:n1])
-            y2 <- mergeSort(x[n1+1:n2])
-            inv <- y1$inversions + y2$inversions
-            x1 <- y1$sortedVector
-            x2 <- y2$sortedVector
-            i1 <- 1
-            i2 <- 1
-            while(i1+i2 <= n1+n2+1){
-                if(i2 > n2 || (i1 <= n1 && x1[i1] <= x2[i2])){ # ***
-                    x[i1+i2-1] <- x1[i1]
-                    i1 <- i1 + 1
-                } else {
-                    inv <- inv + n1 + 1 - i1
-                    x[i1+i2-1] <- x2[i2]
-                    i2 <- i2 + 1
-                }
-            }
+          inv <- inv + n1 + 1 - i1
+          x[i1+i2-1] <- x2[i2]
+          i2 <- i2 + 1
         }
-        return (list(inversions=inv,sortedVector=x))
+      }
     }
+    return (list(inversions=inv,sortedVector=x))
+  }
+  if (!is.na(x))
+  {
     r <- mergeSort(x)
-    return (r$inversions)
+  }
+  return (r$inversions)
 }
 
 kendallTauDistance <- function(x,y){
-    n <- length(x)
-    ub <- (0.5*n)*(n-1)
-    return(1-(inversionNumber(order(x)[rank(y)])/ub))
+  n <- length(x)
+  ub <- (0.5*n)*(n-1)
+  return(1-(inversionNumber(order(x)[rank(y)])/ub))
 }
