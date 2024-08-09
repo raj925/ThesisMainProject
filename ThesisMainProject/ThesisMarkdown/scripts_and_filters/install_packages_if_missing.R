@@ -3,9 +3,9 @@ requiredPackages <- c("tibble", "scales", "psych", "ltm", "stringr", "ggsci", "g
                       "smacof","cluster","factoextra", "pwr", "magrittr", "tidyr", "dplyr", "boot", "rstatix", 
                       "devtools",  "fossil", "tidyverse", "proxy", "plotly","viridis","padr", 
                       "RColorBrewer", "tm", "logisticPCA", "rARPACK", "FactoMineR", "verification","interactions",
-                      "rpart", "caret", "data.table", "GGally", "ROCR", "maptree",
+                      "rpart", "caret", "data.table", "GGally", "ROCR", "maptree", "knitr", "kableExtra",
                       "glmnet", "gridExtra", "mgcv", "nnet", "pROC", "pls", "stats",
-                      "gbm", "xgboost", "DT", "NeuralNetTools", "rpart.plot", "poLCA", "lsr", "cowplot")
+                      "gbm", "xgboost", "DT", "NeuralNetTools", "rpart.plot", "poLCA", "lsr", "cowplot", "stargazer")
 
 new.packages <- requiredPackages[!(requiredPackages %in% installed.packages()[,"Package"])]
 if(length(new.packages)) install.packages(new.packages, repos = "http://cran.us.r-project.org")
@@ -27,6 +27,43 @@ subsample <- function(x,n,r) {
     returnDf[iter,] <- returnArr
   }
   return(returnDf)
+}
+
+binarysimilarity <- function(x,y)
+{
+  if (length(x) != length(y))
+  {
+    return (0)
+  }
+  else
+  {
+    return (sum(x==y)/length(x))
+  }
+}
+
+binarysimilarityMat <- function(m) {
+  mat <- data.frame(matrix(ncol = nrow(m), nrow = nrow(m) ))
+  for (x in 1:nrow(m))
+  {
+    for (y in 1:nrow(m))
+    {
+      if (x == y)
+      {
+        mat[x,y] <- 0
+      }
+      else
+      {
+        mat[x,y] <- binarysimilarity(m[x,],m[y,])
+      }
+    }
+  }
+  return(mat)
+}
+
+binarysimilarityMean <- function(m){
+  mat <- binarysimilarityMat(m)
+  values <- mat[upper.tri(mat)]
+  return(c(mean(values),sd(values)^2))
 }
 
 jaccard <- function(a, b) {
