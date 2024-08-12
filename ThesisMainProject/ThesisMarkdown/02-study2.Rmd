@@ -632,7 +632,7 @@ We train the classifier using a Generalised Linear Model (GLM) by treating the 2
 
 set.seed(1000)
 
-classifierData <- infoSeekingFullMatrix[,c(2:29,39)]
+classifierData <- infoSeekingFullMatrix[infoSeekingFullMatrix$ParticipantType=="p",c(2:29,39)]
 classifierData$AccuracyGroup <- as.integer(as.logical(classifierData$AccuracyGroup>2))
 classifierData$AccuracyGroup <- as.factor(classifierData$AccuracyGroup)
 colnames(classifierData)[1:29] <- c("T2",  "T3",  "T4",  "T5",  "T6",  "T7",  
@@ -746,6 +746,24 @@ print(barsPlot +
         theme_classic()) 
 
 summary(aov(Variance ~ AccuracyGroup, data=accGroupDf))
+
+```
+
+```{r caseClassifier, include=FALSE, eval=FALSE, message=FALSE, echo=FALSE, warning=FALSE,out.width='100%', fig.align='center'}
+
+ctrl <- trainControl(method = "LOOCV", savePredictions = TRUE)
+
+classifierData$Condition <- infoSeekingFullMatrix[infoSeekingFullMatrix$ParticipantType=="p",]$Condition
+
+model <- train(Condition ~ T2 + T3 + T4 + T5 + T6 + T7 + T8 + T9 + T10 +
+                   T11 + T12 + T13 + T14 + T15 + T16 + T17 +  T18 + T19 + T20 +
+                   T21 + T22 + T23 + T24 + T25 + T26 + T27 + T28 + T29, method = "multinom", data = classifierData, trControl = ctrl)
+
+predictions <- predict(model, newdata = classifierData)
+
+classifierData$predictedCondition <- predictions
+
+classifierAccuracy <- sum(classifierData$Condition==classifierData$predictedCondition)/nrow(classifierData)
 
 ```
 

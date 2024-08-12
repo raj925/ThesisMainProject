@@ -32,8 +32,7 @@ nFullPpts <- nrow(vrCompleteData)/2
 ```
 <!-- For PDF output, include these two LaTeX commands after unnumbered chapter headings, otherwise the mini table of contents and the running header will show the previous chapter -->
 
-A critique with the vignette task used in the previous studies is its lack of naturalism. For a start, participants are unable to see the patient, which is important given that the visual state (or distress) of a patient can be informative for a doctor in diagnosing the patient. In addition, the task is static in time, in that the patient does not change over the course of a case (i.e. improving or deteriorating over time). The case also does not include any aspect of treatment of patients, where doctors can start managing the patient’s symptoms and even using reactions to their treatment plan in order to change their understanding of the patient. In order to address these shortcomings in realism of our task, we used a virtual reality (VR) paradigm in order to investigate questions of differential evaluation, confidence and information seeking in a more naturalistic manner.
-
+A critique with the vignette task used in the previous studies is its lack of naturalism. For a start, participants are unable to see the patient, which is important given that the visual state (or distress) of a patient can be informative for a doctor in diagnosing the patient. In addition, the task is static in time, in that the patient does not change over the course of a case (i.e. improving or deteriorating over time). The case also does not include any aspect of treatment of patients, where doctors can start managing the patient’s symptoms and even using reactions to their treatment plan in order to change their understanding of the patient. In order to address these shortcomings in realism of our task, we used a virtual reality (VR) paradigm in order to investigate questions of differential evaluation, confidence and information seeking in a more naturalistic manner. This is due to the fact that VR allows for a more open-ended simulation of medical scenarios, given there is a wider set of tests/actions available to a clinician when compared to our vignette paradigm (which constrained the amount of information available on each case for usability).
 
 ## Methods {.unnumbered}
 
@@ -92,9 +91,270 @@ As all actions are recorded with timestamps in the output dataset, we categorise
 
 ### Overall Performance {.unnumbered}
 
+Say how many participants completed each scenario
+
+```{r anovadf, warning=FALSE, message=FALSE}
+
+anovaDf <- data.frame(c(vrData$t1Confidence,vrData$t2Confidence),
+                      c(vrData$t1Severity,vrData$t2Severity),
+                      c(vrData$t1numOfDiagnoses,vrData$t2numOfDiagnoses),
+                      c(rep("1",nrow(vrData)),rep("2",nrow(vrData))),
+                      c(rep(vrData$Scenario,2)),
+                       c(rep(vrData$scenGroup,2)),
+                      c(rep(vrData$ParticipantID,2)))
+
+colnames(anovaDf) <- c("Confidence","Severity","Diagnoses", 
+                       "Timepoint","Scenario","ScenarioGroup","ID")
+
+```
+
+Table 1 below shows average values for our key dependent variables by scenario.
+
+```{r descstats, warning=FALSE, message=FALSE}
+
+vrDescStats <- vrData %>%
+  group_by(Scenario) %>%
+  dplyr::mutate(N = n()) %>%
+  dplyr::summarise(n = mean(N),
+                   MeanPerformance = mean(OMSScore,na.rm=T),
+                   MeanInformationSeeking = mean(filteredActions,na.rm=T),
+                   MeanInitialConfidence = mean(t1Confidence,na.rm=T),
+                   MeanConfidenceChange = mean(confidenceChange,na.rm=T),
+                   MeanInitialDiagnoses = mean(t1numOfDiagnoses,na.rm=T))
+
+vrDescStats
+
+```
+
+Diagnoses by timepoint and scenario
+
+```{r confidencetime, warning=FALSE, message=FALSE}
+p <- ggplot(anovaDf, aes(x=Timepoint, y=Diagnoses, fill=Scenario)) + 
+    geom_violin() +
+    stat_summary(fun.data=data_summary, geom="crossbar", width=0.05, position=position_dodge(0.1)) +
+    facet_wrap(~Scenario) +
+    ylim(0,8) +
+    theme_classic()
+
+p
+```
+
+Confidence by timepoint and scenario
+
+```{r confidencetime, warning=FALSE, message=FALSE}
+p <- ggplot(anovaDf, aes(x=Timepoint, y=Confidence, fill=Scenario)) + 
+    geom_violin() +
+    stat_summary(fun.data=data_summary, geom="crossbar", width=0.05, position=position_dodge(0.1)) +
+    facet_wrap(~Scenario) +
+    theme_classic()
+
+p
+```
+
 ### Initial Diagnostic Breadth {.unnumbered}
 
-### Predictors of Confidence {.unnumbered}
+ConfidenceChange ~ InitialDiagnoses + (1|Scenario) + (1|Participant)
 
-### Information Seeking {.unnumbered}
+InformationSeeking ~ InitialDiagnoses + (1|Scenario) + (1|Participant)
 
+### Information Seeking and Confidence {.unnumbered}
+
+Initial Confidence ~ Information Seeking Before
+
+```{r initialconfidence, warning=FALSE, message=FALSE}
+
+model <- lmerTest::lmer(t1Confidence ~ numOfHistoryActionsBeforePause + numOfExamActionsBeforePause + numOfTestingActionsBeforePause + (1|Scenario) + (1 | ParticipantID), data=vrData)
+
+pcaModel <- rePCA(model)
+model2 <- lmerTest::lmer(t1Confidence ~ numOfHistoryActionsBeforePause + numOfExamActionsBeforePause + numOfTestingActionsBeforePause + (1|Scenario), data=vrData)
+modelcomp <- anova(model2,model)
+
+# Get the fitted values from the model
+fittedValues <- fitted(model2)
+
+# Get the actual observed values
+obsValues <- vrData[!is.na(vrData$t1Confidence),]$t1Confidence
+
+# Create a data frame for plotting
+plotDf <- data.frame(
+  observedConfidence = obsValues,
+  fittedConfidence = fittedValues
+)
+
+# Plot using ggplot2
+ggplot(plotDf, aes(x = observedConfidence, y = fittedConfidence)) +
+  geom_point() +
+  geom_abline(slope = 1, intercept = 0, color = "red") +
+    geom_smooth(method = "lm", se = TRUE, color = "blue") + 
+  labs(x = "Observed Confidence", y = "Fitted Confidence (mixed effects model)") +
+  theme_classic(base_size = 20)
+
+
+```
+
+Information Seeking After ~ Initial Confidence
+
+```{r subinfoseeking, warning=FALSE, message=FALSE}
+
+### Initial confidence predicting subsequent information seeking
+
+model <- lmerTest::lmer(numOfHistoryActionsAfterPause ~ t1Confidence + (1|Scenario) + (1 | ParticipantID), data=vrData)
+pcaModel <- rePCA(model)
+model2 <- lmerTest::lmer(numOfHistoryActionsAfterPause ~ t1Confidence + (1 | ParticipantID), data=vrData)
+modelcomp <- anova(model2,model)
+
+model <- lmerTest::lmer(numOfExamActionsAfterPause ~ t1Confidence + (1|Scenario) + (1 | ParticipantID), data=vrData)
+pcaModel <- rePCA(model)
+model2 <- lmerTest::lmer(numOfExamActionsAfterPause ~ t1Confidence + (1|Scenario), data=vrData)
+modelcomp <- anova(model2,model)
+
+model <- lmerTest::lmer(numOfTestingActionsAfterPause ~ t1Confidence + (1|Scenario) + (1 | ParticipantID), data=vrData)
+pcaModel <- rePCA(model)
+model2 <- lmerTest::lmer(numOfTestingActionsAfterPause ~ t1Confidence + (1|Scenario), data=vrData)
+
+# Get the fitted values from the model
+fittedValues <- fitted(model2)
+
+# Get the actual observed values
+obsValues <- vrData[!is.na(vrData$t1Confidence),]$numOfTestingActionsAfterPause
+
+# Create a data frame for plotting
+plotDf <- data.frame(
+  observedTestingActions = obsValues,
+  fittedTestingActions = fittedValues
+)
+
+# Plot using ggplot2
+ggplot(plotDf, aes(x = observedTestingActions, y = fittedTestingActions)) +
+  geom_point() +
+  geom_abline(slope = 1, intercept = 0, color = "red") +
+    geom_smooth(method = "lm", se = TRUE, color = "blue") + 
+  labs(x = "Observed Testing Actions", y = "Fitted Testing Actions (mixed effects model)") +
+  theme_classic(base_size = 20)
+
+```
+
+Final Confidence ~ Treatment + Time to Ask for Help
+
+```{r finalconfidence, warning=FALSE, message=FALSE}
+
+helpedData <- vrData[vrData$totalHelpStart<9999,]
+
+model <- lmerTest::lmer(t2Confidence ~ numOfTreatmentActions + totalHelpStart + (1|Scenario) + (1 | ParticipantID), data=helpedData)
+pcaModel <- rePCA(model)
+model2 <- lmerTest::lmer(t2Confidence ~ numOfTreatmentActions + totalHelpStart + (1 | ParticipantID), data=helpedData)
+modelcomp <- anova(model2,model)
+
+# Get the fitted values from the model
+fittedValues <- fitted(model)
+
+# Get the actual observed values
+obsValues <- helpedData[!is.na(helpedData$t2Confidence),]$t2Confidence
+
+# Create a data frame for plotting
+plotDf <- data.frame(
+  observedConfidence = obsValues,
+  fittedConfidence = fittedValues
+)
+
+# Plot using ggplot2
+ggplot(plotDf, aes(x = observedConfidence, y = fittedConfidence)) +
+  geom_point() +
+  geom_abline(slope = 1, intercept = 0, color = "red") +
+    geom_smooth(method = "lm", se = TRUE, color = "blue") + 
+  labs(x = "Observed Final Confidence", y = "Fitted Final Confidence (mixed effects model)") +
+  theme_classic(base_size = 20)
+
+
+```
+
+### Diagnostic Appropriateness {.unnumbered}
+
+Diagnostic Appropriateness ~ Value
+Diagnostic Appropriateness split with binary classifier
+
+```{r pcaclassifier, warning=FALSE, message=FALSE}
+
+#######################################
+# Use of regular PCA
+
+infoSeekingMatrixVRPCA <- infoSeekingMatrixVR[,1:82]
+infoSeekingMatrixVRPCA <- infoSeekingMatrixVRPCA[,-which(names(infoSeekingMatrixVRPCA) %in% c("past medical history","measure oxygen saturations & heart rate","measure blood pressure"))] 
+# Remove columns that are sought on most scenarios
+
+# Perform PCA on binary data
+pca_result <- PCA(infoSeekingMatrixVRPCA, graph = FALSE)
+
+# Scree plot shows elbow around 5
+qplot(c(1:79), pca_result$eig[,2]) + 
+  geom_line() + 
+  xlab("Principal Component") + 
+  ylab("Variance Explained") +
+  ggtitle("Scree Plot") +
+  theme_classic()
+
+#########
+
+pca_result <- principal(infoSeekingMatrixVRPCA, nfactors = 4, rotate = "promax")
+pcs <- pca_result$scores
+weights <- pca_result$loadings
+
+topPCS <- weights
+
+
+rownames(topPCS) <- c(1:79)
+
+# Sort the columns alphabetically
+colnames(topPCS) <- c("RC1", "RC2", "RC3", "RC4")
+topPCS <- topPCS[, order(colnames(topPCS))]
+
+
+# Determine the maximum absolute value in the loadings matrix
+max_abs <- max(abs(c(min(topPCS), max(topPCS))))
+# Normalize the data to the range [-1, 1]
+normalized_topPCS <- topPCS / max_abs
+# Define a custom color palette with clear differentiation between negative, zero, and positive values
+n_colors <- 20
+color_palette <- colorRampPalette(c("blue", "white", "red"))(n_colors)
+
+#apcluster::heatmap(normalized_topPCS,
+ #                  main = "Variable Weights (Normalised) Clustered by PC",
+#                   xlab = "PCs", ylab = "Test",
+#                   col = color_palette, scale = "none", breaks = seq(-1, 1, length.out = n_colors + 1), Colv = NA)
+
+# Define colors for legend
+#legend_colors <- c("blue", "white", "red")
+
+# Add color key
+#legend("topleft", legend = c("Negative", "Zero", "Positive"),
+   #    fill = legend_colors, title = "Color Key", cex = 0.8)
+
+pcs <- pcs[, order(colnames(pcs))]
+pcDF <- data.frame(pcs[,1],pcs[,2],pcs[,3],pcs[,4])
+colnames(pcDF) <- c("PC1","PC2","PC3","PC4")
+pcDF$pid <- vrData$ParticipantID
+pcDF$condition <- vrData$Scenario
+pcDF$diagChange <- vrData$diagnosticChange
+pcDF$confidenceChange <- vrData$confidenceChange
+pcDF$OMSScore <- vrData$OMSScore
+pcDF$diagScore <- vrData$t1DiagnosisScore
+
+mixedPCModel = lm(diagScore ~ PC1 + PC2 + PC3 + PC4 + condition, data = pcDF)
+#summary(mixedPCModel)
+
+pcDF$diagGroup <- ifelse(pcDF$diagScore < median(pcDF$diagScore),0,1)
+pcDF$diagGroup <- as.factor(pcDF$diagGroup)
+pcDF$conditionFactor <- as.factor(pcDF$condition)
+
+
+modelglmVR<-train(diagGroup ~ PC1 + PC2 + PC3 + PC4, method = "glm", family = binomial(link=probit), data = pcDF, trControl = ctrl)
+prediglmVR<-predict(modelglmVR,type = "prob")[2]
+  
+thresh<-seq(0,1,0.001)
+#specify the cross-validation method
+ctrl <- trainControl(method = "LOOCV", savePredictions = TRUE)
+# Plot all test results on one ROC curve
+rocPlot <- roc.plot(x=pcDF$diagGroup=="1",pred=cbind(prediglmVR),legend = T,
+                    leg.text = c("GLM"),thresholds = thresh)$roc.vol
+
+```
