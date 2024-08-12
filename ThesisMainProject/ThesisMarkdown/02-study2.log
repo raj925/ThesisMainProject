@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.24)  9 AUG 2024 19:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.24)  12 AUG 2024 12:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1037,39 +1037,99 @@ Package: ulem 2019/11/18
 \ULdepth=\dimen271
 ) (/usr/local/texlive/2020/texmf-dist/tex/generic/soulutf8/soulutf8.sty
 Package: soulutf8 2019/12/15 v1.2 Permit use of UTF-8 characters in soul (HO)
+) (/usr/local/texlive/2020/texmf-dist/tex/latex/wrapfig/wrapfig.sty
+\wrapoverhang=\dimen272
+\WF@size=\dimen273
+\c@WF@wrappedlines=\count320
+\WF@box=\box115
+\WF@everypar=\toks38
+Package: wrapfig 2003/01/31  v 3.6
+) (/usr/local/texlive/2020/texmf-dist/tex/latex/colortbl/colortbl.sty
+Package: colortbl 2020/01/04 v1.0e Color table columns (DPC)
+\everycr=\toks39
+\minrowclearance=\skip88
+) (/usr/local/texlive/2020/texmf-dist/tex/latex/pdflscape/pdflscape.sty
+Package: pdflscape 2019/12/05 v0.12 Display of landscape pages in PDF (HO)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/lscape.sty
+Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
+) (/usr/local/texlive/2020/texmf-dist/tex/latex/tabu/tabu.sty
+Package: tabu 2019/01/11 v2.9 - flexible LaTeX tabulars (FC+tabu-fixed)
+\c@taburow=\count321
+\tabu@nbcols=\count322
+\tabu@cnt=\count323
+\tabu@Xcol=\count324
+\tabu@alloc=\count325
+\tabu@nested=\count326
+\tabu@target=\dimen274
+\tabu@spreadtarget=\dimen275
+\tabu@naturalX=\dimen276
+\tabucolX=\dimen277
+\tabu@Xsum=\dimen278
+\extrarowdepth=\dimen279
+\abovetabulinesep=\dimen280
+\belowtabulinesep=\dimen281
+\tabustrutrule=\dimen282
+\tabu@thebody=\toks40
+\tabu@footnotes=\toks41
+\tabu@box=\box116
+\tabu@arstrutbox=\box117
+\tabu@hleads=\box118
+\tabu@vleads=\box119
+\tabu@cellskip=\skip89
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/threeparttable/threeparttable.sty
+Package: threeparttable 2003/06/13  v 3.0
+\@tempboxb=\box120
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/threeparttablex/threeparttablex.s
+ty
+Package: threeparttablex 2013/07/23 v0.3 by daleif
+(/usr/local/texlive/2020/texmf-dist/tex/latex/environ/environ.sty
+Package: environ 2014/05/04 v0.3 A new way to define environments
+(/usr/local/texlive/2020/texmf-dist/tex/latex/trimspaces/trimspaces.sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+))
+\TPTL@width=\skip90
+) (/usr/local/texlive/2020/texmf-dist/tex/latex/makecell/makecell.sty
+Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
+\rotheadsize=\dimen283
+\c@nlinenum=\count327
+\TeXr@lab=\toks42
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2019/10/16 v2.13 Sectioning titles
-\ttl@box=\box115
-\beforetitleunit=\skip88
-\aftertitleunit=\skip89
-\ttl@plus=\dimen272
-\ttl@minus=\dimen273
-\ttl@toksa=\toks38
-\titlewidth=\dimen274
-\titlewidthlast=\dimen275
-\titlewidthfirst=\dimen276
+\ttl@box=\box121
+\beforetitleunit=\skip91
+\aftertitleunit=\skip92
+\ttl@plus=\dimen284
+\ttl@minus=\dimen285
+\ttl@toksa=\toks43
+\titlewidth=\dimen286
+\titlewidthlast=\dimen287
+\titlewidthfirst=\dimen288
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2019/09/21 v2.5h e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count320
+\etb@tempcnta=\count328
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footer
 s
-\f@nch@headwidth=\skip90
-\f@nch@O@elh=\skip91
-\f@nch@O@erh=\skip92
-\f@nch@O@olh=\skip93
-\f@nch@O@orh=\skip94
-\f@nch@O@elf=\skip95
-\f@nch@O@erf=\skip96
-\f@nch@O@olf=\skip97
-\f@nch@O@orf=\skip98
+\f@nch@headwidth=\skip93
+\f@nch@O@elh=\skip94
+\f@nch@O@erh=\skip95
+\f@nch@O@olh=\skip96
+\f@nch@O@orh=\skip97
+\f@nch@O@elf=\skip98
+\f@nch@O@erf=\skip99
+\f@nch@O@olf=\skip100
+\f@nch@O@orf=\skip101
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
 Package: fancyvrb 2020/01/13 v3.5 verbatim text (tvz,hv)
-\FV@CodeLineNo=\count321
+\FV@CodeLineNo=\count329
 \FV@InFile=\read3
-\FV@TabBox=\box116
-\c@FancyVerbLine=\count322
-\FV@StepNumber=\count323
+\FV@TabBox=\box122
+\c@FancyVerbLine=\count330
+\FV@StepNumber=\count331
 \FV@OutFile=\write4
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/fvextra/fvextra.sty
 Package: fvextra 2019/02/04 v1.4 fvextra - extensions and patches for fancyvrb
@@ -1078,53 +1138,53 @@ Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
 tim
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/lineno/lineno.sty
 Package: lineno 2005/11/02 line numbers on paragraphs v4.41
-\linenopenalty=\count324
-\output=\toks39
-\linenoprevgraf=\count325
-\linenumbersep=\dimen277
-\linenumberwidth=\dimen278
-\c@linenumber=\count326
-\c@pagewiselinenumber=\count327
-\c@LN@truepage=\count328
-\c@internallinenumber=\count329
-\c@internallinenumbers=\count330
-\quotelinenumbersep=\dimen279
-\bframerule=\dimen280
-\bframesep=\dimen281
-\bframebox=\box117
+\linenopenalty=\count332
+\output=\toks44
+\linenoprevgraf=\count333
+\linenumbersep=\dimen289
+\linenumberwidth=\dimen290
+\c@linenumber=\count334
+\c@pagewiselinenumber=\count335
+\c@LN@truepage=\count336
+\c@internallinenumber=\count337
+\c@internallinenumbers=\count338
+\quotelinenumbersep=\dimen291
+\bframerule=\dimen292
+\bframesep=\dimen293
+\bframebox=\box123
 LaTeX Info: Redefining \\ on input line 3056.
 )
-\c@FV@TrueTabGroupLevel=\count331
-\c@FV@TrueTabCounter=\count332
-\FV@TabBox@Group=\box118
-\FV@TmpLength=\skip99
-\c@FV@HighlightLinesStart=\count333
-\c@FV@HighlightLinesStop=\count334
-\FV@LoopCount=\count335
-\FV@NCharsBox=\box119
-\FV@BreakIndent=\dimen282
-\FV@BreakIndentNChars=\count336
-\FV@BreakSymbolSepLeft=\dimen283
-\FV@BreakSymbolSepLeftNChars=\count337
-\FV@BreakSymbolSepRight=\dimen284
-\FV@BreakSymbolSepRightNChars=\count338
-\FV@BreakSymbolIndentLeft=\dimen285
-\FV@BreakSymbolIndentLeftNChars=\count339
-\FV@BreakSymbolIndentRight=\dimen286
-\FV@BreakSymbolIndentRightNChars=\count340
-\c@FancyVerbLineBreakLast=\count341
-\FV@LineBox=\box120
-\FV@LineIndentBox=\box121
-\FV@LineWidth=\dimen287
+\c@FV@TrueTabGroupLevel=\count339
+\c@FV@TrueTabCounter=\count340
+\FV@TabBox@Group=\box124
+\FV@TmpLength=\skip102
+\c@FV@HighlightLinesStart=\count341
+\c@FV@HighlightLinesStop=\count342
+\FV@LoopCount=\count343
+\FV@NCharsBox=\box125
+\FV@BreakIndent=\dimen294
+\FV@BreakIndentNChars=\count344
+\FV@BreakSymbolSepLeft=\dimen295
+\FV@BreakSymbolSepLeftNChars=\count345
+\FV@BreakSymbolSepRight=\dimen296
+\FV@BreakSymbolSepRightNChars=\count346
+\FV@BreakSymbolIndentLeft=\dimen297
+\FV@BreakSymbolIndentLeftNChars=\count347
+\FV@BreakSymbolIndentRight=\dimen298
+\FV@BreakSymbolIndentRightNChars=\count348
+\c@FancyVerbLineBreakLast=\count349
+\FV@LineBox=\box126
+\FV@LineIndentBox=\box127
+\FV@LineWidth=\dimen299
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/csquotes/csquotes.sty
 Package: csquotes 2019-12-06 v5.2j context-sensitive quotations (JAW)
-\csq@reset=\count342
-\csq@gtype=\count343
-\csq@glevel=\count344
-\csq@qlevel=\count345
-\csq@maxlvl=\count346
-\csq@tshold=\count347
-\csq@ltx@everypar=\toks40
+\csq@reset=\count350
+\csq@gtype=\count351
+\csq@glevel=\count352
+\csq@qlevel=\count353
+\csq@maxlvl=\count354
+\csq@tshold=\count355
+\csq@ltx@everypar=\toks45
 (/usr/local/texlive/2020/texmf-dist/tex/latex/csquotes/csquotes.def
 File: csquotes.def 2019-12-06 v5.2j csquotes generic definitions (JAW)
 )
@@ -1140,29 +1200,29 @@ Package csquotes Info: Redefining alias 'default' -> 'english'.
 (./02-study2.aux)
 \openout1 = `02-study2.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 184.
-LaTeX Font Info:    ... okay on input line 184.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 184.
-LaTeX Font Info:    ... okay on input line 184.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 184.
-LaTeX Font Info:    ... okay on input line 184.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 184.
-LaTeX Font Info:    ... okay on input line 184.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 184.
-LaTeX Font Info:    ... okay on input line 184.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 184.
-LaTeX Font Info:    ... okay on input line 184.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 184.
-LaTeX Font Info:    ... okay on input line 184.
-LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 184.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 198.
+LaTeX Font Info:    ... okay on input line 198.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 198.
+LaTeX Font Info:    ... okay on input line 198.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 198.
+LaTeX Font Info:    ... okay on input line 198.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 198.
+LaTeX Font Info:    ... okay on input line 198.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 198.
+LaTeX Font Info:    ... okay on input line 198.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 198.
+LaTeX Font Info:    ... okay on input line 198.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 198.
+LaTeX Font Info:    ... okay on input line 198.
+LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 198.
 LaTeX Font Info:    Trying to load font information for LGR+cmr on input line 1
-84.
+98.
 (/usr/local/texlive/2020/texmf-dist/tex/latex/cbfonts-fd/lgrcmr.fd
 File: lgrcmr.fd 2017/07/29 v1.2 Greek European Computer Regular
 )
-LaTeX Font Info:    ... okay on input line 184.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 184.
-LaTeX Font Info:    ... okay on input line 184.
+LaTeX Font Info:    ... okay on input line 198.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 198.
+LaTeX Font Info:    ... okay on input line 198.
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -1199,17 +1259,17 @@ LaTeX Font Info:    ... okay on input line 184.
 
 (/usr/local/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count348
-\scratchdimen=\dimen288
-\scratchbox=\box122
-\nofMPsegments=\count349
-\nofMParguments=\count350
-\everyMPshowfont=\toks41
-\MPscratchCnt=\count351
-\MPscratchDim=\dimen289
-\MPnumerator=\count352
-\makeMPintoPDFobject=\count353
-\everyMPtoPDFconversion=\toks42
+\scratchcounter=\count356
+\scratchdimen=\dimen300
+\scratchbox=\box128
+\nofMPsegments=\count357
+\nofMParguments=\count358
+\everyMPshowfont=\toks46
+\MPscratchCnt=\count359
+\MPscratchDim=\dimen301
+\MPnumerator=\count360
+\makeMPintoPDFobject=\count361
+\everyMPtoPDFconversion=\toks47
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -1218,14 +1278,14 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Info: Redefining \microtypecontext on input line 184.
+LaTeX Info: Redefining \microtypecontext on input line 198.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `basictext'.
-LaTeX Info: Redefining \showhyphens on input line 184.
+LaTeX Info: Redefining \showhyphens on input line 198.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -1237,16 +1297,11 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: rotating package is loaded.
+Package caption Info: threeparttable package is loaded.
+Package caption Info: wrapfig package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\AtBeginShipoutBox=\box123
-(/usr/local/texlive/2020/texmf-dist/tex/latex/pdflscape/pdflscape.sty
-Package: pdflscape 2019/12/05 v0.12 Display of landscape pages in PDF (HO)
-(/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/lscape.sty
-Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
-)
-Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
-)
-Package hyperref Info: Link coloring ON on input line 184.
+\AtBeginShipoutBox=\box129
+Package hyperref Info: Link coloring ON on input line 198.
 (/usr/local/texlive/2020/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
 (/usr/local/texlive/2020/texmf-dist/tex/latex/refcount/refcount.sty
@@ -1256,11 +1311,11 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count354
+\c@section@level=\count362
 )
-LaTeX Info: Redefining \ref on input line 184.
-LaTeX Info: Redefining \pageref on input line 184.
-LaTeX Info: Redefining \nameref on input line 184.
+LaTeX Info: Redefining \ref on input line 198.
+LaTeX Info: Redefining \pageref on input line 198.
+LaTeX Info: Redefining \nameref on input line 198.
 (./02-study2.out) (./02-study2.out)
 \@outlinefile=\write5
 \openout5 = `02-study2.out'.
@@ -1268,10 +1323,10 @@ LaTeX Info: Redefining \nameref on input line 184.
 
 Package minitoc Warning: W0010
 (minitoc)                No file 02-study2.toc. 
-(minitoc)                MINITOCS NOT PREPARED on input line 254.
+(minitoc)                MINITOCS NOT PREPARED on input line 268.
 
-LaTeX Font Info:    Trying to load font information for T1+put on input line 27
-5.
+LaTeX Font Info:    Trying to load font information for T1+put on input line 28
+9.
 (/usr/local/texlive/2020/texmf-dist/tex/latex/psnfss/t1put.fd
 File: t1put.fd 2001/06/04 font definitions for T1/put.
 )
@@ -1281,10 +1336,15 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             See the microtype manual for details.
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 282.
+(hyperref)                be the same. Added a new anchor on input line 296.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 284--285
+Underfull \hbox (badness 10000) in paragraph at lines 298--299
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 300--301
 
  []
 
@@ -1294,18 +1354,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 284--285
 
 
 {/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 286--287
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 288--289
+Underfull \hbox (badness 10000) in paragraph at lines 302--303
 
  []
 
 [2]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 2
-95.
+Underfull \hbox (badness 10000) in paragraph at lines 304--305
+
+ []
+
+[3]
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 3
+14.
 (/usr/local/texlive/2020/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -1313,192 +1373,146 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 2
-95.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 3
+14.
 (/usr/local/texlive/2020/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 2
-95.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 3
+14.
 (/usr/local/texlive/2020/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-295.
+314.
 (/usr/local/texlive/2020/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-295.
+314.
 (/usr/local/texlive/2020/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 295.
+(Font)              <12> on input line 314.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 295.
+(Font)              <8> on input line 314.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 295.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 295
+(Font)              <6> on input line 314.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 314
 .
 (/usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 295
+LaTeX Font Info:    Trying to load font information for U+msb on input line 314
 .
 (/usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-) [3]
-Underfull \hbox (badness 10000) in paragraph at lines 305--306
+) [4]
+Underfull \hbox (badness 10000) in paragraph at lines 324--325
 
  []
 
-[4]
-<./assets/Paradigm.png, id=47, 623.4492pt x 351.9549pt>
+[5]
+<./assets/Paradigm.png, id=51, 623.4492pt x 351.9549pt>
 File: ./assets/Paradigm.png Graphic file (type png)
 <use ./assets/Paradigm.png>
-Package pdftex.def Info: ./assets/Paradigm.png  used on input line 312.
+Package pdftex.def Info: ./assets/Paradigm.png  used on input line 331.
 (pdftex.def)             Requested size: 421.10046pt x 237.72578pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 314--315
+Underfull \hbox (badness 10000) in paragraph at lines 333--334
 
  []
 
-[5 <./assets/Paradigm.png>]
-<./assets/Screenshot1.png, id=53, 992.70876pt x 796.9775pt>
+[6 <./assets/Paradigm.png>]
+<./assets/Screenshot1.png, id=57, 992.70876pt x 796.9775pt>
 File: ./assets/Screenshot1.png Graphic file (type png)
 <use ./assets/Screenshot1.png>
-Package pdftex.def Info: ./assets/Screenshot1.png  used on input line 318.
+Package pdftex.def Info: ./assets/Screenshot1.png  used on input line 337.
 (pdftex.def)             Requested size: 421.10046pt x 338.07251pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 320--321
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 322--323
-
- []
-
-[6 <./assets/Screenshot1.png>]
-<./assets/Screenshot2.png, id=60, 1427.3325pt x 550.055pt>
-File: ./assets/Screenshot2.png Graphic file (type png)
-<use ./assets/Screenshot2.png>
-Package pdftex.def Info: ./assets/Screenshot2.png  used on input line 324.
-(pdftex.def)             Requested size: 421.10046pt x 162.2816pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 326--327
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 328--329
-
- []
-
-[7 <./assets/Screenshot2.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 335--336
-
- []
-
-[8]
 Underfull \hbox (badness 10000) in paragraph at lines 339--340
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 341--342
+
+ []
+
+[7 <./assets/Screenshot1.png>]
+<./assets/Screenshot2.png, id=65, 1427.3325pt x 550.055pt>
+File: ./assets/Screenshot2.png Graphic file (type png)
+<use ./assets/Screenshot2.png>
+Package pdftex.def Info: ./assets/Screenshot2.png  used on input line 343.
+(pdftex.def)             Requested size: 421.10046pt x 162.2816pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 345--346
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 347--348
+
+ []
+
+[8 <./assets/Screenshot2.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 354--355
+
+ []
+
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 358--359
+
+ []
+
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 3
-47.
+66.
 (/usr/local/texlive/2020/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [9] [10] [11] [12]
-Underfull \hbox (badness 10000) in paragraph at lines 404--405
+) [10] [11] [12] [13]
+Underfull \hbox (badness 10000) in paragraph at lines 423--424
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 406--407
+Underfull \hbox (badness 10000) in paragraph at lines 425--426
 
  []
 
-[13]
-<02-study2_files/figure-latex/meyerGraph-1.pdf, id=94, 453.695pt x 301.125pt>
+[14]
+<02-study2_files/figure-latex/meyerGraph-1.pdf, id=98, 453.695pt x 301.125pt>
 File: 02-study2_files/figure-latex/meyerGraph-1.pdf Graphic file (type pdf)
 <use 02-study2_files/figure-latex/meyerGraph-1.pdf>
 Package pdftex.def Info: 02-study2_files/figure-latex/meyerGraph-1.pdf  used on
- input line 408.
+ input line 427.
 (pdftex.def)             Requested size: 421.10046pt x 279.49197pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 410--411
+Underfull \hbox (badness 10000) in paragraph at lines 429--430
 
  []
 
-[14 <./02-study2_files/figure-latex/meyerGraph-1.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 417--418
+[15 <./02-study2_files/figure-latex/meyerGraph-1.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 436--437
 
  []
 
-<02-study2_files/figure-latex/diffsOverStages-1.pdf, id=107, 433.62pt x 303.132
+<02-study2_files/figure-latex/diffsOverStages-1.pdf, id=111, 433.62pt x 303.132
 5pt>
 File: 02-study2_files/figure-latex/diffsOverStages-1.pdf Graphic file (type pdf
 )
 <use 02-study2_files/figure-latex/diffsOverStages-1.pdf>
 Package pdftex.def Info: 02-study2_files/figure-latex/diffsOverStages-1.pdf  us
-ed on input line 419.
+ed on input line 438.
 (pdftex.def)             Requested size: 421.10046pt x 294.39433pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[15]
-Underfull \hbox (badness 10000) in paragraph at lines 421--422
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 423--424
-
- []
-
-<02-study2_files/figure-latex/initialDiffsPlot-1.pdf, id=112, 464.73625pt x 313
-.17pt>
-File: 02-study2_files/figure-latex/initialDiffsPlot-1.pdf Graphic file (type pd
-f)
-<use 02-study2_files/figure-latex/initialDiffsPlot-1.pdf>
-Package pdftex.def Info: 02-study2_files/figure-latex/initialDiffsPlot-1.pdf  u
-sed on input line 425.
-(pdftex.def)             Requested size: 421.10046pt x 283.77136pt.
-[16 <./02-study2_files/figure-latex/diffsOverStages-1.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 427--428
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 432--433
-
- []
-
-[17 <./02-study2_files/figure-latex/initialDiffsPlot-1.pdf>]
-<02-study2_files/figure-latex/confAccPlot-1.pdf, id=142, 460.72125pt x 316.1812
-4pt>
-File: 02-study2_files/figure-latex/confAccPlot-1.pdf Graphic file (type pdf)
-<use 02-study2_files/figure-latex/confAccPlot-1.pdf>
-Package pdftex.def Info: 02-study2_files/figure-latex/confAccPlot-1.pdf  used o
-n input line 434.
-(pdftex.def)             Requested size: 421.10046pt x 288.9894pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 436--437
-
- []
-
-[18 <./02-study2_files/figure-latex/confAccPlot-1.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 438--439
-
- []
-
-
+[16]
 Underfull \hbox (badness 10000) in paragraph at lines 440--441
 
  []
@@ -1508,38 +1522,43 @@ Underfull \hbox (badness 10000) in paragraph at lines 442--443
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 444--445
-
- []
-
-[19]
+<02-study2_files/figure-latex/initialDiffsPlot-1.pdf, id=116, 464.73625pt x 313
+.17pt>
+File: 02-study2_files/figure-latex/initialDiffsPlot-1.pdf Graphic file (type pd
+f)
+<use 02-study2_files/figure-latex/initialDiffsPlot-1.pdf>
+Package pdftex.def Info: 02-study2_files/figure-latex/initialDiffsPlot-1.pdf  u
+sed on input line 444.
+(pdftex.def)             Requested size: 421.10046pt x 283.77136pt.
+[17 <./02-study2_files/figure-latex/diffsOverStages-1.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 446--447
 
  []
 
-<02-study2_files/figure-latex/accuracyClassifier-1.pdf, id=164, 453.695pt x 300
-.12125pt>
-File: 02-study2_files/figure-latex/accuracyClassifier-1.pdf Graphic file (type 
-pdf)
-<use 02-study2_files/figure-latex/accuracyClassifier-1.pdf>
-Package pdftex.def Info: 02-study2_files/figure-latex/accuracyClassifier-1.pdf 
- used on input line 448.
-(pdftex.def)             Requested size: 421.10046pt x 278.56033pt.
 
-Underfull \vbox (badness 1478) has occurred while \output is active []
-
-[20]
-Underfull \hbox (badness 10000) in paragraph at lines 450--451
+Underfull \hbox (badness 10000) in paragraph at lines 451--452
 
  []
 
+[18 <./02-study2_files/figure-latex/initialDiffsPlot-1.pdf>]
+<02-study2_files/figure-latex/confAccPlot-1.pdf, id=146, 460.72125pt x 316.1812
+4pt>
+File: 02-study2_files/figure-latex/confAccPlot-1.pdf Graphic file (type pdf)
+<use 02-study2_files/figure-latex/confAccPlot-1.pdf>
+Package pdftex.def Info: 02-study2_files/figure-latex/confAccPlot-1.pdf  used o
+n input line 453.
+(pdftex.def)             Requested size: 421.10046pt x 288.9894pt.
 
+Underfull \hbox (badness 10000) in paragraph at lines 455--456
+
+ []
+
+[19 <./02-study2_files/figure-latex/confAccPlot-1.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 457--458
 
  []
 
-[21 <./02-study2_files/figure-latex/accuracyClassifier-1.pdf>]
+
 Underfull \hbox (badness 10000) in paragraph at lines 459--460
 
  []
@@ -1549,35 +1568,81 @@ Underfull \hbox (badness 10000) in paragraph at lines 461--462
 
  []
 
-[22]
+
 Underfull \hbox (badness 10000) in paragraph at lines 463--464
 
  []
 
+[20]
+Underfull \hbox (badness 10000) in paragraph at lines 465--466
+
+ []
+
+<02-study2_files/figure-latex/accuracyClassifier-1.pdf, id=168, 453.695pt x 300
+.12125pt>
+File: 02-study2_files/figure-latex/accuracyClassifier-1.pdf Graphic file (type 
+pdf)
+<use 02-study2_files/figure-latex/accuracyClassifier-1.pdf>
+Package pdftex.def Info: 02-study2_files/figure-latex/accuracyClassifier-1.pdf 
+ used on input line 467.
+(pdftex.def)             Requested size: 421.10046pt x 278.56033pt.
+
+Underfull \vbox (badness 1478) has occurred while \output is active []
+
+[21]
+Underfull \hbox (badness 10000) in paragraph at lines 469--470
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 471--472
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 476--477
+
+ []
+
+[22 <./02-study2_files/figure-latex/accuracyClassifier-1.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 478--479
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 480--481
+
+ []
+
 [23]
+Underfull \hbox (badness 10000) in paragraph at lines 482--483
+
+ []
+
+[24]
 Package minitoc Info: I0009
 (minitoc)             Listing minitoc auxiliary files. 
 (minitoc)             Creating the 02-study2.maf file.
 \openout3 = `02-study2.maf'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 470.
-[24]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 470.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 489.
+[25]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 489.
 (./02-study2.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 470.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 470.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 489.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 489.
 Package rerunfilecheck Info: File `02-study2.out' has not changed.
 (rerunfilecheck)             Checksum: EDFC11707437D30C5B039411993FF526;318.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 470.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 489.
  ) 
 Here is how much of TeX's memory you used:
- 19495 strings out of 480608
- 312977 string characters out of 5903630
- 673696 words of memory out of 5000000
- 34626 multiletter control sequences out of 15000+600000
- 588705 words of font info for 117 fonts, out of 8000000 for 9000
+ 20491 strings out of 480608
+ 327171 string characters out of 5903630
+ 696296 words of memory out of 5000000
+ 35588 multiletter control sequences out of 15000+600000
+ 588796 words of font info for 118 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 49i,12n,49p,1984b,545s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 49i,12n,49p,2176b,545s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/
 texlive/2020/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}</usr/local/texlive/2020/
 texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2020/texmf-dist
@@ -1585,10 +1650,10 @@ texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2020/texmf-dist
 1/public/lm/lmr17.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/lm
 /lmr8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/lm/lmri12.pfb>
 </usr/local/texlive/2020/texmf-dist/fonts/type1/public/lm/lmtt12.pfb>
-Output written on 02-study2.pdf (24 pages, 1299694 bytes).
+Output written on 02-study2.pdf (25 pages, 1302666 bytes).
 PDF statistics:
- 225 PDF objects out of 1000 (max. 8388607)
- 170 compressed objects within 2 object streams
- 28 named destinations out of 1000 (max. 500000)
+ 230 PDF objects out of 1000 (max. 8388607)
+ 174 compressed objects within 2 object streams
+ 29 named destinations out of 1000 (max. 500000)
  14417 words of extra memory for PDF output out of 17280 (max. 10000000)
 

@@ -22,6 +22,12 @@ knitr::opts_chunk$set(cache =TRUE)
 
 ```{r install_packages, include=FALSE}
 source('scripts_and_filters/install_packages_if_missing.R')
+
+binarysimilarityMean <- function(m){
+  mat <- binarysimilarityMat(m)
+  values <- mat[upper.tri(mat)]
+  return(c(mean(values),sd(values)^2))
+}
 ```
 
 ```{r AggregateData1, include=FALSE, eval=knitr::is_latex_output()}
@@ -29,6 +35,99 @@ df <- as.data.frame(read.csv("./study2data.csv",header=TRUE))
 source('scripts_and_filters/Study2/AggregateData.R')
 ```
 
+```{r infovalcalc, include=FALSE, echo=FALSE}
+
+infoValueDf <- infoSeekingFullMatrix[,c(1:29)]
+colnames(infoValueDf)[1:29] <- c("T1","T2","T3","T4","T5","T6","T7", "T8",  "T9", "T10", "T11", "T12", "T13", "T14", 
+                                              "T15", "T16", "T17", "T18", "T19", "T20", "T21", "T22", 
+                                              "T23", "T24", "T25", "T26", "T27", "T28", "T29")
+
+infoValueDf$Correct <- infoSeekingFullMatrix$Correct
+infoValueDf$Condition <- infoSeekingFullMatrix$Condition
+infoValueDf$ID <- infoSeekingFullMatrix$ID
+
+
+temp <- infoSeekingFullMatrix[,c(1:29)]
+colnames(temp)[1:29] <- c("T1","T2","T3","T4","T5","T6","T7", "T8",  "T9", "T10", "T11", "T12", "T13", "T14", 
+                          "T15", "T16", "T17", "T18", "T19", "T20", "T21", "T22", 
+                          "T23", "T24", "T25", "T26", "T27", "T28", "T29")
+
+temp$Condition <- infoSeekingFullMatrix$Condition
+temp$ID <- infoSeekingFullMatrix$ID
+
+temp <- temp[!grepl("e1|e2|e3|e4|e5|e6|e7", rownames(temp)),]
+
+standard <- "student" #student/expert
+if (standard == "student")
+{
+  infoValueDf <- infoValueDf[!grepl("e1|e2|e3|e4|e5|e6|e7", rownames(infoValueDf)),]
+} else
+{
+  infoValueDf <- infoValueDf[grepl("e1|e2|e3|e4|e5|e6|e7", rownames(infoValueDf)),]
+}
+
+
+for (n in 1:nrow(temp)) #row
+{
+  for (m in 1:29) #column
+  {
+    accSet <- c()
+    currentID <- temp[n,]$ID # cross validation
+    infoSelectCase <- infoValueDf[infoValueDf$Condition==temp[n,]$Condition,]
+    infoSelect <- infoSelectCase[,m]
+    infoSelect <- as.data.frame(infoSelect)
+    infoSelect <- cbind(infoSelect,infoSelectCase$ID)
+    infoSelect <- cbind(infoSelect,infoSelectCase$Correct)
+    colnames(infoSelect) <- c("Info","ID","Correct")
+    infoSelect <- infoSelect[infoSelect$ID!=currentID,]
+    infoSelect <- infoSelect[, !(colnames(infoSelect) %in% c("ID"))] 
+    accPresent <- mean(infoSelect[infoSelect$Info==1,]$Correct,na.rm=TRUE)
+    accNotPresent <- mean(infoSelect[infoSelect$Info==0,]$Correct,na.rm=TRUE)
+    if (nrow(infoSelect[infoSelect$Info==0,]) > 1)
+    {
+      temp[n,m] <- ifelse(temp[n,m]==1,accPresent-accNotPresent,NA)
+      if (is.nan(temp[n,m]))
+      {
+        temp[n,m] <- 0
+      }
+    }
+  }
+}
+temp = subset(temp, select = -c(Condition,ID))
+
+
+#temp$infoValue <- rowMeans(temp,na.rm = TRUE)
+temp$infoValue <- rowSums(temp,na.rm = TRUE)
+temp$infoValueAfterHistory <- rowSums(temp[,7:29],na.rm=T)
+
+temp$Condition <- infoSeekingFullMatrix[infoSeekingFullMatrix$ParticipantType=="p",]$Condition
+temp$ID <- infoSeekingFullMatrix[infoSeekingFullMatrix$ParticipantType=="p",]$ID
+
+aggVals <- temp %>%
+  group_by(ID) %>%
+  dplyr::summarise(InfoValue = mean(infoValue))
+
+studentAggData$infoValue <- aggVals$InfoValue
+
+```
+
+```{r infovarcalc, include=FALSE, echo=FALSE}
+
+means <- c()
+vars <- c()
+
+for (x in 1:nrow(studentAggData))
+{
+  id <- studentAggData$participantID[x]
+  values <- binarysimilarityMean(infoSeekingFullMatrix[infoSeekingFullMatrix$ID==id,])
+  means <- c(means, 1-(values[1]))
+  vars <- c(vars, values[2])
+}
+
+studentAggData$infoSeekingVariability <- means
+studentAggData$infoSeekingVariance <- vars
+
+```
 
 ```{r, echo=FALSE}
 
@@ -52,17 +151,34 @@ resolutionColour <- "yellow"
 
 ## Introduction {.unnumbered}
 
-Our systematic scoping review on confidence during diagnoses revealed two main findings. Firstly, past work that measured confidence and accuracy during diagnostic decisions found that confidence was rarely calibrated to objective accuracy, leading to overconfidence or underconfidence. Secondly, confidence was associated to many aspects of the patient care process, such as prescriptions, referrals and seeking tests. The lattermost of these factors is of particular relevance to our research interests. This link made between confidence and information seeking represents confidence as a subjective judgement that then guides subsequent testing and requests for information. Crucially, this work frames information seeking as a single response to a question of whether a clinician would seek further information or not. However, the link between confidence and information seeking can be expanded upon in three ways. Firstly, we can study how information seeking prior to the point at which confidence is reported affects this confidence. Secondly, we can look at qualities of the information seeking itself that confidence links to aside from merely the intention to seek or not seek. Finally, confidence and information seeking are likely to influence each other over time. Past work has tended to look at diagnosis as a single decision at a single point in time. However, clinicians engage with diagnosis as an active, ongoing decision process that may develop with more time and as more information about the patient becomes available. With these points in mind, we aimed to design a paradigm that both reflects the evolving nature of diagnosis and allows to us to study aspects of the information seeking process. Specifically, is clinician confidence informed by the quantity and quality of information sought during the diagnostic process? Allowing clinicians to freely seek information was then an important tenet for designing this experimental paradigm.
+In this study, we aim to retain the control and simplicity of vignette-based approaches while incorporating some of the complexities that characterise real diagnostic decision making. By doing this, we aim to study diagnostic confidence and accuracy as it develops over time with more information.
 \
 
-Another aspect of past work we aimed to expand on was on generating differentials (a term used in medicine to refer to diagnostic hypotheses). Past work has tended to frame diagnosis as a single decision where a clinician responds either a single diagnosis or a limited number of conditions that a patient could have. In the latter case, clinicians report multiple differentials where prompted to consider alternative differentials as a cognitive intervention to encourage clinicians not to miss other diagnoses. These experimental approaches do not necessarily represent the manner in which clinicians make diagnoses in their everyday medical practice. While clinicians may focus on a single differential at a time, they may also generated multiple diagnostic possibilities that past experimental paradigms do not capture. For instance, a clinician usually has to weigh up differentials based on their likelihood (taking into account the base rate of medical conditions within a given patient population) and severity (which may be less likely to be observed for a given patient, but would be more dangerous if missed or not considered by the clinician as a possibility). Our paradigm should then allow clinicians to report multiple differentials at a time without constraints. We can then use the breadth of differentials considered by clinicians as another marker of uncertainty that may guide their subsequent information seeking.
+Our systematic scoping review on confidence during diagnoses revealed two main findings. Firstly, past work that measured confidence and accuracy during diagnostic decisions found that confidence was rarely calibrated to objective accuracy, leading to overconfidence or underconfidence. Secondly, confidence was associated to many aspects of the patient care process, such as prescriptions, referrals and seeking tests. The lattermost of these factors is of particular relevance to our research interests, but as we identify in our scoping review, the link between information seeking and confidence is a current gap in the extant literature. This link currently made between confidence and information seeking in the literature is that confidence is a subjective judgement that then guides subsequent testing and requests for information. 
 \
 
-For this study, we designed a novel vignette-based experimental paradigm where participants are asked to provide a list of all diagnostic differentials they are considered based on the information they have received. We then ask participants to update this list in light of new information by adding or removing differentials. This allows us to more comprehensively capture their thought process in terms of how differentials are being weighed up against each other. Participants then report how severe and likely each of their differentials are to draw a more nuanced distinction between differentials. While past work has tended to provided a preset amount of information to clinicians in a series of stages, we instead prompt participants to actively seek out information that they feel is useful for diagnosing the patient they are presented with. This is more analogous to real medical practice where all the required information is not immediately available to clinician when presented with a patient. We also can then look at information seeking patterns within participants to study how they impact confidence.
+Crucially, this work frames information seeking as a single response to a question of whether a clinician would seek further information or not. However, the link between confidence and information seeking can be expanded upon in three ways. Firstly, we can study how information seeking prior to the point at which confidence is reported affects this confidence. Secondly, we can look at qualities of the information seeking itself that confidence links to aside from merely the intention to seek or not seek. This includes the amount of information sought and how relevant the information is to the patient case. Finally, confidence and information seeking are likely to influence each other over time. Past work has tended to look at diagnosis as a single decision at a single point in time. However, clinicians engage with diagnosis as an active, ongoing decision process that may develop with more time and as more information about the patient becomes available. With these points in mind, we aimed to design a paradigm that both reflects the evolving nature of diagnosis and allows to us to study aspects of the information seeking process. Specifically, is clinician confidence informed by the quantity and quality of information sought during the diagnostic process? Past work from cognitive psychology has shown a link to the quantity of information received and confidence, even if the information is disconfirmatory of one's beliefs. We can hence in this experiment investigate if this holds during medical diagnoses; if so, we would observe that higher amounts of information seeking would be associated with higher confidence. Information seeking could also be a marker of accuracy in addition to confidence though, as we can study whether clinicians who make more accurate diagnoses seek more appropriate information for the patient. This is important to study as some tests/information are less relevant than others for helping to reach a diagnosis for a patient, resulting in instances of overtesting. With all this in mind, allowing clinicians to freely seek information was then an important tenet for designing this experimental paradigm.
 \
 
+Another aspect of past work we aimed to expand on was on generating differentials (a term used in medicine to refer to diagnostic hypotheses). Past work has tended to frame diagnosis as a single decision where a clinician responds either a single diagnosis or a limited number of conditions that a patient could have. In the latter case, clinicians report multiple differentials when prompted to consider alternative differentials via a cognitive intervention that encourages clinicians not to miss other diagnoses. These experimental approaches do not necessarily represent the manner in which clinicians make diagnoses in their everyday medical practice. While clinicians may focus on a single differential at a time, they may also generated multiple diagnostic possibilities that past experimental paradigms do not capture. For instance, a clinician usually has to weigh up differentials based on their likelihood (taking into account the base rate of medical conditions within a given patient population) and severity (which may be less likely to be observed for a given patient, but would be more dangerous if missed or not considered by the clinician as a possibility). In this sense, a clinician may have, at least, a primary diagnosis that is most likely for the patient and a more serious diagnosis that is less likely but can be dangerous if not considered or missed. Our paradigm should then allow clinicians to report multiple differentials at a time without constraints, in order to capture both the primary differentials being considered and the differentials that clinicians keep 'in the back of their mind'. We can then use the breadth of differentials considered by clinicians as another marker of uncertainty that may guide their subsequent information seeking. By allowing participants to record a list of all differentials they are considering at each stage, we can naturalistically capture their thought process as it pertains to the information they have received prior to that point. 
+\
+
+As our paradigm is designed to capture the diagnosis process as evolving over time, we can also study confidence differently to past work. Rather than seeing confidence as a static quantity, confidence is constantly shifting to reflect the current relative strength of evidence in favour of a decision alternative. Our paradigm then records confidence alongside the participants' list of differentials as it is being updated. We can not only use this facet to link confidence to the breadth of diagnoses considered but also to examine how confidence changes over the course of a case. For instance, a clinician may receive a surprising or inconclusive test result for a patient, causing them to reduce their confidence and seek more information as a result to improve their confidence. Our measure of confidence is also distinct from those of past work as we aim to capture the diagnostic process as it pertains to subsequent treatment of patients. An ideal diagnostic process would involve a clinician seeking information to formulate a diagnosis of a patient and in the process create a treatment plan to address this diagnosis. We then capture confidence in this study specifically to measure how ready the clinician is to treat the patient.
+\
+
+For this study, we designed a novel vignette-based experimental paradigm where participants are asked to provide a list of all diagnostic differentials they are considering based on the information they have received. We then ask participants to update this list in light of new information by adding or removing differentials. This allows us to more comprehensively capture their thought process in terms of how differentials are being weighed up against each other. Participants then report how severe and likely each of their differentials are to draw a more nuanced distinction between differentials. While past work has tended to provided a preset amount of information to clinicians in a series of stages, we instead prompt participants to actively seek out information that they feel is useful for diagnosing the patient they are presented with. This is more analogous to real medical practice where all the required information is not immediately available to clinician when presented with a patient. We also can then look at information seeking patterns within participants to study how they impact confidence. 
+
+\
 For this study, in addition to our empirical work, we chose to focus on medical students who were relatively advanced in terms of their medical education but were still early in their clinical experience. Medical students are yet to settle on a particular medical subdiscipline to specialise in, which allows our vignettes to cover a variety of medical conditions and pathophysiological systems. This allows for greater generalisability for our results. We also focus on students as findings from our work could have implications for future medical education in terms of how clinical reasoning and cognitive psychology is taught. Finally, while diagnosis is a complex task that provides a richness for study within cognitive psychology, we note that diagnosis is not a primary task for experienced specialists within some medical subdisciplines. Meanwhile, medical students are more recently accustomed to clinical reasoning and making diagnostic decisions, making them an ideal population to study diagnosis in.
+\
 
+### Research Questions {.unnumbered}
+
+With this study, we can investigate the following research questions:
+
+* Is confidence calibrated to accuracy within medical students?
+* How does confidence and information seeking interact in the diagnostic process? Are the quantity and quality of information seeking each related to diagnostic confidence and/or accuracy?
+* Do differences in confidence and information seeking predict individual differences in accuracy?
 
 ## Methods {.unnumbered}
 
@@ -397,81 +513,6 @@ etasq <- round(etaSquared(aov(InfoSeeking ~ stage, data=infodf))[1],2)
 When investigating whether participants became more selective in their information seeking over the course of cases, we find that the Proportion of Information Seeking decreased with each information stage (F(`r model$DF[1]`, `r model$DF[2]`) = `r round(model$F[1],2)`, `$\Eta$`^2^G = `r etasq`, p < .001). Participants sought more of the available information during the Patient History stage (M = `r round(mean(infodf[infodf$stage==1,]$InfoSeeking),2)`, SD = `r round(sd(infodf[infodf$stage==1,]$InfoSeeking),2)` than during both during the Physical Examination (M = `r round(mean(infodf[infodf$stage==2,]$InfoSeeking),2)`, SD = `r round(sd(infodf[infodf$stage==2,]$InfoSeeking),2)`) and Testing stages (M = `r round(mean(infodf[infodf$stage==3,]$InfoSeeking),2)`, SD = `r round(sd(infodf[infodf$stage==3,]$InfoSeeking),2)`). 
 \
 
-```{r infovalcalc, include=FALSE, echo=FALSE}
-
-infoValueDf <- infoSeekingFullMatrix[,c(1:29)]
-colnames(infoValueDf)[1:29] <- c("T1","T2","T3","T4","T5","T6","T7", "T8",  "T9", "T10", "T11", "T12", "T13", "T14", 
-                                              "T15", "T16", "T17", "T18", "T19", "T20", "T21", "T22", 
-                                              "T23", "T24", "T25", "T26", "T27", "T28", "T29")
-
-infoValueDf$Correct <- infoSeekingFullMatrix$Correct
-infoValueDf$Condition <- infoSeekingFullMatrix$Condition
-infoValueDf$ID <- infoSeekingFullMatrix$ID
-
-
-temp <- infoSeekingFullMatrix[,c(1:29)]
-colnames(temp)[1:29] <- c("T1","T2","T3","T4","T5","T6","T7", "T8",  "T9", "T10", "T11", "T12", "T13", "T14", 
-                          "T15", "T16", "T17", "T18", "T19", "T20", "T21", "T22", 
-                          "T23", "T24", "T25", "T26", "T27", "T28", "T29")
-
-temp$Condition <- infoSeekingFullMatrix$Condition
-temp$ID <- infoSeekingFullMatrix$ID
-
-temp <- temp[!grepl("e1|e2|e3|e4|e5|e6|e7", rownames(temp)),]
-
-standard <- "student" #student/expert
-if (standard == "student")
-{
-  infoValueDf <- infoValueDf[!grepl("e1|e2|e3|e4|e5|e6|e7", rownames(infoValueDf)),]
-} else
-{
-  infoValueDf <- infoValueDf[grepl("e1|e2|e3|e4|e5|e6|e7", rownames(infoValueDf)),]
-}
-
-
-for (n in 1:nrow(temp)) #row
-{
-  for (m in 1:29) #column
-  {
-    accSet <- c()
-    currentID <- temp[n,]$ID # cross validation
-    infoSelectCase <- infoValueDf[infoValueDf$Condition==temp[n,]$Condition,]
-    infoSelect <- infoSelectCase[,m]
-    infoSelect <- as.data.frame(infoSelect)
-    infoSelect <- cbind(infoSelect,infoSelectCase$ID)
-    infoSelect <- cbind(infoSelect,infoSelectCase$Correct)
-    colnames(infoSelect) <- c("Info","ID","Correct")
-    infoSelect <- infoSelect[infoSelect$ID!=currentID,]
-    infoSelect <- infoSelect[, !(colnames(infoSelect) %in% c("ID"))] 
-    accPresent <- mean(infoSelect[infoSelect$Info==1,]$Correct,na.rm=TRUE)
-    accNotPresent <- mean(infoSelect[infoSelect$Info==0,]$Correct,na.rm=TRUE)
-    if (nrow(infoSelect[infoSelect$Info==0,]) > 1)
-    {
-      temp[n,m] <- ifelse(temp[n,m]==1,accPresent-accNotPresent,NA)
-      if (is.nan(temp[n,m]))
-      {
-        temp[n,m] <- 0
-      }
-    }
-  }
-}
-temp = subset(temp, select = -c(Condition,ID))
-
-
-#temp$infoValue <- rowMeans(temp,na.rm = TRUE)
-temp$infoValue <- rowSums(temp,na.rm = TRUE)
-temp$infoValueAfterHistory <- rowSums(temp[,7:29],na.rm=T)
-
-temp$Condition <- infoSeekingFullMatrix[infoSeekingFullMatrix$ParticipantType=="p",]$Condition
-temp$ID <- infoSeekingFullMatrix[infoSeekingFullMatrix$ParticipantType=="p",]$ID
-
-aggVals <- temp %>%
-  group_by(ID) %>%
-  dplyr::summarise(InfoValue = mean(infoValue))
-
-studentAggData$infoValue <- aggVals$InfoValue
-
-```
 
 ```{r confAccPlot, include=TRUE, message=FALSE, echo=FALSE, warning=FALSE,out.width='100%', fig.align='center'}
 
@@ -622,30 +663,13 @@ _Figure 8: Receiver-Operator Characteristic (ROC) curve using a Generalised Line
 \
 
 This result indicates overall that differences in information seeking are indeed predictive of a difference in participant ability at above chance at a broad level. Essentially, information seeking patterns separate high and low accuracy participants, but this analysis does not tell us what aspects of information seeking in particular are predictive of accuracy. We next seek to characterise the specific differences in information seeking that contribute to higher diagnostic performance. 
+\
 
-```{r infovarcalc, include=FALSE, echo=FALSE}
-
-means <- c()
-vars <- c()
-
-for (x in 1:nrow(studentAggData))
-{
-  id <- studentAggData$participantID[x]
-  values <- binarysimilarityMean(infoSeekingFullMatrix[infoSeekingFullMatrix$ID==id,])
-  means <- c(means, 1-(values[1]))
-  vars <- c(vars, values[2])
-}
-
-studentAggData$infoSeekingVariability <- means
-studentAggData$infoSeekingVariance <- vars
-
-```
-
-```{r accVarPlot, include=TRUE, message=FALSE, echo=FALSE, warning=FALSE,out.width='100%', fig.align='center'}
+```{r accVarPlot, eval=FALSE, include=FALSE, message=FALSE, echo=FALSE, warning=FALSE,out.width='100%', fig.align='center'}
 
 ### Correlation between info variance and accuracy
 
-confSought <- ggplot(data = studentAggData, aes(x=infoSeekingVariance, y=meanFinalAccuracy)) +
+varAcc <- ggplot(data = studentAggData, aes(x=infoSeekingVariability, y=meanFinalAccuracy)) +
   geom_point() +
   geom_smooth(method=lm , color=accuracyColour, fill="#69b3a2", se=TRUE) +
   theme_classic() + 
@@ -655,11 +679,79 @@ confSought <- ggplot(data = studentAggData, aes(x=infoSeekingVariance, y=meanFin
              plot.title=element_text(size=14,face="bold")
   )
 
+print(varAcc)
+
+```
+
+```{r accVarSplit, include=FALSE, eval=FALSE, message=FALSE, echo=FALSE, warning=FALSE,out.width='100%', fig.align='center'}
+
+vals <- c()
+cases <- unique(infoSeekingFullMatrix$Condition)
+for (case in cases)
+{
+  rows <- infoSeekingFullMatrix[infoSeekingFullMatrix$Condition==case,]
+  vals <- c(vals,1-(binarysimilarityMean(rows[rows$AccuracyGroup>2,])[1]))
+  vals <- c(vals,1-(binarysimilarityMean(rows[rows$AccuracyGroup<3,])[1]))
+}
+
+accGroups <- rep(c("high","low"),6)
+
+accGroupDf <- data.frame(rep(cases,each=2),accGroups,vals)
+
+colnames(accGroupDf) <- c("Case","AccuracyGroup","Variance")
+
+barsPlot <- ggplot(accGroupDf) +
+  geom_bar( aes(x=Case, y=Variance, fill=AccuracyGroup), colour="black", position="dodge", stat="identity", alpha=0.8)
+
+print(barsPlot +
+        scale_x_discrete(limits=conditionsShort) +
+        ggtitle("Variance in Information Seeking by Case") +
+        labs(x = "Case", y = "Variance") +
+        theme_classic()) 
+
+t.test(accGroupDf[accGroupDf$AccuracyGroup=="low",]$Variance,accGroupDf[accGroupDf$AccuracyGroup=="high",]$Variance)
+
+```
+
+
+```{r accVarSplit2, include=FALSE, eval=FALSE, message=FALSE, echo=FALSE, warning=FALSE,out.width='100%', fig.align='center'}
+
+vals <- c()
+cases <- unique(infoSeekingFullMatrix$Condition)
+for (case in cases)
+{
+  rows <- infoSeekingFullMatrix[infoSeekingFullMatrix$Condition==case,]
+  vals <- c(vals,1-(binarysimilarityMean(rows[rows$AccuracyGroup==1,])[1]))
+  vals <- c(vals,1-(binarysimilarityMean(rows[rows$AccuracyGroup==2,])[1]))
+  vals <- c(vals,1-(binarysimilarityMean(rows[rows$AccuracyGroup==3,])[1]))
+  vals <- c(vals,1-(binarysimilarityMean(rows[rows$AccuracyGroup==4,])[1]))
+}
+
+accGroups <- rep(c(1,2,3,4),6)
+
+accGroupDf <- data.frame(rep(cases,each=4),accGroups,vals)
+
+colnames(accGroupDf) <- c("Case","AccuracyGroup","Variance")
+
+accGroupDf$AccuracyGroup <- as.factor(accGroupDf$AccuracyGroup)
+
+barsPlot <- ggplot(accGroupDf) +
+  geom_bar( aes(fill=AccuracyGroup, x=Case, y=Variance), colour="black", position="dodge", stat="identity", alpha=0.8)
+
+print(barsPlot +
+        scale_x_discrete(limits=conditionsShort) +
+        scale_fill_viridis(discrete = T) +
+        ggtitle("Variance in Information Seeking by Case") +
+        labs(x = "Case", y = "Variance") +
+        theme_classic()) 
+
+summary(aov(Variance ~ AccuracyGroup, data=accGroupDf))
+
 ```
 
 ## Discussion {.unnumbered}
 
-This study of 85 medical students explored the interplay between confidence and information seeking in a novel medical diagnosis task. Using a novel online interface, we explored how medical students work through diagnostic scenarios via information seeking to develop and test sets of possible differentials.
+This study of 85 medical students explored the interplay between confidence and information seeking in a novel medical diagnosis task. Using a novel online interface, we explored how medical students work through diagnostic scenarios via information seeking to develop and test sets of possible differentials. Our aim was look at how different aspects of information seeking impacts both diagnostic confidence and accuracy.
 \
 
 We found that participants become more accurate as they received more information, though cases varied in difficulty as reflected in participant accuracy. In particular, the AD and MTB cases were more difficult based on lower observed accuracy across participants. Using our measure of accuracy, which is obtained by using the likelihood values assigned to correct differentials (if included), we find that accuracy tracks confidence quite closely at each information stage. Participants exhibited a general pattern of broadening the differentials they were considering as they received more information. The initial breadth of diagnoses considered from the patients' history was seen to be predictive of subsequent information seeking and changes in confidence. Relatedly, information seeking and confidence was associated, such that participants who sought more information tended to increase their confidence more over the course of the diagnoses. However, the amount of information sought was not predictive of diagnostic accuracy, which was instead associated with seeking more valuable/appropriate information for a given patient condition. 
@@ -668,7 +760,7 @@ We found that participants become more accurate as they received more informatio
 Previous work (e.g. Meyer et al., 2011) have noted a gap between subjective confidence and objective accuracy. In particular, there has been demonstrated to be a general tendency for less experienced medical trainees to be underconfident and for more experienced medical professionals to be overconfident (Yang and Thompson, 2010). Part of this discrepancy between our findings and past findings could stem from the diagnostic uncertainty expressed by students in this study, which they do in two ways. Firstly, students broaden, rather than narrow, their considered diagnostic differentials with more information and still report a broad range of differentials after receiving all available information for a given case. There is a general adage in healthcare that medical students come across which says that “history is 80% of the diagnosis”. It is therefore worth considering whether there is a specific facet of diagnostic decisions whereby students are taught not to disregard diagnostic possibilities easily. Secondly, students reported fairly low confidence overall to treat patients, with an average confidence of below 50% even after receiving all available information. This may indicate that part of ensuring appropriate confidence, or expressions of uncertainty could be related to properly evaluating all possible diagnostic differentials rather than forcing decisions to focus on a single diagnosis, which has been cited previously as a problematic tendency (Redelmeier & Shafir, 2023). 
 \
 
-The main strength of this study's paradigm is in allowing us to investigate the diagnostic process as an evolving process over time and with more information, rather than as a single decision at a single point in time. By tracking how both confidence and the diagnoses considered by participants changes over time, we gain a better understanding of how the manner in which information sought is key to the diagnostic process. 
+The main strength of this study's paradigm is in allowing us to investigate the diagnostic process as an evolving process over time and with more information, rather than as a single decision at a single point in time. By tracking how both confidence and the diagnoses considered by participants changes over time, we gain a better understanding of how the manner in which information sought is key to the diagnostic process and to clinicians' subjective confidence. 
 \
 
 We find the amount of information sought informed confidence, whilst accuracy was associated with seeking more useful information on each case. This hints at the richness of this dataset in picking on information seeking and differential generation behaviour. We note however that whilst predictors of diagnostic by information seeking behaviour were found, they do not tell us how overarching differences in such behaviour arise. One possibility is that these differences stem from reasoning strategies that we cannot infer from this current dataset. In order to ascertain these strategies, we conduct a follow-up study using a similar diagnostic paradigm conducted in-person where students think out loud as they make diagnoses. We use criteria taken from Coderre et al. (2003) to code case by the reasoning strategy employed. We hypothesise that different reasoning strategies for generating differentials are useful for some cases more than others and that information seeking varies as a function of strategy. This coding of reasoning strategies is then subsequently used to classify the same reasoning strategies in the online dataset from study 1 (where we do not have access to the participants’ thought process) by using the information they sought. 

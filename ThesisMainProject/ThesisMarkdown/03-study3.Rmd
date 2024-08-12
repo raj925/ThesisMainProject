@@ -32,9 +32,25 @@ resolutionColour <- "yellow"
 ```
 <!-- For PDF output, include these two LaTeX commands after unnumbered chapter headings, otherwise the mini table of contents and the running header will show the previous chapter -->
 
-We aimed to replicate the finding of considered differentials increasing with more information when the method by which these differentials were reported. Are students seeking information to confirm their existing set of differentials, to rule out differentials or to expand their set of considered possibilities? And are these different approaches interleaving or are they more dependent on individual diagnostic decision making styles? In order to provide more context to the results from study 1, we conducted a follow-up study that utilised a very similar experimental procedure, but instead prompted students to think out loud as they were performing the task. and the transcripts were coded to conduct both quantitative and qualitative analysis. 
+## Introduction {.unnumbered}
+
+In this mixed-methods study, we aim to gain insight on the types of reasoning strategies used by medical students and how these strategies influence their information seeking patterns. We utilise a very similar experimental procedure to our previous vignette-based study, but instead prompted students to think out loud as they were performing the task. Everything that was said by participants were audio-recorded, trascribed and then coded for both quantitative and qualitative analysis. 
+
+Opening up differentials and not ruling out
+What are the different reasoning strategies
+How do we expect strategies to affect information seeking
 
 Think-aloud methodologies are useful for directly accessing ongoing thought processes during decisions (van Someren, Barnard & Sandberg, 1994). The use of thinking aloud (or verbal protocols) in research is useful for being able to access the information attended to participants in short term memory (Payne, 1994) and can be treated as the ongoing behavioural state of a participant’s knowledge (Newell & Simon, 1972). Think-aloud protocols have historically been used to study problem solving, particularly for comparing how novices and experts solve problems such as finding the best move in chess (de Groot, 1946, Bilalić, McLeod & Gobet, 2008). Diagnosis is a decisional process that develops over time and allowing participants to think aloud reflects this by providing a time-ordered sequence of how thought processes develop (Payne, 1994). This is especially well-suited to our task where the information available to participants is controlled with time, allowing us to investigate how diagnostic thinking develops with more information. A think-aloud methodology has previously been used to study the differences between novice and expert clinicians during diagnostic reasoning (Coderre et al., 2003). This study found a general trend that experts tend to use a ‘pattern recognition’ approach to diagnosis more than novices, who tended to use a ‘hypothetico-deductive’ process (which is aforementioned to be the ‘textbook’ description of the diagnostic process), but this was highly dependent on the case presented. We build on the work of Coderre et al. (2003) here to further investigate how reasoning strategies contribute to accuracy and why certain cases result in differing strategies. 
+
+### Research Questions
+
+In this study, we investigate the following research questions:
+
+* Do students report ruling out differentials as they seek information on patient during diagnoses?
+* What reasoning strategies are medical students using when making diagnoses and weighing up differentials?
+* How do differences in reasoning strategy manifest in terms of information seeking, both in terms of the quality and quantity of information sought?
+* Are differences in reasoning strategy related to the individual or are they dependent on the case at hand?
+* What considerations do medical students report having whilst they are making diagnoses?
 
 ## Methods {.unnumbered}
 
