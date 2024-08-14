@@ -32,13 +32,107 @@ resolutionColour <- "yellow"
 ```
 <!-- For PDF output, include these two LaTeX commands after unnumbered chapter headings, otherwise the mini table of contents and the running header will show the previous chapter -->
 
+```{r install_packages, include=FALSE}
+source('scripts_and_filters/install_packages_if_missing.R')
+
+binarysimilarityMean <- function(m){
+  mat <- binarysimilarityMat(m)
+  values <- mat[upper.tri(mat)]
+  return(c(mean(values),sd(values)^2))
+}
+```
+
+```{r AggregateData2, include=FALSE, eval=knitr::is_latex_output()}
+
+df <- as.data.frame(read.csv("./study2data.csv",header=TRUE))
+source('scripts_and_filters/Study2/AggregateData.R')
+
+TAData <- as.data.frame(read.csv("./study3data.csv",header=TRUE))
+
+###### Info Seeking Variance and Value
+
+infoSeekingMatrixTA <- data.frame()
+studentInfoDf <- as.data.frame(read.csv("./studentInfoDf.csv",row.names = 1,header=TRUE))
+
+for (p in 1:nrow(TAData))
+{
+  infoVector <- TAData$reqTestArray[p]
+  infoVector <- str_split(infoVector,", ")[[1]]
+  infoVector <- as.numeric(infoVector)
+  condition <- TAData$Condition[p]
+  
+  infoValues <- studentInfoDf[rownames(studentInfoDf) == condition,]
+
+  valueVector <- infoVector
+  # Iterate through each element in infoVector
+  for (i in 1:length(valueVector)) {
+   # Check if the current element is 1
+    if (valueVector[i] == 1) {
+      # If it is, replace it with the corresponding value from infoValues
+      valueVector[i] <- as.double(infoValues[i])
+    }
+  }
+  
+  TAData$infoValue[p] <- sum(valueVector)
+  
+  infoSeekingMatrixTA <- rbind(infoSeekingMatrixTA, infoVector)
+  rownames(infoSeekingMatrixTA)[p] <- paste(TAData$ID[p],
+                                            "-OverallStrat",
+                                            TAData$OverallStrat[p],
+                                            "-CaseDominantStrat",
+                                            TAData$caseDominantStrat[p],
+                                            "-usingCaseDominantStrat",
+                                            TAData$usingCaseDominantStrat[p],
+                                            "-matchingIndividualDominantStrat",
+                                            TAData$matchingIndividualDominantStrat[p],
+                                            "-",
+                                            TAData$Condition[p],
+                                            "-Correct",
+                                            TAData$Correct[p],
+                                            sep="")
+  
+  
+  
+}
+
+colnames(infoSeekingMatrixTA) <- c(1:29)
+infoSeekingMatrixTA$Condition <- TAData$Condition
+infoSeekingMatrixTA$ID <- TAData$ID
+infoSeekingMatrixTA$Correct <- TAData$Correct
+infoSeekingMatrixTA$Strat <- TAData$OverallStrat
+infoSeekingMatrixTA$caseDominantStrat <- TAData$caseDominantStrat
+infoSeekingMatrixTA$usingCaseDominantStrat <- TAData$usingCaseDominantStrat
+infoSeekingMatrixTA$matchingIndividualDominantStrat <- TAData$matchingIndividualDominantStrat
+
+distancesTA <- infoSeekingMatrixTA[,1:29] %>% proxy::dist(method = "Dice") %>% as.matrix()
+colnames(distancesTA) <- rownames(distancesTA)
+
+```
+
 ## Introduction {.unnumbered}
 
-In this mixed-methods study, we aim to gain insight on the types of reasoning strategies used by medical students and how these strategies influence their information seeking patterns. We utilise a very similar experimental procedure to our previous vignette-based study, but instead prompted students to think out loud as they were performing the task. Everything that was said by participants were audio-recorded, trascribed and then coded for both quantitative and qualitative analysis. 
+In this mixed-methods study, we aim to gain insight on the types of reasoning strategies used by medical students and how these strategies influence their information seeking patterns. We utilise a very similar experimental procedure to our previous vignette-based study, but instead prompted students to think out loud as they were performing the task. Everything that was said by participants were audio-recorded, transcribed and then coded for both quantitative and qualitative analysis. 
 
-Opening up differentials and not ruling out
-What are the different reasoning strategies
-How do we expect strategies to affect information seeking
+In our previous study, we observed a general tendency for participants to broaden the set of differentials they considered as they received more information. This was reflected in the number of differentials reported at each information stage increasing over each case on average. This effect was driven by participants (74 out of 85 participants, 87%) never reporting fewer differentials at the Testing stage compared to the Patient History stage. This is a surprising result, as we may have expected that participants to use a 'process of elimination', which would manifest in decreasing numbers of differentials as participants receive more information. What this speaks to however is a general reticence to remove differentials from consideration. One of our focuses for this study then is to replicate this finding by examining if students' thought processes reflect this tendency to focus on broadening rather than the narrowing the differentials being considered. This is to ensure that the finding in our previous study is not merely a quirk of our experimental interface and design, as it is possible that participants are not encouraged to disregard differentials within our paradigm.
+\
+
+Another focus of this study is to understand how differences in information seeking patterns arise. One possibility is that these differences stem from different reasoning strategies when making diagnoses. Clinical reasoning is a key skill that is taught, either explicitly or implicitly, within medical education. Medicine is based in uncertainty and reasoning as a skill is taught to navigate this uncertainty. However, clinical reasoning has a broad remit and covers multiple different methods by which a decision can be reached. Doctors may have different considerations when diagnosing a patient. As we noted in the design of the previous study, doctors may have consider what conditions are likely for a patient and what conditions are too severe to not miss. A doctor's reasoning strategy may then reflect this dichotomy, such that the focus is either on determining what is most likely or being thorough such as to consider all diagnostic possibilities. 
+\
+
+Different reasoning strategies within diagnoses were studied by Coderre et al. (2003). In this paper, novice and expert clinicians were asked to provided diagnoses based on patient vignettes and asked to verbalise their thought process. Using these verbalisations, the researchers categorised the clincian's reasoning strategies. The researchers defined three reasoning strategies as follows (paraphrased from their paper):
+
+* *Hypothetico-deductive (HD) strategy*: prior to selecting the most likely diagnosis, the clinician analysed, one by one, each alternative diagnosis. 
+
+* *Scheme-inductive (SI) strategy*: This strategy consisted of key predetermined
+propositions that linked categories and thus provided evidence for chunking (i.e. scheme use). These propositions were presented as structuring diagnoses by different pathophysiological systems/processes (e.g. Small Bowel vs. Large Bowel, Gastrointestinal vs. non-GI causes).
+
+* *Pattern Recognition (PR) strategy*: The clinician directly reached a single
+diagnosis with only perfunctory attention to the alternatives.
+
+In their study, the researchers found that novice clinicians tended to adopt a HD strategy more often, whilst experts tended to use a PR strategy more. In addition, a addition a PR was associated with higher diagnostic accuracy, which in turn explains why experts were more accurate than novices. In addition to explaining differences in accuracy, these strategies point to different approaches in how diagnostic differentials are generated and considered. A PR strategy, by definition, considers a clinician as seeking to identify the correct condition whilst SI and HD strategies reflect a more thorough, systematic consideration of possible differentials. The work of Coderre did not reveal whether these strategies result in differences in information seeking and confidence. We would expect that with a more thorough SI reasoning strategy, participants would seek more information in order to consider a larger number of diagnostic possibilities. By contrast, we would expect that a PR strategy would result in more selective information seeking in order to provide evidence in support of the single diagnosis being considered. Finally for a HD strategy, participants would be seeking information to rule out differentials, but it is unclear as to how selective participants would be with the information they seek. 
+\
+
+In order to pick apart these different reasoning strategies within our vignette-based paradigm, we adopted a think-aloud methodology similarly to Coderre et al. (2003), whereby participants verbalise their thought process as they are doing the task. 
 
 Think-aloud methodologies are useful for directly accessing ongoing thought processes during decisions (van Someren, Barnard & Sandberg, 1994). The use of thinking aloud (or verbal protocols) in research is useful for being able to access the information attended to participants in short term memory (Payne, 1994) and can be treated as the ongoing behavioural state of a participant’s knowledge (Newell & Simon, 1972). Think-aloud protocols have historically been used to study problem solving, particularly for comparing how novices and experts solve problems such as finding the best move in chess (de Groot, 1946, Bilalić, McLeod & Gobet, 2008). Diagnosis is a decisional process that develops over time and allowing participants to think aloud reflects this by providing a time-ordered sequence of how thought processes develop (Payne, 1994). This is especially well-suited to our task where the information available to participants is controlled with time, allowing us to investigate how diagnostic thinking develops with more information. A think-aloud methodology has previously been used to study the differences between novice and expert clinicians during diagnostic reasoning (Coderre et al., 2003). This study found a general trend that experts tend to use a ‘pattern recognition’ approach to diagnosis more than novices, who tended to use a ‘hypothetico-deductive’ process (which is aforementioned to be the ‘textbook’ description of the diagnostic process), but this was highly dependent on the case presented. We build on the work of Coderre et al. (2003) here to further investigate how reasoning strategies contribute to accuracy and why certain cases result in differing strategies. 
 
@@ -68,7 +162,7 @@ The general procedure was very similar to that of Study 1, except that participa
 
 *“Whilst you are doing the task, you will be asked to think aloud. This means that you verbalise what you are thinking about, especially how you interpret the information you receive and what conditions or diagnoses you are considering or are concerned about for each patient case. If you have nothing to say or nothing on your mind, there’s no need to say anything but do say whatever is on your mind once it pops up. If you are unsure about anything you see or do not know about what something means, you will not receive any help but verbalise when you are unsure about anything during the task. Please make sure that you speak clearly ‘to the room’.”*
 
-The experimenter occasionally prompted participants with content-neutral probes: *“can you tell me what you are thinking?”* in cases of periods of long silence, and *“can you tell me more?”* when the participant said something vague that may warrant further detail. We emphasise that these are non-leading questions. The audio of the participants’ verbalisations was recorded and then transcribed. An initial transcript was generated using Microsoft Office’s transcription feature, but the transcript was checked and modified for accuracy by listening through the audio recordings again. The screen of the experimental interface was also recorded, such that the audio could be linked to specific actions within the task. The focus of this study is on verbal utterances rather than any non-verbal or inferential aspects of the participants’ qualitative data. At the end of the experiment, the researcher administered a semi-structured interview to better understand what the participants feel their diagnostic reasoning approach tends to be. These questions are provided in the Appendices.
+The experimenter occasionally prompted participants with content-neutral probes: *“can you tell me what you are thinking?”* in cases of periods of long silence, and *“can you tell me more?”* when the participant said something vague that may warrant further detail. We emphasise that these are non-leading questions. The audio of the participants’ verbalisations was recorded and then transcribed. An initial transcript was generated using Microsoft Office’s transcription feature, but the transcript was checked and modified for accuracy by listening through the audio recordings again. The screen of the experimental interface was also recorded, such that the audio could be linked to specific actions within the task. The focus of this study is on verbal utterances rather than any non-verbal or inferential aspects of the participants’ qualitative data. Given that participants were encouraged to verbalise their considered differentials as they were performing the task, we did not show participants the screen where they explicitly listed the differentials they were considered (as depicted in Figure X in the previous section). At the end of the experiment, the researcher administered a semi-structured interview to better understand what the participants feel their diagnostic reasoning approach tends to be. These questions are provided in the Appendices.
 
 ### Data Analysis {.unnumbered}
 
@@ -117,7 +211,7 @@ We show a breakdown of cases by their coded reasoning strategy in Table 4. We no
 
 We hypothesised that an interaction with reasoning strategy is associated with accuracy on the task. This is because a single reasoning strategy is considered unlikely to be more accurate for all cases. Different patient conditions seem to result in varying reasoning strategies being utilised, which begs the question of what properties of a condition contribute to changes in strategy and in accuracy. One possibility is that reasoning strategy interacts with the diagnostic uncertainty of a case (i.e. the breadth of conditions that a patient could have given their current symptoms and history, with some conditions presenting in a more apparent way than others), as captured by the number of initial differentials reported by participants. To test this hypothesis, we fit a linear model to predict accuracy with an interaction between the number of initial diagnoses and reasoning strategy. 
 
-```{r stratClassifier, include=TRUE, echo=FALSE, warning = FALSE, message=FALSE}
+```{r stratClassifier, include=FALSE, echo=FALSE, warning = FALSE, message=FALSE}
 
 trainingDataStrats <- infoSeekingMatrixTA
 testingDataStrats <- infoSeekingFullMatrix[infoSeekingFullMatrix$ParticipantType=="p",]
