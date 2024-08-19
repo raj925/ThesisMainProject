@@ -43,6 +43,7 @@ for (n in 1:length(participantIDS))
   aggData$meanMiddleDiffs[n] <- mean(pptTrials[pptTrials$stage==2,]$numOfDifferentials)
   aggData$meanFinalDiffs[n] <- mean(pptTrials[pptTrials$stage==3,]$numOfDifferentials)
   aggData$averageDiffChange[n] <- aggData$meanFinalDiffs[n] - aggData$meanInitialDiffs[n]
+  aggData$absoluteDifferentialChange[n] <- abs(aggData$averageDiffChange[n])
   aggData$stage2DiffsAdded[n] <- aggData$meanMiddleDiffs[n] - aggData$meanInitialDiffs[n]
   aggData$stage3DiffsAdded[n] <- aggData$meanFinalDiffs[n] - aggData$meanMiddleDiffs[n]
   
@@ -383,8 +384,11 @@ for (y in 1:nCase)
   caseDf$caseInformationReqs[y] <- df$currentTests[(3*y)-2] + df$currentTests[(3*y)-1] + df$currentTests[(3*y)]
   caseDf$likelihoodChange[y] <- df$highestLikelihood[(3*y)] - df$highestLikelihood[(3*y)-2]
   caseDf$differentialChange[y] <- df$numOfDifferentials[(3*y)] - df$numOfDifferentials[(3*y)-2]
+  caseDf$absoluteDifferentialChange[y] <- abs(caseDf$differentialChange[y])
   caseDf$confidenceArray[y] <- toString(c(df$confidence[(3*y)-2],df$confidence[(3*y)-1],df$confidence[(3*y)]))
   caseDf$highestFinalLikelihood[y] <- df$highestLikelihood[(3*y)]
+  caseDf$readyToTreat[y] <- ifelse((df$treatmentPlan[(3*y)-2] == "Not Provided")&
+    (df$treatmentPlan[(3*y)-1] == "Not Provided")&(df$treatmentPlan[(3*y)] == "Not Provided"),0,1)
   correct <- df$correct[(3*y)]
   caseDf$correct[y] <- correct
   if (correct == 1)

@@ -41,6 +41,7 @@ tidyverse
 readr
 purrr
 forcats
+lubridate
 proxy
 plotly
 viridisLite
@@ -65,6 +66,7 @@ GGally
 ROCR
 maptree
 knitr
+kableExtra
 glmnet
 gridExtra
 nlme
@@ -81,5 +83,3 @@ scatterplot3d
 poLCA
 lsr
 cowplot
-stargazer
-kableExtra

@@ -5,7 +5,7 @@ requiredPackages <- c("tibble", "scales", "psych", "ltm", "stringr", "ggsci", "g
                       "RColorBrewer", "tm", "logisticPCA", "rARPACK", "FactoMineR", "verification","interactions",
                       "rpart", "caret", "data.table", "GGally", "ROCR", "maptree", "knitr", "kableExtra",
                       "glmnet", "gridExtra", "mgcv", "nnet", "pROC", "pls", "stats",
-                      "gbm", "xgboost", "DT", "NeuralNetTools", "rpart.plot", "poLCA", "lsr", "cowplot", "stargazer")
+                      "gbm", "xgboost", "DT", "NeuralNetTools", "rpart.plot", "poLCA", "lsr", "cowplot")
 
 new.packages <- requiredPackages[!(requiredPackages %in% installed.packages()[,"Package"])]
 if(length(new.packages)) install.packages(new.packages, repos = "http://cran.us.r-project.org")
@@ -63,7 +63,13 @@ binarysimilarityMat <- function(m) {
 binarysimilarityMean <- function(m){
   mat <- binarysimilarityMat(m)
   values <- mat[upper.tri(mat)]
-  return(c(mean(values),sd(values)^2))
+  return(mean(values))
+}
+
+dicesimilarityMean <- function(m){
+  mat <- as.matrix(proxy::dist(m,method = "Dice"))
+  values <- mat[upper.tri(mat)]
+  return(mean(values))
 }
 
 jaccard <- function(a, b) {
