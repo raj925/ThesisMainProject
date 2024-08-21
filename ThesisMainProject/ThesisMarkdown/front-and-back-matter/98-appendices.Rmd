@@ -1,16 +1,60 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 `r if(knitr:::is_latex_output()) '\\startappendices'`
 
 `r if(!knitr:::is_latex_output()) '# (APPENDIX) Appendix {-}'` 
 
 <!-- If you feel it necessary to include an appendix, it goes here. The first appendix should include the commands above. -->
+```{r setup, include=FALSE}
 
-# Vignette Marking Scheme (Studies 1 and 2)
+knitr::opts_chunk$set(cache =TRUE)
 
+install.packages("tidyverse",repos = "http://cran.us.r-project.org")
+library(tidyverse)
+
+```
+
+# Vignette Marking Scheme (Studies 2 and 3)
+
+``` {r markingtable, include=TRUE, eval=TRUE, message=FALSE, echo=FALSE, warning=FALSE,out.width='100%', fig.align='center'}
+
+marking <- as.data.frame(read.csv("../assets/VignetteMarkingScheme.csv",header=TRUE))
+
+colnames(marking) <- c("Condition","Abbreviation","Presenting Complaint","Accepted Answers")
+
+knitr::kable(marking) %>% 
+  kableExtra::kable_styling(latex_options=c("HOLD_position","scale_down"))
+
+```
+
+# Vignette Information Requests
+
+``` {r inforequests, include=TRUE, eval=TRUE, message=FALSE, echo=FALSE, warning=FALSE,out.width='100%', fig.align='center'}
+
+marking <- as.data.frame(read.csv("../assets/VignetteInformationRequests.csv",header=TRUE))
+
+colnames(marking) <- c("Patient History", "Physical Examinations", "Testing")
+
+knitr::kable(marking) %>% 
+  kableExtra::kable_styling(latex_options=c("HOLD_position","scale_down"))
+
+```
+
+
+# Analysis of Accuracy Using Alternative Measures
+
+
+```{r}
 # Think Aloud Study - Debrief Questionnaire
 
 # Diagnostic Appropriateness Marking Scheme (Study 3)
 
 # R Environment and Packages
+
+```
 
 ```{r}
 

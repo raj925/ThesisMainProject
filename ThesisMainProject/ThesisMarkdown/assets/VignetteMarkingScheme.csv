@@ -1,0 +1,7 @@
+﻿Condition,Abbreviation,Presenting Complaint,Accepted Answers
+Temporal Arteritis,TA,Patient is a 68 year old male presented with fever and arthralgia.,Any inflammatory arthritis is accepted
+Ulcerative Colitis,UC,Patient is a 60 year old male presented with 2 day history of bloody diarrhoea.,"Infectious colitis, ischemic colitis and diverticulitis are also accepted answers."
+Miliary Tuberculosis,MTB,Patient is a 62 year old male admitted for fevers and generalised weakness.,Any TB or lymphoma type is accepted
+Aortic Dissection,AD,Patient is a 58 year old female presented with shortness of breath.,Pulmonary embolism and coarctation of the aorta are also accepted answers. Aortic stenosis
+Guillain-Barré Syndrome,GBS,Patient is a 67 year old male presented with weakness of the legs for 24 hours.,Cauda Equina Syndrome is also accepted
+Thrombotic Thrombocytopenic Purpura,TTP,Patient is a 20 year old male was admitted from an outside hospital with complaints of a headache and slurred speech.,ITP or Meningitis are also accepted.
