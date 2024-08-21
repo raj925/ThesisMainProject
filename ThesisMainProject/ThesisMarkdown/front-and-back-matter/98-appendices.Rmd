@@ -30,6 +30,10 @@ knitr::kable(marking) %>%
 
 ```
 
+_Table S1: Marking scheme used to denote differentials that are considered as correct for each of the six patient cases/vignettes. The same marking scheme is applied for online and think-aloud vignette studies. The presenting complaint is shown to participants at the start of the case, before they start seeking information._
+
+\newpage
+
 # Vignette Information Requests
 
 ``` {r inforequests, include=TRUE, eval=TRUE, message=FALSE, echo=FALSE, warning=FALSE,out.width='100%', fig.align='center'}
@@ -43,6 +47,7 @@ knitr::kable(marking) %>%
 
 ```
 
+_Table S2: Full list of possible information requests that participants can make. This set of information is the same for all cases. The same vignettes and corresponding information are used for the online and think-aloud vignette studies._
 
 # Analysis of Accuracy Using Alternative Measures
 
