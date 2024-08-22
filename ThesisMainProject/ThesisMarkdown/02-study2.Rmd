@@ -205,7 +205,7 @@ We recruited final year medical students within the UK. 85 medical students comp
 
 ### Materials {.unnumbered}
 
-This study involved patient vignettes that we adapted from anonymised past cases used by Friedman (2004). Six cases were chosen, each designed to indicate a specific underlying condition  the patient had: Aortic Dissection (AD), Guillain-Barre Syndrome (GBS), Miliary TB (MTB), Temporal Arteritis (TA), Thrombotic Thrombocytopenic Purpura (TTP) and Ulcerative Colitis (UC). The order in which the cases were presented was randomised for each participant. We also included a practice case (Colon Cancer) to familiarise the participants with the experimental procedure and the interface. Cases were chosen to reflect a variety of affected pathophysiological systems and to test medical students on medical conditions that they were expected to know given their level of education/training.
+This study involved patient vignettes that we adapted from anonymised past cases used by Friedman (2004). Six cases were chosen, each designed to indicate a specific underlying condition the patient had: Aortic Dissection (AD), Guillain-Barre Syndrome (GBS), Miliary TB (MTB), Temporal Arteritis (TA), Thrombotic Thrombocytopenic Purpura (TTP) and Ulcerative Colitis (UC). The order in which the cases were presented was randomised for each participant. We also included a practice case (Colon Cancer) to familiarise the participants with the experimental procedure and the interface. Cases were chosen to reflect a variety of affected pathophysiological systems and to test medical students on medical conditions that they were expected to know given their level of education/training.
 \
 
 A panel of 3 subject matter experts (practising doctors and researchers within the NHS and the OxSTaR centre www.oxstar.ox.ac.uk ) were recruited to design the vignettes used in this study. These medical professionals were at differing experience levels, with their medical roles at the time of this study as follows: Speciality trainee (ST7) in Anaesthetics, Foundation (F1) Doctor and Gastroenterology Consultant. The panel assisted with translating terms (e.g., medication names, tests etc.) from US to UK doctors’ vernacular, updated patient details to be more current and provided input on the choice and complexity of the cases chosen. 
@@ -293,6 +293,8 @@ accdf <- studentDf %>%
   group_by(stage,participantID) %>%
   dplyr::summarise(Accuracy = mean(likelihoodOfCorrectDiagnosis))
 
+accdf$stage <- as.factor(accdf$stage)
+
 model <- summary(aov(Accuracy ~ stage, data=accdf))
 print(model)
 model <- model[[1]]
@@ -301,7 +303,7 @@ etasq <- round(etaSquared(aov(Accuracy ~ stage, data=accdf))[1],2)
 
 ```
 
-Across cases, accuracy increased with each stage of information gathering as per our Accuracy measure (F(`r model$DF[1]`, `r model$DF[2]`) = `r round(model$F[1],2)`, $\eta^2$G = `r etasq`, p = `r round(model$p[1],3)`). Participants had lower accuracy during the Patient History stage (M = `r round(mean(accdf[accdf$stage==1,]$Accuracy)/10,2)`, SD = `r round(sd(accdf[accdf$stage==1,]$Accuracy)/10,2)`) than during the Physical Examination (M = `r round(mean(accdf[accdf$stage==2,]$Accuracy)/10,2)`, SD = `r round(sd(accdf[accdf$stage==2,]$Accuracy)/10,2)`) and Testing stages (M = `r round(mean(accdf[accdf$stage==3,]$Accuracy)/10,2)`, SD = `r round(sd(accdf[accdf$stage==3,]$Accuracy)/10,2)`). Table 2 shows overall accuracy (at the Testing stage) by case, indicating that there was variability in performance due to cases varying in difficulty. 
+Across cases, accuracy increased with each stage of information gathering as per our Accuracy measure (F(`r model$DF[1]`, `r model$DF[2]`) = `r round(model$F[1],2)`, $\eta^2$G = `r etasq`, p < .001). Participants had lower accuracy during the Patient History stage (M = `r round(mean(accdf[accdf$stage==1,]$Accuracy)/10,2)`, SD = `r round(sd(accdf[accdf$stage==1,]$Accuracy)/10,2)`) than during the Physical Examination (M = `r round(mean(accdf[accdf$stage==2,]$Accuracy)/10,2)`, SD = `r round(sd(accdf[accdf$stage==2,]$Accuracy)/10,2)`) and Testing stages (M = `r round(mean(accdf[accdf$stage==3,]$Accuracy)/10,2)`, SD = `r round(sd(accdf[accdf$stage==3,]$Accuracy)/10,2)`). Table 2 shows overall accuracy (at the Testing stage) by case, indicating that there was variability in performance due to cases varying in difficulty. 
 
 ### Calibration of Confidence to Accuracy {.unnumbered}
 
@@ -310,6 +312,8 @@ Across cases, accuracy increased with each stage of information gathering as per
 condf <- studentDf %>%
   group_by(stage,participantID) %>%
   dplyr::summarise(Confidence = mean(confidence))
+
+condf$stage <- as.factor(condf$stage)
 
 model <- summary(aov(Confidence ~ stage, data=condf))
 print(model)
@@ -331,7 +335,7 @@ readinessttest <- t.test(studentCaseDf[studentCaseDf$readyToTreat==0,]$finalConf
 
 ```
 
-Confidence also increased as participants received more information (F(`r model$DF[1]`, `r model$DF[2]`) = `r round(model$F[1],2)`, $\eta^2$G = `r etasq`, p = `r round(model$p[1],3)`). Participants reported lower confidence during the Patient History stage (M = `r round(mean(condf[condf$stage==1,]$Confidence)/100,2)`, SD = `r round(sd(condf[condf$stage==1,]$Confidence)/100,2)`) than during the Physical Examination (M = `r round(mean(condf[condf$stage==2,]$Confidence)/100,2)`, SD = `r round(sd(condf[condf$stage==2,]$Confidence)/100,2)`) and Testing stages (M = `r round(mean(condf[condf$stage==3,]$Confidence)/100,2)`, SD = `r round(mean(condf[condf$stage==3,]$Confidence)/100,2)`). We note here that confidence was on average below 50% even at the end of each case, which indicates that participants were not highly confident to start treatment. This is reflected in participants expressing their readiness to treat the patient in the vignette, which allows them to enter a treatment plan for the patient. In `r readinesspercent`% of cases, participants reported they were ready to treat the patient and entered a treatment plan. As we expect, we find via a Welch Two Sample t-test that participants reported higher confidence at the final stage when they were ready to treat (M = `r round(mean(studentCaseDf[studentCaseDf$readyToTreat == 1, ]$finalConfidence),2)`, SD = `r round(sd(studentCaseDf[studentCaseDf$readyToTreat == 1, ]$finalConfidence),2)`) compared to when they were not (M = `r round(mean(studentCaseDf[studentCaseDf$readyToTreat == 0, ]$finalConfidence),2)`, SD = `r round(sd(studentCaseDf[studentCaseDf$readyToTreat == 0, ]$finalConfidence),2)`) (t(`r round(readinessttest$parameter)`) = `r round(readinessttest$statistic,2)`, MDiff = `r round(readinessttest$estimate,2)`, p = < .001).
+Confidence also increased as participants received more information (F(`r model$DF[1]`, `r model$DF[2]`) = `r round(model$F[1],2)`, $\eta^2$G = `r etasq`, p < .001). Participants reported lower confidence during the Patient History stage (M = `r round(mean(condf[condf$stage==1,]$Confidence)/100,2)`, SD = `r round(sd(condf[condf$stage==1,]$Confidence)/100,2)`) than during the Physical Examination (M = `r round(mean(condf[condf$stage==2,]$Confidence)/100,2)`, SD = `r round(sd(condf[condf$stage==2,]$Confidence)/100,2)`) and Testing stages (M = `r round(mean(condf[condf$stage==3,]$Confidence)/100,2)`, SD = `r round(mean(condf[condf$stage==3,]$Confidence)/100,2)`). We note here that confidence was on average below 50% even at the end of each case, which indicates that participants were not highly confident to start treatment. This is reflected in participants expressing their readiness to treat the patient in the vignette, which allows them to enter a treatment plan for the patient. In `r readinesspercent`% of cases, participants reported they were ready to treat the patient and entered a treatment plan. As we expect, we find via a Welch Two Sample t-test that participants reported higher confidence at the final stage when they were ready to treat (M = `r round(mean(studentCaseDf[studentCaseDf$readyToTreat == 1, ]$finalConfidence),2)`, SD = `r round(sd(studentCaseDf[studentCaseDf$readyToTreat == 1, ]$finalConfidence),2)`) compared to when they were not (M = `r round(mean(studentCaseDf[studentCaseDf$readyToTreat == 0, ]$finalConfidence),2)`, SD = `r round(sd(studentCaseDf[studentCaseDf$readyToTreat == 0, ]$finalConfidence),2)`) (t(`r round(readinessttest$parameter)`) = `r round(readinessttest$statistic,2)`, MDiff = `r round(readinessttest$estimate,2)`, p < .001).
 \
 
 ```{r casewiseStatsTable, include=TRUE, echo=FALSE}
@@ -364,6 +368,8 @@ testtest <- t.test(condf[condf$stage==3,]$Confidence,accdf[accdf$stage==3,]$Accu
 
 When comparing Accuracy (taking into account the likelihood assigned to correct differentials) to Confidence, we find, across stages, participants’ Confidence was fairly well aligned to their Accuracy (see Figure 4). To determine whether confident participants tended to be more accurate, we compared a paired t-test between Average Confidence and Average Accuracy (across cases) at each stage. There was no evidence of a difference between the two at the Patient History (t(`r histtest$parameter`) = `r round(histtest$statistic,2)`, MDiff = `r round(histtest$estimate,3)`, p = `r round(histtest$p.value,2)`) and Physical Examination stages (t(`r exattest$parameter`) = `r round(exattest$statistic,2)`, MDiff = `r round(exattest$estimate,2)`, p = `r round(exattest$p.value,2)`), but there was a statistically significant difference between the two at the Testing stage (t(`r testtest$parameter`) = `r round(testtest$statistic,2)`, MDiff = `r round(testtest$estimate,2)`, p = `r round(testtest$p.value,2)`). This indicated well-calibrated confidence after Patient History and Physical Examination, but a slight overconfidence across participants after Testing. 
 \
+
+\newpage
 
 ```{r meyerGraph, include=TRUE, echo=FALSE, out.width='100%', fig.align='center', fig.align='center', fig.height=8}
 
@@ -442,6 +448,8 @@ diffdf <- studentDf %>%
   group_by(stage,participantID) %>%
   dplyr::summarise(Differentials = mean(numOfDifferentials))
 
+diffdf$stage <- as.factor(diffdf$stage)
+
 model <- summary(aov(Differentials ~ stage, data=diffdf))
 print(model)
 model <- model[[1]]
@@ -452,7 +460,7 @@ etasq <- round(etaSquared(aov(Differentials ~ stage, data=diffdf))[1],2)
 Analysis of the number of differentials considered by participants at each stage provides little evidence for an overall strategy of deductive narrowing towards a single differential. Instead, participants overall increased the number of the differentials they reported as they received more information (F(`r model$DF[1]`, `r model$DF[2]`) = `r round(model$F[1],2)`, $\eta^2$G = `r etasq`, p < .001). Participants reported fewer differentials during the Patient History stage (M = `r round(mean(diffdf[diffdf$stage==1,]$Differentials),2)`, SD = `r round(sd(diffdf[diffdf$stage==1,]$Differentials),2)`) than during the Physical Examination (M = `r round(mean(diffdf[diffdf$stage==2,]$Differentials),2)`, SD = `r round(sd(diffdf[diffdf$stage==2,]$Differentials),2)`) and Testing stages (M = `r round(mean(diffdf[diffdf$stage==3,]$Differentials),2)`, SD = `r round(sd(diffdf[diffdf$stage==3,]$Differentials),2)`). The majority (74/85) did not decrease the number of differentials between Patient History and Testing on any case, indicating a tendency to widen rather than narrow the set of considered diagnoses through the evolving decision process (even while, on average, growing increasingly certain of the correct diagnosis). 
 \
 
-```{r diffsOverStages, include=TRUE, echo=FALSE, out.width='100%', fig.align='center'}
+```{r diffsOverStages, include=TRUE, echo=FALSE, out.width='100%', fig.align='center', fig.height=6}
 
 nPpts <- nrow(studentAggData)
 
@@ -477,8 +485,8 @@ print(diffs +
 
 ```
 _Figure 5: The average number of differentials after each stage of information seeking (x-axis, PaH = Patient History, PhE = Physical Examinations, Te = Testing). The red dots indicate the mean values, whilst the red lines indicate standard deviations._
-\
 
+\newpage
 
 ```{r initialDiffs, include=FALSE, echo=FALSE}
 
@@ -492,8 +500,9 @@ cor2 <- cor.test(studentAggData$meanInitialDiffs,studentAggData$meanConfidenceOv
 
 ```
 
-We then ask if participants who generate more differentials early in the diagnostic process go on to seek more information by conducting a Pearson’s Correlation test on individual differences. We find an association (see Figure 6) between the average number of differentials generated from the Patient History and the average amount of information sought during cases (r(`r cor$parameter`) = `r round(cor$estimate,2)`, 95% CI = [`r round(cor$conf.int[1],2)`, `r round(cor$conf.int[2],2)`], p = `r round(cor$p.value,3)`). As previously discussed, participants rarely seem to remove differentials from consideration. Therefore, one can surmise here that higher information seeking is associated with the consideration of more diagnostic differentials. We also find evidence for a positive association between the number of initial differentials and the change in confidence (i.e. the difference in confidence reported during the Patient History stage and the Testing stage) (r(`r cor2$parameter`) = `r round(cor2$estimate,2)`, 95% CI = [`r round(cor2$conf.int[1],2)`, `r round(cor2$conf.int[2],2)`], p = `r round(cor2$p.value,2)`)
-\
+We then ask if participants who generate more differentials early in the diagnostic process go on to seek more information by conducting a Pearson’s Correlation test on individual differences. We find an association (see Figure 6) between the average number of differentials generated from the Patient History and the average amount of information sought during cases (r(`r cor$parameter`) = `r round(cor$estimate,2)`, 95% CI = [`r round(cor$conf.int[1],2)`, `r round(cor$conf.int[2],2)`], p = `r round(cor$p.value,3)`). As previously discussed, participants rarely seem to remove differentials from consideration. Therefore, one can surmise here that higher information seeking is associated with the consideration of more diagnostic differentials. We also find evidence for a positive association between the number of initial differentials and the change in confidence (i.e. the difference in confidence reported during the Patient History stage and the Testing stage) (r(`r cor2$parameter`) = `r round(cor2$estimate,2)`, 95% CI = [`r round(cor2$conf.int[1],2)`, `r round(cor2$conf.int[2],2)`], p = `r round(cor2$p.value,2)`).
+
+\newpage
 
 ```{r diffsPlot, include=TRUE, echo=FALSE, message=FALSE, warning=FALSE, out.width='100%', fig.align='center', fig.height=10}
 
@@ -577,6 +586,8 @@ As well the initial diagnostic breadth of participants, we are also interested i
 infodf <- studentDf %>%
   group_by(stage,participantID) %>%
   dplyr::summarise(InfoSeeking = mean(proportionOfInfo))
+
+infodf$stage <- as.factor(infodf$stage)
 
 model <- summary(aov(InfoSeeking ~ stage, data=infodf))
 print(model)
@@ -846,7 +857,6 @@ knitr::kable(casewisePredictions) %>%
 _Table 2: The accuracy of our multinomial classifier that predicts patient condition for each case based on the information sought/not sought as binary predictors. We then test the accuracy of the classifier by comparing the predicted condition from the model against the actual patient condition for each case. We then split cases by condition to look at accuracy on a case-by-case level. Given that participants perform 6 cases each, accuracy would 1/6 (16.6%) when at chance._
 
 \
-
 Taking these findings together, keeping information seeking more constant across cases was found to have an association with accuracy whilst also there being information sought for specific conditions. To reconcile these, we derive which information requests were most weighted in our classifier models to find which were considered markers of accuracy (by being sought across cases) and which were considered markers of identifying specific cases. We extract coefficients from the logistic classifier of accuracy (the ROC curve for which was shown in Figure 8) and the multinomial classifier (the accuracy of which was depicted above in Table 2). We identify the highest weighted information requests as input parameters for each model. The five highest weighted information requests for each model are shown below in Table 3.
 
 \newpage
@@ -891,7 +901,8 @@ We found that participants become more accurate as they received more informatio
 Previous work (e.g. Meyer et al., 2011) have noted a gap between subjective confidence and objective accuracy. In particular, a general tendency has been demonstrated for less experienced medical trainees to be underconfident and for more experienced medical professionals to be overconfident (Yang and Thompson, 2010). Part of the discrepancy between our findings and past findings could stem from the way that diagnostic uncertainty is expressed by students in this study. Using our measure of accuracy, which is obtained by using the likelihood values assigned to correct differentials (if included), we find that accuracy tracks confidence quite closely at each information stage. We note however that our finding of calibrated confidence is highly contingent on the measure of accuracy used. When using a more lenient measure, the proportion of cases where a correct differential was reported, participants were found to be underconfident. When using a stricter measure, the likelihood value assigned to the most likely differential if it is correct, participants are found to be overconfident. While we therefore temper our finding of calibration, this has implications for other research that looks at  calibration during diagnoses, given that accuracy can be defined in multiple ways when participants record multiple differentials. In addition, our confidence measure is related to the participants' subjective readiness to treat the patient, rather than confidence in the set of differentials. This limits to extent to which we can compare accuracy and confidence directly.
 \
 
-Participants exhibited a general pattern of broadening the range of differentials they were considering as they received more information. In addition, we observed that participants did not tend to remove differentials from consideration despite having the option to do so. We can interpret this as students being careful not to miss differentials from consideration, indicating a focus on being comprehensive in their generation of differentials rather than a focus on narrowing in on a single diagnosis. It is therefore worth considering whether students are taught not to disregard diagnostic possibilities easily as per their medical education. \
+Participants exhibited a general pattern of broadening the range of differentials they were considering as they received more information. In addition, we observed that participants did not tend to remove differentials from consideration despite having the option to do so. We can interpret this as students being careful not to miss differentials from consideration, indicating a focus on being comprehensive in their generation of differentials rather than a focus on narrowing in on a single diagnosis. It is therefore worth considering whether students are taught not to disregard diagnostic possibilities easily as per their medical education. 
+\
 
 We also found that the initial breadth of diagnoses considered from the patients' history was predictive of the amount of subsequent information seeking and changes in confidence. We also find that how much participants change the number of differentials they are considering is predictive of information seeking and changes in confidence. Relatedly, information seeking and confidence was associated, such that participants who sought more information tended to increase their confidence more over the course of the diagnoses. However, the amount of information sought was not predictive of diagnostic accuracy, which was instead associated with seeking more valuable/appropriate information for a given patient condition. When taken together, these findings give an interesting picture of the diagnostic process as we capture it within our task. Our account of how participants approach this task can be surmised as follows: medical students generate an initial set of differentials from the patient history and use this to guide their information seeking. With more differentials to consider, students may be seeking more information to 'test' each of these hypotheses. Seeking more information increases the likelihood that new differentials are brought to mind, resulting in more differentials being added as under consideration. When participants have more information and have considered a wider range of differentials, they are likely to increase their confidence due to being more comprehensive in their thought process. However, this account requires follow-up study to elucidate (as we discuss later in this section).
 \

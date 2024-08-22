@@ -111,7 +111,7 @@ colnames(distancesTA) <- rownames(distancesTA)
 
 ## Introduction {.unnumbered}
 
-In this mixed-methods study, we aim to gain insight on the types of reasoning strategies used by medical students and how these strategies influence their information seeking patterns. We utilise a very similar experimental procedure to our previous vignette-based study, but instead prompted students to think out loud as they were performing the task. Everything that was said by participants were audio-recorded, transcribed and then coded for both quantitative and qualitative analysis. 
+In this mixed-methods study, we aim to gain insight on the types of reasoning strategies used by medical students and how these strategies influence their information seeking patterns. We utilise a very similar experimental procedure to our previous online study (using the same patient vignettes), but instead prompted students to think out loud as they were performing the task. Everything that was said by participants were audio-recorded, transcribed and then coded for both quantitative and qualitative analysis. 
 
 In our previous study, we observed a general tendency for participants to broaden the set of differentials they considered as they received more information. This was reflected in the number of differentials reported at each information stage increasing over each case on average. This effect was driven by participants (74 out of 85 participants, 87%) never reporting fewer differentials at the Testing stage compared to the Patient History stage. This is a surprising result, as we may have expected that participants to use a 'process of elimination', which would manifest in decreasing numbers of differentials as participants receive more information. What this speaks to however is a general reticence to remove differentials from consideration. One of our focuses for this study then is to replicate this finding by examining if students' thought processes reflect this tendency to focus on broadening rather than the narrowing the differentials being considered. This is to ensure that the finding in our previous study is not merely a quirk of our experimental interface and design, as it is possible that participants are not encouraged to disregard differentials within our paradigm.
 \
@@ -198,6 +198,51 @@ Qualitative piece – thinking aloud as they doing it
 Debrief questionnaire – thematic analysis (more reflective)
 Recoding analysis (from online study)
 
+```{r stratppttable, warning=FALSE, message=FALSE}
+
+stratppttable <- TAData %>%
+  group_by(Condition, ID) %>%
+  dplyr::summarise(Strategy = InterraterStrat)
+
+```
+
+
+```{r stratbreakdown, warning=FALSE, message=FALSE}
+
+stratBreakdown <- TAData %>%
+  group_by(Condition, InterraterStrat) %>%
+  dplyr::mutate(N = n()) %>%
+  dplyr::summarise(m_N = mean(N)/16)
+
+nCases <- nrow(TAData)
+props <- c(nrow(TAData[TAData$InterraterStrat=="PR",])/nCases,
+           nrow(TAData[TAData$InterraterStrat=="HD",])/nCases,
+           nrow(TAData[TAData$InterraterStrat=="SI",])/nCases,
+           nrow(TAData[TAData$InterraterStrat=="NONE",])/nCases)
+
+temp <- data.frame(c("Overall","Overall","Overall","Overall"),
+                   c("PR","HD","SI","NONE"),
+                   props)
+colnames(temp) <- c("Condition","InterraterStrat","m_N")
+
+stratBreakdown <- rbind(stratBreakdown,temp)
+
+stratBreakdown$InterraterStrat <- factor(stratBreakdown$InterraterStrat, levels = c('HD', 'PR', 'SI', 'NONE'))
+
+p <- ggplot(stratBreakdown, aes(fill=InterraterStrat, y=m_N, x=Condition)) + 
+    geom_bar(position="dodge", stat="identity",alpha=0.7) +
+    scale_fill_manual(values=c("#E69F00", "#56B4E9", "#009E73",  "grey")) +
+  scale_x_discrete(limits = c("UC","GBS","TTP","AD","TA","MTB","Overall")) +
+  labs(x="Case (Decreasing Accuracy)",y="Proportion of Participants") +
+  theme_minimal() +
+    theme(axis.text=element_text(size=16),
+        axis.title=element_text(size=16),
+        plot.title=element_text(size=18,face="bold"),
+        line = element_blank())
+
+print(p)
+
+```
 
 First, we look at overall quantitative characteristics of the think aloud statements. When looking at accuracy (the proportion of cases where a correct differential was mentioned by the participant), accuracy was 0.57 across all cases. This varied considerably by condition however, with accuracy across participants for each condition being as follows: AD = 0.63, GBS = 0.88, MTB = 0.19, TA = 0.44, TTP = 0.69, UC = 0.63. For utterances coded as Differential Evaluations, participants on average made 5.21 such utterances per case (SD = 2.80). The mean number of Differential Evaluations was relatively constant by condition except for the AD case: AD = 8.18, GBS = 4.63, MTB = 4.81, TA = 4.75, TTP = 4.25, UC = 4.63. Participants varied in how much they spoke during the study, uttering 1038-7730 words (M = 4194) across the scenarios. Part of this range is driven by participants repeating information they see during the task, but participants also varied in terms of how much they externalised their thought process. 
 
