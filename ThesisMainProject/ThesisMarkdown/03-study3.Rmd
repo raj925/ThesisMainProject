@@ -140,11 +140,12 @@ Think-aloud methodologies are useful for directly accessing ongoing thought proc
 
 In this study, we investigate the following research questions:
 
-* Do students report ruling out differentials as they seek information on patient during diagnoses?
-* What reasoning strategies are medical students using when making diagnoses and weighing up differentials?
+* What is the thought process of students as they performing our diagnosis task? Do students report ruling out differentials as they seek information on patient during diagnoses?
+* Can we define different reasoning strategies based on the think-aloud utterances of medical students?
+* If so, what reasoning strategies are medical students using when making diagnoses and weighing up differentials?
 * How do differences in reasoning strategy manifest in terms of information seeking, both in terms of the quality and quantity of information sought?
-* Are differences in reasoning strategy related to the individual or are they dependent on the case at hand?
-* What considerations do medical students report having whilst they are making diagnoses?
+* Are differences in reasoning strategy related to the individual or are they dependent on the case at hand? Do better performing medical students utilise specific reasoning strategies?
+* What considerations do medical students report having whilst they are making diagnoses? And how these differ from how medical students reflect on their thought process after performing the task?
 
 ## Methods {.unnumbered}
 
@@ -190,6 +191,13 @@ Coding of utterances and case-wise reasoning strategies were conducted with a se
 Although we do not record differentials in the same way as in Study 1 (in a list with corresponding likelihood and severity ratings), we do obtain the other variables. Namely, we record confidence at each stage of information seeking and data around the information sought by participants. As we do not explicitly record differentials in the same manner as in Study 1, accuracy is operationalised differently. We code each case as ‘correct’ if a correct differential is mentioned at some point by the participant (using the same marking scheme, found in the Appendices).
 
 ## Results {.unnumbered}
+
+Results of the utterances (differential evaluations, how much they say they’re seeking information) – Desc. Quantitative
+Quantitative results – by strategy
+Qualitative piece – thinking aloud as they doing it
+Debrief questionnaire – thematic analysis (more reflective)
+Recoding analysis (from online study)
+
 
 First, we look at overall quantitative characteristics of the think aloud statements. When looking at accuracy (the proportion of cases where a correct differential was mentioned by the participant), accuracy was 0.57 across all cases. This varied considerably by condition however, with accuracy across participants for each condition being as follows: AD = 0.63, GBS = 0.88, MTB = 0.19, TA = 0.44, TTP = 0.69, UC = 0.63. For utterances coded as Differential Evaluations, participants on average made 5.21 such utterances per case (SD = 2.80). The mean number of Differential Evaluations was relatively constant by condition except for the AD case: AD = 8.18, GBS = 4.63, MTB = 4.81, TA = 4.75, TTP = 4.25, UC = 4.63. Participants varied in how much they spoke during the study, uttering 1038-7730 words (M = 4194) across the scenarios. Part of this range is driven by participants repeating information they see during the task, but participants also varied in terms of how much they externalised their thought process. 
 
