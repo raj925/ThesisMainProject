@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.7.7)  22 AUG 2024 19:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.7.7)  29 AUG 2024 15:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1451,7 +1451,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 335--336
  []
 
 [7]
-<./assets/Paradigm.png, id=67, 623.4492pt x 351.9549pt>
+<./assets/Paradigm.png, id=68, 623.4492pt x 351.9549pt>
 File: ./assets/Paradigm.png Graphic file (type png)
 <use ./assets/Paradigm.png>
 Package pdftex.def Info: ./assets/Paradigm.png  used on input line 343.
@@ -1462,7 +1462,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 345--346
  []
 
 [8 <./assets/Paradigm.png>]
-<./assets/Screenshot1.png, id=74, 992.70876pt x 796.9775pt>
+<./assets/Screenshot1.png, id=75, 992.70876pt x 796.9775pt>
 File: ./assets/Screenshot1.png Graphic file (type png)
 <use ./assets/Screenshot1.png>
 Package pdftex.def Info: ./assets/Screenshot1.png  used on input line 349.
@@ -1478,7 +1478,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 353--354
  []
 
 [9 <./assets/Screenshot1.png>]
-<./assets/Screenshot2.png, id=81, 1427.3325pt x 550.055pt>
+<./assets/Screenshot2.png, id=82, 1427.3325pt x 550.055pt>
 File: ./assets/Screenshot2.png Graphic file (type png)
 <use ./assets/Screenshot2.png>
 Package pdftex.def Info: ./assets/Screenshot2.png  used on input line 355.
@@ -1498,18 +1498,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 367--368
 
  []
 
-
+[11]
 Underfull \hbox (badness 10000) in paragraph at lines 369--370
 
  []
 
-[11] [12] [13] [14]
+[12] [13] [14] [15{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mat
+hit.enc}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}]
 Underfull \hbox (badness 10000) in paragraph at lines 419--420
 
  []
 
-[15{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/l
-ocal/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}]
+
 Underfull \hbox (badness 10000) in paragraph at lines 442--443
 
  []
@@ -1520,7 +1520,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 444--445
  []
 
 [17]
-<02-study2_files/figure-latex/meyerGraph-1.pdf, id=125, 459.7175pt x 550.055pt>
+<02-study2_files/figure-latex/meyerGraph-1.pdf, id=126, 459.7175pt x 550.055pt>
 
 File: 02-study2_files/figure-latex/meyerGraph-1.pdf Graphic file (type pdf)
 <use 02-study2_files/figure-latex/meyerGraph-1.pdf>
@@ -1537,7 +1537,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 458--459
 
  []
 
-<02-study2_files/figure-latex/diffsOverStages-1.pdf, id=138, 433.62pt x 406.518
+<02-study2_files/figure-latex/diffsOverStages-1.pdf, id=139, 433.62pt x 406.518
 75pt>
 File: 02-study2_files/figure-latex/diffsOverStages-1.pdf Graphic file (type pdf
 )
@@ -1546,7 +1546,7 @@ Package pdftex.def Info: 02-study2_files/figure-latex/diffsOverStages-1.pdf  us
 ed on input line 460.
 (pdftex.def)             Requested size: 421.10046pt x 394.80032pt.
 [19] [20 <./02-study2_files/figure-latex/diffsOverStages-1.pdf>] [21]
-<02-study2_files/figure-latex/diffsPlot-1.pdf, id=164, 460.72125pt x 713.66624p
+<02-study2_files/figure-latex/diffsPlot-1.pdf, id=165, 460.72125pt x 713.66624p
 t>
 File: 02-study2_files/figure-latex/diffsPlot-1.pdf Graphic file (type pdf)
 <use 02-study2_files/figure-latex/diffsPlot-1.pdf>
@@ -1576,7 +1576,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 486--487
 
  []
 
-<02-study2_files/figure-latex/confAccPlot-1.pdf, id=184, 460.72125pt x 713.6662
+<02-study2_files/figure-latex/confAccPlot-1.pdf, id=185, 460.72125pt x 713.6662
 4pt>
 File: 02-study2_files/figure-latex/confAccPlot-1.pdf Graphic file (type pdf)
 <use 02-study2_files/figure-latex/confAccPlot-1.pdf>
@@ -1607,7 +1607,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 496--497
  []
 
 [26]
-<02-study2_files/figure-latex/accuracyClassifier-1.pdf, id=210, 453.695pt x 300
+<02-study2_files/figure-latex/accuracyClassifier-1.pdf, id=211, 453.695pt x 300
 .12125pt>
 File: 02-study2_files/figure-latex/accuracyClassifier-1.pdf Graphic file (type 
 pdf)
@@ -1626,7 +1626,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 502--503
  []
 
 [27 <./02-study2_files/figure-latex/accuracyClassifier-1.pdf>]
-<02-study2_files/figure-latex/accVarPlot-1.pdf, id=223, 459.7175pt x 312.16624p
+<02-study2_files/figure-latex/accVarPlot-1.pdf, id=224, 459.7175pt x 312.16624p
 t>
 File: 02-study2_files/figure-latex/accVarPlot-1.pdf Graphic file (type pdf)
 <use 02-study2_files/figure-latex/accVarPlot-1.pdf>
@@ -1637,7 +1637,7 @@ Package pdftex.def Info: 02-study2_files/figure-latex/accVarPlot-1.pdf  used on
 Underfull \vbox (badness 8132) has occurred while \output is active []
 
 [28] [29 <./02-study2_files/figure-latex/accVarPlot-1.pdf>]
-<02-study2_files/figure-latex/accVarSplitPlot-1.pdf, id=242, 453.695pt x 313.17
+<02-study2_files/figure-latex/accVarSplitPlot-1.pdf, id=243, 453.695pt x 313.17
 pt>
 File: 02-study2_files/figure-latex/accVarSplitPlot-1.pdf Graphic file (type pdf
 )
@@ -1671,12 +1671,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 582--583
  []
 
 [33]
-Underfull \hbox (badness 10000) in paragraph at lines 584--585
+Underfull \hbox (badness 10000) in paragraph at lines 595--596
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 586--587
+Underfull \hbox (badness 10000) in paragraph at lines 598--599
 
  []
 
@@ -1705,10 +1705,10 @@ f-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2023/texmf-dist/font
 s/type1/public/lm/lmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/publ
 ic/lm/lmri12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmtt
 12.pfb>
-Output written on 02-study2.pdf (36 pages, 1362693 bytes).
+Output written on 02-study2.pdf (36 pages, 1363940 bytes).
 PDF statistics:
- 337 PDF objects out of 1000 (max. 8388607)
- 254 compressed objects within 3 object streams
+ 338 PDF objects out of 1000 (max. 8388607)
+ 255 compressed objects within 3 object streams
  58 named destinations out of 1000 (max. 500000)
  26203 words of extra memory for PDF output out of 29859 (max. 10000000)
 

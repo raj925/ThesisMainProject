@@ -49,17 +49,20 @@ knitr::kable(marking) %>%
 
 _Table S2: Full list of possible information requests that participants can make. This set of information is the same for all cases. The same vignettes and corresponding information are used for the online and think-aloud vignette studies._
 
-# Analysis of Accuracy Using Alternative Measures
+# Debrief Questionnaire from Think-Aloud Study (Study 3)
 
+Each question has a corresponding follow-up question below in case they are not answered by responses to the main questions.
 
-```{r}
-# Think Aloud Study - Debrief Questionnaire
+* 1. What's your general approach to making diagnoses? *Follow-Up:* Do you have those cognitive aids or frameworks you use?
+* 2. Do you tend to keep a broad set of differentials in mind? *Follow-Up:* Are there particular situations where having a narrower set would be more useful?
+* 3. How do you decide what information or tests to get on a patient? *Follow-Up:* Would you say you tend to seek information to confirm or to rule out differentials that you have in mind?
+* 4. How similar was your diagnostic reasoning on this task versus how you would approach diagnosis in real life? *Follow-Up:* Was there anything that prevented you from approaching the task as you would in real life?
+
 
 # Diagnostic Appropriateness Marking Scheme (Study 3)
 
 # R Environment and Packages
 
-```
 
 ```{r}
 
