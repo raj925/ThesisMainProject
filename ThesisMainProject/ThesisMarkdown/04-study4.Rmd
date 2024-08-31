@@ -1,7 +1,4 @@
 ---
-#########################################
-# options for knitting a single chapter #
-#########################################
 output:
   bookdown::pdf_document2:
     template: templates/template.tex
@@ -13,7 +10,71 @@ documentclass: book
 
 # Study 4 - Diagnostic Uncertainty and Information Seeking in Virtual Reality Paediatric Scenarios {.unnumbered}
 
-```{r completedata, echo=FALSE}
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(cache =TRUE)
+```
+
+```{r install_packages, include=FALSE}
+source('scripts_and_filters/install_packages_if_missing.R')
+
+```
+
+```{r AggregateData1, include=FALSE, eval=knitr::is_latex_output()}
+vrData <- as.data.frame(read.csv("./study4data.csv",header=TRUE))
+```
+
+```{r infomatrix, include=FALSE, warning=FALSE, message=FALSE}
+
+actioncategories <- read.csv("./assets/actionCategories.csv",header=TRUE,sep=",")
+
+# Get set of actions categorised under History, Exams or Testing
+# From external file actioncategories
+historyActions <- actioncategories$History
+historyActions <- historyActions[which(historyActions != "")]
+
+examActions <- actioncategories$Examination
+examActions <- examActions[which(examActions != "")]
+
+TestingActions <- actioncategories$Testing
+TestingActions <- TestingActions[which(TestingActions != "")]
+
+treatmentActions <- actioncategories$Treatment
+treatmentActions <- treatmentActions[which(treatmentActions != "")]
+
+# All actions considered here are combination of these three
+actionsMasterList <- c(historyActions, examActions, TestingActions)
+actionsMasterList <- actionsMasterList[nzchar(actionsMasterList)]
+
+infoSeekingMatrixVR <- data.frame(matrix(nrow = nrow(vrData), ncol = length(actionsMasterList)))
+
+# Add to matrix from vectors stored as strings in vrData so we get a binary matrix.
+for (n in 1:nrow(vrData))
+{
+  infoSeekingMatrixVR[n,] <- str_split(vrData$actionVector[n],"\n")[[1]]
+}
+
+infoSeekingMatrixVR <- apply(infoSeekingMatrixVR, 2, as.numeric)
+
+infoSeekingMatrixVR <- as.data.frame(infoSeekingMatrixVR)
+colnames(infoSeekingMatrixVR) <- actionsMasterList
+
+# Use colSums to calculate the sum of each column
+sumVals <- colSums(infoSeekingMatrixVR)
+
+# Use the column sums to filter columns with at least one 1
+filtered_data <- infoSeekingMatrixVR[, sumVals > 0]
+
+# Get pairwise distances/dissimilarity
+distancesVR <- infoSeekingMatrixVR %>% proxy::dist(method = "Hamman") %>% as.matrix()
+
+infoSeekingMatrixVR$scenario <- vrData$Scenario
+infoSeekingMatrixVR$OMSScore <- vrData$OMSScore
+infoSeekingMatrixVR$t1Confidence <- vrData$t1Confidence
+infoSeekingMatrixVR$t1DiagnosisScore <- vrData$t1DiagnosisScore
+
+```
+
+```{r completedata, include=FALSE, warning=FALSE, message=FALSE, echo=FALSE}
 # Get data where participants have completed two scenarios
 
 ids <- vrData$ParticipantID
@@ -32,7 +93,15 @@ nFullPpts <- nrow(vrCompleteData)/2
 ```
 <!-- For PDF output, include these two LaTeX commands after unnumbered chapter headings, otherwise the mini table of contents and the running header will show the previous chapter -->
 
-A critique with the vignette task used in the previous studies is its lack of naturalism. For a start, participants are unable to see the patient, which is important given that the visual state (or distress) of a patient can be informative for a doctor in diagnosing the patient. In addition, the task is static in time, in that the patient does not change over the course of a case (i.e. improving or deteriorating over time). The case also does not include any aspect of treatment of patients, where doctors can start managing the patient’s symptoms and even using reactions to their treatment plan in order to change their understanding of the patient. In order to address these shortcomings in realism of our task, we used a virtual reality (VR) paradigm in order to investigate questions of differential evaluation, confidence and information seeking in a more naturalistic manner. This is due to the fact that VR allows for a more open-ended simulation of medical scenarios, given there is a wider set of tests/actions available to a clinician when compared to our vignette paradigm (which constrained the amount of information available on each case for usability).
+## Introduction {.unnumbered}
+
+In this study, we aim to extend our previous findings using a virtual reality (VR) experimental paradigm that is more naturalistic to real medical practice. Participants were unable to see the patient in the vignette task, which is important given that the visual state (or distress) of a patient can be informative for a doctor in diagnosing the patient. By simulating this, we aim to investigate the link between information seeking and confidence in a more open-ended clinical situation that has a wider range of possible options for history taking, physical examination, testing and treatment options when compared to our vignette paradigm (which constrained the amount of information available on each case for usability). Given this increased flexibility, we can look at more fine-grained aspects of information seeking, as well as the effect of ongoing treatment of patients on confidence. Our vignette task was static in time, in that the patient does not change over the course of a case (i.e. improving or deteriorating over time). This VR paradigm then allows for doctors to start managing the patient’s symptoms and even using reactions to their treatment plan in order to change their understanding of the patient. 
+
+\
+Multiple differentials to guide treatment
+With treatment, differentials may (have to) narrow rather than broaden
+Fine grained information seeking: split into three areas
+
 
 ## Methods {.unnumbered}
 
@@ -41,22 +110,26 @@ A critique with the vignette task used in the previous studies is its lack of na
 
 ### Materials {.unnumbered}
 
-We used VR scenarios implemented by Oxford Medical Simulation (OMS), a company that uses VR for medical education and simulation, in their bespoke software. Participants in this study were medical students based in Oxford who were at the time taking part in VR-based teaching sessions as part of their medical degrees. Students performed the scenarios using Oculus Quest 2 VR headsets. Scenarios were based in paediatrics, meaning that the patients in the scenario were children who were attending the hospital with their legal guardian. Each scenario features a visual 3D implementation of a basic ward room in a hospital. Participants are shown a (child) patient, their guardian and a nurse who can help with certain treatment and testing. All of the ‘avatars’ in the scenario can be questioned by the participant using a predefined set of requests/actions (e.g. asking the nurse to check blood pressure, asking the patient/child about if they are in pain). The scenarios have full sound (e.g. being able to hear the patient’s lung auscultation) and the avatars are voiced. 
+We used VR scenarios implemented by Oxford Medical Simulation (OMS, [https://oxfordmedicalsimulation.com/](https://oxfordmedicalsimulation.com/)), a company that implements bespoke VR software for medical education and simulation. Participants in this study were medical students based in Oxford who were at the time taking part in VR-based teaching sessions as part of their medical degrees. Students performed the scenarios using Oculus Quest 2 VR headsets. Scenarios were based in paediatrics, meaning that the patients in the scenario were children who were attending the hospital with their legal guardian. Each scenario features a visual 3D implementation of a basic ward room in a hospital. Participants are shown a (child) patient, their guardian and a nurse who can help with certain treatment and testing. All of the ‘avatars’ in the scenario can be questioned by the participant using a predefined set of requests/actions (e.g. asking the nurse to check blood pressure, asking the patient/child about if they are in pain). The scenarios have full sound (e.g. being able to hear the patient’s lung auscultation) and the avatars are voiced. 
 
+\
 Each participant completed two scenarios over two separate VR sessions. The sessions were held around one month apart. During each session, the participants each performed one scenario in VR and observed their partner during their scenario. Participants also engaged in peer-to-peer feedback discussions as part of their education. The scenarios presented in each sessions are described below (students are split into two groups, shown below as groups A and B, each performing a different pair of scenarios in a fixed order):
 
-Session One:
-* Group A: patient/child is a 6-year-old-girl presenting with a 1 day history of central abdominal pain and thirst. She was generally unwell for 2 days prior, with reduced appetite and a sore throat. Collateral history reveals Type 1 Diabetes and erratic blood sugars. (True Condition: Diabetic Ketoacidosis)
-* Group B: patient/child is a 5-year-old boy presenting with worsening shortness of breath, wheeze, and signs of respiratory distress, on the background of 2 days of likely viral illness. He has a medical history of asthma and has had similar exacerbations in the past. (True Condition: Acute Severe Exacerbation of Asthma)
+\
+* **Session One:**
+ + * _Group A:_ patient/child is a 6-year-old-girl presenting with a 1 day history of central abdominal pain and thirst. She was generally unwell for 2 days prior, with reduced appetite and a sore throat. Collateral history reveals Type 1 Diabetes and erratic blood sugars. (**Underlying Condition: Diabetic Ketoacidosis**)
+ + * _Group B:_ patient/child is a 5-year-old boy presenting with worsening shortness of breath, wheeze, and signs of respiratory distress, on the background of 2 days of likely viral illness. He has a medical history of asthma and has had similar exacerbations in the past. (**Underlying Condition: Acute Severe Exacerbation of Asthma**)
 
-Session Two:
-* Group A: patient/child is a 5-year-old boy presenting with shortness of breath and drowsiness (True Condition: Chest Sepsis/Pneumonia)
-* Group B: patient/child is a 5-year-old girl with a 1 day history of sore throat and fever. She starts having a generalised tonic clonic seizure during the scenario. (True Condition: Febrile seizure on background of tonsillitis)
+\
+* **Session Two:**
+ + * _Group A:_ patient/child is a 5-year-old boy presenting with shortness of breath and drowsiness (**Underlying Condition: Chest Sepsis/Pneumonia**)
+ + * _Group B:_ patient/child is a 5-year-old girl with a 1 day history of sore throat and fever. She starts having a generalised tonic clonic seizure during the scenario. (**Underlying Condition: Febrile seizure on background of tonsillitis**)
 
 ### Procedure {.unnumbered}
 
 The aim for students in the scenarios was to diagnose the patient, begin treatment and hand over the case to a senior with appropriate understanding of the patient (handovers were conducted using a standardised framework known as SBAR, meaning that clinicians have to brief the senior on the Situation, Background, Assessment and Recommendation for the patient). Whilst in the scenario, participants can learn about the patient’s medical history, check key parameters (such as temperature, pulse, blood pressure, respiratory rate etc), perform physical exams/tests and begin certain treatment actions (such as administering oxygen or prescribing medication). Compared to the previous studies, participants have a much wider array in terms of the information and tests they can request, as well as being able to begin a treatment plan. 
 
+\
 After 5 minutes in the scenario (by which point it is expected that participants would have a history of the patient and have started some early assessment of the patient), participants are asked to pause the scenario (taking off their VR headset) and fill in a brief questionnaire on paper. Multiple VR participants were performing the scenario simultaneously and were paired with another student who would watch their performance. This other student would aid with administering the questionnaire, with the student subsequently switching roles for the other scenario. The VR participant was asked in the questionnaire to answer the follow (this is considered time point 1):
 
 * "Please say all the conditions that you are currently considering or are concerned about for this patient. Include any/all common, rare or contributing conditions you are considering. For each, please rate how likely you think they are on a scale of 1 (low) to 5 (high)."
@@ -72,12 +145,15 @@ The questionnaire was kept relatively short to minimise disruption to the scenar
 
 The dependent variables that we derive are as follows:
 
-* Performance: The OMS software implements a series of objectives for each scenario, which are tasks or actions that the participant is expected to have completed within the allotted time. This can include administering oxygen, prescribing a particular medication or calculating the Patient Early Warning Score (PEWS). The proportion of completed objectives is used as a score of the participant’s performance during the scenario. 
+* Performance Score: The OMS software implements a series of objectives for each scenario, which are tasks or actions that the participant is expected to have completed within the allotted time. This can include administering oxygen, prescribing a particular medication or calculating the Patient Early Warning Score (PEWS). The proportion of completed objectives is used as a score of the participant’s performance during the scenario. 
+
 * Confidence Change: the participants’ confidence in their understanding of the patient’s condition is recorded at two time points, with the first being after 5 minutes (out of the 20 minute time limit) and the second being after the participant has finished the scenario. Confidence at each stage is recorded on a 10 point scale (1-10). The difference between the second and the first confidence rating is taken, such that a positive value indicates that the participant has increased their confidence over the course of the scenario. 
-* Number of Differentials: participants are asked to record all the diagnostic differentials that they are considering at the two aforementioned time points. Hence, the total number of differentials is recorded at each stage. 
-* Initial Diagnostic Breadth: this is the number of diagnostic differentials reported by the participant at the pause point.
+
+* Number of Differentials: participants are asked to record all the diagnostic differentials that they are considering at the two aforementioned time points. Hence, the total number of differentials is recorded at each stage. The Initial Number of differentials is the number of diagnoses provided at the pause point.
+
 * Diagnostic Appropriateness: each participant's set of differentials are assessed for how appropriate they are for the scenario. Each scenario has a set of differentials that are considered most likely, probable and improbable (with any others considered incorrect). To calculate a score for how appropriate the diagnoses are, we sum the likelihood values provided for all differentials that were marked as most likely or probable. We then add these to the sum of likelihood values for improbable differentials divided by two. This sum is divided by the total sum of all differentials. This overall measure then measures what proportion of the participants’ likelihoods are dedicated to probable differentials. However, we also penalised participants for providing few differentials, such that high scoring sets of differentials are larger sets of likely or probably differentials. 
 
+\
 We also derived measures of information seeking similar to previous studies. The VR scenarios are far richer in terms of the available set of information for participants when compared to the vignette paradigm. For our analysis, we record all actions (or ‘clicks) made by participants whilst in the scenario. Actions are categorised into a number of groups. The main categories are labelled as History, Examination or Testing, similar to in the vignette study. This set of information is mostly similar across scenarios though there are minor differences especially in the History category. Across scenarios, there are 35 possible History actions, 29 Examination actions and 18 Testing actions. This especially means that in comparison to the vignette paradigm, participants can take more detailed patient histories and can receive very different pieces of information depending on what they request from patient documentation and from asking the patient/guardian in the scenario. Outside of these categories, there are other actions available to participants, such as administering medication for the patient, calling for help or providing reassurance to the patient/guardian, but these are not used for our analysis. After categorising the participants’ actions, we define a number information seeking measures:
 
 * History Taking: this is the number of History actions for a given scenario that take place before the pause point. 
@@ -93,7 +169,7 @@ As all actions are recorded with timestamps in the output dataset, we categorise
 
 Say how many participants completed each scenario
 
-```{r anovadf, warning=FALSE, message=FALSE}
+```{r anovadf, include=FALSE, warning=FALSE, message=FALSE, echo=FALSE}
 
 anovaDf <- data.frame(c(vrData$t1Confidence,vrData$t2Confidence),
                       c(vrData$t1Severity,vrData$t2Severity),
@@ -108,27 +184,30 @@ colnames(anovaDf) <- c("Confidence","Severity","Diagnoses",
 
 ```
 
+Correlate performance scores?
+
 Table 1 below shows average values for our key dependent variables by scenario.
 
-```{r descstats, warning=FALSE, message=FALSE}
+```{r descstats, include=TRUE, warning=FALSE, message=FALSE, echo=FALSE}
 
 vrDescStats <- vrData %>%
   group_by(Scenario) %>%
   dplyr::mutate(N = n()) %>%
   dplyr::summarise(n = mean(N),
-                   MeanPerformance = mean(OMSScore,na.rm=T),
-                   MeanInformationSeeking = mean(filteredActions,na.rm=T),
-                   MeanInitialConfidence = mean(t1Confidence,na.rm=T),
-                   MeanConfidenceChange = mean(confidenceChange,na.rm=T),
-                   MeanInitialDiagnoses = mean(t1numOfDiagnoses,na.rm=T))
+                   MeanPerformance = round(mean(OMSScore,na.rm=T),2),
+                   MeanInformationSeeking = round(mean(filteredActions,na.rm=T),2),
+                   MeanInitialConfidence = round(mean(t1Confidence,na.rm=T),2),
+                   MeanConfidenceChange = round(mean(confidenceChange,na.rm=T),2),
+                   MeanInitialDiagnoses = round(mean(t1numOfDiagnoses,na.rm=T),2))
 
-vrDescStats
+knitr::kable(vrDescStats) %>% 
+  kableExtra::kable_styling(latex_options="HOLD_position")
 
 ```
 
 Diagnoses by timepoint and scenario
 
-```{r confidencetime, warning=FALSE, message=FALSE}
+```{r diagtime, include=TRUE, echo=FALSE, out.width='100%', fig.align='center', warning=FALSE, message=FALSE}
 p <- ggplot(anovaDf, aes(x=Timepoint, y=Diagnoses, fill=Scenario)) + 
     geom_violin() +
     stat_summary(fun.data=data_summary, geom="crossbar", width=0.05, position=position_dodge(0.1)) +
@@ -136,19 +215,19 @@ p <- ggplot(anovaDf, aes(x=Timepoint, y=Diagnoses, fill=Scenario)) +
     ylim(0,8) +
     theme_classic()
 
-p
+print(p)
 ```
 
 Confidence by timepoint and scenario
 
-```{r confidencetime, warning=FALSE, message=FALSE}
+```{r confidencetime, include=TRUE, echo=FALSE, out.width='100%', fig.align='center', warning=FALSE, message=FALSE}
 p <- ggplot(anovaDf, aes(x=Timepoint, y=Confidence, fill=Scenario)) + 
     geom_violin() +
     stat_summary(fun.data=data_summary, geom="crossbar", width=0.05, position=position_dodge(0.1)) +
     facet_wrap(~Scenario) +
     theme_classic()
 
-p
+print(p)
 ```
 
 ### Initial Diagnostic Breadth {.unnumbered}
@@ -161,7 +240,7 @@ InformationSeeking ~ InitialDiagnoses + (1|Scenario) + (1|Participant)
 
 Initial Confidence ~ Information Seeking Before
 
-```{r initialconfidence, warning=FALSE, message=FALSE}
+```{r initialconfidence, include=FALSE, warning=FALSE, message=FALSE, echo=FALSE}
 
 model <- lmerTest::lmer(t1Confidence ~ numOfHistoryActionsBeforePause + numOfExamActionsBeforePause + numOfTestingActionsBeforePause + (1|Scenario) + (1 | ParticipantID), data=vrData)
 
@@ -182,19 +261,19 @@ plotDf <- data.frame(
 )
 
 # Plot using ggplot2
-ggplot(plotDf, aes(x = observedConfidence, y = fittedConfidence)) +
-  geom_point() +
-  geom_abline(slope = 1, intercept = 0, color = "red") +
-    geom_smooth(method = "lm", se = TRUE, color = "blue") + 
-  labs(x = "Observed Confidence", y = "Fitted Confidence (mixed effects model)") +
-  theme_classic(base_size = 20)
+#ggplot(plotDf, aes(x = observedConfidence, y = fittedConfidence)) +
+ # geom_point() +
+ # geom_abline(slope = 1, intercept = 0, color = "red") +
+ #  geom_smooth(method = "lm", se = TRUE, color = "blue") + 
+ # labs(x = "Observed Confidence", y = "Fitted Confidence (mixed effects model)") +
+ # theme_classic(base_size = 20)
 
 
 ```
 
 Information Seeking After ~ Initial Confidence
 
-```{r subinfoseeking, warning=FALSE, message=FALSE}
+```{r subinfoseeking, include=FALSE, warning=FALSE, message=FALSE, echo=FALSE}
 
 ### Initial confidence predicting subsequent information seeking
 
@@ -224,6 +303,11 @@ plotDf <- data.frame(
   fittedTestingActions = fittedValues
 )
 
+```
+
+
+```{r subinfoseekingplot, include=TRUE, warning=FALSE, message=FALSE, echo=FALSE, out.width='100%', fig.align='center'}
+
 # Plot using ggplot2
 ggplot(plotDf, aes(x = observedTestingActions, y = fittedTestingActions)) +
   geom_point() +
@@ -236,7 +320,7 @@ ggplot(plotDf, aes(x = observedTestingActions, y = fittedTestingActions)) +
 
 Final Confidence ~ Treatment + Time to Ask for Help
 
-```{r finalconfidence, warning=FALSE, message=FALSE}
+```{r finalconfidence, include=FALSE, warning=FALSE, message=FALSE, echo=FALSE}
 
 helpedData <- vrData[vrData$totalHelpStart<9999,]
 
@@ -257,6 +341,11 @@ plotDf <- data.frame(
   fittedConfidence = fittedValues
 )
 
+```
+
+
+```{r finalconfidenceplot, include=TRUE, warning=FALSE, message=FALSE, echo=FALSE, out.width='100%', fig.align='center'}
+
 # Plot using ggplot2
 ggplot(plotDf, aes(x = observedConfidence, y = fittedConfidence)) +
   geom_point() +
@@ -267,13 +356,12 @@ ggplot(plotDf, aes(x = observedConfidence, y = fittedConfidence)) +
 
 
 ```
-
 ### Diagnostic Appropriateness {.unnumbered}
 
 Diagnostic Appropriateness ~ Value
 Diagnostic Appropriateness split with binary classifier
 
-```{r pcaclassifier, warning=FALSE, message=FALSE}
+```{r pcaclassifier, include=FALSE, warning=FALSE, message=FALSE, echo=FALSE}
 
 #######################################
 # Use of regular PCA
@@ -286,12 +374,12 @@ infoSeekingMatrixVRPCA <- infoSeekingMatrixVRPCA[,-which(names(infoSeekingMatrix
 pca_result <- PCA(infoSeekingMatrixVRPCA, graph = FALSE)
 
 # Scree plot shows elbow around 5
-qplot(c(1:79), pca_result$eig[,2]) + 
-  geom_line() + 
-  xlab("Principal Component") + 
-  ylab("Variance Explained") +
-  ggtitle("Scree Plot") +
-  theme_classic()
+#qplot(c(1:79), pca_result$eig[,2]) + 
+#  geom_line() + 
+#  xlab("Principal Component") + 
+#  ylab("Variance Explained") +
+#  ggtitle("Scree Plot") +
+#  theme_classic()
 
 #########
 
@@ -346,15 +434,21 @@ pcDF$diagGroup <- ifelse(pcDF$diagScore < median(pcDF$diagScore),0,1)
 pcDF$diagGroup <- as.factor(pcDF$diagGroup)
 pcDF$conditionFactor <- as.factor(pcDF$condition)
 
-
-modelglmVR<-train(diagGroup ~ PC1 + PC2 + PC3 + PC4, method = "glm", family = binomial(link=probit), data = pcDF, trControl = ctrl)
-prediglmVR<-predict(modelglmVR,type = "prob")[2]
-  
 thresh<-seq(0,1,0.001)
 #specify the cross-validation method
 ctrl <- trainControl(method = "LOOCV", savePredictions = TRUE)
+
+modelglmVR<-train(diagGroup ~ PC1 + PC2 + PC3 + PC4, method = "glm", family = binomial(link=probit), data = pcDF, trControl = ctrl)
+prediglmVR<-predict(modelglmVR,type = "prob")[2]
+
+```
+
+```{r pcaclassifierplot, include=TRUE, warning=FALSE, message=FALSE, echo=FALSE, out.width='100%', fig.align='center'}
+
 # Plot all test results on one ROC curve
 rocPlot <- roc.plot(x=pcDF$diagGroup=="1",pred=cbind(prediglmVR),legend = T,
                     leg.text = c("GLM"),thresholds = thresh)$roc.vol
+
+print(rocPlot)
 
 ```
