@@ -112,6 +112,18 @@ Fine grained information seeking: split into three areas
 
 We used VR scenarios implemented by Oxford Medical Simulation (OMS, [https://oxfordmedicalsimulation.com/](https://oxfordmedicalsimulation.com/)), a company that implements bespoke VR software for medical education and simulation. Participants in this study were medical students based in Oxford who were at the time taking part in VR-based teaching sessions as part of their medical degrees. Students performed the scenarios using Oculus Quest 2 VR headsets. Scenarios were based in paediatrics, meaning that the patients in the scenario were children who were attending the hospital with their legal guardian. Each scenario features a visual 3D implementation of a basic ward room in a hospital. Participants are shown a (child) patient, their guardian and a nurse who can help with certain treatment and testing. All of the ‘avatars’ in the scenario can be questioned by the participant using a predefined set of requests/actions (e.g. asking the nurse to check blood pressure, asking the patient/child about if they are in pain). The scenarios have full sound (e.g. being able to hear the patient’s lung auscultation) and the avatars are voiced. 
 
+```{r screenshot1, include=TRUE, echo=FALSE, out.width='100%', fig.align='center'}
+
+knitr::include_graphics("./assets/VRScreenshot1.png")
+
+```
+
+```{r screenshot2, include=TRUE, echo=FALSE, out.width='100%', fig.align='center'}
+
+knitr::include_graphics("./assets/VRScreenshot2.png")
+
+```
+
 \
 Each participant completed two scenarios over two separate VR sessions. The sessions were held around one month apart. During each session, the participants each performed one scenario in VR and observed their partner during their scenario. Participants also engaged in peer-to-peer feedback discussions as part of their education. The scenarios presented in each sessions are described below (students are split into two groups, shown below as groups A and B, each performing a different pair of scenarios in a fixed order):
 
