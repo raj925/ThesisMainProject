@@ -921,7 +921,7 @@ inf <- ggplot(numDiagCon) +
 model <- lmerTest::lmer(filteredActions ~ t1numOfDiagnoses + (1|Scenario) + (1 | ParticipantID), data=vrData)
 summary(model)
 
-model <- lm(t1DiagnosisScore ~ t1numOfDiagnoses*filteredActions, data=vrDataNoNAs)
+model <- lm(t1DiagnosisScore ~ t1numOfDiagnoses*filteredActions, data=vrData)
 
 library(interactions)
 intplot <- interact_plot(model, pred = t1numOfDiagnosesChange, modx = filteredActions) +

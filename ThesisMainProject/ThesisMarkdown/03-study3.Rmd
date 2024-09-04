@@ -919,15 +919,27 @@ _Figure 3: Fitted regression lines for model to explore the interaction between 
 
 ```{r modelcomparisontable, include=TRUE, echo=FALSE, warning = FALSE, message=FALSE, out.width='100%', fig.align='center'}
 
-modelnull <- lmer(Accuracy ~ 1 + (1|ID),data=testingDataStrats) 
 
-model2 <- lmer(Accuracy ~ classifiedStrat + (1|ID),data=testingDataStrats) 
+model <- lmer(Accuracy ~ classifiedStrat*initialDiagnoses + (1|Condition) + (1|ID),data=testingDataStrats)
+summary(model)
 
-model3 <- lmer(Accuracy ~ initialDiagnoses + (1|ID),data=testingDataStrats) 
+pcaModel <- rePCA(model)
 
-model4 <- lmer(Accuracy ~ classifiedStrat + initialDiagnoses + (1|ID),data=testingDataStrats) 
+model2 <- lmer(Accuracy ~ classifiedStrat*initialDiagnoses + (1|Condition),data=testingDataStrats)
 
-modelinteraction <- lmer(Accuracy ~ classifiedStrat*initialDiagnoses + (1|ID),data=testingDataStrats) 
+modelcomp <- anova(model2,model)
+
+################################################
+
+modelnull <- lmer(Accuracy ~ 1 + (1|Condition) + (1|ID),data=testingDataStrats) 
+
+model2 <- lmer(Accuracy ~ classifiedStrat + (1|Condition) + (1|ID),data=testingDataStrats) 
+
+model3 <- lmer(Accuracy ~ initialDiagnoses + (1|Condition) + (1|ID),data=testingDataStrats) 
+
+model4 <- lmer(Accuracy ~ classifiedStrat + initialDiagnoses + (1|Condition) + (1|ID),data=testingDataStrats) 
+
+modelinteraction <- lmer(Accuracy ~ classifiedStrat*initialDiagnoses + (1|Condition) + (1|ID),data=testingDataStrats) 
 
 tbl <- as.data.frame(anova(modelnull,model2,model3,model4,modelinteraction))
 

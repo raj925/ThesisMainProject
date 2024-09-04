@@ -101,8 +101,18 @@ In this study, we aim to extend our previous findings using a virtual reality (V
 In our previous two studies, we have found evidence for a general tendency for medical students to broaden the range of differentials they are considering as they receive more information. These studies, made use of patient vignettes where there was no requirement to treat the patient and no subsequent observation of improvement or deterioration in the patients' state. This begs the question of whether medical students still show a tendency to broaden the differentials they are considering when beginning a treatment plan for a patient requires a degree of narrowing of diagnoses. We predict then that with the use of VR scenarios where patients are deteriorating and require treatment, medical students will be more likely to narrow the differentials they are considering due to the medical situation demanding it. Similar to our previous studies, we measure the range of diagnostic differentials that students are considering at multiple points during the scenarios. Our online study found the initial diagnostic breadth of students was predictive of their subsequent information seeking and changes in confidence. We not only look to replicate this finding in a more naturalistic medical context but also investigate whether initial diagnostic breadth is predictive of patient treatment too. 
 
 \
-One of the aforementioned benefits of using a VR paradigm is that we are able to simulate a real medical environment. This includes the wide range of possible actions available to a clinician. Using our paradigm, we are able to record every action or information request made by participants. These actions can then be categorised into a number of areas: Patient History, Physical Examinations, Testing and Treatment. Our findings around initial diagnostic breadth and the qualitative theme from the previous study on the importance of an in-depth history to base diagnosis on necessitate a deeper look at history taking during diagnoses. Our vignette paradigm used fairly limited patient histories, with a perceived lack of detail potentially explaining why some participants expressed diagnostic uncertainty. In the VR paradigm, there is much detail available on the patient's medical history, including follow-up questions to patients to access more detail on their condition. For example, if a patient is feeling pain, the interactive nature of VR allows participants to ask about the nature of the pain (e.g. whether it is a dull or sharp pain, whether anything makes the pain better/worse etc.). With the wider range of actions available to participants, we not only look at information seeking as a whole, but also information seeking with each of these categories. In particular, we are interested in how the comprehensiveness of participants' history taking affects their subsequent confidence and considered diagnoses. Given that VR also simulate active medical situations, participants can be graded based on the information they seek, the tests they run and treatment they administer. 
+One of the aforementioned benefits of using a VR paradigm is that we are able to simulate a real medical environment. This includes the wide range of possible actions available to a clinician. Using our paradigm, we are able to record every action or information request made by participants. These actions can then be categorised into a number of areas: Patient History, Physical Examinations, Testing and Treatment. Our findings around initial diagnostic breadth and the qualitative theme from the previous study on the importance of an in-depth history to base diagnosis on necessitate a deeper look at history taking during diagnoses. Our vignette paradigm used fairly limited patient histories, with a perceived lack of detail potentially explaining why some participants expressed diagnostic uncertainty. In the VR paradigm, there is much more detail available on the patient's medical history, including follow-up questions to patients to access more detail on their condition. For example, if a patient is feeling pain, the interactive nature of VR allows participants to ask about the nature of the pain (e.g. whether it is a dull or sharp pain, whether anything makes the pain better/worse etc.). With the wider range of actions available to participants, we not only look at information seeking as a whole, but also information seeking with each of these categories. In particular, we are interested in how the comprehensiveness of participants' history taking affects their subsequent confidence and considered diagnoses. Given that VR also simulate active medical situations, participants can be graded based on the information they seek, the tests they run and treatment they administer. 
+\
 
+Due to our VR methodology being substantially different to our vignette methodology, the manner in which we think of accuracy has to change to reflect this. In the previous studies, we operationalised accuracy given that there was a specific condition/diagnosis that participants were tasked with identifying. In this task however, determining a diagnosis is not the primary focus of the task (although we do ask participants to report the set of diagnostic differentials that they are considering). Instead, participants are required to begin treatment for the patient in the scenario and handover the case to a senior. Given this, there are two ways in which performance can be measured for participants: performance in terms of the clinical actions (e.g. testing, treatment etc.) they take or in terms of the diagnoses they report. For the former, we hence make use of a predetermined criteria for which clinical actions are considered optimal for each patient scenario. For the latter, given that the scenarios are more naturalistic, there is not a correct (ground truth) condition that the patients have. For example, one of the scenarios sees the patient having a febrile convulsion/seizure. Identifying this as such, as a focal diagnosis, is expected of most medical students due to there being a lack of diagnostic uncertainty. Identifying the causes of this seizure however, is associated with more diagnostic uncertainty as there are several possible causes of such a medical episode. When it comes to identifying these causes, there is not a set correct answer, as the scenario does not comprise of later stages of the patient's care pathway. Because of this, we instead consider a measure of Diagnostic Appropriateness, where we measure how suitable the recorded set of diagnostic differentials is as a whole in terms of whether participants record differentials that would be considered plausible or likely given the patient's condition. 
+
+### Research Questions {.unnumbered}
+
+With this study, we investigate the following research questions:
+
+* Do medical students narrow or broaden their diagnostic differentials in a naturalistic medical scenario where patient treatment is required?
+* Is information seeking, in terms of quantity and quality. linked to more appropriate sets of diagnoses?
+* How do specific types of information seeking (i.e. around Patient History, Physical Examinations and Testing) relate to confidence, both in terms of information seeking preceding confidence and as a result of confidence?
 
 ## Methods {.unnumbered}
 
@@ -171,7 +181,7 @@ The dependent variables that we derive are as follows:
 We also derived measures of information seeking similar to previous studies. The VR scenarios are far richer in terms of the available set of information for participants when compared to the vignette paradigm. For our analysis, we record all actions (or ‘clicks) made by participants whilst in the scenario. Actions are categorised into a number of groups. The main categories are labelled as History, Examination or Testing, similar to in the vignette study. This set of information is mostly similar across scenarios though there are minor differences especially in the History category. Across scenarios, there are 35 possible History actions, 29 Examination actions and 18 Testing actions. This especially means that in comparison to the vignette paradigm, participants can take more detailed patient histories and can receive very different pieces of information depending on what they request from patient documentation and from asking the patient/guardian in the scenario. Outside of these categories, there are other actions available to participants, such as administering medication for the patient, calling for help or providing reassurance to the patient/guardian, but these are not used for our analysis. After categorising the participants’ actions, we define a number information seeking measures:
 
 * History Taking: this is the number of History actions for a given scenario that take place before the pause point. 
-* Total Information Seeking: this is the number of actions classified under History, Examination or Testing across the scenario.
+* Total Information Seeking: this is the number of unique actions (i.e. does not include requesting the taking the same action multiple times) classified under History, Examination or Testing across the scenario.
 * Information Value: to calculate the value of each information sought across these categories, we calculate the difference in OMS performance score for participants with or without that information. We then sum all sought information values for each participant within each of the information categories (History, Examination, Testing).
 * Amount of Treatment: this is the number of actions classified as treatment of the patient across the scenario. 
 
@@ -180,8 +190,6 @@ As all actions are recorded with timestamps in the output dataset, we categorise
 ## Results {.unnumbered}
 
 ### Overall Performance {.unnumbered}
-
-Say how many participants completed each scenario
 
 ```{r anovadf, include=FALSE, warning=FALSE, message=FALSE, echo=FALSE}
 
@@ -198,11 +206,7 @@ colnames(anovaDf) <- c("Confidence","Severity","Diagnoses",
 
 ```
 
-Correlate performance scores?
-
-Table 1 below shows average values for our key dependent variables by scenario.
-
-```{r descstats, include=TRUE, warning=FALSE, message=FALSE, echo=FALSE}
+```{r descstats, include=FALSE, warning=FALSE, message=FALSE, echo=FALSE}
 
 vrDescStats <- vrData %>%
   group_by(Scenario) %>%
@@ -214,12 +218,21 @@ vrDescStats <- vrData %>%
                    MeanConfidenceChange = round(mean(confidenceChange,na.rm=T),2),
                    MeanInitialDiagnoses = round(mean(t1numOfDiagnoses,na.rm=T),2))
 
+```
+
+We report data from `r length(unique(vrData$ParticipantID))` participants. As shown in Table 1, some participants only completed a single scenario rather than two. `r length(unique(vrCompleteData$ParticipantID))` participants completed two scenarios (as part of either Scenario A or B as explained in the Procedure section). Overall, `r vrDescStats[vrDescStats$Scenario=="Asthma",]$n` participants completed the Asthma scenario, `r vrDescStats[vrDescStats$Scenario=="DKA",]$n` participants completed the DKA scenario, `r vrDescStats[vrDescStats$Scenario=="Pneumonia",]$n` participants completed the Pneumonia scenario and `r vrDescStats[vrDescStats$Scenario=="Seizure",]$n` participants completed the Seizure scenario. 
+
+
+```{r descstatstable, include=TRUE, warning=FALSE, message=FALSE, echo=FALSE}
+
+colnames(vrDescStats) <- c("Scenario","n","Performance Score", "Information Seeking", "Initial Confidence", "Confidence Change", "Initial Diagnoses")
+
 knitr::kable(vrDescStats) %>% 
   kableExtra::kable_styling(latex_options="HOLD_position")
 
 ```
 
-Diagnoses by timepoint and scenario
+_Table 1: Average values for dependent variables by scenario. The n column denotes the number of participants (or 'observations') per scenario. We show mean values for the Performance Score, Amount of Information Seeking, Initial Confidence (as reported at the pause point in the scenario), Change in Confidence (difference in reported confidence between the pause point and end of the scenario) and Initial Diagnoses (the number of differentials reported at the pause point)._
 
 ```{r diagtime, include=TRUE, echo=FALSE, out.width='100%', fig.align='center', warning=FALSE, message=FALSE}
 p <- ggplot(anovaDf, aes(x=Timepoint, y=Diagnoses, fill=Scenario)) + 
@@ -231,8 +244,7 @@ p <- ggplot(anovaDf, aes(x=Timepoint, y=Diagnoses, fill=Scenario)) +
 
 print(p)
 ```
-
-Confidence by timepoint and scenario
+_Figure 1: Violin plots showing the number of reported diagnoses at timepoint 1 (the pause point at 5 minutes into the scenario) and timepoint 2 (at the end of the scenario) by condition (Asthma = red, DKA = green, Pnuemonia = blue, Seizure = purple). The dark region of the box plot shows the mean value, with the lines of the box plots showing standard deviation._ 
 
 ```{r confidencetime, include=TRUE, echo=FALSE, out.width='100%', fig.align='center', warning=FALSE, message=FALSE}
 p <- ggplot(anovaDf, aes(x=Timepoint, y=Confidence, fill=Scenario)) + 
@@ -244,49 +256,40 @@ p <- ggplot(anovaDf, aes(x=Timepoint, y=Confidence, fill=Scenario)) +
 print(p)
 ```
 
+_Figure 2: Violin plots showing confidence at timepoint 1 (the pause point at 5 minutes into the scenario) and timepoint 2 (at the end of the scenario) by condition (Asthma = red, DKA = green, Pnuemonia = blue, Seizure = purple). The dark region of the box plot shows the mean value, with the lines of the box plots showing standard deviation._ 
+
 ### Initial Diagnostic Breadth {.unnumbered}
 
-ConfidenceChange ~ InitialDiagnoses + (1|Scenario) + (1|Participant)
+```{r initialdiagnoses, include=FALSE, warning=FALSE, message=FALSE, echo=FALSE}
 
-InformationSeeking ~ InitialDiagnoses + (1|Scenario) + (1|Participant)
+model1 <- lmerTest::lmer(filteredActions ~ t1numOfDiagnoses + (1|Scenario) + (1 | ParticipantID), data=vrData)
+model1 <- summary(model1)
 
-### Information Seeking and Confidence {.unnumbered}
-
-Initial Confidence ~ Information Seeking Before
-
-```{r initialconfidence, include=FALSE, warning=FALSE, message=FALSE, echo=FALSE}
-
-model <- lmerTest::lmer(t1Confidence ~ numOfHistoryActionsBeforePause + numOfExamActionsBeforePause + numOfTestingActionsBeforePause + (1|Scenario) + (1 | ParticipantID), data=vrData)
-
-pcaModel <- rePCA(model)
-model2 <- lmerTest::lmer(t1Confidence ~ numOfHistoryActionsBeforePause + numOfExamActionsBeforePause + numOfTestingActionsBeforePause + (1|Scenario), data=vrData)
-modelcomp <- anova(model2,model)
-
-# Get the fitted values from the model
-fittedValues <- fitted(model2)
-
-# Get the actual observed values
-obsValues <- vrData[!is.na(vrData$t1Confidence),]$t1Confidence
-
-# Create a data frame for plotting
-plotDf <- data.frame(
-  observedConfidence = obsValues,
-  fittedConfidence = fittedValues
-)
-
-# Plot using ggplot2
-#ggplot(plotDf, aes(x = observedConfidence, y = fittedConfidence)) +
- # geom_point() +
- # geom_abline(slope = 1, intercept = 0, color = "red") +
- #  geom_smooth(method = "lm", se = TRUE, color = "blue") + 
- # labs(x = "Observed Confidence", y = "Fitted Confidence (mixed effects model)") +
- # theme_classic(base_size = 20)
-
+model2 <- lmerTest::lmer(confidenceChange ~ t1numOfDiagnoses + (1|Scenario) + (1 | ParticipantID), data=vrData)
+model2 <- summary(model2)
 
 ```
 
-Information Seeking After ~ Initial Confidence
+We now look at whether the initial diagnostic breadth (i.e. the number of diagnostic differentials being considered early in the scenario) was predictive of information seeking and change in confidence over the course of the scenario (as we found evidence for such an association in Study 2). We fit linear mixed effects models to predict each of these with the number of initial diagnoses as a fixed effect and both the scenario and participant as random effects. We do not evidence that the initial diagnostic breadth is predictive of the amount of information seeking ($\beta$ = `r abs(round(model1$coefficients[2],2))`, SE = `r round(model1$coefficients[,"Std. Error"][2],2)` t = `r abs(round(model1$coefficients[,"t value"][2],2))`, p = `r abs(round(model1$coefficients[,"Pr(>|t|)"][2],2))`) or changes in confidence ($\beta$ = `r abs(round(model2$coefficients[2],2))`, SE = `r round(model2$coefficients[,"Std. Error"][2],2)` t = `r abs(round(model2$coefficients[,"t value"][2],2))`, p = `r abs(round(model2$coefficients[,"Pr(>|t|)"][2],2))`).
 
+### Information Seeking and Confidence {.unnumbered}
+
+```{r initialconfidence, include=FALSE, warning=FALSE, message=FALSE, echo=FALSE}
+
+model1 <- lmerTest::lmer(t1Confidence ~ numOfHistoryActionsBeforePause + numOfExamActionsBeforePause + numOfTestingActionsBeforePause + (1|Scenario) + (1 | ParticipantID), data=vrData)
+
+pcaModel <- rePCA(model1)
+model2 <- lmerTest::lmer(t1Confidence ~ numOfHistoryActionsBeforePause + numOfExamActionsBeforePause + numOfTestingActionsBeforePause + (1|Scenario), data=vrData)
+modelcomp <- anova(model2,model1)
+
+modelincon <- model2
+modelincon <- summary(modelincon)
+
+```
+
+We now ask whether confidence is related to the amount of information sought on a given case. To investigate this, we look at information seeking before and after the pause point and look at both initial and final confidence. This allows us to look at this association in both directions: whether the amount of information seeking predicts subsequent confidence and whether confidence predicts subsequent information seeking. We fit linear mixed effect models using the amount of information seeking in each of the three categories (Patient History, Physical Examinations and Testing). We first look at whether initial confidence is predicted by information seeking prior to the pause point (i.e. prior to when this initial confidence was reported). We do not find evidence that initial confidence is predicted by prior information seeking related to Patient History ($\beta$ = `r abs(round(modelincon$coefficients[2],2))`, SE = `r round(modelincon$coefficients[,"Std. Error"][2],2)` t = `r abs(round(modelincon$coefficients[,"t value"][2],2))`, p = `r abs(round(modelincon$coefficients[,"Pr(>|t|)"][2],2))`), Physical Examinations ($\beta$ = `r abs(round(modelincon$coefficients[3],2))`, SE = `r round(modelincon$coefficients[,"Std. Error"][3],2)` t = `r abs(round(modelincon$coefficients[,"t value"][3],2))`, p = `r abs(round(modelincon$coefficients[,"Pr(>|t|)"][3],2))`) or Testing ($\beta$ = `r abs(round(modelincon$coefficients[4],2))`, SE = `r round(modelincon$coefficients[,"Std. Error"][4],2)` t = `r abs(round(modelincon$coefficients[,"t value"][4],2))`, p = `r abs(round(modelincon$coefficients[,"Pr(>|t|)"][4],2))`).
+
+\
 ```{r subinfoseeking, include=FALSE, warning=FALSE, message=FALSE, echo=FALSE}
 
 ### Initial confidence predicting subsequent information seeking
@@ -295,18 +298,26 @@ model <- lmerTest::lmer(numOfHistoryActionsAfterPause ~ t1Confidence + (1|Scenar
 pcaModel <- rePCA(model)
 model2 <- lmerTest::lmer(numOfHistoryActionsAfterPause ~ t1Confidence + (1 | ParticipantID), data=vrData)
 modelcomp <- anova(model2,model)
+histmodel <- model2
+histmodel <- summary(histmodel)
 
 model <- lmerTest::lmer(numOfExamActionsAfterPause ~ t1Confidence + (1|Scenario) + (1 | ParticipantID), data=vrData)
 pcaModel <- rePCA(model)
 model2 <- lmerTest::lmer(numOfExamActionsAfterPause ~ t1Confidence + (1|Scenario), data=vrData)
 modelcomp <- anova(model2,model)
+exammodel <- model2
+exammodel <- summary(exammodel)
 
 model <- lmerTest::lmer(numOfTestingActionsAfterPause ~ t1Confidence + (1|Scenario) + (1 | ParticipantID), data=vrData)
 pcaModel <- rePCA(model)
 model2 <- lmerTest::lmer(numOfTestingActionsAfterPause ~ t1Confidence + (1|Scenario), data=vrData)
-
+modelcomp <- anova(model2,model)
+testmodel <- model2
 # Get the fitted values from the model
-fittedValues <- fitted(model2)
+fittedValues <- fitted(testmodel)
+
+testmodel <- summary(testmodel)
+
 
 # Get the actual observed values
 obsValues <- vrData[!is.na(vrData$t1Confidence),]$numOfTestingActionsAfterPause
@@ -319,35 +330,40 @@ plotDf <- data.frame(
 
 ```
 
+We next look at if initial confidence predicts subsequent information seeking. To investigate this, we fit separate linear mixed effect models for each type of information seeking as the outcome variable. We find evidence that initial confidence predicts subsequent history taking in a negative direction (i.e. that higher confidence is associated with lower subsequent history taking) ($\beta$ = `r abs(round(histmodel$coefficients[2],2))`, SE = `r round(histmodel$coefficients[,"Std. Error"][2],2)` t = `r abs(round(histmodel$coefficients[,"t value"][2],2))`, p = `r abs(round(histmodel$coefficients[,"Pr(>|t|)"][2],2))`). We do not find evidence that initial confidence is associated with subsequent Physical Examinations ($\beta$ = `r abs(round(exammodel$coefficients[2],2))`, SE = `r round(exammodel$coefficients[,"Std. Error"][2],2)` t = `r abs(round(exammodel$coefficients[,"t value"][2],2))`, p = `r abs(round(exammodel$coefficients[,"Pr(>|t|)"][2],2))`). We do find however that initial confidence was associated with higher amounts of Testing ($\beta$ = `r abs(round(testmodel$coefficients[2],2))`, SE = `r round(testmodel$coefficients[,"Std. Error"][2],2)` t = `r abs(round(testmodel$coefficients[,"t value"][2],2))`, p = `r abs(round(testmodel$coefficients[,"Pr(>|t|)"][2],2))`).
 
 ```{r subinfoseekingplot, include=TRUE, warning=FALSE, message=FALSE, echo=FALSE, out.width='100%', fig.align='center'}
 
 # Plot using ggplot2
-ggplot(plotDf, aes(x = observedTestingActions, y = fittedTestingActions)) +
+p <- ggplot(plotDf, aes(x = fittedTestingActions, y = observedTestingActions)) +
   geom_point() +
-  geom_abline(slope = 1, intercept = 0, color = "red") +
     geom_smooth(method = "lm", se = TRUE, color = "blue") + 
-  labs(x = "Observed Testing Actions", y = "Fitted Testing Actions (mixed effects model)") +
+  xlim(c(0,5)) +
+  scale_y_continuous(breaks=seq(0,10,1)) +
+  labs(x = "Fitted Testing Actions", y = "Observed Testing Actions") +
   theme_classic(base_size = 20)
+
+print(p)
 
 ```
 
-Final Confidence ~ Treatment + Time to Ask for Help
+_Figure 3: Plot of linear mixed effects model predicting the amount of testing actions (after the pause point) by the initial confidence reported (during the pause point). We show the fitted values for the number of testing actions (x-axis) against the actual observed number of testing actions (y-axis) on each case (each data point representing a single case). We fit a linear model line of best fit with a 95% confidence interval denoted by the shaded region_
 
 ```{r finalconfidence, include=FALSE, warning=FALSE, message=FALSE, echo=FALSE}
 
-helpedData <- vrData[vrData$totalHelpStart<9999,]
-
-model <- lmerTest::lmer(t2Confidence ~ numOfTreatmentActions + totalHelpStart + (1|Scenario) + (1 | ParticipantID), data=helpedData)
+model <- lmerTest::lmer(t2Confidence ~ numOfTreatmentActions + (1|Scenario) + (1 | ParticipantID), data=vrData)
 pcaModel <- rePCA(model)
-model2 <- lmerTest::lmer(t2Confidence ~ numOfTreatmentActions + totalHelpStart + (1 | ParticipantID), data=helpedData)
+model2 <- lmerTest::lmer(t2Confidence ~ numOfTreatmentActions  + (1 | ParticipantID), data=vrData)
 modelcomp <- anova(model2,model)
 
+finconmodel <- model
 # Get the fitted values from the model
-fittedValues <- fitted(model)
+fittedValues <- fitted(finconmodel)
+
+finconmodel <- summary(finconmodel)
 
 # Get the actual observed values
-obsValues <- helpedData[!is.na(helpedData$t2Confidence),]$t2Confidence
+obsValues <- vrData[!is.na(vrData$t2Confidence),]$t2Confidence
 
 # Create a data frame for plotting
 plotDf <- data.frame(
@@ -357,23 +373,30 @@ plotDf <- data.frame(
 
 ```
 
+We finally look at whether final confidence (as reported at the end of the scenario) is predicted by the number of treatment actions performed by participants during the scenario. We fit a linear mixed effects model with the number of treatment actions as a fixed effect and both scenario and participant as random effects. We find evidence that final confidence were predicted by the amount of treatment actions administered during the scenario ($\beta$ = `r abs(round(finconmodel$coefficients[2],2))`, SE = `r round(finconmodel$coefficients[,"Std. Error"][2],2)` t = `r abs(round(finconmodel$coefficients[,"t value"][2],2))`, p = `r abs(round(finconmodel$coefficients[,"Pr(>|t|)"][2],2))`).
 
 ```{r finalconfidenceplot, include=TRUE, warning=FALSE, message=FALSE, echo=FALSE, out.width='100%', fig.align='center'}
 
 # Plot using ggplot2
-ggplot(plotDf, aes(x = observedConfidence, y = fittedConfidence)) +
+p <- ggplot(plotDf, aes(x = fittedConfidence, y = observedConfidence)) +
   geom_point() +
-  geom_abline(slope = 1, intercept = 0, color = "red") +
-    geom_smooth(method = "lm", se = TRUE, color = "blue") + 
-  labs(x = "Observed Final Confidence", y = "Fitted Final Confidence (mixed effects model)") +
+  geom_smooth(method = "lm", se = TRUE, color = "blue") + 
+  scale_y_continuous(breaks=seq(4,10,1)) +
+    scale_x_continuous(breaks=seq(4,10,1)) +
+  labs(x = "Fitted Confidence Change", y = "Observed Confidence Change") +
   theme_classic(base_size = 20)
+
+print(p)
 
 
 ```
+
+_Figure 4: Plot of linear mixed effects model predicting final confidence (at the end of the scenario) by the amount of treatment actions. We show the fitted values for final confidence (x-axis) against the actual observed values for final confidence (y-axis) on each case (each data point representing a single case). We fit a linear model line of best fit with a 95% confidence interval denoted by the shaded region_
+
+
 ### Diagnostic Appropriateness {.unnumbered}
 
-Diagnostic Appropriateness ~ Value
-Diagnostic Appropriateness split with binary classifier
+We next ask whether the diagnoses provided by participants is a result of 'better' information seeking. If this were the case, we would be able to differentiate between low and high quality diagnoses (as per our Diagnostic Appropriateness measure) solely from the information sought by participants. 
 
 ```{r pcaclassifier, include=FALSE, warning=FALSE, message=FALSE, echo=FALSE}
 
@@ -388,12 +411,12 @@ infoSeekingMatrixVRPCA <- infoSeekingMatrixVRPCA[,-which(names(infoSeekingMatrix
 pca_result <- PCA(infoSeekingMatrixVRPCA, graph = FALSE)
 
 # Scree plot shows elbow around 5
-#qplot(c(1:79), pca_result$eig[,2]) + 
-#  geom_line() + 
-#  xlab("Principal Component") + 
-#  ylab("Variance Explained") +
-#  ggtitle("Scree Plot") +
-#  theme_classic()
+qplot(c(1:79), pca_result$eig[,1]) + 
+  geom_line() + 
+  xlab("Principal Component") + 
+  ylab("Variance Explained") +
+  ggtitle("Scree Plot") +
+  theme_classic()
 
 #########
 
@@ -419,18 +442,6 @@ normalized_topPCS <- topPCS / max_abs
 n_colors <- 20
 color_palette <- colorRampPalette(c("blue", "white", "red"))(n_colors)
 
-#apcluster::heatmap(normalized_topPCS,
- #                  main = "Variable Weights (Normalised) Clustered by PC",
-#                   xlab = "PCs", ylab = "Test",
-#                   col = color_palette, scale = "none", breaks = seq(-1, 1, length.out = n_colors + 1), Colv = NA)
-
-# Define colors for legend
-#legend_colors <- c("blue", "white", "red")
-
-# Add color key
-#legend("topleft", legend = c("Negative", "Zero", "Positive"),
-   #    fill = legend_colors, title = "Color Key", cex = 0.8)
-
 pcs <- pcs[, order(colnames(pcs))]
 pcDF <- data.frame(pcs[,1],pcs[,2],pcs[,3],pcs[,4])
 colnames(pcDF) <- c("PC1","PC2","PC3","PC4")
@@ -441,7 +452,7 @@ pcDF$confidenceChange <- vrData$confidenceChange
 pcDF$OMSScore <- vrData$OMSScore
 pcDF$diagScore <- vrData$t1DiagnosisScore
 
-mixedPCModel = lm(diagScore ~ PC1 + PC2 + PC3 + PC4 + condition, data = pcDF)
+mixedPCModel = lmer(diagScore ~ PC1 + PC2 + PC3 + PC4 + (1|condition) + (1|pid), data = pcDF)
 #summary(mixedPCModel)
 
 pcDF$diagGroup <- ifelse(pcDF$diagScore < median(pcDF$diagScore),0,1)
@@ -464,5 +475,24 @@ rocPlot <- roc.plot(x=pcDF$diagGroup=="1",pred=cbind(prediglmVR),legend = T,
                     leg.text = c("GLM"),thresholds = thresh)$roc.vol
 
 print(rocPlot)
+
+```
+
+```{r pcaheatmap, include=FALSE, warning=FALSE, message=FALSE, echo=FALSE, out.width='100%', fig.align='center'}
+
+testnames <- colnames(infoSeekingMatrixVRPCA)
+testnames <- testnames[!(testnames %in% c("past medical history","measure oxygen saturations & heart rate","measure blood pressure"))]
+
+# apcluster::heatmap(normalized_topPCS,
+#                   main = "Variable Weights (Normalised) Clustered by PC",
+#                    xlab = "PCs", ylab = "Test",
+#                    col = color_palette, scale = "none", breaks = seq(-1, 1, length.out = n_colors + 1), Colv = NA)
+# 
+# # Define colors for legend
+# legend_colors <- c("blue", "white", "red")
+# 
+# # Add color key
+# legend("topleft", legend = c("Negative", "Zero", "Positive"),
+#        fill = legend_colors, title = "Color Key", cex = 0.8)
 
 ```
