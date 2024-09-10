@@ -78,7 +78,7 @@ for (p in 1:nrow(TAData))
   infoSeekingMatrixTA <- rbind(infoSeekingMatrixTA, infoVector)
   rownames(infoSeekingMatrixTA)[p] <- paste(TAData$ID[p],
                                             "-OverallStrat",
-                                            TAData$OverallStrat[p],
+                                            TAData$InterraterStrat[p],
                                             "-CaseDominantStrat",
                                             TAData$caseDominantStrat[p],
                                             "-usingCaseDominantStrat",
@@ -99,7 +99,7 @@ colnames(infoSeekingMatrixTA) <- c(1:29)
 infoSeekingMatrixTA$Condition <- TAData$Condition
 infoSeekingMatrixTA$ID <- TAData$ID
 infoSeekingMatrixTA$Correct <- TAData$Correct
-infoSeekingMatrixTA$Strat <- TAData$OverallStrat
+infoSeekingMatrixTA$Strat <- TAData$InterraterStrat
 infoSeekingMatrixTA$caseDominantStrat <- TAData$caseDominantStrat
 infoSeekingMatrixTA$usingCaseDominantStrat <- TAData$usingCaseDominantStrat
 infoSeekingMatrixTA$matchingIndividualDominantStrat <- TAData$matchingIndividualDominantStrat
@@ -692,35 +692,32 @@ testingDataStrats$likelihoodAcc <- studentCaseDf$likelihoodOfCorrectDiagnosis
 
 trainingDataStrats <- trainingDataStrats[trainingDataStrats$Strat!="NONE",]
 
-trainingDataStrats$HDLabel <- ifelse(trainingDataStrats$Strat=="HD",1,0)
-trainingDataStrats$PRLabel <- ifelse(trainingDataStrats$Strat=="PR",1,0)
-trainingDataStrats$HDLabel <- as.factor(trainingDataStrats$HDLabel)
-trainingDataStrats$PRLabel <- as.factor(trainingDataStrats$PRLabel)
-
 trainingDataStrats$CaseLabel <- as.factor(trainingDataStrats$Strat)
 
 colnames(trainingDataStrats)[1:29] <- c("T1", "T2",  "T3",  "T4",  "T5",  "T6",  "T7",  
                                       "T8",  "T9", "T10", "T11", "T12", "T13", "T14", 
-                                      "T15", "T16", "T17", "T18", "T19", "T20", "T21", "T22",
-                                      "T23", "T24", "T25", "T26", "T27", "T28", "T29")
+                                      "T15", "T16", "T17", "T18", "T19", "T20", "T21", "T22","T23", "T24", "T25", "T26", "T27", "T28", "T29")
 
 colnames(testingDataStrats)[1:29] <- c("T1", "T2",  "T3",  "T4",  "T5",  "T6",  "T7",  
                                         "T8",  "T9", "T10", "T11", "T12", "T13", "T14", 
-                                        "T15", "T16", "T17", "T18", "T19", "T20", "T21", "T22",
-                                        "T23", "T24", "T25", "T26", "T27", "T28", "T29")
+                                        "T15", "T16", "T17", "T18", "T19", "T20", "T21", "T22","T23", "T24", "T25", "T26", "T27", "T28", "T29")
 
 
 thresh<-seq(0,1,0.001)
 #specify the cross-validation method
-ctrl <- trainControl(method = "LOOCV", number=90, savePredictions = TRUE)
+ctrl <- trainControl(method = "repeatedcv", repeats = 5, number=10, savePredictions = TRUE, summaryFunction = multiClassSummary)
 
 set.seed(101)
 
 trainingDataStrats$stratLabel <- as.factor(trainingDataStrats$Strat)
 
-model <- train(stratLabel ~ Condition + T2 + T3 + T4 + T5 + T6 + T7 + T8 + T9 + T10 +
+# shuffle rows in case of order effect
+trainingDataStrats <- trainingDataStrats[sample(1:nrow(trainingDataStrats)), ]
+
+model <- caret::train(stratLabel ~ T2 + T3 + T4 + T5 + T6 + T7 + T8 + T9 + T10 +
                     T11 + T12 + T13 + T14 + T15 + T16 + T17 +  T18 + T19 + T20 +
-                    T21 + T22 + T23 + T24 + T25 + T26 + T27 + T28 + T29, method = "multinom", data = trainingDataStrats, trControl = ctrl)
+                    T21 + T22 + T23 + T24 + T25 + T26 + T27 + T28 + T29, method = "glmnet", family = "multinomial", data = trainingDataStrats, trControl = ctrl, tuneGrid = expand.grid(alpha = 0:1,  # Alpha 0 = ridge, Alpha 1 = lasso
+                                      lambda = seq(0.01, 1, by = 0.01)))
 
 predictions <- predict(model, newdata = trainingDataStrats)
 trainingDataStrats$predictedStrat <- predictions
@@ -808,6 +805,37 @@ testingDataStrats$value <- temp$infoValue
 
 ```
 
+```{r stratClassifierNullShuffle, include=FALSE, echo=FALSE, warning = FALSE, message=FALSE}
+
+nShuffles <- 20
+
+trainingDataStratsShuffle <- trainingDataStrats
+trainingDataStratsShuffle$nullStrat <- sample(trainingDataStratsShuffle$stratLabel)
+
+accs <- c()
+
+for (i in 1:nShuffles)
+{
+  trainingDataStratsShuffle$nullStrat <- sample(trainingDataStratsShuffle$nullStrat)
+  
+  model <- caret::train(nullStrat ~ T2 + T3 + T4 + T5 + T6 + T7 + T8 + T9 + T10 +
+                    T11 + T12 + T13 + T14 + T15 + T16 + T17 +  T18 + T19 + T20 +
+                    T21 + T22 + T23 + T24 + T25 + T26 + T27 + T28 + T29, method = "glmnet", family = "multinomial",  data = trainingDataStratsShuffle, trControl = ctrl, tuneGrid = expand.grid(alpha = 0:1,  # Alpha 0 = ridge, Alpha 1 = lasso
+                                      lambda = seq(0.01, 1, by = 0.01)))
+
+  predictions <- predict(model, newdata = trainingDataStratsShuffle)
+  trainingDataStratsShuffle$predictedStratNull <- predictions
+  success <- sum(trainingDataStratsShuffle$predictedStratNull==trainingDataStratsShuffle$nullStrat)/nrow(trainingDataStratsShuffle)
+  
+  accs[i] <- success
+  
+}
+
+nullMean <- mean(accs)
+
+
+```
+
 ```{r testingpptbreakdown, include=TRUE, echo=FALSE, warning = FALSE, message=FALSE, out.width='100%', fig.align='center'}
 
 testingPptBreakdown <- testingDataStrats %>%
@@ -831,19 +859,19 @@ _Table 8: Dependent variables in the Study 2 dataset broken down by the reasonin
 
 ```{r stratcomparisons, include=FALSE, echo=FALSE, warning = FALSE, message=FALSE}
 
-accTest <- lmerTest::lmer(likelihoodAcc ~ classifiedStrat + (1|ID),data=testingDataStrats)
+accTest <- lmerTest::lmer(likelihoodAcc ~ classifiedStrat + (1|Condition) + (1|ID),data=testingDataStrats)
 accTest <- summary(accTest)
 
-conTest <- lmerTest::lmer(confidenceChange ~ classifiedStrat + (1|ID),data=testingDataStrats)
+conTest <- lmerTest::lmer(confidenceChange ~ classifiedStrat + (1|Condition) + (1|ID),data=testingDataStrats)
 conTest <- summary(conTest)
 
-diffTest <- lmerTest::lmer(initialDiagnoses ~ classifiedStrat + (1|ID),data=testingDataStrats)
+diffTest <- lmerTest::lmer(initialDiagnoses ~ classifiedStrat + (1|Condition) + (1|ID),data=testingDataStrats)
 diffTest <- summary(diffTest)
 
-infoTest <- lmerTest::lmer(infoAmount ~ classifiedStrat + (1|ID),data=testingDataStrats)
+infoTest <- lmerTest::lmer(infoAmount ~ classifiedStrat + (1|Condition) + (1|ID),data=testingDataStrats)
 infoTest <- summary(infoTest)
 
-valTest <- lmerTest::lmer(value ~ classifiedStrat + (1|ID),data=testingDataStrats)
+valTest <- lmerTest::lmer(value ~ classifiedStrat + (1|Condition) + (1|ID),data=testingDataStrats)
 valTest <- summary(valTest)
 
 ```
@@ -925,13 +953,11 @@ summary(model)
 
 pcaModel <- rePCA(model)
 
-
-
-Anova(model)
-
 model2 <- lmer(Accuracy ~ classifiedStrat*initialDiagnoses + (1|Condition),data=testingDataStrats)
 
 modelcomp <- anova(model2,model)
+
+Anova(model)
 
 ################################################
 
