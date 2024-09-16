@@ -1,0 +1,7 @@
+﻿Condition,Key Test 1,Key Test 2,Key Test 3,Key Test 4,Key Test 5
+AD,Assess Extremities,ECG,Chest X-Ray,Other Biochemistry Tests,FBC
+GBS,Neurologic Exam Record,FBC,,,
+MTB,Auscultate Lungs,Chest X-Ray,Abdominal CT Scan,CRP and ESR,Other Biochemistry Tests
+TA,Assess Head,CRP and ESR,FBC,,
+TTP,Measure Blood Pressure,Urine Dipstick,Other Biochemistry Tests,,
+UC,Rectal Examination,Abdominal CT Scan,CRP and ESR,,

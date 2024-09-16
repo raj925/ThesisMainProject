@@ -35,6 +35,32 @@ df <- as.data.frame(read.csv("./study2data.csv",header=TRUE))
 source('scripts_and_filters/Study2/AggregateData.R')
 ```
 
+```{r keyTests, include=FALSE, eval=knitr::is_latex_output()}
+keyTests <- as.data.frame(read.csv("./assets/VignetteKeyTests.csv",header=TRUE))
+
+for (r in 1:nrow(studentCaseDf))
+{
+  caseTests <- keyTests[keyTests$Condition==studentCaseDf$caseCode[r],]
+  caseTests <- c(caseTests$Key.Test.1,caseTests$Key.Test.2,caseTests$Key.Test.3,caseTests$Key.Test.4,caseTests$Key.Test.5)
+  caseTests <- caseTests[which(caseTests != "")]
+  
+  reqTests <- studentCaseDf$reqTestArray[r]
+  reqTests <- str_split(reqTests,", ")[[1]]
+  reqTests <- as.numeric(reqTests)
+  reqTests <- allTests[reqTests==1]
+  studentCaseDf$numOfKeyTests[r] <- sum(reqTests %in% caseTests)
+}
+
+keyTestsById <- studentCaseDf %>%
+              group_by(id) %>%
+              dplyr::summarise(numberOfKeyTests = sum(numOfKeyTests))
+
+colnames(keyTestsById)[1] <- "participantID"
+
+studentAggData <- merge(studentAggData, keyTestsById[, c("participantID","numberOfKeyTests")], by = "participantID", all.x = TRUE)
+
+```
+
 ```{r infovalcalc, include=FALSE, echo=FALSE}
 
 infoValueDf <- infoSeekingFullMatrix[,c(1:29)]
@@ -328,7 +354,7 @@ detach()
 readinesspercent <- sum(studentCaseDf$readyToTreat)/nrow(studentCaseDf)
 readinesspercent <- round((readinesspercent*100),2)
 
-readinessttest <- lmerTest::lmer(finalConfidence ~ readyToTreat + (1|id),data=studentCaseDf)
+readinessttest <- lmerTest::lmer(finalConfidence ~ readyToTreat + (1|caseCode) + (1|id),data=studentCaseDf)
 readinessttest <- summary(readinessttest)
 
 ```
@@ -713,6 +739,7 @@ classifierData <- classifierData[sample(1:nrow(classifierData)),]
 modelglm<-train(Group ~ T2 + T3 + T4 + T5 + T6 + T7 + T8 + T9 + T10 +
                 T11 + T12 + T13 + T14 + T15 + T16 + T17 +  T18 + T19 + T20 +
                 T21 + T22 + T23 + T24 + T25 + T26 + T27 + T28 + T29, method = "glm", family = binomial(link=probit), data = classifierData, trControl = ctrl)
+
 prediglm<-predict(modelglm,type = "prob")[2]
 
 # Plot all test results on one ROC curve
@@ -813,48 +840,80 @@ _Figure 10: Information Seeking Variability (y-axis) for all cases of a given co
 
 ```{r caseClassifier, include=FALSE, eval=TRUE, message=FALSE, echo=FALSE, warning=FALSE}
 
-ctrl <- trainControl(method = "LOOCV", savePredictions = TRUE)
+ctrl <- trainControl(method = "LOOCV", savePredictions = "final")
 
 classifierData$Condition <- infoSeekingFullMatrix[infoSeekingFullMatrix$ParticipantType=="p",]$Condition
 
 model <- train(Condition ~ T2 + T3 + T4 + T5 + T6 + T7 + T8 + T9 + T10 +
                    T11 + T12 + T13 + T14 + T15 + T16 + T17 +  T18 + T19 + T20 +
-                   T21 + T22 + T23 + T24 + T25 + T26 + T27 + T28 + T29, method = "multinom", data = classifierData, trControl = ctrl)
+                   T21 + T22 + T23 + T24 + T25 + T26 + T27 + T28 + T29, method = "glmnet", family="multinomial", data = classifierData, trControl = ctrl, tuneGrid = expand.grid(alpha = 0:1,  # Alpha 0 for ridge, 1 for lasso
+                                      lambda = seq(0.01, 1, by = 0.01)))
 
-predictions <- predict(model, newdata = classifierData)
+#predictions <- predict(model, newdata = classifierData)
 
-classifierData$predictedCondition <- predictions
+predictions <- model$pred
+success <- sum(predictions$pred==predictions$obs)/nrow(predictions)
 
-classifierData$predictedCorrect <- ifelse(classifierData$predictedCondition==classifierData$Condition,1,0)
+#classifierData$predictedCondition <- predictions$pred
 
-classifierAccuracy <- sum(classifierData$Condition==classifierData$predictedCondition)/nrow(classifierData)
+#classifierData$predictedCorrect <- ifelse(classifierData$predictedCondition==classifierData$Condition,1,0)
+
+#classifierAccuracy <- sum(classifierData$Condition==classifierData$predictedCondition)/nrow(classifierData)
+
+classifierAccuracy <- success
 
 # Get coefficients from classifier excluding intercept
-coefficients <- coef(model$finalModel)
-modelcoeffsCase <- apply(abs(coefficients), 2, mean)[-1]
+lambdaVal <- model$bestTune$lambda
+# Access the final model (glmnet object) from train
+finalModel <- model$finalModel
+# Extract coefficients for the best lambda
+coefficients <- coef(finalModel, s = lambdaVal)
+# Convert the list of sparse matrices to a list of dense matrices
+coeflist <- lapply(coefficients, as.matrix)
+
+coefficientMeans <- cbind(as.data.frame(coeflist[1]),
+                 as.data.frame(coeflist[2]),
+                 as.data.frame(coeflist[3]),
+                 as.data.frame(coeflist[4]),
+                 as.data.frame(coeflist[5]),
+                 as.data.frame(coeflist[6]))
+
+coefficientMeans <- coefficientMeans[-1,]
+
+coefficientMeans$Coefficients <- rowMeans(abs(coefficientMeans))
+
+# Convert the average coefficients to a dataframe
+coefficients_df <- as.data.frame(average_coefficients)
+
+
+modelcoeffsCase <- coefficientMeans$Coefficients
+
+modelcoeffsCase <- cbind(modelcoeffsCase,allTests[-1])
+colnames(modelcoeffsCase) <- c("Coefficients","Tests")
 modelcoeffsCase <- as.data.frame(modelcoeffsCase)
-colnames(modelcoeffsCase) <- c("Coefficients") 
-modelcoeffsCase$TestNames <- allTests[-1]
-modelcoeffsCase$Sign <- sign(modelcoeffsCase$Coefficients)
-modelcoeffsCase$Coefficients <- abs(modelcoeffsCase$Coefficients)
+
 modelcoeffsCase <- modelcoeffsCase[order(modelcoeffsCase$Coefficients, decreasing = TRUE), , drop = FALSE]
 
 # NB: these values are logits, or the log of the odds
 # to convert logits to probabilities, you expoentiate
 
-modelcoeffsCase$OddsRatio <- exp((modelcoeffsCase$Coefficients*modelcoeffsCase$Sign))
+#modelcoeffsCase$OddsRatio <- exp((modelcoeffsCase$Coefficients*modelcoeffsCase$Sign))
 
-modelcoeffsCase$PercentChangeInOdds <- modelcoeffsCase$OddsRatio-1
+#modelcoeffsCase$PercentChangeInOdds <- modelcoeffsCase$OddsRatio-1
 
 ```
 
-Given that information seeking variability has a weak negative association with accuracy on our task, we next ask if information seeking is also specific to patient conditions. If so, we would expect the information sought to be predictive of which case the participant is performing. To investigate this, we train a classifier using Penalized Multinomial Regression and Leave One Out Cross Validation. Our input parameters are the available information requests as binary predictors (i.e. to denote whether they were sought on each case or not). The outcome variable of the classifier is the patient condition. We generate model predictions and then look at whether they correctly match the actual condition for that case. Across 510 cases (85 participants performing 6 cases each), the accuracy of the classifier was `r round(classifierAccuracy*100,2)`%, which is higher than the chance level of 16.6%. When breaking down accuracy by condition, we find accuracy to be above chance across all conditions (see Table 2 below).
+Given that information seeking variability has a weak negative association with accuracy on our task, we next ask if information seeking is also specific to patient conditions. If so, we would expect the information sought to be predictive of which case the participant is performing. To investigate this, we train a classifier using Penalized Multinomial Regression and Leave One Out Cross Validation. Our input parameters are the available information requests as binary predictors (i.e. to denote whether they were sought on each case or not). The outcome variable of the classifier is the patient condition. We generate model predictions and then look at whether they correctly match the actual condition for that case. Across 510 cases (85 participants performing 6 cases each), the accuracy of the classifier was `r classifierAccuracy*100`%, which is higher than the chance level of 16.6%. When breaking down accuracy by condition, we find accuracy to be above chance across all conditions (see Table 2 below).
 
 ```{r caseClassifierTable, include=TRUE, eval=TRUE, message=FALSE, echo=FALSE, warning=FALSE,out.width='100%', fig.align='center', fig.height=5}
 
-casewisePredictions <- classifierData %>%
-  group_by(Condition) %>%
+predictions$predictedCorrect <- ifelse(predictions$pred==predictions$obs,1,0)
+
+casewisePredictions <- predictions %>%
+  group_by(obs) %>%
   dplyr::summarise(`Prediction Accuracy` = round(mean(predictedCorrect),2))
+
+colnames(casewisePredictions)[1] <- "Condition"
 
 knitr::kable(casewisePredictions) %>% 
   kableExtra::kable_styling(latex_options="HOLD_position")
@@ -884,8 +943,7 @@ coeffTable <- cbind(highestCoeffs[highestCoeffs$Model=="Accuracy",]$Rank,       
 round(highestCoeffs[highestCoeffs$Model=="Accuracy",]$Coefficients*highestCoeffs[highestCoeffs$Model=="Accuracy",]$Sign,2),                 
 round(highestCoeffs[highestCoeffs$Model=="Accuracy",]$OddsRatio,2),
 highestCoeffs[highestCoeffs$Model=="Condition",]$TestNames,
-round(highestCoeffs[highestCoeffs$Model=="Condition",]$Coefficients*highestCoeffs[highestCoeffs$Model=="Condition",]$Sign,2),
-round(highestCoeffs[highestCoeffs$Model=="Condition",]$OddsRatio,2))
+round(highestCoeffs[highestCoeffs$Model=="Condition",]$Coefficients))
 
 colnames(coeffTable) <- c("Rank","Test Name", "Coefficient", "Odds Ratio", "Test Name", "Coefficient", "Odds Ratio")
 
