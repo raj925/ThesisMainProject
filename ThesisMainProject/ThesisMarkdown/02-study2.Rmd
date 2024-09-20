@@ -767,6 +767,54 @@ modelcoeffs$PercentChangeInOdds <- modelcoeffs$OddsRatio-1
 _Figure 8: Receiver-Operator Characteristic (ROC) curve using a Generalised Linear Model to classify individual cases as being performed by either high or low accuracy participants. The models are trained on the raw binary predictor variables for each of the 29 available pieces of information, with 0 indicating that the information was not sought for the case and 1 indicating that the information was sought. Participants were sorted as high or low accuracy based on a median split on their average Accuracy value across the six cases._
 \
 
+```{r accuracyClassifierNull, include=FALSE, echo=FALSE, out.width='100%', fig.align='center'}
+
+accPredictions <- modelglm$pred
+confusionAcc <- confusionMatrix(accPredictions$pred,accPredictions$obs)
+
+nShuffles <- 1000
+
+set.seed(1000)
+
+classifierDataShuffle <- classifierData
+classifierDataShuffle$Group <- sample(classifierDataShuffle$Group)
+
+accs <- c()
+preds <- c()
+obs <- c()
+
+for (i in 1:nShuffles)
+{
+  classifierDataShuffle$Group <- sample(classifierDataShuffle$Group)
+  
+  modelglm<-train(Group ~ T2 + T3 + T4 + T5 + T6 + T7 + T8 + T9 + T10 +
+                T11 + T12 + T13 + T14 + T15 + T16 + T17 +  T18 + T19 + T20 +
+                T21 + T22 + T23 + T24 + T25 + T26 + T27 + T28 + T29, method = "glm", family = binomial(link=probit), data = classifierDataShuffle, trControl = ctrl)
+
+  predictions <- modelglm$pred
+  
+  success <- sum(predictions$pred==predictions$obs)/nrow(predictions)
+  
+  accs[i] <- success
+  
+  preds <- c(preds,predictions$pred)
+  obs <- c(obs,predictions$obs)
+  
+}
+
+nullPreds <- data.frame(preds,obs)
+
+nullPreds$preds <- as.factor(nullPreds$preds)
+nullPreds$obs <- as.factor(nullPreds$obs)
+
+nullConfusion <- confusionMatrix(nullPreds$preds, nullPreds$obs)
+
+nullMean <- mean(accs)
+
+
+```
+
+
 This result indicates overall that differences in information seeking are indeed predictive of a difference in participant ability at above chance at a broad level. Essentially, information seeking patterns are different between high and low accuracy participants. This analysis alone, however, does not tell us what aspects of information seeking in particular are predictive of accuracy. We know from figure 7D that seeking more valuable information is associated with higher accuracy. We next seek to characterise the specific differences in information seeking that contribute to higher diagnostic performance. 
 \
 
@@ -846,8 +894,7 @@ classifierData$Condition <- infoSeekingFullMatrix[infoSeekingFullMatrix$Particip
 
 model <- train(Condition ~ T2 + T3 + T4 + T5 + T6 + T7 + T8 + T9 + T10 +
                    T11 + T12 + T13 + T14 + T15 + T16 + T17 +  T18 + T19 + T20 +
-                   T21 + T22 + T23 + T24 + T25 + T26 + T27 + T28 + T29, method = "glmnet", family="multinomial", data = classifierData, trControl = ctrl, tuneGrid = expand.grid(alpha = 0:1,  # Alpha 0 for ridge, 1 for lasso
-                                      lambda = seq(0.01, 1, by = 0.01)))
+                   T21 + T22 + T23 + T24 + T25 + T26 + T27 + T28 + T29, method = "glmnet", family="multinomial", data = classifierData, trControl = ctrl)
 
 #predictions <- predict(model, newdata = classifierData)
 

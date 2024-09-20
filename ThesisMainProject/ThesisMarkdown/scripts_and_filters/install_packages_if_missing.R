@@ -1,10 +1,10 @@
 requiredPackages <- c("tibble", "scales", "psych", "ltm", "stringr", "ggsci", "ggplot2", "rjson", 
-                      "reticulate", "ggpubr", "lme4", "lmerTest", "pracma", "lattice", "MASS", "apcluster", "blme", 
-                      "smacof","cluster","factoextra", "pwr", "magrittr", "tidyr", "dplyr", "boot", "rstatix", 
-                      "devtools",  "fossil", "tidyverse", "proxy", "plotly","viridis","padr", 
+                      "reticulate", "ggpubr", "lme4", "lmerTest", "MASS", "apcluster", "blme", 
+                      "factoextra", "pwr", "magrittr", "tidyr", "dplyr", "boot", "rstatix", 
+                      "devtools",  "tidyverse", "proxy", "plotly","viridis","padr", "pracma", "bookdown",
                       "RColorBrewer", "tm", "logisticPCA", "rARPACK", "FactoMineR", "verification","interactions",
-                      "rpart", "caret", "data.table", "GGally", "ROCR", "maptree", "knitr", "kableExtra",
-                      "glmnet", "gridExtra", "mgcv", "nnet", "pROC", "pls", "stats",
+                      "rpart", "caret", "data.table", "ROCR", "maptree", "knitr", "kableExtra",
+                      "glmnet", "gridExtra", "mgcv", "nnet", "pROC", "stats", "e1071", "kernlab",
                       "gbm", "xgboost", "DT", "NeuralNetTools", "rpart.plot", "poLCA", "lsr", "cowplot")
 
 new.packages <- requiredPackages[!(requiredPackages %in% installed.packages()[,"Package"])]

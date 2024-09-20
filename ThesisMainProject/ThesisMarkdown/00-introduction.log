@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.7.7)  10 SEP 2024 17:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.7.7)  19 SEP 2024 15:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1338,7 +1338,7 @@ Package minitoc Warning: W0010
 (minitoc)                MINITOCS NOT PREPARED on input line 254.
 
 LaTeX Font Info:    Trying to load font information for T1+put on input line 27
-6.
+5.
 (/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/t1put.fd
 File: t1put.fd 2001/06/04 font definitions for T1/put.
 )
@@ -1348,7 +1348,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             See the microtype manual for details.
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 284.
+(hyperref)                be the same. Added a new anchor on input line 282.
 
 [1
 
@@ -1356,48 +1356,45 @@ Package hyperref Warning: The anchor of a bookmark and its parent's must not
 
 
 {/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/loc
-al/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}] [2] [3] [4]
+al/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}] [2] [3] [4] [5]
 <./assets/confidenceCalibration.png, id=55, 416.55624pt x 314.17375pt>
 File: ./assets/confidenceCalibration.png Graphic file (type png)
 <use ./assets/confidenceCalibration.png>
 Package pdftex.def Info: ./assets/confidenceCalibration.png  used on input line
  321.
 (pdftex.def)             Requested size: 421.10046pt x 317.61499pt.
-
-Underfull \vbox (badness 2772) has occurred while \output is active []
-
-[5] [6 <./assets/confidenceCalibration.png>] [7] [8] [9]
-<./assets/OskampGraph.png, id=80, 2053.6725pt x 1935.23pt>
+[6 <./assets/confidenceCalibration.png>] [7] [8] [9] [10]
+<./assets/OskampGraph.png, id=79, 2053.6725pt x 1935.23pt>
 File: ./assets/OskampGraph.png Graphic file (type png)
 <use ./assets/OskampGraph.png>
 Package pdftex.def Info: ./assets/OskampGraph.png  used on input line 347.
 (pdftex.def)             Requested size: 421.10046pt x 396.81331pt.
-[10 <./assets/OskampGraph.png>] [11] [12] [13] [14] [15] [16]
+[11 <./assets/OskampGraph.png>] [12] [13] [14] [15] [16] [17]
 Package minitoc Info: I0009
 (minitoc)             Listing minitoc auxiliary files. 
 (minitoc)             Creating the 00-introduction.maf file.
 \openout3 = `00-introduction.maf'.
 
-[17] (./00-introduction.aux)
+[18] (./00-introduction.aux)
 Package rerunfilecheck Info: File `00-introduction.out' has not changed.
 (rerunfilecheck)             Checksum: 34CB334CA5C595B36D446EADC547DF26;1208.
  ) 
 Here is how much of TeX's memory you used:
- 24624 strings out of 476025
- 415418 string characters out of 5790018
+ 24620 strings out of 476025
+ 415282 string characters out of 5790018
  1860388 words of memory out of 5000000
  44365 multiletter control sequences out of 15000+600000
- 542295 words of font info for 92 fonts, out of 8000000 for 9000
+ 542386 words of font info for 93 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,11n,77p,2461b,636s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,12n,77p,2461b,556s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/lo
 cal/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive
 /2023/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2023/texmf
 -dist/fonts/type1/public/lm/lmri12.pfb>
-Output written on 00-introduction.pdf (17 pages, 307241 bytes).
+Output written on 00-introduction.pdf (18 pages, 308910 bytes).
 PDF statistics:
- 145 PDF objects out of 1000 (max. 8388607)
- 113 compressed objects within 2 object streams
- 30 named destinations out of 1000 (max. 500000)
+ 141 PDF objects out of 1000 (max. 8388607)
+ 108 compressed objects within 2 object streams
+ 24 named destinations out of 1000 (max. 500000)
  11331 words of extra memory for PDF output out of 12000 (max. 10000000)
 
