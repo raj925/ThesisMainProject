@@ -111,6 +111,9 @@ colnames(distancesTA) <- rownames(distancesTA)
 
 ## Introduction {.unnumbered}
 
+In the previous study, we presented results from an online vignette study where we investigated confidence and information seeking within evolving diagnostic decisions. Overall, we found that students provided confidence judgements that were well-calibrated with their objective accuracy. We found that higher information seeking was associated with larger increases in confidence over the course of diagnostic decisions. However, seeking more information was not associated with accuracy. Rather, accuracy was associated with selectivity in information seeking, such that certain information was beneficial to students regardless of the patient's condition. We also found that medical students tended to broaden the range of differentials they were considering with more information, as they rarely removed differentials from their consideration. However, students who considered more differentials early on tended to seek more information and increase their confidence to a greater extent. Given that we find that certain information seeking patterns were associated with accuracy, and that students were overall calibrated, we now aim to better understand how students approach the task in terms of their decision making strategies. As the previous study was conducted online, we are not able to ascertain why students sought certain information or why they considered certain differentials (as likely or unlikely). To address this, we present in this chapter a study using a modified version of the previous study's vignette methodology where students verbalise their thought process as they were performing their diagnoses. 
+
+\
 In this mixed-methods study, we aim to gain insight on the types of reasoning strategies used by medical students and how these strategies influence both their information seeking patterns and changes in confidence over the course of their diagnostic decisions. We also investigate why reasoning strategies may vary on a case-by-case basis. We utilise a very similar experimental procedure to our previous study (using the same patient vignettes), but rather than explicitly asking students to report the differentials they were considering, we instead prompted students to think out loud as they were performing the diagnostic task. Everything said by participants was audio-recorded, transcribed and then coded for both quantitative and qualitative analysis. We aim to use this method to derive a richer understanding of the diagnostic process as it pertains to medical students' evolving thought processes. 
 \
 
@@ -136,7 +139,7 @@ These reasoning strategies may have been explicitly taught during a clinician's 
 In order to pick apart these different reasoning strategies within our vignette-based paradigm, we adopted a think-aloud methodology similar to Coderre et al. (2003), whereby participants verbalise their thought process as they are doing the vignette-based diagnosis task. Think-aloud methodologies are useful for directly accessing ongoing thought processes during decisions (van Someren, Barnard & Sandberg, 1994). The use of thinking aloud (or 'verbal protocols') in research is useful for being able to access the information attended to participants in short term memory (Payne, 1994) and can be treated as the ongoing behavioural state of a participant’s knowledge (Newell & Simon, 1972). Think-aloud protocols have historically been used to study problem solving, particularly for comparing how novices and experts solve problems such as finding the best move in chess (de Groot, 1946, Bilalić, McLeod & Gobet, 2008). Diagnosis is a decisional process that develops over time and allowing participants to think aloud reflects this by providing a time-ordered sequence of how thought processes develop (Payne, 1994). This is especially well-suited to our task where the information available to participants is controlled at discrete time points, allowing us to investigate how diagnostic thinking develops with more information. We also are able to connect the verbalisations in our task to the exact information participants received to prompt that thought. As mentioned, a think-aloud methodology has previously been used to study the differences between novice and expert clinicians during diagnostic reasoning (Coderre et al., 2003). We build on the work of Coderre et al. here to further investigate how reasoning strategies contribute to differences in both accuracy and confidence, as well as understanding why certain cases result in differing strategies. 
 \
 
-In order to bolster our findings from this study, we aim to use the reasoning strategies determined from this study to reanalyse the cases in Study 2. Whilst we record information seeking, confidence and differential/hypothesis generation behaviour during the previous study, we do not have an understanding of how participants are approaching each case from a reasoning strategy perspective. One way in which we can to some extent infer this is via the information seeking patterns that participants adopt. If our hypothesis is correct that reasoning strategies result in different patterns of information seeking, we should then we able to predict what strategy a participant is using solely from their information seeking. If we can also establish that these predictions are reliable, we can then study the properties of these reasoning strategies with the larger sample size afforded to us in Study 2. This work would then improve our understanding of how these reasoning strategies not only affect diagnostic accuracy, but how they contribute to information seeking, confidence and differential generation. Based on these findings, we could then draw some implications for medical education around clinical reasoning. 
+In order to bolster our findings from this study, we aim to use the reasoning strategies determined from this study to reanalyse the cases in Study 2. Whilst we record information seeking, confidence and differential/hypothesis generation behaviour during the previous study, we do not have an understanding of how participants are approaching each case from a reasoning strategy perspective. One way in which we can to some extent infer this is via the information seeking patterns that participants adopt. If our hypothesis is correct that reasoning strategies result in different patterns of information seeking, we should then we able to predict what strategy a participant is using solely from their information seeking. If we can also establish that these predictions are reliable, we can then study the properties of these reasoning strategies with the larger sample size afforded to us in Study 2. This work would then improve our understanding of how these reasoning strategies not only affect diagnostic accuracy, but how they contribute to information seeking, confidence and differential generation. 
 
 ### Research Questions {.unnumbered}
 
@@ -222,7 +225,7 @@ The aim of this thematic analysis is to identify the reasoning strategies that m
 As laid out in the Introduction, we ask with this study is whether we are able to detect each participant's reasoning strategy on a case-by-case basis in Study 2. As Study 2 was an online study, we do not have access to participants' thought process via thinking aloud. However, we can ask whether the information seeking patterns in Study 3, in which we do have coded reasoning strategies based on think-aloud utterances, can be used to predict reasoning strategies in Study 2. In order for this to be possible, we assume that the reasoning strategies we have defined are differentiated from each other by their information seeking. To test this assumption, we establish whether the predictions of reasoning strategy are able to reliably correspond with the 'ground truth' labels of reasoning strategy via our independent interrater coding process. If these predictions of reasoning strategy are reliable within the think-aloud study, we can then apply the same method for predicting based on information seeking in the online study. If they are indeed reliable, we can determine, given medical students' reasoning strategies, whether these strategies are associated with differences in information seeking and confidence (with the increased robustness of the online study's higher sample size). In order to apply reasoning strategies to the data from Study 2, we train a classifier using penalised multinomial logistic regression to classify cases as HD, PR or SI using the cases from the think aloud study (with Leave One Out Cross Validation). As mentioned, some cases are not coded with a reasoning strategy if there are insufficient utterances to infer a clear strategy, and these case are excluded from this training. The input parameters for the classifier are the 29 pieces of information as binary predictors (similar to the approach depicted in Figure 8 of the previous study) and the cases’ condition. In other words, the cases from the think-aloud study make up the training data for the classifier whilst the cases from the larger online study make up the test dataset. The classifier was implemented using R’s caret package with the train() and glmnet() functions. The testing data is then labelled with predicted strategies using R’s predict function. We report accuracy values for the classifier when applied to think-aloud study in terms of how well the classifier is able to reproduce the coded reasoning strategies. 
 \
 
-As well as predicting reasoning strategy on a case-by-case basis to determine differences in information seeking, confidence and differential generation, we also look at differences across cases with a given reasoning strategy. As we describe earlier, we use the think-aloud to determine the dominant strategy for a given case by observing which reasoning strategy was used by a majority of participants. We then look across cases for a given dominant strategy, how our key dependent variables are affected by the type of case. 
+As well as predicting reasoning strategy on a case-by-case basis to determine differences in information seeking, confidence and differential generation, we also look at differences across cases with a given reasoning strategy. As we describe earlier, we use the think-aloud to determine the dominant strategy for a given case by observing which reasoning strategy was used by a majority of participants. We then look across cases for a given dominant strategy, how our key dependent variables are affected by the type of case. We group cases in Study 2 by the dominant strategy used in Study 3 for each condition. For example, if a majority of participants use a HD strategy in the think-aloud study for the UC case, we then consider UC to be HD-dominant.
 
 ## Results {.unnumbered}
 
@@ -416,7 +419,7 @@ p <- ggplot(stratBreakdown, aes(fill=Strategy, y=m_N, x=Condition)) +
         plot.title=element_text(size=18,face="bold"),
         line = element_blank())
 
-print(p)
+ v
 
 ```
 _Figure 2: Proportion of participants who use each type of reasoning strategy for each condition/case, with the overall proportions across all cases shown by the rightmost bars. The strategies shown are: Hypothetico-Deductive (where multiple differentials are considered simultaneously, orange), Pattern Recognition (where a single differential is considered in turn, blue), Scheme-Inductive (where participants evaluate pathophysiological systems as causes of patients rather than specific conditions, green) and None (for cases where a clear differential is not mentioned or if there are not enough utterances to infer a clear strategy, grey)._
@@ -434,16 +437,30 @@ strattable <- TAData %>%
                     Accuracy = round(mean(Correct),2),
                    `Differential Evaluations` = round(mean(DEs),2), 
                    `Information Seeking` = round(mean(proportionOfInfo),2),
+                   `Information Value` = round(mean(infoValue),2),
                    `Confidence Change` = round(mean(confidenceChange)/100,2))
 
 colnames(strattable)[1] <- c("Strategy")
 
 strattable <- strattable[order(strattable$N, decreasing = TRUE), , drop = FALSE]
 
+TADataNoNons <- TAData[TAData$InterraterStrat!="NONE",]
+
+normalityTest <- shapiro.test(filteredData$RelativeInfluence)
+homoscedasticityTest <- bptest(studentAggData$proportionOfInfo ~ studentAggData$meanConfidenceOverallChange)
+
+accTest <- lme4::glmer(Correct ~ InterraterStrat + (1|Condition) + (1|ID),family=binomial,data=TADataNoNons)
+DETest <- lme4::glmer(DEs ~ InterraterStrat + (1|Condition) + (1|ID),data=TADataNoNons)
+infoTest <- lme4::glmer(proportionOfInfo ~ InterraterStrat + (1|Condition) + (1|ID),data=TADataNoNons)
+valTest <- lme4::glmer(infoValue ~ InterraterStrat + (1|Condition) + (1|ID),data=TADataNoNons)
+conTest <- lme4::glmer(confidenceChange ~ InterraterStrat + (1|Condition) + (1|ID),data=TADataNoNons)
+
 knitr::kable(strattable) %>% 
   kableExtra::kable_styling(latex_options=c("HOLD_position","scale_down"))
 
 colnames(strattable) <- c("Strategy","N","Accuracy","DiffEval", "InfoSeeking","ConfidenceChange")
+
+
 
 ```
 _Table 4: Mean values for dependent variables broken down by the reasoning strategy coded after resolving conflicts between the two independent coders. From left to right, Accuracy refers to the proportion of cases where a correct differential was mentioned. Differential Evaluations refers to the number of coded utterances under one of the subcodes (Differential Added, Differential Removed, Increased Likelihood, Decreased Likelihood). Information Seeking refers to the proportion of available information sought across cases. Confidence Change refers to difference between initial confidence and final confidence._
@@ -720,17 +737,9 @@ ctrl <- trainControl(method = "LOOCV", savePredictions = "final", sampling="down
 regModelLambda <- caret::train(stratLabel ~ T5 + T6 + T8 + T9 + T10 +
                     T11 + T12 + T13 + T14 + T15 + T16 + T17 +  T18 + T19 + T20 + T21 + T22 + T23 + T24 + T25 + T26 + T27 + T28 + T29, method = "glmnet", family="multinomial", data = trainingDataStrats, trControl = ctrl, tuneGrid = expand.grid(alpha = seq(0, 1, by = 0.1), lambda = seq(0, 0.05, by = 0.01)))
 
-svmModel <- caret::train(stratLabel ~ T5 + T6 + T8 + T9 + T10 +
-                    T11 + T12 + T13 + T14 + T15 + T16 + T17 +  T18 + T19 + T20 +
-                    T21 + T22 + T23 + T24 + T25 + T26 + T27 + T28 + T29, method = "svmRadial", data = trainingDataStrats, trControl = ctrl, tuneLength = 40 )
-
-
 predictions <- regModelLambda$pred
 confusionReg <- confusionMatrix(predictions$pred,predictions$obs)
 confusionRegTable <- as.data.frame(confusionReg$byClass)
-
-predictions <- svmModel$pred
-confusionSVM <- confusionMatrix(predictions$pred,predictions$obs)
 
 #########################
 #coef_list <- coef(regModelLambda$finalModel, s = regModelLambda$bestTune$lambda)
@@ -744,7 +753,7 @@ confusionSVM <- confusionMatrix(predictions$pred,predictions$obs)
 
 ##############################
 # Make predictions
-predictions <- predict(model, newdata = testingDataStrats, type="raw")
+predictions <- predict(regModelLambda, newdata = testingDataStrats, type="raw")
 
 testingDataStrats$classifiedStrat <- predictions
 testingDataStrats$classifiedStrat <- as.factor(testingDataStrats$classifiedStrat)
@@ -874,7 +883,7 @@ nullConfusionTable <- as.data.frame(nullConfusion$byClass)
 
 ```
 
-We next turn to the coding of reasoning strategies in Study 2. We train a multinomial logistic classifier to identify reasoning strategy in this think-aloud study, with each of the information requests as binary predictors (i.e. whether they were sought or not on each case). We then compare the predicted strategies from the classifier to objective 'ground truth' strategies to assess model accuracy. In order to train the classifier, we account for imbalance in the training data (due to the larger number of HD cases and the lower number of SI cases) using downsampling and limited regularisation. In summary, we are not able to train a classifier that performs better than chance at predicting reasoning strategy. The accuracy of our classifier is `r round(confusionReg$overall["Accuracy"],2)`, which is significantly lower than the No Information Rate of `r round(sum(trainingDataStrats$stratLabel=="HD")/length(trainingDataStrats$stratLabel),2)` (i.e. the accuracy of the classifier if HD was predicted on all cases). We compare classifier accuracy to a bootstrapped null distribution where the ground truth labels are repeatedly shuffled. Based on `r nShuffles` shuffles, we find an average accuracy of `r round(nullConfuson$overall["Accuracy"],2)`. We also compare Balanced Accuracy values (i.e. the accuracy within each reasoning strategy, in order to account for the data imbalance) to those of the null classifier. We find that the Balanced Accuracy of our trained classifier (HD = `r round(confusionRegTable$"Balanced Accuracy"[1],2)`, PR = `r round(confusionRegTable$"Balanced Accuracy"[2],2)`, SI = `r round(confusionRegTable$"Balanced Accuracy"[3],2)`) does not exceed that of the null classifier (HD = `r round(nullConfusionTable$"Balanced Accuracy"[1],2)`, PR = `r round(nullConfusionTable$"Balanced Accuracy"[2],2)`, SI = `r round(nullConfusionTable$"Balanced Accuracy"[3],2)`). To summarise, we are not able to predict reasoning strategy reliably based on information seeking alone using on our think-aloud dataset. 
+We next turn to the coding of reasoning strategies in Study 2. We train a multinomial logistic classifier to identify reasoning strategy in this think-aloud study, with each of the information requests as binary predictors (i.e. whether they were sought or not on each case). We then compare the predicted strategies from the classifier to the objective 'ground truth' strategies in order to assess the model's accuracy. In order to train the classifier, we account for imbalance in the training data (due to the larger number of HD cases and the lower number of SI cases) using downsampling and limited regularisation. In summary, we are not able to train a classifier that performs better than chance at predicting reasoning strategy. The accuracy of our classifier is `r round(confusionReg$overall["Accuracy"],2)`, which is significantly lower than the No Information Rate of `r round(sum(trainingDataStrats$stratLabel=="HD")/length(trainingDataStrats$stratLabel),2)` (i.e. the accuracy of the classifier if HD was predicted on all cases). We compare classifier accuracy to a bootstrapped null distribution where the ground truth labels are repeatedly shuffled. Based on `r nShuffles` shuffles, we find an average accuracy of `r round(nullConfuson$overall["Accuracy"],2)`. We also compare Balanced Accuracy values (i.e. the accuracy within each reasoning strategy, in order to account for the data imbalance) to those of the null classifier. We find that the Balanced Accuracy of our trained classifier (HD = `r round(confusionRegTable$"Balanced Accuracy"[1],2)`, PR = `r round(confusionRegTable$"Balanced Accuracy"[2],2)`, SI = `r round(confusionRegTable$"Balanced Accuracy"[3],2)`) does not exceed that of the null classifier (HD = `r round(nullConfusionTable$"Balanced Accuracy"[1],2)`, PR = `r round(nullConfusionTable$"Balanced Accuracy"[2],2)`, SI = `r round(nullConfusionTable$"Balanced Accuracy"[3],2)`). To summarise, we are not able to predict reasoning strategy reliably based on information seeking alone using on our think-aloud dataset. Hence, we do not perform further analysis based on the predicted reasoning strategies in Study 2's dataset.
 
 \
 ```{r dominantstratsonline, include = FALSE,warning=FALSE, message=FALSE, echo=FALSE}
@@ -883,28 +892,60 @@ dominantStratOnline <- testingDataStrats %>%
               group_by(caseDominantStrat) %>%
               dplyr::mutate(N = n()) %>%
               dplyr::summarise(N = mean(N),
-              Accuracy = round((mean(likelihoodAcc)/10),2),                     
+              Accuracy = round((mean(likelihoodAcc)/10),2),                 
               `Initial Diagnoses` = round(mean(initialDiagnoses),2), 
               `Information Seeking` = round(mean(infoAmount),2),
               `Confidence Change` = round(mean(confidenceChange)/100,2),
               `Information Value` = round(mean(value),2))
 
-accTest <- lmerTest::lmer(likelihoodAcc ~ caseDominantStrat + (1|Condition) + (1|ID),data=testingDataStrats)
-accTest <- summary(accTest)
+dominantStratOnlineAnalysis <- testingDataStrats %>%
+              group_by(ID,caseDominantStrat) %>%
+              dplyr::summarise(Accuracy = round((mean(likelihoodAcc)/10),2),
+              `InitialDiagnoses` = round(mean(initialDiagnoses),2), 
+              `InformationSeeking` = round(mean(infoAmount),2),
+              `ConfidenceChange` = round(mean(confidenceChange)/100,2),
+              `InformationValue` = round(mean(value),2))
 
-conTest <- lmerTest::lmer(confidenceChange ~ caseDominantStrat + (1|Condition) + (1|ID),data=testingDataStrats)
-conTest <- summary(conTest)
+# Accuracy
 
-diffTest <- lmerTest::lmer(initialDiagnoses ~ caseDominantStrat + (1|Condition) + (1|ID),data=testingDataStrats)
-diffTest <- summary(diffTest)
+accTest <- wilcox.test(Accuracy ~ caseDominantStrat, data = dominantStratOnlineAnalysis,paired = T, conf.int = T)
 
-infoTest <- lmerTest::lmer(infoAmount ~ caseDominantStrat + (1|Condition) + (1|ID),data=testingDataStrats)
-infoTest <- summary(infoTest)
+# Confidence
 
-valTest <- lmerTest::lmer(value ~ caseDominantStrat + (1|Condition) + (1|ID),data=testingDataStrats)
-valTest <- summary(valTest)
+conTest <- wilcox.test(ConfidenceChange ~ caseDominantStrat, data = dominantStratOnlineAnalysis, paired = T, conf.int = T)
+
+# Initial Diagnoses
+
+diagTest <- wilcox.test(InitialDiagnoses ~ caseDominantStrat, data = dominantStratOnlineAnalysis, paired = T, conf.int = T)
+
+# Info Seeking
+
+infoTest <- wilcox.test(InformationSeeking ~ caseDominantStrat,data=dominantStratOnlineAnalysis,paired = T, conf.int = T)
+
+# Info Value
+
+valTest <- wilcox.test(InformationValue ~ caseDominantStrat,data=dominantStratOnlineAnalysis,paired = T, conf.int = T)
+
+
+# Interaction: Accuracy * Diagnoses 
+
+accModel <- lmer(Accuracy ~ InitialDiagnoses*caseDominantStrat + (1 | ID), data = dominantStratOnlineAnalysis)
+
+intplot <- interact_plot(accModel, pred = InitialDiagnoses, modx = caseDominantStrat) +
+  labs(y="Accuracy", x = "Initial Diagnoses", colour = "Reasoning Strategy") +
+  theme(axis.text=element_text(size=16),
+        axis.title=element_text(size=16),
+        legend.title=element_text(size=16),
+        legend.text=element_text(size=16))
+print(intplot)
+
 
 ```
+
+We are not able to reliably predict reasoning strategy on a case-by-case basis. We instead look at behaviour as a function of the dominant reasoning strategy for the patient conditions based on the coded reasoning strategies in the think-aloud study. Our aim to is to look at whether cases result in different diagnostic behaviour assuming that each patient condition is associated with a particular reasoning strategy. We find that three of the six conditions (UC, GBS, AD) were approached using a HD strategy by a majority of participants. The remaining cases tended to be performed using a PR strategy (except for the TA case, where there were equal numbers of PR and SI coded participants). We consider these cases (TTP, TA, MTB) as PR-dominant cases for ease of comparison with HD-dominant cases. As our observations are not independent, we calculate the mean values across conditions within each group of cases (HD-dominant or PR-dominant) in the online dataset from Study 2 such that there is a single observation per participant. This allows us to investigate broadly if reasoning strategy on a case-wise level affects diagnostic behaviour. 
+
+\
+First, we look at whether our key variables vary as a function of the dominant strategy for cases in order to determine if strategy is associated with a difference in behaviour. As we have two groups of cases, we use paired Wilcoxon Signed Rank to compare median values between these groups (averaged across conditions), as these variables are not normally distributed. We observe higher accuracy for HD-dominant cases (Mdn = `r median(dominantStratOnlineAnalysis[dominantStratOnlineAnalysis$caseDominantStrat=="HD",]$Accuracy)`) when compared to PR-dominant cases (MDn = `r median(dominantStratOnlineAnalysis[dominantStratOnlineAnalysis$caseDominantStrat=="PR",]$Accuracy)`) (V = `r accTest$statistic`, pseudomedian difference = `r round(accTest$estimate,2)`, 95% CI = [`r round(accTest$conf.int[1],2)`, `r round(accTest$conf.int[2],2)`], p < .001). We also observe that more initial diagnoses being considered during HD-dominant cases (MDn = `r median(dominantStratOnlineAnalysis[dominantStratOnlineAnalysis$caseDominantStrat=="HD",]$InitialDiagnoses)`) when compared to PR-dominant cases (MDn = `r median(dominantStratOnlineAnalysis[dominantStratOnlineAnalysis$caseDominantStrat=="PR",]$InitialDiagnoses)`) (V = `r diagTest$statistic`, pseudomedian difference = `r round(diagTest$estimate,2)`, 95% CI = [`r round(diagTest$conf.int[1],2)`, `r round(diagTest$conf.int[2],2)`], p < .001). When looking at differences in information seeking, we observed that more information was sought on PR-dominant cases (MDn = `r median(dominantStratOnlineAnalysis[dominantStratOnlineAnalysis$caseDominantStrat=="PR",]$InformationSeeking)`) when compared to HD-dominant cases (MDn = `r median(dominantStratOnlineAnalysis[dominantStratOnlineAnalysis$caseDominantStrat=="HD",]$InformationSeeking)`) (V = `r infoTest$statistic`, pseudomedian difference = `r abs(round(infoTest$estimate,2))`, 95% CI = [`r abs(round(infoTest$conf.int[1],2))`, `r abs(round(infoTest$conf.int[2],2))`], p < .001). We also observed that informational value was higher for PR-dominant cases (MDn = `r median(dominantStratOnlineAnalysis[dominantStratOnlineAnalysis$caseDominantStrat=="PR",]$InformationValue)`) when compared to HD-dominant cases (MDn = `r median(dominantStratOnlineAnalysis[dominantStratOnlineAnalysis$caseDominantStrat=="HD",]$InformationValue)`) (V = `r valTest$statistic`, pseudomedian difference = `r abs(round(valTest$estimate,2))`, 95% CI = [`r abs(round(valTest$conf.int[1],2))`, `r abs(round(valTest$conf.int[2],2))`], p < .001). We did not observe a significant difference between groups of cases in terms of changes in confidence.
 
 ## Discussion {.unnumbered}
 
@@ -914,11 +955,11 @@ This study of 16 medical students explored the usage of a think-aloud methodolog
 We found that participants' confidence judgements were well calibrated to their objective accuracy, similar to the previous study. The measure of accuracy was different in this study by necessity, in that a case was considered 'correct' with the mention of a correct differential at some point during the case. This measure is most similar to the lenient measure of accuracy from our previous study, in that participants were marked as correct if they considered a correct differential without taking into account its relative likelihood compared to other differentials. However, given that accuracy and our test of calibration being different in this study, it is difficult to compare these findings directly. Our finding of calibrated confidence in both studies however is an indication that medical students express uncertainty appropriately. Similar to the previous study, we also find that medical students are reticent to remove differentials from consideration. In this study, participants report low occurrences of disregarding differentials. This would correspond with our assumption that medical students attempt to remain open minded in their diagnoses. By rarely removing differentials from consideration, students are then observed to broaden their differentials with more information (as the number of differentials being considered at once only increases). 
 
 \
-Based on our qualitative findings, we provide support for findings from our previous study. Firstly, several participants reported progressively investigating patient symptoms based on the patient's history and their initial set of diagnostic differentials. This corresponds with our finding in the previous study that the number of initial differentials considered based on the patient history was predictive of information seeking and changes in confidence. This supports evidence for the large weighting on early information received by clinicians, especially to do with history taking, because early information is responsible for the initial set of diagnoses that then guide subsequent information seeking. Secondly, we find a qualitative theme that participants report certain information being standard to seek regardless of the patient case. This corresponds with the finding from our previous study that lower information seeking variability was associated with higher accuracy, with certain information requests in our task being associated with higher accuracy when sought across cases. This further corroborates our evidence for a degree of standardisation in information seeking being useful for maximising diagnostic accuracy.
+Based on our qualitative findings, we provide support for findings from our previous study. Firstly, several participants reported progressively investigating patient symptoms based on the patient's history and their initial set of diagnostic differentials. This corresponds with our finding in the previous study that the number of initial differentials considered based on the patient history was predictive of information seeking and changes in confidence. This supports evidence for the large weighting on early information received by clinicians, especially to do with history taking, because early information is responsible for the initial set of diagnoses that then guide subsequent information seeking. Secondly, we find a qualitative theme that participants report certain information being standard to seek regardless of the patient case. This corresponds with the finding from our previous study that lower information seeking variability was associated with higher accuracy, with certain information requests in our task being associated with higher accuracy when sought across cases. This further corroborates our evidence for a degree of standardisation in information seeking being useful for maximising diagnostic accuracy. In particular, we had found in Study 2 that lower variability in information seeking was associated with higher accuracy, with specific pieces of information (e.g. full blood count, assessing extremities) being useful to seek regardless of the patient's condition. We can then find an agreement between these studies that diagnosis is a decision process where there is considered to be 'optimal' information to seek for any given patient. 
 
 \
 We were able in this study to use think-aloud utterances to detect reasoning strategies on the part of the medical students. We considered three different strategies: Hypothetico-Deductive (HD), Pattern Recognition (PR) and Scheme-Inductive (SI). These strategies represent different approaches to diagnosis, either seeking to be comprehensive in both the information sought and differentials considered or focusing in on a single diagnosis. We found that these choices in reasoning strategies were not solely determined by either an individual's general decision making approach or by specific patient conditions. Whilst these reasoning strategies carry some differences qualitatively, our study was used to investigate how these strategies actually manifest in differences to information seeking and confidence. We found that HD reasoning was associated with reevaluting the diagnoses considered more often when compared to the other approaches, as well as higher diagnostic accuracy. This is different to the results to Coderre et al. (2003), who found PR was associated with accuracy. We would interpret our findings as HD being a 'better' approach for medical students and PR would be more suitable for experienced clinicians who have more cases to draw from.  
 
 
 \
-These two studies together provide a nuanced and in-depth look of the diagnostic process as demonstrated with our vignette-based task. We should consider however the generalisability and ecological validity of these studies. By using a vignette-based paradigm, participants do not actually interact with, observe and treat a patient. We are also limited in terms of the information that is available for clinicians to seek. In addition, participants completed the studies in relatively controlled environments, outside of their usual medical context. Our next study hence aims to study the link between information seeking and confidence, but with a more naturalistic paradigm. To alleviate these concerns of generalisability, we require a paradigm that allows for more open-ended information seeking, observation of a patient that can be treated during cases and the use of a clinical environment akin to the one in which clinicians operate. As previously explored in our systematic review, the use of in-situ research lacks objective markers of accuracy that we utilise. To this end, we utilise virtual reality (VR) in our next study. This allows for a realistic, interactive paradigm where participants observe a (virtual) patient in real-time and can administer treatment (and observe reactions to this treatment in the patient). There is also more openness in terms of the information that can be sought and clinical actions taken, making its use more analogous to real medical contexts. 
+These two studies together provide a nuanced and in-depth look of the diagnostic process as demonstrated with our vignette-based task. We should consider however the generalisability and ecological validity of these studies. By using a vignette-based paradigm, participants do not actually interact with, observe and treat a patient. We are also limited in terms of the information that is available for clinicians to seek. In addition, participants completed the studies in relatively controlled environments, outside of their usual medical context. Our next study hence aims to study the link between information seeking and confidence, but with a more naturalistic paradigm. To alleviate these concerns of generalisability, we require a paradigm that allows for more open-ended information seeking, observation of a patient that can be treated during cases and the use of a clinical environment akin to the one in which clinicians operate. As previously explored in our systematic review, the use of in-situ research lacks objective markers of accuracy that we utilise. To this end, we use virtual reality (VR) in our next study to simulate a realistic medical environment, as well as the patients themselves. This allows for a realistic, interactive paradigm where participants observe a (virtual) patient in real-time and can administer treatment (and observe reactions to this treatment in the patient). There is also more openness in terms of the information that can be sought and clinical actions taken, making its use more analogous to real medical contexts. 
