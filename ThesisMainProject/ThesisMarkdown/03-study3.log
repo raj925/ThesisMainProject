@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.24)  25 SEP 2024 18:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.24)  26 SEP 2024 14:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1339,7 +1339,7 @@ Package hyperref Warning: The anchor of a bookmark and its parent's must not
 (hyperref)                be the same. Added a new anchor on input line 296.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 300--302
+Underfull \hbox (badness 10000) in paragraph at lines 300--304
 
  []
 
@@ -1348,244 +1348,256 @@ Underfull \hbox (badness 10000) in paragraph at lines 300--302
 
 
 
-{/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 303--305
-
- []
-
-[2] [3]
+{/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 3
-13.
+12.
 (/usr/local/texlive/2020/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-Underfull \hbox (badness 10000) in paragraph at lines 322--324
+Underfull \hbox (badness 10000) in paragraph at lines 321--323
 
  []
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 325--326
+Underfull \hbox (badness 10000) in paragraph at lines 324--325
 
  []
 
 [5] [6] [7]
-Underfull \hbox (badness 10000) in paragraph at lines 368--369
+Underfull \hbox (badness 10000) in paragraph at lines 367--368
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 370--371
+Underfull \hbox (badness 10000) in paragraph at lines 369--370
 
  []
 
 [8] [9] [10]
-Underfull \hbox (badness 10000) in paragraph at lines 434--435
+Underfull \hbox (badness 10000) in paragraph at lines 433--434
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 437--438
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 436--437
 
  []
 
-[11] [12] [13]
-Underfull \hbox (badness 10000) in paragraph at lines 452--453
+[12] [13]
+Underfull \hbox (badness 10000) in paragraph at lines 451--452
 
  []
 
 [14]
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 4
-67.
+66.
 (/usr/local/texlive/2020/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 4
-67.
+66.
 (/usr/local/texlive/2020/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-467.
+466.
 (/usr/local/texlive/2020/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-467.
+466.
 (/usr/local/texlive/2020/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 467.
+(Font)              <12> on input line 466.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 467.
+(Font)              <8> on input line 466.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 467.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 467
+(Font)              <6> on input line 466.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 466
 .
 (/usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 467
+LaTeX Font Info:    Trying to load font information for U+msb on input line 466
 .
 (/usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-) [15] [16] [17]
-<03-study3_files/figure-latex/diffbarsplot-1.pdf, id=101, 448.67625pt x 428.601
+)
+Underfull \vbox (badness 4859) has occurred while \output is active []
+
+[15] [16] [17] [18]
+<03-study3_files/figure-latex/diffbarsplot-1.pdf, id=105, 448.67625pt x 428.601
 26pt>
 File: 03-study3_files/figure-latex/diffbarsplot-1.pdf Graphic file (type pdf)
 <use 03-study3_files/figure-latex/diffbarsplot-1.pdf>
 Package pdftex.def Info: 03-study3_files/figure-latex/diffbarsplot-1.pdf  used 
-on input line 526.
+on input line 525.
 (pdftex.def)             Requested size: 421.10046pt x 402.27048pt.
-[18 <./03-study3_files/figure-latex/diffbarsplot-1.pdf>]
-<03-study3_files/figure-latex/stratbreakdown-1.pdf, id=117, 453.695pt x 302.128
+[19 <./03-study3_files/figure-latex/diffbarsplot-1.pdf>]
+<03-study3_files/figure-latex/stratbreakdown-1.pdf, id=122, 453.695pt x 302.128
 75pt>
 File: 03-study3_files/figure-latex/stratbreakdown-1.pdf Graphic file (type pdf)
 
 <use 03-study3_files/figure-latex/stratbreakdown-1.pdf>
 Package pdftex.def Info: 03-study3_files/figure-latex/stratbreakdown-1.pdf  use
-d on input line 582.
+d on input line 581.
 (pdftex.def)             Requested size: 453.6939pt x 302.128pt.
 
-Overfull \hbox (50.21825pt too wide) in paragraph at lines 582--584
+Overfull \hbox (50.21825pt too wide) in paragraph at lines 581--583
 [][]
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[19]
-Underfull \hbox (badness 10000) in paragraph at lines 585--586
+[20]
+Underfull \hbox (badness 10000) in paragraph at lines 584--585
 
  []
 
 
-Overfull \hbox (27.59381pt too wide) in alignment at lines 587--591
+Overfull \hbox (27.59381pt too wide) in alignment at lines 586--590
  [] [] [] [] 
  []
 
 
-Overfull \hbox (27.59381pt too wide) in alignment at lines 591--596
+Overfull \hbox (27.59381pt too wide) in alignment at lines 590--595
  [] [] [] [] 
  []
 
 
-Overfull \hbox (27.59381pt too wide) in alignment at lines 596--609
+Overfull \hbox (27.59381pt too wide) in alignment at lines 595--608
  [] [] [] [] 
  []
 
-[20 <./03-study3_files/figure-latex/stratbreakdown-1.pdf>] [21]
-Underfull \hbox (badness 10000) in paragraph at lines 634--635
+[21 <./03-study3_files/figure-latex/stratbreakdown-1.pdf>] [22]
+Underfull \hbox (badness 10000) in paragraph at lines 633--634
 
  []
 
-[22] [23]
-Underfull \hbox (badness 10000) in paragraph at lines 666--667
+[23] [24]
+Underfull \hbox (badness 10000) in paragraph at lines 665--666
 
  []
 
-[24]
-Overfull \hbox (39.9938pt too wide) in alignment at lines 684--688
+[25]
+Overfull \hbox (39.9938pt too wide) in alignment at lines 683--687
  [] [] [] [] [] 
  []
 
 
-Overfull \hbox (39.9938pt too wide) in alignment at lines 688--693
+Overfull \hbox (39.9938pt too wide) in alignment at lines 687--692
  [] [] [] [] [] 
  []
 
 
-Overfull \hbox (39.9938pt too wide) in alignment at lines 693--726
+Overfull \hbox (39.9938pt too wide) in alignment at lines 692--725
  [] [] [] [] [] 
  []
 
-[25] [26] [27] [28] [29] [30] [31]
-Underfull \hbox (badness 10000) in paragraph at lines 730--731
+[26] [27] [28] [29] [30] [31] [32]
+Underfull \hbox (badness 10000) in paragraph at lines 729--730
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 742--743
+Underfull \hbox (badness 10000) in paragraph at lines 741--742
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 744--745
-
- []
-
-[32]
-Underfull \hbox (badness 10000) in paragraph at lines 746--747
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 752--753
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 754--755
+Underfull \hbox (badness 10000) in paragraph at lines 743--744
 
  []
 
 [33]
-Underfull \hbox (badness 10000) in paragraph at lines 768--769
+Underfull \hbox (badness 10000) in paragraph at lines 745--746
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 751--752
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 753--754
 
  []
 
 [34]
-Underfull \hbox (badness 10000) in paragraph at lines 784--786
+Underfull \hbox (badness 10000) in paragraph at lines 767--768
 
  []
 
-[35] [36]
-Underfull \hbox (badness 10000) in paragraph at lines 801--802
+[35]
+Underfull \hbox (badness 10000) in paragraph at lines 783--785
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 803--804
-
- []
-
-[37]
-Underfull \hbox (badness 10000) in paragraph at lines 818--819
+[36] [37]
+Underfull \hbox (badness 10000) in paragraph at lines 800--801
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 824--825
+Underfull \hbox (badness 10000) in paragraph at lines 802--803
+
+ []
+
+[38]
+Underfull \hbox (badness 10000) in paragraph at lines 817--818
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 826--827
+Underfull \hbox (badness 10000) in paragraph at lines 823--824
 
  []
 
-[38] [39]
-Underfull \hbox (badness 10000) in paragraph at lines 841--842
+
+Underfull \hbox (badness 10000) in paragraph at lines 825--826
 
  []
 
-[40] [41]
+[39] [40]
+Underfull \hbox (badness 10000) in paragraph at lines 840--841
+
+ []
+
+[41]
+<03-study3_files/figure-latex/accmodelplot-1.pdf, id=229, 448.67625pt x 315.177
+5pt>
+File: 03-study3_files/figure-latex/accmodelplot-1.pdf Graphic file (type pdf)
+<use 03-study3_files/figure-latex/accmodelplot-1.pdf>
+Package pdftex.def Info: 03-study3_files/figure-latex/accmodelplot-1.pdf  used 
+on input line 850.
+(pdftex.def)             Requested size: 448.67516pt x 315.17673pt.
+
+Overfull \hbox (27.57469pt too wide) in paragraph at lines 847--852
+[]
+ []
+
+[42]
 Underfull \hbox (badness 10000) in paragraph at lines 856--857
 
  []
 
-[42] [43] [44] [45] [46]
+[43 <./03-study3_files/figure-latex/accmodelplot-1.pdf>] [44] [45] [46] [47] [4
+8]
 Package minitoc Info: I0009
 (minitoc)             Listing minitoc auxiliary files. 
 (minitoc)             Creating the 03-study3.maf file.
 \openout3 = `03-study3.maf'.
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 878.
-[47]
+[49]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 878.
 (./03-study3.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 878.
@@ -1595,13 +1607,13 @@ Package rerunfilecheck Info: File `03-study3.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 878.
  ) 
 Here is how much of TeX's memory you used:
- 20462 strings out of 480608
- 325680 string characters out of 5903630
+ 20470 strings out of 480608
+ 325990 string characters out of 5903630
  747691 words of memory out of 5000000
- 35520 multiletter control sequences out of 15000+600000
+ 35525 multiletter control sequences out of 15000+600000
  587034 words of font info for 128 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 49i,11n,49p,2924b,635s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 49i,11n,49p,2977b,635s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/lo
 cal/texlive/2020/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/local/texlive/2
 020/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}</usr/local/texlive/2020/texmf-dist
@@ -1609,10 +1621,10 @@ cal/texlive/2020/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/local/texlive/2
 e1/public/lm/lmmi12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/
 lm/lmr12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/lm/lmr17.pf
 b></usr/local/texlive/2020/texmf-dist/fonts/type1/public/lm/lmri12.pfb>
-Output written on 03-study3.pdf (47 pages, 230641 bytes).
+Output written on 03-study3.pdf (49 pages, 239363 bytes).
 PDF statistics:
- 294 PDF objects out of 1000 (max. 8388607)
- 231 compressed objects within 3 object streams
- 58 named destinations out of 1000 (max. 500000)
- 13363 words of extra memory for PDF output out of 14400 (max. 10000000)
+ 312 PDF objects out of 1000 (max. 8388607)
+ 244 compressed objects within 3 object streams
+ 60 named destinations out of 1000 (max. 500000)
+ 13368 words of extra memory for PDF output out of 14400 (max. 10000000)
 
