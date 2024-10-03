@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.24)  4 SEP 2024 18:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.24)  2 OCT 2024 23:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1037,99 +1037,39 @@ Package: ulem 2019/11/18
 \ULdepth=\dimen271
 ) (/usr/local/texlive/2020/texmf-dist/tex/generic/soulutf8/soulutf8.sty
 Package: soulutf8 2019/12/15 v1.2 Permit use of UTF-8 characters in soul (HO)
-) (/usr/local/texlive/2020/texmf-dist/tex/latex/wrapfig/wrapfig.sty
-\wrapoverhang=\dimen272
-\WF@size=\dimen273
-\c@WF@wrappedlines=\count320
-\WF@box=\box115
-\WF@everypar=\toks38
-Package: wrapfig 2003/01/31  v 3.6
-) (/usr/local/texlive/2020/texmf-dist/tex/latex/colortbl/colortbl.sty
-Package: colortbl 2020/01/04 v1.0e Color table columns (DPC)
-\everycr=\toks39
-\minrowclearance=\skip88
-) (/usr/local/texlive/2020/texmf-dist/tex/latex/pdflscape/pdflscape.sty
-Package: pdflscape 2019/12/05 v0.12 Display of landscape pages in PDF (HO)
-(/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/lscape.sty
-Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
-)
-Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
-) (/usr/local/texlive/2020/texmf-dist/tex/latex/tabu/tabu.sty
-Package: tabu 2019/01/11 v2.9 - flexible LaTeX tabulars (FC+tabu-fixed)
-\c@taburow=\count321
-\tabu@nbcols=\count322
-\tabu@cnt=\count323
-\tabu@Xcol=\count324
-\tabu@alloc=\count325
-\tabu@nested=\count326
-\tabu@target=\dimen274
-\tabu@spreadtarget=\dimen275
-\tabu@naturalX=\dimen276
-\tabucolX=\dimen277
-\tabu@Xsum=\dimen278
-\extrarowdepth=\dimen279
-\abovetabulinesep=\dimen280
-\belowtabulinesep=\dimen281
-\tabustrutrule=\dimen282
-\tabu@thebody=\toks40
-\tabu@footnotes=\toks41
-\tabu@box=\box116
-\tabu@arstrutbox=\box117
-\tabu@hleads=\box118
-\tabu@vleads=\box119
-\tabu@cellskip=\skip89
-)
-(/usr/local/texlive/2020/texmf-dist/tex/latex/threeparttable/threeparttable.sty
-Package: threeparttable 2003/06/13  v 3.0
-\@tempboxb=\box120
-)
-(/usr/local/texlive/2020/texmf-dist/tex/latex/threeparttablex/threeparttablex.s
-ty
-Package: threeparttablex 2013/07/23 v0.3 by daleif
-(/usr/local/texlive/2020/texmf-dist/tex/latex/environ/environ.sty
-Package: environ 2014/05/04 v0.3 A new way to define environments
-(/usr/local/texlive/2020/texmf-dist/tex/latex/trimspaces/trimspaces.sty
-Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
-))
-\TPTL@width=\skip90
-) (/usr/local/texlive/2020/texmf-dist/tex/latex/makecell/makecell.sty
-Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
-\rotheadsize=\dimen283
-\c@nlinenum=\count327
-\TeXr@lab=\toks42
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2019/10/16 v2.13 Sectioning titles
-\ttl@box=\box121
-\beforetitleunit=\skip91
-\aftertitleunit=\skip92
-\ttl@plus=\dimen284
-\ttl@minus=\dimen285
-\ttl@toksa=\toks43
-\titlewidth=\dimen286
-\titlewidthlast=\dimen287
-\titlewidthfirst=\dimen288
+\ttl@box=\box115
+\beforetitleunit=\skip88
+\aftertitleunit=\skip89
+\ttl@plus=\dimen272
+\ttl@minus=\dimen273
+\ttl@toksa=\toks38
+\titlewidth=\dimen274
+\titlewidthlast=\dimen275
+\titlewidthfirst=\dimen276
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2019/09/21 v2.5h e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count328
+\etb@tempcnta=\count320
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footer
 s
-\f@nch@headwidth=\skip93
-\f@nch@O@elh=\skip94
-\f@nch@O@erh=\skip95
-\f@nch@O@olh=\skip96
-\f@nch@O@orh=\skip97
-\f@nch@O@elf=\skip98
-\f@nch@O@erf=\skip99
-\f@nch@O@olf=\skip100
-\f@nch@O@orf=\skip101
+\f@nch@headwidth=\skip90
+\f@nch@O@elh=\skip91
+\f@nch@O@erh=\skip92
+\f@nch@O@olh=\skip93
+\f@nch@O@orh=\skip94
+\f@nch@O@elf=\skip95
+\f@nch@O@erf=\skip96
+\f@nch@O@olf=\skip97
+\f@nch@O@orf=\skip98
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
 Package: fancyvrb 2020/01/13 v3.5 verbatim text (tvz,hv)
-\FV@CodeLineNo=\count329
+\FV@CodeLineNo=\count321
 \FV@InFile=\read3
-\FV@TabBox=\box122
-\c@FancyVerbLine=\count330
-\FV@StepNumber=\count331
+\FV@TabBox=\box116
+\c@FancyVerbLine=\count322
+\FV@StepNumber=\count323
 \FV@OutFile=\write4
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/fvextra/fvextra.sty
 Package: fvextra 2019/02/04 v1.4 fvextra - extensions and patches for fancyvrb
@@ -1138,53 +1078,53 @@ Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
 tim
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/lineno/lineno.sty
 Package: lineno 2005/11/02 line numbers on paragraphs v4.41
-\linenopenalty=\count332
-\output=\toks44
-\linenoprevgraf=\count333
-\linenumbersep=\dimen289
-\linenumberwidth=\dimen290
-\c@linenumber=\count334
-\c@pagewiselinenumber=\count335
-\c@LN@truepage=\count336
-\c@internallinenumber=\count337
-\c@internallinenumbers=\count338
-\quotelinenumbersep=\dimen291
-\bframerule=\dimen292
-\bframesep=\dimen293
-\bframebox=\box123
+\linenopenalty=\count324
+\output=\toks39
+\linenoprevgraf=\count325
+\linenumbersep=\dimen277
+\linenumberwidth=\dimen278
+\c@linenumber=\count326
+\c@pagewiselinenumber=\count327
+\c@LN@truepage=\count328
+\c@internallinenumber=\count329
+\c@internallinenumbers=\count330
+\quotelinenumbersep=\dimen279
+\bframerule=\dimen280
+\bframesep=\dimen281
+\bframebox=\box117
 LaTeX Info: Redefining \\ on input line 3056.
 )
-\c@FV@TrueTabGroupLevel=\count339
-\c@FV@TrueTabCounter=\count340
-\FV@TabBox@Group=\box124
-\FV@TmpLength=\skip102
-\c@FV@HighlightLinesStart=\count341
-\c@FV@HighlightLinesStop=\count342
-\FV@LoopCount=\count343
-\FV@NCharsBox=\box125
-\FV@BreakIndent=\dimen294
-\FV@BreakIndentNChars=\count344
-\FV@BreakSymbolSepLeft=\dimen295
-\FV@BreakSymbolSepLeftNChars=\count345
-\FV@BreakSymbolSepRight=\dimen296
-\FV@BreakSymbolSepRightNChars=\count346
-\FV@BreakSymbolIndentLeft=\dimen297
-\FV@BreakSymbolIndentLeftNChars=\count347
-\FV@BreakSymbolIndentRight=\dimen298
-\FV@BreakSymbolIndentRightNChars=\count348
-\c@FancyVerbLineBreakLast=\count349
-\FV@LineBox=\box126
-\FV@LineIndentBox=\box127
-\FV@LineWidth=\dimen299
+\c@FV@TrueTabGroupLevel=\count331
+\c@FV@TrueTabCounter=\count332
+\FV@TabBox@Group=\box118
+\FV@TmpLength=\skip99
+\c@FV@HighlightLinesStart=\count333
+\c@FV@HighlightLinesStop=\count334
+\FV@LoopCount=\count335
+\FV@NCharsBox=\box119
+\FV@BreakIndent=\dimen282
+\FV@BreakIndentNChars=\count336
+\FV@BreakSymbolSepLeft=\dimen283
+\FV@BreakSymbolSepLeftNChars=\count337
+\FV@BreakSymbolSepRight=\dimen284
+\FV@BreakSymbolSepRightNChars=\count338
+\FV@BreakSymbolIndentLeft=\dimen285
+\FV@BreakSymbolIndentLeftNChars=\count339
+\FV@BreakSymbolIndentRight=\dimen286
+\FV@BreakSymbolIndentRightNChars=\count340
+\c@FancyVerbLineBreakLast=\count341
+\FV@LineBox=\box120
+\FV@LineIndentBox=\box121
+\FV@LineWidth=\dimen287
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/csquotes/csquotes.sty
 Package: csquotes 2019-12-06 v5.2j context-sensitive quotations (JAW)
-\csq@reset=\count350
-\csq@gtype=\count351
-\csq@glevel=\count352
-\csq@qlevel=\count353
-\csq@maxlvl=\count354
-\csq@tshold=\count355
-\csq@ltx@everypar=\toks45
+\csq@reset=\count342
+\csq@gtype=\count343
+\csq@glevel=\count344
+\csq@qlevel=\count345
+\csq@maxlvl=\count346
+\csq@tshold=\count347
+\csq@ltx@everypar=\toks40
 (/usr/local/texlive/2020/texmf-dist/tex/latex/csquotes/csquotes.def
 File: csquotes.def 2019-12-06 v5.2j csquotes generic definitions (JAW)
 )
@@ -1200,29 +1140,29 @@ Package csquotes Info: Redefining alias 'default' -> 'english'.
 (./04-study4.aux)
 \openout1 = `04-study4.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 198.
-LaTeX Font Info:    ... okay on input line 198.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 198.
-LaTeX Font Info:    ... okay on input line 198.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 198.
-LaTeX Font Info:    ... okay on input line 198.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 198.
-LaTeX Font Info:    ... okay on input line 198.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 198.
-LaTeX Font Info:    ... okay on input line 198.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 198.
-LaTeX Font Info:    ... okay on input line 198.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 198.
-LaTeX Font Info:    ... okay on input line 198.
-LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 198.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 184.
+LaTeX Font Info:    ... okay on input line 184.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 184.
+LaTeX Font Info:    ... okay on input line 184.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 184.
+LaTeX Font Info:    ... okay on input line 184.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 184.
+LaTeX Font Info:    ... okay on input line 184.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 184.
+LaTeX Font Info:    ... okay on input line 184.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 184.
+LaTeX Font Info:    ... okay on input line 184.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 184.
+LaTeX Font Info:    ... okay on input line 184.
+LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 184.
 LaTeX Font Info:    Trying to load font information for LGR+cmr on input line 1
-98.
+84.
 (/usr/local/texlive/2020/texmf-dist/tex/latex/cbfonts-fd/lgrcmr.fd
 File: lgrcmr.fd 2017/07/29 v1.2 Greek European Computer Regular
 )
-LaTeX Font Info:    ... okay on input line 198.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 198.
-LaTeX Font Info:    ... okay on input line 198.
+LaTeX Font Info:    ... okay on input line 184.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 184.
+LaTeX Font Info:    ... okay on input line 184.
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -1259,17 +1199,17 @@ LaTeX Font Info:    ... okay on input line 198.
 
 (/usr/local/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count356
-\scratchdimen=\dimen300
-\scratchbox=\box128
-\nofMPsegments=\count357
-\nofMParguments=\count358
-\everyMPshowfont=\toks46
-\MPscratchCnt=\count359
-\MPscratchDim=\dimen301
-\MPnumerator=\count360
-\makeMPintoPDFobject=\count361
-\everyMPtoPDFconversion=\toks47
+\scratchcounter=\count348
+\scratchdimen=\dimen288
+\scratchbox=\box122
+\nofMPsegments=\count349
+\nofMParguments=\count350
+\everyMPshowfont=\toks41
+\MPscratchCnt=\count351
+\MPscratchDim=\dimen289
+\MPnumerator=\count352
+\makeMPintoPDFobject=\count353
+\everyMPtoPDFconversion=\toks42
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -1278,14 +1218,14 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Info: Redefining \microtypecontext on input line 198.
+LaTeX Info: Redefining \microtypecontext on input line 184.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `basictext'.
-LaTeX Info: Redefining \showhyphens on input line 198.
+LaTeX Info: Redefining \showhyphens on input line 184.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -1297,11 +1237,16 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: rotating package is loaded.
-Package caption Info: threeparttable package is loaded.
-Package caption Info: wrapfig package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\AtBeginShipoutBox=\box129
-Package hyperref Info: Link coloring ON on input line 198.
+\AtBeginShipoutBox=\box123
+(/usr/local/texlive/2020/texmf-dist/tex/latex/pdflscape/pdflscape.sty
+Package: pdflscape 2019/12/05 v0.12 Display of landscape pages in PDF (HO)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/lscape.sty
+Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
+)
+Package hyperref Info: Link coloring ON on input line 184.
 (/usr/local/texlive/2020/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
 (/usr/local/texlive/2020/texmf-dist/tex/latex/refcount/refcount.sty
@@ -1311,11 +1256,11 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count362
+\c@section@level=\count354
 )
-LaTeX Info: Redefining \ref on input line 198.
-LaTeX Info: Redefining \pageref on input line 198.
-LaTeX Info: Redefining \nameref on input line 198.
+LaTeX Info: Redefining \ref on input line 184.
+LaTeX Info: Redefining \pageref on input line 184.
+LaTeX Info: Redefining \nameref on input line 184.
 (./04-study4.out) (./04-study4.out)
 \@outlinefile=\write5
 \openout5 = `04-study4.out'.
@@ -1323,10 +1268,10 @@ LaTeX Info: Redefining \nameref on input line 198.
 
 Package minitoc Warning: W0010
 (minitoc)                No file 04-study4.toc. 
-(minitoc)                MINITOCS NOT PREPARED on input line 268.
+(minitoc)                MINITOCS NOT PREPARED on input line 254.
 
-LaTeX Font Info:    Trying to load font information for T1+put on input line 28
-9.
+LaTeX Font Info:    Trying to load font information for T1+put on input line 27
+5.
 (/usr/local/texlive/2020/texmf-dist/tex/latex/psnfss/t1put.fd
 File: t1put.fd 2001/06/04 font definitions for T1/put.
 )
@@ -1336,26 +1281,26 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             See the microtype manual for details.
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 296.
+(hyperref)                be the same. Added a new anchor on input line 285.
 
 [1
 
 
 
 
-{/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 303--305
+{/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
+Underfull \hbox (badness 10000) in paragraph at lines 298--300
 
  []
 
-[2] [3]
+[3] [4]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 3
-16.
+11.
 (/usr/local/texlive/2020/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
+) [5]
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 3
-34.
+29.
 (/usr/local/texlive/2020/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -1364,144 +1309,156 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 3
-34.
+29.
 (/usr/local/texlive/2020/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 3
-34.
+29.
 (/usr/local/texlive/2020/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-334.
+329.
 (/usr/local/texlive/2020/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-334.
+329.
 (/usr/local/texlive/2020/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 334.
+(Font)              <12> on input line 329.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 334.
+(Font)              <8> on input line 329.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 334.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 334
+(Font)              <6> on input line 329.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 329
 .
 (/usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 334
+LaTeX Font Info:    Trying to load font information for U+msb on input line 329
 .
 (/usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-) [4]
-<./assets/VRScreenshot1.png, id=43, 452.69125pt x 283.0575pt>
+)
+<./assets/VRScreenshot1.png, id=49, 452.69125pt x 283.0575pt>
 File: ./assets/VRScreenshot1.png Graphic file (type png)
 <use ./assets/VRScreenshot1.png>
-Package pdftex.def Info: ./assets/VRScreenshot1.png  used on input line 336.
+Package pdftex.def Info: ./assets/VRScreenshot1.png  used on input line 331.
 (pdftex.def)             Requested size: 421.10046pt x 263.30553pt.
-<./assets/VRScreenshot2.png, id=45, 452.69125pt x 283.0575pt>
-File: ./assets/VRScreenshot2.png Graphic file (type png)
-<use ./assets/VRScreenshot2.png>
-Package pdftex.def Info: ./assets/VRScreenshot2.png  used on input line 338.
-(pdftex.def)             Requested size: 421.10046pt x 263.30553pt.
-[5 <./assets/VRScreenshot1.png> <./assets/VRScreenshot2.png>] [6] [7] [8] [9] [
-10]
-Overfull \hbox (209.0138pt too wide) in paragraph at lines 424--437
- [][] 
+
+Underfull \vbox (badness 6125) has occurred while \output is active []
+
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 333--334
+
  []
 
-<04-study4_files/figure-latex/diagtime-1.pdf, id=73, 453.695pt x 315.1775pt>
+<./assets/VRScreenshot2.png, id=57, 452.69125pt x 283.0575pt>
+File: ./assets/VRScreenshot2.png Graphic file (type png)
+<use ./assets/VRScreenshot2.png>
+Package pdftex.def Info: ./assets/VRScreenshot2.png  used on input line 335.
+(pdftex.def)             Requested size: 421.10046pt x 263.30553pt.
+[7 <./assets/VRScreenshot1.png> <./assets/VRScreenshot2.png>]
+Overfull \hbox (35.855pt too wide) in paragraph at lines 364--365
+\T1/lmr/m/n/12 (-20) breath and drowsi-ness (\T1/lmr/bx/n/12 Underlying Con-di-
+tion: Chest Sep-sis/Pneumonia\T1/lmr/m/n/12 (-20) ) 
+ []
+
+[8] [9] [10] [11] [12] [13] [14]
+<04-study4_files/figure-latex/diagtime-1.pdf, id=94, 453.695pt x 315.1775pt>
 File: 04-study4_files/figure-latex/diagtime-1.pdf Graphic file (type pdf)
 <use 04-study4_files/figure-latex/diagtime-1.pdf>
 Package pdftex.def Info: 04-study4_files/figure-latex/diagtime-1.pdf  used on i
-nput line 441.
+nput line 471.
 (pdftex.def)             Requested size: 421.10046pt x 292.53493pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[11]
-<04-study4_files/figure-latex/confidencetime-1.pdf, id=79, 453.695pt x 315.1775
-pt>
+[15 <./04-study4_files/figure-latex/diagtime-1.pdf>] [16]
+<04-study4_files/figure-latex/confidencetime-1.pdf, id=110, 453.695pt x 315.177
+5pt>
 File: 04-study4_files/figure-latex/confidencetime-1.pdf Graphic file (type pdf)
 
 <use 04-study4_files/figure-latex/confidencetime-1.pdf>
 Package pdftex.def Info: 04-study4_files/figure-latex/confidencetime-1.pdf  use
-d on input line 445.
+d on input line 477.
 (pdftex.def)             Requested size: 421.10046pt x 292.53493pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[12 <./04-study4_files/figure-latex/diagtime-1.pdf>] [13 <./04-study4_files/fig
-ure-latex/confidencetime-1.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 459--460
+[17 <./04-study4_files/figure-latex/confidencetime-1.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 491--493
 
  []
 
-<04-study4_files/figure-latex/subinfoseekingplot-1.pdf, id=104, 451.6875pt x 30
+<04-study4_files/figure-latex/subinfoseekingplot-1.pdf, id=123, 451.6875pt x 30
 6.14375pt>
 File: 04-study4_files/figure-latex/subinfoseekingplot-1.pdf Graphic file (type 
 pdf)
 <use 04-study4_files/figure-latex/subinfoseekingplot-1.pdf>
 Package pdftex.def Info: 04-study4_files/figure-latex/subinfoseekingplot-1.pdf 
- used on input line 463.
+ used on input line 496.
 (pdftex.def)             Requested size: 421.10046pt x 285.43011pt.
-[14]
-<04-study4_files/figure-latex/finalconfidenceplot-1.pdf, id=109, 451.6875pt x 3
+[18]
+<04-study4_files/figure-latex/finalconfidenceplot-1.pdf, id=128, 451.6875pt x 3
 11.1625pt>
 File: 04-study4_files/figure-latex/finalconfidenceplot-1.pdf Graphic file (type
  pdf)
 <use 04-study4_files/figure-latex/finalconfidenceplot-1.pdf>
 Package pdftex.def Info: 04-study4_files/figure-latex/finalconfidenceplot-1.pdf
-  used on input line 469.
+  used on input line 502.
 (pdftex.def)             Requested size: 421.10046pt x 290.10931pt.
 
 Underfull \vbox (badness 2689) has occurred while \output is active []
 
-[15 <./04-study4_files/figure-latex/subinfoseekingplot-1.pdf>]
-<04-study4_files/figure-latex/pcaclassifierplot-1.pdf, id=124, 453.695pt x 300.
+[19 <./04-study4_files/figure-latex/subinfoseekingplot-1.pdf>] [20 <./04-study4
+_files/figure-latex/finalconfidenceplot-1.pdf>]
+<04-study4_files/figure-latex/pcaclassifierplot-1.pdf, id=159, 453.695pt x 300.
 12125pt>
 File: 04-study4_files/figure-latex/pcaclassifierplot-1.pdf Graphic file (type p
 df)
 <use 04-study4_files/figure-latex/pcaclassifierplot-1.pdf>
 Package pdftex.def Info: 04-study4_files/figure-latex/pcaclassifierplot-1.pdf  
-used on input line 478.
+used on input line 511.
 (pdftex.def)             Requested size: 421.10046pt x 278.56033pt.
+[21 <./04-study4_files/figure-latex/pcaclassifierplot-1.pdf>]
+<04-study4_files/figure-latex/historyvalplot-1.pdf, id=172, 459.7175pt x 315.17
+75pt>
+File: 04-study4_files/figure-latex/historyvalplot-1.pdf Graphic file (type pdf)
 
-Underfull \vbox (badness 3907) has occurred while \output is active []
+<use 04-study4_files/figure-latex/historyvalplot-1.pdf>
+Package pdftex.def Info: 04-study4_files/figure-latex/historyvalplot-1.pdf  use
+d on input line 522.
+(pdftex.def)             Requested size: 421.10046pt x 288.71642pt.
 
-[16 <./04-study4_files/figure-latex/finalconfidenceplot-1.pdf>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[22] [23 <./04-study4_files/figure-latex/historyvalplot-1.pdf>] [24] [25]
 Package minitoc Info: I0009
 (minitoc)             Listing minitoc auxiliary files. 
 (minitoc)             Creating the 04-study4.maf file.
 \openout3 = `04-study4.maf'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 488.
-[17 <./04-study4_files/figure-latex/pcaclassifierplot-1.pdf>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 488.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 548.
+[26]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 548.
 (./04-study4.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 488.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 488.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 548.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 548.
 Package rerunfilecheck Info: File `04-study4.out' has not changed.
-(rerunfilecheck)             Checksum: D0089E2854FFB4F4A2B584950416DE76;296.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 488.
+(rerunfilecheck)             Checksum: 6CFF257E67D750A1B86622A20A398F69;357.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 548.
  ) 
 Here is how much of TeX's memory you used:
- 20449 strings out of 480608
- 326707 string characters out of 5903630
- 695231 words of memory out of 5000000
- 35574 multiletter control sequences out of 15000+600000
- 584795 words of font info for 108 fonts, out of 8000000 for 9000
+ 19488 strings out of 480608
+ 313130 string characters out of 5903630
+ 673663 words of memory out of 5000000
+ 34623 multiletter control sequences out of 15000+600000
+ 585197 words of font info for 112 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 49i,11n,49p,1983b,543s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 49i,12n,49p,2133b,545s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/lo
 cal/texlive/2020/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/20
 20/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}</usr/local/texlive/2020/texmf-dist
@@ -1510,10 +1467,10 @@ e1/public/lm/lmmi12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/
 lm/lmr12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/lm/lmr17.pf
 b></usr/local/texlive/2020/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/lo
 cal/texlive/2020/texmf-dist/fonts/type1/public/lm/lmtt12.pfb>
-Output written on 04-study4.pdf (17 pages, 1843258 bytes).
+Output written on 04-study4.pdf (26 pages, 1878538 bytes).
 PDF statistics:
- 184 PDF objects out of 1000 (max. 8388607)
- 138 compressed objects within 2 object streams
- 21 named destinations out of 1000 (max. 500000)
- 13892 words of extra memory for PDF output out of 14400 (max. 10000000)
+ 236 PDF objects out of 1000 (max. 8388607)
+ 178 compressed objects within 2 object streams
+ 30 named destinations out of 1000 (max. 500000)
+ 13905 words of extra memory for PDF output out of 14400 (max. 10000000)
 

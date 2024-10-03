@@ -251,7 +251,8 @@ Participants varied in how much they spoke during the study, uttering 1038-7730 
 
 ```{r calibrationtest, include=TRUE, echo=FALSE}
 
-calibrationtest <- lmerTest::lmer(finalConfidence ~ Correct + (1|ID),data=TAData)
+calibrationtest <- lme4::glmer(finalConfidence+1 ~ Correct + (1|ID),family=Gamma(link = "inverse"),data=TAData)
+
 calibrationtest <- summary(calibrationtest)
 
 ```
@@ -491,7 +492,7 @@ valTest <- joint_tests(valTest)
 knitr::kable(strattable) %>% 
   kableExtra::kable_styling(latex_options=c("HOLD_position","scale_down"))
 
-colnames(strattable) <- c("Strategy","N","Accuracy","DiffEval", "InfoSeeking","ConfidenceChange")
+colnames(strattable) <- c("Strategy","N","Accuracy","DiffEval", "InfoSeeking","InfoValue","ConfidenceChange")
 
 ```
 _Table 5: Mean values for dependent variables broken down by the reasoning strategy coded after resolving conflicts between the two independent coders. From left to right, Accuracy refers to the proportion of cases where a correct differential was mentioned. Differential Evaluations refers to the number of coded utterances under one of the subcodes (Differential Added, Differential Removed, Increased Likelihood, Decreased Likelihood). Information Seeking refers to the proportion of available information sought across cases. Confidence Change refers to difference between initial confidence and final confidence._

@@ -334,6 +334,10 @@ for (n in 1:nrow(vrData))
     vrData$numOfTestingActionsAfterPause[n] <- sum(unique(actions)[times>300] %in% TestingActions)
   vrData$percentageTesting[n] <- vrData$numOfTestingActionsAfterPause[n]/vrData$numOfTestingActions[n]
   
+  
+    vrData$numOfTreatmentActionsBeforePause[n] <- sum(unique(actions)[times<300] %in% treatmentActions)
+    vrData$numOfTreatmentActionsAfterPause[n] <- sum(unique(actions)[times>300] %in% treatmentActions)
+  
   vrData$historyVectorBeforePause[n] <- as.String(historyActions[historyActions %in% actions[times<300]])
   vrData$numOfActionsBeforePause[n] <- length(actions[times<300])
   vrData$numOfActionsAfterPause[n] <- length(actions[times>=300])
