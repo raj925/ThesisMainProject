@@ -210,7 +210,7 @@ We also code all utterances related to differential/hypothesis generation. We de
 Based on this, in lieu of the Number of Differentials variable from our previous study, we define a new variable to look at the number of instances in which participants evaluate or reevaluate the differentials they are considering:
 
 \
-* _Number of Differential Evaluations_: The number of instances of the above subcodes belonging to the main Differential Evaluation code. The number of such utterances are defined for each individual case. The higher this number, the more participants are 'updating' their thinking around what differentials they were considering as likely/unlikely for the patient.
+* **Number of Differential Evaluations**: The number of instances of the above subcodes belonging to the main Differential Evaluation code. The number of such utterances are defined for each individual case. The higher this number, the more participants are 'updating' their thinking around what differentials they were considering as likely/unlikely for the patient.
 
 #### Coding of Reasoning Strategies {.unnumbered}
 
@@ -271,6 +271,7 @@ Participants varied in how much they spoke during the study, uttering 1038-7730 
 calibrationtest <- lme4::glmer(finalConfidence+1 ~ Correct + (1|ID),family=Gamma(link = "inverse"),data=TAData)
 
 calibrationtest <- summary(calibrationtest)
+
 
 ```
 \

@@ -172,31 +172,71 @@ After 5 minutes in the scenario (by which point it is expected that participants
 * "Please say all the conditions that you are currently considering or are concerned about for this patient. Include any/all common, rare or contributing conditions you are considering. For each, please rate how likely you think they are on a scale of 1 (low) to 5 (high)."
 * "On a scale of 1-10, how confident are you that you understand the patient’s condition?"
 * "How severe do you think the patient’s condition is on a scale of 1 to 10?" (Each point of the scale represented a different clinical action/course, with 1 representing "Discharge in <4 hours, no follow up" and 10 representing "Requires arrest/peri arrest team.")
-
-
 * "To what extent would you be prepared to leave the patient prior to a senior review" (this question was answered using a visual analogue scale)
 * "Did you complete all the history, examinations and investigations necessary? If not, what else would you do if given more time?"
+
+During the scenario, participants had access to a phone on the wall that could be used to call external staff members for help. In terms of general options for external second opinions, participants could call the on-call doctor or the day team on the ward. For more serious situations, participants could call the rapid response team, crash team or push the emergency button (in very severe situations). Participants were expected to at least handover to another staff member using the SBAR protocol but could request the help of a senior before this point. Crucially, the structure of the scenario (including the amount of time spent in the scenario) is dictated by the participant, who can handover the case when they feel they have done enough to stabilise the patient and understand enough to handover to a senior. Once the participant is ready to finish, they 'leave the room' in the VR ward. However, the scenario automatically ends after 20 minutes if the participant has not finished it themselves. 
 
 ### Data Analysis {.unnumbered}
 
 The dependent variables that we derive are as follows:
 
-* **Performance Score**: The OMS software implements a series of objectives for each scenario, which are tasks or actions that the participant is expected to have completed within the allotted time. This can include administering oxygen, prescribing a particular medication or calculating the Patient Early Warning Score (PEWS). The proportion of completed objectives is used as a score of the participant’s performance during the scenario. 
+* **Performance Score**: The OMS software implements a series of objectives for each scenario, which are tasks or actions that the participant is expected to have completed within the allotted time. These objectives are comprised of a range of actions, including examinations that they were expected to condcut, history questions they should have asked and treatment that should have been administered. These objectives can include administering oxygen, prescribing a particular medication or calculating the Patient Early Warning Score (PEWS). The proportion of completed objectives is used as a score of the participant’s performance during the scenario. 
 
 * **Confidence Change**: the participants’ confidence in their understanding of the patient’s condition is recorded at two time points, with the first being after 5 minutes (out of the 20 minute time limit) and the second being after the participant has finished the scenario. Confidence at each stage is recorded on a 10 point scale (1-10). The difference between the second and the first confidence rating is taken, such that a positive value indicates that the participant has increased their confidence over the course of the scenario. 
 
 * **Number of Differentials**: participants are asked to record all the diagnostic differentials that they are considering at the two aforementioned time points. Hence, the total number of differentials is recorded at each stage. The Initial Number of differentials is the number of diagnoses provided at the pause point.
 
-* **Diagnostic Appropriateness**: each participant's set of differentials are assessed for how appropriate they are for the scenario. Each scenario has a set of differentials that are considered most likely, probable and improbable (with any others considered incorrect). To calculate a score for how appropriate the diagnoses are, we sum the likelihood values provided for all differentials that were marked as most likely or probable. We then add these to the sum of likelihood values for improbable differentials divided by two. This sum is divided by the total sum of all differentials. This overall measure then measures what proportion of the participants’ likelihoods are dedicated to probable differentials. However, we also penalised participants for providing few differentials, such that high scoring sets of differentials are larger sets of likely or probably differentials. We only calculate this score for the initial set of differential recorded during the pause point, as the number of differentials changes between the two time points. 
+* **Diagnostic Appropriateness**: each participant's set of differentials are assessed for how appropriate they are for the scenario. Each scenario has a set of differentials that are considered most likely, probable and improbable (with any others considered incorrect). To calculate a score for how appropriate the diagnoses are, we consider what proportion of likelihood values are assigned to likely differentials. We sum the likelihood values provided for all differentials that were marked as most likely or probable. We then add these to the sum of likelihood values for improbable differentials divided by two. This sum is divided by the total sum of all differentials. However, we also penalised participants for providing fewer differentials, such that high scoring sets of differentials are larger sets of likely or probably differentials. This is because we expect participants to provide a wider set of differentials that could be contributing to the patients' conditions. We only calculate this score for the initial set of differentials recorded during the pause point, as the number of differentials changes between the two time points. 
 
 \
+To define this metric formally, we express **Diagnostic Appropriateness (A)** as follows:
+
+\
+Let \( L = \{ l_1, l_2, \ldots, l_m \} \) be the set of all likelihoods provided across participants, where each array of likelihoods provided for a given scenario \( l_j \) has a length \( |l_j| \) (i.e. the number of differentials recorded). 
+
+\
+We define:
+
+* \( n_{\text{max}} = \max(|l_1|, |l_2|, \ldots, |l_m|) \) (length of the longest array in \( L \))
+
+* The penalty for lower number of differentials:
+  \[
+  \lambda_j = n_{\text{max}} - |l_j|
+  \]
+
+Diagnostic Appropriateness for a given set of differentials and likelihoods \( A_j \) for each array \( l_j \) can be expressed as:
+
+\[
+A_j = \frac{S_{p,j} + \frac{1}{2} S_{u,j}}{S_{L,j} + \lambda_j}
+\]
+
+Where:
+
+* \( S_{p,j} = \sum_{l_k \in l_j, l_k = p} l_k \) (sum of likelihoods for probable/possible differentials for that scenario/condition)
+
+* \( S_{u,j} = \sum_{l_k \in l_j, l_k = u} l_k \) (sum of likelihoods for unlikely differentials for that scenario/condition)
+
+* \( S_{L,j} = \sum_{l_k \in l_j} l_k \) (total sum of likelihoods across all differentials in \( l_j \))
+
+\newpage
 We also derived measures of information seeking similar to previous studies. The VR scenarios are far richer in terms of the available set of information for participants when compared to the vignette paradigm. For our analysis, we record all actions (or ‘clicks) made by participants whilst in the scenario. Actions are categorised into a number of groups. The main categories are labelled as History, Examination or Testing, similar to in the vignette study. This set of information is mostly similar across scenarios though there are minor differences especially in the History category. Across scenarios, there are 35 possible History actions, 29 Examination actions and 18 Testing actions. This especially means that in comparison to the vignette paradigm, participants can take more detailed patient histories and can receive very different pieces of information depending on what they request from patient documentation and from asking the patient/guardian in the scenario. Outside of these categories, there are other actions available to participants, such as administering medication for the patient, calling for help or providing reassurance to the patient/guardian, but these are not used for our analysis. After categorising the participants’ actions, we define a number information seeking measures:
 
-* History Taking: this is the number of History actions for a given scenario that take place before the pause point. 
-* Total Information Seeking: this is the number of unique actions (i.e. does not include requesting the taking the same action multiple times) classified under History, Examination or Testing across the scenario.
-* Information Value: to calculate the value of each information sought across these categories, we calculate the difference in OMS performance score for participants with or without that information on a given scenario. We then sum all values across all information sought by the participant within each of the information categories (History, Examination, Testing).
-* Amount of Treatment: this is the number of actions classified as treatment of the patient across the scenario. 
+* **History Taking**: this is the number of History actions for a given scenario that take place before the pause point. 
+* **Total Information Seeking**: this is the number of unique actions (i.e. does not include requesting the taking the same action multiple times) classified under History, Examination or Testing across the scenario.
+* **Information Value**: to calculate the value of each information sought across these categories, we calculate the difference in OMS performance score for participants with or without that information on a given scenario. We then sum all values across all information sought by the participant within each of the information categories (History, Examination, Testing).
+* **Amount of Treatment**: this is the number of actions classified as treatment of the patient across the scenario. 
 
+\
+Given that, unlike our vignette paradigm, participants are able to administer treatment and ask for help from a senior member (using the telephone in the VR ward), we measure how long it takes for students to do both of these:
+
+* **Time to Treatment**: this is the amount of time (in seconds) between the start of the scenario and the point at which the first treatment action is performed.
+
+* **Time to Call for Help**: this is the amount of time (in seconds) between the start of the scenario and the point at which the participant uses the phone to call a senior for help.
+
+We expect that confidence will predict how long it takes for participants to both start treatment and call for help, with higher confidence being associated with quicker times for both. We exclude participants from these analyses if they do not ask for help or do not administer any treatment respectively.
+
+\
 As all actions are recorded with timestamps in the output dataset, we categorise whether actions occurred before or after the pause point (5 minutes in). Hence, we can investigate information seeking before and after the pause point where participants record their initial diagnoses and confidence. For this study, we are particularly interested in the relationship between confidence and information seeking as it follows the timecourse of a diagnostic decision. To this end, we look at whether information seeking up until the pause point predicts initial confidence (as reported during the pause point). We then look at whether this initial confidence predicts subsequent information seeking (after the pause point). This allows us to look at the relationship between information seeking and confidence in both directions: respectively, how information informs subsequent confidence and how confidence informs subsequent information seeking. This is important given that the directionality of this relationship was unclear from the previous studies we conducted. Finally, we look at whether the amount of patient treatment during the scenario is predicted by confidence, both before and after participants administer treatment. We investigate this by looking at the number of treatment actions performed and its relationship with both initial and final confidence. These analysis are performed on a case-wise level, and thus we used generalised mixed effects modelling due to the lack of independence between observations. As such, we control for individual participants and the patient condition/case as random effects.  
 
 \
@@ -230,7 +270,7 @@ vrDescStats <- vrData %>%
                    MeanPerformance = round(mean(OMSScore,na.rm=T),2),
                    MeanInformationSeeking = round(mean(filteredActions,na.rm=T),2),
                    MeanInitialConfidence = round(mean(t1Confidence,na.rm=T),2),
-                   MeanConfidenceChange = round(mean(confidenceChange,na.rm=T),2),
+                   MeanFinalConfidence = round(mean(t2Confidence,na.rm=T),2),
                    MeanInitialDiagnoses = round(mean(t1numOfDiagnoses,na.rm=T),2),
                    DiagScore = round(mean(t1DiagnosisScore,na.rm=T),2))
 
@@ -240,28 +280,17 @@ perfCorr <- cor.test(vrData$t1DiagnosisScore,vrData$OMSScore,method="spearman",e
 
 We report data from `r length(unique(vrData$ParticipantID))` participants. As shown in Table 1, some participants only completed a single scenario rather than two. `r length(unique(vrCompleteData$ParticipantID))` participants completed two scenarios (as part of either Scenario A or B as explained in the Procedure section). Overall, `r vrDescStats[vrDescStats$Scenario=="Asthma",]$n` participants completed the Asthma scenario, `r vrDescStats[vrDescStats$Scenario=="DKA",]$n` participants completed the DKA scenario, `r vrDescStats[vrDescStats$Scenario=="Pneumonia",]$n` participants completed the Pneumonia scenario and `r vrDescStats[vrDescStats$Scenario=="Seizure",]$n` participants completed the Seizure scenario. 
 
+\
 In terms of overall performance, the average OMS score across all scenarios and all participants was `r round(mean(vrData$OMSScore,na.rm=T),2)` (ranging from `r min(vrData$OMSScore,na.rm=T)` to `r max(vrData$OMSScore,na.rm=T)`), which indicates the percentage of predefined 'objectives' successfully completed by participants during each of the scenarios (each scenario has its own set of objectives, with some overlap). The mean OMS score for each scenario was as follows: Asthma = `r vrDescStats[vrDescStats$Scenario=="Asthma",]$MeanPerformance`, DKA = `r vrDescStats[vrDescStats$Scenario=="DKA",]$MeanPerformance`, Pneumonia = `r vrDescStats[vrDescStats$Scenario=="Pneumonia",]$MeanPerformance`, Seizure = `r vrDescStats[vrDescStats$Scenario=="Seizure",]$MeanPerformance`. The average Diagnostic Appropriateness score across all scenarios and participants was `r round(mean(vrData$t1DiagnosisScore,na.rm=T),2)` (ranging from `r min(vrData$t1DiagnosisScore,na.rm=T)` to `r max(vrData$t1DiagnosisScore,na.rm=T)`). The mean Diagnostic Appropriateness score for each scenario was as follows: Asthma = `r vrDescStats[vrDescStats$Scenario=="Asthma",]$DiagScore`, DKA = `r vrDescStats[vrDescStats$Scenario=="DKA",]$DiagScore`, Pneumonia = `r vrDescStats[vrDescStats$Scenario=="Pneumonia",]$DiagScore`, Seizure = `r vrDescStats[vrDescStats$Scenario=="Seizure",]$DiagScore`. These performance measures are weakly correlated as per a Spearman's Rank Correlation test (rs(111) = `r round(perfCorr$estimate,2)`, p = `r round(perfCorr$p.value,2)`).
 
-```{r calibrationtest, include=FALSE, warning=FALSE, message=FALSE, echo=FALSE}
-
-temp <- vrData[!is.na(vrData$t2Confidence),]
-
-calibrationtest <- lme4::glmer(t1DiagnosisScore ~ t2Confidence + (1|Scenario) + (1|ParticipantID),family=Gamma(link = "inverse"),data=temp)
-
-calibrationtest2 <- lme4::glmer(t1DiagnosisScore ~ t2Confidence + (1|Scenario) + (1|ParticipantID),family=inverse.gaussian(link = "1/mu^2"),data=temp)
-
-#anova(calibrationtest,calibrationtest2)
-
-```
-
 \
-We next look at confidence reported by participants and its calibration to objective performance. Across all scenarios, participants increase their confidence between the two timepoints. Average initial confidence (recorded on a 10 point Likert scale) across scenarios was `r mean(round(vrData$t1Confidence,2),na.rm=T)`. Average change in confidence between the two timepoints was `r mean(round(vrData$confidenceChange,2),na.rm=T)`. By scenario, initial confidence and change in confidence respectively were: Asthma = [`r vrDescStats[vrDescStats$Scenario=="Asthma",]$MeanInitialConfidence`, `r vrDescStats[vrDescStats$Scenario=="Asthma",]$MeanConfidenceChange`], DKA = [`r vrDescStats[vrDescStats$Scenario=="DKA",]$MeanInitialConfidence`, `r vrDescStats[vrDescStats$Scenario=="DKA",]$MeanConfidenceChange`], Pneumonia = [`r vrDescStats[vrDescStats$Scenario=="Pneumonia",]$MeanInitialConfidence`, `r vrDescStats[vrDescStats$Scenario=="Pneumonia",]$MeanConfidenceChange`], Seizure = [`r vrDescStats[vrDescStats$Scenario=="Seizure",]$MeanInitialConfidence`, `r vrDescStats[vrDescStats$Scenario=="Seizure",]$MeanConfidenceChange`]. 
+We next look at confidence reported by participants and its calibration to objective performance. Across all scenarios, participants increase their confidence between the two timepoints. Average initial confidence (recorded on a 10 point Likert scale) across scenarios was `r mean(round(vrData$t1Confidence,2),na.rm=T)` and average final confidence was `r mean(round(vrData$t2Confidence,2),na.rm=T)`. By scenario, initial confidence and final confidence respectively were: Asthma = [`r vrDescStats[vrDescStats$Scenario=="Asthma",]$MeanInitialConfidence`, `r vrDescStats[vrDescStats$Scenario=="Asthma",]$MeanFinalConfidence`], DKA = [`r vrDescStats[vrDescStats$Scenario=="DKA",]$MeanInitialConfidence`, `r vrDescStats[vrDescStats$Scenario=="DKA",]$MeanFinalConfidence`], Pneumonia = [`r vrDescStats[vrDescStats$Scenario=="Pneumonia",]$MeanInitialConfidence`, `r vrDescStats[vrDescStats$Scenario=="Pneumonia",]$MeanFinalConfidence`], Seizure = [`r vrDescStats[vrDescStats$Scenario=="Seizure",]$MeanInitialConfidence`, `r vrDescStats[vrDescStats$Scenario=="Seizure",]$MeanFinalConfidence`]. 
 
 
 
 ```{r descstatstable, include=TRUE, warning=FALSE, message=FALSE, echo=FALSE}
 
-colnames(vrDescStats) <- c("Scenario","n","OMS Score", "Information Seeking", "Initial Confidence", "Confidence Change", "Initial Diagnoses", "Diagnostic Score")
+colnames(vrDescStats) <- c("Scenario","n","OMS Score", "Information Seeking", "Initial Confidence", "Final Confidence", "Initial Diagnoses", "Diagnostic Score")
 
 knitr::kable(vrDescStats) %>% 
   kableExtra::kable_styling(latex_options=c("HOLD_position","scale_down"))
@@ -298,6 +327,26 @@ print(p)
 ```
 
 _Figure 4: Violin plots showing confidence at timepoint 1 (the pause point at 5 minutes into the scenario) and timepoint 2 (at the end of the scenario) by condition (Asthma = red, DKA = green, Pnuemonia = blue, Seizure = purple). The dark region of the box plot shows the mean value, with the lines of the box plots showing standard deviation._ 
+
+```{r calibrationtest, include=FALSE, warning=FALSE, message=FALSE, echo=FALSE}
+
+medp <- median(vrData$t1DiagnosisScore)
+vrData$diagGroup <- ifelse(vrData$t1DiagnosisScore<medp,0,1)
+
+medp <- median(vrData$OMSScore,na.rm = T)
+vrData$scoreGroup <- ifelse(vrData$OMSScore<medp,0,1)
+
+diagLowInitialCon <- mean(vrData[vrData$diagGroup==0,]$t1Confidence,na.rm=T)
+diagHighInitialCon <- mean(vrData[vrData$diagGroup==1,]$t1Confidence,na.rm=T)
+
+diagLowFinalCon <- mean(vrData[vrData$diagGroup==0,]$t2Confidence,na.rm=T)
+diagHighFinalCon <- mean(vrData[vrData$diagGroup==1,]$t2Confidence,na.rm=T)
+
+
+```
+
+\
+As with previous studies, we now look at whether participants provide confidence judgements that are calibrated to their objective performance. We first median split cases by high and low performance, doing so separately for both measures of performance (Diagnostic Appropriateness and Performance Score). We then compare confidence between groups. We expect that if confidence judgements were calibrated, participants would report higher confidence when performing better during the scenario. 
 
 ### Initial Diagnostic Breadth {.unnumbered}
 
@@ -382,7 +431,7 @@ plotDf <- data.frame(
 
 ```
 
-We next look at if initial confidence predicts subsequent information seeking. To investigate this, we fit separate linear mixed effect models for each type of information seeking as the outcome variable. We find marginal evidence that initial confidence predicts subsequent history taking in a negative direction (i.e. that higher confidence is associated with lower subsequent history taking) ($\beta$ = `r abs(round(histmodel$coefficients[2],2))`, SE = `r round(histmodel$coefficients[,"Std. Error"][2],2)` z = `r abs(round(histmodel$coefficients[,"z value"][2],2))`, p = `r abs(round(histmodel$coefficients[,"Pr(>|z|)"][2],2))`). We do not find evidence that initial confidence is associated with subsequent Physical Examinations ($\beta$ = `r abs(round(exammodel$coefficients[2],2))`, SE = `r round(exammodel$coefficients[,"Std. Error"][2],2)` z = `r abs(round(exammodel$coefficients[,"z value"][2],2))`, p = `r abs(round(exammodel$coefficients[,"Pr(>|z|)"][2],2))`). We do find however that initial confidence was associated with higher amounts of Testing ($\beta$ = `r abs(round(testmodel$coefficients[2],2))`, SE = `r round(testmodel$coefficients[,"Std. Error"][2],2)` z = `r abs(round(testmodel$coefficients[,"z value"][2],2))`, p = `r abs(round(testmodel$coefficients[,"Pr(>|z|)"][2],2))`).
+We next look at if initial confidence predicts subsequent information seeking. To investigate this, we fit separate linear mixed effect models for each type of information seeking as the outcome variable. We find marginal evidence that initial confidence predicts subsequent history taking in a negative direction (i.e. that higher confidence is associated with lower subsequent history taking) ($\beta$ = `r abs(round(histmodel$coefficients[2],2))`, SE = `r round(histmodel$coefficients[,"Std. Error"][2],2)` z = `r abs(round(histmodel$coefficients[,"z value"][2],2))`, p = `r abs(round(histmodel$coefficients[,"Pr(>|z|)"][2],2))`). We do not find evidence that initial confidence is associated with subsequent Physical Examinations ($\beta$ = `r abs(round(exammodel$coefficients[2],2))`, SE = `r round(exammodel$coefficients[,"Std. Error"][2],2)` z = `r abs(round(exammodel$coefficients[,"z value"][2],2))`, p = `r abs(round(exammodel$coefficients[,"Pr(>|z|)"][2],2))`). We do find however that initial confidence was associated with higher amounts of Testing ($\beta$ = `r abs(round(testmodel$coefficients[2],2))`, SE = `r round(testmodel$coefficients[,"Std. Error"][2],2)` z = `r abs(round(testmodel$coefficients[,"z value"][2],2))`, p = `r abs(round(testmodel$coefficients[,"Pr(>|z|)"][2],2))`). We plot this model's fitted values against the actual observed values below in Figure 5.
 
 ```{r subinfoseekingplot, include=TRUE, warning=FALSE, message=FALSE, echo=FALSE, out.width='100%', fig.align='center'}
 
@@ -432,7 +481,7 @@ plotDf <- data.frame(
 
 ```
 
-We finally look at whether final confidence (as reported at the end of the scenario) is predicted by the number of treatment actions performed by participants during the scenario. We fit a linear mixed effects model with the number of treatment actions as a fixed effect and both scenario and participant as random effects. We find evidence that final confidence were predicted by the amount of treatment actions administered during the scenario ($\beta$ = `r abs(round(finconmodel$coefficients[2],2))`, SE = `r round(finconmodel$coefficients[,"Std. Error"][2],2)` t = `r abs(round(finconmodel$coefficients[,"t value"][2],2))`, p = `r abs(round(finconmodel$coefficients[,"Pr(>|t|)"][2],2))`).
+We finally look at whether final confidence (as reported at the end of the scenario) is predicted by the number of treatment actions performed by participants during the scenario. We fit a linear mixed effects model with the number of treatment actions as a fixed effect and both scenario and participant as random effects. We find evidence that final confidence were predicted by the amount of treatment actions administered during the scenario ($\beta$ = `r abs(round(finconmodel$coefficients[2],2))`, SE = `r round(finconmodel$coefficients[,"Std. Error"][2],2)` t = `r abs(round(finconmodel$coefficients[,"t value"][2],2))`, p = `r abs(round(finconmodel$coefficients[,"Pr(>|t|)"][2],3))`). We plot the model's fitted values against the actual observed values below in Figure 6.
 
 ```{r finalconfidenceplot, include=TRUE, warning=FALSE, message=FALSE, echo=FALSE, out.width='100%', fig.align='center'}
 
@@ -442,7 +491,7 @@ p <- ggplot(plotDf, aes(x = fittedConfidence, y = observedConfidence)) +
   geom_smooth(method = "lm", se = TRUE, color = "blue") + 
   scale_y_continuous(breaks=seq(4,10,1)) +
     scale_x_continuous(breaks=seq(4,10,1)) +
-  labs(x = "Fitted Confidence Change", y = "Observed Confidence Change") +
+  labs(x = "Fitted Final Confidence", y = "Observed Final Confidence") +
   theme_classic(base_size = 20)
 
 print(p)
@@ -452,6 +501,43 @@ print(p)
 
 _Figure 6: Plot of linear mixed effects model predicting final confidence (at the end of the scenario) by the amount of treatment actions. We show the fitted values for final confidence (x-axis) against the actual observed values for final confidence (y-axis) on each case (each data point representing a single case). We fit a linear model line of best fit with a 95% confidence interval denoted by the shaded region_
 
+### Time to Treat and Call for Help
+
+```{r timetohelp, include=FALSE, warning=FALSE, message=FALSE, echo=FALSE}
+
+treatData <- vrData[vrData$treatStart<9999,]
+
+treatExclusions <- nrow(vrData) - nrow(treatData)
+
+model <- lmer(treatStart ~ t1Confidence + (1|Scenario) + (1 | ParticipantID), data=treatData)
+
+treatConModel <- model
+treatConModel <- summary(treatConModel)
+
+model <- lmer(treatStart ~ t1Severity + (1|Scenario) + (1 | ParticipantID), data=treatData)
+
+treatSevModel <- model
+treatSevModel <- summary(treatSevModel)
+
+######################
+
+helpData <- vrData[vrData$totalHelpStart<9999,]
+
+helpExclusions <- nrow(vrData) - nrow(helpData)
+
+model <- lmer(totalHelpStart ~ t1Confidence + (1|Scenario) + (1 | ParticipantID), data=helpData)
+
+helpConModel <- model
+helpConModel <- summary(helpConModel)
+
+model <- lmer(totalHelpStart ~ t1Severity + (1|Scenario) + (1 | ParticipantID), data=helpData)
+
+helpSevModel <- model
+helpSevModel <- summary(helpSevModel)
+
+```
+
+We next turn to the time taken for participants to start treatment of patients and to call for help from a senior in the scenarios. We use linear mixed effect modelling to determine if the time taken to start treatment and to call for help is predicted by both confidence judgements and ratings of patient severity. We control for individual participants and scenarios as random effects. We do not find evidence that Initial Confidence predicts the time taken to start treatment or ask for help (ps > .1). `r treatExclusions` cases were excluded from the analysis involving time taken to treat, as no treatment actions were recorded for these cases. `r helpExclusions` cases were excluded from the analysis involving time taken to call for help, as no help actions were recorded for these cases. We do not find evidence that initial ratings of severity predict the time taken to start treatment ($\beta$ = `r round(treatSevModel$coefficients[2],2)`, SE = `r round(treatSevModel$coefficients[,"Std. Error"][2],2)`, t = `r round(treatSevModel$coefficients[,"t value"][2],2)`, p = `r round(treatSevModel$coefficients[,"Pr(>|t|)"][2],2)`), but we do find that severity is predictive of the time taken to call for help ($\beta$ = `r round(helpSevModel$coefficients[2],2)`, SE = `r round(helpSevModel$coefficients[,"Std. Error"][2],2)`, t = `r round(helpSevModel$coefficients[,"t value"][2],2)`, p = `r round(helpSevModel$coefficients[,"Pr(>|t|)"][2],2)`). Each unit increase in severity rating was associated with participants seeking help `r abs(round(helpSevModel$coefficients[2],2))` seconds quicker.
 
 ### Diagnostic Appropriateness {.unnumbered}
 
@@ -535,12 +621,62 @@ rocPlot <- roc.plot(x=pcDF$diagGroup=="1",pred=cbind(prediglmVR),legend = T,
 
 ```
 
-We next ask whether the diagnoses provided by participants is a result of 'better' information seeking. If this were the case, we would be able to differentiate between low and high quality diagnoses (as per our Diagnostic Appropriateness measure) solely from the information sought by participants. This is similar to the analysis presented in Study 2 (in Figure 8). We split participants into low and high diagnostic accuracy via a median split. Given the large amount of information available (82), we reduce the dimensionality of the information seeking data using Principal Component Analysis. When computing a scree plot and observing eigenvalues for each cumulative component that exceeded 1, we find that reducing the 82 information factors to 26 components is recommended. We trained a binary classification algorithm using a generalised logistic regression (GLM) model to identify if participants exhibited high or low accuracy based on the information they sought. When plotting an ROC curve, the area under the curve (AUC) is indicative of how well a model performs at correctly categorising cases as having high or low diagnostic appropriateness. An AUC of 0.5 would signify that our model is performing at chance and is not able to predict participant accuracy in any meaningful way. By plotting an ROC curve for our model, we find an AUC value of `r round(rocPlot$Area,2)` (plotted below). When conducting a DeLong test, to test the null hypothesis that the AUC is equal is 0.5 (i.e. that the classifier is unable to differentiate between high and low accuracy participants), we find p < .001, indicating that the AUC differs significantly from 0.5. This indicates that diagnostic appropriateness is predicted by information seeking during the scenarios. 
+```{r classifiersep, eval=FALSE, include=FALSE, warning=FALSE, message=FALSE, echo=FALSE}
+
+temp <- infoSeekingMatrixVR
+
+temp$diagGroup <- ifelse(temp$t1DiagnosisScore < median(temp$t1DiagnosisScore),0,1)
+temp$diagGroup <- as.factor(temp$diagGroup)
+
+infoSeekingMatrixVRHist <- temp[, c(historyActions,"diagGroup"), drop = FALSE]
+infoSeekingMatrixVRExams <- temp[, c(examActions,"diagGroup"), drop = FALSE]
+infoSeekingMatrixVRTesting <- temp[, c(TestingActions,"diagGroup"), drop = FALSE]
+
+dropcols <- c("past medical history","measure oxygen saturations & heart rate","measure blood pressure")
+
+infoSeekingMatrixVRHist <- infoSeekingMatrixVRHist[ , -which(names(infoSeekingMatrixVRHist) %in% dropcols)]
+infoSeekingMatrixVRExams <- infoSeekingMatrixVRExams[ , -which(names(infoSeekingMatrixVRExams) %in% dropcols)]
+
+names(infoSeekingMatrixVRHist) <- make.names(names(infoSeekingMatrixVRHist))
+names(infoSeekingMatrixVRExams) <- make.names(names(infoSeekingMatrixVRExams))
+names(infoSeekingMatrixVRTesting) <- make.names(names(infoSeekingMatrixVRTesting))
+
+# Convert all columns to numeric
+infoSeekingMatrixVRHist <- data.frame(lapply(infoSeekingMatrixVRHist, function(x) as.numeric(as.character(x))))
+infoSeekingMatrixVRExams <- data.frame(lapply(infoSeekingMatrixVRExams, function(x) as.numeric(as.character(x))))
+infoSeekingMatrixVRTesting <- data.frame(lapply(infoSeekingMatrixVRTesting, function(x) as.numeric(as.character(x))))
+
+# Keep columns where the sum is greater than zero
+infoSeekingMatrixVRHist <- infoSeekingMatrixVRHist[, colSums(infoSeekingMatrixVRHist) > 1]
+infoSeekingMatrixVRExams <- infoSeekingMatrixVRExams[, colSums(infoSeekingMatrixVRExams) > 1]
+infoSeekingMatrixVRTesting <- infoSeekingMatrixVRTesting[, colSums(infoSeekingMatrixVRTesting) > 1]
+
+# Outcome as a factor
+infoSeekingMatrixVRHist$diagGroup <- as.factor(infoSeekingMatrixVRHist$diagGroup)
+infoSeekingMatrixVRExams$diagGroup <- as.factor(infoSeekingMatrixVRExams$diagGroup)
+infoSeekingMatrixVRTesting$diagGroup <- as.factor(infoSeekingMatrixVRTesting$diagGroup)
+
+modelglmHist<-train(diagGroup ~ ., method = "glm", family = binomial(link=probit), data = infoSeekingMatrixVRHist, trControl = ctrl)
+modelglmExams<-train(diagGroup ~ ., method = "glm", family = binomial(link=probit), data = infoSeekingMatrixVRExams, trControl = ctrl)
+modelglmTest<-train(diagGroup ~ ., method = "glm", family = binomial(link=probit), data = infoSeekingMatrixVRTesting, trControl = ctrl)
+
+prediglmHist<-predict(modelglmHist,type = "prob")[2]
+prediglmExams<-predict(modelglmExams,type = "prob")[2]
+prediglmTest<-predict(modelglmTest,type = "prob")[2]
+
+temp$diagGroup <- as.factor(temp$diagGroup)
+
+roc.plot(x=temp$diagGroup=="1",pred=cbind(prediglmHist,prediglmExams,prediglmTest),legend = T,
+                    leg.text = c("History","Exams","Testing"),thresholds = thresh)$roc.vol
+
+```
+
+We next ask whether the diagnoses provided by participants is a result of 'better' information seeking. If this were the case, we would be able to differentiate between low and high quality diagnoses (as per our Diagnostic Appropriateness measure) solely from the information sought by participants. This is similar to the analysis presented in Study 2 (in Figure 8). We split participants into low and high diagnostic accuracy via a median split. Given the large amount of information available (82 unique information requests across History, Physical Examinations and Testing), we reduce the dimensionality of the information seeking data using Principal Component Analysis. When computing a scree plot and observing eigenvalues for each cumulative component that exceeded 1, we find that reducing the 82 information factors to 26 components is recommended. We trained a binary classification algorithm using a generalised logistic regression (GLM) model to identify if participants exhibited high or low accuracy based on the information they sought. When plotting an ROC curve, the area under the curve (AUC) is indicative of how well a model performs at correctly categorising cases as having high or low diagnostic appropriateness. An AUC of 0.5 would signify that our model is performing at chance and is not able to predict participant accuracy in any meaningful way. By plotting an ROC curve for our model, we find an AUC value of `r round(rocPlot$Area,2)` (plotted below). When conducting a DeLong test, to test the null hypothesis that the AUC is equal is 0.5 (i.e. that the classifier is unable to differentiate between high and low accuracy participants), we find p < .001, indicating that the AUC differs significantly from 0.5. This indicates that diagnostic appropriateness is predicted by information seeking during the scenarios. 
 
 ```{r pcaclassifierplot, include=TRUE, warning=FALSE, message=FALSE, echo=FALSE, out.width='100%', fig.align='center'}
 
 roc.plot(x=pcDF$diagGroup=="1",pred=cbind(prediglmVR),legend = T,
-                    leg.text = c("GLM"),thresholds = thresh)$roc.vol
+                    leg.text = c("GLM"),thresholds = thresh)
 
 ```
 _Figure 7: Receiver-Operator Characteristic (ROC) curve using a Generalised Linear Model to classify individual cases as having either high or low diagnostic appropriateness reported based on the initial set of differentials. The model is trained PCA components of the total available information requests, with the 82 information requests reduced to 26 components. Cases were sorted as high or low diagnostic appropriateness based on a median split._
@@ -602,14 +738,17 @@ On diganostic breadth, we did not replicate our finding from Study 2 that the in
 
 \
 On confidence and information seeking, we were able to look at information seeking in a more fine-grained manner in comparison to our previous studies due to the paradigm's open-ended nature and greater availability of information requests, testing and treatment in the VR scenarios. As a result, we were able to study information seeking not just as a whole, but related to specific types of information that clinicians use to formulate diagnoses. We did not find initial confidence was predicted by information seeking prior to that point. We do however find that initial confidence then predicted the amount of subsequent testing that medical students requested. If we intuitively consider the different stages of the diagnostic process, as we observed in Studies 2 and 3 with our vignette methodology, clinicians tend to request tests when they honing in on a particular diagnosis and want to either confirm their beliefs or rule out an alternative diagnosis. Given we observed little evidence of the latter in our previous studies, it is then more likely that clinicians perform tests to focus in on a particular diagnosis. This would explain why, with higher confidence, medical students in this study subsequent request more tests as they seek to confirm their diagnostic hypotheses. This is especially supported by the higher fidelity of information available in VR (e.g. ECG traces, blood gas) when compared to textual vignettes. We also found that confidence was predicted by the amount of treatment administered by students. The consideration of treatment in this study is certainly an important aspect of real medical practice to emulate. When formulating a diagnosis, clinicians then use this diagnosis to guide their future treatment and care pathway. By administering treatment, both in real medical practice and in our VR scenarios, clinicians can observe the patient changing in terms of their condition. If a clinician decides to administer oxygen for the patient, they may then observe the patient's oxygen levels increase if successful. 
-
 \
 We also use the aspect of treatment and patient improvement to explain our overall finding in this study that differentials narrowed between the two timepoints, rather than broadening as in the previous studies. The act of administering treatment and observing the patient's reaction to this treatment is a key part of the diagnostic decisional process, as it provides clinicians with a form of feedback on their decisions. When participants could not administer treatment in the vignette studies and observe the patient's change in condition (either improving or deteriorating), they then do not receive feedback that can be used to support or rule out diagnoses. Taken together, this provides an important consideration for future work looking at diagnostic uncertainty, in that methodologies without treatable patients (e.g textual vignettes) may result in different behaviour to how clinicians would approach such diagnoses in everyday practice.
 
 \
+On the time taken to treat the patient and call for help, we do not find evidence that confidence was predictive of how long it took for participants to being treatment or ask for help. We found evidence that perceptions of patient severity were related to asking for help, such that higher severity ratings were associated with quicker requests for help. The lattermost finding makes intuitive sense, as doctors are likely required to escalate more serious cases to other staff with more urgency if patients require inputs from other specialists or other departments.
+
+\
 On diagnostic appropriateness, we used a score for diagnostic accuracy that took into account the range of differentials that medical students considered. We adopted this measure to assess diagnostic thinking as a whole, rather than simply identifying a focal diagnosis/condition correctly. This was important to do given that the diagnostic uncertainty came not from the focal condition, but from identifying its source and causes. We found that information seeking was predictive of differences in diagnostic appropriateness. More specifically, we found more informative/valuable history taking was associated with higher diagnostic appropriateness. There is a heuristic taught within medicine that history taking alone determines between 70% and 90% of diagnoses (Keifenheim, 2015). This would then explain that we see the positive effect of optimal history taking on diagnostic performance. We show that with a more appropriate patient history, participants are better able to understand the patient's condition and its possible causes. This suggest that future work and interventions could be especially effective when focused on history taking and early information seeking by clinicians. We note that with this measure, we operationalise diagnostic accuracy quite differently to previous work. Such a measure is analogous to real practice as clinicians may not always be able to identify a focal diagnosis, or such a task is not the central priority for their practice. Rather, their priority is on starting an appropriate treatment plan and being thorough in considering possible causes of the patient's condition. As we noted in previous chapters however, diagnostic accuracy can be defined in many different ways. We revisit this line of discussion in the Overall Discussion section.
 
-
+\
+Bring it all together, set up discussion and reflective. 
 
 
 

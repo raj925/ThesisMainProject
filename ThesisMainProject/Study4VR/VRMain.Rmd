@@ -223,11 +223,16 @@ for (n in 1:nrow(vrData))
   
   helpActions <- actioncategories$Help
   helpStart <- unique(actions[which(actions %in% helpActions)])
-  helpStart <- ifelse(length(sbarStart)<1,9999,min(pptActions[pptActions$ACTION.TITLE %in% helpActions,]$ACTION.TIMESTAMP..SECS.AFTER.START.))
+  helpStart <- ifelse(length(helpStart)<1,9999,min(pptActions[pptActions$ACTION.TITLE %in% helpActions,]$ACTION.TIMESTAMP..SECS.AFTER.START.))
   
   vrData$sbarStart[n] <- sbarStart
   vrData$helpStart[n] <- helpStart
   vrData$totalHelpStart[n] <- min(c(sbarStart,helpStart))
+  
+  treatStart <- unique(actions[which(actions %in% treatmentActions)])
+  treatStart <- ifelse(length(treatStart)<1,9999,min(pptActions[pptActions$ACTION.TITLE %in% treatmentActions,]$ACTION.TIMESTAMP..SECS.AFTER.START.))
+  
+  vrData$treatStart[n] <- treatStart
   
   for (row in 1:nrow(pewsTable))
   {
