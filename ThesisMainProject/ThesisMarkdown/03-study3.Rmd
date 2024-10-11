@@ -243,7 +243,7 @@ As well as predicting reasoning strategy on a case-by-case basis to determine di
 
 ## Results {.unnumbered}
 
-### Descriptive Quantiative Results {.unnumbered}
+### Descriptive Quantitative Results {.unnumbered}
 
 #### Overall Performance and Calibration {.unnumbered}
 

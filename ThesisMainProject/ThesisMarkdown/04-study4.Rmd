@@ -501,7 +501,7 @@ print(p)
 
 _Figure 6: Plot of linear mixed effects model predicting final confidence (at the end of the scenario) by the amount of treatment actions. We show the fitted values for final confidence (x-axis) against the actual observed values for final confidence (y-axis) on each case (each data point representing a single case). We fit a linear model line of best fit with a 95% confidence interval denoted by the shaded region_
 
-### Time to Treat and Call for Help
+### Time to Treat and Call for Help {.unnumbered}
 
 ```{r timetohelp, include=FALSE, warning=FALSE, message=FALSE, echo=FALSE}
 
