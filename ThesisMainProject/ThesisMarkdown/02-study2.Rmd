@@ -35,7 +35,7 @@ df <- as.data.frame(read.csv("./study2data.csv",header=TRUE))
 source('scripts_and_filters/Study2/AggregateData.R')
 ```
 
-```{r keyTests, include=FALSE, eval=knitr::is_latex_output()}
+```{r keyTests, eval=FALSE, include=FALSE}
 keyTests <- as.data.frame(read.csv("./assets/VignetteKeyTests.csv",header=TRUE))
 
 for (r in 1:nrow(studentCaseDf))
