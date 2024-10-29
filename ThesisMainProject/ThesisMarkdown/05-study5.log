@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.24)  28 OCT 2024 15:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.3.24)  29 OCT 2024 12:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1299,40 +1299,40 @@ LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 3
 44.
 (/usr/local/texlive/2020/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [9] [10] [11] [12] [13] [14] [15] [16] [17] [18]
+) [9] [10] [11] [12] [13] [14] [15] [16] [17] [18] [19]
 Package minitoc Info: I0009
 (minitoc)             Listing minitoc auxiliary files. 
 (minitoc)             Creating the 05-study5.maf file.
 \openout3 = `05-study5.maf'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 405.
-[19]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 405.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 409.
+[20]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 409.
 (./05-study5.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 405.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 405.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 409.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 409.
 Package rerunfilecheck Info: File `05-study5.out' has not changed.
 (rerunfilecheck)             Checksum: EA23B938AC837C59BE6EF2D73F86D5A3;582.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 405.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 409.
  ) 
 Here is how much of TeX's memory you used:
- 19176 strings out of 480608
- 305833 string characters out of 5903630
+ 19175 strings out of 480608
+ 305818 string characters out of 5903630
  672499 words of memory out of 5000000
  34412 multiletter control sequences out of 15000+600000
- 561811 words of font info for 77 fonts, out of 8000000 for 9000
+ 561720 words of font info for 76 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 49i,12n,49p,2462b,442s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 49i,12n,49p,2469b,442s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/local
 /texlive/2020/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}</usr/local/texlive/2020/
 texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2020/texmf-dist
 /fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type
 1/public/lm/lmr17.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/lm
 /lmri12.pfb>
-Output written on 05-study5.pdf (19 pages, 143460 bytes).
+Output written on 05-study5.pdf (20 pages, 144937 bytes).
 PDF statistics:
- 141 PDF objects out of 1000 (max. 8388607)
- 114 compressed objects within 2 object streams
- 22 named destinations out of 1000 (max. 500000)
+ 145 PDF objects out of 1000 (max. 8388607)
+ 117 compressed objects within 2 object streams
+ 23 named destinations out of 1000 (max. 500000)
  7233 words of extra memory for PDF output out of 10000 (max. 10000000)
 
