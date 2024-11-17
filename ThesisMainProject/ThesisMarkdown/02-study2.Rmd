@@ -383,7 +383,7 @@ readinessttest <- summary(readinessttest)
 
 ```
 
-We first look at our research question as to whether confidence is calibrated within medical students. When comparing Accuracy (taking into account the likelihood assigned to correct differentials) to Confidence, we find, across stages, participants’ Confidence was aligned to their Accuracy (see Figure 4 below). To determine whether there is any systematic discrepancy between subjective confidence and objective accuracy across stages, we compute a paired t-test between average Confidence and average Accuracy (across cases) at each stage. There was no evidence of a difference between the two at the Patient History (t(`r histtest$parameter`) = `r round(histtest$statistic,2)`, MDiff = `r round(histtest$estimate,3)`, p = `r round(histtest$p.value,2)`) and Physical Examination stages (t(`r exattest$parameter`) = `r round(exattest$statistic,2)`, MDiff = `r round(exattest$estimate,2)`, p = `r round(exattest$p.value,2)`), but there was a statistically significant difference between the two at the Testing stage (t(`r testtest$parameter`) = `r round(testtest$statistic,2)`, MDiff = `r round(testtest$estimate,2)`, p = `r round(testtest$p.value,2)`). This indicated well-calibrated confidence after Patient History and Physical Examination, but a slight overconfidence across participants after Testing. 
+We first look at our research question as to whether confidence is calibrated within medical students. When comparing Accuracy (taking into account the likelihood assigned to correct differentials) to Confidence, we find, across stages, participants’ Confidence was aligned to their Accuracy (see Figure 4 below). To determine whether there is any systematic discrepancy between subjective confidence and objective accuracy across stages, we compute a paired t-test between average Confidence and average Accuracy (across cases) at each stage. There was no evidence of a difference between the two at the Patient History (t(`r histtest$parameter`) = `r round(histtest$statistic,2)`, MDiff = `r round(histtest$estimate,2)`, p = `r round(histtest$p.value,2)`) and Physical Examination stages (t(`r exattest$parameter`) = `r round(exattest$statistic,2)`, MDiff = `r round(exattest$estimate,2)`, p = `r round(exattest$p.value,2)`), but there was a statistically significant difference between the two at the Testing stage (t(`r testtest$parameter`) = `r round(testtest$statistic,2)`, MDiff = `r round(testtest$estimate,2)`, p = `r round(testtest$p.value,2)`). This indicated well-calibrated confidence after Patient History and Physical Examination, but a slight overconfidence across participants after Testing. 
 
 \
 To investigate the dynamics of confidence and accuracy further, we look at how both variables change over the course of the information seeking stages. Across cases, accuracy increased with each stage of information gathering as per our Accuracy measure, (F(`r model$DF[1]`, `r model$DF[2]`) = `r round(model$F[1],2)`, $\eta^2$G = `r etasq`, p < .001). Participants had lower accuracy at the Patient History stage (M = `r round(mean(accdf[accdf$stage==1,]$Accuracy),2)`, SD = `r round(sd(accdf[accdf$stage==1,]$Accuracy),2)`) than during the Physical Examination (M = `r round(mean(accdf[accdf$stage==2,]$Accuracy)/10,2)`, SD = `r round(sd(accdf[accdf$stage==2,]$Accuracy),2)`) and Testing stages (M = `r round(mean(accdf[accdf$stage==3,]$Accuracy),2)`, SD = `r round(sd(accdf[accdf$stage==3,]$Accuracy),2)`). Pairwise comparisons between the History stage and each of the other two stages are significant (ps < .001). Table 2 shows overall accuracy (at the Testing stage) by case, indicating that there was variability in performance between cases.
@@ -396,8 +396,9 @@ Confidence also increased as participants received more information (F(`r model$
 
 caseBreakdown <- studentCaseDf %>%
   group_by(caseCode) %>%
-  dplyr::summarise(`Correct Differential Included` = round(mean(correct),2),
+  dplyr::summarise(`Differential Accuracy` = round(mean(correct),2),
                    Accuracy = round((mean(likelihoodOfCorrectDiagnosis)/10),2),
+                   `Highest Likelihood Accuracy` = round((mean(highestLikelihoodCorrectValue)/10),2),
                    `Final Confidence` = round((mean(finalConfidence)/100),2),
                     Difficulty = round(mean(subjectiveDifficulty,na.rm=T),1))
 
@@ -406,7 +407,7 @@ colnames(caseBreakdown)[1] <- "Case"
 knitr::kable(caseBreakdown) %>% 
   kableExtra::kable_styling(latex_options="HOLD_position")
 ```
-_Table 1: Average statistics across participants for each case (leftmost column, AD = Aortic Dissection, GBS = Guillain Barré Syndrome, MTB = Miliary Tuberculosis, TA = Temporal Arteritis, TTP = Thrombotic Thrombocytopenia Purpura, UC = Ulcerative Colitis). Correct Differential Included (0-1) refers to the proportion of participants who correctly included the correct condition or a condition considered correct for that case based on our marking criteria. Accuracy refers to the average likelihood (on a 1-10 scale, rescaled to range between 0-1) assigned to a correct differential if included. Confidence refers to the confidence provided by participants on their readiness to treat the patient at the Testing stage (on a scale of 0-100, rescaled to fall between 0-1). All these measures are calculated based on values observed at the final information stage of each case (i.e. the Testing stage). Difficulty refers to the subjective rating provided at the end of each case of how difficult participants found the case to be in terms of determining a diagnosis (on a scale of 1-10)._
+_Table 1: Average statistics across participants for each case (leftmost column, AD = Aortic Dissection, GBS = Guillain Barré Syndrome, MTB = Miliary Tuberculosis, TA = Temporal Arteritis, TTP = Thrombotic Thrombocytopenia Purpura, UC = Ulcerative Colitis). Differential Accuracy (0-1) refers to the proportion of participants who correctly included the correct condition or a condition considered correct for that case based on our marking criteria. Highest Likelihood Accuracy refers to the likelihood assigned to the differential with the highest likelihood if it is correct (1-10), otherwise the value for a given case is 0 if this differential is incorrect. This value is then rescaled to range between 0-1. Accuracy refers to the average likelihood (on a 1-10 scale, rescaled to range between 0-1) assigned to a correct differential if included. Confidence refers to the confidence provided by participants on their readiness to treat the patient at the Testing stage (on a scale of 0-100, rescaled to fall between 0-1). All these measures are calculated based on values observed at the final information stage of each case (i.e. the Testing stage). Difficulty refers to the subjective rating provided at the end of each case of how difficult participants found the case to be in terms of determining a diagnosis (on a scale of 1-10)._
 
 ```{r meyerGraph, include=TRUE, echo=FALSE, out.width='100%', fig.align='center', fig.align='center', fig.height=8}
 
@@ -422,7 +423,7 @@ cors <- c(mean(studentAggData$meanInitialCorrect), mean(studentAggData$meanMiddl
 highestLiks <- c(mean(studentAggData$highestLikelihoodCorrectValueInitial)/10, mean(studentAggData$highestLikelihoodCorrectValueMiddle)/10, mean(studentAggData$highestLikelihoodCorrectValueFinal)/10)
 
 val <- c(yb,zb,cors,highestLiks)
-typ <- c(rep("Confidence",3),rep("Accuracy",3),rep("Correct Differential Included",3),rep("Highest Likelihood Accuracy",3))
+typ <- c(rep("Confidence",3),rep("Accuracy",3),rep("Differential Accuracy",3),rep("Highest Likelihood Accuracy",3))
 
 secon <- c(sd(studentAggData$meanInitialConfidence/100)/rootN, sd(studentAggData$meanMiddleConfidence/100)/rootN, sd(studentAggData$meanFinalConfidence/100)/rootN)
 selik <- c(sd(studentAggData$meanInitialAccuracy)/rootN, sd(studentAggData$meanMiddleAccuracy)/rootN, sd(studentAggData$meanFinalAccuracy)/rootN)
@@ -511,7 +512,7 @@ dataV <- data.frame("Stage" = xb, "Mean"= yb)
 dataV$Stage <- as.factor(dataV$Stage)
 diffs <- ggplot(dataV, aes(x=Stage, y=Mean)) +
   geom_violin(colour="black", fill=differentialColour, alpha=0.8, trim=FALSE) + 
-  # geom_dotplot(binaxis='y', stackdir='center', dotsize=0.5,colour="white") +
+ # geom_dotplot(binaxis='y', stackdir='center', dotsize=0.5,colour="white") +
   stat_summary(fun.data=data_summary, colour="red")
 
 print(diffs +
@@ -525,7 +526,7 @@ print(diffs +
       ) 
 
 ```
-_Figure 5: The average number of differentials after each stage of information seeking (x-axis, History = Patient History, Physical = Physical Examinations, Testing = Testing). The red dots indicate the mean values, whilst the red lines indicate standard deviations._
+_Figure 5: The average number of differentials after each stage of information seeking (x-axis, History = Patient History, Physical = Physical Examinations, Testing = Testing). The width of the blue area corresponds to the amount of data points that fall within that part of the y-axis, with a wider area meaning a higher concentration of data points. The red dots indicate the mean values, whilst the red lines indicate standard deviations._
 
 \newpage
 

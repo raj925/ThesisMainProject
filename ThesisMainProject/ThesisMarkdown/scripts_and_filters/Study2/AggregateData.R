@@ -417,6 +417,7 @@ for (y in 1:nCase)
   }
   caseDf$likelihoodOfCorrectDiagnosis[y] <- df$likelihoodOfCorrectDiagnosis[(3*y)]
   caseDf$likelihoodOfCorrectDiagnosisSigned[y] <- ifelse(correct==1,df$likelihoodOfCorrectDiagnosis[(3*y)],df$highestLikelihood[(3*y)]*-1)
+  caseDf$highestLikelihoodCorrectValue[y] <- df$highestLikelihoodCorrectValue[(3*y)]
   caseDf$sevOfCorrectDiagnosis[y] <- df$sevOfCorrectDiagnosis[(3*y)]
   caseDf$differentialsDropped[y] <- (df$numOfDifferentials[(3*y)-2] > df$numOfDifferentials[(3*y)-1]) ||(df$numOfDifferentials[(3*y)-1] > df$numOfDifferentials[(3*y)])
   caseDf$likelihoodsUpdated[y] <- !((df$likelihoods[(3*y)-2] == df$likelihoods[(3*y)-1]) || (df$likelihoods[(3*y)-1] == df$likelihoods[(3*y)]))

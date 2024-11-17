@@ -49,6 +49,173 @@ knitr::kable(marking) %>%
 
 _Table S2: Full list of possible information requests that participants can make. This set of information is the same for all cases. The same vignettes and corresponding information are used for the online and think-aloud vignette studies._
 
+# Calibration of Confidence to Alternative Accuracy Measures
+
+```{r study2data, include=FALSE, eval=knitr::is_latex_output()}
+df <- as.data.frame(read.csv("../study2data.csv",header=TRUE))
+
+df <- df %>%
+  group_by(participantID, trialNum) %>%                            # Group by ID and trialNum
+  filter(!(all(proportionOfInfo == 0))) %>%             # Keep rows where not all proportionOfInfo values are 0
+  ungroup()      
+
+source('scripts_and_filters/Study2/AggregateData.R')
+
+```
+
+## Differential Accuracy
+
+```{r accanova, include=FALSE, echo=FALSE}
+
+accdf <- studentDf %>%
+  group_by(stage,participantID) %>%
+  dplyr::summarise(Accuracy = mean(correct))
+
+accdf$stage <- as.factor(accdf$stage)
+
+model <- summary(aov(Accuracy ~ stage, data=accdf))
+print(model)
+model <- model[[1]]
+colnames(model) <- c("DF", "SumSq", "MeanSq", "F", "p")
+etasq <- round(etaSquared(aov(Accuracy ~ stage, data=accdf))[1],2)
+
+attach(accdf)
+pairtests <- pairwise.t.test(Accuracy,stage,p.adj="bonf")
+detach()
+
+```
+
+```{r conanova, include=FALSE, echo=FALSE}
+
+condf <- studentDf %>%
+  group_by(stage,participantID) %>%
+  dplyr::summarise(Confidence = mean(confidence))
+
+condf$stage <- as.factor(condf$stage)
+
+model <- summary(aov(Confidence ~ stage, data=condf))
+print(model)
+model <- model[[1]]
+colnames(model) <- c("DF", "SumSq", "MeanSq", "F", "p")
+etasq <- round(etaSquared(aov(Confidence ~ stage, data=condf))[1],2)
+
+attach(condf)
+pairtests <- pairwise.t.test(Confidence,stage,p.adj="bonf")
+detach()
+```
+
+```{r calibrationttests, include=FALSE, echo=FALSE}
+
+condf$Confidence <- condf$Confidence/100
+
+
+histtest <- t.test(accdf[accdf$stage==1,]$Accuracy,condf[condf$stage==1,]$Confidence,paired=T)
+exattest <- t.test(condf[condf$stage==2,]$Confidence,accdf[accdf$stage==2,]$Accuracy,paired=T)
+testtest <- t.test(condf[condf$stage==3,]$Confidence,accdf[accdf$stage==3,]$Accuracy,paired=T)
+
+```
+
+When comparing Differential Accuracy (if a correct differential is provided in the participant's list) to Confidence, we find, across stages, participants’ Confidence was not aligned to their Accuracy. Instead, we find evidence of underconfidence at all stages. There was evidence of a significant difference between the two at the Patient History (t(`r histtest$parameter`) = `r round(histtest$statistic,2)`, MDiff = `r round(histtest$estimate,2)`, p = `r round(histtest$p.value,2)`), Physical Examination stage (t(`r exattest$parameter`) = `r round(exattest$statistic,2)`, MDiff = `r round(exattest$estimate,2)`, p = `r round(exattest$p.value,2)`), and Testing stage (t(`r testtest$parameter`) = `r round(testtest$statistic,2)`, MDiff = `r round(testtest$estimate,2)`, p = `r round(testtest$p.value,2)`). 
+
+```{r calibrationttestsbycasediff, include=FALSE, echo=FALSE}
+
+temp <- studentCaseDf
+
+temp$Accuracy <- temp$correct
+temp$Confidence <- temp$finalConfidence/100
+
+cases <- c("AD","GBS","MTB","TA","TTP","UC")
+caseComparisons <- data.frame()
+for (case in cases)
+{
+  ttest <- t.test(temp[temp$caseCode==case,]$Confidence,temp[temp$caseCode==case,]$Accuracy,paired=T)
+  caseComparisons <- rbind(caseComparisons,c(case,as.numeric(ttest$parameter), round(ttest$statistic,2), round(ttest$estimate,2), round(ttest$p.value,2)))
+  
+}
+
+colnames(caseComparisons) <- c("Case","df","t","MDiff","p")
+
+```
+
+In order to examine the observed underconfidence in more detail, we compare confidence and Differential Accuracy by case (the mean values of which can be found in Table 1 of the main thesis). We conducted paired t-tests for each condition's cases by comparing Differential Accuracy and confidence values (at the final Testing stage) to observe if they significantly differ from each other. A p value of less than .05 is interpreted as evidence for overconfidence or underconfidence (depending on the direction of the effect). We observed underconfidence for the GBS case (t(`r as.numeric(caseComparisons[caseComparisons$Case=="GBS",]$df)`) = `r as.numeric(caseComparisons[caseComparisons$Case=="GBS",]$t)`, MDiff = `r as.numeric(caseComparisons[caseComparisons$Case=="GBS",]$MDiff)`, p = < .001), the TA case (t(`r as.numeric(caseComparisons[caseComparisons$Case=="TA",]$df)`) = `r as.numeric(caseComparisons[caseComparisons$Case=="TA",]$t)`, MDiff = `r as.numeric(caseComparisons[caseComparisons$Case=="TA",]$MDiff)`, p = < .001), the TTP case (t(`r as.numeric(caseComparisons[caseComparisons$Case=="TTP",]$df)`) = `r as.numeric(caseComparisons[caseComparisons$Case=="TTP",]$t)`, MDiff = `r as.numeric(caseComparisons[caseComparisons$Case=="TTP",]$MDiff)`, p = < .001) and the UC case (t(`r as.numeric(caseComparisons[caseComparisons$Case=="UC",]$df)`) = `r as.numeric(caseComparisons[caseComparisons$Case=="UC",]$t)`, MDiff = `r as.numeric(caseComparisons[caseComparisons$Case=="UC",]$MDiff)`, p = < .001). The remaining cases did not yield a significant effect. 
+
+## Highest Likelihood Accuracy
+
+```{r accanova, include=FALSE, echo=FALSE}
+
+accdf <- studentDf %>%
+  group_by(stage,participantID) %>%
+  dplyr::summarise(Accuracy = mean(highestLikelihoodCorrectValue))
+
+accdf$stage <- as.factor(accdf$stage)
+
+model <- summary(aov(Accuracy ~ stage, data=accdf))
+print(model)
+model <- model[[1]]
+colnames(model) <- c("DF", "SumSq", "MeanSq", "F", "p")
+etasq <- round(etaSquared(aov(Accuracy ~ stage, data=accdf))[1],2)
+
+attach(accdf)
+pairtests <- pairwise.t.test(Accuracy,stage,p.adj="bonf")
+detach()
+
+```
+
+```{r conanova, include=FALSE, echo=FALSE}
+
+condf <- studentDf %>%
+  group_by(stage,participantID) %>%
+  dplyr::summarise(Confidence = mean(confidence))
+
+condf$stage <- as.factor(condf$stage)
+
+model <- summary(aov(Confidence ~ stage, data=condf))
+print(model)
+model <- model[[1]]
+colnames(model) <- c("DF", "SumSq", "MeanSq", "F", "p")
+etasq <- round(etaSquared(aov(Confidence ~ stage, data=condf))[1],2)
+
+attach(condf)
+pairtests <- pairwise.t.test(Confidence,stage,p.adj="bonf")
+detach()
+```
+
+```{r calibrationttests, include=FALSE, echo=FALSE}
+
+accdf$Accuracy <- accdf$Accuracy/10
+condf$Confidence <- condf$Confidence/100
+
+
+histtest <- t.test(accdf[accdf$stage==1,]$Accuracy,condf[condf$stage==1,]$Confidence,paired=T)
+exattest <- t.test(condf[condf$stage==2,]$Confidence,accdf[accdf$stage==2,]$Accuracy,paired=T)
+testtest <- t.test(condf[condf$stage==3,]$Confidence,accdf[accdf$stage==3,]$Accuracy,paired=T)
+
+```
+
+When comparing Highest Likelihood Accuracy (likelihood assigned to the highest likelihood differential if it is correct) to Confidence, we find, across stages, participants’ Confidence was not aligned to their Accuracy. Instead, we find evidence of overconfidence at all stages. There was evidence of a significant difference between the two at the Patient History (t(`r histtest$parameter`) = `r round(histtest$statistic,2)`, MDiff = `r round(histtest$estimate,2)`, p = `r round(histtest$p.value,2)`), Physical Examination stages (t(`r exattest$parameter`) = `r round(exattest$statistic,2)`, MDiff = `r round(exattest$estimate,2)`, p = `r round(exattest$p.value,2)`), and Testing stage (t(`r testtest$parameter`) = `r round(testtest$statistic,2)`, MDiff = `r round(testtest$estimate,2)`, p = `r round(testtest$p.value,2)`). 
+
+```{r calibrationttestsbycasehighest, include=FALSE, echo=FALSE}
+
+temp <- studentCaseDf
+
+temp$Accuracy <- temp$highestLikelihoodCorrectValue/10
+temp$Confidence <- temp$finalConfidence/100
+
+cases <- c("AD","GBS","MTB","TA","TTP","UC")
+caseComparisons <- data.frame()
+for (case in cases)
+{
+  ttest <- t.test(temp[temp$caseCode==case,]$Confidence,temp[temp$caseCode==case,]$Accuracy,paired=T)
+  caseComparisons <- rbind(caseComparisons,c(case,as.numeric(ttest$parameter), round(ttest$statistic,2), round(ttest$estimate,2), round(ttest$p.value,2)))
+  
+}
+
+colnames(caseComparisons) <- c("Case","df","t","MDiff","p")
+
+```
+
+In order to examine the observed overconfidence in more detail, we compare confidence and Highest Likelihood Accuracy by case (the mean values of which can be found in Table 1 of the main thesis). We conducted paired t-tests for each condition's cases by comparing Highest Likelihood Accuracy and confidence values (at the final Testing stage) to observe if they significantly differ from each other. A p value of less than .05 is interpreted as evidence for overconfidence or underconfidence (depending on the direction of the effect). We observed overconfidence for the AD case (t(`r as.numeric(caseComparisons[caseComparisons$Case=="AD",]$df)`) = `r as.numeric(caseComparisons[caseComparisons$Case=="AD",]$t)`, MDiff = `r as.numeric(caseComparisons[caseComparisons$Case=="AD",]$MDiff)`, p = < .001), the MTB case (t(`r as.numeric(caseComparisons[caseComparisons$Case=="MTB",]$df)`) = `r as.numeric(caseComparisons[caseComparisons$Case=="MTB",]$t)`, MDiff = `r as.numeric(caseComparisons[caseComparisons$Case=="MTB",]$MDiff)`, p = < .001) and the TTP case (t(`r as.numeric(caseComparisons[caseComparisons$Case=="TTP",]$df)`) = `r as.numeric(caseComparisons[caseComparisons$Case=="TTP",]$t)`, MDiff = `r as.numeric(caseComparisons[caseComparisons$Case=="TTP",]$MDiff)`, p = < .001). The remaining cases did not yield a significant effect. 
+
 # Debrief Questionnaire from Think-Aloud Study (Study 3)
 
 Each question has a corresponding follow-up question below in case they are not answered by responses to the main questions.
