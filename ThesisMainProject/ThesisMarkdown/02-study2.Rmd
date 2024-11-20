@@ -541,6 +541,10 @@ cor <- cor.test(studentAggData$meanInitialDiffs,studentAggData$proportionOfInfo,
 
 cor2 <- cor.test(studentAggData$meanInitialDiffs,studentAggData$meanConfidenceOverallChange,method="pearson")
 
+diffModel <- lmer(caseInformationProportion ~ initialDifferentials + (1 | condition) + (1 | id), data=studentCaseDf)
+
+diffModel2 <- lmer(confidenceChange ~ initialDifferentials + (1 | condition) + (1 | id), data=studentCaseDf)
+
 ```
 
 As a first probe of the dynamics of the diagnostic process, we analysed whether participants who generated more differentials early in the diagnostic process go on to seek more information by conducting a Pearson’s Correlation test on individual differences. We find a positive correlation (see Figure 6) between the average number of differentials generated from the Patient History and the average amount of information sought during cases (r(`r cor$parameter`) = `r round(cor$estimate,2)`, 95% CI = [`r round(cor$conf.int[1],2)`, `r round(cor$conf.int[2],2)`], p = `r round(cor$p.value,3)`, Figure 6a). As previously discussed, participants rarely seem to remove differentials from consideration. Therefore, one can surmise here that higher information seeking is associated with the consideration of more diagnostic differentials. We also find evidence for a positive association between the number of initial differentials and the change in confidence (i.e. the difference in confidence reported during the Patient History stage and the Testing stage) (r(`r cor2$parameter`) = `r round(cor2$estimate,2)`, 95% CI = [`r round(cor2$conf.int[1],2)`, `r round(cor2$conf.int[2],2)`], p = `r round(cor2$p.value,2)`, Figure 6b). 
@@ -550,6 +554,12 @@ As a first probe of the dynamics of the diagnostic process, we analysed whether 
 cor <- cor.test(studentAggData$absoluteDifferentialChange,studentAggData$proportionOfInfo,method="pearson")
 
 cor2 <- cor.test(studentAggData$absoluteDifferentialChange,studentAggData$meanConfidenceOverallChange,method="pearson")
+
+diffModel3 <- lmer(caseInformationProportion ~ absoluteDifferentialChange + (1 | condition) + (1 | id), data=studentCaseDf)
+
+diffModel4 <- lmer(confidenceChange ~ absoluteDifferentialChange + (1 | condition) + (1 | id), data=studentCaseDf)
+
+conInfoModel <- lmer(confidenceChange ~ caseInformationProportion + (1 | condition) + (1 | id), data=studentCaseDf)
 
 ```
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.7.7)  5 NOV 2024 17:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.7.7)  20 NOV 2024 17:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1356,48 +1356,46 @@ Package hyperref Warning: The anchor of a bookmark and its parent's must not
 
 
 {/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/loc
-al/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}] [2] [3] [4] [5] [6]
-<./assets/confidenceCalibration.png, id=59, 416.55624pt x 314.17375pt>
+al/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}] [2] [3] [4] [5] [6] [
+7] [8] [9]
+<./assets/confidenceCalibration.png, id=72, 416.55624pt x 314.17375pt>
 File: ./assets/confidenceCalibration.png Graphic file (type png)
 <use ./assets/confidenceCalibration.png>
 Package pdftex.def Info: ./assets/confidenceCalibration.png  used on input line
- 330.
+ 335.
 (pdftex.def)             Requested size: 421.10046pt x 317.61499pt.
-
-Underfull \vbox (badness 5388) has occurred while \output is active []
-
-[7] [8 <./assets/confidenceCalibration.png>] [9] [10] [11] [12]
-<./assets/OskampGraph.png, id=87, 2053.6725pt x 1935.23pt>
+[10 <./assets/confidenceCalibration.png>] [11] [12] [13] [14]
+<./assets/OskampGraph.png, id=96, 2053.6725pt x 1935.23pt>
 File: ./assets/OskampGraph.png Graphic file (type png)
 <use ./assets/OskampGraph.png>
-Package pdftex.def Info: ./assets/OskampGraph.png  used on input line 356.
+Package pdftex.def Info: ./assets/OskampGraph.png  used on input line 361.
 (pdftex.def)             Requested size: 421.10046pt x 396.81331pt.
-[13 <./assets/OskampGraph.png>] [14] [15] [16] [17] [18] [19] [20]
+[15 <./assets/OskampGraph.png>] [16] [17] [18] [19] [20] [21] [22] [23]
 Package minitoc Info: I0009
 (minitoc)             Listing minitoc auxiliary files. 
 (minitoc)             Creating the 00-introduction.maf file.
 \openout3 = `00-introduction.maf'.
 
-[21] (./00-introduction.aux)
+[24] (./00-introduction.aux)
 Package rerunfilecheck Info: File `00-introduction.out' has not changed.
 (rerunfilecheck)             Checksum: 34CB334CA5C595B36D446EADC547DF26;1208.
  ) 
 Here is how much of TeX's memory you used:
- 24623 strings out of 476025
- 415303 string characters out of 5790018
+ 24626 strings out of 476025
+ 415324 string characters out of 5790018
  1861388 words of memory out of 5000000
  44365 multiletter control sequences out of 15000+600000
  542386 words of font info for 93 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,11n,77p,2634b,636s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,11n,77p,3364b,556s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/lo
 cal/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive
 /2023/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2023/texmf
 -dist/fonts/type1/public/lm/lmri12.pfb>
-Output written on 00-introduction.pdf (21 pages, 316192 bytes).
+Output written on 00-introduction.pdf (24 pages, 322637 bytes).
 PDF statistics:
- 155 PDF objects out of 1000 (max. 8388607)
- 119 compressed objects within 2 object streams
- 27 named destinations out of 1000 (max. 500000)
+ 167 PDF objects out of 1000 (max. 8388607)
+ 128 compressed objects within 2 object streams
+ 30 named destinations out of 1000 (max. 500000)
  11331 words of extra memory for PDF output out of 12000 (max. 10000000)
 
