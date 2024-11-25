@@ -1,8 +1,8 @@
 
 ###############################################
 
-dfPath <- "./study2data.csv"
-df <- read.csv(dfPath, header=TRUE, sep=",")
+#dfPath <- "./study2data.csv"
+#df <- read.csv(dfPath, header=TRUE, sep=",")
 
 infoStages <- c("Patient History", "Physical Exmination", "Testing")
 experiencedIDs <- c("qj4vcw","sz5k4r","kqzd96","s8c6kp","j1bwlt", "jhym2l","gzsfhp")
@@ -21,6 +21,13 @@ accuracyMeasure <- "CorrectLikelihood" #HighestLikelihood, CorrectLikelihood, Di
 classifyVar <- "accuracy" #accuracy or confidence
 
 participantIDS <- unique(df$participantID)
+
+fullDf <- df
+
+df <- df %>%
+  group_by(participantID, trialNum) %>%                            # Group by ID and trialNum
+  filter(!(all(proportionOfInfo == 0))) %>%             # Keep rows where not all proportionOfInfo values are 0
+  ungroup()      
 
 ################################################
 # Aggregate df for participant wise data
@@ -354,6 +361,8 @@ expertAggData <- aggData[aggData$participantID %in% experiencedIDs,]
 ################################################
 ## Generate df for case-wise data
 
+df <- fullDf
+
 nCase <- length(participantIDS)*6
 caseDf <- data.frame(matrix(ncol = 0, nrow = nCase))
 #Generate tests and paired values
@@ -616,3 +625,6 @@ colnames(infoSeekingFullMatrix)[38] <- "AccuracyScore"
 colnames(infoSeekingFullMatrix)[39] <- "AccuracyGroup"
 colnames(infoSeekingFullMatrix)[40] <- "ConfidenceScore"
 colnames(infoSeekingFullMatrix)[41] <- "ConfidenceGroup"
+
+
+studentCaseDf <- studentCaseDf[studentCaseDf$caseInformationProportion>0,]

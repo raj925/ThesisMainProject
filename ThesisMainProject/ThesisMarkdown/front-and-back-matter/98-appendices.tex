@@ -94,6 +94,20 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage[normalem]{ulem}
+\usepackage{makecell}
+\usepackage{xcolor}
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
@@ -108,6 +122,8 @@
 \date{\vspace{-2.5em}}
 
 \begin{document}
+
+\startappendices
 
 \section{Vignette Marking Scheme (Studies 2 and
 3)}\label{vignette-marking-scheme-studies-2-and-3}
@@ -126,21 +142,151 @@ Thrombotic Thrombocytopenic Purpura & TTP & Patient is a 20 year old male was ad
 \bottomrule
 \end{longtable}
 
-\section{Vignette Information Requests and
-Text}\label{vignette-information-requests-and-text}
+\emph{Table S1: Marking scheme used to denote differentials that are
+considered as correct for each of the six patient cases/vignettes. The
+same marking scheme is applied for online and think-aloud vignette
+studies. The presenting complaint is shown to participants at the start
+of the case, before they start seeking information.}
 
-\section{Analysis of Accuracy Using Alternative
-Measures}\label{analysis-of-accuracy-using-alternative-measures}
+\newpage
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{\# Think Aloud Study {-} Debrief Questionnaire}
+\section{Vignette Information
+Requests}\label{vignette-information-requests}
 
-\CommentTok{\# Diagnostic Appropriateness Marking Scheme (Study 3)}
+\begin{longtable}[t]{lll}
+\toprule
+Patient History & Physical Examinations & Testing\\
+\midrule
+History of Presenting Complaint & Take Pulse & Urine Dipstick\\
+Past Medical History & Measure Blood Pressure & ECG\\
+Medications & Assess Respiratory Rate & Abdominal CT Scan\\
+Allergies & Auscultate Lungs & Venous Blood Gas\\
+Family History & Auscultate the Heart & CRP and ESR\\
+\addlinespace
+Social History & Assess Eyes & Clotting Test\\
+ & Measure Temperature & FBC\\
+ & Abdomen Examination & Other Biochemistry tests\\
+ & Rectal Examination & UREA and Electrolytes\\
+ & Neck/Throat Examination & Chest X-Ray\\
+\addlinespace
+ & Assess Head & \\
+ & Neurological Exam Record & \\
+ & Assess Extremities & \\
+\bottomrule
+\end{longtable}
 
-\CommentTok{\# R Environment and Packages}
-\end{Highlighting}
-\end{Shaded}
+\emph{Table S2: Full list of possible information requests that
+participants can make. This set of information is the same for all
+cases. The same vignettes and corresponding information are used for the
+online and think-aloud vignette studies.}
+
+\section{Calibration of Confidence to Alternative Accuracy
+Measures}\label{calibration-of-confidence-to-alternative-accuracy-measures}
+
+\subsection{Differential Accuracy}\label{differential-accuracy}
+
+When comparing Differential Accuracy (if a correct differential is
+provided in the participant's list) to Confidence, we find, across
+stages, participants' Confidence was not aligned to their Accuracy.
+Instead, we find evidence of underconfidence at all stages. There was
+evidence of a significant difference between the two at the Patient
+History (t(84) = 8.24, MDiff = 0.24, p = 0), Physical Examination stage
+(t(84) = -9.09, MDiff = -0.25, p = 0), and Testing stage (t(84) = -7.74,
+MDiff = -0.22, p = 0).
+
+In order to examine the observed underconfidence in more detail, we
+compare confidence and Differential Accuracy by case (the mean values of
+which can be found in Table 1 of the main thesis). We conducted paired
+t-tests for each condition's cases by comparing Differential Accuracy
+and confidence values (at the final Testing stage) to observe if they
+significantly differ from each other. A p value of less than .05 is
+interpreted as evidence for overconfidence or underconfidence (depending
+on the direction of the effect). We observed underconfidence for the GBS
+case (t(84) = -7.43, MDiff = -0.39, p = \textless{} .001), the TA case
+(t(84) = -5.07, MDiff = -0.25, p = \textless{} .001), the TTP case
+(t(84) = -3.23, MDiff = -0.2, p = \textless{} .001) and the UC case
+(t(82) = -14.83, MDiff = -0.38, p = \textless{} .001). The remaining
+cases did not yield a significant effect.
+
+\subsection{Highest Likelihood
+Accuracy}\label{highest-likelihood-accuracy}
+
+When comparing Highest Likelihood Accuracy (likelihood assigned to the
+highest likelihood differential if it is correct) to Confidence, we
+find, across stages, participants' Confidence was not aligned to their
+Accuracy. Instead, we find evidence of overconfidence at all stages.
+There was evidence of a significant difference between the two at the
+Patient History (t(84) = -2.49, MDiff = -0.05, p = 0.01), Physical
+Examination stages (t(84) = 4.45, MDiff = 0.09, p = 0), and Testing
+stage (t(84) = 6.84, MDiff = 0.16, p = 0).
+
+In order to examine the observed overconfidence in more detail, we
+compare confidence and Highest Likelihood Accuracy by case (the mean
+values of which can be found in Table 1 of the main thesis). We
+conducted paired t-tests for each condition's cases by comparing Highest
+Likelihood Accuracy and confidence values (at the final Testing stage)
+to observe if they significantly differ from each other. A p value of
+less than .05 is interpreted as evidence for overconfidence or
+underconfidence (depending on the direction of the effect). We observed
+overconfidence for the AD case (t(84) = 8.92, MDiff = 0.37, p =
+\textless{} .001), the MTB case (t(83) = 7.66, MDiff = 0.35, p =
+\textless{} .001) and the TTP case (t(84) = 4.09, MDiff = 0.21, p =
+\textless{} .001). The remaining cases did not yield a significant
+effect.
+
+\section{Debrief Questionnaire from Think-Aloud Study (Study
+3)}\label{debrief-questionnaire-from-think-aloud-study-study-3}
+
+Each question has a corresponding follow-up question below in case they
+are not answered by responses to the main questions.
+
+\begin{itemize}
+\tightlist
+\item
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \tightlist
+  \item
+    What's your general approach to making diagnoses? \emph{Follow-Up:}
+    Do you have those cognitive aids or frameworks you use?
+  \end{enumerate}
+\item
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \setcounter{enumi}{1}
+  \tightlist
+  \item
+    Do you tend to keep a broad set of differentials in mind?
+    \emph{Follow-Up:} Are there particular situations where having a
+    narrower set would be more useful?
+  \end{enumerate}
+\item
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \setcounter{enumi}{2}
+  \tightlist
+  \item
+    How do you decide what information or tests to get on a patient?
+    \emph{Follow-Up:} Would you say you tend to seek information to
+    confirm or to rule out differentials that you have in mind?
+  \end{enumerate}
+\item
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \setcounter{enumi}{3}
+  \tightlist
+  \item
+    How similar was your diagnostic reasoning on this task versus how
+    you would approach diagnosis in real life? \emph{Follow-Up:} Was
+    there anything that prevented you from approaching the task as you
+    would in real life?
+  \end{enumerate}
+\end{itemize}
+
+\section{Diagnostic Appropriateness Marking Scheme (Study
+3)}\label{diagnostic-appropriateness-marking-scheme-study-3}
+
+\section{R Environment and Packages}\label{r-environment-and-packages}
 
 \begin{Shaded}
 \begin{Highlighting}[]

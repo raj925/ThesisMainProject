@@ -1,7 +1,7 @@
 ---
 output:
-  pdf_document: default
   html_document: default
+  pdf_document: default
 ---
 `r if(knitr:::is_latex_output()) '\\startappendices'`
 
@@ -12,8 +12,11 @@ output:
 
 knitr::opts_chunk$set(cache =TRUE)
 
-install.packages("tidyverse",repos = "http://cran.us.r-project.org")
-library(tidyverse)
+source('../scripts_and_filters/install_packages_if_missing.R')
+
+df <- as.data.frame(read.csv("../study2data.csv",header=TRUE))
+
+source('../scripts_and_filters/Study2/AggregateData.R')
 
 ```
 
@@ -51,21 +54,9 @@ _Table S2: Full list of possible information requests that participants can make
 
 # Calibration of Confidence to Alternative Accuracy Measures
 
-```{r study2data, include=FALSE, eval=knitr::is_latex_output()}
-df <- as.data.frame(read.csv("../study2data.csv",header=TRUE))
-
-df <- df %>%
-  group_by(participantID, trialNum) %>%                            # Group by ID and trialNum
-  filter(!(all(proportionOfInfo == 0))) %>%             # Keep rows where not all proportionOfInfo values are 0
-  ungroup()      
-
-source('scripts_and_filters/Study2/AggregateData.R')
-
-```
-
 ## Differential Accuracy
 
-```{r accanova, include=FALSE, echo=FALSE}
+```{r diffaccanova, include=FALSE, echo=FALSE}
 
 accdf <- studentDf %>%
   group_by(stage,participantID) %>%
@@ -85,7 +76,7 @@ detach()
 
 ```
 
-```{r conanova, include=FALSE, echo=FALSE}
+```{r diffconanova, include=FALSE, echo=FALSE}
 
 condf <- studentDf %>%
   group_by(stage,participantID) %>%
@@ -104,7 +95,7 @@ pairtests <- pairwise.t.test(Confidence,stage,p.adj="bonf")
 detach()
 ```
 
-```{r calibrationttests, include=FALSE, echo=FALSE}
+```{r diffcalibrationttests, include=FALSE, echo=FALSE}
 
 condf$Confidence <- condf$Confidence/100
 
@@ -141,7 +132,7 @@ In order to examine the observed underconfidence in more detail, we compare conf
 
 ## Highest Likelihood Accuracy
 
-```{r accanova, include=FALSE, echo=FALSE}
+```{r highlikaccanova, include=FALSE, echo=FALSE}
 
 accdf <- studentDf %>%
   group_by(stage,participantID) %>%
@@ -161,7 +152,7 @@ detach()
 
 ```
 
-```{r conanova, include=FALSE, echo=FALSE}
+```{r highlikconanova, include=FALSE, echo=FALSE}
 
 condf <- studentDf %>%
   group_by(stage,participantID) %>%
@@ -180,7 +171,7 @@ pairtests <- pairwise.t.test(Confidence,stage,p.adj="bonf")
 detach()
 ```
 
-```{r calibrationttests, include=FALSE, echo=FALSE}
+```{r highlikcalibrationttests, include=FALSE, echo=FALSE}
 
 accdf$Accuracy <- accdf$Accuracy/10
 condf$Confidence <- condf$Confidence/100
