@@ -536,9 +536,8 @@ cor <- cor.test(studentAggData$meanInitialDiffs,studentAggData$proportionOfInfo,
 
 cor2 <- cor.test(studentAggData$meanInitialDiffs,studentAggData$meanConfidenceOverallChange,method="pearson")
 
-diffModel <- lmer(caseInformationProportion ~ initialDifferentials + (1 | condition) + (1 | id), data=studentCaseDf)
 
-diffModel2 <- lmer(confidenceChange ~ initialDifferentials + (1 | condition) + (1 | id), data=studentCaseDf)
+conModel <- lmer(caseInformationProportion ~ initialDifferentials + absoluteDifferentialChange + (1 | condition) + (1 | id), data=studentCaseDf)
 
 ```
 
@@ -918,9 +917,19 @@ _Figure 3.10: Information Seeking Variability (y-axis) for all cases of a given 
 
 ctrl <- trainControl(method = "LOOCV", savePredictions = "final")
 
+
+classifierData <- infoSeekingFullMatrix[infoSeekingFullMatrix$ParticipantType=="p",c(2:29)]
+colnames(classifierData)[1:28] <- c("T2",  "T3",  "T4",  "T5",  "T6",  "T7",  
+                                      "T8",  "T9", "T10", "T11", "T12", "T13", "T14", 
+                                      "T15", "T16", "T17", "T18", "T19", "T20", "T21", "T22", 
+                                      "T23", "T24", "T25", "T26", "T27", "T28", "T29")
+
 classifierData$Condition <- infoSeekingFullMatrix[infoSeekingFullMatrix$ParticipantType=="p",]$Condition
 
-model <- train(Condition ~ T2 + T3 + T4 + T5 + T6 + T7 + T8 + T9 + T10 +
+# Shuffle rows in case there are order biases
+classifierData <- classifierData[sample(1:nrow(classifierData)),]
+
+model <- train(Condition ~ T7 + T8 + T9 + T10 +
                    T11 + T12 + T13 + T14 + T15 + T16 + T17 +  T18 + T19 + T20 +
                    T21 + T22 + T23 + T24 + T25 + T26 + T27 + T28 + T29, method = "glmnet", family="multinomial", data = classifierData, trControl = ctrl)
 
@@ -962,7 +971,7 @@ coefficientMeans$Sign <- sign(coefficientMeans$Coefficients)
 modelcoeffsCase <- coefficientMeans$Coefficients
 
 
-modelcoeffsCase <- cbind(modelcoeffsCase,allTests[-1])
+modelcoeffsCase <- cbind(modelcoeffsCase,allTests[-(1:6)])
 colnames(modelcoeffsCase) <- c("Coefficients","TestNames")
 modelcoeffsCase <- as.data.frame(modelcoeffsCase)
 modelcoeffsCase$Sign <- coefficientMeans$Sign
@@ -980,7 +989,7 @@ modelcoeffsCase$PercentChangeInOdds <- modelcoeffsCase$OddsRatio-1
 
 ```
 
-Given that information seeking variability has a weak negative association with accuracy on our task, we next ask if information seeking is also specific to patient conditions. If so, we would expect the information sought to be predictive of which case the participant is performing. To investigate this, we train a classifier using Penalized Multinomial Regression and Leave One Out Cross Validation. Our input parameters are the available information requests as binary predictors (i.e. to denote whether they were sought on each case or not). The outcome variable of the classifier is the patient condition. We generate model predictions and then look at whether they correctly match the actual condition for that case. Across 510 cases (85 participants performing 6 cases each), the accuracy of the classifier was `r round(classifierAccuracy*100)`%, which is higher than the chance level of 16.6%. When breaking down accuracy by condition, we find accuracy to be above chance across all conditions (see Table 3.2 below). 
+Given that information seeking variability has a weak negative association with accuracy on our task, we next ask if information seeking is also specific to patient conditions. If so, we would expect the information sought to be predictive of which case the participant is performing. To investigate this, we train a classifier using Penalized Multinomial Regression and Leave One Out Cross Validation (i.e. we train the classifier on all data except one case, and ask if, based on learnt patterns in the remaining data, whether we are able to predict which case/condition it is based on information seeking patterns). Our input parameters are the available information requests as binary predictors (i.e. to denote whether they were sought on each case or not). The outcome variable of the classifier is the patient condition. We generate model predictions and then look at whether they correctly match the actual condition for that case. Across 510 cases (85 participants performing 6 cases each), the accuracy of the classifier was `r round(classifierAccuracy*100)`%, which is higher than the chance level of 16.6%. When breaking down accuracy of our classifier by condition, we find accuracy to be above chance across all conditions (see Table 3.2 below). 
 
 ```{r caseClassifierTable, include=TRUE, eval=TRUE, message=FALSE, echo=FALSE, warning=FALSE,out.width='100%', fig.align='center', fig.height=5}
 
@@ -999,7 +1008,7 @@ knitr::kable(casewisePredictions) %>%
 _Table 3.2: The accuracy of our multinomial classifier that predicts patient condition for each case based on the information sought/not sought as binary predictors. We then test the accuracy of the classifier by comparing the predicted condition from the model against the actual patient condition for each case. We then split cases by condition to look at accuracy on a case-by-case level. Given that participants perform 6 cases each, accuracy would be 1/6 (16.6%) when at chance._
 
 \
-Taking these findings together, keeping information seeking more constant (i.e. requesting similar high-value information) across cases was found to have an association with accuracy whilst there also being some information that is useful for clinicians to know for patients with specific conditions. To reconcile these, we derive which information requests were most weighted in our classifier models to find which were considered markers of accuracy (by being sought across cases) and which were considered markers of identifying specific cases. We extract coefficients from the logistic classifier of accuracy (the ROC curve for which was shown in Figure 3.8) and the multinomial classifier (the accuracy of which was depicted above in Table 3.2). We identify the highest weighted information requests as input parameters for each model. The five highest weighted information requests for each model are shown below in Table 3.3.
+Taking these findings together, keeping information seeking more constant (i.e. requesting similar high-value information) across cases was found to have an association with accuracy whilst there also being some information that is useful for clinicians to know for patients with specific conditions. To reconcile these, we derive which information requests were most weighted in our classifier models to find which were considered markers of accuracy (by being sought across cases) and which were considered markers of identifying specific cases. We extract coefficients from the logistic classifier of accuracy (the ROC curve for which was shown in Figure 3.8) and the multinomial classifier (the accuracy of which was depicted above in Table 3.2). We identify the highest weighted information requests as input parameters for each model. The five highest weighted information requests for each model are shown below in Table 3.3. We also show how often each piece of information was sought for each of the cases in Figure 3.11 below. Viewing this figure shows individual tests that are useful for specific cases. For example, an ECG is sought by most participants for the AD (a heart condition) case.
 
 ```{r coefficientTable, include=TRUE, eval=TRUE, message=FALSE, echo=FALSE, warning=FALSE,out.width='100%', fig.align='center'}
 
@@ -1029,7 +1038,11 @@ add_header_above(c(" " = 1, "Accuracy" = 3, "Condition" = 3))
 ```
 _Table 3.3: The five highest weighted parameters (by the absolute value of the coefficient values) for our logistic classifier of participant accuracy (under the "Accuracy" heading above) and our multinomial classifier of patient condition (under the "Condition" heading above). We also show coefficient values and odds ratio values for each parameter. _
 
-```{r infoProps, include=TRUE, eval=FALSE, message=FALSE, echo=FALSE, warning=FALSE,out.width='100%', fig.align='center'}
+```{r infoProps, include=TRUE, eval=TRUE, message=FALSE, echo=FALSE, warning=FALSE,out.width='100%', fig.align='center'}
+
+temp <- infoSeekingFullMatrix[,c(1:29)]
+temp$Condition <- infoSeekingFullMatrix$Condition
+colnames(temp) <- c(allTests,"Condition")
 
 infoProp <- temp %>%
      group_by(Condition) %>%
@@ -1039,10 +1052,11 @@ infoProp <- as.data.frame(infoProp)
 rownames(infoProp) <- c(infoProp[1])[[1]]
 infoProp <- infoProp[-1]
 
-pheatmap(infoProp, display_numbers = T, color = colorRampPalette(c('skyblue','red'))(100), cluster_rows = F, cluster_cols = F, fontsize_number = 9,
+pheatmap(infoProp, display_numbers = T, color = colorRampPalette(c('#56B4E9','#D55E00'))(100), cluster_rows = F, cluster_cols = F, fontsize_number = 5,
 number_color = "black")
 
 ```
+_Figure 3.11: Visualisation of the proportion of participants who sought each available piece of information (columns, x-axis) broken down by case (rows, y-axis). Lighter blue colours indicate that fewer participants sought that information for a given case (i.e. towards 0%), whilst lighter orange colours indicate more participants sought that information for a given case (i.e. towards 100%)_
 
 ## Discussion {.unnumbered}
 

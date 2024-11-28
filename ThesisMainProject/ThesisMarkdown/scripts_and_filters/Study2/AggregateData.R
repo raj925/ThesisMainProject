@@ -626,5 +626,5 @@ colnames(infoSeekingFullMatrix)[39] <- "AccuracyGroup"
 colnames(infoSeekingFullMatrix)[40] <- "ConfidenceScore"
 colnames(infoSeekingFullMatrix)[41] <- "ConfidenceGroup"
 
-
+infoSeekingFullMatrix <- infoSeekingFullMatrix[studentCaseDf$caseInformationProportion>0,]
 studentCaseDf <- studentCaseDf[studentCaseDf$caseInformationProportion>0,]
