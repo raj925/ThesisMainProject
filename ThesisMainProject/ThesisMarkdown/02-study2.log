@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.7.7)  28 NOV 2024 14:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.7.7)  30 NOV 2024 01:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1169,11 +1169,16 @@ Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
 \rotheadsize=\dimen299
 \c@nlinenum=\count349
 \TeXr@lab=\toks46
-) (/usr/local/texlive/2023/texmf-dist/tex/latex/titlesec/titlesec.sty
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/tools/hhline.sty
+Package: hhline 2020/01/04 v2.04 Table rule package (DPC)
+)
+\Oldarrayrulewidth=\skip92
+\Oldtabcolsep=\skip93
+(/usr/local/texlive/2023/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2021/07/05 v2.14 Sectioning titles
 \ttl@box=\box128
-\beforetitleunit=\skip92
-\aftertitleunit=\skip93
+\beforetitleunit=\skip94
+\aftertitleunit=\skip95
 \ttl@plus=\dimen300
 \ttl@minus=\dimen301
 \ttl@toksa=\toks47
@@ -1183,15 +1188,15 @@ Package: titlesec 2021/07/05 v2.14 Sectioning titles
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
 
-\f@nch@headwidth=\skip94
-\f@nch@O@elh=\skip95
-\f@nch@O@erh=\skip96
-\f@nch@O@olh=\skip97
-\f@nch@O@orh=\skip98
-\f@nch@O@elf=\skip99
-\f@nch@O@erf=\skip100
-\f@nch@O@olf=\skip101
-\f@nch@O@orf=\skip102
+\f@nch@headwidth=\skip96
+\f@nch@O@elh=\skip97
+\f@nch@O@erh=\skip98
+\f@nch@O@olh=\skip99
+\f@nch@O@orh=\skip100
+\f@nch@O@elf=\skip101
+\f@nch@O@erf=\skip102
+\f@nch@O@olf=\skip103
+\f@nch@O@orf=\skip104
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
 Package: fancyvrb 2023/01/19 4.5a verbatim text (tvz,hv)
 \FV@CodeLineNo=\count350
@@ -1227,7 +1232,7 @@ LaTeX Info: Redefining \\ on input line 3131.
 \c@FV@TrueTabGroupLevel=\count361
 \c@FV@TrueTabCounter=\count362
 \FV@TabBox@Group=\box131
-\FV@TmpLength=\skip103
+\FV@TmpLength=\skip105
 \c@FV@HighlightLinesStart=\count363
 \c@FV@HighlightLinesStop=\count364
 \FV@LoopCount=\count365
@@ -1271,31 +1276,31 @@ Package csquotes Info: Redefining alias 'default' -> 'english'.
 (./02-study2.aux)
 \openout1 = `02-study2.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 198.
-LaTeX Font Info:    ... okay on input line 198.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 198.
-LaTeX Font Info:    ... okay on input line 198.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 198.
-LaTeX Font Info:    ... okay on input line 198.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 198.
-LaTeX Font Info:    ... okay on input line 198.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 198.
-LaTeX Font Info:    ... okay on input line 198.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 198.
-LaTeX Font Info:    ... okay on input line 198.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 198.
-LaTeX Font Info:    ... okay on input line 198.
-LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 198.
-LaTeX Font Info:    Trying to load font information for LGR+cmr on input line 1
-98.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 203.
+LaTeX Font Info:    ... okay on input line 203.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 203.
+LaTeX Font Info:    ... okay on input line 203.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 203.
+LaTeX Font Info:    ... okay on input line 203.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 203.
+LaTeX Font Info:    ... okay on input line 203.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 203.
+LaTeX Font Info:    ... okay on input line 203.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 203.
+LaTeX Font Info:    ... okay on input line 203.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 203.
+LaTeX Font Info:    ... okay on input line 203.
+LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 203.
+LaTeX Font Info:    Trying to load font information for LGR+cmr on input line 2
+03.
 (/usr/local/texlive/2023/texmf-dist/tex/latex/cbfonts-fd/lgrcmr.fd
 File: lgrcmr.fd 2017/07/29 v1.2 Greek European Computer Regular
 )
-LaTeX Font Info:    ... okay on input line 198.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 198.
-LaTeX Font Info:    ... okay on input line 198.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 198.
-LaTeX Font Info:    ... okay on input line 198.
+LaTeX Font Info:    ... okay on input line 203.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 203.
+LaTeX Font Info:    ... okay on input line 203.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 203.
+LaTeX Font Info:    ... okay on input line 203.
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -1351,19 +1356,19 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Info: Redefining \microtypecontext on input line 198.
-Package microtype Info: Applying patch `item' on input line 198.
-Package microtype Info: Applying patch `toc' on input line 198.
-Package microtype Info: Applying patch `eqnum' on input line 198.
-Package microtype Info: Applying patch `footnote' on input line 198.
-Package microtype Info: Applying patch `verbatim' on input line 198.
+LaTeX Info: Redefining \microtypecontext on input line 203.
+Package microtype Info: Applying patch `item' on input line 203.
+Package microtype Info: Applying patch `toc' on input line 203.
+Package microtype Info: Applying patch `eqnum' on input line 203.
+Package microtype Info: Applying patch `footnote' on input line 203.
+Package microtype Info: Applying patch `verbatim' on input line 203.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 198.
+LaTeX Info: Redefining \showhyphens on input line 203.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -1384,7 +1389,7 @@ File: puenc-greek.def 2023/03/08 2.2.1 Greek LICRs for PDF strings
 File: greek-fontenc.def 2023/03/08 2.2.1 Common Greek font encoding definitions
 
 ))
-Package hyperref Info: Link coloring ON on input line 198.
+Package hyperref Info: Link coloring ON on input line 203.
 (./02-study2.out) (./02-study2.out)
 \@outlinefile=\write5
 \openout5 = `02-study2.out'.
@@ -1392,10 +1397,10 @@ Package hyperref Info: Link coloring ON on input line 198.
 
 Package minitoc Warning: W0010
 (minitoc)                No file 02-study2.toc. 
-(minitoc)                MINITOCS NOT PREPARED on input line 268.
+(minitoc)                MINITOCS NOT PREPARED on input line 273.
 
-LaTeX Font Info:    Trying to load font information for T1+put on input line 28
-9.
+LaTeX Font Info:    Trying to load font information for T1+put on input line 29
+4.
 (/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/t1put.fd
 File: t1put.fd 2001/06/04 font definitions for T1/put.
 )
@@ -1405,15 +1410,10 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             See the microtype manual for details.
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 296.
+(hyperref)                be the same. Added a new anchor on input line 301.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 300--302
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 303--304
+Underfull \hbox (badness 10000) in paragraph at lines 308--310
 
  []
 
@@ -1424,39 +1424,24 @@ Underfull \hbox (badness 10000) in paragraph at lines 303--304
 
 {/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/loc
 al/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}]
-Overfull \hbox (17.38763pt too wide) in paragraph at lines 305--306
+Overfull \hbox (17.38763pt too wide) in paragraph at lines 311--312
 []\T1/lmr/m/n/12 (-20) Crucially, this past work stud-ies in-for-ma-tion seek-i
 ng by ask-ing par-tic-i-pants/clinicians
  []
 
-[2] [3]
-Underfull \hbox (badness 10000) in paragraph at lines 313--315
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 316--317
-
- []
-
-[4]
-Underfull \hbox (badness 10000) in paragraph at lines 318--319
-
- []
-
-[5]
-Underfull \hbox (badness 10000) in paragraph at lines 322--324
+[2] [3] [4] [5]
+Underfull \hbox (badness 10000) in paragraph at lines 331--333
 
  []
 
 [6]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 3
-33.
+42.
 (/usr/local/texlive/2023/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [7{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}]
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 3
-45.
+54.
 (/usr/local/texlive/2023/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -1465,51 +1450,51 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 3
-45.
+54.
 (/usr/local/texlive/2023/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 3
-45.
+54.
 (/usr/local/texlive/2023/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-345.
+354.
 (/usr/local/texlive/2023/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-345.
+354.
 (/usr/local/texlive/2023/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 345.
+(Font)              <12> on input line 354.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 345.
+(Font)              <8> on input line 354.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 345.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 345
+(Font)              <6> on input line 354.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 354
 .
 (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 345
+LaTeX Font Info:    Trying to load font information for U+msb on input line 354
 .
 (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 ) [8]
-Underfull \hbox (badness 10000) in paragraph at lines 355--356
+Underfull \hbox (badness 10000) in paragraph at lines 364--365
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 362--363
+Underfull \hbox (badness 10000) in paragraph at lines 371--372
 
  []
 
@@ -1517,16 +1502,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 362--363
 <./assets/Paradigm.png, id=74, 623.4492pt x 351.9549pt>
 File: ./assets/Paradigm.png Graphic file (type png)
 <use ./assets/Paradigm.png>
-Package pdftex.def Info: ./assets/Paradigm.png  used on input line 364.
+Package pdftex.def Info: ./assets/Paradigm.png  used on input line 373.
 (pdftex.def)             Requested size: 421.10046pt x 237.72578pt.
 [10 <./assets/Paradigm.png>]
 <./assets/Screenshot1.png, id=80, 992.70876pt x 796.9775pt>
 File: ./assets/Screenshot1.png Graphic file (type png)
 <use ./assets/Screenshot1.png>
-Package pdftex.def Info: ./assets/Screenshot1.png  used on input line 370.
+Package pdftex.def Info: ./assets/Screenshot1.png  used on input line 379.
 (pdftex.def)             Requested size: 421.10046pt x 338.07251pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 374--375
+Underfull \hbox (badness 10000) in paragraph at lines 383--384
 
  []
 
@@ -1534,44 +1519,39 @@ Underfull \hbox (badness 10000) in paragraph at lines 374--375
 <./assets/Screenshot2.png, id=87, 1427.3325pt x 550.055pt>
 File: ./assets/Screenshot2.png Graphic file (type png)
 <use ./assets/Screenshot2.png>
-Package pdftex.def Info: ./assets/Screenshot2.png  used on input line 376.
+Package pdftex.def Info: ./assets/Screenshot2.png  used on input line 385.
 (pdftex.def)             Requested size: 421.10046pt x 162.2816pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 378--379
+Underfull \hbox (badness 10000) in paragraph at lines 387--388
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 380--381
+Underfull \hbox (badness 10000) in paragraph at lines 389--390
 
  []
 
 [12 <./assets/Screenshot2.png>] [13] [14] [15] [16] [17]
-Underfull \hbox (badness 10000) in paragraph at lines 433--435
+Underfull \hbox (badness 10000) in paragraph at lines 442--444
 
  []
 
 [18{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/l
-ocal/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}]
-Overfull \hbox (234.06151pt too wide) in paragraph at lines 438--455
- [][] 
- []
-
-[19]
+ocal/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}] [19]
 <02-study2_files/figure-latex/meyerGraph-1.pdf, id=126, 459.7175pt x 550.055pt>
 
 File: 02-study2_files/figure-latex/meyerGraph-1.pdf Graphic file (type pdf)
 <use 02-study2_files/figure-latex/meyerGraph-1.pdf>
 Package pdftex.def Info: 02-study2_files/figure-latex/meyerGraph-1.pdf  used on
- input line 459.
+ input line 525.
 (pdftex.def)             Requested size: 421.10046pt x 503.87451pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 461--462
+Underfull \hbox (badness 10000) in paragraph at lines 527--528
 
  []
 
 [20 <./02-study2_files/figure-latex/meyerGraph-1.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 468--469
+Underfull \hbox (badness 10000) in paragraph at lines 534--535
 
  []
 
@@ -1582,7 +1562,7 @@ File: 02-study2_files/figure-latex/diffsOverStages-1.pdf Graphic file (type pdf
 )
 <use 02-study2_files/figure-latex/diffsOverStages-1.pdf>
 Package pdftex.def Info: 02-study2_files/figure-latex/diffsOverStages-1.pdf  us
-ed on input line 470.
+ed on input line 536.
 (pdftex.def)             Requested size: 421.10046pt x 394.80032pt.
 [22 <./02-study2_files/figure-latex/diffsOverStages-1.pdf>] [23]
 <02-study2_files/figure-latex/diffsPlot-1.pdf, id=163, 460.72125pt x 713.66624p
@@ -1590,18 +1570,18 @@ t>
 File: 02-study2_files/figure-latex/diffsPlot-1.pdf Graphic file (type pdf)
 <use 02-study2_files/figure-latex/diffsPlot-1.pdf>
 Package pdftex.def Info: 02-study2_files/figure-latex/diffsPlot-1.pdf  used on 
-input line 483.
+input line 547.
 (pdftex.def)             Requested size: 421.10046pt x 652.29037pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [24 <./02-study2_files/figure-latex/diffsPlot-1.pdf>] [25]
-Underfull \hbox (badness 10000) in paragraph at lines 492--493
+Underfull \hbox (badness 10000) in paragraph at lines 556--557
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 494--495
+Underfull \hbox (badness 10000) in paragraph at lines 558--559
 
  []
 
@@ -1611,10 +1591,10 @@ pt>
 File: 02-study2_files/figure-latex/confAccPlot-1.pdf Graphic file (type pdf)
 <use 02-study2_files/figure-latex/confAccPlot-1.pdf>
 Package pdftex.def Info: 02-study2_files/figure-latex/confAccPlot-1.pdf  used o
-n input line 500.
+n input line 564.
 (pdftex.def)             Requested size: 421.10046pt x 653.74959pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 502--503
+Underfull \hbox (badness 10000) in paragraph at lines 566--567
 
  []
 
@@ -1622,17 +1602,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 502--503
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [28 <./02-study2_files/figure-latex/confAccPlot-1.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 504--505
+Underfull \hbox (badness 10000) in paragraph at lines 568--569
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 506--507
+Underfull \hbox (badness 10000) in paragraph at lines 570--571
 
  []
 
 [29]
-Underfull \hbox (badness 10000) in paragraph at lines 508--509
+Underfull \hbox (badness 10000) in paragraph at lines 572--573
 
  []
 
@@ -1642,15 +1622,15 @@ File: 02-study2_files/figure-latex/accuracyClassifier-1.pdf Graphic file (type
 pdf)
 <use 02-study2_files/figure-latex/accuracyClassifier-1.pdf>
 Package pdftex.def Info: 02-study2_files/figure-latex/accuracyClassifier-1.pdf 
- used on input line 510.
+ used on input line 574.
 (pdftex.def)             Requested size: 421.10046pt x 278.56033pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 512--513
+Underfull \hbox (badness 10000) in paragraph at lines 576--577
 
  []
 
 [30 <./02-study2_files/figure-latex/accuracyClassifier-1.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 514--515
+Underfull \hbox (badness 10000) in paragraph at lines 578--579
 
  []
 
@@ -1660,7 +1640,7 @@ t>
 File: 02-study2_files/figure-latex/accVarPlot-1.pdf Graphic file (type pdf)
 <use 02-study2_files/figure-latex/accVarPlot-1.pdf>
 Package pdftex.def Info: 02-study2_files/figure-latex/accVarPlot-1.pdf  used on
- input line 521.
+ input line 585.
 (pdftex.def)             Requested size: 421.10046pt x 285.95798pt.
 [32 <./02-study2_files/figure-latex/accVarPlot-1.pdf>]
 <02-study2_files/figure-latex/accVarSplitPlot-1.pdf, id=245, 453.695pt x 313.17
@@ -1669,10 +1649,10 @@ File: 02-study2_files/figure-latex/accVarSplitPlot-1.pdf Graphic file (type pdf
 )
 <use 02-study2_files/figure-latex/accVarSplitPlot-1.pdf>
 Package pdftex.def Info: 02-study2_files/figure-latex/accVarSplitPlot-1.pdf  us
-ed on input line 527.
+ed on input line 591.
 (pdftex.def)             Requested size: 421.10046pt x 290.67165pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 531--532
+Underfull \hbox (badness 10000) in paragraph at lines 595--596
 
  []
 
@@ -1681,35 +1661,35 @@ Underfull \hbox (badness 10000) in paragraph at lines 531--532
 File: 02-study2_files/figure-latex/infoProps-1.pdf Graphic file (type pdf)
 <use 02-study2_files/figure-latex/infoProps-1.pdf>
 Package pdftex.def Info: 02-study2_files/figure-latex/infoProps-1.pdf  used on 
-input line 585.
+input line 768.
 (pdftex.def)             Requested size: 421.10046pt x 288.02896pt.
-[35 <./02-study2_files/figure-latex/infoProps-1.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 592--593
+[35]
+Underfull \hbox (badness 10000) in paragraph at lines 775--776
+
+ []
+
+[36 <./02-study2_files/figure-latex/infoProps-1.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 777--778
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 594--595
+Underfull \hbox (badness 10000) in paragraph at lines 779--780
 
  []
 
-[36]
-Underfull \hbox (badness 10000) in paragraph at lines 596--597
+[37] [38]
+Underfull \hbox (badness 10000) in paragraph at lines 781--783
 
  []
 
-[37]
-Underfull \hbox (badness 10000) in paragraph at lines 598--600
-
- []
-
-[38] [39]
-Underfull \hbox (badness 10000) in paragraph at lines 614--615
+[39]
+Underfull \hbox (badness 10000) in paragraph at lines 797--798
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 617--618
+Underfull \hbox (badness 10000) in paragraph at lines 800--801
 
  []
 
@@ -1721,14 +1701,14 @@ Package minitoc Info: I0009
 
 [42] (./02-study2.aux)
 Package rerunfilecheck Info: File `02-study2.out' has not changed.
-(rerunfilecheck)             Checksum: 996BD63223DE71A98CB3AEB33A5A5659;827.
+(rerunfilecheck)             Checksum: 36D749B360B248F261F26DA3605BFB89;821.
  ) 
 Here is how much of TeX's memory you used:
- 26171 strings out of 476025
- 443600 string characters out of 5790018
- 1864388 words of memory out of 5000000
- 45727 multiletter control sequences out of 15000+600000
- 568082 words of font info for 148 fonts, out of 8000000 for 9000
+ 26208 strings out of 476025
+ 444364 string characters out of 5790018
+ 1871388 words of memory out of 5000000
+ 45754 multiletter control sequences out of 15000+600000
+ 574455 words of font info for 154 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,12n,77p,3074b,689s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/lo
@@ -1738,10 +1718,10 @@ f-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2023/texmf-dist/font
 s/type1/public/lm/lmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/publ
 ic/lm/lmri12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmtt
 12.pfb>
-Output written on 02-study2.pdf (42 pages, 1386667 bytes).
+Output written on 02-study2.pdf (42 pages, 1386279 bytes).
 PDF statistics:
  359 PDF objects out of 1000 (max. 8388607)
  267 compressed objects within 3 object streams
  48 named destinations out of 1000 (max. 500000)
- 26208 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 30304 words of extra memory for PDF output out of 35830 (max. 10000000)
 

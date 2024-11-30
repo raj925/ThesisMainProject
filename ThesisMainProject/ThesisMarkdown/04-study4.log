@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.7.7)  24 OCT 2024 12:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.7.7)  29 NOV 2024 15:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1356,19 +1356,19 @@ Package hyperref Warning: The anchor of a bookmark and its parent's must not
 
 
 {/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/loc
-al/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}] [2] [3]
+al/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}] [2]
 Underfull \hbox (badness 10000) in paragraph at lines 301--303
 
  []
 
-[4]
+[3] [4]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 3
-14.
+17.
 (/usr/local/texlive/2023/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [5{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}]
+)
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 3
-32.
+35.
 (/usr/local/texlive/2023/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -1377,157 +1377,157 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 3
-32.
+35.
 (/usr/local/texlive/2023/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 3
-32.
+35.
 (/usr/local/texlive/2023/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-332.
+335.
 (/usr/local/texlive/2023/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-332.
+335.
 (/usr/local/texlive/2023/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 332.
+(Font)              <12> on input line 335.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 332.
+(Font)              <8> on input line 335.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 332.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 332
+(Font)              <6> on input line 335.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 335
 .
 (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 332
+LaTeX Font Info:    Trying to load font information for U+msb on input line 335
 .
 (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-) [6]
+) [5{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}] [6]
 <./assets/VRScreenshot1.png, id=55, 452.69125pt x 283.0575pt>
 File: ./assets/VRScreenshot1.png Graphic file (type png)
 <use ./assets/VRScreenshot1.png>
-Package pdftex.def Info: ./assets/VRScreenshot1.png  used on input line 336.
+Package pdftex.def Info: ./assets/VRScreenshot1.png  used on input line 339.
 (pdftex.def)             Requested size: 421.10046pt x 263.30553pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 338--339
+Underfull \hbox (badness 10000) in paragraph at lines 341--342
 
  []
 
 <./assets/VRScreenshot2.png, id=57, 452.69125pt x 283.0575pt>
 File: ./assets/VRScreenshot2.png Graphic file (type png)
 <use ./assets/VRScreenshot2.png>
-Package pdftex.def Info: ./assets/VRScreenshot2.png  used on input line 340.
+Package pdftex.def Info: ./assets/VRScreenshot2.png  used on input line 343.
 (pdftex.def)             Requested size: 421.10046pt x 263.30553pt.
 [7 <./assets/VRScreenshot1.png> <./assets/VRScreenshot2.png>]
-Overfull \hbox (30.44182pt too wide) in paragraph at lines 369--370
+Overfull \hbox (30.44182pt too wide) in paragraph at lines 372--373
 \T1/lmr/m/n/12 (-20) breath and drowsi-ness (\T1/lmr/bx/n/12 (-20) Underlying C
 on-di-tion: Chest Sep-sis/Pneumonia\T1/lmr/m/n/12 (-20) ) 
  []
 
-[8] [9] [10] [11]
-<./assets/OMSScoreExample.png, id=81, 571.13374pt x 734.745pt>
+[8] [9] [10] [11] [12]
+<./assets/OMSScoreExample.png, id=85, 571.13374pt x 734.745pt>
 File: ./assets/OMSScoreExample.png Graphic file (type png)
 <use ./assets/OMSScoreExample.png>
-Package pdftex.def Info: ./assets/OMSScoreExample.png  used on input line 416.
+Package pdftex.def Info: ./assets/OMSScoreExample.png  used on input line 437.
 (pdftex.def)             Requested size: 421.10046pt x 541.7296pt.
-[12 <./assets/OMSScoreExample.png>] [13] [14{/usr/local/texlive/2023/texmf-dist
+[13 <./assets/OMSScoreExample.png>] [14] [15{/usr/local/texlive/2023/texmf-dist
 /fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2023/texmf-dist/fonts/enc
 /dvips/lm/lm-rm.enc}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-m
 athsy.enc}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}
-] [15] [16] [17]
-<04-study4_files/figure-latex/diagtime-1.pdf, id=117, 453.695pt x 315.1775pt>
-File: 04-study4_files/figure-latex/diagtime-1.pdf Graphic file (type pdf)
-<use 04-study4_files/figure-latex/diagtime-1.pdf>
-Package pdftex.def Info: 04-study4_files/figure-latex/diagtime-1.pdf  used on i
-nput line 533.
-(pdftex.def)             Requested size: 421.10046pt x 292.53493pt.
-
-Underfull \vbox (badness 1675) has occurred while \output is active []
-
-[18] [19 <./04-study4_files/figure-latex/diagtime-1.pdf>]
-<04-study4_files/figure-latex/confidencetime-1.pdf, id=134, 453.695pt x 315.177
+] [16] [17] [18] [19] [20]
+<04-study4_files/figure-latex/confidencetime-1.pdf, id=130, 453.695pt x 315.177
 5pt>
 File: 04-study4_files/figure-latex/confidencetime-1.pdf Graphic file (type pdf)
 
 <use 04-study4_files/figure-latex/confidencetime-1.pdf>
 Package pdftex.def Info: 04-study4_files/figure-latex/confidencetime-1.pdf  use
-d on input line 539.
+d on input line 578.
 (pdftex.def)             Requested size: 421.10046pt x 292.53493pt.
-[20 <./04-study4_files/figure-latex/confidencetime-1.pdf>] [21]
-Underfull \hbox (badness 10000) in paragraph at lines 556--558
+[21 <./04-study4_files/figure-latex/confidencetime-1.pdf>] [22]
+<04-study4_files/figure-latex/diagtime-1.pdf, id=146, 453.695pt x 315.1775pt>
+File: 04-study4_files/figure-latex/diagtime-1.pdf Graphic file (type pdf)
+<use 04-study4_files/figure-latex/diagtime-1.pdf>
+Package pdftex.def Info: 04-study4_files/figure-latex/diagtime-1.pdf  used on i
+nput line 590.
+(pdftex.def)             Requested size: 421.10046pt x 292.53493pt.
+[23 <./04-study4_files/figure-latex/diagtime-1.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 599--601
 
  []
 
-<04-study4_files/figure-latex/subinfoseekingplot-1.pdf, id=150, 451.6875pt x 30
+<04-study4_files/figure-latex/subinfoseekingplot-1.pdf, id=158, 451.6875pt x 30
 6.14375pt>
 File: 04-study4_files/figure-latex/subinfoseekingplot-1.pdf Graphic file (type 
 pdf)
 <use 04-study4_files/figure-latex/subinfoseekingplot-1.pdf>
 Package pdftex.def Info: 04-study4_files/figure-latex/subinfoseekingplot-1.pdf 
- used on input line 561.
+ used on input line 604.
 (pdftex.def)             Requested size: 421.10046pt x 285.43011pt.
-[22]
-<04-study4_files/figure-latex/finalconfidenceplot-1.pdf, id=155, 451.6875pt x 3
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[24]
+<04-study4_files/figure-latex/finalconfidenceplot-1.pdf, id=163, 451.6875pt x 3
 03.1325pt>
 File: 04-study4_files/figure-latex/finalconfidenceplot-1.pdf Graphic file (type
  pdf)
 <use 04-study4_files/figure-latex/finalconfidenceplot-1.pdf>
 Package pdftex.def Info: 04-study4_files/figure-latex/finalconfidenceplot-1.pdf
-  used on input line 567.
+  used on input line 610.
 (pdftex.def)             Requested size: 421.10046pt x 282.62262pt.
 
 Underfull \vbox (badness 1024) has occurred while \output is active []
 
-[23 <./04-study4_files/figure-latex/subinfoseekingplot-1.pdf>] [24 <./04-study4
-_files/figure-latex/finalconfidenceplot-1.pdf>] [25]
-<04-study4_files/figure-latex/pcaclassifierplot-1.pdf, id=190, 453.695pt x 300.
+[25 <./04-study4_files/figure-latex/subinfoseekingplot-1.pdf>] [26 <./04-study4
+_files/figure-latex/finalconfidenceplot-1.pdf>] [27]
+<04-study4_files/figure-latex/pcaclassifierplot-1.pdf, id=198, 453.695pt x 300.
 12125pt>
 File: 04-study4_files/figure-latex/pcaclassifierplot-1.pdf Graphic file (type p
 df)
 <use 04-study4_files/figure-latex/pcaclassifierplot-1.pdf>
 Package pdftex.def Info: 04-study4_files/figure-latex/pcaclassifierplot-1.pdf  
-used on input line 584.
+used on input line 627.
 (pdftex.def)             Requested size: 421.10046pt x 278.56033pt.
-[26 <./04-study4_files/figure-latex/pcaclassifierplot-1.pdf>]
-<04-study4_files/figure-latex/historyvalplot-1.pdf, id=203, 459.7175pt x 315.17
+[28 <./04-study4_files/figure-latex/pcaclassifierplot-1.pdf>]
+<04-study4_files/figure-latex/historyvalplot-1.pdf, id=211, 459.7175pt x 315.17
 75pt>
 File: 04-study4_files/figure-latex/historyvalplot-1.pdf Graphic file (type pdf)
 
 <use 04-study4_files/figure-latex/historyvalplot-1.pdf>
 Package pdftex.def Info: 04-study4_files/figure-latex/historyvalplot-1.pdf  use
-d on input line 591.
+d on input line 634.
 (pdftex.def)             Requested size: 421.10046pt x 288.71642pt.
-[27 <./04-study4_files/figure-latex/historyvalplot-1.pdf>] [28] [29] [30] [31]
+[29 <./04-study4_files/figure-latex/historyvalplot-1.pdf>] [30] [31] [32] [33]
 Package minitoc Info: I0009
 (minitoc)             Listing minitoc auxiliary files. 
 (minitoc)             Creating the 04-study4.maf file.
 \openout3 = `04-study4.maf'.
 
-[32] (./04-study4.aux)
+[34] (./04-study4.aux)
 Package rerunfilecheck Info: File `04-study4.out' has not changed.
 (rerunfilecheck)             Checksum: 1BB1C18A7489BF4BE375BCF1E5609D7F;961.
  ) 
 Here is how much of TeX's memory you used:
- 25045 strings out of 476025
- 424962 string characters out of 5790018
- 1861388 words of memory out of 5000000
- 44637 multiletter control sequences out of 15000+600000
- 573863 words of font info for 151 fonts, out of 8000000 for 9000
+ 25064 strings out of 476025
+ 425242 string characters out of 5790018
+ 1860388 words of memory out of 5000000
+ 44642 multiletter control sequences out of 15000+600000
+ 574563 words of font info for 157 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,12n,77p,2146b,681s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,12n,77p,2142b,683s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/lo
 cal/texlive/2023/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texliv
 e/2023/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2023/tex
@@ -1539,10 +1539,10 @@ blic/lm/lmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr
 live/2023/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2023/
 texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2023/texmf-dist/
 fonts/type1/public/lm/lmtt12.pfb>
-Output written on 04-study4.pdf (32 pages, 2087635 bytes).
+Output written on 04-study4.pdf (34 pages, 2090998 bytes).
 PDF statistics:
- 311 PDF objects out of 1000 (max. 8388607)
- 223 compressed objects within 3 object streams
- 36 named destinations out of 1000 (max. 500000)
+ 322 PDF objects out of 1000 (max. 8388607)
+ 232 compressed objects within 3 object streams
+ 38 named destinations out of 1000 (max. 500000)
  30294 words of extra memory for PDF output out of 35830 (max. 10000000)
 

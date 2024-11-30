@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.7.7)  28 NOV 2024 13:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.7.7)  30 NOV 2024 01:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1169,11 +1169,16 @@ Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
 \rotheadsize=\dimen299
 \c@nlinenum=\count349
 \TeXr@lab=\toks46
-) (/usr/local/texlive/2023/texmf-dist/tex/latex/titlesec/titlesec.sty
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/tools/hhline.sty
+Package: hhline 2020/01/04 v2.04 Table rule package (DPC)
+)
+\Oldarrayrulewidth=\skip92
+\Oldtabcolsep=\skip93
+(/usr/local/texlive/2023/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2021/07/05 v2.14 Sectioning titles
 \ttl@box=\box128
-\beforetitleunit=\skip92
-\aftertitleunit=\skip93
+\beforetitleunit=\skip94
+\aftertitleunit=\skip95
 \ttl@plus=\dimen300
 \ttl@minus=\dimen301
 \ttl@toksa=\toks47
@@ -1183,15 +1188,15 @@ Package: titlesec 2021/07/05 v2.14 Sectioning titles
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
 
-\f@nch@headwidth=\skip94
-\f@nch@O@elh=\skip95
-\f@nch@O@erh=\skip96
-\f@nch@O@olh=\skip97
-\f@nch@O@orh=\skip98
-\f@nch@O@elf=\skip99
-\f@nch@O@erf=\skip100
-\f@nch@O@olf=\skip101
-\f@nch@O@orf=\skip102
+\f@nch@headwidth=\skip96
+\f@nch@O@elh=\skip97
+\f@nch@O@erh=\skip98
+\f@nch@O@olh=\skip99
+\f@nch@O@orh=\skip100
+\f@nch@O@elf=\skip101
+\f@nch@O@erf=\skip102
+\f@nch@O@olf=\skip103
+\f@nch@O@orf=\skip104
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
 Package: fancyvrb 2023/01/19 4.5a verbatim text (tvz,hv)
 \FV@CodeLineNo=\count350
@@ -1227,7 +1232,7 @@ LaTeX Info: Redefining \\ on input line 3131.
 \c@FV@TrueTabGroupLevel=\count361
 \c@FV@TrueTabCounter=\count362
 \FV@TabBox@Group=\box131
-\FV@TmpLength=\skip103
+\FV@TmpLength=\skip105
 \c@FV@HighlightLinesStart=\count363
 \c@FV@HighlightLinesStop=\count364
 \FV@LoopCount=\count365
@@ -1271,31 +1276,31 @@ Package csquotes Info: Redefining alias 'default' -> 'english'.
 (./03-study3.aux)
 \openout1 = `03-study3.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 198.
-LaTeX Font Info:    ... okay on input line 198.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 198.
-LaTeX Font Info:    ... okay on input line 198.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 198.
-LaTeX Font Info:    ... okay on input line 198.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 198.
-LaTeX Font Info:    ... okay on input line 198.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 198.
-LaTeX Font Info:    ... okay on input line 198.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 198.
-LaTeX Font Info:    ... okay on input line 198.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 198.
-LaTeX Font Info:    ... okay on input line 198.
-LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 198.
-LaTeX Font Info:    Trying to load font information for LGR+cmr on input line 1
-98.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 203.
+LaTeX Font Info:    ... okay on input line 203.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 203.
+LaTeX Font Info:    ... okay on input line 203.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 203.
+LaTeX Font Info:    ... okay on input line 203.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 203.
+LaTeX Font Info:    ... okay on input line 203.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 203.
+LaTeX Font Info:    ... okay on input line 203.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 203.
+LaTeX Font Info:    ... okay on input line 203.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 203.
+LaTeX Font Info:    ... okay on input line 203.
+LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 203.
+LaTeX Font Info:    Trying to load font information for LGR+cmr on input line 2
+03.
 (/usr/local/texlive/2023/texmf-dist/tex/latex/cbfonts-fd/lgrcmr.fd
 File: lgrcmr.fd 2017/07/29 v1.2 Greek European Computer Regular
 )
-LaTeX Font Info:    ... okay on input line 198.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 198.
-LaTeX Font Info:    ... okay on input line 198.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 198.
-LaTeX Font Info:    ... okay on input line 198.
+LaTeX Font Info:    ... okay on input line 203.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 203.
+LaTeX Font Info:    ... okay on input line 203.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 203.
+LaTeX Font Info:    ... okay on input line 203.
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -1351,19 +1356,19 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Info: Redefining \microtypecontext on input line 198.
-Package microtype Info: Applying patch `item' on input line 198.
-Package microtype Info: Applying patch `toc' on input line 198.
-Package microtype Info: Applying patch `eqnum' on input line 198.
-Package microtype Info: Applying patch `footnote' on input line 198.
-Package microtype Info: Applying patch `verbatim' on input line 198.
+LaTeX Info: Redefining \microtypecontext on input line 203.
+Package microtype Info: Applying patch `item' on input line 203.
+Package microtype Info: Applying patch `toc' on input line 203.
+Package microtype Info: Applying patch `eqnum' on input line 203.
+Package microtype Info: Applying patch `footnote' on input line 203.
+Package microtype Info: Applying patch `verbatim' on input line 203.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 198.
+LaTeX Info: Redefining \showhyphens on input line 203.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -1384,7 +1389,7 @@ File: puenc-greek.def 2023/03/08 2.2.1 Greek LICRs for PDF strings
 File: greek-fontenc.def 2023/03/08 2.2.1 Common Greek font encoding definitions
 
 ))
-Package hyperref Info: Link coloring ON on input line 198.
+Package hyperref Info: Link coloring ON on input line 203.
 (./03-study3.out) (./03-study3.out)
 \@outlinefile=\write5
 \openout5 = `03-study3.out'.
@@ -1392,10 +1397,10 @@ Package hyperref Info: Link coloring ON on input line 198.
 
 Package minitoc Warning: W0010
 (minitoc)                No file 03-study3.toc. 
-(minitoc)                MINITOCS NOT PREPARED on input line 268.
+(minitoc)                MINITOCS NOT PREPARED on input line 273.
 
-LaTeX Font Info:    Trying to load font information for T1+put on input line 28
-9.
+LaTeX Font Info:    Trying to load font information for T1+put on input line 29
+4.
 (/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/t1put.fd
 File: t1put.fd 2001/06/04 font definitions for T1/put.
 )
@@ -1405,7 +1410,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             See the microtype manual for details.
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 296.
+(hyperref)                be the same. Added a new anchor on input line 301.
 
 [1
 
@@ -1414,289 +1419,322 @@ Package hyperref Warning: The anchor of a bookmark and its parent's must not
 
 {/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/loc
 al/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}] [2] [3]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 3
-17.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 4
+08.
 (/usr/local/texlive/2023/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-Underfull \hbox (badness 10000) in paragraph at lines 328--331
+Underfull \hbox (badness 10000) in paragraph at lines 438--458
 
  []
 
 [4{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}]
-Underfull \hbox (badness 10000) in paragraph at lines 332--333
+Underfull \hbox (badness 10000) in paragraph at lines 459--484
 
  []
 
 [5] [6] [7] [8]
-Underfull \hbox (badness 10000) in paragraph at lines 380--382
+Underfull \hbox (badness 10000) in paragraph at lines 607--618
 
  []
 
 [9]
-Underfull \hbox (badness 10000) in paragraph at lines 399--400
+Underfull \hbox (badness 10000) in paragraph at lines 671--680
 
  []
 
 [10] [11]
-Underfull \hbox (badness 10000) in paragraph at lines 436--437
+Underfull \hbox (badness 10000) in paragraph at lines 769--773
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 439--440
+Underfull \hbox (badness 10000) in paragraph at lines 775--797
 
  []
 
 [12] [13] [14]
-Underfull \hbox (badness 10000) in paragraph at lines 456--457
+Underfull \hbox (badness 10000) in paragraph at lines 886--913
 
  []
 
 [15] [16]
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 4
-69.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 9
+70.
 (/usr/local/texlive/2023/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 4
-69.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 9
+70.
 (/usr/local/texlive/2023/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-469.
+970.
 (/usr/local/texlive/2023/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-469.
+970.
 (/usr/local/texlive/2023/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 469.
+(Font)              <12> on input line 970.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 469.
+(Font)              <8> on input line 970.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 469.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 469
+(Font)              <6> on input line 970.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 970
 .
 (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 469
+LaTeX Font Info:    Trying to load font information for U+msb on input line 970
 .
 (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-) [17{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}]
-Overfull \hbox (249.86653pt too wide) in paragraph at lines 499--516
- [][] 
- []
-
-[18] [19]
-<03-study3_files/figure-latex/diffbarsplot-1.pdf, id=110, 448.67625pt x 428.601
+) [17] [18{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}
+] [19] [20]
+<03-study3_files/figure-latex/diffbarsplot-1.pdf, id=114, 448.67625pt x 428.601
 26pt>
 File: 03-study3_files/figure-latex/diffbarsplot-1.pdf Graphic file (type pdf)
 <use 03-study3_files/figure-latex/diffbarsplot-1.pdf>
 Package pdftex.def Info: 03-study3_files/figure-latex/diffbarsplot-1.pdf  used 
-on input line 525.
+on input line 1190.
 (pdftex.def)             Requested size: 421.10046pt x 402.27048pt.
-[20 <./03-study3_files/figure-latex/diffbarsplot-1.pdf>]
-<03-study3_files/figure-latex/stratbreakdown-1.pdf, id=126, 453.695pt x 302.128
+[21 <./03-study3_files/figure-latex/diffbarsplot-1.pdf>]
+Overfull \hbox (44.51953pt too wide) in alignment at lines 1234--1242
+ [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (44.51953pt too wide) in alignment at lines 1242--1248
+ [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (44.51953pt too wide) in alignment at lines 1248--1348
+ [] [] [] [] [] [] [] [] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1364--1365
+
+ []
+
+[22]
+<03-study3_files/figure-latex/stratbreakdown-1.pdf, id=135, 453.695pt x 302.128
 75pt>
 File: 03-study3_files/figure-latex/stratbreakdown-1.pdf Graphic file (type pdf)
 
 <use 03-study3_files/figure-latex/stratbreakdown-1.pdf>
 Package pdftex.def Info: 03-study3_files/figure-latex/stratbreakdown-1.pdf  use
-d on input line 581.
+d on input line 1366.
 (pdftex.def)             Requested size: 453.6939pt x 302.128pt.
 
-Overfull \hbox (50.21825pt too wide) in paragraph at lines 581--583
-[][]
+Overfull \hbox (50.21825pt too wide) in paragraph at lines 1366--1367
+[][] 
  []
 
 
-Underfull \vbox (badness 5008) has occurred while \output is active []
-
-[21]
-Underfull \hbox (badness 10000) in paragraph at lines 584--585
+Underfull \hbox (badness 10000) in paragraph at lines 1380--1381
 
  []
 
 
-Overfull \hbox (27.59381pt too wide) in alignment at lines 586--590
+Overfull \hbox (27.59381pt too wide) in alignment at lines 1382--1386
  [] [] [] [] 
  []
 
 
-Overfull \hbox (27.59381pt too wide) in alignment at lines 590--595
+Overfull \hbox (27.59381pt too wide) in alignment at lines 1386--1391
  [] [] [] [] 
  []
 
 
-Overfull \hbox (27.59381pt too wide) in alignment at lines 595--608
+Overfull \hbox (27.59381pt too wide) in alignment at lines 1391--1404
  [] [] [] [] 
  []
 
-[22 <./03-study3_files/figure-latex/stratbreakdown-1.pdf>] [23]
-Overfull \hbox (295.82065pt too wide) in paragraph at lines 617--630
- [][] 
+[23 <./03-study3_files/figure-latex/stratbreakdown-1.pdf>] [24] [25]
+Overfull \hbox (1.41077pt too wide) in paragraph at lines 1434--1434
+ []|[]\T1/lmr/m/n/11 (-20) Differentials 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 632--633
+Overfull \hbox (44.51953pt too wide) in alignment at lines 1428--1436
+ [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (1.41077pt too wide) in paragraph at lines 1440--1440
+ []|[]\T1/lmr/m/n/11 (-20) Differentials 
+ []
+
+
+Overfull \hbox (44.51953pt too wide) in alignment at lines 1436--1442
+ [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (44.51953pt too wide) in alignment at lines 1442--1470
+ [] [] [] [] [] [] [] [] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1494--1495
 
  []
 
-[24] [25]
-Underfull \hbox (badness 10000) in paragraph at lines 664--666
+[26] [27] [28]
+Underfull \hbox (badness 10000) in paragraph at lines 1703--1704
 
  []
 
-[26] [27]
-Overfull \hbox (39.9938pt too wide) in alignment at lines 683--687
+
+Overfull \hbox (39.9938pt too wide) in alignment at lines 1764--1768
  [] [] [] [] [] 
  []
 
 
-Overfull \hbox (39.9938pt too wide) in alignment at lines 687--692
+Overfull \hbox (39.9938pt too wide) in alignment at lines 1768--1773
  [] [] [] [] [] 
  []
 
 
-Overfull \hbox (39.9938pt too wide) in alignment at lines 692--725
+Overfull \hbox (39.9938pt too wide) in alignment at lines 1773--1806
  [] [] [] [] [] 
  []
 
-[28] [29] [30] [31] [32] [33]
-Underfull \hbox (badness 10000) in paragraph at lines 729--730
+[29] [30] [31] [32] [33] [34]
+Underfull \hbox (badness 10000) in paragraph at lines 1819--1820
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 741--742
-
- []
-
-[34] [35]
-Underfull \hbox (badness 10000) in paragraph at lines 757--759
+[35]
+Underfull \hbox (badness 10000) in paragraph at lines 1863--1875
 
  []
 
 [36]
-Underfull \hbox (badness 10000) in paragraph at lines 774--775
+Underfull \hbox (badness 10000) in paragraph at lines 1909--1924
+
+ []
+
+[37] [38]
+Underfull \hbox (badness 10000) in paragraph at lines 1970--1971
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 776--777
-
- []
-
-[37]
-Underfull \hbox (badness 10000) in paragraph at lines 790--791
-
- []
-
-[38]
-Underfull \hbox (badness 10000) in paragraph at lines 806--807
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 808--809
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 810--811
+Underfull \hbox (badness 10000) in paragraph at lines 1972--1978
 
  []
 
 [39]
-Underfull \hbox (badness 10000) in paragraph at lines 816--817
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 818--819
+Underfull \hbox (badness 10000) in paragraph at lines 2014--2022
 
  []
 
 [40]
-Underfull \hbox (badness 10000) in paragraph at lines 832--833
+Underfull \hbox (badness 10000) in paragraph at lines 2050--2054
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 838--839
+Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2061--2069
 
  []
 
 [41]
-Underfull \hbox (badness 10000) in paragraph at lines 840--841
+Underfull \hbox (badness 10000) in paragraph at lines 2079--2080
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 853--854
+Underfull \hbox (badness 10000) in paragraph at lines 2081--2087
 
  []
 
-[42] [43] [44]
-<03-study3_files/figure-latex/accmodelplot-1.pdf, id=242, 448.67625pt x 315.177
+[42]
+Underfull \hbox (badness 10000) in paragraph at lines 2118--2124
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2136--2137
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2138--2141
+
+ []
+
+[43]
+Underfull \hbox (badness 10000) in paragraph at lines 2170--2210
+
+ []
+
+[44] [45] [46]
+Underfull \hbox (badness 10000) in paragraph at lines 2300--2301
+
+ []
+
+<03-study3_files/figure-latex/accmodelplot-1.pdf, id=250, 448.67625pt x 315.177
 5pt>
 File: 03-study3_files/figure-latex/accmodelplot-1.pdf Graphic file (type pdf)
 <use 03-study3_files/figure-latex/accmodelplot-1.pdf>
 Package pdftex.def Info: 03-study3_files/figure-latex/accmodelplot-1.pdf  used 
-on input line 864.
+on input line 2302.
 (pdftex.def)             Requested size: 448.67516pt x 315.17673pt.
 
-Overfull \hbox (27.57469pt too wide) in paragraph at lines 863--866
-[]
+Overfull \hbox (45.19951pt too wide) in paragraph at lines 2302--2303
+[][] 
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[45]
-Underfull \hbox (badness 10000) in paragraph at lines 870--871
+[47 <./03-study3_files/figure-latex/accmodelplot-1.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 2314--2328
 
  []
 
-[46 <./03-study3_files/figure-latex/accmodelplot-1.pdf>] [47] [48] [49] [50] [5
-1] [52]
+[48] [49] [50] [51] [52] [53] [54]
 Package minitoc Info: I0009
 (minitoc)             Listing minitoc auxiliary files. 
 (minitoc)             Creating the 03-study3.maf file.
 \openout3 = `03-study3.maf'.
 
-[53] (./03-study3.aux)
+[55] (./03-study3.aux)
 Package rerunfilecheck Info: File `03-study3.out' has not changed.
-(rerunfilecheck)             Checksum: 1C71B9445C480264587ECF4A32D78275;894.
+(rerunfilecheck)             Checksum: 3D171BDAE3629C08EC9E73756ACC9CF7;894.
  ) 
 Here is how much of TeX's memory you used:
- 26088 strings out of 476025
- 440315 string characters out of 5790018
- 1907388 words of memory out of 5000000
- 45622 multiletter control sequences out of 15000+600000
- 569055 words of font info for 158 fonts, out of 8000000 for 9000
+ 26122 strings out of 476025
+ 440988 string characters out of 5790018
+ 1911388 words of memory out of 5000000
+ 45650 multiletter control sequences out of 15000+600000
+ 572171 words of font info for 160 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,12n,77p,2433b,668s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,12n,77p,1295b,675s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/lo
 cal/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texliv
 e/2023/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2023/texm
 f-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2023/texmf-dist/font
 s/type1/public/lm/lmri12.pfb>
-Output written on 03-study3.pdf (53 pages, 256907 bytes).
+Output written on 03-study3.pdf (55 pages, 256558 bytes).
 PDF statistics:
- 335 PDF objects out of 1000 (max. 8388607)
- 257 compressed objects within 3 object streams
- 64 named destinations out of 1000 (max. 500000)
- 25656 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 344 PDF objects out of 1000 (max. 8388607)
+ 264 compressed objects within 3 object streams
+ 66 named destinations out of 1000 (max. 500000)
+ 27704 words of extra memory for PDF output out of 29859 (max. 10000000)
 

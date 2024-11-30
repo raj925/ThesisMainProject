@@ -1,0 +1,23 @@
+Scenario,Probable/Possible Differentials,Improbable/Unlikely Differentials
+Asthma,Asthma / asthma excerbation,Epiglotitis 
+,Pneumonia / LRTI ,Croup 
+,RSV / Virual URTI ,PE
+,Foreign Body ,
+,Anaphylaxis ,
+,Viral Induced Wheeze,
+DKA,DKA ,Alcohol ingestion 
+,URTI / throat infection / tonsillitis ,Sickle Cell 
+,Gastroenteritis / abdominal infection ,Inborn errors of metabolism 
+,Insulin non compliance ,
+,Sepsis ,
+,Viral infection,
+Seizure,Epilepsy ,Fictitious / malingering 
+,Meningitis / CNS infection / encephalitis ,Alcohol withdrawing 
+,Hypo / hypoglycaemia ,Sickle cell 
+,Non accidential injury (NEA) ,Inborn errors of metabolism
+,Space occupying lesion (SOL) / tumour,
+Pneumonia,Pneumonia / LRTI ,Anaphylaxis 
+,URTI / cold / flu ,Pleural effusion 
+,Viral LRTI ,Pneumothorax
+,Asthma ,
+,Inhaled foreign body (FB),

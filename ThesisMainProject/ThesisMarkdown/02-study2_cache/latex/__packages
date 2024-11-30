@@ -80,3 +80,5 @@ lsr
 cowplot
 diffcor
 pheatmap
+readxl
+flextable
