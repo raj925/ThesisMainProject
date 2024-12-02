@@ -1,6 +1,7 @@
 ---
 output:
   pdf_document: default
+  word_document: default
   html_document: default
 ---
 <!-- `r if(knitr:::is_latex_output()) '\\startappendices'` -->
@@ -28,8 +29,15 @@ marking <- as.data.frame(read.csv("../assets/VignetteMarkingScheme.csv",header=T
 
 colnames(marking) <- c("Condition","Abbreviation","Presenting Complaint","Accepted Answers")
 
-knitr::kable(marking) %>% 
-  kableExtra::kable_styling(latex_options=c("HOLD_position","scale_down"))
+#knitr::kable(marking) %>% 
+#  kableExtra::kable_styling(latex_options=c("HOLD_position","scale_down"))
+
+ft <- flextable(marking)
+ft <- align(ft, part = "all", align = "center")
+ft <- width(ft, width = 1.5)
+
+
+ft
 
 ```
 
@@ -45,8 +53,14 @@ marking <- as.data.frame(read.csv("../assets/VignetteInformationRequests.csv",he
 
 colnames(marking) <- c("Patient History", "Physical Examinations", "Testing")
 
-knitr::kable(marking) %>% 
-  kableExtra::kable_styling(latex_options=c("HOLD_position","scale_down"))
+#knitr::kable(marking) %>% 
+#  kableExtra::kable_styling(latex_options=c("HOLD_position","scale_down"))
+
+ft <- flextable(marking)
+ft <- align(ft, part = "all", align = "center")
+ft <- width(ft, width = 2)
+
+ft
 
 ```
 
@@ -224,8 +238,6 @@ Each question has a corresponding follow-up question below in case they are not 
 
 # Diagnostic Appropriateness Marking Scheme for VR Study
 
-The table below shows differentials for each scenario that were categorised as probable/possible and those categorised as improbable/unlikely. Any differentials provided by participants that were not included in this table were considered incorrect. 
-
 ``` {r vrmarking, include=TRUE, eval=TRUE, message=FALSE, echo=FALSE, warning=FALSE,out.width='100%', fig.align='center'}
 
 marking <- as.data.frame(read_excel("../assets/VRMarking.xlsx"))
@@ -234,10 +246,20 @@ colnames(marking) <- c("Scenario","Probable/Possible Differentials","Improbable/
 
 marking[is.na(marking)] <- ""
 
-knitr::kable(marking) %>% 
-  kableExtra::kable_styling(latex_options=c("HOLD_position","scale_down"))
+#knitr::kable(marking) %>% 
+#  kableExtra::kable_styling(latex_options=c("HOLD_position","scale_down"))
+
+ft <- flextable(marking)
+ft <- align(ft, part = "all", align = "center")
+ft <- width(ft, width = 2)
+
+ft
 
 ```
+
+\newpage
+
+_Table S3: Marking criteria for the VR Study. Differentials are shown for each scenario that were marked as either probable/possible and those categorised as improbable/unlikely. Any differentials not included in this table were marked as incorrect._
 
 \newpage
 

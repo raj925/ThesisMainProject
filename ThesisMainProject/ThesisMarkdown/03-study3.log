@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.7.7)  30 NOV 2024 01:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.7.7)  30 NOV 2024 14:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1505,25 +1505,25 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 File: 03-study3_files/figure-latex/diffbarsplot-1.pdf Graphic file (type pdf)
 <use 03-study3_files/figure-latex/diffbarsplot-1.pdf>
 Package pdftex.def Info: 03-study3_files/figure-latex/diffbarsplot-1.pdf  used 
-on input line 1190.
+on input line 1192.
 (pdftex.def)             Requested size: 421.10046pt x 402.27048pt.
 [21 <./03-study3_files/figure-latex/diffbarsplot-1.pdf>]
-Overfull \hbox (44.51953pt too wide) in alignment at lines 1234--1242
+Overfull \hbox (44.51953pt too wide) in alignment at lines 1236--1244
  [] [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (44.51953pt too wide) in alignment at lines 1242--1248
+Overfull \hbox (44.51953pt too wide) in alignment at lines 1244--1250
  [] [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (44.51953pt too wide) in alignment at lines 1248--1348
+Overfull \hbox (44.51953pt too wide) in alignment at lines 1250--1350
  [] [] [] [] [] [] [] [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1364--1365
+Underfull \hbox (badness 10000) in paragraph at lines 1366--1367
 
  []
 
@@ -1534,160 +1534,160 @@ File: 03-study3_files/figure-latex/stratbreakdown-1.pdf Graphic file (type pdf)
 
 <use 03-study3_files/figure-latex/stratbreakdown-1.pdf>
 Package pdftex.def Info: 03-study3_files/figure-latex/stratbreakdown-1.pdf  use
-d on input line 1366.
+d on input line 1368.
 (pdftex.def)             Requested size: 453.6939pt x 302.128pt.
 
-Overfull \hbox (50.21825pt too wide) in paragraph at lines 1366--1367
+Overfull \hbox (50.21825pt too wide) in paragraph at lines 1368--1369
 [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1380--1381
+Underfull \hbox (badness 10000) in paragraph at lines 1382--1383
 
  []
 
 
-Overfull \hbox (27.59381pt too wide) in alignment at lines 1382--1386
+Overfull \hbox (27.59381pt too wide) in alignment at lines 1384--1388
  [] [] [] [] 
  []
 
 
-Overfull \hbox (27.59381pt too wide) in alignment at lines 1386--1391
+Overfull \hbox (27.59381pt too wide) in alignment at lines 1388--1393
  [] [] [] [] 
  []
 
 
-Overfull \hbox (27.59381pt too wide) in alignment at lines 1391--1404
+Overfull \hbox (27.59381pt too wide) in alignment at lines 1393--1406
  [] [] [] [] 
  []
 
 [23 <./03-study3_files/figure-latex/stratbreakdown-1.pdf>] [24] [25]
-Overfull \hbox (1.41077pt too wide) in paragraph at lines 1434--1434
+Overfull \hbox (1.41077pt too wide) in paragraph at lines 1436--1436
  []|[]\T1/lmr/m/n/11 (-20) Differentials 
  []
 
 
-Overfull \hbox (44.51953pt too wide) in alignment at lines 1428--1436
+Overfull \hbox (44.51953pt too wide) in alignment at lines 1430--1438
  [] [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (1.41077pt too wide) in paragraph at lines 1440--1440
+Overfull \hbox (1.41077pt too wide) in paragraph at lines 1442--1442
  []|[]\T1/lmr/m/n/11 (-20) Differentials 
  []
 
 
-Overfull \hbox (44.51953pt too wide) in alignment at lines 1436--1442
+Overfull \hbox (44.51953pt too wide) in alignment at lines 1438--1444
  [] [] [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (44.51953pt too wide) in alignment at lines 1442--1470
+Overfull \hbox (44.51953pt too wide) in alignment at lines 1444--1472
  [] [] [] [] [] [] [] [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1494--1495
+Underfull \hbox (badness 10000) in paragraph at lines 1496--1497
 
  []
 
 [26] [27] [28]
-Underfull \hbox (badness 10000) in paragraph at lines 1703--1704
+Underfull \hbox (badness 10000) in paragraph at lines 1707--1708
 
  []
 
 
-Overfull \hbox (39.9938pt too wide) in alignment at lines 1764--1768
+Overfull \hbox (39.9938pt too wide) in alignment at lines 1768--1772
  [] [] [] [] [] 
  []
 
 
-Overfull \hbox (39.9938pt too wide) in alignment at lines 1768--1773
+Overfull \hbox (39.9938pt too wide) in alignment at lines 1772--1777
  [] [] [] [] [] 
  []
 
 
-Overfull \hbox (39.9938pt too wide) in alignment at lines 1773--1806
+Overfull \hbox (39.9938pt too wide) in alignment at lines 1777--1810
  [] [] [] [] [] 
  []
 
 [29] [30] [31] [32] [33] [34]
-Underfull \hbox (badness 10000) in paragraph at lines 1819--1820
+Underfull \hbox (badness 10000) in paragraph at lines 1823--1824
 
  []
 
 [35]
-Underfull \hbox (badness 10000) in paragraph at lines 1863--1875
+Underfull \hbox (badness 10000) in paragraph at lines 1867--1879
 
  []
 
 [36]
-Underfull \hbox (badness 10000) in paragraph at lines 1909--1924
+Underfull \hbox (badness 10000) in paragraph at lines 1913--1928
 
  []
 
 [37] [38]
-Underfull \hbox (badness 10000) in paragraph at lines 1970--1971
+Underfull \hbox (badness 10000) in paragraph at lines 1974--1975
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1972--1978
+Underfull \hbox (badness 10000) in paragraph at lines 1976--1982
 
  []
 
 [39]
-Underfull \hbox (badness 10000) in paragraph at lines 2014--2022
+Underfull \hbox (badness 10000) in paragraph at lines 2018--2026
 
  []
 
 [40]
-Underfull \hbox (badness 10000) in paragraph at lines 2050--2054
+Underfull \hbox (badness 10000) in paragraph at lines 2054--2058
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2059--2060
+Underfull \hbox (badness 10000) in paragraph at lines 2063--2064
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2061--2069
+Underfull \hbox (badness 10000) in paragraph at lines 2065--2073
 
  []
 
 [41]
-Underfull \hbox (badness 10000) in paragraph at lines 2079--2080
+Underfull \hbox (badness 10000) in paragraph at lines 2083--2084
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2081--2087
+Underfull \hbox (badness 10000) in paragraph at lines 2085--2091
 
  []
 
 [42]
-Underfull \hbox (badness 10000) in paragraph at lines 2118--2124
+Underfull \hbox (badness 10000) in paragraph at lines 2122--2128
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2136--2137
+Underfull \hbox (badness 10000) in paragraph at lines 2140--2141
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2138--2141
+Underfull \hbox (badness 10000) in paragraph at lines 2142--2145
 
  []
 
 [43]
-Underfull \hbox (badness 10000) in paragraph at lines 2170--2210
+Underfull \hbox (badness 10000) in paragraph at lines 2174--2214
 
  []
 
 [44] [45] [46]
-Underfull \hbox (badness 10000) in paragraph at lines 2300--2301
+Underfull \hbox (badness 10000) in paragraph at lines 2304--2305
 
  []
 
@@ -1696,15 +1696,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 2300--2301
 File: 03-study3_files/figure-latex/accmodelplot-1.pdf Graphic file (type pdf)
 <use 03-study3_files/figure-latex/accmodelplot-1.pdf>
 Package pdftex.def Info: 03-study3_files/figure-latex/accmodelplot-1.pdf  used 
-on input line 2302.
+on input line 2306.
 (pdftex.def)             Requested size: 448.67516pt x 315.17673pt.
 
-Overfull \hbox (45.19951pt too wide) in paragraph at lines 2302--2303
+Overfull \hbox (45.19951pt too wide) in paragraph at lines 2306--2307
 [][] 
  []
 
 [47 <./03-study3_files/figure-latex/accmodelplot-1.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 2314--2328
+Underfull \hbox (badness 10000) in paragraph at lines 2318--2332
 
  []
 
@@ -1731,7 +1731,7 @@ cal/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texliv
 e/2023/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2023/texm
 f-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2023/texmf-dist/font
 s/type1/public/lm/lmri12.pfb>
-Output written on 03-study3.pdf (55 pages, 256558 bytes).
+Output written on 03-study3.pdf (55 pages, 256086 bytes).
 PDF statistics:
  344 PDF objects out of 1000 (max. 8388607)
  264 compressed objects within 3 object streams

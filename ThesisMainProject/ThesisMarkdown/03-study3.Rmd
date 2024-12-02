@@ -1243,6 +1243,8 @@ cases
 (`r round(dominantStratCompare[dominantStratCompare$matchingCaseDominantStrat==1,]$N/sum(dominantStratCompare$N)*100,1)`%
 of cases, excluding those cases without a clear reasoning strategy).
 
+\newpage
+
 ```{r dominantstratstable, include = TRUE,warning=FALSE, message=FALSE, echo=FALSE}
 
 colnames(dominantStrat)[1] <- "Dominant Strategy"
