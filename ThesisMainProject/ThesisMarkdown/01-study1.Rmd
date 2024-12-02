@@ -179,6 +179,12 @@ education journals being most common (19 studies). Clinical areas most
 represented were Primary Care/General Practice, Emergency Medicine and
 Nursing.
 
+```{r chartable, include=TRUE, echo=FALSE, out.width='100%', fig.align='center'}
+
+knitr::include_graphics("./assets/ReviewTable.png")
+
+```
+
 *Table 1.1: Characteristics of Included Studies, including year of
 publication, study environment used and medical population (recruiting
 single or multiple levels of participant experience, medical

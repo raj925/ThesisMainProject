@@ -452,7 +452,7 @@ print(p)
 
 ```
 
-*Figure 3.4: Graph showing Confidence (green) at each of the three information stages (History = Patient History, Physical = Physical Examinations, Testing = Testing) in comparison to our main accuracy measure (black, likelihood value assigned to the correct diagnosis), the more lenient measure of the proportion of trials where a correct differential was included (dark red) and the stricter measure of the value assigned to the highest likelihood differential if it is correct (orange) .*\
+*Figure 3.4: Graph showing Confidence (green) at each of the three information stages (History = Patient History, Physical = Physical Examinations, Testing = Testing) in comparison to our main accuracy measure (black, likelihood value assigned to the correct diagnosis), the more lenient measure of the proportion of trials where a correct differential was included (dark red) and the stricter measure of the value assigned to the highest likelihood differential if it is correct (orange). Values shown are averaged across participants and cases, with the error bars representing standard error.*\
 
 ```{r calibrationttestsbycase, include=FALSE, echo=FALSE}
 
@@ -497,9 +497,11 @@ pairtests <- pairwise.t.test(Differentials,stage,p.adj="bonf")
 detach()
 ```
 
-We now analyse the number of differentials to provide insights into the diagnostic decision process across stages, specifically the degree to which it follows a process of deductive narrowing (decreasing differentials) or open-minded broadening (increasing differentials). Analysis of the number of differentials considered by participants at each stage provides little evidence for an overall strategy of deductive narrowing towards a single differential. Instead, participants overall increased the number of the differentials they reported as they received more information (F(`r model$DF[1]`, `r model$DF[2]`) = `r round(model$F[1],2)`, $\eta^2$G = `r etasq`, p \< .001). Participants reported fewer differentials during the Patient History stage (M = `r round(mean(diffdf[diffdf$stage==1,]$Differentials),2)`, SD = `r round(sd(diffdf[diffdf$stage==1,]$Differentials),2)`) than during the Physical Examination (M = `r round(mean(diffdf[diffdf$stage==2,]$Differentials),2)`, SD = `r round(sd(diffdf[diffdf$stage==2,]$Differentials),2)`) and Testing stages (M = `r round(mean(diffdf[diffdf$stage==3,]$Differentials),2)`, SD = `r round(sd(diffdf[diffdf$stage==3,]$Differentials),2)`). Pairwise comparisons between the History stage and each of the other two stages are significant (ps \< .05). The majority of participants (74/85) did not decrease the number of differentials between Patient History and Testing on any case, indicating a tendency to widen rather than narrow the set of considered diagnoses through the evolving decision process (even while, on average, growing increasingly certain of the correct diagnosis).\
+We analysed the number of differentials to provide insights into the diagnostic decision process across stages, specifically the degree to which it follows a process of deductive narrowing (decreasing differentials) or open-minded broadening (increasing differentials). Analysis of the number of differentials considered by participants at each stage provides little evidence for an overall strategy of deductive narrowing towards a single differential. Instead, participants overall increased the number of the differentials they reported as they received more information (F(`r model$DF[1]`, `r model$DF[2]`) = `r round(model$F[1],2)`, $\eta^2$G = `r etasq`, p \< .001). Participants reported fewer differentials during the Patient History stage (M = `r round(mean(diffdf[diffdf$stage==1,]$Differentials),2)`, SD = `r round(sd(diffdf[diffdf$stage==1,]$Differentials),2)`) than during the Physical Examination (M = `r round(mean(diffdf[diffdf$stage==2,]$Differentials),2)`, SD = `r round(sd(diffdf[diffdf$stage==2,]$Differentials),2)`) and Testing stages (M = `r round(mean(diffdf[diffdf$stage==3,]$Differentials),2)`, SD = `r round(sd(diffdf[diffdf$stage==3,]$Differentials),2)`). Pairwise comparisons between the History stage and each of the other two stages are significant (ps \< .05). The majority of participants (74/85) did not decrease the number of differentials between Patient History and Testing on any case, indicating a tendency to widen rather than narrow the set of considered diagnoses through the evolving decision process (even while, on average, growing increasingly certain of the correct diagnosis). As can be observed in Figure 3.5 below, there is general consistency in terms of participants broadening their differentials with more information despite some inter-participant variability, with a small minority of participants narrowing their differentials on average.
 
-```{r diffsOverStages, include=TRUE, echo=FALSE, out.width='100%', fig.align='center', fig.height=6}
+\newpage
+
+```{r diffsOverStages, include=TRUE, echo=FALSE, message=FALSE, warning = FALSE, out.width='100%', fig.align='center', fig.height=6}
 
 nPpts <- nrow(studentAggData)
 
@@ -507,10 +509,32 @@ xb <- c(rep("History",nPpts),rep("Physical",nPpts), rep("Testing",nPpts))
 yb <- c(studentAggData$meanInitialDiffs, studentAggData$meanMiddleDiffs, studentAggData$meanFinalDiffs)
 dataV <- data.frame("Stage" = xb, "Mean"= yb)
 dataV$Stage <- as.factor(dataV$Stage)
+dataV$ID <- studentAggData$participantID
+
+# Calculate the trend direction for each participant
+# Check if the value for "History" (first stage) is greater than "Testing" (last stage)
+trend_data <- dataV %>%
+  group_by(ID) %>%
+  summarize(Trend = first(Mean[Stage == "History"]) > last(Mean[Stage == "Testing"]))
+
+# Merge the trend information back into the main data frame
+dataV <- merge(dataV, trend_data, by = "ID")
+
 diffs <- ggplot(dataV, aes(x=Stage, y=Mean)) +
   geom_violin(colour="black", fill=differentialColour, alpha=0.8, trim=FALSE) + 
- # geom_dotplot(binaxis='y', stackdir='center', dotsize=0.5,colour="white") +
-  stat_summary(fun.data=data_summary, colour="red")
+  geom_dotplot(binaxis='y', stackdir='center', dotsize=0.5,colour="grey",alpha=0.5) +
+  # Add individual points
+  #geom_point(aes(group = ID), position = position_jitter(width = 0.2), size = 2, alpha = 0.7) +
+  # Add lines connecting the points for each participant
+    # Add lines connecting the points for each participant
+  geom_line(aes(group = ID, color = Trend), alpha = 0.3) +
+  stat_summary(fun.data=data_summary, colour="black") +
+  # Define colors for lines
+  scale_color_manual(
+    values = c("TRUE" = "red", "FALSE" = "grey"),
+    labels = c("TRUE" = "Narrowing Differentials", "FALSE" = "Broadening or Stable Differentials")
+  )
+
 
 print(diffs +
         labs(x = "Stage", y = "Average Differentials") +
@@ -518,13 +542,14 @@ print(diffs +
         theme(axis.text=element_text(size=16),
                axis.title=element_text(size=18),
                plot.title=element_text(size=18,face="bold"),
-              line = element_blank()
+              line = element_blank(),
+              legend.position = "bottom"
         )
       ) 
 
 ```
 
-*Figure 3.5: The average number of differentials after each stage of information seeking (x-axis, History = Patient History, Physical = Physical Examinations, Testing = Testing). The width of the blue area corresponds to the amount of data points that fall within that part of the y-axis, with a wider area meaning a higher concentration of data points. The red dots indicate the mean values, whilst the red lines indicate standard deviations.*
+*Figure 3.5: The average number of differentials after each stage of information seeking (x-axis, History = Patient History, Physical = Physical Examinations, Testing = Testing). The width of the blue area corresponds to the amount of data points that fall within that part of the y-axis, with a wider area meaning a higher concentration of data points. The larger black dots indicate the mean values, whilst the larger black vertical lines indicate standard deviations. The grey dots show individual values at each stage, with lines connecting the dots at each stage to represent individual participants' trend across the information seeking stages. The participants who show a narrowing of differentials (i.e. recording fewer differentials at the Testing stage compared to the Patient History stage) are marked with a red line, whilst the remainder of participants are marked with a grey line.*
 
 ```{r initialDiffs, include=FALSE, echo=FALSE}
 

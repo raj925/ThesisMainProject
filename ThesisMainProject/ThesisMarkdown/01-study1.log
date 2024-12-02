@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.7.7)  1 DEC 2024 22:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.7.7)  2 DEC 2024 17:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1409,58 +1409,58 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 <./assets/PRISMA.png, id=49, 513.92pt x 276.03125pt>
 File: ./assets/PRISMA.png Graphic file (type png)
 <use ./assets/PRISMA.png>
-Package pdftex.def Info: ./assets/PRISMA.png  used on input line 432.
+Package pdftex.def Info: ./assets/PRISMA.png  used on input line 439.
 (pdftex.def)             Requested size: 421.10046pt x 226.1786pt.
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 441--442
+<./assets/ReviewTable.png, id=55, 821.0675pt x 422.57875pt>
+File: ./assets/ReviewTable.png Graphic file (type png)
+<use ./assets/ReviewTable.png>
+Package pdftex.def Info: ./assets/ReviewTable.png  used on input line 455.
+(pdftex.def)             Requested size: 421.10046pt x 216.72453pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 461--462
 
  []
 
-<./assets/ReviewYears.png, id=55, 412.54124pt x 298.11375pt>
+[5 <./assets/PRISMA.png> <./assets/ReviewTable.png>]
+<./assets/ReviewYears.png, id=62, 412.54124pt x 298.11375pt>
 File: ./assets/ReviewYears.png Graphic file (type png)
 <use ./assets/ReviewYears.png>
-Package pdftex.def Info: ./assets/ReviewYears.png  used on input line 443.
+Package pdftex.def Info: ./assets/ReviewYears.png  used on input line 463.
 (pdftex.def)             Requested size: 421.10046pt x 304.30399pt.
-
-Underfull \vbox (badness 2229) has occurred while \output is active []
-
-[5 <./assets/PRISMA.png>] [6 <./assets/ReviewYears.png>] [7] [8] [9] [10] [11] 
-[12]
-<./assets/ReviewModel.png, id=91, 492.6405pt x 293.898pt>
+[6 <./assets/ReviewYears.png>] [7] [8] [9] [10] [11] [12] [13]
+<./assets/ReviewModel.png, id=98, 492.6405pt x 293.898pt>
 File: ./assets/ReviewModel.png Graphic file (type png)
 <use ./assets/ReviewModel.png>
-Package pdftex.def Info: ./assets/ReviewModel.png  used on input line 507.
+Package pdftex.def Info: ./assets/ReviewModel.png  used on input line 762.
 (pdftex.def)             Requested size: 421.10046pt x 251.2226pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[13] [14 <./assets/ReviewModel.png>] [15] [16] [17]
+[14 <./assets/ReviewModel.png>] [15] [16] [17] [18] [19]
 Package minitoc Info: I0009
 (minitoc)             Listing minitoc auxiliary files. 
 (minitoc)             Creating the 01-study1.maf file.
 \openout3 = `01-study1.maf'.
 
-[18] (./01-study1.aux)
+[20] (./01-study1.aux)
 Package rerunfilecheck Info: File `01-study1.out' has not changed.
 (rerunfilecheck)             Checksum: 5E10447A170C14699704563B5B3450B4;855.
  ) 
 Here is how much of TeX's memory you used:
- 24901 strings out of 476025
- 420584 string characters out of 5790018
+ 24913 strings out of 476025
+ 420917 string characters out of 5790018
  1859388 words of memory out of 5000000
- 44551 multiletter control sequences out of 15000+600000
- 566052 words of font info for 134 fonts, out of 8000000 for 9000
+ 44562 multiletter control sequences out of 15000+600000
+ 565961 words of font info for 133 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,12n,77p,1955b,709s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,12n,77p,1006b,709s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/lo
 cal/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive
 /2023/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2023/texmf
 -dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2023/texmf-dist/font
 s/type1/public/lm/lmtt12.pfb>
-Output written on 01-study1.pdf (18 pages, 492312 bytes).
+Output written on 01-study1.pdf (20 pages, 613805 bytes).
 PDF statistics:
- 151 PDF objects out of 1000 (max. 8388607)
- 113 compressed objects within 2 object streams
- 27 named destinations out of 1000 (max. 500000)
- 24120 words of extra memory for PDF output out of 24883 (max. 10000000)
+ 162 PDF objects out of 1000 (max. 8388607)
+ 120 compressed objects within 2 object streams
+ 29 named destinations out of 1000 (max. 500000)
+ 24125 words of extra memory for PDF output out of 24883 (max. 10000000)
 

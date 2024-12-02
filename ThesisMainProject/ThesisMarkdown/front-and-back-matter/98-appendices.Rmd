@@ -21,6 +21,27 @@ source('../scripts_and_filters/Study2/AggregateData.R')
 
 ```
 
+# Scoping Review - Full Table of Included Papers
+
+Papers are arranged in alphabetical order. Studies marked with ** next to their title were included via citation tracking. 
+
+``` {r paperstable, include=TRUE, eval=TRUE, message=FALSE, echo=FALSE, warning=FALSE,out.width='100%', fig.align='center'}
+
+marking <- as.data.frame(read.csv("../assets/ReviewPapersTable.csv",header=TRUE))
+
+colnames(marking) <- c("Author(s)","Title","Year","Discipline","Methodology","Measure of Confidence")
+
+marking$Year <- as.character(marking$Year)
+
+ft <- flextable(marking)
+ft <- align(ft, part = "all", align = "center")
+ft <- width(ft, width = 1)
+
+
+ft
+
+```
+
 # Vignette Marking Scheme (Studies 2 and 3)
 
 ``` {r markingtable, include=TRUE, eval=TRUE, message=FALSE, echo=FALSE, warning=FALSE,out.width='100%', fig.align='center'}
