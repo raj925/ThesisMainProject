@@ -689,7 +689,7 @@ further information they may need to determine a diagnosis. In addition
 to studying the interplay between information seeking and confidence, we
 also use a variety of methodologies to study the cognitive mechanisms of
 medical diagnoses. Across the remainder of the thesis, we increase the
-naturalism of our methods with each chapter. We start with a dynamic
+naturalism of our methods with each chapter in order to address our point on the lack of high-fidelity methodologies in the extant literature. We start with a dynamic
 version of previous vignette studies that allow us to study information
 seeking patterns whilst maintaining the experimental control afforded to
 us by the use of vignette paradigms. We then use a think-aloud

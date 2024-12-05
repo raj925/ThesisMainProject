@@ -615,21 +615,26 @@ by participants during the vignette task, we record and transcribe the
 responses given by participants during the debrief interviews
 (administered after the vignette task). With these interviews, we aimed
 to understand how participants report making diagnostic decisions,
-including how they seek information and weigh up differentials against
-each other. Based on these transcribed responses, we conducted a
-theory-driven semantic thematic analysis (as per definitions detailed by
-Braun and Clarke, 2006) to code utterances under specific categories.
-This kind of thematic analysis is suitable given that our qualitative
-data is from a semi-structured interview with predefined research
-questions of interest (whilst allowing participants to deviate slightly
-based on their responses), rather than a dataset with a looser
-structure. Similar to the coding of reasoning strategies outlined in the
-previous section, thematic analysis was conducted using two independent
-coders. Each individual analysed the data from the debrief interviews
-and independently coded emerging themes using NVivo. After this point,
+including how they seek information, weigh up differentials against each
+other and whether they use any cognitive frameworks during diagnoses.
+These interviews were important for providing an account of how
+participants would characterise the general approach they adopt during
+diagnoses, which may or may not correspond with the approach they
+actually adopt (as coded from their think-aloud utterances). Based on
+these transcribed responses, we conducted a theory-driven semantic
+thematic analysis (as per definitions detailed by Braun and Clarke,
+2006) to code utterances under specific categories. This kind of
+thematic analysis is suitable given that our qualitative data is from a
+semi-structured interview with predefined research questions of interest
+(whilst allowing participants to deviate slightly based on their
+responses), rather than a dataset with a looser structure. Similar to
+the coding of reasoning strategies outlined in the previous section,
+thematic analysis was conducted using two independent coders. Each
+individual coder analysed the data from the debrief interviews and
+independently coded emerging themes using NVivo. After this point,
 themes that were common to both coders were included for further
 analysis, with these themes being discussed in the Results section of
-this chapter.
+this chapter and related to our quantitative analyses for triangulation.
 
 #### Recoding of Reasoning Strategies in Online Vignette Study {.unnumbered}
 
@@ -935,6 +940,10 @@ subjstrategies <- as.data.frame(read.csv("./assets/TASubjectiveCodes.csv",header
 
 stratppttable$`Self Reported Strategy` <- subjstrategies$Code.Strategy
 
+TAIDs <- stratppttable$ID
+
+stratppttable$ID <- paste("p",c(1:length(TAIDs)),sep="")
+
 ```
 
 In Table 4.3, we show all `r nrow(TAData)` cases from the think-aloud
@@ -1100,9 +1109,10 @@ valTest <- joint_tests(valTest)
 
 # Can't have negative values for confidence
 
-#conTest <- lme4::glmer(confidenceChange ~ InterraterStrat + (1|Condition) + (1|ID),family=Gamma(link = "inverse"),data=TADataNoNons)
+conTest <- lmer(confidenceChange ~ InterraterStrat + (1|Condition) + (1|ID),data=TADataNoNons)
 #conTest2 <- lme4::glmer(confidenceChange ~ InterraterStrat + (1|Condition) + (1|ID),family=inverse.gaussian(link = "1/mu^2"),data=TADataNoNons)
 #conAnova <- anova(conTest,conTest2)
+conTest <- joint_tests(conTest)
 
 ```
 
@@ -1149,8 +1159,11 @@ cases with a SI strategy, participants gained more confidence over the
 case (`r strattable[strattable$Strategy=="SI",]$ConfidenceChange`) when
 compared to PR
 (`r strattable[strattable$Strategy=="PR",]$ConfidenceChange`) and HD
-cases (`r strattable[strattable$Strategy=="HD",]$ConfidenceChange`).
-Participants evaluated differentials more often during HD cases
+cases (`r strattable[strattable$Strategy=="HD",]$ConfidenceChange`) but
+the effect of reasoning strategy on confidence was not statistically
+significant (F = `r round(conTest$F.ratio,2)`, p =
+`r round(conTest$p.value,2)`). Participants evaluated differentials more
+often during HD cases
 (`r strattable[strattable$Strategy=="HD",]$DiffEval`) when compared to
 other strategies, and we find evidence of an effect of reasoning
 strategy on the number of differential evaluations (F =
@@ -1242,6 +1255,8 @@ matched the dominant strategy on
 cases
 (`r round(dominantStratCompare[dominantStratCompare$matchingCaseDominantStrat==1,]$N/sum(dominantStratCompare$N)*100,1)`%
 of cases, excluding those cases without a clear reasoning strategy).
+Participants then use a range of strategies, with variability observed
+here for a given case.
 
 \newpage
 
@@ -1305,12 +1320,14 @@ model <- summary(lme4::glmer(Correct ~ SubjectiveStrategyMatched + (1|Condition)
 
 ```
 
-In addition to reasoning strategies being coded based on the
-participants' think-aloud utterances, we also asked participants about
-their diagnostic process during the debrief interviews that can be used
-to infer the reasoning strategies participants think they use in their
-regular medical practice. We use this to determine if participants were
-more accurate when using their subjectively preferred reasoning
+Not only do we find reasoning strategy usage varying on a given case, we
+also show in this section evidence that there is variability for a given
+participant. In addition to reasoning strategies being coded based on
+the participants' think-aloud utterances, we also asked participants
+about their diagnostic process during the debrief interviews that can be
+used to infer the reasoning strategies participants think they use in
+their regular medical practice. We use this to determine if participants
+were more accurate when using their subjectively preferred reasoning
 strategy. In Table 4.7 below, we categorise participants based on their
 subjective reflection of their diagnostic process. In Table 4.8 below,
 we provide quotes from the debrief interview that exemplify each
@@ -1359,9 +1376,10 @@ probability = `r round(subjStratBinom$estimate,2)`, 95% CI =
 `r round(subjStratBinom$p.value,3)`). To summarise, participants either
 do not seem to have insight into what reasoning strategies they tend to
 use or the nature of the patient cases presented caused participants to
-deviate from their usual process for making diagnoses.
-
-\
+deviate from their usual process for making diagnoses. Either way, we
+find there is not a close match between diagnostic strategies reported
+by participants and how they seem to actually work through diagnoses as
+derived by think-aloud utterances during the diagnoses. \
 
 ```{r subjstrategiesmatched, include = TRUE,warning=FALSE, message=FALSE, echo=FALSE}
 
@@ -1488,27 +1506,26 @@ if missed.\
 
 *"I do have an approach, the first (thing) I always want to think is if
 I miss something, is this patient gonna be bad? So, like, thinking about
-emergency stuff." (4khzxs)*
+emergency stuff." (p2)*
 
 *"I think probably, especially as a medical student, we get taught to
 rule out red flag stuff...a lot of my thinking is like, what really
 worrying thing could this be that we need to rule out? And what tests do
-I need to rule it out?" (5lvg8j)*
+I need to rule it out?" (p4)*
 
 *"If it's...an acute versus a non-acute thing, I think that would change
-the pace I approach it." (dcjymb)*
+the pace I approach it." (p7)*
 
 *"Like, if someone's coming in with a presentation that could be quite
 urgent and serious, then obviously you want to rule out like a stroke,
-you want to rule that out quite quickly." (gdq7tc)*
+you want to rule that out quite quickly." (p8)*
 
 *"If I think something's remotely possible, that's really like say, so
 like for GBS, I'm even thinking about Cauda Equina syndrome, like,
 regardless of how high my index of suspicion for it is, even if it's
-pretty low. If it's an urgent diagnosis, I'll just do it anyway."
-(gs6zbl)*
+pretty low. If it's an urgent diagnosis, I'll just do it anyway." (p9)*
 
-*"I'm trying to rule out the most serious things." (rslkq8)*
+*"I'm trying to rule out the most serious things." (p14)*
 
 *"And essentially if there’s any serious conditions, I make sure to rule
 those out...and then go from there. I probably should go through each
@@ -1517,7 +1534,7 @@ biased. But it’s not something I do as much as I should...The other big
 things, are there any of the red flag symptoms that are really important
 that should influence what I’m thinking? Like fevers especially, that
 sort of thing...So generally, acute situations are where I narrow a
-little bit." (y86m2n)*
+little bit." (p15)*
 
 \
 Another tendency was for participants to report a form of progressive
@@ -1538,29 +1555,29 @@ on the subsequent diagnostic process:\
 *"Definitely start like history...I think to go from there and like,
 kind of think about that in the context of the patient. Yeah, I feel
 I've definitely been taught in terms like that methodical, like do it in
-that order." (593ybw)*
+that order." (p3)*
 
 *"I guess going through like a system of starting with the history and
 sort of gathering as much information as I can there and thinking
 already what I think might be happening. And then examining them and
 seeing if that sort of changed anything, but then sort of getting
-investigations." (5lvg8j)*
+investigations." (p4)*
 
 *"You can get a lot from the history. So I think sort of, I guess my
 general approach is like, take your history, and then from the history,
 have a little, it's not like, if you wrote it down, it'd be like a
 little bubble, like brainstorming thing as...the key big differentials
-I'm considering." (clhtyq)*
+I'm considering." (p5)*
 
 *"But if it was a patient...who had sort of not very clear symptoms, but
 wanted to be a bit more thorough, like take a history first and then
 looking at any test they've had, starting with like more basic tests
 like observations blood tests, and then, depending on the cause, or the
-symptoms, doing more invasive tests, perhaps." (dcjymb)*
+symptoms, doing more invasive tests, perhaps." (p7)*
 
 *"Take a history, like detailed history, formulate my top differentials.
 And then basically, look at investigations and examinations to confirm
-or rule out these differentials." (l3jd8r)*
+or rule out these differentials." (p12)*
 
 *"I think, start, think systematically. So start with a thorough
 history, asking kind of about what's happening currently, and then going
@@ -1571,50 +1588,49 @@ the kind of symptom at hand, but you should do a kind of formal full
 checkthrough as well...see if there's anything that points you towards a
 diagnosis. I think it (the experiment) was set up in the way that I go
 about things in the way that you do the history first, you do the
-examination, you do the investigations." (ly9kzg)*
+examination, you do the investigations." (p13)*
 
 *"Just sort of work through from the most like, basic things like
 history and examination, least invasive tests, and then try to work up
-from there." (rslkq8)*
+from there." (p14)*
 
 *"So probably getting history, I look at initial observations
 first...And then I look at ECG as well, then I want to get initial
 bloods being guided by what I think could be going on and then think
-about potential images." (ytpshg)*\
+about potential images." (p16)*\
 
 Within this process of progressive investigation, seven participants
-(including the quote above from participant *ytpshg*) noted that there
-are pieces of information or tests that they would seek for all patients
+(including the quote above from participant *p16*) noted that there are
+pieces of information or tests that they would seek for all patients
 (regardless of their condition) as part of a routine diagnostic
 approach. This indicates that some aspects of the diagnostic process are
 seen as fairly standardised by medical students:\
 
 *"I would always want to do like full blood count, VBG [Venous Blood
 Gas]… Probably, as I said, I think like most people in the emergency
-department get a chest X ray" (4khzxs)*
+department get a chest X ray" (p2)*
 
 *"With the examination, I think, normally, I would like...auscultating
 the heart and feeling the heart, abdomen, etc. These are things I think
-I would do in any patient, irrespective." (5lvg8j)*
+I would do in any patient, irrespective." (p4)*
 
 *"And then for investigations...I'll take all the bloods, do an ECG,
 chest X Ray, just in case. Yeah, yeah. So I am a bit more like, on the
-side of caution." (d9b1qf)*
+side of caution." (p6)*
 
 *"I think if you went to your senior and you said I'm really concerned
 about this patient, but I've not done an FBC [Full Blood Count], a U&E
 [Urea & Electrolytes], an ECG, VBG...They'd be like, what are you on
 about? So there's a few that you would do anyway, that are largely non
 invasive, in terms of...higher degree investigations, very much depends
-on anatomically, what you're seeing, what your differential is."
-(k5376h)*
+on anatomically, what you're seeing, what your differential is." (p11)*
 
 *"I wasn't sure (during the experiment) whether I should try and be very
 focused to the presentation at hand...because for example, when I was
 going through the examinations, in reality, I would do a full exam on
 someone, even if they presented with something that was very specific,
 like a very specific symptom just so that you can have a full kind of
-clerking assessment." (ly9kzg)*
+clerking assessment." (p13)*
 
 *"And then if the patient's unwell, I do an A to E assessment of them.
 Try to take history from them if I can, or collateral history from staff
@@ -1622,9 +1638,9 @@ or family members. And while I'm doing the A to E assessment, also, I
 don't have exact logic for it. But I'd run like blood tests, FBC, Us and
 Es, LFTs, CRP [C-Reactive Protein blood Test] and then adding other
 things like troponin, if I think it's like cardio related or D dimer
-[blood clot test], if I think it's PE [pulmonary embolism]." (jdqsnf)*
+[blood clot test], if I think it's PE [pulmonary embolism]." (p10)*
 
-Along similar lines to the above quote from participant *jdqsnf*, four
+Along similar lines to the above quote from participant *p10*, four
 other participants noted the use of a standardised framework for
 structuring their diagnostic process, with the two mentioned (as covered
 during the students' medical education) being the ABCDE assessment tool
@@ -1635,16 +1651,15 @@ through different pathphysiological systems, Chai, Evans & Hughes,
 
 *"So I feel like the A to E has very drilled into us at medical school.
 So I think I still rely on that. And even when all the things were
-jumbled up, I try and like, pick them out in that order." (clhtyq)*
+jumbled up, I try and like, pick them out in that order." (p5)*
 
 *"If it was an acute patient, I want to do like an A to E assessment,
-like airway, breathing circulation..." (dcjymb)*
+like airway, breathing circulation..." (p7)*
 
-*"Basically, if I'm not sure I'll work through a surgical sieve."
-(gs6zbl)*
+*"Basically, if I'm not sure I'll work through a surgical sieve." (p9)*
 
 *"I think the other way I can do it is the sort of surgical sieve idea
-to make sure you’ve ruled out" (y86m2n)*
+to make sure you’ve ruled out" (p15)*
 
 \
 When taken as a whole, students tended to view diagnosis as quite a
@@ -1668,7 +1683,7 @@ follows:\
 I think it's called anchor bias where you have, you can leap onto one
 thing early on, and then you want other things to fit that. I think we
 are all vulnerable to it to an extent. And we will look for things that
-support our initial idea, but I try and keep an open mind." (k5376h)*\
+support our initial idea, but I try and keep an open mind." (p11)*\
 
 These participants showed awareness of this phenomenon, whereby
 clinicians may focus too early on a particular diagnosis and then seek
@@ -1681,14 +1696,14 @@ cited this as a consideration of theirs when making diagnoses:\
 
 *"I'm quite rubbish, I often get fixated like 'I think this is
 this'’'...but I'm not that good at thinking, 'oh, what else could it be'
-into like, 'I've got something that's proved to me it's not.'" (4khzxs)*
+into like, 'I've got something that's proved to me it's not.'" (p2)*
 
 *"I try to, but I think my brain can sometimes get stuck on an idea. And
-it's difficult to pull away from that." (gdq7tc)*
+it's difficult to pull away from that." (p8)*
 
 *"I think I probably do think about that the whole way through, which
 probably can be beneficial, but can also sometimes hold me back from
-looking at other options" (593ybw)*\
+looking at other options" (p3)*\
 
 One reason provided by students for such a bias is that they are
 relatively early into their medical experience. As a result, they have
@@ -1699,14 +1714,14 @@ with regards to alternative differentials given their inexperience:\
 
 *"But then I do think I, at this stage, I'm quite kind of biased towards
 what I know more about, if that makes sense. So, I think the things
-which I don't know about, I'm just hoping it’s not that." (3lkzjq)*
+which I don't know about, I'm just hoping it’s not that." (p1)*
 
 *"I think I try to keep an open mind perhaps because I'm just like, the
 student and I don't have as much knowledge, as someone who's been
-training for a long time." (dcjymb)*
+training for a long time." (p7)*
 
 *"My knowledge isn't broad enough...to remember all the differentials
-for everything." (rslkq8)*
+for everything." (p14)*
 
 \
 This is important to note for three reasons. Firstly, medical students
@@ -1734,17 +1749,17 @@ Firstly, three participants noted that it was difficult to retain all of
 the information they needed during the task:\
 
 *"I kept thinking that I couldn't like hold onto all of the
-information." (4khzxs)*
+information." (p2)*
 
 *"I'm quite a visual person. So...reading on a screen is quite different
 to I don't know, actually having seen a patient, seeing the exam
 findings, or even looking at the scans myself. I feel like I find that
 easier to retain the information. Whereas when it's, I find it, it's
-kind of hard to take it in when it's like just written down" (593ybw)*
+kind of hard to take it in when it's like just written down" (p3)*
 
 *"I think just thinking on the spot and coming up with the diagnosis
 quite quickly, it's quite hard remembering the management afterwards as
-well." (rslkq8)*\
+well." (p14)*\
 
 Four participants noted that, in their real medical practice, they would
 be consulting other doctors, frameworks or online resources, which made
@@ -1760,22 +1775,22 @@ kind of more, more of an organic process. But at the moment, I think I
 rely quite a lot on prompts and things like that, or guidelines, even if
 I don't read them thoroughly, I'd need kind of reminders, especially
 when I feel like there's so much that it could be and I lose myself a
-little bit in the possibilities." (3lkzjq)*
+little bit in the possibilities." (p1)*
 
 *"I guess in real life, I also have, like, Google. So at points where I
 forgot the disease, or like, what is the first line, I would have like
 checked before, before typing up my management plan...when I'm confused,
 I’m definitely going to approach the senior. So I wouldn't be the one
 making the diagnostic decision. So I think it's a bit harder to do it
-alone." (d9b1qf)*
+alone." (p6)*
 
 *"When I'm not sure, I'll definitely be running my train of thought past
-my consultants." (l3jd8r)*
+my consultants." (p12)*
 
 *"I think it's weird doing it in isolation. Because I guess in an actual
-clinical setting, you kind of bounce ideas off someone else." (ytpshg)*
+clinical setting, you kind of bounce ideas off someone else." (p16)*
 
-### Reasoning Strategies in the Online Study {.unnumbered}
+### Reasoning Strategies in the Online Vignette Study {.unnumbered}
 
 ```{r stratClassifier, include=FALSE, echo=FALSE, warning = FALSE, message=FALSE, fig.height=7}
 
@@ -2127,13 +2142,13 @@ Finally, we look at predictors of diagnostic accuracy, hypothesising
 that the dominant reasoning strategy for a case interacts with the
 number of initial diagnoses when predicting accuracy. Given that HD has
 been previously associated with more diagnoses being considered early
-on, we expect that diagnostic accuracy is determined by the initial
-diagnostic breadth depending on the case's dominant reasoning strategy.
-In order to investigate this hypothesis, we fit a linear mixed effects
-model that predicts diagnostic accuracy with an interaction between the
-number of initial diagnoses and case-dominant strategy, with participant
-as a random effect. As in the previous analysis, variables are averaged
-per participant across all conditions within each case group (i.e. for
+on, we expect that diagnostic accuracy is increased with the initial
+diagnostic breadth for cases with a HD strategy. In order to investigate
+this hypothesis, we fit a linear mixed effects model that predicts
+diagnostic accuracy with an interaction between the number of initial
+diagnoses and case-dominant strategy, with participant as a random
+effect. As in the previous analysis, variables are averaged per
+participant across all conditions within each case group (i.e. for
 HD-dominant cases, accuracy and initial diagnoses are averaged across
 the UC, GBS and AD cases for each participant). We find main effects for
 the number of initial diagnoses

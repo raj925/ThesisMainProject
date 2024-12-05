@@ -1,8 +1,8 @@
 ---
 output:
-  pdf_document: default
-  word_document: default
   html_document: default
+  word_document: default
+  pdf_document: default
 ---
 <!-- `r if(knitr:::is_latex_output()) '\\startappendices'` -->
 
@@ -19,6 +19,18 @@ df <- as.data.frame(read.csv("../study2data.csv",header=TRUE))
 
 source('../scripts_and_filters/Study2/AggregateData.R')
 
+```
+
+```{r, echo=FALSE}
+
+# Colour coding for figures
+confidenceColour <- "#03c200"
+difficultyColour <- "#bf00c2"
+infoSeekingColour <- "#ca0600"
+differentialColour <- "skyblue"
+likelihoodColour <- "orange"
+accuracyColour <- "black"
+resolutionColour <- "yellow"
 ```
 
 # Scoping Review - Full Table of Included Papers
@@ -243,6 +255,317 @@ colnames(caseComparisons) <- c("Case","df","t","MDiff","p")
 ```
 
 In order to examine the observed overconfidence in more detail, we compare confidence and Highest Likelihood Accuracy by case (the mean values of which can be found in Table 1 of the main thesis). We conducted paired t-tests for each condition's cases by comparing Highest Likelihood Accuracy and confidence values (at the final Testing stage) to observe if they significantly differ from each other. A p value of less than .05 is interpreted as evidence for overconfidence or underconfidence (depending on the direction of the effect). We observed overconfidence for the AD case (t(`r as.numeric(caseComparisons[caseComparisons$Case=="AD",]$df)`) = `r as.numeric(caseComparisons[caseComparisons$Case=="AD",]$t)`, MDiff = `r as.numeric(caseComparisons[caseComparisons$Case=="AD",]$MDiff)`, p = < .001), the MTB case (t(`r as.numeric(caseComparisons[caseComparisons$Case=="MTB",]$df)`) = `r as.numeric(caseComparisons[caseComparisons$Case=="MTB",]$t)`, MDiff = `r as.numeric(caseComparisons[caseComparisons$Case=="MTB",]$MDiff)`, p = < .001) and the TTP case (t(`r as.numeric(caseComparisons[caseComparisons$Case=="TTP",]$df)`) = `r as.numeric(caseComparisons[caseComparisons$Case=="TTP",]$t)`, MDiff = `r as.numeric(caseComparisons[caseComparisons$Case=="TTP",]$MDiff)`, p = < .001). The remaining cases did not yield a significant effect. 
+
+# Analysis of Expert Participants (Online Vignette Study)
+
+In this section, we present analysis of experienced participants who had completed the same online vignette task that the medical student participants completed. In total, 7 participants completed the experiment. Given this small sample size, we primarily use the expert participants to compare to the medical student participants' results (as presented in the main thesis).
+
+## Calibration of Confidence and Accuracy 
+
+```{r accanovaexp, include=FALSE, echo=FALSE}
+
+accdf <- expertDf %>%
+  group_by(stage,participantID) %>%
+  dplyr::summarise(Accuracy = mean(likelihoodOfCorrectDiagnosis))
+
+accdf$stage <- as.factor(accdf$stage)
+
+model <- summary(aov(Accuracy ~ stage, data=accdf))
+print(model)
+model <- model[[1]]
+colnames(model) <- c("DF", "SumSq", "MeanSq", "F", "p")
+etasq <- round(etaSquared(aov(Accuracy ~ stage, data=accdf))[1],2)
+
+attach(accdf)
+pairtests <- pairwise.t.test(Accuracy,stage,p.adj="bonf")
+detach()
+
+```
+
+```{r conanovaexp, include=FALSE, echo=FALSE}
+
+condf <- expertDf %>%
+  group_by(stage,participantID) %>%
+  dplyr::summarise(Confidence = mean(confidence))
+
+condf$stage <- as.factor(condf$stage)
+
+model <- summary(aov(Confidence ~ stage, data=condf))
+print(model)
+model <- model[[1]]
+colnames(model) <- c("DF", "SumSq", "MeanSq", "F", "p")
+etasq <- round(etaSquared(aov(Confidence ~ stage, data=condf))[1],2)
+
+attach(condf)
+pairtests <- pairwise.t.test(Confidence,stage,p.adj="bonf")
+detach()
+```
+
+```{r calibrationttestsexp, include=FALSE, echo=FALSE}
+
+accdf$Accuracy <- accdf$Accuracy/10
+condf$Confidence <- condf$Confidence/100
+
+
+histtest <- t.test(accdf[accdf$stage==1,]$Accuracy,condf[condf$stage==1,]$Confidence,paired=T)
+exattest <- t.test(condf[condf$stage==2,]$Confidence,accdf[accdf$stage==2,]$Accuracy,paired=T)
+testtest <- t.test(condf[condf$stage==3,]$Confidence,accdf[accdf$stage==3,]$Accuracy,paired=T)
+
+
+```
+
+We first look at whether confidence is calibrated within experienced clinicians during our vignette task. Clinicians had highest accuracy at the Physical Examination stage (M = `r round(mean(accdf[accdf$stage==1,]$Accuracy),2)`, SD = `r round(sd(accdf[accdf$stage==1,]$Accuracy),2)`) compared to the Testing (M = `r round(mean(accdf[accdf$stage==2,]$Accuracy)/10,2)`, SD = `r round(sd(accdf[accdf$stage==2,]$Accuracy),2)`) and Physical History stages (M = `r round(mean(accdf[accdf$stage==3,]$Accuracy),2)`, SD = `r round(sd(accdf[accdf$stage==3,]$Accuracy),2)`). Clinicians reported lower confidence during the Patient History stage (M = `r round(mean(condf[condf$stage==1,]$Confidence),2)`, SD = `r round(sd(condf[condf$stage==1,]$Confidence),2)`) both compared to during the Physical Examination (M = `r round(mean(condf[condf$stage==2,]$Confidence),2)`, SD = `r round(sd(condf[condf$stage==2,]$Confidence),2)`) and Testing stages (M = `r round(mean(condf[condf$stage==3,]$Confidence),2)`, SD = `r round(mean(condf[condf$stage==3,]$Confidence),2)`). Hence, at all stages, clinicians were both more confident and more accurate when compared to medical students on average. When comparing Accuracy (taking into account the likelihood assigned to correct differentials) to Confidence, we find, across stages, clinicians’ Confidence was aligned to their Accuracy (see Figure below). As per the previous section, calibration varies as a function of the accuracy measure used, with Differential Accuracy showing evidence for underconfidence if compared against confidence. 
+
+```{r meyerGraphExp, include=TRUE, echo=FALSE, out.width='100%', fig.align='center', fig.align='center', fig.height=8}
+
+nPpts <- nrow(expertAggData)
+rootN <- sqrt(nPpts)
+
+xb <- c("History","Physical", "Testing")
+yb <- c(mean(expertAggData$meanInitialConfidence)/100, mean(expertAggData$meanMiddleConfidence)/100, mean(expertAggData$meanFinalConfidence)/100)
+zb <- c(mean(expertAggData$meanInitialAccuracy), mean(expertAggData$meanMiddleAccuracy), mean(expertAggData$meanFinalAccuracy))
+
+cors <- c(mean(expertAggData$meanInitialCorrect), mean(expertAggData$meanMiddleCorrect), mean(expertAggData$meanFinalCorrect))
+
+highestLiks <- c(mean(expertAggData$highestLikelihoodCorrectValueInitial)/10, mean(expertAggData$highestLikelihoodCorrectValueMiddle)/10, mean(expertAggData$highestLikelihoodCorrectValueFinal)/10)
+
+val <- c(yb,zb,cors,highestLiks)
+typ <- c(rep("Confidence",3),rep("Accuracy",3),rep("Differential Accuracy",3),rep("Highest Likelihood Accuracy",3))
+
+secon <- c(sd(expertAggData$meanInitialConfidence/100)/rootN, sd(expertAggData$meanMiddleConfidence/100)/rootN, sd(expertAggData$meanFinalConfidence/100)/rootN)
+selik <- c(sd(expertAggData$meanInitialAccuracy)/rootN, sd(expertAggData$meanMiddleAccuracy)/rootN, sd(expertAggData$meanFinalAccuracy)/rootN)
+secor <- c(sd(expertAggData$meanInitialCorrect)/rootN, sd(expertAggData$meanMiddleCorrect)/rootN, sd(expertAggData$meanFinalCorrect)/rootN)
+sehighs <- c(sd(expertAggData$highestLikelihoodCorrectValueInitial/10)/rootN, sd(expertAggData$highestLikelihoodCorrectValueMiddle/10)/rootN, sd(expertAggData$highestLikelihoodCorrectValueFinal/10)/rootN)
+
+ses <- c(secon,selik,secor,sehighs)
+
+dataV <- data.frame("Stage" = xb, "Value"= val, "Measure"= typ, "se" = ses)
+
+p <- ggplot(dataV, aes(x = Stage, y = Value, group = Measure, color = Measure )) +
+  geom_line() +
+  geom_point() +
+  geom_errorbar(aes(ymin=Value-se, ymax=Value+se), width=.2) +
+  labs(title="   ",x="Stage",y="Value") +
+  theme_classic() +
+  scale_color_manual(values = c(accuracyColour,confidenceColour,"darkred","orange")) +
+  theme(axis.text=element_text(size=16),
+                             axis.title=element_text(size=18),
+                             plot.title=element_text(size=20,face="bold"),
+                             legend.text = element_text(size = 18),
+                              legend.position="bottom",
+                              legend.direction="vertical") 
+
+print(p)
+
+```
+
+*Figure: Graph for the expert participants showing Confidence (green) at each of the three information stages (History = Patient History, Physical = Physical Examinations, Testing = Testing) in comparison to our main accuracy measure (black, likelihood value assigned to the correct diagnosis), the more lenient measure of the proportion of trials where a correct differential was included (dark red) and the stricter measure of the value assigned to the highest likelihood differential if it is correct (orange). Values shown are averaged across participants and cases, with the error bars representing standard error.*\
+
+## Information Seeking Value of Expert Participants
+
+```{r infovalcalcexp, include=FALSE, echo=FALSE}
+
+infoValueDf <- infoSeekingFullMatrix[,c(1:29)]
+colnames(infoValueDf)[1:29] <- c("T1","T2","T3","T4","T5","T6","T7", "T8",  "T9", "T10", "T11", "T12", "T13", "T14", 
+                                              "T15", "T16", "T17", "T18", "T19", "T20", "T21", "T22", 
+                                              "T23", "T24", "T25", "T26", "T27", "T28", "T29")
+
+infoValueDf$Correct <- infoSeekingFullMatrix$Correct
+infoValueDf$Condition <- infoSeekingFullMatrix$Condition
+infoValueDf$ID <- infoSeekingFullMatrix$ID
+
+
+temp <- infoSeekingFullMatrix[,c(1:29)]
+colnames(temp)[1:29] <- c("T1","T2","T3","T4","T5","T6","T7", "T8",  "T9", "T10", "T11", "T12", "T13", "T14", 
+                          "T15", "T16", "T17", "T18", "T19", "T20", "T21", "T22", 
+                          "T23", "T24", "T25", "T26", "T27", "T28", "T29")
+
+temp$Condition <- infoSeekingFullMatrix$Condition
+temp$ID <- infoSeekingFullMatrix$ID
+
+temp <- temp[!grepl("e1|e2|e3|e4|e5|e6|e7", rownames(temp)),]
+
+infoValueDf <- infoValueDf[grepl("e1|e2|e3|e4|e5|e6|e7", rownames(infoValueDf)),]
+
+for (n in 1:nrow(temp)) #row
+{
+  for (m in 1:29) #column
+  {
+    accSet <- c()
+    currentID <- temp[n,]$ID # cross validation
+    infoSelectCase <- infoValueDf[infoValueDf$Condition==temp[n,]$Condition,]
+    infoSelect <- infoSelectCase[,m]
+    infoSelect <- as.data.frame(infoSelect)
+    infoSelect <- cbind(infoSelect,infoSelectCase$ID)
+    infoSelect <- cbind(infoSelect,infoSelectCase$Correct)
+    colnames(infoSelect) <- c("Info","ID","Correct")
+    infoSelect <- infoSelect[infoSelect$ID!=currentID,]
+    infoSelect <- infoSelect[, !(colnames(infoSelect) %in% c("ID"))] 
+    accPresent <- mean(infoSelect[infoSelect$Info==1,]$Correct,na.rm=TRUE)
+    accNotPresent <- mean(infoSelect[infoSelect$Info==0,]$Correct,na.rm=TRUE)
+    if (nrow(infoSelect[infoSelect$Info==0,]) > 1)
+    {
+      temp[n,m] <- ifelse(temp[n,m]==1,accPresent-accNotPresent,NA)
+      if (is.nan(temp[n,m]))
+      {
+        temp[n,m] <- 0
+      }
+    }
+  }
+}
+temp = subset(temp, select = -c(Condition,ID))
+
+temp$infoValue <- rowSums(temp,na.rm = TRUE)
+temp$infoValueAfterHistory <- rowSums(temp[,7:29],na.rm=T)
+
+temp$Condition <- infoSeekingFullMatrix[infoSeekingFullMatrix$ParticipantType=="p",]$Condition
+temp$ID <- infoSeekingFullMatrix[infoSeekingFullMatrix$ParticipantType=="p",]$ID
+
+aggVals <- temp %>%
+  group_by(ID) %>%
+  dplyr::summarise(InfoValue = mean(infoValue))
+
+studentAggData$infoValueExp <- aggVals$InfoValue
+
+```
+
+```{r confAccExp, include=FALSE, message=FALSE, echo=FALSE}
+
+corexpcon <- cor.test(studentAggData$infoValueExp,studentAggData$meanConfidenceOverallChange,method="pearson")
+
+corexpacc <- cor.test(studentAggData$infoValueExp,studentAggData$meanFinalAccuracy,method="pearson")
+
+```
+
+In the main thesis, we use a measure of information seeking value that is defined by splitting all cases completed across participants into two groups: cases where that information was sought at any stage and cases where that information was not sought. For each group, we computed the proportion of trials where the students included a correct differential, and then take the difference between these two values. A positive value would indicate that students were more likely to identify the correct condition with that information rather than without that information. This difference can be considered that information’s ‘value’. For this measure, we use the medical student participants to both define and measure information value for each participant. With our clinician participants, we can use their information seeking patterns to define information value to them measure the performance of the medical students. We use a similar method as defined above to define each piece of information's 'value': we instead compute the difference accuracy when the experienced clinicians did or did not seek that piece of information. We then calculate the sum of all information values for each case. This gives an overall measure of, on average, how useful the information was that participants sought on each case. However, this measure instead separates the definition of informational value from the information seeking behaviour. We use this measure to replicate our analyses correlating information value with both Confidence Change and Accuracy (as depicted in Figures 3.7B and 3.7D). Below we show the expert participants' information seeking by case in Figure. 
+
+```{r infoPropsExp, include=TRUE, eval=TRUE, message=FALSE, echo=FALSE, warning=FALSE,out.width='100%', fig.align='center'}
+
+temp <- infoSeekingFullMatrix[infoSeekingFullMatrix$ParticipantType=="e",c(1:29)]
+temp$Condition <- infoSeekingFullMatrix[infoSeekingFullMatrix$ParticipantType=="e",]$Condition
+colnames(temp) <- c(allTests,"Condition")
+
+infoProp <- temp %>%
+     group_by(Condition) %>%
+     summarise(across(everything(), mean, na.rm = TRUE))
+
+infoProp <- as.data.frame(infoProp)
+rownames(infoProp) <- c(infoProp[1])[[1]]
+infoProp <- infoProp[-1]
+
+pheatmap(infoProp, display_numbers = T, color = colorRampPalette(c('#56B4E9','#D55E00'))(100), cluster_rows = F, cluster_cols = F, fontsize_number = 5,
+number_color = "black")
+
+```
+
+*Figure: Visualisation of the proportion of experience clinicians who sought each available piece of information (columns, x-axis) broken down by case (rows, y-axis). Lighter blue colours indicate that fewer participants sought that information for a given case (i.e. towards 0%), whilst lighter orange colours indicate more participants sought that information for a given case (i.e. towards 100%)*
+
+\
+We assess the degree to which each participant’s accuracy is predicted by the quality of the information they sought using this new measure and find evidence for a positive relationship between accuracy and information value (r(`r corexpacc$parameter`) = `r round(corexpacc$estimate,2)`, 95% CI = [`r round(corexpacc$conf.int[1],2)`, `r round(corexpacc$conf.int[2],2)`], p = `r round(corexpacc$p.value,2)`, Figure A), as well as between confidence and information value (r(`r corexpcon$parameter`) = `r round(corexpcon$estimate,2)`, 95% CI = [`r round(corexpcon$conf.int[1],2)`, `r round(corexpcon$conf.int[2],2)`], p = `r round(corexpcon$p.value,2)`, Figure B).
+
+```{r confAccPlotExp, include=TRUE, message=FALSE, echo=FALSE, warning=FALSE,out.width='100%', fig.align='center', fig.height=10}
+
+### Correlation between info value and confidence
+
+confVal <- ggplot(data = studentAggData, aes(x=infoValueExp, y=meanConfidenceOverallChange)) +
+  geom_point() +
+  geom_smooth(method=lm , color=confidenceColour, fill="#69b3a2", se=TRUE) +
+  theme_classic() + 
+  labs(y="Confidence", x = "Information Value") +
+  theme(axis.text=element_text(size=12),
+             axis.title=element_text(size=16),
+             plot.title=element_text(size=14,face="bold")
+  )
+
+### Correlation between info value and confidence
+
+accVal <- ggplot(data = studentAggData, aes(x=infoValueExp, y=meanFinalAccuracy)) +
+  geom_point() +
+  geom_smooth(method=lm , color=accuracyColour, fill="#69b3a2", se=TRUE) +
+  theme_classic() + 
+  labs(y="Accuracy", x = "Information Value") +
+  theme(axis.text=element_text(size=12),
+             axis.title=element_text(size=16),
+             plot.title=element_text(size=14,face="bold")
+  )
+
+cow <- plot_grid(accVal,confVal,ncol=2, align = "v", axis="1", labels=c('A','B'))
+print(cow) #view the multi-panel figure  
+
+```
+
+*Figure: Scatter plots showing information seeking value (defined using experienced clinicians' information seeking) against our key dependent variables of accuracy (the likelihood assigned to a correct differential if provided, A) and change in confidence (difference between final confidence and initial confidence, B). Information Sought refers to the proportion of available information sought across cases. Information Value refers to the sum of all mean information values across all 6 cases for a given participant. All data points are for a single participant where variables are averaged across all 6 cases they completed.*\
+
+## Information Seeking Variability of Expert Participants
+
+```{r accVarExp, include=FALSE, eval=TRUE, message=FALSE, echo=FALSE, warning=FALSE,out.width='100%', fig.align='center'}
+
+vals <- c()
+accs <- c()
+groups <- c()
+typs <- c()
+
+for (i in c(1:4))
+{
+  rows <- infoSeekingFullMatrix[infoSeekingFullMatrix$ParticipantType=="p"&infoSeekingFullMatrix$AccuracyGroup==i,]
+  rows <- rows[rowSums(rows[,2:29])>1,]
+  ids <- unique(rows$ID)
+  for (id in ids)
+  {
+    temp <- rows[rows$ID == id,]
+    vals <- c(vals,dicesimilarityMean(temp[,2:29]))
+    accs <- c(accs,mean(temp$likelihoodOfCorrectDiagnosis)/10)
+    groups <- c(groups,i)
+    typs <- c(typs,"p")
+  }
+}
+
+rows <- infoSeekingFullMatrix[infoSeekingFullMatrix$ParticipantType=="e",]
+rows <- rows[rowSums(rows[,2:29])>1,]
+ids <- unique(rows$ID)
+for (id in ids)
+{
+  temp <- rows[rows$ID == id,]
+  vals <- c(vals,dicesimilarityMean(temp[,2:29]))
+  accs <- c(accs,mean(temp$likelihoodOfCorrectDiagnosis)/10)
+  groups <- c(groups,"e")
+  typs <- c(typs,"e")
+}
+
+varDf <- data.frame(vals,accs,groups,typs)
+colnames(varDf) <- c("InformationSeekingVariance","Accuracy","AccuracyGroup","ParticipantType")
+
+varSum <- varDf %>%
+     group_by(AccuracyGroup) %>%
+     dplyr::summarise(Variance = mean(InformationSeekingVariance),
+                      Accuracy = mean(Accuracy),
+                      VarErr = sd(InformationSeekingVariance)/n())
+
+varSum$AccuracyGroup <- as.factor(as.character(varSum$AccuracyGroup))
+
+studentsSurpassedNum <-sum(varSum[varSum$AccuracyGroup=="e",]$Accuracy > varDf[varDf$ParticipantType=="p",]$Accuracy)
+studentsSurpassedPercent <- round(studentsSurpassedNum/nrow(varDf[varDf$ParticipantType=="p",]),2)*100
+
+```
+
+We turn to our analysis of Information Seeking Variability as depicted in Figures 3.9 and 3.10. We surmised from these analyses that diagnostic accuracy was negatively correlated with information seeking variability. This meant that medical students were observed to be more accurate in their diagnoses when seeking more similar across cases. In Figure below, we show information seeking variability by accuracy for medical students, as compared with expert clinicians. The highest quartile of medical students had an average accuracy of `r round(varSum[varSum$AccuracyGroup==4,]$Accuracy,2)`, which is slightly higher than the expert clinicians' average accuracy of `r round(varSum[varSum$AccuracyGroup=="e",]$Accuracy,2)`. Hence, whilst expert clinicians outperformed the majority of medical students (`r studentsSurpassedNum`,`r studentsSurpassedPercent`%), some medical students exhibited better performance than the clinicians.
+
+\
+When comparing Information Seeking Variability, we find the average variability to higher for expert clinicians compared to the highest performing medical students (see Figure below). This would support our account that lower information seeking variability is associated with higher accuracy, but we show that it is not necessarily associated with expertise/experience. 
+
+```{r accVarExpPlot, include=TRUE, eval=TRUE, message=FALSE, echo=FALSE, warning=FALSE,out.width='100%', fig.align='center'}
+
+varexpplot <- ggplot(varSum) +
+  geom_bar( aes(x=AccuracyGroup, y=Variance), colour="black", stat="identity", fill=infoSeekingColour, alpha=0.8) +
+  geom_errorbar(aes(x = AccuracyGroup,ymin=Variance-VarErr, ymax=Variance+VarErr), width=.3, position=position_dodge(0.05),color="orange")
+
+print(varexpplot +
+        ggtitle("Average Information Seeking Variability") +
+        labs(x = "Participant Accuracy Group/Expert", y = "Variance in MDS Distances") +
+        theme_classic()) 
+
+```
+_Figure: Average Information Seeking variability by participant accuracy. On the x-axis, groups 1 to 4 represent quartiles of accuracy for the medical student participants (each group containing 21-22 participants). Group e represents the expert clinicians (containing 7 participants). Information seeking variability is calculated using the Dice Coefficient method (Dice, 1945) described in the main thesis for each participant, with average values shown here (y-axis). The orange error bars represent standard error._
 
 \newpage
 

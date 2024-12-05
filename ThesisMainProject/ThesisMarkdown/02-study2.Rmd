@@ -561,10 +561,13 @@ cor <- cor.test(studentAggData$meanInitialDiffs,studentAggData$proportionOfInfo,
 
 cor2 <- cor.test(studentAggData$meanInitialDiffs,studentAggData$meanConfidenceOverallChange,method="pearson")
 
+studentCaseDf$initialConfidence <- studentCaseDf$finalConfidence - studentCaseDf$confidenceChange
+
+infoModel <- lmer(laterInfoProp ~ initialConfidence + initialDifferentials + (1 | condition) + (1 | id), data=studentCaseDf)
+
+diffModel <- lmer(absoluteDifferentialChange ~ laterInfoProp + initialDifferentials + confidenceChange + (1 | condition) + (1 | id), data=studentCaseDf)
 
 conModel <- lmer(confidenceChange ~ caseInformationProportion + initialDifferentials + absoluteDifferentialChange + (1 | condition) + (1 | id), data=studentCaseDf)
-
-diffModel <- lmer(absoluteDifferentialChange ~ caseInformationProportion + initialDifferentials + confidenceChange + (1 | condition) + (1 | id), data=studentCaseDf)
 
 ```
 
@@ -576,11 +579,9 @@ cor <- cor.test(studentAggData$absoluteDifferentialChange,studentAggData$proport
 
 cor2 <- cor.test(studentAggData$absoluteDifferentialChange,studentAggData$meanConfidenceOverallChange,method="pearson")
 
-diffModel3 <- lmer(absoluteDifferentialChange ~ caseInformationProportion + (1 | condition) + (1 | id), data=studentCaseDf)
+#diffModel3 <- lmer(absoluteDifferentialChange ~ caseInformationProportion + (1 | condition) + (1 | id), data=studentCaseDf)
 
-diffModel4 <- lmer(confidenceChange ~ absoluteDifferentialChange + (1 | condition) + (1 | id), data=studentCaseDf)
-
-conInfoModel <- lmer(confidenceChange ~ caseInformationProportion + (1 | condition) + (1 | id), data=studentCaseDf)
+#diffModel4 <- lmer(confidenceChange ~ absoluteDifferentialChange + (1 | condition) + (1 | id), data=studentCaseDf)
 
 ```
 
@@ -752,7 +753,7 @@ print(cow) #view the multi-panel figure
 
 ```
 
-*Figure 3.7: Scatter plots showing our information seeking variables (amount in figures 2.7A & 2.7C and value in 3.7B & 3.7D) against our key dependent variables of accuracy (the likelihood assigned to a correct differential if provided, figures 3.7A & 3.7B) and change in confidence (difference between final confidence and initial confidence, figures 3.7C & 3.7D). Information Sought refers to the proportion of available information sought across cases. Information Value refers to the sum of all mean information values across all 6 cases for a given participant. All data points are for a single participant where variables are averaged across all 6 cases they completed.*\
+*Figure 3.7: Scatter plots showing our information seeking variables (amount in figures 3.7A & 3.7C and value in 3.7B & 3.7D) against our key dependent variables of accuracy (the likelihood assigned to a correct differential if provided, figures 3.7A & 3.7B) and change in confidence (difference between final confidence and initial confidence, figures 3.7C & 3.7D). Information Sought refers to the proportion of available information sought across cases. Information Value refers to the sum of all mean information values across all 6 cases for a given participant. All data points are for a single participant where variables are averaged across all 6 cases they completed.*\
 
 Whilst we do not find evidence that the amount of information sought is predictive of accuracy, it may be that there are identifiable 'fingerprints' reflected in information seeking patterns that differentiate between high and low accuracy diagnosticians. If this is the case, participants who are high and low accuracy participants could be predicted based on their information seeking patterns.\
 
@@ -942,8 +943,12 @@ colnames(classifierData)[1:28] <- c("T2",  "T3",  "T4",  "T5",  "T6",  "T7",
 
 classifierData$Condition <- infoSeekingFullMatrix[infoSeekingFullMatrix$ParticipantType=="p",]$Condition
 
+classifierData$Correct <- infoSeekingFullMatrix[infoSeekingFullMatrix$ParticipantType=="p",]$likelihoodOfCorrectDiagnosis
+
 # Shuffle rows in case there are order biases
 classifierData <- classifierData[sample(1:nrow(classifierData)),]
+
+pptCorrects <- classifierData$Correct
 
 model <- train(Condition ~ T7 + T8 + T9 + T10 +
                    T11 + T12 + T13 + T14 + T15 + T16 + T17 +  T18 + T19 + T20 +
@@ -1010,6 +1015,18 @@ Given that information seeking variability has a weak negative association with 
 ```{r caseClassifierTable, include=TRUE, eval=TRUE, message=FALSE, echo=FALSE, warning=FALSE,out.width='100%', fig.align='center', fig.height=5}
 
 predictions$predictedCorrect <- ifelse(predictions$pred==predictions$obs,1,0)
+
+predictions <- predictions[order(predictions$rowIndex, decreasing = FALSE), , drop = FALSE]
+
+predictions$pptCorrect <- pptCorrects
+
+pptAccuracy <- predictions %>%
+  group_by(obs,predictedCorrect) %>%
+  dplyr::summarise(`Participant Accuracy` = round(mean(pptCorrect),2)/10)
+
+pptAccTTest <- t.test(pptAccuracy[pptAccuracy$predictedCorrect==0,]$`Participant Accuracy`,pptAccuracy[pptAccuracy$predictedCorrect==1,]$`Participant Accuracy`)
+
+##################
 
 casewisePredictions <- predictions %>%
   group_by(obs) %>%
@@ -1083,8 +1100,8 @@ ft
 
 ```{r infoProps, include=TRUE, eval=TRUE, message=FALSE, echo=FALSE, warning=FALSE,out.width='100%', fig.align='center'}
 
-temp <- infoSeekingFullMatrix[,c(1:29)]
-temp$Condition <- infoSeekingFullMatrix$Condition
+temp <- infoSeekingFullMatrix[infoSeekingFullMatrix$ParticipantType=="p",c(1:29)]
+temp$Condition <- infoSeekingFullMatrix[infoSeekingFullMatrix$ParticipantType=="p",]$Condition
 colnames(temp) <- c(allTests,"Condition")
 
 infoProp <- temp %>%
