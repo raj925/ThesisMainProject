@@ -8,7 +8,7 @@ documentclass: book
 #bibliography: [bibliography/references.bib, bibliography/additional-references.bib]
 ---
 
-# Study 4 - Diagnostic Uncertainty and Information Seeking in Virtual Reality Paediatric Scenarios {.unnumbered}
+# Chapter 5 - Diagnostic Uncertainty and Information Seeking in Virtual Reality Paediatric Scenarios {.unnumbered}
 
 ```{=tex}
 \adjustmtc
@@ -81,19 +81,6 @@ infoSeekingMatrixVR$t1DiagnosisScore <- vrData$t1DiagnosisScore
 
 ```
 
-```{r completedata, include=FALSE, warning=FALSE, message=FALSE, echo=FALSE}
-# Get data where participants have completed two scenarios
-
-ids <- vrData$ParticipantID
-# Create a frequency table
-freq_table <- table(ids)
-# Identify elements with more than one occurrence
-repeatIDs <- names(freq_table[freq_table > 1])
-vrCompleteData <-  vrData[vrData$ParticipantID %in% repeatIDs,]
-vrCompleteData <- vrCompleteData[!is.na(vrCompleteData$t2Confidence),]
-nFullPpts <- nrow(vrCompleteData)/2
-```
-
 ```{=tex}
 \adjustmtc
 \markboth{VR Study}{}
@@ -163,12 +150,12 @@ _Figure 5.2: Screenshot from the VR software. Depicted here is the participant c
 Each participant completed two scenarios over two separate VR sessions. The sessions were held around one month apart. During each session, the participants each performed one scenario in VR and observed another medical student during their scenario. We chose medical scenarios that were considered fairly common to arise for paediatric patients. The scenarios presented in each session are described below (students are split into two groups, shown below as groups A and B, each performing a different pair of scenarios in a fixed order):
 
 * Session One:
- + * _Group A:_ patient/child is a 6-year-old-girl presenting with a 1-day history of central abdominal pain and thirst. She was generally unwell for 2 days prior, with a reduced appetite and a sore throat. Collateral history reveals Type 1 Diabetes and erratic blood sugars. (**Underlying Condition: Diabetic Ketoacidosis**)
- + * _Group B:_ patient/child is a 5-year-old boy presenting with worsening shortness of breath, wheeze, and signs of respiratory distress, on the background of 2 days of likely viral illness. He has a medical history of asthma and has had similar exacerbations in the past. (**Underlying Condition: Acute Severe Exacerbation of Asthma**)
+ + * _Group A:_ patient/child is a 6-year-old-girl presenting with a 1-day history of central abdominal pain and thirst. She was generally unwell for 2 days prior, with a reduced appetite and a sore throat. Collateral history reveals Type 1 Diabetes and erratic blood sugars. (**Underlying Condition: Diabetic Ketoacidosis**, henceforth referred to as the 'DKA' scenario)
+ + * _Group B:_ patient/child is a 5-year-old boy presenting with worsening shortness of breath, wheeze, and signs of respiratory distress, on the background of 2 days of likely viral illness. He has a medical history of asthma and has had similar exacerbations in the past. (**Underlying Condition: Acute Severe Exacerbation of Asthma**, henceforth referred to as the 'Asthma' scenario)
 
 * Session Two:
- + * _Group A:_ patient/child is a 5-year-old boy presenting with shortness of breath and drowsiness (**Underlying Condition: Chest Sepsis/Pneumonia**)
- + * _Group B:_ patient/child is a 5-year-old girl with a 1-day history of sore throat and fever. She starts having a generalised tonic-clonic seizure during the scenario. (**Underlying Condition: Febrile seizure on background of tonsillitis**)
+ + * _Group A:_ patient/child is a 5-year-old boy presenting with shortness of breath and drowsiness (**Underlying Condition: Chest Sepsis/Pneumonia**, henceforth referred to as the 'Pneumonia' scenario)
+ + * _Group B:_ patient/child is a 5-year-old girl with a 1-day history of sore throat and fever. She starts having a generalised tonic-clonic seizure during the scenario. (**Underlying Condition: Febrile seizure on background of tonsillitis**, henceforth referred to as the 'Seizure' scenario)
 
 ### Procedure {.unnumbered}
 
@@ -212,11 +199,7 @@ knitr::include_graphics("./assets/OMSScoreExample.png")
 ```
 _Figure 5.3: An example of scoring criteria used when calculating the Performance Score. The criteria are pre-defined specifically to each scenario. This example shows objectives that have been met (as denoted by a green tick) and those that have not been met (as denoted by a red cross). This example is taken from the OMS software, which calculates Performance Score internally for each case. _
 
-* **Diagnostic Appropriateness**: Complementing the Performance Score, our other key overall metric of diagostic performance concerns how appropriate each participant's set of differentials are assessed for how appropriate they are for the scenario. Each scenario has a set of differentials that are considered most likely, probable and improbable (with any others considered incorrect). This criteria for provided differentials was developed in consultation with an experienced medical professional (who at the time of this study was an Anaesthetic and Intensive Care Doctor, as well as a medical educator). To calculate a score for how appropriate the diagnoses are, we consider what proportion of likelihood values are assigned to likely or probable differentials, whilst penalising participants for providing fewer differentials, such that larger sets of likely or probable differentials are assigned higher scores. This is because we expect participants to provide a wider set of differentials that could be contributing to the patients' conditions (as explained during the Introduction). 
-
-\newpage
-
-To define this metric formally, we express **Diagnostic Appropriateness (A)** as follows:
+* **Diagnostic Appropriateness**: To define this metric formally, we express **Diagnostic Appropriateness (A)** as follows:
 
 \
 Let \( L = \{ l_1, l_2, \ldots, l_m \} \) be the set of all likelihoods provided across participants for a given scenario, where each array of likelihoods provided for a given scenario \( l_j \) has a length \( |l_j| \) (i.e. the number of differentials recorded). 
@@ -253,10 +236,13 @@ Hence:
 
 * \( A_j \to 1 \) when all listed differentials are correct.
 
+Complementing the Performance Score, this other key metric of diagnostic performance concerns how appropriate each participant's set of differentials are assessed for how appropriate they are for the scenario. Each scenario has a set of differentials that are considered most likely, probable and improbable (with any others considered incorrect). This criteria for provided differentials was developed in consultation with an experienced medical professional (who at the time of this study was an Anaesthetic and Intensive Care Doctor, as well as a medical educator). To calculate a score for how appropriate the diagnoses are, we consider what proportion of likelihood values are assigned to likely or probable differentials, whilst penalising participants for providing fewer differentials, such that larger sets of likely or probable differentials are assigned higher scores. This is because we expect participants to provide a wider set of differentials that could be contributing to the patients' conditions (as explained during the Introduction). 
+
+\newpage
 
 #### Questionnaire Measures {.unnumbered}
 
-* **Number of Differentials**: participants are asked to record all the diagnostic differentials that they are considering at the two aforementioned time points. Hence, the total number of differentials is recorded at each stage. The Initial Number of differentials is the number of diagnoses provided at the pause point.
+* **Number of Differentials**: participants are asked to record all the diagnostic differentials that they are considering at the two aforementioned time points. Hence, the total number of differentials is recorded at each stage. The Initial Number of differentials (also known as Initial Diagnostic Breadth) is the number of diagnoses provided at the pause point.
 
 * **Confidence Change**: the participants’ confidence in their understanding of the patient’s condition is recorded at two time points, with the first being after 5 minutes (out of the 20-minute time limit) and the second being after the participant has finished the scenario. Confidence at each stage is recorded on a 10-point scale (1-10). The difference between the second and the first confidence rating is taken, such that a positive value indicates that the participant has increased their confidence over the course of the scenario. 
 
@@ -325,10 +311,10 @@ perfCorr <- cor.test(vrData$t1DiagnosisScore,vrData$OMSScore,method="spearman",e
 We report data from `r length(unique(vrData$ParticipantID))` participants. As shown in Table 5.1, some participants only completed a single scenario rather than two. `r length(unique(vrCompleteData$ParticipantID))` participants completed two scenarios (as part of either Scenario A or B as explained in the Procedure section). Overall, `r vrDescStats[vrDescStats$Scenario=="Asthma",]$n` participants completed the Asthma scenario, `r vrDescStats[vrDescStats$Scenario=="DKA",]$n` participants completed the DKA scenario, `r vrDescStats[vrDescStats$Scenario=="Pneumonia",]$n` participants completed the Pneumonia scenario and `r vrDescStats[vrDescStats$Scenario=="Seizure",]$n` participants completed the Seizure scenario. 
 
 \
-In terms of overall performance, the average Diagnostic Appropriateness score (calculated at the pause point) across all scenarios and participants was `r round(mean(vrData$t1DiagnosisScore,na.rm=T),2)` (ranging from `r min(vrData$t1DiagnosisScore,na.rm=T)` to `r max(vrData$t1DiagnosisScore,na.rm=T)`). The mean Diagnostic Appropriateness score for each scenario was as follows: Asthma = `r vrDescStats[vrDescStats$Scenario=="Asthma",]$DiagScore`, DKA = `r vrDescStats[vrDescStats$Scenario=="DKA",]$DiagScore`, Pneumonia = `r vrDescStats[vrDescStats$Scenario=="Pneumonia",]$DiagScore`, Seizure = `r vrDescStats[vrDescStats$Scenario=="Seizure",]$DiagScore`. The average OMS score (calculated at the end of the scenario) across all scenarios and all participants was `r round(mean(vrData$OMSScore,na.rm=T),2)` (ranging from `r min(vrData$OMSScore,na.rm=T)` to `r max(vrData$OMSScore,na.rm=T)`), which indicates the percentage of predefined 'objectives' successfully completed by participants during each of the scenarios (each scenario has its own set of objectives, with some overlap). The mean OMS score for each scenario was as follows: Asthma = `r vrDescStats[vrDescStats$Scenario=="Asthma",]$MeanPerformance`, DKA = `r vrDescStats[vrDescStats$Scenario=="DKA",]$MeanPerformance`, Pneumonia = `r vrDescStats[vrDescStats$Scenario=="Pneumonia",]$MeanPerformance`, Seizure = `r vrDescStats[vrDescStats$Scenario=="Seizure",]$MeanPerformance`.  
+We first characterise how well medical students performed during the scenario using our two performance measures. In terms of overall performance, the average Diagnostic Appropriateness score (calculated at the pause point) across all scenarios and participants was `r round(mean(vrData$t1DiagnosisScore,na.rm=T),2)` (ranging from `r min(vrData$t1DiagnosisScore,na.rm=T)` to `r max(vrData$t1DiagnosisScore,na.rm=T)`). The mean Diagnostic Appropriateness score for each scenario was as follows: Asthma = `r vrDescStats[vrDescStats$Scenario=="Asthma",]$DiagScore`, DKA = `r vrDescStats[vrDescStats$Scenario=="DKA",]$DiagScore`, Pneumonia = `r vrDescStats[vrDescStats$Scenario=="Pneumonia",]$DiagScore`, Seizure = `r vrDescStats[vrDescStats$Scenario=="Seizure",]$DiagScore`. The average OMS score (calculated at the end of the scenario) across all scenarios and all participants was `r round(mean(vrData$OMSScore,na.rm=T),2)` (ranging from `r min(vrData$OMSScore,na.rm=T)` to `r max(vrData$OMSScore,na.rm=T)`), which indicates the percentage of predefined 'objectives' successfully completed by participants during each of the scenarios (each scenario has its own set of objectives, with some overlap). The mean OMS score for each scenario was as follows: Asthma = `r vrDescStats[vrDescStats$Scenario=="Asthma",]$MeanPerformance`, DKA = `r vrDescStats[vrDescStats$Scenario=="DKA",]$MeanPerformance`, Pneumonia = `r vrDescStats[vrDescStats$Scenario=="Pneumonia",]$MeanPerformance`, Seizure = `r vrDescStats[vrDescStats$Scenario=="Seizure",]$MeanPerformance`.  
 
 \
-We next look at confidence reported by participants and its calibration to objective performance. Across all scenarios, participants increase their confidence between the two timepoints. Average initial confidence (recorded on a 10-point Likert scale) across scenarios was `r round(mean(vrData$t1Confidence,na.rm=T),2)` and average final confidence was `r round(mean(vrData$t2Confidence,na.rm=T),2)`. By scenario, initial confidence and final confidence respectively were: Asthma = [`r vrDescStats[vrDescStats$Scenario=="Asthma",]$MeanInitialConfidence`, `r vrDescStats[vrDescStats$Scenario=="Asthma",]$MeanFinalConfidence`], DKA = [`r vrDescStats[vrDescStats$Scenario=="DKA",]$MeanInitialConfidence`, `r vrDescStats[vrDescStats$Scenario=="DKA",]$MeanFinalConfidence`], Pneumonia = [`r vrDescStats[vrDescStats$Scenario=="Pneumonia",]$MeanInitialConfidence`, `r vrDescStats[vrDescStats$Scenario=="Pneumonia",]$MeanFinalConfidence`], Seizure = [`r vrDescStats[vrDescStats$Scenario=="Seizure",]$MeanInitialConfidence`, `r vrDescStats[vrDescStats$Scenario=="Seizure",]$MeanFinalConfidence`]. The distribution of confidence values are shown below in Figure 5.4. Other dependent variables such as the number of differentials are summarised below in Table 5.1.
+We next look at confidence reported by participants and its calibration to objective performance. Across all scenarios, participants increase their confidence between the two timepoints. Average initial confidence (recorded on a 10-point Likert scale) across scenarios was `r round(mean(vrData$t1Confidence,na.rm=T),2)` and average final confidence was `r round(mean(vrData$t2Confidence,na.rm=T),2)`. By scenario, average final confidence was higher than average initial confidence (see Table 5.1 below). Other dependent variables such as the number of differentials are also summarised below in Table 5.1. The distribution of confidence values are shown below in Figure 5.4.
 
 ```{r descstatstable, include=TRUE, warning=FALSE, message=FALSE, echo=FALSE}
 
@@ -405,13 +391,14 @@ model <- lme4::glmer(confidenceChange+2 ~ t1numOfDiagnoses + (1|Scenario) + (1 |
 pcaModel <- rePCA(model)
 
 model2 <- lmerTest::lmer(confidenceChange ~ t1numOfDiagnoses + (1|Scenario) + (1 | ParticipantID), data=vrData)
-model2 <- summary(model2)
+modelcomp <- anova(model2,model)
+model2 <- summary(model)
 
 ##########################
 
 ```
 
-We can ask whether the initial diagnostic breadth (i.e. the number of diagnostic differentials being considered early in the scenario) is predictive of information seeking and change in confidence over the course of the scenario (as we found evidence for such an association in the online vignette study). We fit generalized linear mixed effects models to predict each of these with the number of initial differentials as a fixed effect and both the scenario and participant as random effects. We do not see evidence that the initial diagnostic breadth is predictive of the amount of information seeking ($\beta$ = `r abs(round(model1$coefficients[2],2))`, SE = `r round(model1$coefficients[,"Std. Error"][2],2)` z = `r abs(round(model1$coefficients[,"z value"][2],2))`, p = `r abs(round(model1$coefficients[,"Pr(>|z|)"][2],2))`) or changes in confidence ($\beta$ = `r abs(round(model2$coefficients[2],2))`, SE = `r round(model2$coefficients[,"Std. Error"][2],2)` t = `r abs(round(model2$coefficients[,"t value"][2],2))`, p = `r abs(round(model2$coefficients[,"Pr(>|t|)"][2],2))`). As a result, we are not able to replicate findings from Study 2 on a case-level, in which initial diagnostic breadth was predictive of information seeking and changes in confidence when averaged across each of the participants' cases. The distribution of values for the number of differentials at each time point is shown below in Figure 5.5.
+We can ask whether the initial diagnostic breadth (i.e. the number of diagnostic differentials being considered early in the scenario) is predictive of information seeking and change in confidence over the course of the scenario (as we found evidence for such an association in the online vignette study). We fit generalized linear mixed effects models to predict each of these with the number of initial differentials as a fixed effect and both the scenario and participant as random effects. We do not see evidence that the initial diagnostic breadth is predictive of the amount of information seeking ($\beta$ = `r abs(round(model1$coefficients[2],2))`, SE = `r round(model1$coefficients[,"Std. Error"][2],2)` z = `r abs(round(model1$coefficients[,"z value"][2],2))`, p = `r abs(round(model1$coefficients[,"Pr(>|z|)"][2],2))`) or changes in confidence ($\beta$ = `r abs(round(model2$coefficients[2],2))`, SE = `r round(model2$coefficients[,"Std. Error"][2],2)` z = `r abs(round(model2$coefficients[,"z value"][2],2))`, p = `r abs(round(model2$coefficients[,"Pr(>|t|)"][2],2))`). As a result, we are not able to replicate findings from Study 2 on a case-level, in which initial diagnostic breadth was predictive of information seeking via a linear mixed effects model (and changes in confidence via an individual differences correlation). The distribution of values for the number of differentials at each time point is shown below in Figure 5.5.
 
 ```{r diagtime, include=TRUE, echo=FALSE, out.width='100%', fig.align='center', warning=FALSE, message=FALSE}
 p <- ggplot(anovaDf, aes(x=Timepoint, y=Differentials, fill=Scenario)) + 
@@ -441,12 +428,15 @@ modelcomp <- anova(model2,model1)
 modelincon <- model2
 modelincon <- summary(modelincon)
 
+mod <- lm(t1Confidence ~ numOfHistoryActionsBeforePause + numOfExamActionsBeforePause + numOfTestingActionsBeforePause, data=vrData)
+t1conshap <- shapiro.test(rstandard(mod))
+
 ```
 
 We ask whether confidence is related to the amount of information sought on a given case. To investigate this, we look at information seeking before and after the pause point and look at both initial and final confidence. This allows us to look at this association in both directions: whether the amount of information seeking predicts subsequent confidence and whether confidence predicts subsequent information seeking. We fit generalised mixed effect models using the amount of information seeking in each of the three categories (Patient History, Physical Examinations and Testing). 
 
 \
-We first look at whether initial confidence is predicted by information seeking prior to the pause point (i.e. prior to when this initial confidence was reported). For this, we use a generalised mixed effect model with a Poisson distribution. We do not find evidence that initial confidence is predicted by prior information seeking related to Patient History ($\beta$ = `r abs(round(modelincon$coefficients[2],2))`, SE = `r round(modelincon$coefficients[,"Std. Error"][2],2)`, z = `r abs(round(modelincon$coefficients[,"z value"][2],2))`, p = `r abs(round(modelincon$coefficients[,"Pr(>|z|)"][2],2))`), Physical Examinations ($\beta$ = `r abs(round(modelincon$coefficients[3],2))`, SE = `r round(modelincon$coefficients[,"Std. Error"][3],2)`, z = `r abs(round(modelincon$coefficients[,"z value"][3],2))`, p = `r abs(round(modelincon$coefficients[,"Pr(>|z|)"][3],2))`) or Testing ($\beta$ = `r abs(round(modelincon$coefficients[4],2))`, SE = `r round(modelincon$coefficients[,"Std. Error"][4],2)`, z = `r abs(round(modelincon$coefficients[,"z value"][4],2))`, p = `r abs(round(modelincon$coefficients[,"Pr(>|z|)"][4],2))`).
+We first look at whether initial confidence is predicted by information seeking prior to the pause point (i.e. prior to when this initial confidence was reported). In line with our previous results, we would expect participants to be more confident after having sought more information beforehand. For this, we use a generalised mixed effect model with a Poisson distribution (due to a violation of normality of residuals assumption for linear mixed effects models, Shapiro-Wilk Test p = `r round(t1conshap$p.value,3)`). We do not find evidence that initial confidence is predicted by prior information seeking related to Patient History ($\beta$ = `r abs(round(modelincon$coefficients[2],2))`, SE = `r round(modelincon$coefficients[,"Std. Error"][2],2)`, z = `r abs(round(modelincon$coefficients[,"z value"][2],2))`, p = `r abs(round(modelincon$coefficients[,"Pr(>|z|)"][2],2))`), Physical Examinations ($\beta$ = `r abs(round(modelincon$coefficients[3],2))`, SE = `r round(modelincon$coefficients[,"Std. Error"][3],2)`, z = `r abs(round(modelincon$coefficients[,"z value"][3],2))`, p = `r abs(round(modelincon$coefficients[,"Pr(>|z|)"][3],2))`) or Testing ($\beta$ = `r abs(round(modelincon$coefficients[4],2))`, SE = `r round(modelincon$coefficients[,"Std. Error"][4],2)`, z = `r abs(round(modelincon$coefficients[,"z value"][4],2))`, p = `r abs(round(modelincon$coefficients[,"Pr(>|z|)"][4],2))`).
 \
 ```{r subinfoseeking, include=FALSE, warning=FALSE, message=FALSE, echo=FALSE}
 
@@ -488,7 +478,7 @@ plotDf <- data.frame(
 
 ```
 
-We next look at whether initial confidence predicts subsequent information seeking. To investigate this, we fit separate linear mixed effect models for each type of information seeking as the outcome variable. We find marginal evidence that initial confidence predicts subsequent history taking in a negative direction (i.e. that higher confidence is associated with lower subsequent history taking) ($\beta$ = `r abs(round(histmodel$coefficients[2],2))`, SE = `r round(histmodel$coefficients[,"Std. Error"][2],2)`, z = `r abs(round(histmodel$coefficients[,"z value"][2],2))`, p = `r abs(round(histmodel$coefficients[,"Pr(>|z|)"][2],2))`). We do not find evidence that initial confidence is associated with subsequent Physical Examinations ($\beta$ = `r abs(round(exammodel$coefficients[2],2))`, SE = `r round(exammodel$coefficients[,"Std. Error"][2],2)`, z = `r abs(round(exammodel$coefficients[,"z value"][2],2))`, p = `r abs(round(exammodel$coefficients[,"Pr(>|z|)"][2],2))`). We do find however that initial confidence was associated with higher amounts of Testing ($\beta$ = `r abs(round(testmodel$coefficients[2],2))`, SE = `r round(testmodel$coefficients[,"Std. Error"][2],2)`, z = `r abs(round(testmodel$coefficients[,"z value"][2],2))`, p = `r abs(round(testmodel$coefficients[,"Pr(>|z|)"][2],2))`). We plot the effect sizes and their confidence intervals below in Figure 5.6.
+To investigate information seeking later in the scenario, we look at whether initial confidence predicts subsequent information seeking. To investigate this, we fit separate generalised mixed effect models with Possion distributions for each type of information seeking as the outcome variable. We would expect that with higher initial confidence, participants subsequently seek less information (as they need less further information to confidently state a diagnosis). We find limited evidence that initial confidence predicts subsequent history taking in a negative direction (i.e. that higher confidence is associated with lower subsequent history taking) ($\beta$ = `r round(histmodel$coefficients[2],2)`, SE = `r round(histmodel$coefficients[,"Std. Error"][2],2)`, z = `r abs(round(histmodel$coefficients[,"z value"][2],2))`, p = `r abs(round(histmodel$coefficients[,"Pr(>|z|)"][2],2))`). We do not find evidence that initial confidence is associated with subsequent Physical Examinations ($\beta$ = `r abs(round(exammodel$coefficients[2],2))`, SE = `r round(exammodel$coefficients[,"Std. Error"][2],2)`, z = `r abs(round(exammodel$coefficients[,"z value"][2],2))`, p = `r abs(round(exammodel$coefficients[,"Pr(>|z|)"][2],2))`). We do find however, unlike our expectation, that initial confidence was associated with higher amounts of Testing ($\beta$ = `r abs(round(testmodel$coefficients[2],2))`, SE = `r round(testmodel$coefficients[,"Std. Error"][2],2)`, z = `r abs(round(testmodel$coefficients[,"z value"][2],2))`, p = `r abs(round(testmodel$coefficients[,"Pr(>|z|)"][2],2))`). We plot the effect sizes and their confidence intervals below in Figure 5.6.
 
 ```{r finalconfidenceplot, include=TRUE, warning=FALSE, message=FALSE, echo=FALSE, out.width='100%', fig.align='center'}
 
@@ -584,44 +574,6 @@ plotDf <- data.frame(
 
 We also look at whether final confidence (as reported at the end of the scenario) is predicted by the number of treatment actions performed by participants during the scenario. We fit a linear mixed effects model with the number of treatment actions as a fixed effect and both scenario and participant as random effects. We find evidence that final confidence was predicted by the amount of treatment actions administered during the scenario ($\beta$ = `r abs(round(finconmodel$coefficients[2],2))`, SE = `r round(finconmodel$coefficients[,"Std. Error"][2],2)` t = `r abs(round(finconmodel$coefficients[,"t value"][2],2))`, p = `r abs(round(finconmodel$coefficients[,"Pr(>|t|)"][2],3))`), such that higher confidence was associated with more treatment actions being performed during the scenario.
 
-### Time to Treat and Call for Help {.unnumbered}
-
-```{r timetohelp, include=FALSE, warning=FALSE, message=FALSE, echo=FALSE}
-
-treatData <- vrData[vrData$treatStart<9999,]
-
-treatExclusions <- nrow(vrData) - nrow(treatData)
-
-model <- lmer(treatStart ~ t1Confidence + (1|Scenario) + (1 | ParticipantID), data=treatData)
-
-treatConModel <- model
-treatConModel <- summary(treatConModel)
-
-model <- lmer(treatStart ~ t1Severity + (1|Scenario) + (1 | ParticipantID), data=treatData)
-
-treatSevModel <- model
-treatSevModel <- summary(treatSevModel)
-
-######################
-
-helpData <- vrData[vrData$totalHelpStart<9999,]
-
-helpExclusions <- nrow(vrData) - nrow(helpData)
-
-model <- lmer(totalHelpStart ~ t1Confidence + (1|Scenario) + (1 | ParticipantID), data=helpData)
-
-helpConModel <- model
-helpConModel <- summary(helpConModel)
-
-model <- lmer(totalHelpStart ~ t1Severity + (1|Scenario) + (1 | ParticipantID), data=helpData)
-
-helpSevModel <- model
-helpSevModel <- summary(helpSevModel)
-
-```
-
-We next turn to the time taken for participants to start treatment of patients and to call for help from a senior in the scenarios. We use linear mixed effect modelling to determine if the time taken to start treatment and to call for help is predicted by both confidence judgements and ratings of patient severity. We control for individual participants and scenarios as random effects. We do not find evidence that Initial Confidence predicts the time taken to start treatment or ask for help (ps > .1). `r treatExclusions` cases were excluded from the analysis involving time taken to treat, as no treatment actions were recorded for these cases. `r helpExclusions` cases were excluded from the analysis involving time taken to call for help, as no help actions were recorded for these cases. We do not find evidence that initial ratings of severity predict the time taken to start treatment ($\beta$ = `r round(treatSevModel$coefficients[2],2)`, SE = `r round(treatSevModel$coefficients[,"Std. Error"][2],2)`, t = `r round(treatSevModel$coefficients[,"t value"][2],2)`, p = `r round(treatSevModel$coefficients[,"Pr(>|t|)"][2],2)`), but we do find that severity is predictive of the time taken to call for help ($\beta$ = `r round(helpSevModel$coefficients[2],2)`, SE = `r round(helpSevModel$coefficients[,"Std. Error"][2],2)`, t = `r round(helpSevModel$coefficients[,"t value"][2],2)`, p = `r round(helpSevModel$coefficients[,"Pr(>|t|)"][2],2)`). Each unit increase in severity rating was associated with participants seeking help `r abs(round(helpSevModel$coefficients[2],2))` seconds quicker.
-
 ### Aspects of Information Seeking as Contributors to Diagnostic Appropriateness {.unnumbered}
 
 ```{r pcaclassifier, include=FALSE, warning=FALSE, message=FALSE, echo=FALSE}
@@ -661,18 +613,6 @@ topPCS <- weights
 
 
 rownames(topPCS) <- c(1:ncol(infoSeekingMatrixVRPCA))
-
-# Sort the columns alphabetically
-#colnames(topPCS) <- c("RC1", "RC2", "RC3", "RC4")
-#topPCS <- topPCS[, order(colnames(topPCS))]
-
-# Determine the maximum absolute value in the loadings matrix
-#max_abs <- max(abs(c(min(topPCS), max(topPCS))))
-# Normalize the data to the range [-1, 1]
-#normalized_topPCS <- topPCS / max_abs
-# Define a custom color palette with clear differentiation between negative, zero, and positive values
-#n_colors <- 20
-#color_palette <- colorRampPalette(c("blue", "white", "red"))(n_colors)
 
 pcs <- pcs[, order(colnames(pcs))]
 pcDF <- data.frame(pcs)
@@ -817,6 +757,45 @@ print(histCon +
 ```
 
 _Figure 5.8: Scatter plot showing the relationship between information value for information requests in the Patient History category (x-axis) and Diagnostic Appropriateness score  (y-axis) calculated based on the initial set of differentials provided at the pause point in the scenario. Each data point in this plot represents a single case/scenario._
+
+
+### Time to Treat and Call for Help {.unnumbered}
+
+```{r timetohelp, include=FALSE, warning=FALSE, message=FALSE, echo=FALSE}
+
+treatData <- vrData[vrData$treatStart<9999,]
+
+treatExclusions <- nrow(vrData) - nrow(treatData)
+
+model <- lmer(treatStart ~ t1Confidence + (1|Scenario) + (1 | ParticipantID), data=treatData)
+
+treatConModel <- model
+treatConModel <- summary(treatConModel)
+
+model <- lmer(treatStart ~ t1Severity + (1|Scenario) + (1 | ParticipantID), data=treatData)
+
+treatSevModel <- model
+treatSevModel <- summary(treatSevModel)
+
+######################
+
+helpData <- vrData[vrData$totalHelpStart<9999,]
+
+helpExclusions <- nrow(vrData) - nrow(helpData)
+
+model <- lmer(totalHelpStart ~ t1Confidence + (1|Scenario) + (1 | ParticipantID), data=helpData)
+
+helpConModel <- model
+helpConModel <- summary(helpConModel)
+
+model <- lmer(totalHelpStart ~ t1Severity + (1|Scenario) + (1 | ParticipantID), data=helpData)
+
+helpSevModel <- model
+helpSevModel <- summary(helpSevModel)
+
+```
+
+We next turn to the time taken for participants to start treatment of patients and to call for help from a senior in the scenarios. We use linear mixed effect modelling to determine if the time taken to start treatment and to call for help is predicted by both confidence judgements and ratings of patient severity. We control for individual participants and scenarios as random effects. `r treatExclusions` cases were excluded from the following analysis involving time taken to treat, as no treatment actions were recorded for these cases. `r helpExclusions` cases were excluded from the analysis involving time taken to call for help, as no help actions were recorded for these cases. We do not find evidence that Initial Confidence predicts the time taken to start treatment or ask for help (ps > .1). We do not find evidence that initial ratings of severity predict the time taken to start treatment ($\beta$ = `r round(treatSevModel$coefficients[2],2)`, SE = `r round(treatSevModel$coefficients[,"Std. Error"][2],2)`, t = `r round(treatSevModel$coefficients[,"t value"][2],2)`, p = `r round(treatSevModel$coefficients[,"Pr(>|t|)"][2],2)`), but we do find that severity is predictive of the time taken to call for help ($\beta$ = `r round(helpSevModel$coefficients[2],2)`, SE = `r round(helpSevModel$coefficients[,"Std. Error"][2],2)`, t = `r round(helpSevModel$coefficients[,"t value"][2],2)`, p = `r round(helpSevModel$coefficients[,"Pr(>|t|)"][2],2)`). Each unit increase in severity rating was associated with participants seeking help `r abs(round(helpSevModel$coefficients[2],2))` seconds quicker.
 
 ## Discussion {.unnumbered}
 

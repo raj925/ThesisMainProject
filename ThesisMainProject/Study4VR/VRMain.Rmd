@@ -446,6 +446,8 @@ for (x in 1:nrow(vrData))
   pptTimes <- str_split(vrData$actTimesVector[n],"\n")[[1]]
   pptTimes <- as.numeric(pptTimes)
   pptHistTimes <- pptTimes[1:length(historyActions)]
+  pptExamTimes <- pptTimes[(length(historyActions)+1):(length(historyActions)+length(examActions))]
+  pptTestTimes <- pptTimes[(length(historyActions)+length(examActions)+1):length(pptTimes)]
   vrData$infoValHistoryBeforePause[x] <- sum(historyVals[pptHistTimes<300&pptHistTimes>1],na.rm = T)
   
   vrData$infoValBeforePause[x] <- sum(soughtVals[pptTimes<300&pptTimes>1],na.rm = T)
@@ -455,6 +457,9 @@ for (x in 1:nrow(vrData))
   #vrData$infoValAfterHistory[x] <- mean(afterHistoryVals[afterHistoryVals!=0],na.rm = T)
   vrData$infoValAfterHistory[x] <- sum(afterHistoryVals,na.rm = T)
   
+  vrData$infoValHistoryAfterPause[x] <- sum(historyVals[pptHistTimes>=300],na.rm = T)
+  vrData$infoValExamsAfterPause[x] <- sum(examVals[pptExamTimes>=300],na.rm = T)
+  vrData$infoValTestsAfterPause[x] <- sum(testVals[pptTestTimes>=300],na.rm = T)
   
 }
 

@@ -11,7 +11,7 @@ documentclass: book
 #bibliography: [bibliography/references.bib, bibliography/additional-references.bib]
 ---
 
-# Introduction {.unnumbered}
+# Chapter 1 - Introduction {.unnumbered}
 
 ```{=tex}
 \adjustmtc

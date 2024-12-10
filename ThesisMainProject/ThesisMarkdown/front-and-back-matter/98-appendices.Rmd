@@ -33,7 +33,9 @@ accuracyColour <- "black"
 resolutionColour <- "yellow"
 ```
 
-# Scoping Review - Full Table of Included Papers
+# Chapter 2 - Systematic Scoping Review on Confidence and Certainty in Diagnoses {.unnumbered}
+
+## Full Table of Included Papers
 
 Papers are arranged in alphabetical order. Studies marked with ** next to their title were included via citation tracking. 
 
@@ -54,7 +56,9 @@ ft
 
 ```
 
-# Vignette Marking Scheme (Studies 2 and 3)
+# Chapter 3 - Information Seeking and Confidence During Medical Diagnoses {.unnumbered}
+
+## Vignette Marking Scheme (Online and Think-Aloud Studies)
 
 ``` {r markingtable, include=TRUE, eval=TRUE, message=FALSE, echo=FALSE, warning=FALSE,out.width='100%', fig.align='center'}
 
@@ -78,7 +82,7 @@ _Table S1: Marking scheme used to denote differentials that are considered as co
 
 \newpage
 
-# Vignette Information Requests
+## Vignette Information Requests
 
 ``` {r inforequests, include=TRUE, eval=TRUE, message=FALSE, echo=FALSE, warning=FALSE,out.width='100%', fig.align='center'}
 
@@ -101,9 +105,9 @@ _Table S2: Full list of possible information requests that participants can make
 
 \newpage
 
-# Calibration of Confidence to Alternative Accuracy Measures
+## Calibration of Confidence to Alternative Accuracy Measures
 
-## Differential Accuracy
+### Differential Accuracy
 
 ```{r diffaccanova, include=FALSE, echo=FALSE}
 
@@ -179,7 +183,7 @@ colnames(caseComparisons) <- c("Case","df","t","MDiff","p")
 
 In order to examine the observed underconfidence in more detail, we compare confidence and Differential Accuracy by case (the mean values of which can be found in Table 1 of the main thesis). We conducted paired t-tests for each condition's cases by comparing Differential Accuracy and confidence values (at the final Testing stage) to observe if they significantly differ from each other. A p value of less than .05 is interpreted as evidence for overconfidence or underconfidence (depending on the direction of the effect). We observed underconfidence for the GBS case (t(`r as.numeric(caseComparisons[caseComparisons$Case=="GBS",]$df)`) = `r as.numeric(caseComparisons[caseComparisons$Case=="GBS",]$t)`, MDiff = `r as.numeric(caseComparisons[caseComparisons$Case=="GBS",]$MDiff)`, p = < .001), the TA case (t(`r as.numeric(caseComparisons[caseComparisons$Case=="TA",]$df)`) = `r as.numeric(caseComparisons[caseComparisons$Case=="TA",]$t)`, MDiff = `r as.numeric(caseComparisons[caseComparisons$Case=="TA",]$MDiff)`, p = < .001), the TTP case (t(`r as.numeric(caseComparisons[caseComparisons$Case=="TTP",]$df)`) = `r as.numeric(caseComparisons[caseComparisons$Case=="TTP",]$t)`, MDiff = `r as.numeric(caseComparisons[caseComparisons$Case=="TTP",]$MDiff)`, p = < .001) and the UC case (t(`r as.numeric(caseComparisons[caseComparisons$Case=="UC",]$df)`) = `r as.numeric(caseComparisons[caseComparisons$Case=="UC",]$t)`, MDiff = `r as.numeric(caseComparisons[caseComparisons$Case=="UC",]$MDiff)`, p = < .001). The remaining cases did not yield a significant effect. 
 
-## Highest Likelihood Accuracy
+### Highest Likelihood Accuracy
 
 ```{r highlikaccanova, include=FALSE, echo=FALSE}
 
@@ -256,11 +260,11 @@ colnames(caseComparisons) <- c("Case","df","t","MDiff","p")
 
 In order to examine the observed overconfidence in more detail, we compare confidence and Highest Likelihood Accuracy by case (the mean values of which can be found in Table 1 of the main thesis). We conducted paired t-tests for each condition's cases by comparing Highest Likelihood Accuracy and confidence values (at the final Testing stage) to observe if they significantly differ from each other. A p value of less than .05 is interpreted as evidence for overconfidence or underconfidence (depending on the direction of the effect). We observed overconfidence for the AD case (t(`r as.numeric(caseComparisons[caseComparisons$Case=="AD",]$df)`) = `r as.numeric(caseComparisons[caseComparisons$Case=="AD",]$t)`, MDiff = `r as.numeric(caseComparisons[caseComparisons$Case=="AD",]$MDiff)`, p = < .001), the MTB case (t(`r as.numeric(caseComparisons[caseComparisons$Case=="MTB",]$df)`) = `r as.numeric(caseComparisons[caseComparisons$Case=="MTB",]$t)`, MDiff = `r as.numeric(caseComparisons[caseComparisons$Case=="MTB",]$MDiff)`, p = < .001) and the TTP case (t(`r as.numeric(caseComparisons[caseComparisons$Case=="TTP",]$df)`) = `r as.numeric(caseComparisons[caseComparisons$Case=="TTP",]$t)`, MDiff = `r as.numeric(caseComparisons[caseComparisons$Case=="TTP",]$MDiff)`, p = < .001). The remaining cases did not yield a significant effect. 
 
-# Analysis of Expert Participants (Online Vignette Study)
+## Analysis of Expert Participants (Online Vignette Study)
 
 In this section, we present analysis of experienced participants who had completed the same online vignette task that the medical student participants completed. In total, 7 participants completed the experiment. Given this small sample size, we primarily use the expert participants to compare to the medical student participants' results (as presented in the main thesis).
 
-## Calibration of Confidence and Accuracy 
+### Calibration of Confidence and Accuracy 
 
 ```{r accanovaexp, include=FALSE, echo=FALSE}
 
@@ -361,7 +365,7 @@ print(p)
 
 *Figure: Graph for the expert participants showing Confidence (green) at each of the three information stages (History = Patient History, Physical = Physical Examinations, Testing = Testing) in comparison to our main accuracy measure (black, likelihood value assigned to the correct diagnosis), the more lenient measure of the proportion of trials where a correct differential was included (dark red) and the stricter measure of the value assigned to the highest likelihood differential if it is correct (orange). Values shown are averaged across participants and cases, with the error bars representing standard error.*\
 
-## Information Seeking Value of Expert Participants
+### Information Seeking Value of Expert Participants
 
 ```{r infovalcalcexp, include=FALSE, echo=FALSE}
 
@@ -496,7 +500,7 @@ print(cow) #view the multi-panel figure
 
 *Figure: Scatter plots showing information seeking value (defined using experienced clinicians' information seeking) against our key dependent variables of accuracy (the likelihood assigned to a correct differential if provided, A) and change in confidence (difference between final confidence and initial confidence, B). Information Sought refers to the proportion of available information sought across cases. Information Value refers to the sum of all mean information values across all 6 cases for a given participant. All data points are for a single participant where variables are averaged across all 6 cases they completed.*\
 
-## Information Seeking Variability of Expert Participants
+### Information Seeking Variability of Expert Participants
 
 ```{r accVarExp, include=FALSE, eval=TRUE, message=FALSE, echo=FALSE, warning=FALSE,out.width='100%', fig.align='center'}
 
@@ -569,7 +573,9 @@ _Figure: Average Information Seeking variability by participant accuracy. On the
 
 \newpage
 
-# Debrief Questionnaire from Think-Aloud Study
+# Chapter 4 - Characterising Diagnostic Reasoning Strategies via a Think-Aloud Paradigm {.unnumbered}
+
+## Debrief Questionnaire from Think-Aloud Study
 
 Each question has a corresponding follow-up question below in case they are not answered by responses to the main questions.
 
@@ -580,7 +586,7 @@ Each question has a corresponding follow-up question below in case they are not 
 
 \newpage
 
-# Diagnostic Appropriateness Marking Scheme for VR Study
+## Diagnostic Appropriateness Marking Scheme for VR Study
 
 ``` {r vrmarking, include=TRUE, eval=TRUE, message=FALSE, echo=FALSE, warning=FALSE,out.width='100%', fig.align='center'}
 
@@ -608,7 +614,6 @@ _Table S3: Marking criteria for the VR Study. Differentials are shown for each s
 \newpage
 
 # R Environment and Packages
-
 
 ```{r}
 

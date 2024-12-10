@@ -2187,256 +2187,39 @@ from the online experiment dataset of Study 2.*
 
 ## Discussion {.unnumbered}
 
-This study of 16 medical students explored the usage of a think-aloud
-methodology to understand thought processes during medical diagnoses.
-Using our online interface and recorded verbalisations by students, we
-aimed to detect clinical reasoning strategies based on criteria adapted
-from Coderre et al. (2003). The strength of this paradigm is in
-qualitatively recording medical students' thought processes as they
-evolve with information as per our flexible, evolving vignette-based
-interface design. By recording how participants consider different
-diagnoses in real time, we are able to understand the reasoning approach
-students are applying for each case and how this affects their
-information seeking and confidence behaviour. We are also able to
-investigate if these reasoning strategies affect diagnostic accuracy,
-both in the context of this current study and in the previous online
-study.\
+This study of 16 medical students explored the usage of a think-aloud methodology to understand thought processes during medical diagnoses. Using our online interface and recorded verbalisations by students, we aimed to detect clinical reasoning strategies based on criteria adapted from Coderre et al. (2003). The strength of this paradigm is in qualitatively recording medical students’ thought processes as they evolve with information as per our flexible, evolving vignette-based interface design. By recording how participants consider different diagnoses in real time, we are able to understand the reasoning approach students are applying for each case and how this affects their information seeking and confidence behaviour. We are also able to investigate if these reasoning strategies affect diagnostic accuracy, both in the context of this current study and in the previous online study. In this section, we summarise the main findings from this mixed-methods study.
 
-In terms of performance and calibration, we found that participants'
-confidence judgements were well calibrated to their objective accuracy,
-similar to the previous study. The measure of accuracy was different in
-this study by necessity, in that a case was considered 'correct' with
-the mention of a correct differential at some point during the case.
-This measure is most like the lenient measure of accuracy from our
-previous study, in that participants were marked as correct if they
-considered a correct differential without taking into account its
-relative likelihood compared to other differentials. However, given that
-both accuracy and calibration are operationalised differently in this
-study, it is difficult to compare these findings directly. Our finding
-of calibrated confidence in both studies however is an indication that
-medical students express uncertainty appropriately. Similar to the
-previous study, we also find that medical students are reticent to
-remove differentials from consideration. In this study, participants
-report low occurrences of disregarding differentials. This would
-correspond with our assumption that medical students attempt to remain
-open minded in their diagnoses. By rarely removing differentials from
-consideration, students are then observed to broaden their differentials
-with more information.
+### Broadening of Differentials {.unnumbered}
 
-\
-In terms of differential evaluations, we observed via think-aloud
-utterances a similar tendency for medical students to very rarely remove
-differentials from their consideration. This would support the finding
-from the previous study that students tend to broaden the differentials
-they are considering as they receive more information. We find in this
-study that a HD reasoning strategy is the most common among students,
-which is similar to the Coderre et al. finding that novice clinicians
-tended to use a HD reasoning strategy over PR). The overall pattern of
-broadening differentials in the online can explained by students tending
-to use a HD strategy but rarely removing differentials from
-consideration (assuming that there was a majority of students using a HD
-strategy in the online study). The reticence to remove differentials
-corresponds with Krupat et al. (2017), who found that medical students
-tended to consider more differentials when compared to more experienced
-medical faculty. This tendency toward open-mindedness for students has
-implications for medical education in terms of whether students should
-be taught situations where it makes sense to disregard differentials or
-if remaining open-minded at all times is useful to all patients.
+Similar to the online vignette study, we find that medical students are reticent to remove differentials from consideration. In this study, participants report low occurrences of disregarding/removing differentials from consideration The reticence to remove differentials seems to be a clear tendency for medical students, rather than a quirk of our interface from the previous study (where we explicitly prompted participants to record their differentials). By rarely removing differentials from consideration, students are then observed to broaden their differentials with more information, as observed more directly in the online vignette study.  
 
-\
-On reasoning strategies, we were able in this study to use think-aloud
-utterances to detect reasoning strategies on the part of the medical
-students. We considered three different strategies:
-Hypothetico-Deductive (HD), Pattern Recognition (PR) and
-Scheme-Inductive (SI). These strategies represent different approaches
-to diagnosis, either seeking to be comprehensive in both the information
-sought and differentials considered or focusing in on a single
-diagnosis. We found that these choices in reasoning strategies were not
-determined by an individual's general decision making approach. We found
-evidence that participants do not seem to favour the strategy they
-report using during debrief interviews. This could be because of the
-practicalities of patient cases meant that students were forced to make
-decisions in ways that they were not used to. This begs the question of
-what the properties are of a patient case that determine the choice of
-reasoning strategy on a given case. One account is that reasoning
-strategy is determined by how much experience/familiarity the
-student/clinician has with that type of patient presentation. If they
-had seen a similar patient before (during their education or practice),
-they may be more likely to use pattern recognition to identify the
-patient's condition. Future work can elucidate this by asking
-participants to report how much familiarity they have with the patient
-presentation and symptoms before they proceed with determining a
-diagnosis. Another account is that students have the capability of using
-multiple strategies and is dependent on their educational progression.
-Arocha, Patel & Patel (1993) found that students at different points in
-their education using differing strategies in terms of either
-maintaining multiple concurrent diagnostic hypotheses or focusing on
-narrowing their differentials. When using a think-aloud protocol, Arocha
-& Patel (1995) found compared medical students at novice, intermediate
-and advanced stages of their education/experience. They found a
-deterioration in performance for intermediate students, who were more
-open-minded than novice students but not able to narrow differentials
-based on information as the advanced students did. This indicates that
-clinicians learn over time to reconcile their abilities to both narrow
-and broaden differentials by choosing the right situations/cases for
-each.
+One way that this broadening of differentials can be explained is in terms of ‘decision inertia’, whereby individuals tend to report their past choices regardless of the evidence presented against those choices (Akaishi et al, 2014). However, this account seems unlikely given that we found medical students to be sensitive to information that was either confirmatory or disconfirmatory of their diagnostic hypotheses. This is because we found that medical students were equally as likely to increase or decrease the likelihoods of differentials via coding of such utterances. We can surmise from this finding that medical students do not solely think about positive/confirmatory evidence for their beliefs (cf. Kaanders et al., 2021). The ‘positive test account’ put forward by Klayman & Ha (1987) claimed that individuals formulate beliefs and then seek information to support these beliefs, rather than against them (as also explained by Hunt et al., 2016). In our task, we find that medical students integrated information to both support and oppose their differentials despite the sequential nature of the task’s information seeking (cf. Jonas et al., 2001). It is however possible that with more freedom in information seeking, they may be more strategic in choosing information that is more likely to yield supporting information. This has been investigated in some previous studies as ‘diagnostic momentum’, in which individuals seek positive test results to resolve uncertainty/ambiguity caused by inconclusive tests (Aron et al., 2023). Future work then requires a more fine-grained understanding of information seeking within medicine and whether certain tests are chosen based on their likelihood of producing a positive test result. While the receipt of information seems to increase diagnostic confidence (as found in our online study), the choice of information itself may be an important factor to consider and a focus for future interventions/study. However, this informational account would not explain our findings in this study that students tended to broaden their differentials.
 
-\
-Whilst these reasoning strategies carry some differences qualitatively,
-our study was used to investigate how these strategies actually manifest
-in differences to information seeking and confidence. We found that HD
-reasoning was associated with more differential evaluations when
-compared to the other approaches, as well as higher diagnostic accuracy.
-This is different to the results of Coderre et al. (2003), who found PR
-was associated with accuracy. We would interpret our findings as HD
-being a 'better' approach for medical students and PR would be more
-suitable for experienced clinicians who have more cases to draw from.
+This tendency to broaden diagnostic thinking could instead correspond with medical students remaining open minded in their diagnoses in order to conscious avoid biased diagnoses, which was also reflected in our qualitative data. A number of participants mentioned that they aware of an ‘anchoring bias’ and that they should avoid it. The conscious attempts to avoid narrowing on a diagnosis too early could explain our findings of differentials rarely being removed consideration. There has been past work studying how to reduce such instances of ‘premature closure’ (Voytovich, Rippey & Suffredini, 1985, Eva & Cunnington, 2006, Krupat et al., 2017), whereby clinicians focus in on a diagnosis and disregard other possibilities too early in the decision process. The foremost of these papers in particular found that experienced clinicians were more susceptible to settling on a diagnosis too early than those who were less experienced. It has also been found that medical residents with greater knowledge of discriminating features between diseases were less susceptible to anchoring bias (Mamede et al., 2024). It is then reasonable for medical students to be more susceptible to such a bias due to their relative inexperience compared to other clinicians (as reflected by participants during debrief interviews). As this work was conducted using controlled experimental paradigms, it does not include environmental factors that may exacerbate tendencies toward anchoring/premature closure (e.g. work stress, busyness in managing multiple patients at once) (Gupta et al., 2023).  Prior to conducting both of these studies, we may have expected a ‘process of elimination’ to be used by students but this does not appear to be the case across both of these studies. Rather than frequently disregarding differentials altogether, medical students instead incorporate new information to adjust how likely their considered differentials are, whilst also being able to incorporate new differentials for consideration that the information suggests. 
 
-\
-Our findings suggest that the reasoning strategy used by a medical
-decision maker should not only be appropriate for the case at hand, but
-also appropriate for the decision maker's experience/expertise (either
-for cases of that nature or in terms of general medical experience).
-This implies pattern recognition should be employed when possessing
-enough experience to use it accurately. On information seeking, whilst
-we do not find evidence for differences in information seeking when
-looking at individual cases (in this think-aloud study), we do find
-evidence for reasoning strategy affecting information seeking when
-considering whether a case/condition tends to be approached with a HD or
-PR approach by a majority of students. We observed higher information
-seeking and informational value for PR-dominant cases when compared to
-HD-dominant cases. Given that we averaged across individual
-cases/conditions however, we advise caution in interpreting these
-findings, as the difference in information seeking could also be a
-result of these being different cases as opposed to involving reasoning
-strategies. Disentangling reasoning strategy from the medical conditions
-being treated is useful when looking at individual reasoning strategies
-on each case is useful, though we would require a much larger sample
-size in our think-aloud study to investigate this. We were unable to
-reliably predict reasoning strategies on an individual-case level for
-the online study where we did not have access to think-aloud utterances,
-which was likely a result of our think-aloud study dataset being both
-underpowered (from a quantitative analysis perspective) and imbalanced
-in terms of the incidences of reasoning strategies. Looking at reasoning
-strategies on a case-by-case level with larger samples (and different
-levels of expertise) would be incredibly useful and we recommend future
-work to adopt such a methodology to do so, as the think-aloud
-methodology provides useful insight into the diagnostic decision
-process.
+### Reasoning Strategies and Their Relationship with Accuracy {.unnumbered}
 
-\
-Based on our qualitative findings, we provide support for findings from
-our previous study. Firstly, several participants reported progressively
-investigating patient symptoms based on the patient's history and their
-initial set of diagnostic differentials. This corresponds with our
-finding in the previous study that the number of initial differentials
-considered based on the patient history was predictive of information
-seeking and changes in confidence. This supports evidence for the large
-weighting on early information received by clinicians, especially to do
-with history taking, because early information is responsible for the
-initial set of diagnoses that then guide subsequent information seeking.
-Secondly, we find a qualitative theme that participants report certain
-information being standard to seek regardless of the patient case. This
-corresponds with the finding from our previous study that lower
-information seeking variability was associated with higher accuracy,
-with certain information requests in our task being associated with
-higher accuracy when sought across cases. This further corroborates our
-evidence for a degree of standardisation in information seeking being
-useful for maximising diagnostic accuracy. In particular, we had found
-in the online study that lower variability in information seeking was
-associated with higher accuracy, with specific pieces of information
-(e.g. full blood count, assessing extremities) being useful to seek
-regardless of the patient's condition.
+On reasoning strategies, we were able in this study to use think-aloud utterances to detect reasoning strategies on the part of the medical students, replicating Coderre et al.’s (2003) general finding of different strategies being utilised during diagnoses. We considered three different strategies: Hypothetico-Deductive (HD), Pattern Recognition (PR) and Scheme-Inductive (SI). These strategies represent different approaches to diagnosis, either seeking to be comprehensive in both the information sought and differentials considered or focusing in on a single diagnosis. We extend previous work to show variability in strategies that is not linked to individual medical students or to specific cases. Specifically, we found that reasoning strategies were not primarily determined by either an individual’s general decision making approach (as per their subjectively preferred strategy during debrief interviews) or by specific patient conditions. 
 
-\
-We can then find an agreement between these studies that diagnosis is a
-decision process where there is considered to be 'optimal' information
-to seek for any given patient. Future work from medical professionals
-should focus on designing cognitive aids for prompting information
-seeking, such as providing a 'checklist' of what information should be
-needed for particular conditions. Whilst this is not feasible for all
-possible patient conditions, some standardisation in information seeking
-would be beneficial for diagnostic accuracy. Finally, we note that a
-number of participants mention that they aware of 'anchoring bias' and
-that they should avoid it. The conscious attempts to avoid narrowing on
-a diagnosis too early could explain our findings of differentials rarely
-being removed consideration. There has been past work studying how to
-reduce such instances of 'premature closure' (Voytovich, Rippey &
-Suffredini, 1985, Eva & Cunnington, 2006, Krupat et al., 2017), with the
-former paper finding that experienced clinicians were more susceptible
-to settling on a diagnosis too early than those who were less
-experienced. As this work was conducted using controlled experimental
-paradigms, they do not consider environmental factors that may
-exacerbate tendencies toward anchoring/premature closure (e.g. work
-stress, busyness in managing multiple patients at once). Future work
-should hence study how such anchoring arises and interventions that can
-mitigate it.
+This could be because of the practicalities of patient cases meant that students were forced to make decisions in ways that they were not used to. This begs the question of what the properties are of a patient case that determine the choice of reasoning strategy on a given case. One account is that reasoning strategy is determined by how much experience/familiarity the student/clinician has with that type of patient presentation. If they had seen a similar patient before (during their education or practice), they may be more likely to use pattern recognition to identify the patient’s condition (Nendaz & Perrier, 2012). Arocha and Patel (1980) found that intermediate medical students displayed a deterioration in performance (compared to advanced students) as they were able to generate plausible differentials but did not have sufficient knowledge yet to use incoming information to narrow their differentials (which could also explain the finding from the previous section on students tending to broaden their differentials on average). Hence, the use of reasoning strategies may be dependent on experience and knowledge, with clinicians/medical students using their assessment of their own knowledge to guide their reasoning strategy (even if it is not their preferred method for making diagnostic decisions). Future work can validate this account by looking at reasoning strategies as a function of clinicians’ experience with similar patient conditions/symptoms. 
 
-\
-Finally, we identified the dominant reasoning strategy for each of the
-patient conditions used in our vignettes, and then investigated their
-effect on accuracy within our previous study's (larger) dataset. We
-sorted cases into two groups: HD-dominant (where HD was used by a
-majority of students in the think-aloud study) and PR-dominant (where PR
-was used by a majority of students in the think-aloud study). Whilst we
-observed higher accuracy and higher initial diagnostic breadth for
-HD-dominant cases, we observed higher information seeking and
-informational value for PR-dominant cases. It seems likely that as a
-result of our task design, naming more diagnoses increases the chance
-that a correct diagnosis is mentioned. A HD reasoning strategy being
-associated with greater diagnostic breadth corresponds with the nature
-of HD being that of considering a broad set of differentials to either
-add to or subtract from. Higher information seeking for PR-dominant
-cases is surprising however, as we may have expected a PR strategy to
-result in selective information seeking in order to confirm a focal
-diagnosis. An alternative explanation could be participants seek more
-information because they are less able to generate a broad set of
-differentials. However, we find through modelling that accuracy was
-highest when participants had initial diagnostic breadth on a
-PR-dominant cases (whilst increasing diagnostic breadth had less of an
-impact on accuracy).
+However, this study did emulate conditions within healthcare environments (e.g. time pressures as per Gupta et al., 2023, interruptions as per Soares et al., 2019) that may force clinicians to make decisions in ways that do not prefer, making this account less likely. A more likely account stems from a key difference between our study’s methodology and Coderre et al.’s (2003): in the latter study, participants were asked to retrospectively think aloud about how they arrived at a diagnosis, whilst our study asked participants to think aloud as they were performing a diagnosis. Given our finding that participants do not tend to use their preferred strategy, it seems that clinicians are often not able to accurately reflect on their own decision making process retrospectively due to inaccurate self-perceptions. This could relate closely to miscalibrations of confidence, whereby individuals have false self-beliefs (Oeberst & Imhoff, 2023) about their own performance/efficacy (Alicke & Govorun, 2005) and can then include false beliefs about how they make decisions too (for instance, believing that others are more biased that one’s self when processing information, Pronin et al., 2002).
 
-\
-Whilst reasoning strategy does seem to vary as a function of the patient
-condition, an optimal strategy for diagnostic accuracy seems to be
-generating a larger set of initial differentials and then selectively
-choosing from this set the diagnosis that closely resembles the
-patient's symptoms and observations. In other words, medical students
-performed best by starting broad and then narrowing their differentials.
-This is predicated on students and clinicians being able to identify
-plausible diagnoses early on, whilst remaining open minded to other
-possibilities. An assumption we make from this result, however, is that
-the dominant strategy for each patient's conditions is the same in the
-think-aloud study as it was in the online-study. However, it should be
-noted that, as our multinomial classifier was unable to accurately
-predict strategies for individual cases in the online study, we are
-unable to verify this assumption. This is likely because of the
-relatively small and unbalanced think-aloud dataset used to train the
-classifier. This could be rectified by future work that uses think-aloud
-methodologies for larger scale data collection for quantitative analysis
-such as this.
+Unlike Coderre et al. (2003) however, we do not find the same association between reasoning strategy and accuracy. Coderre et al. (2003) had found that pattern recognition was associated with higher accuracy and was utilised more by experienced clinicians. We investigated this relationship in two ways: by coding reasoning strategies in the think-aloud study based on participants’ utterances and using the dominant reasoning strategy for each case in the think-aloud study to determine how this affects behaviour in the online vignette study (utilising its larger sample size). Both of these methods provide some concordant results: whilst we observed an association between PR and beneficial information seeking (i.e. informational value), HD was associated with higher initial diagnostic breadth and higher diagnostic accuracy (for HD-dominant cases). A HD reasoning strategy being associated with greater diagnostic breadth corresponds with the nature of HD being that of considering a broad set of differentials to either add to or subtract from. We find through modelling that accuracy was highest when participants had higher initial diagnostic breadth on PR-dominant cases (whilst increasing diagnostic breadth had less of an impact on accuracy for HD-dominant cases). This deviates from the assumption in past literature that HD, as a process, is the optimal one for medical diagnoses (Kuipers & Kassirer, 1984, Higgs et al., 2008). Given that we averaged across individual cases/conditions however, we advise caution in interpreting these findings, as the difference in information seeking could also be a result of these being different cases as opposed to involving reasoning strategies. Our differing results to Coderre et al. (2003) hint that effective strategy usage is predicated on the experience/knowledge available to the clinician. For example, pattern recognition is more effective when a clinician has more past cases to draw from and relate to any given patient. This would explain why we find that medical students are more accurate when using a hypothetico-deductive process instead.
 
-\
-These two studies together provide a nuanced and in-depth look at the
-diagnostic process as demonstrated with our vignette-based task. We
-should consider however the generalisability and ecological validity of
-these studies. By using a vignette-based paradigm, participants do not
-actually interact with, observe and treat a patient. We are also limited
-in terms of the information that is available for clinicians to seek. In
-addition, participants completed the studies in relatively controlled
-environments, outside of their usual medical context. Hence, our next
-study hence aims to look at the link between information seeking and
-confidence, but with a more naturalistic paradigm. To alleviate these
-concerns of generalisability, we require a paradigm that allows for more
-open-ended information seeking, visual observation and treatment of a
-patient and the use of a clinical environment akin to the one in which
-clinicians operate. As previously explored in our systematic review, the
-use of in-situ research lacks objective markers of accuracy that we
-utilise. To this end, we use virtual reality (VR) in our next study to
-simulate a realistic medical environment, as well as the patients
-themselves. This allows for a realistic, interactive paradigm where
-participants observe a (virtual) patient in real-time and can administer
-treatment (and observe reactions to this treatment in the patient).
-There is also more openness in terms of the information that can be
-sought and clinical actions taken, making its use more analogous to real
-medical contexts.
+Though we find evidence of a link between reasoning strategy and initial diagnostic breadth, the causal direction between the two is not yet fully ascertained. It seems unlikely that the reasoning strategy is consciously applied by clinicians to guide their subsequent reasoning process and differential generation. This is because of our finding that participants have limited insight into their own reasoning process, meaning that participant do not seem to be consciously applying a reasoning strategy from the outset that then manifests in a number of differentials being generated. Our account would then be that based on the initial presentation of the patient and the early differentials that come to mind; clinicians then reason within this space of differentials using the strategy that they perceive as being most appropriate in terms of broadening or narrowing from this initial set of differentials. Future work would be needed to elucidate this account by assessing the awareness that clinicians have of their own decision process whilst they are making diagnoses, with think-aloud methodologies providing a promising avenue for this research. 
+
+### Progressive Investigations and History Taking {.unnumbered}
+
+Whilst finding that there is variance in how medical students make diagnostic decisions, there was some agreement on certain tendencies to follow that emerged by our qualitative thematic analysis. In debrief interviews, several participants reported progressively investigating patient symptoms based on the patient’s history and their associated set of initial diagnostic differentials. This corresponds with our finding in the previous study that the number of initial differentials considered based on the patient history was predictive of information seeking and changes in confidence. This supports evidence for the large weighting on early information received by clinicians, especially to do with history taking, because early information is responsible for the initial set of diagnoses that then guides subsequent information seeking. It has also been found that a patient’s case history that is suggestive of a particular diagnosis prompts selective processing of clinical features that favour said diagnosis (Leblanc, Brooks & Norman, 2022), with quality of working hypotheses influencing the relevance of information sought on a patient (Brooks, LeBlanc & Norman, 2000).  The influence of early differentials is also found in the extant literature, with differentials generated early on being harder to disregard later on (Kourtidis et al., 2022, Redelmeier & Shafir, 2023). Given the influence of early differentials on the diagnostic process, it follows that history taking is an important skill to teach medical students that has been researched extensively in the past (Keifenham et al., 2015). 
+
+We also find a qualitative theme that participants report certain information being standard to seek regardless of the patient case. This corresponds with the finding from the online study that lower information seeking variability was associated with higher accuracy. Variability in information seeking across cases has not been previously studied during diagnostic decisions to our knowledge, but previous work has called for a degree of standardisation within medical decisions (Wears, 2015), such as checklists (Ely, Graber & Croskerry, 2011). When taking findings from both our coding of reasoning strategies and thematic analysis together, these findings portray that diagnosis is a decision process where there is considered to be ‘optimal’ information to seek for any given patient, with a particular focus on history taking to inform the rest of the decisional process. Whilst reasoning processes varied as a function of the patient condition, an optimal strategy for diagnostic accuracy across all cases seems to be generating a larger set of initial differentials from the patient history and then selectively choosing from this set the diagnosis that closely resembles the patient’s symptoms and observations. In other words, medical students performed best by starting broad and then narrowing their differentials. This is predicated on students and clinicians being able to identify plausible diagnoses early on, whilst remaining open minded to other possibilities. This speaks to a strength of our methodology, whereby we are able to observe triangulation between quantitative analysis and qualitative themes.
+
+### Implications and Limitations {.unnumbered}
+
+From our coding of reasoning strategies, we found that medical students utilise a variety of reasoning strategies and that we were able to pick up on these strategies from medical students’ verbalisations as they thought out loud during diagnoses. However, students did not show clear insight into their own decision making process, as they tended to deviate from their subjectively preferred strategies.  In addition, reasoning strategies were not reliably explained by the case/patient being treated. This brings an unresolved question from this work of the factors that inform the diagnostic reasoning processes used by medical students or clinicians. Clinical reasoning can be described and taught in a variety of ways (Royce et al., 2019), such as teaching the strategies coded in these studies (e.g. hypothethico-deductive, pattern recognition) and other reasoning processes (e.g. Bayesian reasoning, inductive reasoning). With this range of reasoning approaches however, there is currently not a clear consensus on which approach, or approaches, are most useful for diagnoses and the situations in which a clinician should adopt a certain approach.  Our study reveals this as an open question for future work: understanding the factors related to individual clinicians and to patient cases that necessitate the use of certain reasoning strategies. A real strength of this study is its use of a think-aloud protocol, which has only been used in a few past papers for diagnoses (Arocha & Patel, 1995, Coderre et al., 2003). We recommend the use of this methodology or similar qualitative means (e.g. focus group discussions) in future work given its ability to pick out nuances of diagnostic reasoning process that would not otherwise be apparent based on the diagnostic decisions alone (without the context of how the decision was arrived at). By gaining a greater understanding of when certain reasoning strategies as being most appropriate, it shifts the use of cognitive interventions away from a single framework being appropriate for all decisions (as adopted in previous interventions, Graber et al., 2012, Lambe et al., 2016,). Instead, one can imagine that clinicians are explicit taught a variety of reasoning techniques and then a framework for deciding which reasoning strategy to utilise for a given case when we develop a better understanding of when certain strategies are more effective for diagnoses. For instance, we discussed that effective strategy use may be predicated on past experience, and clinicians could be prompted to reflect on how much experience they have with similar patients to guide their choice of reasoning strategy (with a more structured reasoning process to fall back on when clinicians are unconfident). 
+
+We now note some limitations with our experimental studies thus far. A limitation with our vignette studies is the assumption we make that the dominant reasoning strategy for each patient’s conditions is the same in the think-aloud study as it was in the online vignette study. It should be noted that, as our multinomial classifier was unable to accurately predict strategies for individual cases in the online study, we are unable to verify this assumption. This is likely because of the relatively small and unbalanced think-aloud dataset used to train the classifier. This could be rectified by future work that uses think-aloud methodologies for larger scale data collection for quantitative analysis such as this. Disentangling reasoning strategy from the medical conditions being treated is useful when looking at individual reasoning strategies on each case is useful, though we would require a much larger sample size in our think-aloud study to investigate this. We were unable to reliably predict reasoning strategies on an individual-case level for the online study where we did not have access to think-aloud utterances, which was likely a result of our think-aloud study dataset being both underpowered and imbalanced in terms of the incidences of reasoning strategies. Looking at reasoning strategies on a case-by-case level with larger samples (and different levels of expertise) would be incredibly useful and we recommend future work to adopt such a methodology to do so, as the think-aloud methodology has been found to provide useful insights into the diagnostic decision process. We would also recommend the use of other techniques such as focus group discussions to explore reasoning strategies in depth, particularly in groups of clinicians rather than simply individuals (which has been relatively underexplored in previous research). 
+
+We should also consider the generalisability and ecological validity of these studies. This study is more naturalistic than our online study, as it allows medical students to verbalise their thought process as they might to other clinicians that they are working with. By using a vignette-based paradigm however, participants do not actually interact with, observe and treat a patient. Participants noted during debrief interviews that there were elements of the task that were not analogous to real life (e.g. being able to see a patient, getting more specific information about patient history). We are also limited in terms of the information that is available for clinicians to seek. In addition, participants completed the studies in relatively controlled environments, outside of their usual medical context. Hence, our next study hence aims to look at the link between information seeking and confidence, but with a more naturalistic paradigm. This limitation is one we address more directly in an experimental study presented in the next chapter. To address this limitation, we require a paradigm that allows for more open-ended information seeking, visual observation and treatment of a patient and the use of a clinical environment akin to the one in which clinicians operate. As previously explored in our systematic review, the use of in-situ research lacks objective markers of accuracy that we utilise. To this end, we use virtual reality (VR) in our next study to simulate a realistic medical environment, as well as the patients themselves. This allows for a realistic, interactive paradigm where participants observe a (virtual) patient in real-time and can administer treatment (and observe reactions to this treatment in the patient). There is also more openness in terms of the information that can be sought and clinical actions taken, making its use more analogous to real medical contexts. 
+
