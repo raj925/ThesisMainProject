@@ -51,11 +51,13 @@ actionsMasterList <- c(historyActions, examActions, TestingActions)
 actionsMasterList <- actionsMasterList[nzchar(actionsMasterList)]
 
 infoSeekingMatrixVR <- data.frame(matrix(nrow = nrow(vrData), ncol = length(actionsMasterList)))
+actionTimesMatrixVR <- data.frame(matrix(nrow = nrow(vrData), ncol = length(actionsMasterList)))
 
 # Add to matrix from vectors stored as strings in vrData so we get a binary matrix.
 for (n in 1:nrow(vrData))
 {
   infoSeekingMatrixVR[n,] <- str_split(vrData$actionVector[n],"\n")[[1]]
+  actionTimesMatrixVR[n,] <- str_split(vrData$actTimesVector[n],"\n")[[1]]
 }
 
 infoSeekingMatrixVR <- apply(infoSeekingMatrixVR, 2, as.numeric)
@@ -199,7 +201,7 @@ In this section, we detail three different groups of dependent variables defined
 
 We define two performance measures for this study. Firstly, we make use of predetermined criteria for which clinical actions are considered optimal for each patient scenario. When it comes to diagnostic accuracy (as we defined in our previous studies), given that the scenarios are more naturalistic, there is not a correct (ground truth) condition that the patients have. For example, one of the scenarios sees the patient having a febrile convulsion/seizure. Identifying this as such, as a focal diagnosis, is expected of most medical students due to there being a lack of diagnostic uncertainty. Identifying the causes of this seizure however, is associated with more diagnostic uncertainty as there are several possible causes of such a medical episode. When it comes to identifying these causes, there is not a set correct answer, as the scenario does not comprise of later stages of the patient's care pathway. Because of this, we instead consider a measure of Diagnostic Appropriateness, where we measure how suitable the recorded set of diagnostic differentials is as a whole in terms of whether participants record differentials that would be considered plausible or likely given the patient's condition. 
 
-* **Performance Score**: The OMS software implements a series of objectives for each scenario (designed by a peer review process with clinicians and subject matter experts in consultation with Oxford Medical School), which are tasks or actions that the participant is expected to have completed within the allotted time. These objectives are comprised of a range of actions, including examinations that they were expected to conduct, history questions they should have asked and treatment that should have been administered. These objectives can include administering oxygen, prescribing a particular medication or calculating the Paediatric Early Warning Score (PEWS). The proportion of completed objectives is used as a score of the participant’s performance during the scenario. See Figure 5.3 below for an example of objectives used for the Pneumonia scenario.
+* **Performance Score**: The OMS software implements a series of objectives for each scenario (designed by a peer review process with clinicians and subject matter experts in consultation with Oxford Medical School), which are tasks or actions that the participant is expected to have completed within the allotted time. These objectives are comprised of a range of actions, including examinations that they were expected to conduct, history questions they should have asked and treatment that should have been administered. These objectives can include administering oxygen, prescribing a particular medication or calculating the Paediatric Early Warning Score (PEWS). Some objectives are required to contribute towards a higher performance score, whilst a participant may be penalised for doing certain other actions (e.g. prescribing a medication without first checking for allergies). The peer review panel differently weighted certain actions/objectives, so some result in a larger point deduction based on how serious the consequences would be for the patient. See Figure 5.3 below for an example of objectives used for the Pneumonia scenario.
 
 \newpage
 
@@ -264,7 +266,7 @@ We also derived measures of information seeking similar to previous studies. The
 
 * **History Taking**: this is the number of History actions for a given scenario that take place before the pause point. 
 * **Total Information Seeking**: this is the number of unique actions (i.e. does not include requesting the taking of the same action multiple times) classified under History, Examination or Testing across the scenario.
-* **Information Value**: this measure captures the value of each piece of information sought, similar to our measure of information value used in the vignette studies. We calculate the difference in OMS performance score for participants with or without that information on a given scenario. We then sum all values across all information sought by the participant within each of the information categories (History, Examination, Testing).
+* **Information Value**: this measure captures the value of each piece of information sought, similar to our measure of information value used in the vignette studies. We calculate the difference in OMS performance score for participants with or without that information on a given scenario. We then sum all values across all information sought by the participant within each of the information categories (History, Examination, Testing). This allows us to have a measure of value for every possible action, which is not the case within the OMS Performance Score criteria (as only certain objectives/actions have a bearing on the overall scoring).
 * **Amount of Treatment**: this is the number of actions classified as treatment of the patient across the scenario. 
 
 \
@@ -486,24 +488,68 @@ plotDf <- data.frame(
 
 ```
 
-We next look at whether initial confidence predicts subsequent information seeking. To investigate this, we fit separate linear mixed effect models for each type of information seeking as the outcome variable. We find marginal evidence that initial confidence predicts subsequent history taking in a negative direction (i.e. that higher confidence is associated with lower subsequent history taking) ($\beta$ = `r abs(round(histmodel$coefficients[2],2))`, SE = `r round(histmodel$coefficients[,"Std. Error"][2],2)`, z = `r abs(round(histmodel$coefficients[,"z value"][2],2))`, p = `r abs(round(histmodel$coefficients[,"Pr(>|z|)"][2],2))`). We do not find evidence that initial confidence is associated with subsequent Physical Examinations ($\beta$ = `r abs(round(exammodel$coefficients[2],2))`, SE = `r round(exammodel$coefficients[,"Std. Error"][2],2)`, z = `r abs(round(exammodel$coefficients[,"z value"][2],2))`, p = `r abs(round(exammodel$coefficients[,"Pr(>|z|)"][2],2))`). We do find however that initial confidence was associated with higher amounts of Testing ($\beta$ = `r abs(round(testmodel$coefficients[2],2))`, SE = `r round(testmodel$coefficients[,"Std. Error"][2],2)`, z = `r abs(round(testmodel$coefficients[,"z value"][2],2))`, p = `r abs(round(testmodel$coefficients[,"Pr(>|z|)"][2],2))`). We plot this model's fitted values against the actual observed values below in Figure 5.6.
+We next look at whether initial confidence predicts subsequent information seeking. To investigate this, we fit separate linear mixed effect models for each type of information seeking as the outcome variable. We find marginal evidence that initial confidence predicts subsequent history taking in a negative direction (i.e. that higher confidence is associated with lower subsequent history taking) ($\beta$ = `r abs(round(histmodel$coefficients[2],2))`, SE = `r round(histmodel$coefficients[,"Std. Error"][2],2)`, z = `r abs(round(histmodel$coefficients[,"z value"][2],2))`, p = `r abs(round(histmodel$coefficients[,"Pr(>|z|)"][2],2))`). We do not find evidence that initial confidence is associated with subsequent Physical Examinations ($\beta$ = `r abs(round(exammodel$coefficients[2],2))`, SE = `r round(exammodel$coefficients[,"Std. Error"][2],2)`, z = `r abs(round(exammodel$coefficients[,"z value"][2],2))`, p = `r abs(round(exammodel$coefficients[,"Pr(>|z|)"][2],2))`). We do find however that initial confidence was associated with higher amounts of Testing ($\beta$ = `r abs(round(testmodel$coefficients[2],2))`, SE = `r round(testmodel$coefficients[,"Std. Error"][2],2)`, z = `r abs(round(testmodel$coefficients[,"z value"][2],2))`, p = `r abs(round(testmodel$coefficients[,"Pr(>|z|)"][2],2))`). We plot the effect sizes and their confidence intervals below in Figure 5.6.
 
-```{r subinfoseekingplot, include=TRUE, warning=FALSE, message=FALSE, echo=FALSE, out.width='100%', fig.align='center'}
+```{r finalconfidenceplot, include=TRUE, warning=FALSE, message=FALSE, echo=FALSE, out.width='100%', fig.align='center'}
 
-# Plot using ggplot2
-p <- ggplot(plotDf, aes(x = fittedTestingActions, y = observedTestingActions)) +
-  geom_point() +
-    geom_smooth(method = "lm", se = TRUE, color = "blue") + 
-  xlim(c(0,5)) +
-  scale_y_continuous(breaks=seq(0,10,1)) +
-  labs(x = "Fitted Testing Actions", y = "Observed Testing Actions") +
-  theme_classic(base_size = 20)
+histmodel <- lme4::glmer(numOfHistoryActionsAfterPause ~ t1Confidence + (1|Scenario) + (1 | ParticipantID),family=poisson(link = "log"), data=vrData)
 
-print(p)
+exammodel <- lme4::glmer(numOfExamActionsAfterPause ~ t1Confidence + (1|Scenario) + (1 | ParticipantID),family=poisson(link = "log"), data=vrData)
+
+testmodel <- lme4::glmer(numOfTestingActionsAfterPause ~ t1Confidence + (1|Scenario) + (1 | ParticipantID),family=poisson(link = "log"), data=vrData)
+
+extractEffects <- function(model, model_name) {
+  fixedEffects <- coef(summary(model))
+  data.frame(
+    Term = rownames(fixedEffects),
+    Estimate = fixedEffects[, "Estimate"],
+    StdError = fixedEffects[, "Std. Error"],
+    Model = model_name
+  )
+}
+
+# Combine data from all models
+effectsData <- bind_rows(
+  extractEffects(histmodel, "History"),
+  extractEffects(exammodel, "Examinations"),
+  extractEffects(testmodel, "Testing")
+)
+
+effectsData <- effectsData[effectsData$Term!="(Intercept)",]
+# Add confidence intervals
+effectsData <- effectsData %>%
+  mutate(
+    CILower = Estimate - 1.96 * StdError, #95% confidence interval
+    CIUpper = Estimate + 1.96 * StdError
+  )
+
+# Ensure the Model column is a factor with the desired order
+effectsData$Model <- factor(
+  effectsData$Model,
+  levels = c("History", "Examinations", "Testing")  # Desired order
+)
+
+# Plot
+ggplot(effectsData, aes(x = Term, y = Estimate, color = Model)) +
+  geom_point(position = position_dodge(width = 0.5), size = 3) +
+  geom_errorbar(
+    aes(ymin = CILower, ymax = CIUpper),
+    width = 0.2,
+    position = position_dodge(width = 0.5)
+  ) +
+  labs(
+    x = "Test",
+    y = "Effect Size Estimate of Initial Confidence"
+  ) +
+  scale_color_discrete(
+    name = "Information Type",         # New legend title
+  ) +
+  theme_minimal() + 
+  theme(axis.text.x = element_blank())
 
 ```
 
-_Figure 5.6: Plot of linear mixed effects model predicting the amount of testing actions (after the pause point) by the initial confidence reported (during the pause point). We show the fitted values for the number of testing actions (x-axis) against the actual observed number of testing actions (y-axis) on each case (each data point representing a single case). We fit a linear model line of best fit with a 95% confidence interval denoted by the shaded region_
+_Figure 5.6: Plot of effect sizes (beta values) of each linear mixed effects model, with initial confidence as a fixed effect predicting the number of tests (after the pause point and the recording of this initial confidence value) belonging to each category (Patient History: red, Physical Examinations: green, Testing: blue). For all models, case/condition and participants are both included as random effects. 95% confidence intervals are visualised for each effect size estimate. A confidence interval not intersecting with an effect size of 0 would be interpreted as evidence for an effect of initial confidence on the number of subsequent information requests within each category._
 
 ```{r finalconfidence, include=FALSE, warning=FALSE, message=FALSE, echo=FALSE}
 
@@ -536,25 +582,7 @@ plotDf <- data.frame(
 
 ```
 
-We also look at whether final confidence (as reported at the end of the scenario) is predicted by the number of treatment actions performed by participants during the scenario. We fit a linear mixed effects model with the number of treatment actions as a fixed effect and both scenario and participant as random effects. We find evidence that final confidence was predicted by the amount of treatment actions administered during the scenario ($\beta$ = `r abs(round(finconmodel$coefficients[2],2))`, SE = `r round(finconmodel$coefficients[,"Std. Error"][2],2)` t = `r abs(round(finconmodel$coefficients[,"t value"][2],2))`, p = `r abs(round(finconmodel$coefficients[,"Pr(>|t|)"][2],3))`), such that higher confidence was associated with more treatment actions being performed during the scenario. We plot the model's fitted values against the actual observed values below in Figure 5.7.
-
-```{r finalconfidenceplot, include=TRUE, warning=FALSE, message=FALSE, echo=FALSE, out.width='100%', fig.align='center'}
-
-# Plot using ggplot2
-p <- ggplot(plotDf, aes(x = fittedConfidence, y = observedConfidence)) +
-  geom_point() +
-  geom_smooth(method = "lm", se = TRUE, color = "blue") + 
-  scale_y_continuous(breaks=seq(4,10,1)) +
-    scale_x_continuous(breaks=seq(4,10,1)) +
-  labs(x = "Fitted Final Confidence", y = "Observed Final Confidence") +
-  theme_classic(base_size = 20)
-
-print(p)
-
-
-```
-
-_Figure 5.7: Plot of linear mixed effects model predicting final confidence (at the end of the scenario) by the amount of treatment actions. We show the fitted values for final confidence (x-axis) against the actual observed values for final confidence (y-axis) on each case (each data point representing a single case). We fit a linear model line of best fit with a 95% confidence interval denoted by the shaded region_
+We also look at whether final confidence (as reported at the end of the scenario) is predicted by the number of treatment actions performed by participants during the scenario. We fit a linear mixed effects model with the number of treatment actions as a fixed effect and both scenario and participant as random effects. We find evidence that final confidence was predicted by the amount of treatment actions administered during the scenario ($\beta$ = `r abs(round(finconmodel$coefficients[2],2))`, SE = `r round(finconmodel$coefficients[,"Std. Error"][2],2)` t = `r abs(round(finconmodel$coefficients[,"t value"][2],2))`, p = `r abs(round(finconmodel$coefficients[,"Pr(>|t|)"][2],3))`), such that higher confidence was associated with more treatment actions being performed during the scenario.
 
 ### Time to Treat and Call for Help {.unnumbered}
 
@@ -602,14 +630,21 @@ We next turn to the time taken for participants to start treatment of patients a
 # Use of regular PCA
 
 infoSeekingMatrixVRPCA <- infoSeekingMatrixVR[,1:82]
+
+# Look at information seeking only after the pause point
+infoSeekingMatrixVRPCA[actionTimesMatrixVR < 300 & infoSeekingMatrixVRPCA == 1] <- 0
+
 infoSeekingMatrixVRPCA <- infoSeekingMatrixVRPCA[,-which(names(infoSeekingMatrixVRPCA) %in% c("past medical history","measure oxygen saturations & heart rate","measure blood pressure"))] 
 # Remove columns that are sought on most scenarios
+
+infoSeekingMatrixVRPCA <- infoSeekingMatrixVRPCA[, colSums(infoSeekingMatrixVRPCA) > 0]
+# Remove columns for information never sought
 
 # Perform PCA on binary data
 pca_result <- PCA(infoSeekingMatrixVRPCA, graph = FALSE)
 
 # Scree plot shows elbow around 5
-qplot(c(1:79), pca_result$eig[,1]) + 
+qplot(c(1:ncol(infoSeekingMatrixVRPCA)), pca_result$eig[,1]) + 
   geom_line() + 
   xlab("Principal Component") + 
   ylab("Variance Explained") +
@@ -618,14 +653,14 @@ qplot(c(1:79), pca_result$eig[,1]) +
 
 #########
 
-pca_result <- principal(infoSeekingMatrixVRPCA, nfactors = 26, rotate = "promax")
+pca_result <- principal(infoSeekingMatrixVRPCA, nfactors = 27, rotate = "promax")
 pcs <- pca_result$scores
 weights <- pca_result$loadings
 
 topPCS <- weights
 
 
-rownames(topPCS) <- c(1:79)
+rownames(topPCS) <- c(1:ncol(infoSeekingMatrixVRPCA))
 
 # Sort the columns alphabetically
 #colnames(topPCS) <- c("RC1", "RC2", "RC3", "RC4")
@@ -641,7 +676,7 @@ rownames(topPCS) <- c(1:79)
 
 pcs <- pcs[, order(colnames(pcs))]
 pcDF <- data.frame(pcs)
-colnames(pcDF) <- paste("PC",c(1:26),sep="")
+colnames(pcDF) <- paste("PC",c(1:27),sep="")
 pcDF$pid <- vrData$ParticipantID
 pcDF$condition <- vrData$Scenario
 pcDF$diagChange <- vrData$diagnosticChange
@@ -654,7 +689,7 @@ pcDF$diagGroup <- as.factor(pcDF$diagGroup)
 mixedPCModel = lmer(diagScore ~ PC1 + PC2 + PC3 + PC4 + PC5 + PC6 + PC7 +
                       PC8 + PC9 + PC10 + PC11 + PC12 + PC13 + PC14 +
                       PC15 + PC16 + PC17 + PC18 + PC19 + PC20 + PC21 + 
-                      PC22 + PC23 + PC24 + PC25 + PC26 + (1|condition) + (1|pid), data = pcDF)
+                      PC22 + PC23 + PC24 + PC25 + PC26 + PC27 + (1|condition) + (1|pid), data = pcDF)
 #summary(mixedPCModel)
 
 pcDF$conditionFactor <- as.factor(pcDF$condition)
@@ -666,7 +701,7 @@ ctrl <- trainControl(method = "LOOCV", savePredictions = TRUE)
 modelglmVR<-train(diagGroup ~ PC1 + PC2 + PC3 + PC4 + PC5 + PC6 + PC7 +
                       PC8 + PC9 + PC10 + PC11 + PC12 + PC13 + PC14 +
                       PC15 + PC16 + PC17 + PC18 + PC19 + PC20 + PC21 + 
-                      PC22 + PC23 + PC24 + PC25 + PC26, method = "glm", family = binomial(link=probit), data = pcDF, trControl = ctrl)
+                      PC22 + PC23 + PC24 + PC25 + PC26 + PC27, method = "glm", family = binomial(link=probit), data = pcDF, trControl = ctrl)
 prediglmVR<-predict(modelglmVR,type = "prob")[2]
 
 
@@ -726,10 +761,10 @@ roc.plot(x=temp$diagGroup=="1",pred=cbind(prediglmHist,prediglmExams,prediglmTes
 
 ```
 
-We next ask whether the differentials provided by participants is a result of 'better' information seeking. If this were the case, we would be able to differentiate between low and high quality differentials (as per our Diagnostic Appropriateness measure) solely from the information sought by participants. This is similar to the analysis presented in Study 2 (in Figure 5.8). We split participants into low and high diagnostic accuracy via a median split. Given the large amount of information available (82 unique information requests across History, Physical Examinations and Testing), we reduce the dimensionality of the information seeking data using Principal Component Analysis. When computing a scree plot and observing eigenvalues for each cumulative component that exceeded 1, we find that reducing the 82 information factors to 26 components is recommended. 
+We next ask whether the differentials provided by participants is a result of 'better' information seeking. If this were the case, we would be able to differentiate between low and high quality differentials (as per our Diagnostic Appropriateness measure) solely from the information sought by participants. This is similar to the analysis presented in Figure 3.8 of the online vignette study chapter. We split participants into low and high diagnostic accuracy via a median split. Given the large amount of information available (82 unique information requests across History, Physical Examinations and Testing), we reduce the dimensionality of the information seeking data using Principal Component Analysis. When computing a scree plot and observing eigenvalues for each cumulative component that exceeded 1, we find that reducing the 82 information factors to 27 components is recommended. 
 
 \
-We trained a binary classification algorithm using a generalised logistic regression (GLM) model to identify if participants exhibited high or low accuracy based on the information they sought. When plotting an ROC curve, the area under the curve (AUC) is indicative of how well a model performs at correctly categorising cases as having high or low diagnostic appropriateness. An AUC of 0.5 would signify that our model is performing at chance and is not able to predict participant accuracy in any meaningful way. By plotting an ROC curve for our model, we find an AUC value of `r round(rocPlot$Area,2)` (plotted below). When conducting a DeLong test, to test the null hypothesis that the AUC is equal to 0.5 (i.e. that the classifier is unable to differentiate between high and low accuracy participants), we find p < .001, indicating that the AUC differs significantly from 0.5. This indicates that diagnostic appropriateness is predicted by information seeking during the scenarios. 
+We trained a binary classification algorithm using a generalised logistic regression (GLM) model to identify if participants exhibited high or low appropriateness of initial differentials is associated with better information seeking after these differentials are recorded. When plotting an ROC curve, the area under the curve (AUC) is indicative of how well a model performs at correctly categorising cases as having high or low diagnostic appropriateness. An AUC of 0.5 would signify that our model is performing at chance and is not able to predict participant accuracy in any meaningful way. By plotting an ROC curve for our model, we find an AUC value of `r round(rocPlot$Area,2)` (plotted below). When conducting a DeLong test, to test the null hypothesis that the AUC is equal to 0.5 (i.e. that the classifier is unable to differentiate between high and low accuracy participants), we find p < .001, indicating that the AUC differs significantly from 0.5. This indicates that diagnostic appropriateness at the pause point is predicted by information seeking after the pause point. The ROC curve can be viewed below in Figure 5.7. 
 
 ```{r pcaclassifierplot, include=TRUE, warning=FALSE, message=FALSE, echo=FALSE, out.width='100%', fig.align='center'}
 
@@ -737,7 +772,7 @@ roc.plot(x=pcDF$diagGroup=="1",pred=cbind(prediglmVR),legend = T,
                     leg.text = c("GLM"),thresholds = thresh)
 
 ```
-_Figure 5.8: Receiver-Operator Characteristic (ROC) curve using a Generalised Linear Model to classify individual cases as having either high or low diagnostic appropriateness reported based on the initial set of differentials. The model is trained PCA components of the total available information requests, with the 82 information requests reduced to 26 components. Cases were sorted as high or low diagnostic appropriateness based on a median split._
+_Figure 5.7: Receiver-Operator Characteristic (ROC) curve using a Generalised Linear Model to classify individual cases as having either high or low diagnostic appropriateness reported based on the initial set of differentials. The model is trained PCA components of the total available information requests, with the 82 information requests reduced to 27 components. Cases were sorted as high or low diagnostic appropriateness based on a median split._
 
 ```{r appropinfo, include=FALSE, warning=FALSE, message=FALSE, echo=FALSE}
 
@@ -764,7 +799,7 @@ diagTestInfo <- joint_tests(diagTest2)
 
 ```
 \
-Given that information seeking is broadly associated with diagnostic appropriateness, we seek to better understand the specific aspects of information seeking that relate to appropriate differentials. As in previous studies, we look at two aspects of information seeking: the amount of information seeking and informational value. To this end, we look at whether the information seeking amount and value for each of the three categories (History, Physical Examinations, Testing) predicts diagnostic appropriateness score on each case. We fit generalised mixed effect models with inverse Gaussian distributions by controlling for scenario and participant as random effects. We find that diagnostic appropriateness is not predicted by the number of actions in any of the information seeking categories (Fs < 1, ps > .1). We do however find evidence that diagnostic appropriateness is associated with the value of Patient History taking (F = `r round(diagTestVal$F.ratio[1],2)`, p = `r round(diagTestVal$p.value[1],2)`), but not with Physical Examination value (F = `r round(diagTestVal$F.ratio[2],2)`, p = `r round(diagTestVal$p.value[2],2)`) or Testing value (F = `r round(diagTestVal$F.ratio[3],2)`, p = `r round(diagTestVal$p.value[3],2)`). The relationship between Patient History Value and Diagnostic Appropriateness is plotted below in Figure 5.9.
+Given that information seeking is broadly associated with diagnostic appropriateness, we seek to better understand the specific aspects of information seeking that relate to appropriate differentials. As in previous studies, we look at two aspects of information seeking: the amount of information seeking and informational value. To this end, we look at whether the information seeking amount and value for each of the three categories (History, Physical Examinations, Testing) predicts diagnostic appropriateness score on each case. We fit generalised mixed effect models with inverse Gaussian distributions by controlling for scenario and participant as random effects. We find that diagnostic appropriateness is not predicted by the number of actions in any of the information seeking categories (Fs < 1, ps > .1). We do however find evidence that diagnostic appropriateness is associated with the value of Patient History taking (F = `r round(diagTestVal$F.ratio[1],2)`, p = `r round(diagTestVal$p.value[1],2)`), but not with Physical Examination value (F = `r round(diagTestVal$F.ratio[2],2)`, p = `r round(diagTestVal$p.value[2],2)`) or Testing value (F = `r round(diagTestVal$F.ratio[3],2)`, p = `r round(diagTestVal$p.value[3],2)`). The relationship between Patient History Value and Diagnostic Appropriateness is plotted below in Figure 5.8.
 
 ```{r historyvalplot, include=TRUE, warning=FALSE, message=FALSE, echo=FALSE, out.width='100%', fig.align='center'}
 
@@ -781,7 +816,7 @@ print(histCon +
 
 ```
 
-_Figure 5.9: Scatter plot showing the relationship between information value for information requests in the Patient History category (x-axis) and Diagnostic Appropriateness score  (y-axis) calculated based on the initial set of differentials provided at the pause point in the scenario. Each data point in this plot represents a single case/scenario._
+_Figure 5.8: Scatter plot showing the relationship between information value for information requests in the Patient History category (x-axis) and Diagnostic Appropriateness score  (y-axis) calculated based on the initial set of differentials provided at the pause point in the scenario. Each data point in this plot represents a single case/scenario._
 
 ## Discussion {.unnumbered}
 

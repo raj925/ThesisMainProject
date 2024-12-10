@@ -1351,7 +1351,7 @@ However, this difference was not found to be significant via a mixed
 effects logistic regression (with accuracy as a binary outcome measure
 and both condition and participant as random effects) ($\beta$ =
 `r round(model$coefficients[2],2)`, SE =
-`r round(model$coefficients[,"Std. Error"][2],2)` t =
+`r round(model$coefficients[,"Std. Error"][2],2)` z =
 `r abs(round(model$coefficients[,"z value"][2],2))`, p =
 `r round(model$coefficients[,"Pr(>|z|)"][2],2)`). We can also ask
 whether participants tend to use the strategy that they subjectively
