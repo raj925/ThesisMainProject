@@ -81,6 +81,19 @@ infoSeekingMatrixVR$t1DiagnosisScore <- vrData$t1DiagnosisScore
 
 ```
 
+```{r completedata, include=FALSE, warning=FALSE, message=FALSE, echo=FALSE}
+# Get data where participants have completed two scenarios
+
+ids <- vrData$ParticipantID
+# Create a frequency table
+freq_table <- table(ids)
+# Identify elements with more than one occurrence
+repeatIDs <- names(freq_table[freq_table > 1])
+vrCompleteData <-  vrData[vrData$ParticipantID %in% repeatIDs,]
+vrCompleteData <- vrCompleteData[!is.na(vrCompleteData$t2Confidence),]
+nFullPpts <- nrow(vrCompleteData)/2
+```
+
 ```{=tex}
 \adjustmtc
 \markboth{VR Study}{}
@@ -398,7 +411,7 @@ model2 <- summary(model)
 
 ```
 
-We can ask whether the initial diagnostic breadth (i.e. the number of diagnostic differentials being considered early in the scenario) is predictive of information seeking and change in confidence over the course of the scenario (as we found evidence for such an association in the online vignette study). We fit generalized linear mixed effects models to predict each of these with the number of initial differentials as a fixed effect and both the scenario and participant as random effects. We do not see evidence that the initial diagnostic breadth is predictive of the amount of information seeking ($\beta$ = `r abs(round(model1$coefficients[2],2))`, SE = `r round(model1$coefficients[,"Std. Error"][2],2)` z = `r abs(round(model1$coefficients[,"z value"][2],2))`, p = `r abs(round(model1$coefficients[,"Pr(>|z|)"][2],2))`) or changes in confidence ($\beta$ = `r abs(round(model2$coefficients[2],2))`, SE = `r round(model2$coefficients[,"Std. Error"][2],2)` z = `r abs(round(model2$coefficients[,"z value"][2],2))`, p = `r abs(round(model2$coefficients[,"Pr(>|t|)"][2],2))`). As a result, we are not able to replicate findings from Study 2 on a case-level, in which initial diagnostic breadth was predictive of information seeking via a linear mixed effects model (and changes in confidence via an individual differences correlation). The distribution of values for the number of differentials at each time point is shown below in Figure 5.5.
+We can ask whether the initial diagnostic breadth (i.e. the number of diagnostic differentials being considered early in the scenario) is predictive of information seeking and change in confidence over the course of the scenario (as we found evidence for such an association in the online vignette study). We fit generalized linear mixed effects models to predict each of these with the number of initial differentials as a fixed effect and both the scenario and participant as random effects. We do not see evidence that the initial diagnostic breadth is predictive of the amount of information seeking ($\beta$ = `r abs(round(model1$coefficients[2],2))`, SE = `r round(model1$coefficients[,"Std. Error"][2],2)` z = `r abs(round(model1$coefficients[,"z value"][2],2))`, p = `r abs(round(model1$coefficients[,"Pr(>|z|)"][2],2))`) or changes in confidence ($\beta$ = `r abs(round(model2$coefficients[2],2))`, SE = `r round(model2$coefficients[,"Std. Error"][2],2)` z = `r abs(round(model2$coefficients[,"z value"][2],2))`, p = `r abs(round(model2$coefficients[,"Pr(>|z|)"][2],2))`). As a result, we are not able to replicate findings from Study 2 on a case-level, in which initial diagnostic breadth was predictive of information seeking via a linear mixed effects model (and changes in confidence via an individual differences correlation). The distribution of values for the number of differentials at each time point is shown below in Figure 5.5.
 
 ```{r diagtime, include=TRUE, echo=FALSE, out.width='100%', fig.align='center', warning=FALSE, message=FALSE}
 p <- ggplot(anovaDf, aes(x=Timepoint, y=Differentials, fill=Scenario)) + 

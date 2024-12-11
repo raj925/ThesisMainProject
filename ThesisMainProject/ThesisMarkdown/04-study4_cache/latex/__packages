@@ -78,3 +78,7 @@ scatterplot3d
 poLCA
 lsr
 cowplot
+diffcor
+pheatmap
+readxl
+flextable
