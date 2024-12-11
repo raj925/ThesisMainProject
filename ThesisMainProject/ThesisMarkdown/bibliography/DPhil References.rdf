@@ -12177,60 +12177,6 @@ PMID: 29437739</dc:description>
         <z:linkMode>1</z:linkMode>
         <link:type>application/pdf</link:type>
     </z:Attachment>
-    <bib:Article rdf:about="#item_2621">
-        <z:itemType>journalArticle</z:itemType>
-        <dcterms:isPartOf>
-            <bib:Journal>
-                <prism:volume>54</prism:volume>
-                <prism:number>4</prism:number>
-                <dc:title>Journal of Personality and Social Psychology</dc:title>
-                <dc:identifier>ISSN 1939-1315</dc:identifier>
-                <dc:identifier>DOI 10.1037/0022-3514.54.4.569</dc:identifier>
-            </bib:Journal>
-        </dcterms:isPartOf>
-        <bib:authors>
-            <rdf:Seq>
-                <rdf:li>
-                    <foaf:Person>
-                        <foaf:surname>Baron</foaf:surname>
-                        <foaf:givenName>Jonathan</foaf:givenName>
-                    </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                    <foaf:Person>
-                        <foaf:surname>Hershey</foaf:surname>
-                        <foaf:givenName>John C.</foaf:givenName>
-                    </foaf:Person>
-                </rdf:li>
-            </rdf:Seq>
-        </bib:authors>
-        <link:link rdf:resource="#item_2622"/>
-        <dc:subject>
-           <z:AutomaticTag><rdf:value>Decision Making</rdf:value></z:AutomaticTag>
-        </dc:subject>
-        <dc:subject>
-           <z:AutomaticTag><rdf:value>Evaluation</rdf:value></z:AutomaticTag>
-        </dc:subject>
-        <bib:pages>569-579</bib:pages>
-        <dc:date>1988</dc:date>
-        <dc:description>Place: US
-Publisher: American Psychological Association</dc:description>
-        <z:libraryCatalog>APA PsycNet</z:libraryCatalog>
-        <dcterms:abstract>In 5 studies, undergraduate subjects were given descriptions and outcomes of decisions made by others under conditions of uncertainty. Decisions concerned either medical matters or monetary gambles. Subjects rated the quality of thinking of the decisions, the competence of the decision maker, or their willingness to let the decision maker decide on their behalf. Subjects understood that they had all relevant information available to the decision maker. Subjects rated the thinking as better, rated the decision maker as more competent, or indicated greater willingness to yield the decision when the outcome was favorable than when it was unfavorable. In monetary gambles, subjects rated the thinking as better when the outcome of the option not chosen turned out poorly than when it turned out well. Although subjects who were asked felt that they should not consider outcomes in making these evaluations, they did so. This effect of outcome knowledge on evaluation may be explained partly in terms of its effect on the salience of arguments for each side of the choice. Implications for the theory of rationality and for practical situations are discussed. (PsycINFO Database Record (c) 2016 APA, all rights reserved)</dcterms:abstract>
-        <dc:title>Outcome bias in decision evaluation</dc:title>
-    </bib:Article>
-    <z:Attachment rdf:about="#item_2622">
-        <z:itemType>attachment</z:itemType>
-        <dc:identifier>
-            <dcterms:URI>
-                <rdf:value>https://psycnet.apa.org/record/1988-20051-001</rdf:value>
-            </dcterms:URI>
-        </dc:identifier>
-        <dcterms:dateSubmitted>2024-11-05 16:38:26</dcterms:dateSubmitted>
-        <dc:title>Snapshot</dc:title>
-        <z:linkMode>1</z:linkMode>
-        <link:type>text/html</link:type>
-    </z:Attachment>
     <bib:Article rdf:about="https://doi.org/10.1177/0956797612441221">
         <z:itemType>journalArticle</z:itemType>
         <dcterms:isPartOf>
@@ -16114,5 +16060,1242 @@ Conclusions  Rapid ethnographies have the potential to generate findings that 
         <dc:title>Vindrola-Padros and Vindrola-Padros - 2018 - Quick and dirty A systematic review of the use of.pdf</dc:title>
         <z:linkMode>1</z:linkMode>
         <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:BookSection rdf:about="urn:isbn:978-0-648-84882-0">
+        <z:itemType>bookSection</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Book>
+                <dc:identifier>ISBN 978-0-648-84882-0</dc:identifier>
+                <dc:title>JBI Manual for Evidence Synthesis</dc:title>
+            </bib:Book>
+        </dcterms:isPartOf>
+        <dc:publisher>
+           <foaf:Organization><foaf:name>JBI</foaf:name></foaf:Organization>
+        </dc:publisher>
+        <bib:editors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Aromataris</foaf:surname>
+                        <foaf:givenName>Edoardo</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Lockwood</foaf:surname>
+                        <foaf:givenName>Craig</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Porritt</foaf:surname>
+                        <foaf:givenName>Kylie</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Pilla</foaf:surname>
+                        <foaf:givenName>Bianca</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Jordan</foaf:surname>
+                        <foaf:givenName>Zoe</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:editors>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Peters</foaf:surname>
+                        <foaf:givenName>Micah Dj</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Godfrey</foaf:surname>
+                        <foaf:givenName>Christina</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>McInerney</foaf:surname>
+                        <foaf:givenName>Patricia</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Munn</foaf:surname>
+                        <foaf:givenName>Zachary</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Tricco</foaf:surname>
+                        <foaf:givenName>Andrea C</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Khalil</foaf:surname>
+                        <foaf:givenName>Hanan</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://jbi-global-wiki.refined.site/space/MANUAL/355862497/10.+Scoping+reviews</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dc:date>2024</dc:date>
+        <dc:description>DOI: 10.46658/JBIMES-24-09</dc:description>
+        <dcterms:dateSubmitted>2024-12-02 15:46:16</dcterms:dateSubmitted>
+        <z:libraryCatalog>DOI.org (Crossref)</z:libraryCatalog>
+        <dc:title>Scoping reviews</dc:title>
+    </bib:BookSection>
+    <bib:Thesis rdf:about="https://macsphere.mcmaster.ca/bitstream/11375/7187/1/fulltext.pdf">
+        <z:itemType>thesis</z:itemType>
+        <dc:publisher>
+            <foaf:Organization>
+               <foaf:name>McMaster University</foaf:name>
+            </foaf:Organization>
+        </dc:publisher>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Eva</foaf:surname>
+                        <foaf:givenName>Kevin W</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://macsphere.mcmaster.ca/bitstream/11375/7187/1/fulltext.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dc:date>2001</dc:date>
+        <dcterms:dateSubmitted>2024-12-02</dcterms:dateSubmitted>
+        <dc:title>The influence of differentially processing evidence on diagnostic decision-making</dc:title>
+    </bib:Thesis>
+    <bib:Report rdf:about="#item_2763">
+        <z:itemType>report</z:itemType>
+        <dc:publisher>
+           <foaf:Organization><foaf:name>GMC</foaf:name></foaf:Organization>
+        </dc:publisher>
+        <link:link rdf:resource="#item_2762"/>
+        <dc:date>2024</dc:date>
+        <z:libraryCatalog>Zotero</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dc:title>The state of medical education and practice in the UK. Workplace experiences 2024</dc:title>
+    </bib:Report>
+    <z:Attachment rdf:about="#item_2762">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.gmc-uk.org/-/media/documents/somep-workplace-report-2024-full-report_pdf-107930713.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2024-12-02 16:00:37</dcterms:dateSubmitted>
+        <dc:title>The state of medical education and practice in the.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="https://doi.org/10.1177/0146167202286008">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:0146-1672"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Pronin</foaf:surname>
+                        <foaf:givenName>Emily</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Lin</foaf:surname>
+                        <foaf:givenName>Daniel Y.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Ross</foaf:surname>
+                        <foaf:givenName>Lee</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>https://doi.org/10.1177/0146167202286008</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>369-381</bib:pages>
+        <dc:date>2002-03-01</dc:date>
+        <dc:description>Publisher: SAGE Publications Inc</dc:description>
+        <dcterms:dateSubmitted>2024-12-04 12:51:19</dcterms:dateSubmitted>
+        <z:libraryCatalog>SAGE Journals</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dcterms:abstract>Three studies suggest that individuals see the existence and operation of cognitive and motivational biases much more in others than in themselves. Study 1 provides evidence from three surveys that people rate themselves as less subject to various biases than the “average American,” classmates in a seminar, and fellow airport travelers. Data from the third survey further suggest that such claims arise from the interplay among availability biases and self-enhancement motives. Participants in one follow-up study who showed the better-than-average bias insisted that their self-assessments were accurate and objective even after reading a description of how they could have been affected by the relevant bias. Participants in a final study reported their peer’s self-serving attributions regarding test performance to be biased but their own similarly self-serving attributions to be free of bias. The relevance of these phenomena to naïve realism and to conflict, misunderstanding, and dispute resolution is discussed.</dcterms:abstract>
+        <dc:title>The Bias Blind Spot: Perceptions of Bias in Self Versus Others</dc:title>
+        <z:shortTitle>The Bias Blind Spot</z:shortTitle>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:0146-1672">
+        <prism:volume>28</prism:volume>
+        <prism:number>3</prism:number>
+        <dc:title>Personality and Social Psychology Bulletin</dc:title>
+        <dc:identifier>ISSN 0146-1672</dc:identifier>
+        <dcterms:alternative>Pers Soc Psychol Bull</dcterms:alternative>
+        <dc:identifier>DOI 10.1177/0146167202286008</dc:identifier>
+    </bib:Journal>
+    <bib:Article rdf:about="https://onlinelibrary.wiley.com/doi/abs/10.1002/asi.20339">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:1532-2890"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Xu</foaf:surname>
+                        <foaf:givenName>Yunjie (Calvin)</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Tan</foaf:surname>
+                        <foaf:givenName>Bernard C.Y.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Yang</foaf:surname>
+                        <foaf:givenName>Li</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_2766"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://onlinelibrary.wiley.com/doi/abs/10.1002/asi.20339</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dc:rights>Copyright © 2006 Wiley Periodicals, Inc., A Wiley Company</dc:rights>
+        <bib:pages>1666-1677</bib:pages>
+        <dc:date>2006</dc:date>
+        <dc:description>_eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1002/asi.20339</dc:description>
+        <dcterms:dateSubmitted>2024-12-10 10:39:57</dcterms:dateSubmitted>
+        <z:libraryCatalog>Wiley Online Library</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dcterms:abstract>Information seeking behavior is an important form of human behavior. Past literature in information science and organizational studies has employed the cost-benefit framework to analyze Seekers' information-source choice decision. Conflicting findings have been discovered with regard to the importance of source quality and source accessibility in Seekers' choices. With a focus on interpersonal task information seeking, this study proposes a seeker-source-information need framework to understand the source choice decision. In this framework, task importance, as an attribute of information need, is introduced to moderate Seekers' cost-benefit calculation. Our empirical study finds that in the context of interpersonal task information seeking, first, the least effort principle might not be adequate in explaining personal source choices; rather, a quality-driven perspective is more adequate, and cost factors are of much less importance. Second, the seeker-source relationship is not significant to source choices. Third, the nature of information need, especially task importance, can modify Seekers' source choice decisions.</dcterms:abstract>
+        <dc:title>Who will you ask? An empirical study of interpersonal task information seeking</dc:title>
+        <z:shortTitle>Who will you ask?</z:shortTitle>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:1532-2890">
+        <prism:volume>57</prism:volume>
+        <prism:number>12</prism:number>
+        <dc:title>Journal of the American Society for Information Science and Technology</dc:title>
+        <dc:identifier>ISSN 1532-2890</dc:identifier>
+        <dc:identifier>DOI 10.1002/asi.20339</dc:identifier>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_2766">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://asistdl.onlinelibrary.wiley.com/doi/abs/10.1002/asi.20339</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2024-12-10 10:40:04</dcterms:dateSubmitted>
+        <dc:title>Snapshot</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0310216">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>19</prism:volume>
+                <prism:number>10</prism:number>
+                <dc:title>PLOS ONE</dc:title>
+                <dc:identifier>ISSN 1932-6203</dc:identifier>
+                <dcterms:alternative>PLOS ONE</dcterms:alternative>
+                <dc:identifier>DOI 10.1371/journal.pone.0310216</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Gehlbach</foaf:surname>
+                        <foaf:givenName>Hunter</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Robinson</foaf:surname>
+                        <foaf:givenName>Carly D.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Fletcher</foaf:surname>
+                        <foaf:givenName>Angus</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_2768"/>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Behavior</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Decision making</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Human learning</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Psychological attitudes</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Schools</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Social media</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Surveys</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Vaccines</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0310216</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>e0310216</bib:pages>
+        <dc:date>9 Oct 2024</dc:date>
+        <dc:description>Publisher: Public Library of Science</dc:description>
+        <dcterms:dateSubmitted>2024-12-10 10:40:36</dcterms:dateSubmitted>
+        <z:libraryCatalog>PLoS Journals</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dcterms:abstract>How individuals navigate perspectives and attitudes that diverge from their own affects an array of interpersonal outcomes from the health of marriages to the unfolding of international conflicts. The finesse with which people negotiate these differing perceptions depends critically upon their tacit assumptions—e.g., in the bias of naïve realism people assume that their subjective construal of a situation represents objective truth. The present study adds an important assumption to this list of biases: the illusion of information adequacy. Specifically, because individuals rarely pause to consider what information they may be missing, they assume that the cross-section of relevant information to which they are privy is sufficient to adequately understand the situation. Participants in our preregistered study (N = 1261) responded to a hypothetical scenario in which control participants received full information and treatment participants received approximately half of that same information. We found that treatment participants assumed that they possessed comparably adequate information and presumed that they were just as competent to make thoughtful decisions based on that information. Participants’ decisions were heavily influenced by which cross-section of information they received. Finally, participants believed that most other people would make a similar decision to the one they made. We discuss the implications in the context of naïve realism and other biases that implicate how people navigate differences of perspective.</dcterms:abstract>
+        <dc:title>The illusion of information adequacy</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_2768">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0310216&amp;type=printable</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2024-12-10 10:40:39</dcterms:dateSubmitted>
+        <dc:title>Full Text PDF</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="https://royalsocietypublishing.org/doi/10.1098/rstb.2020.0131">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <dc:title>Philosophical Transactions of the Royal Society B</dc:title>
+                <dc:identifier>DOI 10.1098/rstb.2020.0131</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Rollwage</foaf:surname>
+                        <foaf:givenName>Max</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Fleming</foaf:surname>
+                        <foaf:givenName>Stephen M.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_2770"/>
+        <link:link rdf:resource="#item_2771"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://royalsocietypublishing.org/doi/10.1098/rstb.2020.0131</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dc:rights>© 2021 The Authors.</dc:rights>
+        <dc:date>2021-4-12</dc:date>
+        <dc:coverage>world</dc:coverage>
+        <dc:description>Publisher: The Royal Society</dc:description>
+        <dcterms:dateSubmitted>2024-12-10 10:41:21</dcterms:dateSubmitted>
+        <z:libraryCatalog>royalsocietypublishing.org</z:libraryCatalog>
+        <z:language>EN</z:language>
+        <dcterms:abstract>Biases in the consideration of evidence can reduce the chances of consensus between
+people with different viewpoints. While such altered information processing typically
+leads to detrimental performance in laboratory tasks, the ubiquitous nature of ...</dcterms:abstract>
+        <dc:title>Confirmation bias is adaptive when coupled with efficient metacognition</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_2770">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://discovery.ucl.ac.uk/10123496/1/rstb.2020.0131.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2024-12-10 10:41:24</dcterms:dateSubmitted>
+        <dc:title>Full Text</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_2771">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://royalsocietypublishing.org/doi/full/10.1098/rstb.2020.0131</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2024-12-10 10:41:28</dcterms:dateSubmitted>
+        <dc:title>Snapshot</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="#item_2772">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>78</prism:volume>
+                <prism:number>4</prism:number>
+                <dc:title>Journal of Personality and Social Psychology</dc:title>
+                <dc:identifier>ISSN 1939-1315</dc:identifier>
+                <dc:identifier>DOI 10.1037/0022-3514.78.4.655</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Schulz-Hardt</foaf:surname>
+                        <foaf:givenName>Stefan</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Frey</foaf:surname>
+                        <foaf:givenName>Dieter</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Lüthgens</foaf:surname>
+                        <foaf:givenName>Carsten</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Moscovici</foaf:surname>
+                        <foaf:givenName>Serge</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_2773"/>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Group Decision Making</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Group Dynamics</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Information</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Information Seeking</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Interpersonal Interaction</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Judgment</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Preferences</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <bib:pages>655-669</bib:pages>
+        <dc:date>2000</dc:date>
+        <dc:description>Place: US
+Publisher: American Psychological Association</dc:description>
+        <z:libraryCatalog>APA PsycNet</z:libraryCatalog>
+        <dcterms:abstract>Research has shown that people prefer supporting to conflicting information when making decisions. Whether this biased information search also occurs in group decision making was examined in three experiments. Experiment 1 indicated that groups as well as individuals prefer supporting information and that the strength of this bias depends on the distribution of the group members' initial decision preferences. The more group members had chosen the same alternative prior to the group discussion (group homogeneity), the more strongly the group preferred information supporting that alternative. Experiment 2 replicated these results with managers. Experiment 3 showed that the differences between homogeneous and heterogeneous groups reflect group-level processes. Higher commitment and confidence in homogeneous groups mediated this effect. Functional and dysfunctional aspects of biased information seeking in group decision making are discussed. (PsycINFO Database Record (c) 2016 APA, all rights reserved)</dcterms:abstract>
+        <dc:title>Biased information search in group decision making</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_2773">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://psycnet.apa.org/record/2000-08135-004</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2024-12-10 10:42:02</dcterms:dateSubmitted>
+        <dc:title>Snapshot</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="https://ebn.bmj.com/content/17/3/65">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>17</prism:volume>
+                <prism:number>3</prism:number>
+                <dc:title>Evidence-Based Nursing</dc:title>
+                <dc:identifier>ISSN 1367-6539, 1468-9618</dc:identifier>
+                <dc:identifier>DOI 10.1136/eb-2014-101871</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Twycross</foaf:surname>
+                        <foaf:givenName>Alison</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Shorten</foaf:surname>
+                        <foaf:givenName>Allison</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_2775"/>
+        <link:link rdf:resource="#item_2776"/>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>https://ebn.bmj.com/content/17/3/65</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dc:rights>Published by the BMJ Publishing Group Limited. For permission to use (where not already granted under a licence) please go to http://group.bmj.com/group/rights-licensing/permissions</dc:rights>
+        <bib:pages>65-66</bib:pages>
+        <dc:date>2014/07/01</dc:date>
+        <dc:description>Publisher: Royal College of Nursing
+Section: Research made simple
+PMID: 24829302</dc:description>
+        <dcterms:dateSubmitted>2024-12-10 13:15:12</dcterms:dateSubmitted>
+        <z:libraryCatalog>ebn.bmj.com</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dcterms:abstract>Knowing the difference between health service evaluation, audit and research can be tricky especially for the novice researcher. Put simply, nursing research involves finding the answers to questions about “what nurses should do to help patients,” audit examines “whether nurses are doing this , and if not, why not,”1 and service evaluation asks about “the effect of nursing care on patient experiences and outcomes .” In this paper, we aim to provide some tips to help guide you through the decision-making process as you begin to plan your evaluation, audit or research project. As a starting point box 1 provides key definitions for each type of project.
+
+### Box 1 Definitions of service evaluation, audit and research
+
+▸  What is service evaluation? 
+
+Service evaluation seeks to assess how well a service is achieving its intended aims. It is undertaken to benefit the people using a particular healthcare service and is designed and conducted with the sole purpose of defining or judging the current service.2
+
+The results of service evaluations are mostly used to generate information that can be used to inform local decision-making.
+
+▸  What is (clinical) audit? 
+
+The English Department of Health3 states …</dcterms:abstract>
+        <dc:title>Service evaluation, audit and research: what is the difference?</dc:title>
+        <z:shortTitle>Service evaluation, audit and research</z:shortTitle>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_2775">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://ebn.bmj.com/content/ebnurs/17/3/65.full.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2024-12-10 13:15:48</dcterms:dateSubmitted>
+        <dc:title>Full Text PDF</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_2776">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://www.ncbi.nlm.nih.gov/pubmed/24829302</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2024-12-10 13:15:48</dcterms:dateSubmitted>
+        <dc:title>PubMed entry</dc:title>
+        <z:linkMode>3</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Document rdf:about="https://ics.ac.uk/about-icu/what-is-intensive-care.html">
+        <z:itemType>webpage</z:itemType>
+        <dcterms:isPartOf>
+           <z:Website></z:Website>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                   <foaf:Person><foaf:surname>ICS</foaf:surname></foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_2778"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://ics.ac.uk/about-icu/what-is-intensive-care.html</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2024-12-10 13:56:17</dcterms:dateSubmitted>
+        <z:language>en</z:language>
+        <dcterms:abstract>Intensive care units (ICUs) are specialist hospital wards that provide treatment and monitoring for people who are very ill.</dcterms:abstract>
+        <dc:title>What is Intensive Care?</dc:title>
+    </bib:Document>
+    <z:Attachment rdf:about="#item_2778">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://ics.ac.uk/about-icu/what-is-intensive-care.html</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2024-12-10 13:56:23</dcterms:dateSubmitted>
+        <dc:title>Snapshot</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="https://qualitysafety.bmj.com/content/early/2024/08/23/bmjqs-2024-017385">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <dc:title>BMJ Quality &amp; Safety</dc:title>
+                <dc:identifier>ISSN 2044-5415, 2044-5423</dc:identifier>
+                <dcterms:alternative>BMJ Qual Saf</dcterms:alternative>
+                <dc:identifier>DOI 10.1136/bmjqs-2024-017385</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Page</foaf:surname>
+                        <foaf:givenName>Bethan</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Irving</foaf:surname>
+                        <foaf:givenName>Dulcie</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Carthey</foaf:surname>
+                        <foaf:givenName>Jane</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Welch</foaf:surname>
+                        <foaf:givenName>John</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Higham</foaf:surname>
+                        <foaf:givenName>Helen</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Vincent</foaf:surname>
+                        <foaf:givenName>Charles</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_2780"/>
+        <link:link rdf:resource="#item_2781"/>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Crisis management</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Critical care</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Leadership</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Qualitative research</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Risk management</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://qualitysafety.bmj.com/content/early/2024/08/23/bmjqs-2024-017385</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dc:rights>© Author(s) (or their employer(s)) 2024. Re-use permitted under CC BY. Published by BMJ.. https://creativecommons.org/licenses/by/4.0/This is an open access article distributed in accordance with the Creative Commons Attribution 4.0 Unported (CC BY 4.0) license, which permits others to copy, redistribute, remix, transform and build upon this work for any purpose, provided the original work is properly cited, a link to the licence is given, and indication of whether changes were made. See: https://creativecommons.org/licenses/by/4.0/.</dc:rights>
+        <dc:date>2024/08/23</dc:date>
+        <dc:description>Publisher: BMJ Publishing Group Ltd
+Section: Original research
+PMID: 39179378</dc:description>
+        <dcterms:dateSubmitted>2024-12-10 15:24:13</dcterms:dateSubmitted>
+        <z:libraryCatalog>qualitysafety.bmj.com</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dcterms:abstract>Background Healthcare systems are operating under substantial pressures. Clinicians and managers are constantly having to make adaptations, which are typically improvised, highly variable and not coordinated across teams. This study aimed to identify and describe the types of everyday pressures in intensive care and the adaptive strategies staff use to respond, with the longer-term aim of developing practical and coordinated strategies for managing under pressure.
+Methods We conducted qualitative semi-structured interviews with 20 senior multidisciplinary healthcare professionals from intensive care units (ICUs) in 4 major hospitals in the UK. The interviews explored the everyday pressures faced by intensive care staff and the strategies they use to adapt. A thematic template analysis approach was used to analyse the data based on our previously empirically developed taxonomy of pressures and strategies.
+Results The principal source of pressure described was a shortage of staff with the necessary skills and experience to care for the increased numbers and complexity of patients which, in turn, increased staff workload and reduced patient flow. Strategies were categorised into anticipatory (in advance of anticipated pressures) and on the day. The dynamic and unpredictable demands on ICUs meant that strategies were mostly deployed on the day, most commonly by flexing staff, prioritisation of patients and tasks and increasing modes of communication and support.
+Conclusions ICU staff use a wide variety of adaptive strategies at times of pressure to minimise risk and maintain a reasonable standard of care for patients. These findings provide the foundation for a portfolio of strategies, which can be flexibly employed when under pressure. There is considerable potential for training clinical leaders and teams in the effective use of adaptive strategies.</dcterms:abstract>
+        <dc:title>Strategies for adapting under pressure: an interview study in intensive care units</dc:title>
+        <z:shortTitle>Strategies for adapting under pressure</z:shortTitle>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_2780">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://qualitysafety.bmj.com/content/qhc/early/2024/08/23/bmjqs-2024-017385.full.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2024-12-10 15:24:29</dcterms:dateSubmitted>
+        <dc:title>Full Text PDF</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <z:Attachment rdf:about="#item_2781">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>http://www.ncbi.nlm.nih.gov/pubmed/39179378</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2024-12-10 15:24:30</dcterms:dateSubmitted>
+        <dc:title>PubMed entry</dc:title>
+        <z:linkMode>3</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Document rdf:about="https://rcem.ac.uk/the-royal-college-of-emergency-medicine/">
+        <z:itemType>blogPost</z:itemType>
+        <dcterms:isPartOf>
+           <z:Blog><dc:title>RCEM</dc:title></z:Blog>
+        </dcterms:isPartOf>
+        <link:link rdf:resource="#item_2783"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://rcem.ac.uk/the-royal-college-of-emergency-medicine/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2024-12-10 15:38:10</dcterms:dateSubmitted>
+        <z:language>en</z:language>
+        <dcterms:abstract>The Royal College of Emergency Medicine works to ensure high quality care for patients by setting and monitoring standards of care.</dcterms:abstract>
+        <dc:title>About the College &amp; Emergency Medicine</dc:title>
+    </bib:Document>
+    <z:Attachment rdf:about="#item_2783">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://rcem.ac.uk/the-royal-college-of-emergency-medicine/</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2024-12-10 15:38:19</dcterms:dateSubmitted>
+        <dc:title>Snapshot</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="https://doi.org/10.1518/001872095779049543">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:0018-7208"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Endsley</foaf:surname>
+                        <foaf:givenName>Mica R.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>https://doi.org/10.1518/001872095779049543</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>32-64</bib:pages>
+        <dc:date>1995-03-01</dc:date>
+        <dc:description>Publisher: SAGE Publications Inc</dc:description>
+        <dcterms:dateSubmitted>2024-12-10 18:02:17</dcterms:dateSubmitted>
+        <z:libraryCatalog>SAGE Journals</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dcterms:abstract>This paper presents a theoretical model of situation awareness based on its role in dynamic human decision making in a variety of domains. Situation awareness is presented as a predominant concern in system operation, based on a descriptive view of decision making. The relationship between situation awareness and numerous individual and environmental factors is explored. Among these factors, attention and working memory are presented as critical factors limiting operators from acquiring and interpreting information from the environment to form situation awareness, and mental models and goal-directed behavior are hypothesized as important mechanisms for overcoming these limits. The impact of design features, workload, stress, system complexity, and automation on operator situation awareness is addressed, and a taxonomy of errors in situation awareness is introduced, based on the model presented. The model is used to generate design implications for enhancing operator situation awareness and future directions for situation awareness research.</dcterms:abstract>
+        <dc:title>Toward a Theory of Situation Awareness in Dynamic Systems</dc:title>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:0018-7208">
+        <prism:volume>37</prism:volume>
+        <prism:number>1</prism:number>
+        <dc:title>Human Factors</dc:title>
+        <dc:identifier>ISSN 0018-7208</dc:identifier>
+        <dcterms:alternative>Hum Factors</dcterms:alternative>
+        <dc:identifier>DOI 10.1518/001872095779049543</dc:identifier>
+    </bib:Journal>
+    <bib:Report rdf:about="https://rcem.ac.uk/wp-content/uploads/2021/10/SDDC_Intial_Assessment_Feb2017.pdf">
+        <z:itemType>report</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Series>
+                <dcterms:alternative>Service Design and Delivery</dcterms:alternative>
+            </bib:Series>
+        </dcterms:isPartOf>
+        <dc:publisher>
+            <foaf:Organization>
+               <foaf:name>The Royal College of Emergency Medicine</foaf:name>
+            </foaf:Organization>
+        </dc:publisher>
+        <link:link rdf:resource="#item_2785"/>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://rcem.ac.uk/wp-content/uploads/2021/10/SDDC_Intial_Assessment_Feb2017.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dc:date>2017</dc:date>
+        <dcterms:dateSubmitted>2024-12-10 18:19:24</dcterms:dateSubmitted>
+        <dc:title>Initial Assessment of Emergency Department Patients (February 2017)</dc:title>
+    </bib:Report>
+    <z:Attachment rdf:about="#item_2785">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://rcem.ac.uk/wp-content/uploads/2021/10/SDDC_Intial_Assessment_Feb2017.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2024-12-10 18:19:24</dcterms:dateSubmitted>
+        <dc:title>SDDC_Intial_Assessment_Feb2017.pdf</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="https://doi.org/10.1518/001872095779049525">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>37</prism:volume>
+                <prism:number>1</prism:number>
+                <dc:title>Human Factors</dc:title>
+                <dc:identifier>ISSN 0018-7208</dc:identifier>
+                <dcterms:alternative>Hum Factors</dcterms:alternative>
+                <dc:identifier>DOI 10.1518/001872095779049525</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Salas</foaf:surname>
+                        <foaf:givenName>Eduardo</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Prince</foaf:surname>
+                        <foaf:givenName>Carolyn</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Baker</foaf:surname>
+                        <foaf:givenName>David P.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Shrestha</foaf:surname>
+                        <foaf:givenName>Lisa</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>https://doi.org/10.1518/001872095779049525</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>123-136</bib:pages>
+        <dc:date>1995-03-01</dc:date>
+        <dc:description>Publisher: SAGE Publications Inc</dc:description>
+        <dcterms:dateSubmitted>2024-12-10 18:45:21</dcterms:dateSubmitted>
+        <z:libraryCatalog>SAGE Journals</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dcterms:abstract>Situation awareness has long been recognized as an important variable in aviation performance. Research to date has focused on identifying characteristics of situation awareness for individuals, not on the behaviors and processes associated with team situation awareness. The purpose of this review is to delineate and identify characteristics of team situation awareness. In addition, implications are discussed and research questions are outlined that target the measurement and training of situation awareness in teams.</dcterms:abstract>
+        <dc:title>Situation Awareness in Team Performance: Implications for Measurement and Training</dc:title>
+        <z:shortTitle>Situation Awareness in Team Performance</z:shortTitle>
+    </bib:Article>
+    <bib:Article rdf:about="https://onlinelibrary.wiley.com/doi/abs/10.1002/bdm.3960030402">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>3</prism:volume>
+                <prism:number>4</prism:number>
+                <dc:title>Journal of Behavioral Decision Making</dc:title>
+                <dc:identifier>ISSN 1099-0771</dc:identifier>
+                <dc:identifier>DOI 10.1002/bdm.3960030402</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Park</foaf:surname>
+                        <foaf:givenName>Won-Woo</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_2790"/>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Group decision making</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Groupthink</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Modes of measurement</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://onlinelibrary.wiley.com/doi/abs/10.1002/bdm.3960030402</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dc:rights>Copyright © 1990 John Wiley &amp; Sons, Ltd.</dc:rights>
+        <bib:pages>229-245</bib:pages>
+        <dc:date>1990</dc:date>
+        <dc:description>_eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1002/bdm.3960030402</dc:description>
+        <dcterms:dateSubmitted>2024-12-10 18:52:12</dcterms:dateSubmitted>
+        <z:libraryCatalog>Wiley Online Library</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dcterms:abstract>Despite an extensive use of the groupthink model in various areas of social science, there are few empirical studies testing groupthink and many criticisms of it. In order to better understand the concept of groupthink, and to set a foundation for future research, this paper summarizes previous empirical studies on group-think and indicates problems (e.g., limited inclusion of variables and an inappropriate usage of measurement modes) that exist throughout those studies. Recommendations for future research are then provided.</dcterms:abstract>
+        <dc:title>A Review of research on Groupthink</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_2790">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://onlinelibrary.wiley.com/doi/abs/10.1002/bdm.3960030402</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2024-12-10 18:52:17</dcterms:dateSubmitted>
+        <dc:title>Snapshot</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="https://doi.org/10.1177/001872678603900502">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:0018-7267"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Moorhead</foaf:surname>
+                        <foaf:givenName>Gregory</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Montanari</foaf:surname>
+                        <foaf:givenName>John R.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>https://doi.org/10.1177/001872678603900502</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>399-410</bib:pages>
+        <dc:date>1986-05-01</dc:date>
+        <dc:description>Publisher: SAGE Publications Ltd</dc:description>
+        <dcterms:dateSubmitted>2024-12-10 18:53:16</dcterms:dateSubmitted>
+        <z:libraryCatalog>SAGE Journals</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dcterms:abstract>This paper reports results of an empirical investigation of the groupthink theoreticalframework presented in Janis'second edition of Groupthink. Factor analysis was used to develop scales to measure the aspects of groupthink proposed by Janis (1982). Results supported some, but not all, of the symptoms and defects postulated by Janis. Next, a path analytic procedure was utilized to test the implied causal ordering of the Groupthink model (Janis, 1982, p. 244). This study provides limited support for the causal sequence specified in the model. However, the relationship between groupthink-induced decision defects and outcomes were not as strong as Janis suggests. These results prompt the authors to agree with Courtright (1978) that many intervening and/or moderating factors not included in the Janis framework influence decision outcomes.</dcterms:abstract>
+        <dc:title>An Empirical Investigation of the Groupthink Phenomenon</dc:title>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:0018-7267">
+        <prism:volume>39</prism:volume>
+        <prism:number>5</prism:number>
+        <dc:title>Human Relations</dc:title>
+        <dc:identifier>ISSN 0018-7267</dc:identifier>
+        <dc:identifier>DOI 10.1177/001872678603900502</dc:identifier>
+    </bib:Journal>
+    <bib:Article rdf:about="#item_2792">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>133</prism:volume>
+                <prism:number>3</prism:number>
+                <dc:title>Journal of Experimental Psychology: General</dc:title>
+                <dc:identifier>ISSN 1939-2222</dc:identifier>
+                <dc:identifier>DOI 10.1037/0096-3445.133.3.339</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Lavie</foaf:surname>
+                        <foaf:givenName>Nilli</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Hirst</foaf:surname>
+                        <foaf:givenName>Aleksandra</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>de Fockert</foaf:surname>
+                        <foaf:givenName>Jan W.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Viding</foaf:surname>
+                        <foaf:givenName>Essi</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_2793"/>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Cognitive Ability</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Cognitive Control</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Distraction</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Human Channel Capacity</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Numbers (Numerals)</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Selective Attention</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Short Term Memory</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Stimulus Salience</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Task Complexity</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Theories</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Visual Perception</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <bib:pages>339-354</bib:pages>
+        <dc:date>2004</dc:date>
+        <dc:description>Place: US
+Publisher: American Psychological Association</dc:description>
+        <z:libraryCatalog>APA PsycNet</z:libraryCatalog>
+        <dcterms:abstract>A load theory of attention in which distractor rejection depends on the level and type of load involved in current processing was tested. A series of experiments demonstrates that whereas high perceptual load reduces distractor interference, working memory load or dual-task coordination load increases distractor interference. These findings suggest 2 selective attention mechanisms: a perceptual selection mechanism serving to reduce distractor perception in situations of high perceptual load that exhaust perceptual capacity in processing relevant stimuli and a cognitive control mechanism that reduces interference from perceived distractors as long as cognitive control functions are available to maintain current priorities (low cognitive load). This theory resolves the long-standing early versus late selection debate and clarifies the role of cognitive control in selective attention. (PsycINFO Database Record (c) 2016 APA, all rights reserved)</dcterms:abstract>
+        <dc:title>Load Theory of Selective Attention and Cognitive Control</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_2793">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>https://psycnet.apa.org/buy/2004-17825-003</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2024-12-10 18:56:03</dcterms:dateSubmitted>
+        <dc:title>Snapshot</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0116949">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>10</prism:volume>
+                <prism:number>1</prism:number>
+                <dc:title>PLOS ONE</dc:title>
+                <dc:identifier>ISSN 1932-6203</dc:identifier>
+                <dcterms:alternative>PLOS ONE</dcterms:alternative>
+                <dc:identifier>DOI 10.1371/journal.pone.0116949</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Murthy</foaf:surname>
+                        <foaf:givenName>Srinivas</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Leligdowicz</foaf:surname>
+                        <foaf:givenName>Aleksandra</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Adhikari</foaf:surname>
+                        <foaf:givenName>Neill K. J.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_2795"/>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Cities</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Database searching</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Hospitals</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Intensive care units</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Nepal</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Pediatric cardiology</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Pediatrics</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Uganda</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0116949</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>e0116949</bib:pages>
+        <dc:date>24 Jan 2015</dc:date>
+        <dc:description>Publisher: Public Library of Science</dc:description>
+        <dcterms:dateSubmitted>2024-12-10 19:01:26</dcterms:dateSubmitted>
+        <z:libraryCatalog>PLoS Journals</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dcterms:abstract>Purpose Access to critical care is a crucial component of healthcare systems. In low-income countries, the burden of critical illness is substantial, but the capacity to provide care for critically ill patients in intensive care units (ICUs) is unknown. Our aim was to systematically review the published literature to estimate the current ICU capacity in low-income countries. Methods We searched 11 databases and included studies of any design, published 2004-August 2014, with data on ICU capacity for pediatric and adult patients in 36 low-income countries (as defined by World Bank criteria; population 850 million). Neonatal, temporary, and military ICUs were excluded. We extracted data on ICU bed numbers, capacity for mechanical ventilation, and information about the hospital, including referral population size, public accessibility, and the source of funding. Analyses were descriptive. Results Of 1,759 citations, 43 studies from 15 low-income countries met inclusion criteria. They described 36 individual ICUs in 31 cities, of which 16 had population greater than 500,000, and 14 were capital cities. The median annual ICU admission rate was 401 (IQR 234-711; 24 ICUs with data) and median ICU size was 8 beds (IQR 5-10; 32 ICUs with data). The mean ratio of adult and pediatric ICU beds to hospital beds was 1.5% (SD 0.9%; 15 hospitals with data). Nepal and Uganda, the only countries with national ICU bed data, had 16.7 and 1.0 ICU beds per million population, respectively. National data from other countries were not available. Conclusions Low-income countries lack ICU beds, and more than 50% of these countries lack any published data on ICU capacity. Most ICUs in low-income countries are located in large referral hospitals in cities. A central database of ICU resources is required to evaluate health system performance, both within and between countries, and may help to develop related health policy.</dcterms:abstract>
+        <dc:title>Intensive Care Unit Capacity in Low-Income Countries: A Systematic Review</dc:title>
+        <z:shortTitle>Intensive Care Unit Capacity in Low-Income Countries</z:shortTitle>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_2795">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0116949&amp;type=printable</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2024-12-10 19:01:27</dcterms:dateSubmitted>
+        <dc:title>Full Text PDF</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="https://doi.org/10.1001/jama.2013.283800">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>311</prism:volume>
+                <prism:number>6</prism:number>
+                <dc:title>JAMA</dc:title>
+                <dc:identifier>ISSN 0098-7484</dc:identifier>
+                <dcterms:alternative>JAMA</dcterms:alternative>
+                <dc:identifier>DOI 10.1001/jama.2013.283800</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Gooch</foaf:surname>
+                        <foaf:givenName>Rebecca A.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Kahn</foaf:surname>
+                        <foaf:givenName>Jeremy M.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_2797"/>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>https://doi.org/10.1001/jama.2013.283800</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>567-568</bib:pages>
+        <dc:date>2014-02-12</dc:date>
+        <dcterms:dateSubmitted>2024-12-10 19:02:24</dcterms:dateSubmitted>
+        <z:libraryCatalog>Silverchair</z:libraryCatalog>
+        <dcterms:abstract>Intensive care is a substantial financial burden on the US health care system, with spending on critical illness exceeding $80 billion per year, approximately 3% of all health care spending and nearly 1% of the gross domestic product. In contrast, the United Kingdom spends only 0.1% of its gross domestic product on critical care services, with no evidence of worse patient outcomes and similar life expectancies as in the United States. Although there are many differences between these 2 countries, one significant difference is intensive care unit (ICU) bed supply. The United States has 25 ICU beds per 100 000 people, as compared with 5 per 100 000 in the United Kingdom. As a result, ICU case-mix differs substantially. In the United Kingdom, the majority of ICU patients are at high risk for death, whereas in the United States, many patients are admitted to the ICU for observation. At the same time, compared with patients in the United Kingdom, substantially more patients in the United States die in the ICU, suggesting that increased bed availability appears to reduce the incentive to keep dying patients out of the ICU.</dcterms:abstract>
+        <dc:title>ICU Bed Supply, Utilization, and Health Care Spending: An Example of Demand Elasticity</dc:title>
+        <z:shortTitle>ICU Bed Supply, Utilization, and Health Care Spending</z:shortTitle>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_2797">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://jamanetwork.com/journals/jama/article-abstract/1813219</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2024-12-10 19:02:29</dcterms:dateSubmitted>
+        <dc:title>Snapshot</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
     </z:Attachment>
 </rdf:RDF>
