@@ -17298,4 +17298,157 @@ Publisher: American Psychological Association</dc:description>
         <z:linkMode>1</z:linkMode>
         <link:type>text/html</link:type>
     </z:Attachment>
+    <bib:Article rdf:about="https://www.cambridge.org/core/journals/behavioral-and-brain-sciences/article/generalizability-crisis/AD386115BA539A759ACB3093760F4824">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf rdf:resource="urn:issn:0140-525X,%201469-1825"/>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Yarkoni</foaf:surname>
+                        <foaf:givenName>Tal</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_2799"/>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Generalization</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>inference</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>philosophy of science</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>psychology</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>random effects</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>statistics</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.cambridge.org/core/journals/behavioral-and-brain-sciences/article/generalizability-crisis/AD386115BA539A759ACB3093760F4824</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>e1</bib:pages>
+        <dc:date>2022/01</dc:date>
+        <dcterms:dateSubmitted>2024-12-18 13:02:37</dcterms:dateSubmitted>
+        <z:libraryCatalog>Cambridge University Press</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dcterms:abstract>Most theories and hypotheses in psychology are verbal in nature, yet their evaluation overwhelmingly relies on inferential statistical procedures. The validity of the move from qualitative to quantitative analysis depends on the verbal and statistical expressions of a hypothesis being closely aligned – that is, that the two must refer to roughly the same set of hypothetical observations. Here, I argue that many applications of statistical inference in psychology fail to meet this basic condition. Focusing on the most widely used class of model in psychology – the linear mixed model – I explore the consequences of failing to statistically operationalize verbal hypotheses in a way that respects researchers' actual generalization intentions. I demonstrate that although the “random effect” formalism is used pervasively in psychology to model intersubject variability, few researchers accord the same treatment to other variables they clearly intend to generalize over (e.g., stimuli, tasks, or research sites). The under-specification of random effects imposes far stronger constraints on the generalizability of results than most researchers appreciate. Ignoring these constraints can dramatically inflate false-positive rates, and often leads researchers to draw sweeping verbal generalizations that lack a meaningful connection to the statistical quantities they are putatively based on. I argue that failure to take the alignment between verbal and statistical expressions seriously lies at the heart of many of psychology's ongoing problems (e.g., the replication crisis), and conclude with a discussion of several potential avenues for improvement.</dcterms:abstract>
+        <dc:title>The generalizability crisis</dc:title>
+    </bib:Article>
+    <bib:Journal rdf:about="urn:issn:0140-525X,%201469-1825">
+        <prism:volume>45</prism:volume>
+        <dc:title>Behavioral and Brain Sciences</dc:title>
+        <dc:identifier>ISSN 0140-525X, 1469-1825</dc:identifier>
+        <dc:identifier>DOI 10.1017/S0140525X20001685</dc:identifier>
+    </bib:Journal>
+    <z:Attachment rdf:about="#item_2799">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://www.cambridge.org/core/services/aop-cambridge-core/content/view/AD386115BA539A759ACB3093760F4824/S0140525X20001685a.pdf/div-class-title-the-generalizability-crisis-div.pdf</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2024-12-18 13:02:39</dcterms:dateSubmitted>
+        <dc:title>Full Text PDF</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>application/pdf</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="#item_2800">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>18</prism:volume>
+                <prism:number>3</prism:number>
+                <dc:title>Psychological Review</dc:title>
+                <dc:identifier>ISSN 1939-1471</dc:identifier>
+                <dc:identifier>DOI 10.1037/h0074579</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Henmon</foaf:surname>
+                        <foaf:givenName>V. A. C.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <link:link rdf:resource="#item_2801"/>
+        <dc:subject>
+            <z:AutomaticTag>
+               <rdf:value>Individual Differences</rdf:value>
+            </z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Judgment</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <dc:subject>
+           <z:AutomaticTag><rdf:value>Time</rdf:value></z:AutomaticTag>
+        </dc:subject>
+        <bib:pages>186-201</bib:pages>
+        <dc:date>1911</dc:date>
+        <dc:description>Place: US
+Publisher: The Review Publishing Company</dc:description>
+        <z:libraryCatalog>APA PsycNet</z:libraryCatalog>
+        <dcterms:abstract>Studies the relation between the times of judgements and their accuracy, and determines individual differences in judgement times. Three Ss judged the length of lines, with the time being recorded on the Hipp chronoscope. Results revealed that the times of judgement increased uniformly as the degree of confidence decreased. The time taken was longer and more variable for wrong judgements. The range of variability in accuracy was 2:1. The time of judgement varied from one third of a second to one second, and the degree of confidence varied from 90% (perfectly confident) to less than 10%. There was a positive correlation between degree of confidence and accuracy, however, confidence was not a reliable index of accuracy. Ss who responded faster or slower were neither more nor less accurate than others. No sex differences were observed. (PsycINFO Database Record (c) 2016 APA, all rights reserved)</dcterms:abstract>
+        <dc:title>The relation of the time of a judgment to its accuracy</dc:title>
+    </bib:Article>
+    <z:Attachment rdf:about="#item_2801">
+        <z:itemType>attachment</z:itemType>
+        <dc:identifier>
+            <dcterms:URI>
+                <rdf:value>https://psycnet.apa.org/record/1926-03176-001</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <dcterms:dateSubmitted>2024-12-18 16:34:11</dcterms:dateSubmitted>
+        <dc:title>Snapshot</dc:title>
+        <z:linkMode>1</z:linkMode>
+        <link:type>text/html</link:type>
+    </z:Attachment>
+    <bib:Article rdf:about="https://doi.org/10.1080/14640746808400146">
+        <z:itemType>journalArticle</z:itemType>
+        <dcterms:isPartOf>
+            <bib:Journal>
+                <prism:volume>20</prism:volume>
+                <prism:number>2</prism:number>
+                <dc:title>Quarterly Journal of Experimental Psychology</dc:title>
+                <dc:identifier>ISSN 0033-555X</dc:identifier>
+                <dc:identifier>DOI 10.1080/14640746808400146</dc:identifier>
+            </bib:Journal>
+        </dcterms:isPartOf>
+        <bib:authors>
+            <rdf:Seq>
+                <rdf:li>
+                    <foaf:Person>
+                        <foaf:surname>Rabbitt</foaf:surname>
+                        <foaf:givenName>Patrick M. A.</foaf:givenName>
+                    </foaf:Person>
+                </rdf:li>
+            </rdf:Seq>
+        </bib:authors>
+        <dc:identifier>
+            <dcterms:URI>
+               <rdf:value>https://doi.org/10.1080/14640746808400146</rdf:value>
+            </dcterms:URI>
+        </dc:identifier>
+        <bib:pages>179-188</bib:pages>
+        <dc:date>1968-05-01</dc:date>
+        <dc:description>Publisher: SAGE Publications</dc:description>
+        <dcterms:dateSubmitted>2024-12-18 16:34:40</dcterms:dateSubmitted>
+        <z:libraryCatalog>SAGE Journals</z:libraryCatalog>
+        <z:language>en</z:language>
+        <dcterms:abstract>During serial self-paced choice response tasks mean reaction times (RTs) for responses which are made in order to correct errors are faster than mean RTs for other correct responses. Experiment I showed that subjects can accurately correct errors in a four-choice task by making the response which they should have made, even though they are given no indication that an error has occurred. Experiment 2 showed that subjects correct their errors faster and more accurately when they use correction procedure than when they make a common response to all errors. The implication that subjects can correct errors because they know what response they should have made allows some comments on the constraints which must be met by various models which have been proposed to explain error-correction.</dcterms:abstract>
+        <dc:title>Three Kinds of Error-Signalling Responses in a Serial Choice Task</dc:title>
+    </bib:Article>
 </rdf:RDF>
