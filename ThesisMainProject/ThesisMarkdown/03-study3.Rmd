@@ -600,7 +600,7 @@ model for correctness as a binary outcome variable. For the other
 variables, because we are using non-normally distributed continuous
 outcome variables, we compare model fit metrics (Aikake Information
 Criterion and Bayesian Information Criterion) for generalised models
-(with the *glmer* function in R's *lmerTest* package) using inverse
+(with the *glmer* function in R's *lme4* package) using inverse
 Gaussian and Gamma distributions, reporting results for the better
 fitting model (as outputted by the *anova* function in R's *stats*
 package for model comparison).

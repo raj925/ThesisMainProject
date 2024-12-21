@@ -1,4 +1,4 @@
-,OMSID,round,ParticipantID,Scenario,t1Diagnoses,t1DiagnosisScore,t1Likelihoods,t1Confidence,t1Severity,t2Diagnoses,t2Likelihoods,t2Confidence,t2Severity,t2SeniorReview,t2InvestigationsComplete,OMSScore,t2ExtraInvestigations,SCENARIO,CURRENT.SCENARIO.VERSION,SCENARIO.VERSION.PLAYED,SCORE....,TIME.SPENT,DATE,SCENARIO.ATTEMPT..,Quest.2.PIN,scenGroup,scenNum,orderNum,t1numOfDiagnoses,t2numOfDiagnoses,t1HighestLikelihood,t2HighestLikelihood,severityChange,confidenceChange,t1numOfDiagnosesChange,diagnosticChange,calibrationByDiff,sbarStart,helpStart,totalHelpStart,treatStart,pewsScore,totalActions,uniqueActions,filteredActions,actionVector,actTimesVector,historyActionsVector,examsActionsVector,testingActionsVector,treatmentActionsVector,numOfHistoryActions,numOfExamActions,numOfTestingActions,numOfTreatmentActions,numOfActionsAfterHistory,numOfHistoryActionsBeforePause,numOfHistoryActionsAfterPause,numOfExamActionsBeforePause,numOfExamActionsAfterPause,percentageHistory,numOfTestingActionsBeforePause,numOfTestingActionsAfterPause,percentageTesting,numOfTreatmentActionsBeforePause,numOfTreatmentActionsAfterPause,historyVectorBeforePause,numOfActionsBeforePause,numOfActionsAfterPause,numOfDiagnosesLabel,initialConfidenceLabel,infoVal,infoValHistory,infoValExams,infoValTesting,infoValHistoryBeforePause,infoValBeforePause,infoValAfterPause,infoValAfterHistory
+,OMSID,round,ParticipantID,Scenario,t1Diagnoses,t1DiagnosisScore,t1Likelihoods,t1Confidence,t1Severity,t2Diagnoses,t2Likelihoods,t2Confidence,t2Severity,t2SeniorReview,t2InvestigationsComplete,OMSScore,t2ExtraInvestigations,SCENARIO,CURRENT.SCENARIO.VERSION,SCENARIO.VERSION.PLAYED,SCORE....,TIME.SPENT,DATE,SCENARIO.ATTEMPT..,Quest.2.PIN,scenGroup,scenNum,orderNum,t1numOfDiagnoses,t2numOfDiagnoses,t1HighestLikelihood,t2HighestLikelihood,severityChange,confidenceChange,t1numOfDiagnosesChange,diagnosticChange,calibrationByDiff,sbarStart,helpStart,totalHelpStart,treatStart,pewsScore,totalActions,uniqueActions,filteredActions,actionVector,actTimesVector,historyActionsVector,examsActionsVector,testingActionsVector,treatmentActionsVector,numOfHistoryActions,numOfExamActions,numOfTestingActions,numOfTreatmentActions,numOfActionsAfterHistory,numOfHistoryActionsBeforePause,numOfHistoryActionsAfterPause,numOfExamActionsBeforePause,numOfExamActionsAfterPause,percentageHistory,numOfTestingActionsBeforePause,numOfTestingActionsAfterPause,percentageTesting,numOfTreatmentActionsBeforePause,numOfTreatmentActionsAfterPause,historyVectorBeforePause,numOfActionsBeforePause,numOfActionsAfterPause,numOfDiagnosesLabel,initialConfidenceLabel,infoVal,infoValHistory,infoValExams,infoValTesting,infoValHistoryBeforePause,infoValBeforePause,infoValAfterPause,infoValAfterHistory,infoValHistoryAfterPause,infoValExamsAfterPause,infoValTestsAfterPause
 1,1,2,A17,Pneumonia,"Asthma excerbation, pneumonia, sepsis",0.44,"4,3,5",8,7,"Asthma, infectious asthma excerbation, pneumonia","4,4,4",7,7,0,0,74,,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,73.86,13m 26s,18/10/2023 13:23,1,No,DP,2,3,3,3,5,4,0,-1,0,1,1.057142857,476,799,476,287,5,63,53,17,"1
 0
 1
@@ -258,7 +258,7 @@
 0",5,10,2,2,12,4,1,4,6,0.8,1,1,0.5,1,1,"past medical history
 allergies
 history of presenting complaint
-presenting complaint",15,48,low,high,36.02964722,1.236666667,31.20964722,3.583333333,-10.08,-7.066363636,39.45627656,34.79298056
+presenting complaint",15,48,low,high,36.02964722,1.236666667,31.20964722,3.583333333,-10.08,-7.066363636,39.45627656,34.79298056,5.246376812,34.20989975,0
 2,1,3,B21,Asthma,"Acute excerbation of asthma, viral induced wheeze, bronchiolitis, pneumonia, croup, foreign object, anaphylaxis",0.84,"5,2,2,2,2,3,3",9,3,"Acute excerbation of asthma, viral induced wheeze, bronchiolitis, pneumonia, croup, foreign object, anaphylaxis","5,2,2,3,2,2,2",10,7,0.71,0,68,"peak flow, nebuliser","Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,67.73,12m 29s,06/11/2023 15:21,3,No,AS,1,1,7,7,5,5,4,1,0,5,0.68,9999,Inf,9999,648,4,38,37,23,"1
 1
 1
@@ -524,7 +524,7 @@ history of presenting complaint
 past surgical history
 ask birth history
 presenting complaint
-developmental milestones",15,23,high,high,33.32276666,24.82470318,8.498063478,0,4.202317291,-3.062388592,11.34001711,8.498063478
+developmental milestones",15,23,high,high,33.32276666,24.82470318,8.498063478,0,4.202317291,-3.062388592,11.34001711,8.498063478,-0.070967742,11.41098485,0
 3,1,5,C16,Asthma,"Asthma excerbation, virus, atopic allergies, VIW",0.38,"5,4,3,1",7,7,"Acute asthma excerbation second to allergies, VIEW, respiratory virus","5,2,2",7,7,0.25,0,69,"More full history, ECG","Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,70.49,15m 58s,08/01/2024 13:06,4,No,AS,1,1,4,3,5,5,0,0,-1,1,0.985714286,699,Inf,699,444,5,47,44,18,"1
 1
 1
@@ -783,7 +783,7 @@ developmental milestones",15,23,high,high,33.32276666,24.82470318,8.498063478,0,
 0
 0",9,7,2,2,9,3,6,2,5,0.333333333,1,1,0.5,0,2,"ask about pain
 history of presenting complaint
-presenting complaint",10,37,high,high,30.26852623,17.29785077,11.03569094,1.93498452,4.202317291,0.169754265,9.163952893,12.97067546
+presenting complaint",10,37,high,high,30.26852623,17.29785077,11.03569094,1.93498452,4.202317291,0.169754265,9.163952893,12.97067546,-0.070967742,9.234920635,0
 4,1,5,C1,Asthma,"URTI, bronchiolitis, asthma, hypog, DKA",0.47,"4,4,3,1,1",2,8,,,NA,NA,NA,NA,NA,,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,70.49,15m 58s,08/01/2024 13:06,4,No,AS,1,1,5,1,4,NA,NA,NA,-4,NA,NA,699,Inf,699,444,5,47,44,18,"1
 1
 1
@@ -1042,7 +1042,7 @@ presenting complaint",10,37,high,high,30.26852623,17.29785077,11.03569094,1.9349
 0
 0",9,7,2,2,9,3,6,2,5,0.333333333,1,1,0.5,0,2,"ask about pain
 history of presenting complaint
-presenting complaint",10,37,high,low,30.26852623,17.29785077,11.03569094,1.93498452,4.202317291,0.169754265,9.163952893,12.97067546
+presenting complaint",10,37,high,low,30.26852623,17.29785077,11.03569094,1.93498452,4.202317291,0.169754265,9.163952893,12.97067546,-0.070967742,9.234920635,0
 5,1,6,C1,Seizure,"Febrile Seizure, pneumonitis v/b, RSV (high fever), epilepsy, hypoglycaemic seizure",0.56,"5,4,1,3,1",3,7,"Febrile seizure, URTI, epilepsy","5,5,2",9,7,0.26,0,70,Ask mum what meds she was given,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,70.35,17m 29s,14/02/2024 09:57,2,No,AS,2,4,5,3,5,5,0,6,-2,8,0.777777778,365,Inf,365,195,0,59,54,25,"1
 1
 1
@@ -1299,7 +1299,7 @@ presenting complaint",10,37,high,low,30.26852623,17.29785077,11.03569094,1.93498
 0
 0
 0
-0",8,12,5,1,17,0,8,4,8,0,0,5,1,1,0,,12,47,high,low,69.03787943,14.78306182,47.44534791,6.809469697,-7.084795322,16.04678363,42.98851644,54.25481761
+0",8,12,5,1,17,0,8,4,8,0,0,5,1,1,0,,12,47,high,low,69.03787943,14.78306182,47.44534791,6.809469697,-7.084795322,16.04678363,42.98851644,54.25481761,-0.25,41.67488007,1.563636364
 6,10,1,A22,DKA,"DKA, Anaphylaxis, Gastroenteritis, Hypoglycaemia",0.53,"5,2,3,2",9,7,DKA,5,9,7,0.1,0,46,Fluids + VBG,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,46.19,15m 23s,11/09/2023 16:08,1,No,DP,1,2,4,1,5,5,0,0,-3,3,0.511111111,622,901,622,415,3,50,47,18,"1
 0
 1
@@ -1558,7 +1558,7 @@ presenting complaint",10,37,high,low,30.26852623,17.29785077,11.03569094,1.93498
 1
 1",4,8,6,3,14,3,1,3,5,0.75,1,5,0.833333333,0,3,"past medical history
 allergies
-presenting complaint",11,39,high,high,22.55767531,-24.04820633,16.76490927,29.84097237,-10.30418719,25.75537094,-5.956091954,46.60588164
+presenting complaint",11,39,high,high,22.55767531,-24.04820633,16.76490927,29.84097237,-10.30418719,25.75537094,-5.956091954,46.60588164,-13.5,7.543908046,0
 7,10,2,A22,Pneumonia,"Sepsis, Viral infection, Bacterial infection",0.14,"4,2,4",6,7,,,NA,NA,NA,NA,NA,,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,56.8,10m 36s,18/10/2023 15:27,1,No,DP,2,3,3,1,4,NA,NA,NA,-2,NA,NA,430,Inf,430,183,5,38,35,13,"1
 0
 0
@@ -1816,7 +1816,7 @@ presenting complaint",11,39,high,high,22.55767531,-24.04820633,16.76490927,29.84
 0
 0
 0",4,5,4,2,9,2,2,5,0,0.5,4,0,0,1,1,"history of presenting complaint
-presenting complaint",14,24,low,low,12.35491436,-5.516956522,11.90217391,5.96969697,-10.08,-6.496666667,11.21607378,17.87187088
+presenting complaint",14,24,low,low,12.35491436,-5.516956522,11.90217391,5.96969697,-10.08,-6.496666667,11.21607378,17.87187088,5.246376812,3.583333333,2.386363636
 8,11,1,A10,DKA,"DKA, infection (causing DKA?)",0.38,"5,2",8,9,DKA,5,9,9,0,0,55,Give fluids,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,55.1,12m 11s,11/09/2023 14:41,1,No,DP,1,2,2,1,5,5,0,1,-1,2,0.611111111,9999,Inf,9999,9999,2,34,30,16,"1
 0
 1
@@ -2078,7 +2078,7 @@ allergies
 aggravating / relieving factors
 history of presenting complaint
 presenting complaint
-family history",14,20,low,high,25.96753901,-13.809873,26.41780609,13.35960591,-10.30418719,18.20995169,3.334701697,39.777412
+family history",14,20,low,high,25.96753901,-13.809873,26.41780609,13.35960591,-10.30418719,18.20995169,3.334701697,39.777412,-13.5,16.8347017,0
 9,11,2,A10,Pneumonia,"Acute asthma excerbation, concomitant infection, foreign body",0.37,"5,4,2",8,7,"Sepsis, acute asthma excerbation, pneumonia","5,1,4",8,9,0.12,0,51,"full history of travel, examine peripheral cardio signs, view output","Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,51.27,15m 33s,18/10/2023 11:56,2,No,DP,2,3,3,3,5,5,2,0,0,2,0.6375,761,Inf,761,476,5,54,48,20,"1
 1
 1
@@ -2341,7 +2341,7 @@ allergies
 ask about pain
 ask about general activity level
 history of presenting complaint
-presenting complaint",13,41,low,high,27.98309254,17.69238741,9.644871795,0.645833333,-10.08,-6.496666667,12.42971014,10.29070513
+presenting complaint",13,41,low,high,27.98309254,17.69238741,9.644871795,0.645833333,-10.08,-6.496666667,12.42971014,10.29070513,5.246376812,7.183333333,0
 10,11,3,B22,DKA,"DKA, gasteroenteritis, pancreatis, appendicitis, ischaemia, hyperglycemic state, abdominal trauma",0.4,"5,1,2,2,1,1,3",9,7,"DKA, gasteroenteritis, pancreatis, appendicitis, ischaemia, hyperglycemic state, abdominal trauma","5,1,1,1,1,1,1",10,7,0.28,0,42,A to E,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,41.66,13m 57s,06/11/2023 16:18,2,No,DP,1,2,7,7,5,5,0,1,0,1,0.42,542,479,479,672,2,48,45,16,"1
 1
 1
@@ -2603,7 +2603,7 @@ prescribed medications
 allergies
 ask about pain
 history of presenting complaint
-presenting complaint",16,32,high,high,10.95220429,-27.9539603,9.912845775,28.99331882,-10.30418719,25.75537094,-6.125615764,38.90616459
+presenting complaint",16,32,high,high,10.95220429,-27.9539603,9.912845775,28.99331882,-10.30418719,25.75537094,-6.125615764,38.90616459,-13.5,7.374384236,0
 11,11,4,B22,Pneumonia,"acute asthma attack,  pneumonia, anaphylaxis, foreign body inhalation, bronchiolits",0.68,"5,5,2,2,3",8,6,"acute asthma excerbation, sepsis, pneumonia, anaphylaxis, foreign body","5,5,5,1,1",9,8,0.09,0,67,"CXR, would have liked to fully examine patient","Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,67.33,13m 49s,13/12/2023 14:24,3,No,DP,2,3,5,5,5,5,2,1,0,3,0.744444444,554,693,554,366,4,82,59,23,"1
 1
 1
@@ -2869,7 +2869,7 @@ history of presenting complaint
 vaccination history
 past surgical history
 presenting complaint
-progress at school",21,61,high,high,43.86574702,19.19309745,9.644871795,15.02777778,-10.08,-6.496666667,12.42971014,24.67264957
+progress at school",21,61,high,high,43.86574702,19.19309745,9.644871795,15.02777778,-10.08,-6.496666667,12.42971014,24.67264957,5.246376812,7.183333333,0
 12,11,5,C11,DKA,"DKA, gastroenteritis",0.62,"5,3",7,7,DKA,5,9,8,0,0,65,,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,64.98,13m 53s,08/01/2024 14:47,3,No,DP,1,2,2,1,5,5,1,2,-1,4,0.722222222,467,674,467,643,2,57,50,22,"1
 1
 0
@@ -3128,7 +3128,7 @@ progress at school",21,61,high,high,43.86574702,19.19309745,9.644871795,15.02777
 0
 0",6,9,7,1,16,3,3,3,6,0.5,2,5,0.714285714,0,1,"past medical history
 ask about pain
-presenting complaint",14,43,low,high,55.05546031,-6.93494116,35.1994636,26.79093786,-10.30418719,17.2169094,26.36874932,61.99040147
+presenting complaint",14,43,low,high,55.05546031,-6.93494116,35.1994636,26.79093786,-10.30418719,17.2169094,26.36874932,61.99040147,3.375,22.99374932,0
 13,11,6,C11,Pneumonia,"Pneumonia, URTI, croup, pleural effusion",0.53,"4,3,3,2",7,6,"Pneumonia, sepsis, exacerbation asthma, URTI","4,5,4,3",7,8,0.34,0,55,"Abdo exam, exposure, ENT","Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,55.1,15m 34s,14/02/2024 12:33,4,No,DP,2,3,4,4,4,5,2,0,0,2,0.785714286,627,694,627,264,4,66,62,24,"1
 1
 1
@@ -3386,7 +3386,7 @@ presenting complaint",14,43,low,high,55.05546031,-6.93494116,35.1994636,26.79093
 0
 0
 0",7,13,4,2,17,2,5,6,7,0.285714286,1,3,0.75,1,1,"history of presenting complaint
-presenting complaint",15,51,high,high,25.87520859,-0.711746032,25.58021903,1.006735589,-10.08,-7.066363636,35.22534461,26.58695462
+presenting complaint",15,51,high,high,25.87520859,-0.711746032,25.58021903,1.006735589,-10.08,-7.066363636,35.22534461,26.58695462,5.246376812,29.9789678,0
 14,12,1,A20,DKA,"Diabetic Ketoacidosis, appendicitis, stomach bug",0.36,"5,2,3",3,7,"DKA, strep throat, appendicitis, stomach bug","5,2,2,2",9,7,0.25,0,46,"Full history, cardiac exam, neuro exam","Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,45.75,15m 38s,11/09/2023 16:08,1,No,DP,1,2,3,4,5,5,0,6,1,7,0.511111111,463,Inf,463,834,2,49,46,18,"1
 1
 0
@@ -3645,7 +3645,7 @@ presenting complaint",15,51,high,high,25.87520859,-0.711746032,25.58021903,1.006
 1
 0",7,5,6,3,11,3,4,2,3,0.428571429,1,5,0.833333333,0,3,"ask about pain
 history of presenting complaint
-presenting complaint",11,38,low,low,9.261253956,-23.87660783,4.096923919,29.04093786,-10.30418719,17.2169094,-6.710615764,33.13786178
+presenting complaint",11,38,low,low,9.261253956,-23.87660783,4.096923919,29.04093786,-10.30418719,17.2169094,-6.710615764,33.13786178,-10.125,3.414384236,0
 15,12,3,B4,Asthma,"Acute excerbation of asthma, anaphylaxis, urti, foreign body",0.8,"4,2,5,1",6,7,"Asthma, bronchiolitis, pneumonia, anaphylaxis, viral induced wheeze","5,4,4,1,5",7,7,0.25,0,68,"take bloods, a blood gas, glucose reading","Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,67.52,16m 0s,06/11/2023 13:06,2,No,AS,1,1,4,5,5,5,0,1,1,2,0.971428571,9999,Inf,9999,507,0,32,28,17,"1
 1
 1
@@ -3905,7 +3905,7 @@ presenting complaint",11,38,low,low,9.261253956,-23.87660783,4.096923919,29.0409
 0",5,9,3,2,12,4,1,1,8,0.8,0,3,1,0,2,"past medical history
 prescribed medications
 history of presenting complaint
-presenting complaint",10,22,high,low,31.63404462,13.39325431,14.35014076,3.890649545,4.202317291,0.169754265,10.13025457,18.24079031
+presenting complaint",10,22,high,low,31.63404462,13.39325431,14.35014076,3.890649545,4.202317291,0.169754265,10.13025457,18.24079031,-0.070967742,10.20122231,0
 16,12,6,C12,Seizure,"Febrile convulsions, epilepsy, infection",0.43,"4,2,4",4,7,"Febrile seizure, epilepsy","5,1",9,6,0.35,0,48,looked in the mouth - ent assessment,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,47.51,20m 5s,14/02/2024 12:02,2,No,AS,2,4,3,2,4,5,-1,5,-1,7,0.533333333,850,825,825,219,2,62,55,24,"1
 1
 1
@@ -4162,7 +4162,7 @@ presenting complaint",10,22,high,low,31.63404462,13.39325431,14.35014076,3.89064
 0
 1
 0
-0",10,12,2,3,14,1,9,2,10,0.1,1,1,0.5,1,2,past medical history,11,51,low,low,54.82173097,14.03445071,21.45394692,19.33333333,-7.084795322,12.24853801,26.77934375,40.78728026
+0",10,12,2,3,14,1,9,2,10,0.1,1,1,0.5,1,2,past medical history,11,51,low,low,54.82173097,14.03445071,21.45394692,19.33333333,-7.084795322,12.24853801,26.77934375,40.78728026,-0.25,27.02934375,0
 17,13,2,A14,Pneumonia,"Acute asthma excerbation, viral infection, sepsis, anaphylaxis",0.27,"5,3,4,1",7,9,"Sepsis, acute asthma","4,4",7,9,0.18,1,58,,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,57.82,18m 59s,18/10/2023 11:16,2,No,DP,2,3,4,2,5,4,0,0,-2,2,0.828571429,665,Inf,665,518,5,63,50,22,"1
 1
 1
@@ -4423,7 +4423,7 @@ presenting complaint",10,22,high,low,31.63404462,13.39325431,14.35014076,3.89064
 prescribed medications
 allergies
 history of presenting complaint
-presenting complaint",16,47,high,high,19.11663082,5.905064935,8.511868915,4.69969697,-10.08,-7.066363636,23.91883067,13.21156589
+presenting complaint",16,47,high,high,19.11663082,5.905064935,8.511868915,4.69969697,-10.08,-7.066363636,23.91883067,13.21156589,5.246376812,12.03609023,6.636363636
 18,13,3,B19,Asthma,"pneumonia/infection, Acute asthma excerbation",0.64,"4,5",5,7,"Acute asthma excerbation, pneumonia/infection","5,2",9,7,0,1,57,,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,57.24,12m 7s,06/11/2023 15:21,2,No,AS,1,1,2,2,5,5,0,4,0,4,0.633333333,558,Inf,558,210,5,47,41,11,"1
 0
 0
@@ -4682,7 +4682,7 @@ presenting complaint",16,47,high,high,19.11663082,5.905064935,8.511868915,4.6996
 0
 0",4,5,2,3,7,3,1,4,1,0.75,2,0,0,2,1,"past medical history
 history of presenting complaint
-presenting complaint",16,31,low,low,4.654267636,3.626332826,3.359103641,-2.331168831,4.202317291,-5.393557423,10.55284178,1.02793481
+presenting complaint",16,31,low,low,4.654267636,3.626332826,3.359103641,-2.331168831,4.202317291,-5.393557423,10.55284178,1.02793481,-0.070967742,10.62380952,0
 19,13,5,C13,DKA,"DKA, infection",0.36,"5,4",NA,NA,DKA,5,NA,NA,NA,NA,55,,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,54.58,14m 37s,08/01/2024 14:48,4,No,DP,1,2,2,1,5,5,NA,NA,-1,NA,NA,648,822,648,9999,2,47,44,18,"1
 1
 1
@@ -4939,7 +4939,7 @@ presenting complaint",16,31,low,low,4.654267636,3.626332826,3.359103641,-2.33116
 0
 0
 0
-0",6,7,5,0,12,1,5,5,2,0.166666667,1,4,0.8,0,0,presenting complaint,12,35,low,NA,14.31685697,-24.63451585,20.79811612,18.1532567,-10.30418719,9.671490148,-1.925615764,38.95137283
+0",6,7,5,0,12,1,5,5,2,0.166666667,1,4,0.8,0,0,presenting complaint,12,35,low,NA,14.31685697,-24.63451585,20.79811612,18.1532567,-10.30418719,9.671490148,-1.925615764,38.95137283,-13.5,11.57438424,0
 20,13,6,C13,Pneumonia,"Asthma exacerbation, viral induced wheeze/infection",0.18,"5,4",7,7,"Pneumonia, sepsis","5,5",7,8,0.38,1,73,,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,72.55,19m 50s,14/02/2024 13:08,3,No,DP,2,3,2,2,5,5,1,0,0,1,1.042857143,422,443,422,151,4,73,65,34,"1
 1
 1
@@ -5197,7 +5197,7 @@ presenting complaint",16,31,low,low,4.654267636,3.626332826,3.359103641,-2.33116
 0
 0
 0",15,15,4,2,19,2,13,5,10,0.133333333,1,3,0.75,1,1,"history of presenting complaint
-presenting complaint",20,53,low,high,107.6964515,44.63785936,62.05185652,1.006735589,-10.08,-7.066363636,57.08755126,63.05859211
+presenting complaint",20,53,low,high,107.6964515,44.63785936,62.05185652,1.006735589,-10.08,-7.066363636,57.08755126,63.05859211,5.246376812,51.84117445,0
 21,14,1,A11,Asthma,"Asthma excerbation, pneumonia, allergic reaction",0.56,"4,5,3",5,7,"Asthma, pneumonia, allergy","5,4,1",6,9,0.03,0,65,"Blood gas, bloods, steroids, senior","Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,64.88,15m 3s,11/09/2023 13:50,1,No,AS,1,1,3,3,5,5,2,1,0,3,1.083333333,9999,884,884,365,5,38,31,12,"1
 1
 1
@@ -5456,7 +5456,7 @@ presenting complaint",20,53,low,high,107.6964515,44.63785936,62.05185652,1.00673
 0
 0",5,6,1,3,7,5,0,0,6,1,0,1,1,0,3,"past medical history
 history of presenting complaint
-presenting complaint",9,29,low,low,19.53013573,13.39325431,6.136881419,0,4.202317291,-3.062388592,13.33061956,6.136881419
+presenting complaint",9,29,low,low,19.53013573,13.39325431,6.136881419,0,4.202317291,-3.062388592,13.33061956,6.136881419,-0.070967742,13.4015873,0
 22,14,3,B11,Asthma,"Asthma, urti, anaphylaxis, bronchiolitis",0.62,"4,3,1,2",5,5,"Asthma, urti, bronchiolitis, anaphylaxis","5,3,1,1",6,6,0.28,1,74,,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,73.57,11m 44s,06/11/2023 13:49,2,No,AS,1,1,4,4,4,5,1,1,0,2,1.233333333,441,538,441,339,4,59,54,24,"1
 0
 1
@@ -5715,7 +5715,7 @@ presenting complaint",9,29,low,low,19.53013573,13.39325431,6.136881419,0,4.20231
 0
 0",10,11,3,1,14,3,7,4,7,0.3,1,2,0.666666667,1,0,"past medical history
 history of presenting complaint
-presenting complaint",15,44,high,low,34.7187518,18.93018564,16.16406997,-0.375503807,4.202317291,-2.161414566,13.14418377,15.78856616
+presenting complaint",15,44,high,low,34.7187518,18.93018564,16.16406997,-0.375503807,4.202317291,-2.161414566,13.14418377,15.78856616,-0.070967742,13.21515152,0
 23,14,5,C14,Asthma,"Asthma, pneumonia, LRTI, RSV bronchiolitis",0.81,"5,4,3,1",7,7,"Asthma, pneumonia","5,3",9,8,0.72,1,68,,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,68.47,18m 2s,08/01/2024 13:54,3,No,AS,1,1,4,2,5,5,1,2,-2,5,0.755555556,787,720,720,229,5,58,52,20,"1
 1
 1
@@ -5973,7 +5973,7 @@ presenting complaint",15,44,high,low,34.7187518,18.93018564,16.16406997,-0.37550
 0
 0
 0",7,8,5,2,13,2,5,4,4,0.285714286,1,4,0.8,1,1,"past medical history
-history of presenting complaint",12,46,high,high,27.84679789,11.7748438,11.1954312,4.876522888,3.323529412,-0.709033613,18.09856485,16.07195409
+history of presenting complaint",12,46,high,high,27.84679789,11.7748438,11.1954312,4.876522888,3.323529412,-0.709033613,18.09856485,16.07195409,-0.070967742,15.22799423,2.941538368
 24,15,2,A8,Seizure,"Febrile convulsion, new epilepsy, viral infection",0.47,"5,3,5",5,9,"Febrile convulsions, new epilepsy, viral infection ","5,1,5",7,5,0.1,0,38,"Neuro exam, look tonsils/ENT exam, localising signs of infection","Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,37.66,20m 3s,18/10/2023 11:01,1,No,AS,2,4,3,3,5,5,-4,2,0,6,0.542857143,455,673,455,348,4,71,53,25,"1
 0
 0
@@ -6232,7 +6232,7 @@ history of presenting complaint",12,46,high,high,27.84679789,11.7748438,11.19543
 0
 0",6,10,9,2,19,3,3,2,8,0.5,1,8,0.888888889,0,2,"ask about pain
 history of presenting complaint
-presenting complaint",12,59,low,low,1.370648048,-16.49590643,12.50014034,5.366414141,-7.084795322,20.88011696,11.24469776,17.86655448
+presenting complaint",12,59,low,low,1.370648048,-16.49590643,12.50014034,5.366414141,-7.084795322,20.88011696,11.24469776,17.86655448,-1.05,8.118561392,4.176136364
 25,15,4,B16,Pneumonia,"asthma, bronchiolitis, LRTI, pneumothorax, TB",0.28,"5,4,4,1,1",9,3,"LRTI -> sepsis, bronchiolitis, TB, pneumothorax, acute exacerbation of asthma","5,2,1,1,4",9,9,0,0,61,"Finish A to E, sepsis six, communicate with patient more to get history","Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,61.47,20m 20s,13/12/2023 12:03,2,No,DP,2,3,5,5,5,5,6,0,0,6,0.677777778,1158,Inf,1158,538,5,70,62,34,"1
 0
 0
@@ -6494,7 +6494,7 @@ ask about pain
 ask about general activity level
 history of presenting complaint
 past surgical history
-presenting complaint",17,53,high,high,72.20449397,1.255403299,51.86154701,19.08754367,-10.08,-7.066363636,63.2509422,70.94909068
+presenting complaint",17,53,high,high,72.20449397,1.255403299,51.86154701,19.08754367,-10.08,-7.066363636,63.2509422,70.94909068,5.246376812,51.36820175,6.636363636
 26,16,1,A17,DKA,"DKA, viral (URTI)",0.66,"5,5",8,8,"DKA, URTI","5,5",7,8,0.1,1,51,,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,64.22,11m 37s,11/09/2023 15:05,1,No,DP,1,2,2,2,5,5,0,-1,0,1,0.728571429,472,693,472,263,5,53,51,17,"1
 0
 0
@@ -6752,7 +6752,7 @@ presenting complaint",17,53,high,high,72.20449397,1.255403299,51.86154701,19.087
 0
 0
 0",5,7,5,2,12,2,3,5,2,0.4,5,0,0,1,1,"history of presenting complaint
-presenting complaint",23,30,low,high,26.20753432,-24.75,10.11643773,40.84109659,-10.30418719,26.8000138,6.353333333,50.95753432
+presenting complaint",23,30,low,high,26.20753432,-24.75,10.11643773,40.84109659,-10.30418719,26.8000138,6.353333333,50.95753432,-13.5,6.533333333,13.32
 27,16,1,A21,Asthma,"Respiratory infection, sepsis, pneumonia, PE, DKA",0.24,"5,5,4,1,3",6,9,"Acute asthma excerbation, infection respiratory","5,3",9,6,0.1,1,64,,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,64.22,11m 37s,11/09/2023 15:05,1,No,AS,1,1,5,2,5,5,-3,3,-3,9,0.711111111,472,693,472,263,5,53,51,17,"1
 0
 0
@@ -7010,7 +7010,7 @@ presenting complaint",23,30,low,high,26.20753432,-24.75,10.11643773,40.84109659,
 0
 0
 0",5,7,5,2,12,2,3,5,2,0.4,5,0,0,1,1,"history of presenting complaint
-presenting complaint",23,30,high,low,1.297538879,-6.050137762,6.737307105,0.610369536,4.202317291,-2.161414566,10.43680439,7.347676641
+presenting complaint",23,30,high,low,1.297538879,-6.050137762,6.737307105,0.610369536,4.202317291,-2.161414566,10.43680439,7.347676641,-0.070967742,7.566233766,2.941538368
 28,16,6,C16,Seizure,"Febrile convulsion, epilepsy, CNS infection",0.73,"5,3,3",6,5,"Febrile convulsions, epilepsy, meningitis, space occupying lesion","5,2,1,1",9,6,0.65,1,70,,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,70.21,19m 33s,14/02/2024 12:34,3,No,AS,2,4,3,4,5,5,1,3,1,5,0.777777778,271,628,271,212,3,68,61,29,"1
 1
 1
@@ -7268,7 +7268,7 @@ presenting complaint",23,30,high,low,1.297538879,-6.050137762,6.737307105,0.6103
 0
 0
 0",13,13,3,2,16,3,10,3,10,0.230769231,0,3,1,1,1,"history of presenting complaint
-presenting complaint",21,47,low,low,85.09501265,30.34556182,26.9161175,27.83333333,-7.084795322,20.88011696,24.19882427,54.74945083
+presenting complaint",21,47,low,low,85.09501265,30.34556182,26.9161175,27.83333333,-7.084795322,20.88011696,24.19882427,54.74945083,-1.05,25.24882427,0
 29,17,1,A1,Asthma,"Asthma, viral-induced wheeze, foreign body inhalation",0.75,"5,4,3",2,5,"Asthma, Anaphylaxis, viral-induced wheeze","5,1,2",8,NA,NA,0,71,,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,71.33,14m 2s,11/09/2023 13:16,1,No,AS,1,1,3,3,5,5,NA,6,0,NA,0.8875,9999,Inf,9999,493,0,37,36,27,"1
 1
 1
@@ -7538,7 +7538,7 @@ past surgical history
 ask birth history
 parental employment
 travel history
-presenting complaint",19,18,low,low,63.53956348,44.57250273,15.09517146,3.871889282,4.202317291,0.169754265,8.819797049,18.96706074
+presenting complaint",19,18,low,low,63.53956348,44.57250273,15.09517146,3.871889282,4.202317291,0.169754265,8.819797049,18.96706074,-0.070967742,8.890764791,0
 30,17,3,B6,DKA,"DKA, infection, gastro not eating",0.29,"5,4,4",6,6,"DKA, infection","5,5",10,7,0,0,51,"Check the cbgs, blood utis","Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,50.95,10m 15s,06/11/2023 14:25,1,No,DP,1,2,3,2,5,5,1,4,-1,6,0.51,591,Inf,591,9999,0,32,31,16,"0
 0
 0
@@ -7796,7 +7796,7 @@ presenting complaint",19,18,low,low,63.53956348,44.57250273,15.09517146,3.871889
 0
 0
 0",2,11,3,0,14,2,0,5,5,1,1,2,0.666666667,0,0,"history of presenting complaint
-presenting complaint",13,19,low,low,9.50588898,-30.32142857,22.55104497,17.27627258,-16.82142857,3.154248768,4.83973545,39.82731755
+presenting complaint",13,19,low,low,9.50588898,-30.32142857,22.55104497,17.27627258,-16.82142857,3.154248768,4.83973545,39.82731755,-13.5,18.33973545,0
 31,17,5,C17,Asthma,"Asthma attack, viral wheeze, bronchiolitis, foreign body, epiglottis",0.6,"4,3,3,1,2",6,7,"Asthma, viral wheeze, bronchiolitis, foreign body","5,1,1,1",9,7,NA,1,75,,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,75.07,18m 47s,08/01/2024 15:22,2,No,AS,1,1,5,4,4,5,0,3,-1,4,0.833333333,414,Inf,414,184,4,65,57,29,"1
 1
 1
@@ -8055,7 +8055,7 @@ presenting complaint",13,19,low,low,9.50588898,-30.32142857,22.55104497,17.27627
 0
 0",17,11,1,2,12,3,14,4,7,0.176470588,1,0,0,1,1,"past medical history
 history of presenting complaint
-presenting complaint",14,51,high,low,80.64000268,50.94933338,29.6906693,0,4.202317291,0.169754265,28.86535982,29.6906693
+presenting complaint",14,51,high,low,80.64000268,50.94933338,29.6906693,0,4.202317291,0.169754265,28.86535982,29.6906693,-0.410253456,29.27561328,0
 32,17,6,C17,Seizure,"Seizure, epilepsy, febrile convulsion",0.73,"5,3,3",3,9,"Febrile convulsion, epilepsy, seizure","5,2,1",8,7,0.12,0,64,Better examination to determine cause of infection,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,64.24,17m 21s,14/02/2024 12:01,1,No,AS,2,4,3,3,5,5,-2,5,0,7,0.8,541,302,302,195,0,53,46,22,"1
 1
 1
@@ -8312,7 +8312,7 @@ presenting complaint",14,51,high,low,80.64000268,50.94933338,29.6906693,0,4.2023
 0
 0
 0
-0",9,11,2,1,13,1,8,4,7,0.111111111,0,2,1,1,0,check weight & height,15,38,low,low,59.86598255,18.9858396,21.54680961,19.33333333,-7.084795322,12.24853801,26.94378764,40.88014295
+0",9,11,2,1,13,1,8,4,7,0.111111111,0,2,1,1,0,check weight & height,15,38,low,low,59.86598255,18.9858396,21.54680961,19.33333333,-7.084795322,12.24853801,26.94378764,40.88014295,-0.25,27.19378764,0
 33,18,3,B7,Asthma,"infective asthma excerbation, acute asthma, viral induced wheeze, bronchiolitis, variant of cystic fibrosis",0.44,"4,5,3,3,1",5,3,"Acute asthma, infection excerbation of asthma","5,4",7,7,0,0,67,would take a more thorough history about previous hospital visits. Would examine more systems (eg cardiovascular),"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,66.97,12m 43s,06/11/2023 13:01,3,No,AS,1,1,5,2,5,5,4,2,-3,9,0.957142857,576,Inf,576,182,5,48,43,17,"1
 0
 0
@@ -8571,7 +8571,7 @@ presenting complaint",14,51,high,low,80.64000268,50.94933338,29.6906693,0,4.2023
 0
 0",5,8,4,1,12,3,2,5,3,0.6,1,3,0.75,1,0,"past medical history
 presenting complaint
-check weight & height",16,32,high,low,15.50168559,7.88911875,8.006830914,-0.394264069,4.202317291,-2.161414566,12.03939394,7.612566845
+check weight & height",16,32,high,low,15.50168559,7.88911875,8.006830914,-0.394264069,4.202317291,-2.161414566,12.03939394,7.612566845,0,12.03939394,0
 34,18,5,C18,DKA,"DKA, URTI viral",0.62,"5,3",7,6,"Diabetic ketoacidosis, URTI viral, sepsis","5,2,3",9,8,0.15,0,60,Didn't really examine for cerebral oedema (as per guidelines),"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,59.86,18m 17s,08/01/2024 16:03,1,No,DP,1,2,2,3,5,5,2,2,1,5,0.666666667,864,548,548,9999,2,61,52,27,"1
 1
 1
@@ -8829,7 +8829,7 @@ check weight & height",16,32,high,low,15.50168559,7.88911875,8.006830914,-0.3942
 0
 0
 0",12,8,7,0,15,2,10,4,4,0.166666667,1,6,0.857142857,0,0,"past medical history
-presenting complaint",10,51,low,high,60.74359146,5.679731902,18.77447448,36.28938507,-10.30418719,25.75537094,-6.125615764,55.06385955
+presenting complaint",10,51,low,high,60.74359146,5.679731902,18.77447448,36.28938507,-10.30418719,25.75537094,-6.125615764,55.06385955,-13.5,7.374384236,0
 35,18,6,C18,Pneumonia,"Asthma excerbation, LRTI, viral induced wheeze",0.29,"5,3,2",6,7,"Infectious excerbation of asthma, pneumonia","4,5",7,6,0.25,0,60,"I would like to re-listen to lungs, I would probably not take bloods right now but consider it - IV access too. Sepsis screen","Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,60.45,13m 10s,14/02/2024 13:33,1,No,DP,2,3,3,2,5,5,-1,1,-1,3,0.857142857,492,Inf,492,389,4,52,47,16,"1
 1
 1
@@ -9091,7 +9091,7 @@ prescribed medications
 allergies
 ask about pain
 history of presenting complaint
-presenting complaint",16,36,low,low,28.71427656,3.269206349,25.44507021,0,-10.08,-10.08,28.22990856,25.44507021
+presenting complaint",16,36,low,low,28.71427656,3.269206349,25.44507021,0,-10.08,-10.08,28.22990856,25.44507021,5.246376812,22.98353175,0
 36,19,1,A12,DKA,"Diabetic Ketoacidosis, Dehydration",0.38,"5,3",5,7,DKA,5,4,7,0,0,47,I need to SBAR and manage,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,46.79,9m 27s,11/09/2023 14:41,1,No,DP,1,2,2,1,5,5,0,-1,-1,2,1.175,9999,Inf,9999,9999,2,30,27,12,"1
 0
 0
@@ -9352,7 +9352,7 @@ presenting complaint",16,36,low,low,28.71427656,3.269206349,25.44507021,0,-10.08
 aggravating / relieving factors
 ask about pain
 history of presenting complaint
-presenting complaint",17,13,low,low,-12.95648057,-20.7852983,-3.280788177,11.10960591,-10.30418719,8.626847291,-6.125615764,7.828817734
+presenting complaint",17,13,low,low,-12.95648057,-20.7852983,-3.280788177,11.10960591,-10.30418719,8.626847291,-6.125615764,7.828817734,-13.5,7.374384236,0
 37,19,4,B8,Pneumonia,"febrile seizure, tonsilitis, sepsis, meningitis",0.64,"5,5,3,2",6,7,"infective excerbation of asthma, sepsis, lobar pneumonia","4,5,4",7,7,0,0,47,"take 3 (urine, lectate, bloods), fluids, o2, bloods","Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,47.21,20m 2s,13/12/2023 10:40,2,No,DP,2,3,4,3,5,5,0,1,-1,2,0.671428571,595,1071,595,367,5,72,47,16,"1
 1
 1
@@ -9612,7 +9612,7 @@ presenting complaint",17,13,low,low,-12.95648057,-20.7852983,-3.280788177,11.109
 0",5,7,4,2,11,4,1,2,5,0.8,1,3,0.75,0,2,"past medical history
 prescribed medications
 allergies
-presenting complaint",11,61,high,low,4.213846854,-5.152567288,4.183080808,5.183333333,-10.08,-7.066363636,7.183333333,9.366414141
+presenting complaint",11,61,high,low,4.213846854,-5.152567288,4.183080808,5.183333333,-10.08,-7.066363636,7.183333333,9.366414141,0,7.183333333,0
 38,19,5,C19,Asthma,"Asthma, allergic aumery obstruction, bronchiolitis, viral induced wheeze, epiglottis",0.56,"5,2,3,4,2",3,5,"Asthma, allergic aumay obstruction, bronchiolitis, viral induced wheeze, epiglottis","5,1,1,1,1",9,7,0,0,78,Take a full parental/collateral Hx,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,78.39,19m 14s,08/01/2024 15:22,1,No,AS,1,1,5,5,5,5,2,6,0,8,0.866666667,944,Inf,944,438,5,51,45,16,"1
 1
 1
@@ -9871,7 +9871,7 @@ presenting complaint",11,61,high,low,4.213846854,-5.152567288,4.183080808,5.1833
 0
 0",7,7,2,4,9,3,4,2,5,0.428571429,1,1,0.5,0,4,"past medical history
 history of presenting complaint
-presenting complaint",11,40,high,low,43.10194505,15.83005577,25.33690476,1.93498452,4.202317291,7.434460148,10.55284178,27.27188928
+presenting complaint",11,40,high,low,43.10194505,15.83005577,25.33690476,1.93498452,4.202317291,7.434460148,10.55284178,27.27188928,-0.070967742,10.62380952,0
 39,19,6,C19 ,Seizure,"Febrile convulsions, epilepsy, bronchiolitis, meningitis",0.69,"4,3,1,2",1,9,,,NA,NA,NA,NA,NA,,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,75.68,19m 17s,14/02/2024 13:03,1,No,AS,2,4,4,1,4,NA,NA,NA,-3,NA,NA,985,Inf,985,229,1,73,57,28,"1
 1
 1
@@ -10128,7 +10128,7 @@ presenting complaint",11,40,high,low,43.10194505,15.83005577,25.33690476,1.93498
 0
 0
 0
-0",13,13,2,2,15,1,12,2,11,0.076923077,2,0,0,1,1,past medical history,14,59,high,low,78.75101878,5.708552632,53.70913282,19.33333333,-7.084795322,20.88011696,44.02755387,73.04246615
+0",13,13,2,2,15,1,12,2,11,0.076923077,2,0,0,1,1,past medical history,14,59,high,low,78.75101878,5.708552632,53.70913282,19.33333333,-7.084795322,20.88011696,44.02755387,73.04246615,-1.05,45.07755387,0
 40,2,1,A18,DKA,"DKA, Gastroenteritis, UTI",0.71,"5,3,2",6,7,DKA,5,9,8,0,0,70,"CBG earlies, full history","Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,69.9,15m 28s,11/09/2023 16:08,1,No,DP,1,2,3,1,5,5,1,3,-2,6,0.777777778,703,794,703,9999,2,53,47,19,"1
 1
 1
@@ -10388,7 +10388,7 @@ presenting complaint",11,40,high,low,43.10194505,15.83005577,25.33690476,1.93498
 0",5,10,4,0,14,4,1,3,7,0.8,1,3,0.75,0,0,"past medical history
 prescribed medications
 allergies
-presenting complaint",14,39,low,low,72.658699,6.592335997,40.20002831,25.86633469,-10.30418719,26.8000138,19.01438424,66.066363
+presenting complaint",14,39,low,low,72.658699,6.592335997,40.20002831,25.86633469,-10.30418719,26.8000138,19.01438424,66.066363,0,19.01438424,0
 41,2,3,B9,Asthma,"Asthma (excerbating), RSV (or other infection), Bronchiolitis, allergic excerbation of asthma",0.47,"5,4,3,4",7,3,"Acute excerbation of asthma, infection, allergy","5,3,2",8,9,0,0,69,glucose,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,68.7,16m 27s,06/11/2023 13:53,2,No,AS,1,1,4,3,5,5,6,1,-1,8,0.8625,805,Inf,805,485,5,63,43,18,"1
 1
 1
@@ -10651,7 +10651,7 @@ allergies
 aggravating / relieving factors
 ask about pain
 history of presenting complaint
-presenting complaint",14,49,high,high,32.76318539,26.47767482,6.285510568,0,4.202317291,-3.062388592,8.145915375,6.285510568
+presenting complaint",14,49,high,high,32.76318539,26.47767482,6.285510568,0,4.202317291,-3.062388592,8.145915375,6.285510568,-0.070967742,8.216883117,0
 42,2,5,C2,DKA,"DKA, URTI",0.67,"5,5",10,8,"DKA, URTI","5,5",10,8,0.18,0,46,Cardiovascular and neuro exam,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,46.36,14m 41s,08/01/2024 14:19,2,No,DP,1,2,2,2,5,5,0,0,0,0,0.46,465,Inf,465,9999,2,58,49,25,"1
 1
 1
@@ -10911,7 +10911,7 @@ presenting complaint",14,49,high,high,32.76318539,26.47767482,6.285510568,0,4.20
 0",9,5,11,0,16,4,5,3,2,0.444444444,2,9,0.818181818,0,0,"past medical history
 allergies
 history of presenting complaint
-presenting complaint",15,43,low,high,13.28869157,-24.59686345,2.419027094,35.46652793,-10.30418719,18.26155226,4.194384236,37.88555502
+presenting complaint",15,43,low,high,13.28869157,-24.59686345,2.419027094,35.46652793,-10.30418719,18.26155226,4.194384236,37.88555502,-13.5,7.374384236,10.32
 43,2,6,C2,Pneumonia,"Pneumonia, asthma exacerbation, foreign body",0.64,"5,1,1",6,7,"Pneumonia, asthma exacerbation, viral pneumonisis","5,5,1",10,7,0.54,0,60,"CXR, Sputumblood cultures, viral throat swab and examine throat and ears","Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,59.91,10m 54s,14/02/2024 10:17,2,No,DP,2,3,3,3,5,5,0,4,0,4,0.6,584,Inf,584,367,4,55,53,24,"1
 1
 1
@@ -11169,7 +11169,7 @@ presenting complaint",15,43,low,high,13.28869157,-24.59686345,2.419027094,35.466
 0
 0
 0",12,9,3,1,12,2,10,7,2,0.166666667,2,1,0.333333333,0,1,"history of presenting complaint
-presenting complaint",17,38,low,low,31.26309246,25.55820706,9.006021766,-3.301136364,-10.08,-10.64969697,18.84246267,5.704885402
+presenting complaint",17,38,low,low,31.26309246,25.55820706,9.006021766,-3.301136364,-10.08,-10.64969697,18.84246267,5.704885402,5.246376812,13.95972222,-0.363636364
 44,20,1,A2,DKA,DKA,0.45,5,9,8,DKA,5,10,7,0.03,0,45,"Deeper history, cardioresp exam","Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,44.83,15m 4s,11/09/2023 14:19,1,No,DP,1,2,1,1,5,5,-1,1,0,2,0.45,749,685,685,646,2,47,42,18,"1
 1
 1
@@ -11428,7 +11428,7 @@ presenting complaint",17,38,low,low,31.26309246,25.55820706,9.006021766,-3.30113
 0
 0",6,5,7,1,12,4,2,3,2,0.666666667,2,5,0.714285714,0,1,"past medical history
 history of presenting complaint
-presenting complaint",12,35,low,high,10.66062389,-26.04315975,9.912845775,26.79093786,-10.30418719,25.75537094,-6.125615764,36.70378364
+presenting complaint",12,35,low,high,10.66062389,-26.04315975,9.912845775,26.79093786,-10.30418719,25.75537094,-6.125615764,36.70378364,-13.5,7.374384236,0
 45,20,3,B27,Asthma,"Asthma, VIW, Upper resp tract infection, lower resp tract infection",0.79,"5,2,2,2",7,5,,,NA,NA,NA,NA,66,,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,66.45,13m 36s,06/11/2023 15:22,2,No,AS,1,1,4,1,5,NA,NA,NA,-3,NA,NA,709,553,553,122,4,53,46,15,"1
 1
 1
@@ -11689,7 +11689,7 @@ presenting complaint",12,35,low,high,10.66062389,-26.04315975,9.912845775,26.790
 prescribed medications
 allergies
 social and living situation
-presenting complaint",13,40,high,high,18.05924587,14.99491962,-0.807563025,3.871889282,4.202317291,-3.062388592,6.117857143,3.064326257
+presenting complaint",13,40,high,high,18.05924587,14.99491962,-0.807563025,3.871889282,4.202317291,-3.062388592,6.117857143,3.064326257,-0.339285714,6.457142857,0
 46,20,4,B27,Seizure,"febrile seizure, epilepsy",0.62,"5,3",8,9,"febrile seizure, epilepsy, meningitis","5,3,3",8,8,0.18,1,76,,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,75.68,17m 19s,13/12/2023 15:37,1,No,AS,2,4,2,3,5,5,-1,0,1,2,0.95,378,164,164,178,3,59,52,25,"1
 1
 1
@@ -11946,7 +11946,7 @@ presenting complaint",13,40,high,high,18.05924587,14.99491962,-0.807563025,3.871
 0
 0
 0
-0",9,12,4,1,16,1,8,2,10,0.111111111,1,3,0.75,1,0,past medical history,15,44,low,high,130.2646541,51.72706767,57.64061669,20.8969697,-2.973684211,24.99122807,43.1609094,78.53758639
+0",9,12,4,1,16,1,8,2,10,0.111111111,1,3,0.75,1,0,past medical history,15,44,low,high,130.2646541,51.72706767,57.64061669,20.8969697,-2.973684211,24.99122807,43.1609094,78.53758639,0,41.59727304,1.563636364
 47,20,5,C20,DKA,"DKA, URTI, Gastroentiritis ",0.73,"5,4,2",7,8,DKA,5,9,10,0,1,60,,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,60.12,17m 2s,08/01/2024 16:00,2,No,DP,1,2,3,1,5,5,2,2,-2,6,0.666666667,455,619,455,866,2,58,46,14,"1
 0
 0
@@ -12204,7 +12204,7 @@ presenting complaint",13,40,high,high,18.05924587,14.99491962,-0.807563025,3.871
 0
 0
 0",4,4,6,1,10,2,2,2,2,0.5,2,4,0.666666667,0,1,"history of presenting complaint
-presenting complaint",12,46,low,high,32.63888294,-14.50605055,15.35851122,31.78642227,-10.30418719,17.2169094,1.858511221,47.14493349
+presenting complaint",12,46,low,high,32.63888294,-14.50605055,15.35851122,31.78642227,-10.30418719,17.2169094,1.858511221,47.14493349,-13.5,15.35851122,0
 48,20,6,C20,Pneumonia,"Acute exacerbation of asthma, URTI, pneumonia",0.67,"4,2,2",3,3,,,NA,NA,NA,NA,NA,,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,62.81,17m 43s,14/02/2024 13:38,2,Yes,DP,2,3,3,1,4,NA,NA,NA,-2,NA,NA,698,Inf,698,423,4,74,67,36,"1
 1
 1
@@ -12465,7 +12465,7 @@ presenting complaint",12,46,low,high,32.63888294,-14.50605055,15.35851122,31.786
 ask about general activity level
 history of presenting complaint
 past surgical history
-presenting complaint",19,55,low,low,90.39781732,57.9289879,27.05885467,5.409974747,-10.08,-6.496666667,35.69760051,32.46882942
+presenting complaint",19,55,low,low,90.39781732,57.9289879,27.05885467,5.409974747,-10.08,-6.496666667,35.69760051,32.46882942,10.06542443,25.99581245,-0.363636364
 49,21,3,B25,DKA,"DKA, infection",0.38,"5,3",7,6,"DKA, infection","5,2",9,7,0.5,1,77,,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,77.13,17m 41s,06/11/2023 14:55,2,No,DP,1,2,2,2,5,5,1,2,0,3,0.855555556,550,483,483,728,2,73,65,33,"1
 0
 0
@@ -12724,7 +12724,7 @@ presenting complaint",19,55,low,low,90.39781732,57.9289879,27.05885467,5.4099747
 0
 0",11,11,11,1,22,3,8,2,9,0.272727273,3,8,0.727272727,0,1,"history of presenting complaint
 presenting complaint
-check weight & height",22,51,low,high,186.681934,39.61579143,82.32744713,64.73869541,-10.30418719,25.75537094,47.06300858,147.0661425
+check weight & height",22,51,low,high,186.681934,39.61579143,82.32744713,64.73869541,-10.30418719,25.75537094,47.06300858,147.0661425,-13.5,50.24300858,10.32
 50,21,5,C22,Asthma,"Asthma exacerbation, RSV (viral induced wheeze), pneumonia, croup",0.72,"4,4,2,3",2,6,Asthma excerbation (viral),5,7,7,0.65,1,65,,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,64.7,17m 9s,08/01/2024 15:22,1,No,AS,1,1,4,1,4,5,1,5,-3,9,0.928571429,602,Inf,602,440,3,54,46,20,"1
 1
 1
@@ -12988,7 +12988,7 @@ ask about pain
 ask about general activity level
 history of presenting complaint
 vaccination history
-presenting complaint",17,37,high,low,37.06104689,21.92465369,15.1363932,0,4.202317291,0.169754265,14.74620398,15.1363932
+presenting complaint",17,37,high,low,37.06104689,21.92465369,15.1363932,0,4.202317291,0.169754265,14.74620398,15.1363932,-0.070967742,14.81717172,0
 51,21,6,C21,Pneumonia,"Acute asthma exacerbation, viral infection, any infection, pneumonia",0.67,"5,3,2,2",8,7,"Asthma exacerbation, viral infection, chest infection, sepsis","5,3,3,4",7,8,0.13,1,62,,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,61.66,19m 52s,14/02/2024 11:23,1,No,DP,2,3,4,4,5,5,1,-1,0,2,0.885714286,454,Inf,454,166,5,86,74,39,"1
 1
 1
@@ -13246,7 +13246,7 @@ presenting complaint",17,37,high,low,37.06104689,21.92465369,15.1363932,0,4.2023
 0
 0
 0",18,11,10,1,21,2,16,5,6,0.111111111,2,8,0.8,1,0,"history of presenting complaint
-presenting complaint",16,70,high,high,84.64681479,35.88953983,31.15053937,17.60673559,-10.08,-7.066363636,46.32412231,48.75727496
+presenting complaint",16,70,high,high,84.64681479,35.88953983,31.15053937,17.60673559,-10.08,-7.066363636,46.32412231,48.75727496,10.06542443,29.25869788,7
 52,22,1,A3,Asthma,"Asthma, septic pneumonia, bronchiolitis",0.54,"4,3,2",4,7,"Asthma, VIW, Pneumonia/sepsis","5,1,1",8,6,0.22,1,62,,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,62.23,16m 38s,11/09/2023 13:17,1,No,AS,1,1,3,3,4,5,-1,4,0,5,0.775,726,Inf,726,228,4,51,41,15,"1
 1
 1
@@ -13505,7 +13505,7 @@ presenting complaint",16,70,high,high,84.64681479,35.88953983,31.15053937,17.606
 0
 0",6,8,1,3,9,3,3,4,4,0.5,1,0,0,1,2,"past medical history
 prescribed medications
-allergies",11,40,low,low,21.36423971,14.68294992,6.681289789,0,3.323529412,-0.709033613,5.926948052,6.681289789
+allergies",11,40,low,low,21.36423971,14.68294992,6.681289789,0,3.323529412,-0.709033613,5.926948052,6.681289789,-0.339285714,6.266233766,0
 53,22,2,A3,Seizure,"Febrile seizure, viral urti, epilepsy, reflex anoxic seizure",0.4,"5,5,1,1",8,3,"Febrile seizure, viral urti, epilepsy, uti, pnemonia, gasteroenteritis","5,5,1,1,1,1",9,3,0.49,1,63,,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,62.64,19m 12s,18/10/2023 10:19,3,No,AS,2,4,4,6,5,5,0,1,2,3,0.7,321,1145,321,194,0,71,64,26,"1
 0
 1
@@ -13765,7 +13765,7 @@ allergies",11,40,low,low,21.36423971,14.68294992,6.681289789,0,3.323529412,-0.70
 0",6,14,6,2,20,4,2,3,11,0.666666667,0,6,1,1,1,"past medical history
 allergies
 history of presenting complaint
-presenting complaint",19,52,high,high,73.56474358,9.142178363,52.77976219,11.64280303,-7.084795322,29.31345029,37.02848627,64.42256522
+presenting complaint",19,52,high,high,73.56474358,9.142178363,52.77976219,11.64280303,-7.084795322,29.31345029,37.02848627,64.42256522,-0.25,35.71484991,1.563636364
 54,22,4,B28,Seizure,"febrile convulsion, epleptic seizure, bronchiolitis, VIW",0.59,"5,5,2,2",5,9,"tonsilitis, URTI, febrile seizure, meningitis, encephalitis","5,5,5,3,2",8,2,0.68,0,74,would ask for more detail about PMHx and do ENT examination once long enough post seizure,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,73.87,13m 33s,13/12/2023 15:54,4,No,AS,2,4,4,5,5,5,-7,3,1,11,0.925,649,Inf,649,313,4,54,49,21,"0
 1
 1
@@ -14022,7 +14022,7 @@ presenting complaint",19,52,high,high,73.56474358,9.142178363,52.77976219,11.642
 0
 0
 0
-0",6,12,3,1,15,1,5,5,7,0.166666667,0,3,1,0,1,presenting complaint,16,38,high,low,114.6359095,34.07655597,51.67046462,28.88888889,-4.111111111,32.2871345,26.94378764,80.55935351
+0",6,12,3,1,15,1,5,5,7,0.166666667,0,3,1,0,1,presenting complaint,16,38,high,low,114.6359095,34.07655597,51.67046462,28.88888889,-4.111111111,32.2871345,26.94378764,80.55935351,-0.25,27.19378764,0
 55,22,5,C21,DKA,"DKA, hypoglycaemia",0.33,"5,5",7,7,DKA,5,9,7,0.15,0,52,"A more detailed history of SOCRATES, DMHx, FHx, SHx","Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,51.99,15m 10s,08/01/2024 14:47,1,No,DP,1,2,2,1,5,5,0,2,-1,3,0.577777778,495,666,495,9999,2,52,45,19,"1
 1
 1
@@ -14280,7 +14280,7 @@ presenting complaint",19,52,high,high,73.56474358,9.142178363,52.77976219,11.642
 0
 0
 0",9,7,3,0,10,2,7,4,2,0.222222222,2,1,0.333333333,0,0,"past medical history
-presenting complaint",14,38,low,high,-7.614249936,-25.80986707,13.72886836,4.466748768,-10.30418719,9.671490148,-2.101488779,18.19561713
+presenting complaint",14,38,low,high,-7.614249936,-25.80986707,13.72886836,4.466748768,-10.30418719,9.671490148,-2.101488779,18.19561713,-13.5,11.39851122,0
 56,22,6,C22,Seizure,"Febrile seizure, epilepsy",0.64,"5,4",8,8,"Febrile convulsion, epilepsy, meningitis, DKA, brain bleed","5,2,1,1,1",8,7,0.24,0,64,"CT head, feraPAIN score, neuro exam","Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,64.23,12m 47s,14/02/2024 14:20,5,No,AS,2,4,2,5,5,5,-1,0,3,4,0.8,454,Inf,454,210,0,39,33,14,"1
 0
 0
@@ -14538,7 +14538,7 @@ presenting complaint",14,38,low,high,-7.614249936,-25.80986707,13.72886836,4.466
 0
 0
 0",2,10,2,1,12,2,0,5,5,1,1,1,0.5,1,0,"past medical history
-presenting complaint",15,24,low,high,34.19889921,-7.084795322,21.9503612,19.33333333,-7.084795322,29.31345029,7.818141224,41.28369453
+presenting complaint",15,24,low,high,34.19889921,-7.084795322,21.9503612,19.33333333,-7.084795322,29.31345029,7.818141224,41.28369453,0,7.818141224,0
 57,23,1,A4,DKA,"DKA, Gastroenteritis, Tonsilitis",0.71,"5,3,2",7,6,"DKA, Gastroenteritis, Tonsilitis","5,2,1",8,7,0.16,1,39,,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,39.19,7m 39s,11/09/2023 14:22,2,No,DP,1,2,3,3,5,5,1,1,0,2,0.4875,192,408,192,9999,2,33,31,10,"1
 0
 0
@@ -14797,7 +14797,7 @@ presenting complaint",15,24,low,high,34.19889921,-7.084795322,21.9503612,19.3333
 0
 0",3,4,3,0,7,3,0,4,0,1,3,0,0,0,0,"past medical history
 history of presenting complaint
-presenting complaint",22,11,low,high,-13.29389026,-23.80418719,9.038074713,1.472222222,-10.30418719,-9.259544335,-5.506568144,10.51029693
+presenting complaint",22,11,low,high,-13.29389026,-23.80418719,9.038074713,1.472222222,-10.30418719,-9.259544335,-5.506568144,10.51029693,-13.5,7.993431856,0
 58,23,3,B20,DKA,"DKA, hypoglycaemia",0.38,"5,3",7,9,"DKA, hypoglycaemia","5,3",8,8,0.38,1,66,,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,58.38,14m 12s,06/11/2023 16:19,3,No,DP,1,2,2,2,5,5,-1,1,0,2,0.825,351,628,351,9999,3,47,40,15,"1
 0
 0
@@ -15054,7 +15054,7 @@ presenting complaint",22,11,low,high,-13.29389026,-23.80418719,9.038074713,1.472
 0
 0
 0
-0",3,5,7,0,12,1,2,4,1,0.333333333,2,5,0.714285714,0,0,presenting complaint,17,30,low,high,36.38217064,-23.80418719,23.89697276,36.28938507,-10.30418719,25.75537094,1.858511221,60.18635783
+0",3,5,7,0,12,1,2,4,1,0.333333333,2,5,0.714285714,0,0,presenting complaint,17,30,low,high,36.38217064,-23.80418719,23.89697276,36.28938507,-10.30418719,25.75537094,1.858511221,60.18635783,-13.5,15.35851122,0
 59,23,4,B20,Pneumonia,"sepsis, acute severe asthma attack, pneumonia",0.46,"4,3,2",6,7,"sepsis, acute astham excerbation","5,3",8,7,0.16,1,65,,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,65.45,16m 1s,13/12/2023 12:44,2,No,DP,2,3,3,2,4,5,0,2,-1,3,0.8125,697,Inf,697,119,4,71,51,24,"1
 0
 1
@@ -15313,7 +15313,7 @@ presenting complaint",22,11,low,high,-13.29389026,-23.80418719,9.038074713,1.472
 0
 0",7,8,9,2,17,3,4,6,2,0.428571429,1,8,0.888888889,1,1,"past medical history
 history of presenting complaint
-presenting complaint",15,56,low,low,47.32828112,5.25015873,22.98784461,19.09027778,-10.08,-6.496666667,40.05326904,42.07812239
+presenting complaint",15,56,low,low,47.32828112,5.25015873,22.98784461,19.09027778,-10.08,-6.496666667,40.05326904,42.07812239,10.06542443,22.98784461,7
 60,23,4,B21,Seizure,"febrile convulsions, first epilepsy, tonsilitis, epiglottis, sepsis, tumour, meningitis encephalitis",0.61,"4,4,4,3,2,2,4",7,7,"febrile convulsion, epilepsy, sepsis, meningitis, encephalitis","5,3,2,2,2",10,7,0.79,1,65,,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,65.45,16m 1s,13/12/2023 12:44,2,No,AS,2,4,7,5,4,5,0,3,-2,5,0.65,697,Inf,697,119,4,71,51,24,"1
 0
 1
@@ -15572,7 +15572,7 @@ presenting complaint",15,56,low,low,47.32828112,5.25015873,22.98784461,19.090277
 0
 0",7,8,9,2,17,3,4,6,2,0.428571429,1,8,0.888888889,1,1,"past medical history
 history of presenting complaint
-presenting complaint",15,56,high,high,60.448547,5.402704678,26.49536386,28.55047847,-7.084795322,20.88011696,18.37742127,55.04584232
+presenting complaint",15,56,high,high,60.448547,5.402704678,26.49536386,28.55047847,-7.084795322,20.88011696,18.37742127,55.04584232,-1.05,17.86378491,1.563636364
 61,23,5,C23,DKA,"DKA, hyperglycema hypeno strop",0.45,"5,1",8,7,DKA,5,8,7,0.21,0,62,Fluid balance & U&Es ,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,62.49,15m 48s,08/01/2024 16:00,4,No,DP,1,2,2,1,5,5,0,0,-1,1,0.775,324,378,324,646,2,47,40,16,"1
 0
 0
@@ -15830,7 +15830,7 @@ presenting complaint",15,56,high,high,60.448547,5.402704678,26.49536386,28.55047
 0
 0
 0",4,7,5,1,12,2,2,5,2,0.5,1,4,0.8,0,1,"history of presenting complaint
-presenting complaint",11,36,low,high,41.69142357,-14.50605055,27.2041553,28.99331882,-10.30418719,26.8000138,0.954384236,56.19747412
+presenting complaint",11,36,low,high,41.69142357,-14.50605055,27.2041553,28.99331882,-10.30418719,26.8000138,0.954384236,56.19747412,-13.5,14.45438424,0
 62,23,6,C23,Pneumonia,"Asthma exacerbation, anaphylaxis, sepsis",0.4,"4,2,5",7,8,Sepsis,5,7,8,0.07,1,59,,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,59.33,18m 58s,14/02/2024 15:52,3,No,DP,2,3,3,1,5,5,0,0,-2,2,0.842857143,396,540,396,411,4,52,47,20,"1
 1
 1
@@ -16093,7 +16093,7 @@ allergies
 vaccination history
 parental employment
 presenting complaint
-family history",17,35,low,high,17.69772377,-1.182558375,9.019171034,9.861111111,-10.08,-7.066363636,14.76942356,18.88028214
+family history",17,35,low,high,17.69772377,-1.182558375,9.019171034,9.861111111,-10.08,-7.066363636,14.76942356,18.88028214,0,12.01942356,2.75
 63,24,1,A13,Asthma,"Asthma excerbation, sepsis, bronchiolitis, VIW, F. Body",0.55,"5,4,2,3,2",6,9,"Excerbation of asthma, sepsis, viral induced wheeze, bronchiolitis, inhalation of foreign body","5,4,2,2,1",6,9,0.12,0,62,"Cardiac examination, more detailed history including past surgical history, allergies etc","Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,62.29,12m 36s,11/09/2023 13:49,1,No,AS,1,1,5,5,5,5,0,0,0,0,1.033333333,448,738,448,345,4,46,45,16,"1
 1
 0
@@ -16354,7 +16354,7 @@ family history",17,35,low,high,17.69772377,-1.182558375,9.019171034,9.861111111,
 prescribed medications
 history of presenting complaint
 vaccination history
-presenting complaint",15,31,high,low,11.15517535,9.278631677,2.27272798,-0.396184311,4.202317291,-2.161414566,5.086175115,1.876543669
+presenting complaint",15,31,high,low,11.15517535,9.278631677,2.27272798,-0.396184311,4.202317291,-2.161414566,5.086175115,1.876543669,-0.070967742,5.157142857,0
 64,24,2,A13,Seizure,"Seizure, infection, sepsis, epilepsy",0.47,"5,4,2,3",5,7,"Seizure, infectio, sepsis","5,4,3",6,7,0.18,0,70,"investigate source of infection further, maybe blood cultures","Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,70.19,20m 3s,18/10/2023 14:31,2,No,AS,2,4,4,3,5,5,0,1,-1,2,1.166666667,422,Inf,422,234,3,61,52,23,"1
 1
 1
@@ -16613,7 +16613,7 @@ presenting complaint",15,31,high,low,11.15517535,9.278631677,2.27272798,-0.39618
 0
 0",6,15,2,2,17,3,3,3,12,0.5,0,2,1,1,1,"past medical history
 history of presenting complaint
-presenting complaint",14,47,high,low,84.91247297,19.59159357,45.98754607,19.33333333,-7.084795322,20.88011696,40.03865943,65.3208794
+presenting complaint",14,47,high,low,84.91247297,19.59159357,45.98754607,19.33333333,-7.084795322,20.88011696,40.03865943,65.3208794,-0.25,40.28865943,0
 65,24,3,B24,DKA,"DKA, GI infection, glucogen secreting tumour",0.54,"5,2,2",8,8,DKA,5,8,8,0,0,53,"systems enquiry, social services, gastro urinary catheter","Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,52.9,16m 1s,06/11/2023 16:20,2,No,DP,1,2,3,1,5,5,0,0,-2,2,0.6625,572,670,572,9999,2,50,46,17,"1
 0
 1
@@ -16872,7 +16872,7 @@ presenting complaint",14,47,high,low,84.91247297,19.59159357,45.98754607,19.3333
 0
 0",5,7,5,0,12,3,2,4,3,0.6,0,5,1,0,0,"past medical history
 history of presenting complaint
-presenting complaint",12,38,low,high,21.31549794,-20.67320633,12.99538546,28.99331882,-10.30418719,25.75537094,-6.350615764,41.98870427
+presenting complaint",12,38,low,high,21.31549794,-20.67320633,12.99538546,28.99331882,-10.30418719,25.75537094,-6.350615764,41.98870427,-10.125,3.774384236,0
 66,24,4,B24,Pneumonia,"pneumonia, asthma, pneumothorax, DKA, meningococcal septicaemia",0.54,"5,2,1,1,3",7,6,"sepsis, asthma excerbation","5,4",8,7,0,0,71,immunisations,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,71.18,18m 56s,13/12/2023 14:29,1,No,DP,2,3,5,2,5,5,1,1,-3,5,0.8875,549,Inf,549,297,4,60,56,29,"1
 1
 1
@@ -17131,7 +17131,7 @@ presenting complaint",12,38,low,high,21.31549794,-20.67320633,12.99538546,28.993
 0
 0",9,14,6,1,20,3,6,6,8,0.333333333,1,5,0.833333333,1,0,"ask about pain
 history of presenting complaint
-presenting complaint",16,44,high,high,92.21023376,13.66170745,63.52074853,15.02777778,-10.08,-6.496666667,58.30558688,78.54852631
+presenting complaint",16,44,high,high,92.21023376,13.66170745,63.52074853,15.02777778,-10.08,-6.496666667,58.30558688,78.54852631,5.246376812,53.05921007,0
 67,24,6,C24,Pneumonia,"VIW, pneumonia, cold/flu",0.54,"2,3,4",3,3,"Asthma exacerbation, viral induced wheeze, pneumonia, sepsis","5,3,1,2",4,7,0,0,68,Blood cultures,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,68.18,19m 27s,14/02/2024 15:02,2,No,DP,2,3,3,4,4,5,4,1,1,6,1.7,735,Inf,735,185,5,63,57,25,"1
 0
 1
@@ -17389,7 +17389,7 @@ presenting complaint",16,44,high,high,92.21023376,13.66170745,63.52074853,15.027
 0
 0
 0",8,15,2,2,17,2,6,5,9,0.25,1,1,0.5,1,1,"history of presenting complaint
-presenting complaint",13,50,low,low,62.97796474,8.248342246,51.14628916,3.583333333,-10.08,-7.066363636,55.89932072,54.7296225
+presenting complaint",13,50,low,low,62.97796474,8.248342246,51.14628916,3.583333333,-10.08,-7.066363636,55.89932072,54.7296225,5.246376812,50.65294391,0
 68,25,1,A5,Asthma,"Acute asthma, FB inhalation, viral induced wheeze, lung cancer, bronchitis, epiglottitis",0.73,"5,4,4,1,2,3",6,5,"Acute excerbation of asthma, viral induced wheeze, inhaled foreign body","5,4,2",8,7,0.19,0,72,"Disability and Exposure, spent most of time doing B. Would give salbutamol","Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,72.08,14m 18s,11/09/2023 13:17,1,No,AS,1,1,6,3,5,5,2,2,-3,7,0.9,807,Inf,807,335,4,51,48,19,"1
 0
 1
@@ -17647,7 +17647,7 @@ presenting complaint",13,50,low,low,62.97796474,8.248342246,51.14628916,3.583333
 0
 0
 0",7,8,4,2,12,2,5,4,4,0.285714286,3,1,0.25,0,2,"ask about pain
-history of presenting complaint",13,38,high,low,44.15089508,13.67626789,25.35171958,5.122907609,3.323529412,6.555672269,11.5124808,30.47462719
+history of presenting complaint",13,38,high,low,44.15089508,13.67626789,25.35171958,5.122907609,3.323529412,6.555672269,11.5124808,30.47462719,-0.410253456,10.69047619,1.232258065
 69,25,2,A5,Seizure,"Febrile convulsions, infantile seizures, epilepsy, psychogenic seizures, head trauma",0.61,"5,4,3,1,3",5,4,Febrile convulsion,5,7,4,NA,1,73,,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,72.98,20m 3s,18/10/2023 10:10,1,No,AS,2,4,5,1,5,5,0,2,-4,6,1.042857143,1004,Inf,1004,225,2,79,71,39,"1
 1
 1
@@ -17909,7 +17909,7 @@ prescribed medications
 ask about pain
 ask about general activity level
 history of presenting complaint
-presenting complaint",16,63,high,low,153.2043308,52.10270468,62.959481,38.14214514,-7.084795322,20.88011696,53.45101644,101.1016261
+presenting complaint",16,63,high,low,153.2043308,52.10270468,62.959481,38.14214514,-7.084795322,20.88011696,53.45101644,101.1016261,-1.05,50.32488007,4.176136364
 70,25,3,B13,Asthma,"asthma excerbation, allergy/anaphylaxis, viral induced wheeze, bronchiolitis, foreign body",0.69,"4,2,3,3,2",6,3,"viral excerbation of asthma, viral induced wheeze, pneumonia","5,3,3",8,7,0.65,1,72,,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,71.64,15m 48s,06/11/2023 13:54,2,No,AS,1,1,5,3,4,5,4,2,-2,8,0.9,9999,Inf,9999,436,5,46,43,22,"1
 1
 1
@@ -18170,7 +18170,7 @@ presenting complaint",16,63,high,low,153.2043308,52.10270468,62.959481,38.142145
 allergies
 ask birth history
 presenting complaint
-antenatal history and scans",13,33,high,low,43.46682036,26.71808016,10.54285785,6.205882353,4.202317291,0.169754265,8.97965368,16.7487402
+antenatal history and scans",13,33,high,low,43.46682036,26.71808016,10.54285785,6.205882353,4.202317291,0.169754265,8.97965368,16.7487402,0,8.97965368,0
 71,25,4,B13,Seizure,"epilepsy, hypoglycaemic seizures, DKA, febrile convulsion, sepsis",0.56,"4,2,2,4,4",4,9,"febrile convulsion, epilepsy, meningitis, neurological insult, URTI, tonsillitis","5,2,1,1,5,4",8,6,0.51,0,77,social history,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,77.32,20m 2s,13/12/2023 12:28,2,No,AS,2,4,5,6,4,5,-3,4,1,8,0.9625,917,740,740,209,3,74,64,29,"1
 1
 1
@@ -18428,7 +18428,7 @@ antenatal history and scans",13,33,high,low,43.46682036,26.71808016,10.54285785,
 0
 0
 0",5,16,8,2,24,2,3,1,15,0.4,1,7,0.875,1,1,"past medical history
-presenting complaint",13,61,high,low,102.6972758,12.27909357,66.24204582,24.17613636,-7.084795322,29.31345029,44.55261631,90.41818218
+presenting complaint",13,61,high,low,102.6972758,12.27909357,66.24204582,24.17613636,-7.084795322,29.31345029,44.55261631,90.41818218,0,40.37647994,4.176136364
 72,25,5,C25,Asthma,"Asthma, viral wheeze",0.55,"4,2",4,5,Asthma,5,9,4,0.41,0,71,"Repeated the monitoring being done (O2 sats, HR etc). Not sure completely but I didn't feel done - did ABC but not DE.","Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,71.34,18m 32s,08/01/2024 15:24,3,No,AS,1,1,2,1,4,5,-1,5,-1,7,0.788888889,893,Inf,893,403,0,56,50,22,"1
 0
 0
@@ -18689,7 +18689,7 @@ presenting complaint",13,61,high,low,102.6972758,12.27909357,66.24204582,24.1761
 ask about pain
 ask about general activity level
 history of presenting complaint
-presenting complaint",14,42,low,low,34.76866534,18.51272773,16.65212192,-0.396184311,4.202317291,-2.161414566,10.42859936,16.25593761
+presenting complaint",14,42,low,low,34.76866534,18.51272773,16.65212192,-0.396184311,4.202317291,-2.161414566,10.42859936,16.25593761,-0.070967742,10.4995671,0
 73,25,6,C25,Seizure,"Febrile convulsion, epilepsy",0.58,"4,3",6,5,Febrile convulsion,5,7,3,0.51,1,55,,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,54.58,15m 55s,14/02/2024 15:33,1,No,AS,2,4,2,1,4,5,-2,1,-1,4,0.785714286,419,816,419,439,0,43,38,17,"1
 1
 0
@@ -18947,7 +18947,7 @@ presenting complaint",14,42,low,low,34.76866534,18.51272773,16.65212192,-0.39618
 0
 0
 0",4,11,2,1,13,2,2,4,5,0.5,0,2,1,0,1,"ask about pain
-history of presenting complaint",12,31,low,low,35.76346504,1.165204678,15.26492702,19.33333333,-2.973684211,24.99122807,13.34763379,34.59826036
+history of presenting complaint",12,31,low,low,35.76346504,1.165204678,15.26492702,19.33333333,-2.973684211,24.99122807,13.34763379,34.59826036,-0.25,13.59763379,0
 74,26,1,A9,Asthma,"Acute asthma excerbation, viral URTI, LRTI, bronchiolitis, croup/epiglottitis, viral induced wheeze (VIW)",0.85,"5,3,4,1,1,2",7,7,"Acute asthma excerbation, viral illness, viral induced wheeze, bronchiolitis, croup/epiglottitis","5,5,2,1,1",9,7,0,0,79,I would have given 10 puffs of salbutamol again and then call a senior doctor for SBAR,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,78.9,14m 56s,11/09/2023 13:49,1,No,AS,1,1,6,5,5,5,0,2,-1,3,0.877777778,9999,Inf,9999,373,0,40,36,25,"1
 1
 1
@@ -19212,7 +19212,7 @@ ask about pain
 ask about general activity level
 history of presenting complaint
 vaccination history
-presenting complaint",17,23,high,high,66.76956436,27.67465369,22.38492615,16.70998452,4.202317291,0.169754265,11.66193269,39.09491067
+presenting complaint",17,23,high,high,66.76956436,27.67465369,22.38492615,16.70998452,4.202317291,0.169754265,11.66193269,39.09491067,-0.070967742,11.73290043,0
 75,26,3,B14,DKA,DKA,0.45,5,9,8,DKA,5,10,8,0.07,1,73,,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,72.53,13m 20s,06/11/2023 14:55,1,No,DP,1,2,1,1,5,5,0,1,0,1,0.73,242,471,242,647,2,71,57,23,"1
 1
 1
@@ -19474,7 +19474,7 @@ prescribed medications
 allergies
 history of presenting complaint
 presenting complaint
-family history",30,41,low,high,79.46481989,-1.116934764,15.91284577,64.66890888,-10.30418719,25.75537094,7.194384236,80.58175465
+family history",30,41,low,high,79.46481989,-1.116934764,15.91284577,64.66890888,-10.30418719,25.75537094,7.194384236,80.58175465,-13.5,7.374384236,13.32
 76,26,4,B14,Pneumonia,"pneumonia, foreign body, space occ lesion",0.55,"5,1,1",7,6,sepsis (background of pneumonia),5,9,9,0.22,1,72,,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,72.27,17m 40s,13/12/2023 11:58,1,No,DP,2,3,3,1,5,5,3,2,-2,7,0.8,488,731,488,83,4,106,71,34,"1
 1
 1
@@ -19733,7 +19733,7 @@ family history",30,41,low,high,79.46481989,-1.116934764,15.91284577,64.66890888,
 0
 0",14,12,8,2,20,6,8,6,6,0.428571429,2,6,0.75,1,1,"ask about general activity level
 history of presenting complaint
-presenting complaint",21,85,low,high,128.9319346,45.45271159,52.65054302,30.82868003,-10.08,-6.496666667,62.71596745,83.47922306
+presenting complaint",21,85,low,high,128.9319346,45.45271159,52.65054302,30.82868003,-10.08,-6.496666667,62.71596745,83.47922306,10.06542443,52.65054302,0
 77,26,5,C26,DKA,"DKA, abdominal infection, diabetic episode, infection throat",0.81,"4,3,3,3",5,7,"DKA, episode of hypoglycem","5,4",8,7,0,1,54,,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,54.15,19m 3s,08/01/2024 16:05,2,No,DP,1,2,4,2,4,5,0,3,-2,5,0.675,701,618,618,9999,0,55,48,28,"1
 1
 1
@@ -19994,7 +19994,7 @@ presenting complaint",21,85,low,high,128.9319346,45.45271159,52.65054302,30.8286
 ask about pain
 ask about general activity level
 history of presenting complaint
-presenting complaint",8,47,high,low,34.6456826,-0.211942816,8.114306597,26.74331882,-10.30418719,18.26155226,-8.609425287,34.85762541
+presenting complaint",8,47,high,low,34.6456826,-0.211942816,8.114306597,26.74331882,-10.30418719,18.26155226,-8.609425287,34.85762541,-13.5,4.890574713,0
 78,27,2,A6,Pneumonia,"Asthma acute excerbation, anaphylaxis, chest infection",0.41,"5,4,4",3,7,,,NA,NA,NA,NA,61,,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,61.08,13m 30s,18/10/2023 10:40,2,No,DP,2,3,3,1,5,NA,NA,NA,-2,NA,NA,369,631,369,148,5,73,60,21,"1
 0
 1
@@ -20256,7 +20256,7 @@ allergies
 aggravating / relieving factors
 history of presenting complaint
 past surgical history
-presenting complaint",27,46,low,low,33.12683142,1.199084967,24.64323308,7.284513367,-10.08,-6.496666667,32.63960989,31.92774645
+presenting complaint",27,46,low,low,33.12683142,1.199084967,24.64323308,7.284513367,-10.08,-6.496666667,32.63960989,31.92774645,5.246376812,24.64323308,2.75
 79,27,3,B26,DKA,"DKA, gastroenteritis, trauma, urti infection, poisoning, tonsillitis, appendicitis",0.76,"5,3,2,4,1,4,2",6,9,"DKA, laryngitis","5,4",9,7,0.21,0,72,"Full history including social, urinary output, continuous PEWs/obs","Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,71.84,13m 45s,06/11/2023 16:21,1,No,DP,1,2,7,2,5,5,-2,3,-5,10,0.8,537,646,537,770,0,49,43,20,"1
 1
 1
@@ -20518,7 +20518,7 @@ prescribed medications
 allergies
 aggravating / relieving factors
 history of presenting complaint
-feeding, growth and nutrition",19,30,high,low,89.6244892,35.74269487,17.64002831,36.24176602,6.517241379,43.62144237,-6.125615764,53.88179434
+feeding, growth and nutrition",19,30,high,low,89.6244892,35.74269487,17.64002831,36.24176602,6.517241379,43.62144237,-6.125615764,53.88179434,-13.5,7.374384236,0
 80,27,4,B26,Pneumonia,"sepsis, chest infection/penumonia, asthma",0.36,"5,4,1",7,9,"sepsis, pneumonia","5,5",8,7,0.24,1,73,,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,72.82,18m 31s,13/12/2023 15:08,3,No,DP,2,3,3,2,5,5,-2,1,-1,4,0.9125,416,784,416,170,0,68,58,33,"1
 1
 1
@@ -20775,7 +20775,7 @@ feeding, growth and nutrition",19,30,high,low,89.6244892,35.74269487,17.64002831
 0
 0
 0
-0",12,13,8,2,21,1,11,7,6,0.083333333,1,7,0.875,1,1,history of presenting complaint,15,53,low,high,112.4289379,44.33902566,49.95354864,18.13636364,0,3.013636364,64.83654162,68.08991228
+0",12,13,8,2,21,1,11,7,6,0.083333333,1,7,0.875,1,1,history of presenting complaint,15,53,low,high,112.4289379,44.33902566,49.95354864,18.13636364,0,3.013636364,64.83654162,68.08991228,5.246376812,52.95380117,6.636363636
 81,27,5,C27,Asthma,"Viral induced wheeze, bronchiolitis, asthma excerbation",0.53,"4,3,4",5,7,"Asthma excerbation, viral induced wheeze","5,3",8,7,0.81,1,73,,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,72.9,17m 28s,08/01/2024 15:24,2,No,AS,1,1,3,2,4,5,0,3,-1,4,0.9125,691,751,691,210,4,61,51,23,"1
 0
 1
@@ -21037,7 +21037,7 @@ ask about pain
 ask about general activity level
 history of presenting complaint
 past surgical history
-presenting complaint",19,42,low,low,41.72562541,17.97714331,24.14466641,-0.396184311,4.202317291,-2.161414566,13.08238724,23.7484821
+presenting complaint",19,42,low,low,41.72562541,17.97714331,24.14466641,-0.396184311,4.202317291,-2.161414566,13.08238724,23.7484821,-0.410253456,13.49264069,0
 82,27,6,C27,Seizure,"Febrile convulsion, viral URTI, croup, bronchiolitis, VIW",0.56,"5,4,2,1,2",7,5,"Febrile seizure, viral URTI, VIW, bronchiolitis, croup","5,4,3,2,1",7,5,0.85,1,66,,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,65.95,18m 14s,14/02/2024 15:10,2,No,AS,2,4,5,5,5,5,0,0,0,0,0.942857143,457,803,457,262,3,65,53,25,"1
 1
 1
@@ -21298,7 +21298,7 @@ presenting complaint",19,42,low,low,41.72562541,17.97714331,24.14466641,-0.39618
 history of presenting complaint
 past surgical history
 presenting complaint
-check weight & height",15,50,high,high,85.08360886,11.20270468,54.54757085,19.33333333,-7.084795322,20.88011696,36.9369195,73.88090418
+check weight & height",15,50,high,high,85.08360886,11.20270468,54.54757085,19.33333333,-7.084795322,20.88011696,36.9369195,73.88090418,-0.25,37.1869195,0
 83,28,3,B12,DKA,"DKA, tonsilitis, gastroenteritis",0.73,"5,3,3",8,7,"DKA, tonsilitis, gasterenteritis","5,3,1",10,7,0.09,1,61,,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,61.21,12m 48s,06/11/2023 14:54,2,No,DP,1,2,3,3,5,5,0,2,0,2,0.61,658,Inf,658,520,0,39,38,21,"1
 0
 1
@@ -21558,7 +21558,7 @@ check weight & height",15,50,high,high,85.08360886,11.20270468,54.54757085,19.33
 0",6,7,8,1,15,4,2,5,2,0.666666667,1,7,0.875,0,1,"past medical history
 allergies
 history of presenting complaint
-presenting complaint",12,27,low,high,19.9579491,-20.214873,0.811884236,39.36093786,-10.30418719,18.26155226,5.962241379,40.1728221
+presenting complaint",12,27,low,high,19.9579491,-20.214873,0.811884236,39.36093786,-10.30418719,18.26155226,5.962241379,40.1728221,-10.125,5.767241379,10.32
 84,28,4,B12,Pneumonia,"bronchiolitis, VIW, asthma, croup",0.07,"3,5,2,1",8,6,"sepsis, pneumonia, VIW, bronchiolitis, asthma","5,4,5,1,1",9,7,0.91,0,50,CXR,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,49.99,12m 53s,13/12/2023 11:53,1,No,DP,2,3,4,5,5,5,1,1,1,3,0.555555556,417,526,417,449,5,56,39,12,"1
 0
 0
@@ -21817,7 +21817,7 @@ presenting complaint",12,27,low,high,19.9579491,-20.214873,0.811884236,39.360937
 0
 0",4,6,2,3,8,3,1,6,0,0.75,1,1,0.5,0,3,"past medical history
 history of presenting complaint
-presenting complaint",21,35,high,high,3.851213904,-5.516956522,5.784837093,3.583333333,-10.08,-6.496666667,12.42971014,9.368170426
+presenting complaint",21,35,high,high,3.851213904,-5.516956522,5.784837093,3.583333333,-10.08,-6.496666667,12.42971014,9.368170426,5.246376812,7.183333333,0
 85,28,5,C28,DKA,"DKA, viral infection",0.55,"4,2",7,5,DKA precipitated by viral infection,5,9,6,0.94,1,68,,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,67.93,19m 35s,08/01/2024 16:06,3,No,DP,1,2,2,1,4,5,1,2,-1,4,0.755555556,648,789,648,938,2,69,52,24,"1
 0
 0
@@ -22078,7 +22078,7 @@ presenting complaint",21,35,high,high,3.851213904,-5.516956522,5.784837093,3.583
 ask about pain
 ask about general activity level
 history of presenting complaint
-presenting complaint",15,54,low,high,59.54477876,-4.164694438,34.71615438,28.99331882,-10.30418719,26.8000138,15.99562762,63.7094732
+presenting complaint",15,54,low,high,59.54477876,-4.164694438,34.71615438,28.99331882,-10.30418719,26.8000138,15.99562762,63.7094732,-10.125,26.12062762,0
 86,28,6,C28,Pneumonia,"Viral URTI, bronchiolitis, bacterial infection, sepsis (CNS involvement)",0.24,"4,2,4,4",4,9,"Acute asthma exacerbation, viral URTI, sepsis","5,4,2",9,7,0.59,1,64,,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,63.99,15m 29s,14/02/2024 15:37,2,No,DP,2,3,4,3,4,5,-2,5,-1,8,0.711111111,650,677,650,238,4,71,56,27,"1
 1
 1
@@ -22339,7 +22339,7 @@ presenting complaint",15,54,low,high,59.54477876,-4.164694438,34.71615438,28.993
 ask about general activity level
 history of presenting complaint
 presenting complaint
-check weight & height",20,51,high,low,45.4585397,13.48813904,26.78706733,5.183333333,-10.08,-7.066363636,33.12710989,31.97040066
+check weight & height",20,51,high,low,45.4585397,13.48813904,26.78706733,5.183333333,-10.08,-7.066363636,33.12710989,31.97040066,5.246376812,27.88073308,0
 87,29,5,C29,Asthma,"Asthma exacerbation, pneumonia, bronchiolitis",0.53,"5,3,3",6,3,Asthma excerbation,5,8,4,0.63,1,67,,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,67.1,17m 58s,08/01/2024 15:24,1,No,AS,1,1,3,1,5,5,1,2,-2,5,0.8375,807,720,720,165,0,48,46,22,"1
 0
 1
@@ -22599,7 +22599,7 @@ check weight & height",20,51,high,low,45.4585397,13.48813904,26.78706733,5.18333
 0",11,9,2,1,11,4,7,3,6,0.363636364,1,1,0.5,1,0,"past medical history
 ask about pain
 history of presenting complaint
-presenting complaint",13,35,low,low,32.54091882,18.15148434,12.45444996,1.93498452,4.202317291,0.169754265,11.9684262,14.38943448
+presenting complaint",13,35,low,low,32.54091882,18.15148434,12.45444996,1.93498452,4.202317291,0.169754265,11.9684262,14.38943448,-0.070967742,12.03939394,0
 88,29,6,C29,Seizure,"Febrile seizure, epilepsy, infection",0.4,"4,2,5",5,9,"Febrile convulsion, tonsillitis, epilepsy","5,5,1",8,1,0.56,1,64,,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,63.82,20m 4s,14/02/2024 15:12,3,No,AS,2,4,3,3,5,5,-8,3,0,11,0.8,409,1089,409,226,2,58,48,19,"1
 0
 1
@@ -22858,7 +22858,7 @@ presenting complaint",13,35,low,low,32.54091882,18.15148434,12.45444996,1.934984
 0
 0",7,10,2,1,12,3,4,4,6,0.428571429,1,1,0.5,1,0,"past medical history
 history of presenting complaint
-presenting complaint",16,42,low,low,32.29844386,-3.658406433,16.62351696,19.33333333,-7.084795322,20.88011696,11.99193802,35.9568503
+presenting complaint",16,42,low,low,32.29844386,-3.658406433,16.62351696,19.33333333,-7.084795322,20.88011696,11.99193802,35.9568503,-0.25,12.24193802,0
 89,3,1,A7,Asthma,"Asthma, anaphylaxis, viral-induced wheeze, obstruction",0.65,"5,2,4,3",6,7,"Anaphylaxis, asthma, pneumothorax","1,5,3",7,6,0.24,0,69,"Percussion (chest), chest expansion","Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,68.7,16m 28s,11/09/2023 13:17,2,No,AS,1,1,4,3,5,5,-1,1,-1,3,0.985714286,9999,Inf,9999,306,0,36,28,23,"1
 1
 1
@@ -23124,7 +23124,7 @@ ask about general activity level
 history of presenting complaint
 social and living situation
 parental smoking and pets
-presenting complaint",13,23,high,low,47.80152221,33.46283103,14.33869118,0,4.202317291,0.169754265,12.70451927,14.33869118
+presenting complaint",13,23,high,low,47.80152221,33.46283103,14.33869118,0,4.202317291,0.169754265,12.70451927,14.33869118,-0.070967742,12.77548701,0
 90,3,3,B23,Asthma,"Asthma, viral urti, allergy, anaphylaxis",0.69,"5,3,2,3",7,7,"Asthma, bronchiolitis, anaphylaxis, foregin body, bronchitis","5,2,4,1,2",8,5,0.13,0,61,"finish history, manage airways, prescribe bronchochilators","Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,61.11,13m 41s,06/11/2023 15:21,3,No,AS,1,1,4,5,5,5,-2,1,1,4,0.7625,765,Inf,765,216,4,50,41,18,"1
 0
 1
@@ -23381,7 +23381,7 @@ presenting complaint",13,23,high,low,47.80152221,33.46283103,14.33869118,0,4.202
 0
 0
 0
-0",7,9,2,2,11,1,6,4,5,0.142857143,1,1,0.5,1,1,presenting complaint,11,39,high,high,15.93779085,10.10888202,8.160077667,-2.331168831,4.202317291,-2.161414566,11.78238724,5.828908836
+0",7,9,2,2,11,1,6,4,5,0.142857143,1,1,0.5,1,1,presenting complaint,11,39,high,high,15.93779085,10.10888202,8.160077667,-2.331168831,4.202317291,-2.161414566,11.78238724,5.828908836,-0.410253456,12.19264069,0
 91,3,5,C3,Asthma,"Asthma exacerbation, bronchiolitis, viral induced wheeze",0.46,"4,3,2",5,5,"Acute excerbation of asthma, URTI, bronchiolitis, allergy, DKA","5,2,2,1,1",5,8,0.31,0,76,I was going to provide a fluid bolus,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,75.52,15m 9s,08/01/2024 12:56,4,No,AS,1,1,3,5,4,5,3,0,2,5,1.52,493,708,493,438,5,64,54,24,"0
 1
 1
@@ -23641,7 +23641,7 @@ presenting complaint",13,23,high,low,47.80152221,33.46283103,14.33869118,0,4.202
 0",7,12,5,1,17,4,3,5,7,0.571428571,2,3,0.6,0,1,"prescribed medications
 allergies
 history of presenting complaint
-presenting complaint",16,48,low,low,35.0068856,12.16724064,19.97713394,2.862511017,0.878787879,-5.484943978,15.86550412,22.83964496
+presenting complaint",16,48,low,low,35.0068856,12.16724064,19.97713394,2.862511017,0.878787879,-5.484943978,15.86550412,22.83964496,-0.410253456,14.97272727,1.303030303
 92,3,6,C3,Seizure,"Febrile convulsion, epilepsy, hypoglycaemia",0.69,"5,3,1",7,4,"Febrile convulsions, epilepsy, hypoglycaemia","5,2,1",7,3,0.57,1,53,,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,53.07,18m 10s,14/02/2024 09:58,1,No,AS,2,4,3,3,5,5,-1,0,0,1,0.757142857,590,1053,590,344,2,59,56,25,"1
 0
 1
@@ -23899,7 +23899,7 @@ presenting complaint",16,48,low,low,35.0068856,12.16724064,19.97713394,2.8625110
 0
 0
 0",6,13,6,2,19,3,3,4,9,0.5,0,6,1,0,2,"allergies
-presenting complaint",14,45,low,high,10.5938969,-24.36366959,23.31476346,11.64280303,-7.084795322,20.88011696,23.21110659,34.95756649
+presenting complaint",14,45,low,high,10.5938969,-24.36366959,23.31476346,11.64280303,-7.084795322,20.88011696,23.21110659,34.95756649,0,21.64747023,1.563636364
 93,4,1,A24,Asthma,"Acute asthma attack, pneumonia, croup, epiglottitis, viral infection/viral seizure, inhaled foreign body",0.85,"5,2,2,1,4,2",6,6,Asthma,5,8,7,0.29,0,67,"More general assessment of symptoms, social history","Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,67.28,13m 52s,11/09/2023 15:07,2,No,AS,1,1,6,1,5,5,1,2,-5,8,0.8375,9999,Inf,9999,654,0,27,24,17,"1
 1
 1
@@ -24161,7 +24161,7 @@ ask about pain
 ask about general activity level
 history of presenting complaint
 past surgical history
-presenting complaint",10,17,high,low,35.36959658,26.96360261,8.405993973,0,4.202317291,0.169754265,9.163952893,8.405993973
+presenting complaint",10,17,high,low,35.36959658,26.96360261,8.405993973,0,4.202317291,0.169754265,9.163952893,8.405993973,-0.070967742,9.234920635,0
 94,4,3,B1,Asthma,"Pneumonia, excerbation of asthma, pneumothorax, pulmonary edemoa, VIW",0.68,"1,5,1,1,1",7,5,"Asthma excerbation, pneumonia, virally induced wheeze, urti, lrti","5,2,2,3,4",8,7,0.18,1,66,,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,66.36,11m 25s,06/11/2023 13:20,3,No,AS,1,1,5,5,5,5,2,1,0,3,0.825,471,Inf,471,218,5,47,42,22,"1
 0
 1
@@ -24426,7 +24426,7 @@ ask birth history
 presenting complaint
 developmental milestones
 antenatal history and scans
-family history",20,27,high,high,19.24966398,10.40198715,3.014947797,5.832729038,4.202317291,-3.062388592,11.847194,8.847676835
+family history",20,27,high,high,19.24966398,10.40198715,3.014947797,5.832729038,4.202317291,-3.062388592,11.847194,8.847676835,-0.070967742,10.27965368,1.638508065
 95,4,5,C4,DKA,"DKA, gastroenteritis, inborn errors of met, insulin non-compliance crisis, sickle cell disease",0.71,"4,1,3,4,3",6,8,DKA,5,9,8,0.13,0,56,,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,55.62,12m 28s,08/01/2024 14:17,1,No,DP,1,2,5,1,4,5,0,3,-4,7,0.622222222,594,443,443,9999,2,46,41,16,"1
 1
 1
@@ -24686,7 +24686,7 @@ family history",20,27,high,high,19.24966398,10.40198715,3.014947797,5.832729038,
 0",7,5,4,0,9,4,3,5,0,0.571428571,1,3,0.75,0,0,"ask about pain
 ask about general activity level
 history of presenting complaint
-presenting complaint",15,31,high,low,1.411831622,-28.90427086,9.912845775,20.4032567,-10.30418719,17.16530883,-6.125615764,30.31610248
+presenting complaint",15,31,high,low,1.411831622,-28.90427086,9.912845775,20.4032567,-10.30418719,17.16530883,-6.125615764,30.31610248,-13.5,7.374384236,0
 96,4,6,C4,Pneumonia,"Asthma exacerbation, LRTI, URTI",0.75,"4,5,3",4,7,"Pneumonia, asthma exacerbation","5,1",7,8,0.22,0,65,"Maybe sputum sample, check cap refill/glucose. Request chest x-ray","Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,65.31,13m 34s,14/02/2024 10:49,3,No,DP,2,3,3,2,5,5,1,3,-1,5,0.928571429,315,630,315,206,6,48,43,17,"1
 1
 1
@@ -24944,7 +24944,7 @@ presenting complaint",15,31,high,low,1.411831622,-28.90427086,9.912845775,20.403
 0
 0
 0",8,7,2,2,9,2,6,4,3,0.25,1,1,0.5,1,1,"past medical history
-presenting complaint",13,35,low,low,23.55829341,10.89978525,9.075174825,3.583333333,-10.08,-7.066363636,17.24875776,12.65850816
+presenting complaint",13,35,low,low,23.55829341,10.89978525,9.075174825,3.583333333,-10.08,-7.066363636,17.24875776,12.65850816,10.06542443,7.183333333,0
 97,5,1,A19,Asthma,"Pneumonia, asthma, anaphylaxis, viral induced wheeze, epiglottitis, croup, pneumothorax",0.81,"3,5,4,4,2,2,2",6,7,"Asthma, pneumonia, viral induced wheeze, epiglottitis, pneumothorax","5,5,4,3,1",8,7,0.19,0,58,Respiratory percussion,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,58.09,17m 18s,11/09/2023 15:08,1,No,AS,1,1,7,5,5,5,0,2,-2,4,0.725,927,Inf,927,255,4,57,48,21,"1
 1
 1
@@ -25205,7 +25205,7 @@ presenting complaint",13,35,low,low,23.55829341,10.89978525,9.075174825,3.583333
 prescribed medications
 allergies
 history of presenting complaint
-presenting complaint",14,43,high,low,15.21811261,13.31094601,-1.589218869,3.496385475,4.202317291,-5.393557423,5.265233557,1.907166606
+presenting complaint",14,43,high,low,15.21811261,13.31094601,-1.589218869,3.496385475,4.202317291,-5.393557423,5.265233557,1.907166606,-0.410253456,5.675487013,0
 98,5,2,A19,Seizure,"Febrile seizure, meningitis, epilepsy",0.73,"5,4,2",6,7,"Febrile seizure, meningitis, epilepsy","5,3,1",9,1,0.35,0,50,,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,50.55,9m 34s,18/10/2023 13:29,1,No,AS,2,4,3,3,5,5,-6,3,0,9,0.555555556,553,Inf,553,249,0,40,36,13,"1
 0
 0
@@ -25463,7 +25463,7 @@ presenting complaint",14,43,high,low,15.21811261,13.31094601,-1.589218869,3.4963
 0
 0
 0",4,7,2,2,9,3,1,5,2,0.75,0,2,1,1,1,"past medical history
-presenting complaint",19,21,low,low,-11.32827077,-21.75255848,8.860651346,1.563636364,-7.084795322,1.546783626,4.72540107,10.42428771
+presenting complaint",19,21,low,low,-11.32827077,-21.75255848,8.860651346,1.563636364,-7.084795322,1.546783626,4.72540107,10.42428771,0,3.161764706,1.563636364
 99,5,3,B10,Asthma,"Asthma, LRTI, sepsis, anaphylaxis, URTI, foreign body",0.8,"4,1,1,1,1,1",5,5,"Asthma excerbation, pneumonia, foreign bdy inhalation","4,3,3",6,9,0.06,0,74,"check for rash, ask more about PC, PEWS, bloods/blood gas, nebs (could not find)","Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,74.02,12m 14s,06/11/2023 15:21,2,No,AS,1,1,6,3,4,4,4,1,-3,8,1.233333333,576,678,576,410,0,38,36,18,"1
 1
 1
@@ -25726,7 +25726,7 @@ allergies
 parental smoking and pets
 past surgical history
 travel history
-presenting complaint",15,23,high,low,43.83553909,28.906024,11.03886555,3.890649545,4.202317291,0.169754265,10.62380952,14.92951509
+presenting complaint",15,23,high,low,43.83553909,28.906024,11.03886555,3.890649545,4.202317291,0.169754265,10.62380952,14.92951509,0,10.62380952,0
 100,5,5,C5,Asthma,"Acute exacerbation asthma, URTI, foreign object, LRTI, sepsis/DIC, meningitis, non accidental injury",0.71,"5,4,2,4,3,2,1",6,7,"Acute asthma, URTI, LRTI","5,2,2",9,7,0,0,64,Needed to asses pt fx,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,63.91,17m 47s,08/01/2024 13:20,3,No,AS,1,1,7,3,5,5,0,3,-4,7,0.711111111,562,835,562,296,4,48,45,18,"1
 1
 0
@@ -25987,7 +25987,7 @@ presenting complaint",15,23,high,low,43.83553909,28.906024,11.03886555,3.8906495
 ask about pain
 history of presenting complaint
 past surgical history
-presenting complaint",14,34,high,low,24.38959848,14.40637612,10.07583524,-0.092612882,4.202317291,-2.161414566,6.386175115,9.983222361
+presenting complaint",14,34,high,low,24.38959848,14.40637612,10.07583524,-0.092612882,4.202317291,-2.161414566,6.386175115,9.983222361,-0.070967742,6.457142857,0
 101,6,3,B17,DKA,"DKA, infection, urti",0.55,"5,1,1",9,7,"DKA, infection, urti","5,1,1",10,7,0.65,1,67,,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,55.12,15m 36s,06/11/2023 16:20,3,No,DP,1,2,3,3,5,5,0,1,0,1,0.67,595,800,595,9999,1,51,49,25,"1
 1
 1
@@ -26249,7 +26249,7 @@ prescribed medications
 allergies
 social and living situation
 past surgical history
-presenting complaint",14,37,low,high,84.31183428,13.33039018,41.98812528,28.99331882,-10.30418719,25.75537094,20.2097017,70.98144409
+presenting complaint",14,37,low,high,84.31183428,13.33039018,41.98812528,28.99331882,-10.30418719,25.75537094,20.2097017,70.98144409,3.375,16.8347017,0
 102,6,5,C6,DKA,"DKA, sepsis, tonsilitis, hyperglycaemic hyperosmol",0.41,"5,3,2,4",6,6,"DKA, tonsilitis","5,2",9,7,0.03,1,50,,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,49.93,13m 16s,08/01/2024 14:20,2,No,DP,1,2,4,2,5,5,1,3,-2,6,0.555555556,695,Inf,695,9999,2,47,42,21,"1
 1
 1
@@ -26511,7 +26511,7 @@ prescribed medications
 ask about pain
 ask about general activity level
 history of presenting complaint
-presenting complaint",17,30,high,low,2.645695825,-25.00427086,3.986012946,23.66395374,-10.30418719,17.2169094,-9.208949097,27.64996668
+presenting complaint",17,30,high,low,2.645695825,-25.00427086,3.986012946,23.66395374,-10.30418719,17.2169094,-9.208949097,27.64996668,-13.5,4.291050903,0
 103,6,6,C6,Pneumonia,"Asthma exacerbation, pneumonia, inhaled FB, pneumothorax, DKA",0.71,"5,2,1,1,1",8,3,"Asthma, pneumonia","5,3",9,3,0.31,1,58,,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,57.63,11m 37s,14/02/2024 11:33,3,No,DP,2,3,5,2,5,5,0,1,-3,4,0.644444444,425,Inf,425,155,5,47,45,19,"1
 1
 1
@@ -26771,7 +26771,7 @@ presenting complaint",17,30,high,low,2.645695825,-25.00427086,3.986012946,23.663
 0",6,8,5,2,13,4,2,5,3,0.666666667,2,3,0.6,1,1,"past medical history
 prescribed medications
 history of presenting complaint
-presenting complaint",15,32,high,high,14.95881389,0.093809524,12.61917103,2.245833333,-10.08,-7.066363636,20.86580037,14.86500437
+presenting complaint",15,32,high,high,14.95881389,0.093809524,12.61917103,2.245833333,-10.08,-7.066363636,20.86580037,14.86500437,5.246376812,15.61942356,0
 104,7,1,A15,DKA,"DKA, Gastroenteritis, URTI",0.69,"5,2,2",7,7,DKA,5,9,9,0.13,0,74,"ENT, CNS exam, abdo exam, social history","Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,66.57,13m 46s,11/09/2023 13:53,1,No,DP,1,2,3,1,5,5,2,2,-2,6,0.822222222,762,Inf,762,351,4,49,47,18,"1
 0
 1
@@ -27028,7 +27028,7 @@ presenting complaint",15,32,high,high,14.95881389,0.093809524,12.61917103,2.2458
 0
 0
 0
-0",6,8,4,2,12,0,6,4,4,0,1,3,0.75,0,2,,10,39,low,high,131.7887272,47.61581483,36.40181575,47.77109659,6.517241379,43.62144237,10.886289,84.17291235
+0",6,8,4,2,12,0,6,4,4,0,1,3,0.75,0,2,,10,39,low,high,131.7887272,47.61581483,36.40181575,47.77109659,6.517241379,43.62144237,10.886289,84.17291235,0,10.886289,0
 105,7,2,A15,Pneumonia,"Sepsis, Asthma attack, URTI, pneumonia",0.59,"4,4,3,3",6,8,"Sepsis, URTI, asthma attack","5,4,3",8,8,0.21,0,70,would have liked to get more drugs and need catheter and full sepsis six,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,69.89,14m 59s,18/10/2023 15:15,1,No,DP,2,3,4,3,4,5,0,2,-1,3,0.875,634,803,634,271,4,73,57,21,"1
 0
 1
@@ -27287,7 +27287,7 @@ presenting complaint",15,32,high,high,14.95881389,0.093809524,12.61917103,2.2458
 0
 0",4,10,7,2,17,3,1,7,3,0.75,1,6,0.857142857,1,1,"past medical history
 allergies
-presenting complaint",16,57,high,low,43.84159621,-4.009710145,32.14019525,15.71111111,-10.08,-6.496666667,29.75831245,47.85130636
+presenting complaint",16,57,high,low,43.84159621,-4.009710145,32.14019525,15.71111111,-10.08,-6.496666667,29.75831245,47.85130636,0,22.75831245,7
 106,7,3,B18,Asthma,"Acute asthma, bronchiolitis, VIW, allergy",0.47,"5,2,3,4",7,7,"Acute asthma, virally induced wheeze, allergy, bronchiolitis","5,3,4,1",7,7,0,1,55,,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,66.53,14m 52s,06/11/2023 15:23,1,No,AS,1,1,4,4,5,5,0,0,0,0,0.785714286,541,817,541,277,0,46,36,14,"1
 0
 0
@@ -27546,7 +27546,7 @@ presenting complaint",16,57,high,low,43.84159621,-4.009710145,32.14019525,15.711
 0
 0",3,9,2,1,11,3,0,3,6,1,1,1,0.5,1,0,"past medical history
 history of presenting complaint
-presenting complaint",13,33,high,high,10.24121077,4.131349549,8.441030048,-2.331168831,4.202317291,-2.161414566,7.955006284,6.109861217
+presenting complaint",13,33,high,high,10.24121077,4.131349549,8.441030048,-2.331168831,4.202317291,-2.161414566,7.955006284,6.109861217,-0.070967742,8.025974026,0
 107,7,4,B18,Seizure,"epilepsy, febrile convulsions, meningitis, encephalopathy",0.81,"4,5,2,2",6,6,"febrile convulsion, epilepsy","5,4",9,3,0.28,1,71,,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,70.75,20m 6s,13/12/2023 13:14,1,No,AS,2,4,4,2,5,5,-3,3,-2,8,0.788888889,430,Inf,430,280,0,59,53,31,"1
 1
 1
@@ -27803,7 +27803,7 @@ presenting complaint",13,33,high,high,10.24121077,4.131349549,8.441030048,-2.331
 1
 0
 0
-0",8,17,6,2,23,1,7,1,15,0.125,1,5,0.833333333,1,1,,12,47,high,low,120.0657613,29.64695071,70.37600761,20.04280303,-2.973684211,33.4245614,58.63420971,90.41881064
+0",8,17,6,2,23,1,7,1,15,0.125,1,5,0.833333333,1,1,,12,47,high,low,120.0657613,29.64695071,70.37600761,20.04280303,-2.973684211,33.4245614,58.63420971,90.41881064,-0.25,54.70807335,4.176136364
 108,7,5,C7,Asthma,"Asthma, viral induced wheeze, bronchiolitis",0.5,"4,3,3",6,5,Asthma,5,7,2,0.62,0,54,"Longer Hx, more thorough/structured exam","Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,53.86,14m 22s,08/01/2024 12:54,2,No,AS,1,1,3,1,4,5,-3,1,-2,6,0.771428571,615,854,615,436,3,54,51,15,"0
 0
 1
@@ -28063,7 +28063,7 @@ presenting complaint",13,33,high,high,10.24121077,4.131349549,8.441030048,-2.331
 0",7,5,3,2,8,4,3,2,3,0.571428571,2,1,0.333333333,0,2,"allergies
 history of presenting complaint
 presenting complaint
-family history",13,41,low,low,-16.64654592,-7.785763948,-12.46243316,3.601651187,0.878787879,-3.153775146,-8.500837872,-8.860781968
+family history",13,41,low,low,-16.64654592,-7.785763948,-12.46243316,3.601651187,0.878787879,-3.153775146,-8.500837872,-8.860781968,-0.070967742,-8.42987013,0
 109,7,6,C7,Seizure,"Febrile convulsion, tonic clonic seizure",0.38,"5,3",7,9,"Febrile convulsion, sepsis","5,2",7,9,0.62,0,59,"ENT exam, not sure if it was offered as an option. Infebrile chill, want to check tympanic membrane + throat","Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,58.96,16m 4s,14/02/2024 14:24,2,No,AS,2,4,2,2,5,5,0,0,0,0,0.842857143,366,323,323,272,1,53,48,17,"0
 0
 1
@@ -28321,7 +28321,7 @@ family history",13,41,low,low,-16.64654592,-7.785763948,-12.46243316,3.601651187
 0
 0
 0",3,13,1,1,14,2,1,2,11,0.666666667,0,1,1,1,0,"history of presenting complaint
-presenting complaint",15,38,low,high,72.88616273,6.676388889,51.70977384,14.5,-4.111111111,19.02046784,45.7608872,66.20977384
+presenting complaint",15,38,low,high,72.88616273,6.676388889,51.70977384,14.5,-4.111111111,19.02046784,45.7608872,66.20977384,-0.25,46.0108872,0
 110,8,4,B2,Pneumonia,"excerbation asthma, viral induced wheeze, foreign object aspiration, pneumonia, anaphylaxis",0.5,"4,4,1,2,1",6,6,"pneumonia/sepsis, VIW, astham excerbation, anaphylaxis, foreign body","5,3,3,1,1",10,6,0.63,1,69,,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,69.03,16m 12s,13/12/2023 15:36,2,No,DP,2,3,5,5,4,5,0,4,0,4,0.69,626,Inf,626,312,0,78,58,36,"1
 1
 1
@@ -28582,7 +28582,7 @@ presenting complaint",15,38,low,high,72.88616273,6.676388889,51.70977384,14.5,-4
 prescribed medications
 history of presenting complaint
 vaccination history
-presenting complaint",15,63,high,low,100.9570051,47.16459786,46.14657388,7.645833333,-10.08,-7.066363636,50.61282418,53.79240722
+presenting complaint",15,63,high,low,100.9570051,47.16459786,46.14657388,7.645833333,-10.08,-7.066363636,50.61282418,53.79240722,5.246376812,38.36644737,7
 111,8,5,C8,DKA,"DKA, infection",0.33,"4,3",5,7,Diabetic ketoacidosis,5,8,8,0,0,56,Prescribed and administered fluids,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,55.53,13m 34s,08/01/2024 14:20,3,No,DP,1,2,2,1,4,5,1,3,-1,5,0.7,275,639,275,9999,3,49,45,22,"1
 1
 1
@@ -28841,7 +28841,7 @@ presenting complaint",15,63,high,low,100.9570051,47.16459786,46.14657388,7.64583
 0
 0",7,9,6,0,15,3,4,3,6,0.428571429,1,4,0.666666667,0,0,"past medical history
 prescribed medications
-presenting complaint",22,27,low,low,45.77140321,-18.65582365,32.43390805,31.99331882,-10.30418719,17.2169094,10.33136836,64.42722686
+presenting complaint",22,27,low,low,45.77140321,-18.65582365,32.43390805,31.99331882,-10.30418719,17.2169094,10.33136836,64.42722686,-13.5,20.83136836,3
 112,8,6,C8,Pneumonia,"Bronchiolitis, infective exacerbation of asthma, pneumonia with pleural effusion",0.67,"3,4,4",6,5,"Sepsis, Pneumonia/LRTI,, infective excerbation asthma","5,4,4",7,7,0.34,1,61,,"Sam, Pneumonia A-E Assessment [SNP011UK]",V1.0.0.0,V1.0.0.0,60.72,11m 25s,14/02/2024 11:12,3,No,DP,2,3,3,4,4,5,2,1,1,4,0.871428571,426,486,426,230,6,66,45,15,"1
 1
 0
@@ -29101,7 +29101,7 @@ presenting complaint",22,27,low,low,45.77140321,-18.65582365,32.43390805,31.9933
 0",6,6,3,2,9,4,2,4,2,0.666666667,2,1,0.333333333,1,1,"past medical history
 prescribed medications
 history of presenting complaint
-presenting complaint",16,50,low,low,12.02884548,-7.534813665,15.61942356,3.944235589,-10.08,-6.496666667,20.86580037,19.56365915
+presenting complaint",16,50,low,low,12.02884548,-7.534813665,15.61942356,3.944235589,-10.08,-6.496666667,20.86580037,19.56365915,5.246376812,15.61942356,0
 113,9,3,B15,Asthma,"Asthma excerbation, severe infection including sepsis, cardiac problems",0.29,"4,4,2",7,6,"Acute excerbation of asthma, pneumonia, aspect of foreign body","5,2,3",7,8,0.16,1,76,,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,76.24,19m 57s,06/11/2023 13:56,2,No,AS,1,1,3,3,4,5,2,0,0,2,1.085714286,813,827,813,531,5,64,55,27,"1
 1
 1
@@ -29365,7 +29365,7 @@ ask about pain
 ask about general activity level
 history of presenting complaint
 past surgical history
-presenting complaint",15,49,low,high,57.86554884,26.86266559,31.39906757,-0.396184311,4.202317291,-2.161414566,21.87607411,31.00288326
+presenting complaint",15,49,low,high,57.86554884,26.86266559,31.39906757,-0.396184311,4.202317291,-2.161414566,21.87607411,31.00288326,-0.070967742,21.94704185,0
 114,9,3,B15,Asthma,"Asthma excerbation, severe infection including sepsis, cardiac problems",0.29,"4,4,2",7,6,"Acute excerbation of asthma, pneumonia, aspect of foreign body","5,2,3",7,8,0.16,1,76,,"Sarah, Diabetic Ketoacidosis, A-E Assessment [SNP005UK]",V1.0.0.0,V1.0.0.0,50.18,19m 57s,06/11/2023 14:58,1,No,AS,1,1,3,3,4,5,2,0,0,2,1.085714286,587,517,517,785,0,68,56,32,"1
 1
 0
@@ -29629,7 +29629,7 @@ feeding, growth and nutrition
 cardiovascular
 presenting complaint
 home living situation
-school",16,52,low,high,107.374802,50.91498107,31.1715994,25.28822159,4.202317291,-5.393557423,27.47051227,56.45982098
+school",16,52,low,high,107.374802,50.91498107,31.1715994,25.28822159,4.202317291,-5.393557423,27.47051227,56.45982098,-0.070967742,25.90297195,1.638508065
 115,9,4,B17,Pneumonia,"pneumonia, asthma, anaphylaxis, urti, chemical warfare",0.71,"4,3,2,2,1",6,8,"pneumonia, sepsis","5,5",8,7,0,0,72,I just forgot,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,71.95,20m 12s,13/12/2023 12:36,1,No,DP,2,3,5,2,4,5,-1,2,-3,6,0.9,179,387,179,139,3,69,65,34,"1
 1
 1
@@ -29888,7 +29888,7 @@ school",16,52,low,high,107.374802,50.91498107,31.1715994,25.28822159,4.202317291
 0
 0",14,16,4,1,20,3,11,3,13,0.214285714,0,4,1,1,0,"allergies
 history of presenting complaint
-presenting complaint",20,49,high,low,124.2295968,46.69918422,66.94707925,10.58333333,-10.08,-6.496666667,85.41099992,77.53041258
+presenting complaint",20,49,high,low,124.2295968,46.69918422,66.94707925,10.58333333,-10.08,-6.496666667,85.41099992,77.53041258,10.06542443,68.34557549,7
 116,9,5,C9,Asthma,"Asthma exacerbation, bronchiolitis, viral induced wheeze, epiglottitis, foreign body, lower respiratory infection",0.77,"5,2,3,1,1,2",8,7,"Asthma, viral induced wheeze, bronchiolitis, epiglottitis, foreign body, URTI/LRTI","5,3,2,1,2,3",8,6,0.71,1,75,,"Sam, Respiratory Distress and Wheeze A-E Assessment [SNP002UK]",V1.0.0.0,V1.0.0.0,75.39,19m 11s,08/01/2024 13:53,3,No,AS,1,1,6,6,5,5,-1,0,0,1,0.9375,706,1100,706,266,3,58,46,15,"1
 1
 1
@@ -30145,7 +30145,7 @@ presenting complaint",20,49,high,low,124.2295968,46.69918422,66.94707925,10.5833
 0
 0
 0
-0",6,8,1,3,9,1,5,3,5,0.166666667,1,0,0,1,2,,10,48,high,high,25.21498192,12.88823759,12.32674433,0,4.202317291,0.169754265,9.255006284,12.32674433
+0",6,8,1,3,9,1,5,3,5,0.166666667,1,0,0,1,2,,10,48,high,high,25.21498192,12.88823759,12.32674433,0,4.202317291,0.169754265,9.255006284,12.32674433,-0.070967742,9.325974026,0
 117,9,6,C9,Seizure,"Febrile convulsion, epilepstic seizure, hypoglycaemia",0.67,"5,2,1",6,9,"Febrile convulsion, epilepsy, hypoglycaemic seizure, tonsillitis, URTI","5,2,1,4,3",6,9,0.81,1,70,,"Katy, Seizure, A-E Assessment [SNP004UK]",V1.0.0.0,V1.0.0.0,69.62,20m 44s,14/02/2024 10:52,2,No,AS,2,4,3,5,5,5,0,0,2,2,1.166666667,387,171,171,203,2,65,55,29,"1
 0
 0
@@ -30403,4 +30403,4 @@ presenting complaint",20,49,high,low,124.2295968,46.69918422,66.94707925,10.5833
 0
 0
 0",4,20,5,1,25,2,2,4,16,0.5,2,3,0.6,1,0,"past medical history
-presenting complaint",14,51,low,low,91.15574914,-8.134795322,75.78107476,23.5094697,-7.084795322,29.31345029,61.84229885,99.29054446
+presenting complaint",14,51,low,low,91.15574914,-8.134795322,75.78107476,23.5094697,-7.084795322,29.31345029,61.84229885,99.29054446,-1.05,58.71616248,4.176136364

@@ -324,7 +324,7 @@ perfCorr <- cor.test(vrData$t1DiagnosisScore,vrData$OMSScore,method="spearman",e
 We report data from `r length(unique(vrData$ParticipantID))` participants. As shown in Table 5.1, some participants only completed a single scenario rather than two. `r length(unique(vrCompleteData$ParticipantID))` participants completed two scenarios (as part of either Scenario A or B as explained in the Procedure section). Overall, `r vrDescStats[vrDescStats$Scenario=="Asthma",]$n` participants completed the Asthma scenario, `r vrDescStats[vrDescStats$Scenario=="DKA",]$n` participants completed the DKA scenario, `r vrDescStats[vrDescStats$Scenario=="Pneumonia",]$n` participants completed the Pneumonia scenario and `r vrDescStats[vrDescStats$Scenario=="Seizure",]$n` participants completed the Seizure scenario. 
 
 \
-We first characterise how well medical students performed during the scenario using our two performance measures. In terms of overall performance, the average Diagnostic Appropriateness score (calculated at the pause point) across all scenarios and participants was `r round(mean(vrData$t1DiagnosisScore,na.rm=T),2)` (ranging from `r min(vrData$t1DiagnosisScore,na.rm=T)` to `r max(vrData$t1DiagnosisScore,na.rm=T)`). The mean Diagnostic Appropriateness score for each scenario was as follows: Asthma = `r vrDescStats[vrDescStats$Scenario=="Asthma",]$DiagScore`, DKA = `r vrDescStats[vrDescStats$Scenario=="DKA",]$DiagScore`, Pneumonia = `r vrDescStats[vrDescStats$Scenario=="Pneumonia",]$DiagScore`, Seizure = `r vrDescStats[vrDescStats$Scenario=="Seizure",]$DiagScore`. The average OMS score (calculated at the end of the scenario) across all scenarios and all participants was `r round(mean(vrData$OMSScore,na.rm=T),2)` (ranging from `r min(vrData$OMSScore,na.rm=T)` to `r max(vrData$OMSScore,na.rm=T)`), which indicates the percentage of predefined 'objectives' successfully completed by participants during each of the scenarios (each scenario has its own set of objectives, with some overlap). The mean OMS score for each scenario was as follows: Asthma = `r vrDescStats[vrDescStats$Scenario=="Asthma",]$MeanPerformance`, DKA = `r vrDescStats[vrDescStats$Scenario=="DKA",]$MeanPerformance`, Pneumonia = `r vrDescStats[vrDescStats$Scenario=="Pneumonia",]$MeanPerformance`, Seizure = `r vrDescStats[vrDescStats$Scenario=="Seizure",]$MeanPerformance`.  
+We first characterise how well medical students performed during the scenario using our two performance measures. In terms of overall performance, the average Diagnostic Appropriateness score (calculated at the pause point) across all scenarios and participants was `r round(mean(vrData$t1DiagnosisScore,na.rm=T),2)` (ranging from `r min(vrData$t1DiagnosisScore,na.rm=T)` to `r max(vrData$t1DiagnosisScore,na.rm=T)`). The mean Diagnostic Appropriateness score for each scenario was as follows: Asthma = `r vrDescStats[vrDescStats$Scenario=="Asthma",]$DiagScore`, DKA = `r vrDescStats[vrDescStats$Scenario=="DKA",]$DiagScore`, Pneumonia = `r vrDescStats[vrDescStats$Scenario=="Pneumonia",]$DiagScore`, Seizure = `r vrDescStats[vrDescStats$Scenario=="Seizure",]$DiagScore`. The average OMS score (calculated at the end of the scenario) across all scenarios and all participants was `r round(mean(vrData$OMSScore,na.rm=T),2)` (ranging from `r min(vrData$OMSScore,na.rm=T)` to `r max(vrData$OMSScore,na.rm=T)`), which indicates the extent to which the predefined 'objectives' for each scenario were successfully completed by participants (each scenario has its own set of objectives, with some overlap). The mean OMS score for each scenario was as follows: Asthma = `r vrDescStats[vrDescStats$Scenario=="Asthma",]$MeanPerformance`, DKA = `r vrDescStats[vrDescStats$Scenario=="DKA",]$MeanPerformance`, Pneumonia = `r vrDescStats[vrDescStats$Scenario=="Pneumonia",]$MeanPerformance`, Seizure = `r vrDescStats[vrDescStats$Scenario=="Seizure",]$MeanPerformance`.  
 
 \
 We next look at confidence reported by participants and its calibration to objective performance. Across all scenarios, participants increase their confidence between the two timepoints. Average initial confidence (recorded on a 10-point Likert scale) across scenarios was `r round(mean(vrData$t1Confidence,na.rm=T),2)` and average final confidence was `r round(mean(vrData$t2Confidence,na.rm=T),2)`. By scenario, average final confidence was higher than average initial confidence (see Table 5.1 below). Other dependent variables such as the number of differentials are also summarised below in Table 5.1. The distribution of confidence values are shown below in Figure 5.4.
@@ -411,7 +411,25 @@ model2 <- summary(model)
 
 ```
 
-We can ask whether the initial diagnostic breadth (i.e. the number of diagnostic differentials being considered early in the scenario) is predictive of information seeking and change in confidence over the course of the scenario (as we found evidence for such an association in the online vignette study). We fit generalized linear mixed effects models to predict each of these with the number of initial differentials as a fixed effect and both the scenario and participant as random effects. We do not see evidence that the initial diagnostic breadth is predictive of the amount of information seeking ($\beta$ = `r abs(round(model1$coefficients[2],2))`, SE = `r round(model1$coefficients[,"Std. Error"][2],2)` z = `r abs(round(model1$coefficients[,"z value"][2],2))`, p = `r abs(round(model1$coefficients[,"Pr(>|z|)"][2],2))`) or changes in confidence ($\beta$ = `r abs(round(model2$coefficients[2],2))`, SE = `r round(model2$coefficients[,"Std. Error"][2],2)` z = `r abs(round(model2$coefficients[,"z value"][2],2))`, p = `r abs(round(model2$coefficients[,"Pr(>|z|)"][2],2))`). As a result, we are not able to replicate findings from Study 2 on a case-level, in which initial diagnostic breadth was predictive of information seeking via a linear mixed effects model (and changes in confidence via an individual differences correlation). The distribution of values for the number of differentials at each time point is shown below in Figure 5.5.
+```{r diagchange, include=FALSE, warning=FALSE, message=FALSE, echo=FALSE}
+
+diagDf <- data.frame(c(vrData$t1numOfDiagnoses,vrData$t2numOfDiagnoses))
+colnames(diagDf) <- c("NumOfDiagnoses")
+diagDf$Timepoint <- c(rep(1,nrow(vrData)),rep(2,nrow(vrData)))
+diagDf$Scenario <- c(vrData$Scenario,vrData$Scenario)
+diagDf$Participant <- c(vrData$ParticipantID,vrData$ParticipantID)
+
+diagmodel <- lmerTest::lmer(NumOfDiagnoses ~ Timepoint + (1|Scenario) + (1 | Participant), data=diagDf)
+diagmodel <- summary(diagmodel)$coefficients
+diagmodel <- as.data.frame(diagmodel)
+colnames(diagmodel)[4] <- "t.value"
+
+```
+
+The distribution of values for the number of differentials at each time point is shown below in Figure 5.5. Visually, it can be observed that the number of differentials considered by participants decreases between the two timepoints (i.e. a narrowing of differentials). We confirm this using a linear mixed effect that predicts the number of differentials with timepoint as a fixed effect and both scenario and participant as random effects (\beta = `r round(diagmodel$Estimate[2],2)`, t = `r round(diagmodel$t.value[2],2)`, p < .001). We therefore surmise that participants tend to narrow their differentials between the two timepoints regardless of the scenario.
+
+\
+We can ask whether the initial diagnostic breadth (i.e. the number of diagnostic differentials being considered early in the scenario) is predictive of information seeking and change in confidence over the course of the scenario (as we found evidence for such an association in the online vignette study). We fit generalized linear mixed effects models to predict each of these with the number of initial differentials as a fixed effect and both the scenario and participant as random effects. We do not see evidence that the initial diagnostic breadth is predictive of the amount of information seeking ($\beta$ = `r abs(round(model1$coefficients[2],2))`, SE = `r round(model1$coefficients[,"Std. Error"][2],2)` z = `r abs(round(model1$coefficients[,"z value"][2],2))`, p = `r abs(round(model1$coefficients[,"Pr(>|z|)"][2],2))`) or changes in confidence ($\beta$ = `r abs(round(model2$coefficients[2],2))`, SE = `r round(model2$coefficients[,"Std. Error"][2],2)` z = `r abs(round(model2$coefficients[,"z value"][2],2))`, p = `r abs(round(model2$coefficients[,"Pr(>|z|)"][2],2))`). As a result, we are not able to replicate findings from Study 2 on a case-level, in which initial diagnostic breadth was predictive of information seeking via a linear mixed effects model (and changes in confidence via an individual differences correlation).
 
 ```{r diagtime, include=TRUE, echo=FALSE, out.width='100%', fig.align='center', warning=FALSE, message=FALSE}
 p <- ggplot(anovaDf, aes(x=Timepoint, y=Differentials, fill=Scenario)) + 
@@ -587,172 +605,26 @@ plotDf <- data.frame(
 
 We also look at whether final confidence (as reported at the end of the scenario) is predicted by the number of treatment actions performed by participants during the scenario. We fit a linear mixed effects model with the number of treatment actions as a fixed effect and both scenario and participant as random effects. We find evidence that final confidence was predicted by the amount of treatment actions administered during the scenario ($\beta$ = `r abs(round(finconmodel$coefficients[2],2))`, SE = `r round(finconmodel$coefficients[,"Std. Error"][2],2)` t = `r abs(round(finconmodel$coefficients[,"t value"][2],2))`, p = `r abs(round(finconmodel$coefficients[,"Pr(>|t|)"][2],3))`), such that higher confidence was associated with more treatment actions being performed during the scenario.
 
-### Aspects of Information Seeking as Contributors to Diagnostic Appropriateness {.unnumbered}
-
-```{r pcaclassifier, include=FALSE, warning=FALSE, message=FALSE, echo=FALSE}
-
-#######################################
-# Use of regular PCA
-
-infoSeekingMatrixVRPCA <- infoSeekingMatrixVR[,1:82]
-
-# Look at information seeking only after the pause point
-infoSeekingMatrixVRPCA[actionTimesMatrixVR < 300 & infoSeekingMatrixVRPCA == 1] <- 0
-
-infoSeekingMatrixVRPCA <- infoSeekingMatrixVRPCA[,-which(names(infoSeekingMatrixVRPCA) %in% c("past medical history","measure oxygen saturations & heart rate","measure blood pressure"))] 
-# Remove columns that are sought on most scenarios
-
-infoSeekingMatrixVRPCA <- infoSeekingMatrixVRPCA[, colSums(infoSeekingMatrixVRPCA) > 0]
-# Remove columns for information never sought
-
-# Perform PCA on binary data
-pca_result <- PCA(infoSeekingMatrixVRPCA, graph = FALSE)
-
-# Scree plot shows elbow around 5
-qplot(c(1:ncol(infoSeekingMatrixVRPCA)), pca_result$eig[,1]) + 
-  geom_line() + 
-  xlab("Principal Component") + 
-  ylab("Variance Explained") +
-  ggtitle("Scree Plot") +
-  theme_classic()
-
-#########
-
-pca_result <- principal(infoSeekingMatrixVRPCA, nfactors = 27, rotate = "promax")
-pcs <- pca_result$scores
-weights <- pca_result$loadings
-
-topPCS <- weights
-
-
-rownames(topPCS) <- c(1:ncol(infoSeekingMatrixVRPCA))
-
-pcs <- pcs[, order(colnames(pcs))]
-pcDF <- data.frame(pcs)
-colnames(pcDF) <- paste("PC",c(1:27),sep="")
-pcDF$pid <- vrData$ParticipantID
-pcDF$condition <- vrData$Scenario
-pcDF$diagChange <- vrData$diagnosticChange
-pcDF$confidenceChange <- vrData$confidenceChange
-pcDF$OMSScore <- vrData$OMSScore
-pcDF$diagScore <- vrData$t1DiagnosisScore
-pcDF$diagGroup <- ifelse(pcDF$diagScore < median(pcDF$diagScore),0,1)
-pcDF$diagGroup <- as.factor(pcDF$diagGroup)
-
-mixedPCModel = lmer(diagScore ~ PC1 + PC2 + PC3 + PC4 + PC5 + PC6 + PC7 +
-                      PC8 + PC9 + PC10 + PC11 + PC12 + PC13 + PC14 +
-                      PC15 + PC16 + PC17 + PC18 + PC19 + PC20 + PC21 + 
-                      PC22 + PC23 + PC24 + PC25 + PC26 + PC27 + (1|condition) + (1|pid), data = pcDF)
-#summary(mixedPCModel)
-
-pcDF$conditionFactor <- as.factor(pcDF$condition)
-
-thresh<-seq(0,1,0.001)
-#specify the cross-validation method
-ctrl <- trainControl(method = "LOOCV", savePredictions = TRUE)
-
-modelglmVR<-train(diagGroup ~ PC1 + PC2 + PC3 + PC4 + PC5 + PC6 + PC7 +
-                      PC8 + PC9 + PC10 + PC11 + PC12 + PC13 + PC14 +
-                      PC15 + PC16 + PC17 + PC18 + PC19 + PC20 + PC21 + 
-                      PC22 + PC23 + PC24 + PC25 + PC26 + PC27, method = "glm", family = binomial(link=probit), data = pcDF, trControl = ctrl)
-prediglmVR<-predict(modelglmVR,type = "prob")[2]
-
-
-# Plot all test results on one ROC curve
-rocPlot <- roc.plot(x=pcDF$diagGroup=="1",pred=cbind(prediglmVR),legend = T,
-                    leg.text = c("GLM"),thresholds = thresh)$roc.vol
-
-```
-
-```{r classifiersep, eval=FALSE, include=FALSE, warning=FALSE, message=FALSE, echo=FALSE}
-
-temp <- infoSeekingMatrixVR
-
-temp$diagGroup <- ifelse(temp$t1DiagnosisScore < median(temp$t1DiagnosisScore),0,1)
-temp$diagGroup <- as.factor(temp$diagGroup)
-
-infoSeekingMatrixVRHist <- temp[, c(historyActions,"diagGroup"), drop = FALSE]
-infoSeekingMatrixVRExams <- temp[, c(examActions,"diagGroup"), drop = FALSE]
-infoSeekingMatrixVRTesting <- temp[, c(TestingActions,"diagGroup"), drop = FALSE]
-
-dropcols <- c("past medical history","measure oxygen saturations & heart rate","measure blood pressure")
-
-infoSeekingMatrixVRHist <- infoSeekingMatrixVRHist[ , -which(names(infoSeekingMatrixVRHist) %in% dropcols)]
-infoSeekingMatrixVRExams <- infoSeekingMatrixVRExams[ , -which(names(infoSeekingMatrixVRExams) %in% dropcols)]
-
-names(infoSeekingMatrixVRHist) <- make.names(names(infoSeekingMatrixVRHist))
-names(infoSeekingMatrixVRExams) <- make.names(names(infoSeekingMatrixVRExams))
-names(infoSeekingMatrixVRTesting) <- make.names(names(infoSeekingMatrixVRTesting))
-
-# Convert all columns to numeric
-infoSeekingMatrixVRHist <- data.frame(lapply(infoSeekingMatrixVRHist, function(x) as.numeric(as.character(x))))
-infoSeekingMatrixVRExams <- data.frame(lapply(infoSeekingMatrixVRExams, function(x) as.numeric(as.character(x))))
-infoSeekingMatrixVRTesting <- data.frame(lapply(infoSeekingMatrixVRTesting, function(x) as.numeric(as.character(x))))
-
-# Keep columns where the sum is greater than zero
-infoSeekingMatrixVRHist <- infoSeekingMatrixVRHist[, colSums(infoSeekingMatrixVRHist) > 1]
-infoSeekingMatrixVRExams <- infoSeekingMatrixVRExams[, colSums(infoSeekingMatrixVRExams) > 1]
-infoSeekingMatrixVRTesting <- infoSeekingMatrixVRTesting[, colSums(infoSeekingMatrixVRTesting) > 1]
-
-# Outcome as a factor
-infoSeekingMatrixVRHist$diagGroup <- as.factor(infoSeekingMatrixVRHist$diagGroup)
-infoSeekingMatrixVRExams$diagGroup <- as.factor(infoSeekingMatrixVRExams$diagGroup)
-infoSeekingMatrixVRTesting$diagGroup <- as.factor(infoSeekingMatrixVRTesting$diagGroup)
-
-modelglmHist<-train(diagGroup ~ ., method = "glm", family = binomial(link=probit), data = infoSeekingMatrixVRHist, trControl = ctrl)
-modelglmExams<-train(diagGroup ~ ., method = "glm", family = binomial(link=probit), data = infoSeekingMatrixVRExams, trControl = ctrl)
-modelglmTest<-train(diagGroup ~ ., method = "glm", family = binomial(link=probit), data = infoSeekingMatrixVRTesting, trControl = ctrl)
-
-prediglmHist<-predict(modelglmHist,type = "prob")[2]
-prediglmExams<-predict(modelglmExams,type = "prob")[2]
-prediglmTest<-predict(modelglmTest,type = "prob")[2]
-
-temp$diagGroup <- as.factor(temp$diagGroup)
-
-roc.plot(x=temp$diagGroup=="1",pred=cbind(prediglmHist,prediglmExams,prediglmTest),legend = T,
-                    leg.text = c("History","Exams","Testing"),thresholds = thresh)$roc.vol
-
-```
-
-We next ask whether the differentials provided by participants is a result of 'better' information seeking. If this were the case, we would be able to differentiate between low and high quality differentials (as per our Diagnostic Appropriateness measure) solely from the information sought by participants. This is similar to the analysis presented in Figure 3.8 of the online vignette study chapter. We split participants into low and high diagnostic accuracy via a median split. Given the large amount of information available (82 unique information requests across History, Physical Examinations and Testing), we reduce the dimensionality of the information seeking data using Principal Component Analysis. When computing a scree plot and observing eigenvalues for each cumulative component that exceeded 1, we find that reducing the 82 information factors to 27 components is recommended. 
-
-\
-We trained a binary classification algorithm using a generalised logistic regression (GLM) model to identify if participants exhibited high or low appropriateness of initial differentials is associated with better information seeking after these differentials are recorded. When plotting an ROC curve, the area under the curve (AUC) is indicative of how well a model performs at correctly categorising cases as having high or low diagnostic appropriateness. An AUC of 0.5 would signify that our model is performing at chance and is not able to predict participant accuracy in any meaningful way. By plotting an ROC curve for our model, we find an AUC value of `r round(rocPlot$Area,2)` (plotted below). When conducting a DeLong test, to test the null hypothesis that the AUC is equal to 0.5 (i.e. that the classifier is unable to differentiate between high and low accuracy participants), we find p < .001, indicating that the AUC differs significantly from 0.5. This indicates that diagnostic appropriateness at the pause point is predicted by information seeking after the pause point. The ROC curve can be viewed below in Figure 5.7. 
-
-```{r pcaclassifierplot, include=TRUE, warning=FALSE, message=FALSE, echo=FALSE, out.width='100%', fig.align='center'}
-
-roc.plot(x=pcDF$diagGroup=="1",pred=cbind(prediglmVR),legend = T,
-                    leg.text = c("GLM"),thresholds = thresh)
-
-```
-_Figure 5.7: Receiver-Operator Characteristic (ROC) curve using a Generalised Linear Model to classify individual cases as having either high or low diagnostic appropriateness reported based on the initial set of differentials. The model is trained PCA components of the total available information requests, with the 82 information requests reduced to 27 components. Cases were sorted as high or low diagnostic appropriateness based on a median split._
+### Diagnostic Appropriateness as a Predictor of Information Seeking {.unnumbered}
 
 ```{r appropinfo, include=FALSE, warning=FALSE, message=FALSE, echo=FALSE}
 
-diagTest <- lme4::glmer(t1DiagnosisScore ~ infoValHistory + infoValExams + infoValTesting + (1|Scenario) + (1|ParticipantID),family=Gamma(link = "inverse"),data=vrData)
-diagTest2 <- lme4::glmer(t1DiagnosisScore ~ infoValHistory + infoValExams + infoValTesting + (1|Scenario) + (1|ParticipantID),family=inverse.gaussian(link = "1/mu^2"),data=vrData)
-diagpca <- rePCA(diagTest2)
-diagAnova <- anova(diagTest,diagTest2)
+modBefore  <- lmer(t1DiagnosisScore ~ infoValHistoryBeforePause + (1|Scenario) + (1|ParticipantID), data=vrData) 
 
-diagTest3 <- lme4::glmer(t1DiagnosisScore ~ infoValHistory + infoValExams + infoValTesting + (1|Scenario),family=inverse.gaussian(link = "1/mu^2"),data=vrData)
-diagAnova <- anova(diagTest2,diagTest3)
+modHist <- lmer(infoValHistory ~ t1DiagnosisScore + (1|Scenario), data=vrData) 
+modExams <- lmer(infoValExams ~ t1DiagnosisScore + (1|Scenario), data=vrData) 
+modTest <- lmer(infoValTesting ~ t1DiagnosisScore + (1|Scenario), data=vrData) 
 
-diagTestVal <- joint_tests(diagTest2) 
+modHist <- data.frame(summary(modHist)$coefficients)
+modExams <- data.frame(summary(modExams)$coefficients)
+modTest <- data.frame(summary(modTest)$coefficients)
 
-##################################
-
-diagTest <- lme4::glmer(t1DiagnosisScore ~ numOfHistoryActionsAfterPause + numOfExamActionsAfterPause + numOfTestingActionsAfterPause + (1|Scenario) + (1|ParticipantID),family=Gamma(link = "inverse"),data=vrData)
-diagTest2 <- lme4::glmer(t1DiagnosisScore ~ numOfHistoryActionsAfterPause + numOfExamActionsAfterPause + numOfTestingActionsAfterPause + (1|Scenario) + (1|ParticipantID),family=inverse.gaussian(link = "1/mu^2"),data=vrData)
-diagpca <- rePCA(diagTest2)
-
-diagTest3 <- lme4::glmer(t1DiagnosisScore ~ numOfHistoryActionsAfterPause + numOfExamActionsAfterPause + numOfTestingActionsAfterPause + (1|Scenario),family=inverse.gaussian(link = "1/mu^2"),data=vrData)
-diagAnova <- anova(diagTest2,diagTest3)
-
-diagTestInfo <- joint_tests(diagTest2)
+modHistPercent <- lmer(t1DiagnosisScore ~ percentageHistory + (1|Scenario), data=vrData) 
+modHistPercent <- data.frame(summary(modHistPercent)$coefficients)
 
 ```
 \
-Given that information seeking is broadly associated with diagnostic appropriateness, we seek to better understand the specific aspects of information seeking that relate to appropriate differentials. As in previous studies, we look at two aspects of information seeking: the amount of information seeking and informational value. To this end, we look at whether the information seeking amount and value for each of the three categories (History, Physical Examinations, Testing) predicts diagnostic appropriateness score on each case. We fit generalised mixed effect models with inverse Gaussian distributions by controlling for scenario and participant as random effects. We find that diagnostic appropriateness is not predicted by the number of actions in any of the information seeking categories (Fs < 1, ps > .1). We do however find evidence that diagnostic appropriateness is associated with the value of Patient History taking (F = `r round(diagTestVal$F.ratio[1],2)`, p = `r round(diagTestVal$p.value[1],2)`), but not with Physical Examination value (F = `r round(diagTestVal$F.ratio[2],2)`, p = `r round(diagTestVal$p.value[2],2)`) or Testing value (F = `r round(diagTestVal$F.ratio[3],2)`, p = `r round(diagTestVal$p.value[3],2)`). The relationship between Patient History Value and Diagnostic Appropriateness is plotted below in Figure 5.8.
+We are also interested in whether initial diagnostic appropriateness has an effect on subsequent information seeking. As in previous studies, we look at two aspects of information seeking: the amount of information seeking and informational value. To this end, we look at whether diagnostic appropriateness (at the pause point) predictions the subsequent information seeking amount and value for each of the three categories: History, Physical Examinations and Testing. We fit linear mixed effect models whilst controlling for scenario and participant as random effects. We use this modelling to ask whether, on cases where more appropriate diagnoses are provided early on, participants are found to have sought more information and/or useful information. We find that diagnostic appropriateness is not predictive of the number of actions belonging to any of the information seeking categories (Fs < 1, ps > .1). We do however find evidence that diagnostic appropriateness is predictive of the value of Patient History taking (\beta = `r round(modHist$Estimate[2],2)`, t = `r round(modHist$t.value[2],2)`, p = `r round(modHist$Pr...t..[2],2)`), but not with Physical Examination value (\beta = `r round(modExams$Estimate[2],2)`, t = `r round(modExams$t.value[2],2)`, p = `r round(modExams$Pr...t..[2],2)`) or Testing value (\beta = `r round(modTest$Estimate[2],2)`, t = `r round(modTest$t.value[2],2)`, p = `r round(modTest$Pr...t..[2],2)`). The relationship between Patient History Value and Diagnostic Appropriateness is plotted below in Figure 5.7. One explanation for this relationship that Diagnostic Approrpiateness is necessarily associated with history taking, as information on the Patient History is intuitively mostly sought towards the earlier stages of a diagnostic decision process. If this were the case, we would expect that Diagnostic Appropriateness would be predicted by how much of the history taking took place before the pause point (i.e. when the initial Diagnostic Appropriateness is recorded and measured). To this end, we fit a linear mixed model to predict initial Diagnostic Appropriateness using the proportion of a scenario's history taking that took place before the pause point as a fixed effect. We do not find evidence that this is predictive however (\beta = `r round(modHistPercent$Estimate[2],2)`, t = `r round(modHistPercent$t.value[2],2)`, p = `r round(modHistPercent$Pr...t..[2],2)`).
 
 ```{r historyvalplot, include=TRUE, warning=FALSE, message=FALSE, echo=FALSE, out.width='100%', fig.align='center'}
 
@@ -769,7 +641,7 @@ print(histCon +
 
 ```
 
-_Figure 5.8: Scatter plot showing the relationship between information value for information requests in the Patient History category (x-axis) and Diagnostic Appropriateness score  (y-axis) calculated based on the initial set of differentials provided at the pause point in the scenario. Each data point in this plot represents a single case/scenario._
+_Figure 5.7: Scatter plot showing the relationship between information value for information requests in the Patient History category (x-axis) and Diagnostic Appropriateness score (y-axis) calculated based on the initial set of differentials provided at the pause point in the scenario. Each data point in this plot represents a single case/scenario._
 
 
 ### Time to Treat and Call for Help {.unnumbered}
