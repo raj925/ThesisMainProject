@@ -156,7 +156,7 @@ inclusion criteria identified 50 eligible articles. 439 further articles
 were retrieved for review from the included articles’ citations. After
 applying both exclusions of duplicates and our inclusion criteria, 29
 further articles were identified. This produced a total of 79 articles
-for inclusion and synthesis (see figure 1.1 below for PRISMA diagram).
+for inclusion and synthesis (see Figure 2.1 below for PRISMA diagram).
 The full set of papers can be found in Table S1 of the Supplemental
 Materials.
 
@@ -166,11 +166,11 @@ knitr::include_graphics("./assets/PRISMA.png")
 
 ```
 
-*Figure 1.1: PRISMA Diagram of Literature Review.*
+*Figure 2.1: PRISMA Diagram of Literature Review.*
 
 #### Study Characteristics {.unnumbered}
 
-Table 1.1 below summarises study characteristics and Figure 1.2 shows
+Table 1.1 below summarises study characteristics and Figure 2.2 shows
 that 36 of the 79 studies (46%) were published since 2019, indicating a
 recent surge of research interest in this field and the timeliness of
 this scoping review. The studies appeared in 59 different publications,
@@ -197,7 +197,7 @@ knitr::include_graphics("./assets/ReviewYears.png")
 
 ```
 
-*Figure 1.2: Distribution of Papers by Publication Year.*
+*Figure 2.2: Distribution of Papers by Publication Year.*
 
 \
 Study designs were split roughly evenly between focusing on how
@@ -429,10 +429,10 @@ calibrated than a single clinician (Thorlacius-Ussing et al., 2021).
 ### Conceptual Model for Diagnostic Decisions {.unnumbered}
 
 We synthesised the reviewed findings into a theoretical model (Figure
-1.3) that illustrates how various factors distinctly impact diagnostic
+2.3) that illustrates how various factors distinctly impact diagnostic
 confidence and accuracy. This model aims to clarify existing research
 and identify directions for future work. The model starts by mapping out
-the stages of the diagnostic process (Figure 1.3, bottom panel). Based
+the stages of the diagnostic process (Figure 2.3, bottom panel). Based
 on initial patient presentation, clinicians gather and interpret patient
 information (e.g. history, examinations, tests) to inform their
 diagnosis of the patient’s condition. The clinician’s confidence in
@@ -442,7 +442,7 @@ additional information are needed. Once a diagnosis is reached, this
 guides patient treatment and care, the success of which is evident in
 the outcome for the patient.
 
-The middle panel of Figure 1.3 characterises the cognitive processes of
+The middle panel of Figure 2.3 characterises the cognitive processes of
 the clinician that determine the accuracy of the diagnosis and
 confidence with which the diagnosis is made. A key feature is that many
 factors have dissociable effects on accuracy vs. confidence. Diagnostic
@@ -455,7 +455,7 @@ and its outcome, which in turn improves future diagnostic accuracy
 (though this feedback loop’s impact on later confidence is yet to be
 explored).
 
-The top panel of Figure 1.3 highlights factors pertaining to the medical
+The top panel of Figure 2.3 highlights factors pertaining to the medical
 environment/context. Separately from the patient case, confidence is
 reduced by time pressures (Yang, Thompson & Bland, 2012), interruptions
 to work (Soares et al., 2019), busy shifts (Gupta et al., 2023) and
@@ -463,7 +463,7 @@ complex patient cases (either due to conflicting information or
 comorbidities) (Meyer et al., 2013, Hausmann et al., 2019, Li, Zheng &
 Lajoie, 2023).
 
-Figure 1.3 highlights three primary directions for future research.
+Figure 2.3 highlights three primary directions for future research.
 First, given the focus of research to date on diagnosis by individual
 clinicians, we recommend that future work also studies diagnoses in
 groups, given that diagnoses are often made by teams rather than
@@ -492,7 +492,7 @@ knitr::include_graphics("./assets/ReviewModel.png")
 
 ```
 
-*Figure 1.3: Conceptual model that depicts the various factors that
+*Figure 2.3: Conceptual model that depicts the various factors that
 impact the course of a diagnostic process, with links established
 between concepts based on findings from this systematic scoping review.
 Factors are categorised in three levels: the level of the diagnostic
