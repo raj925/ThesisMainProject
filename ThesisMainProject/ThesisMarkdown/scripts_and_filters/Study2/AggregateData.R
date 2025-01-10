@@ -20,14 +20,14 @@ hardCaseGroupLong <- c("THROMBOTIC THROMBOCYTOPENIC PURPURA", "AORTIC DISSECTION
 accuracyMeasure <- "CorrectLikelihood" #HighestLikelihood, CorrectLikelihood, Differential
 classifyVar <- "accuracy" #accuracy or confidence
 
-participantIDS <- unique(df$participantID)
-
 fullDf <- df
 
 df <- df %>%
   group_by(participantID, trialNum) %>%                            # Group by ID and trialNum
   filter(!(all(proportionOfInfo == 0))) %>%             # Keep rows where not all proportionOfInfo values are 0
   ungroup()      
+
+participantIDS <- unique(df$participantID)
 
 ################################################
 # Aggregate df for participant wise data

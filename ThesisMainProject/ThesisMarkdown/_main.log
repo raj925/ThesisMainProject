@@ -1,0 +1,4039 @@
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2025.1.10)  10 JAN 2025 18:45
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**_main.tex
+(./_main.tex
+LaTeX2e <2024-11-01> patch level 1
+L3 programming layer <2024-12-25>
+(./templates/ociamthesis.cls
+Document Class: templates/ociamthesis 2015/04/30 Oxford thesis class
+(/usr/local/texlive/2024/texmf-dist/tex/latex/base/report.cls
+Document Class: report 2024/06/29 v1.4n Standard LaTeX document class
+(/usr/local/texlive/2024/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2024/06/29 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count192
+\c@chapter=\count193
+\c@section=\count194
+\c@subsection=\count195
+\c@subsubsection=\count196
+\c@paragraph=\count197
+\c@subparagraph=\count198
+\c@figure=\count199
+\c@table=\count266
+\abovecaptionskip=\skip49
+\belowcaptionskip=\skip50
+\bibindent=\dimen141
+)
+\singlebaselineskip=\skip51
+\frontmatterbaselineskip=\skip52
+\textbaselineskip=\skip53
+\abstractseparatelineskip=\skip54
+\abstractseparateparskip=\skip55
+(/usr/local/texlive/2024/texmf-dist/tex/latex/varwidth/varwidth.sty
+Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
+\@vwid@box=\box52
+\sift@deathcycles=\count267
+\@vwid@loff=\dimen142
+\@vwid@roff=\dimen143
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+(/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+) (/usr/local/texlive/2024/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+(/usr/local/texlive/2024/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2024/12/12 v1.0g TeX engine tests
+))
+\Gm@cnth=\count268
+\Gm@cntv=\count269
+\c@Gm@tempcnt=\count270
+\Gm@bindingoffset=\dimen144
+\Gm@wd@mp=\dimen145
+\Gm@odd@mp=\dimen146
+\Gm@even@mp=\dimen147
+\Gm@layoutwidth=\dimen148
+\Gm@layoutheight=\dimen149
+\Gm@layouthoffset=\dimen150
+\Gm@layoutvoffset=\dimen151
+\Gm@dimlist=\toks18
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: xetex.def on input line 274.
+(/usr/local/texlive/2024/texmf-dist/tex/latex/graphics-def/xetex.def
+File: xetex.def 2022/09/22 v5.0n Graphics/color driver for xetex
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
+Package xcolor Info: Model `RGB' extended on input line 1365.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: xetex.def on input line 106.
+)
+\Gin@req@height=\dimen152
+\Gin@req@width=\dimen153
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/microtype/microtype.sty
+Package: microtype 2024/12/12 v3.2 Micro-typographical refinements (RS)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count271
+)
+\MT@toks=\toks19
+\MT@tempbox=\box53
+\MT@count=\count272
+LaTeX Info: Redefining \noprotrusionifhmode on input line 1075.
+LaTeX Info: Redefining \leftprotrusion on input line 1076.
+\MT@prot@toks=\toks20
+LaTeX Info: Redefining \rightprotrusion on input line 1095.
+LaTeX Info: Redefining \textls on input line 1437.
+\MT@outer@kern=\dimen154
+LaTeX Info: Redefining \microtypecontext on input line 2041.
+LaTeX Info: Redefining \textmicrotypecontext on input line 2058.
+\MT@listname@count=\count273
+(/usr/local/texlive/2024/texmf-dist/tex/latex/microtype/microtype-xetex.def
+File: microtype-xetex.def 2024/12/12 v3.2 Definitions specific to xetex (RS)
+LaTeX Info: Redefining \lsstyle on input line 443.
+LaTeX Info: Redefining \lslig on input line 451.
+\MT@outer@space=\skip56
+)
+Package microtype Info: Loading configuration file microtype.cfg.
+(/usr/local/texlive/2024/texmf-dist/tex/latex/microtype/microtype.cfg
+File: microtype.cfg 2024/12/12 v3.2 microtype main configuration file (RS)
+)
+LaTeX Info: Redefining \microtypesetup on input line 3053.
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/units/nicefrac.sty
+Package: nicefrac 1998/08/04 v0.9b Nice fractions
+\L@UnitsRaiseDisplaystyle=\skip57
+\L@UnitsRaiseTextstyle=\skip58
+\L@UnitsRaiseScriptstyle=\skip59
+(/usr/local/texlive/2024/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
+)) (/usr/local/texlive/2024/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2024/11/05 v2.17t AMS math features
+\@mathmargin=\skip60
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2024/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+(/usr/local/texlive/2024/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks21
+\ex@=\dimen155
+)) (/usr/local/texlive/2024/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen156
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count274
+LaTeX Info: Redefining \frac on input line 233.
+\uproot@=\count275
+\leftroot@=\count276
+LaTeX Info: Redefining \overline on input line 398.
+LaTeX Info: Redefining \colon on input line 409.
+\classnum@=\count277
+\DOTSCASE@=\count278
+LaTeX Info: Redefining \ldots on input line 495.
+LaTeX Info: Redefining \dots on input line 498.
+LaTeX Info: Redefining \cdots on input line 619.
+\Mathstrutbox@=\box54
+\strutbox@=\box55
+LaTeX Info: Redefining \big on input line 721.
+LaTeX Info: Redefining \Big on input line 722.
+LaTeX Info: Redefining \bigg on input line 723.
+LaTeX Info: Redefining \Bigg on input line 724.
+\big@size=\dimen157
+LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
+\macc@depth=\count279
+LaTeX Info: Redefining \bmod on input line 904.
+LaTeX Info: Redefining \pmod on input line 909.
+LaTeX Info: Redefining \smash on input line 939.
+LaTeX Info: Redefining \relbar on input line 969.
+LaTeX Info: Redefining \Relbar on input line 970.
+\c@MaxMatrixCols=\count280
+\dotsspace@=\muskip17
+\c@parentequation=\count281
+\dspbrk@lvl=\count282
+\tag@help=\toks22
+\row@=\count283
+\column@=\count284
+\maxfields@=\count285
+\andhelp@=\toks23
+\eqnshift@=\dimen158
+\alignsep@=\dimen159
+\tagshift@=\dimen160
+\tagwidth@=\dimen161
+\totwidth@=\dimen162
+\lineht@=\dimen163
+\@envbody=\toks24
+\multlinegap=\skip61
+\multlinetaggap=\skip62
+\mathdisplay@stack=\toks25
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+(/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)) (/usr/local/texlive/2024/texmf-dist/tex/latex/base/textcomp.sty
+Package: textcomp 2024/04/24 v2.1b Standard LaTeX package
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2024-10-27 v4.22 Multi-page Table package (DPC)
+\LTleft=\skip63
+\LTright=\skip64
+\LTpre=\skip65
+\LTpost=\skip66
+\LTchunksize=\count286
+\LTcapwidth=\dimen164
+\LT@head=\box56
+\LT@firsthead=\box57
+\LT@foot=\box58
+\LT@lastfoot=\box59
+\LT@gbox=\box60
+\LT@cols=\count287
+\LT@rows=\count288
+\c@LT@tables=\count289
+\c@LT@chunks=\count290
+\LT@p@ftn=\toks26
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+\caption@tempdima=\dimen165
+\captionmargin=\dimen166
+\caption@leftmargin=\dimen167
+\caption@rightmargin=\dimen168
+\caption@width=\dimen169
+\caption@indent=\dimen170
+\caption@parindent=\dimen171
+\caption@hangindent=\dimen172
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count291
+\c@continuedfloat=\count292
+Package caption Info: longtable package is loaded.
+(/usr/local/texlive/2024/texmf-dist/tex/latex/caption/ltcaption.sty
+Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
+)) (/usr/local/texlive/2024/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2024/09/14 v1.9i multicolumn formatting (FMi)
+\c@tracingmulticols=\count293
+\mult@box=\box61
+\multicol@leftmargin=\dimen173
+\c@unbalance=\count294
+\c@collectmore=\count295
+\doublecol@number=\count296
+\multicoltolerance=\count297
+\multicolpretolerance=\count298
+\full@width=\dimen174
+\page@free=\dimen175
+\premulticols=\dimen176
+\postmulticols=\dimen177
+\multicolsep=\skip67
+\multicolbaselineskip=\skip68
+\partial@page=\box62
+\last@line=\box63
+\mc@boxedresult=\box64
+\maxbalancingoverflow=\dimen178
+\mult@rightbox=\box65
+\mult@grightbox=\box66
+\mult@firstbox=\box67
+\mult@gfirstbox=\box68
+\@tempa=\box69
+\@tempa=\box70
+\@tempa=\box71
+\@tempa=\box72
+\@tempa=\box73
+\@tempa=\box74
+\@tempa=\box75
+\@tempa=\box76
+\@tempa=\box77
+\@tempa=\box78
+\@tempa=\box79
+\@tempa=\box80
+\@tempa=\box81
+\@tempa=\box82
+\@tempa=\box83
+\@tempa=\box84
+\@tempa=\box85
+\@tempa=\box86
+\@tempa=\box87
+\@tempa=\box88
+\@tempa=\box89
+\@tempa=\box90
+\@tempa=\box91
+\@tempa=\box92
+\@tempa=\box93
+\@tempa=\box94
+\@tempa=\box95
+\@tempa=\box96
+\@tempa=\box97
+\@tempa=\box98
+\@tempa=\box99
+\@tempa=\box100
+\@tempa=\box101
+\@tempa=\box102
+\@tempa=\box103
+\@tempa=\box104
+\c@minrows=\count299
+\c@columnbadness=\count300
+\c@finalcolumnbadness=\count301
+\last@try=\dimen179
+\multicolovershoot=\dimen180
+\multicolundershoot=\dimen181
+\mult@nat@firstbox=\box105
+\colbreak@box=\box106
+\mc@col@check@num=\count302
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/multirow/multirow.sty
+Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
+\multirow@colwidth=\skip69
+\multirow@cntb=\count303
+\multirow@dima=\skip70
+\bigstrutjot=\dimen182
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/tools/array.sty
+Package: array 2024/10/17 v2.6g Tabular extension package (FMi)
+\col@sep=\dimen183
+\ar@mcellbox=\box107
+\extrarowheight=\dimen184
+\NC@list=\toks27
+\extratabsurround=\skip71
+\backup@length=\skip72
+\ar@cellbox=\box108
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/rotating.sty
+Package: rotating 2016/08/11 v2.16d rotated objects in LaTeX
+\c@r@tfl@t=\count304
+\rotFPtop=\skip73
+\rotFPbot=\skip74
+\rot@float@box=\box109
+\rot@mess@toks=\toks28
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen185
+\lightrulewidth=\dimen186
+\cmidrulewidth=\dimen187
+\belowrulesep=\dimen188
+\belowbottomsep=\dimen189
+\aboverulesep=\dimen190
+\abovetopsep=\dimen191
+\cmidrulesep=\dimen192
+\cmidrulekern=\dimen193
+\defaultaddspace=\dimen194
+\@cmidla=\count305
+\@cmidlb=\count306
+\@aboverulesep=\dimen195
+\@belowrulesep=\dimen196
+\@thisruleclass=\count307
+\@lastruleclass=\count308
+\@thisrulewidth=\dimen197
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/pdfpages/pdfpages.sty
+Package: pdfpages 2024/10/28 v0.6c Insert pages of external PDF documents (AM)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2023/07/08 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count309
+\calc@Bcount=\count310
+\calc@Adimen=\dimen198
+\calc@Bdimen=\dimen199
+\calc@Askip=\skip75
+\calc@Bskip=\skip76
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count311
+\calc@Cskip=\skip77
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/eso-pic/eso-pic.sty
+Package: eso-pic 2023/05/03 v3.0c eso-pic (RN)
+\ESO@tempdima=\dimen256
+\ESO@tempdimb=\dimen257
+)
+\AM@pagewidth=\dimen258
+\AM@pageheight=\dimen259
+\AM@fboxrule=\dimen260
+(/usr/local/texlive/2024/texmf-dist/tex/latex/pdfpages/ppxetex.def
+File: ppxetex.def 2024/10/28 v0.6c Pdfpages driver for XeTeX (AM)
+)
+\pdfpages@includegraphics@status=\count312
+\AM@pagebox=\box110
+\AM@global@opts=\toks29
+\AM@pagecnt=\count313
+\AM@toc@title=\toks30
+\AM@lof@heading=\toks31
+\c@AM@survey=\count314
+\AM@templatesizebox=\box111
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/xfrac/xfrac.sty
+Package: xfrac 2024-06-04 Split-level fractions
+\l__xfrac_slash_box=\box112
+\l__xfrac_tmp_box=\box113
+\l__xfrac_denominator_bot_sep_dim=\dimen261
+\l__xfrac_numerator_bot_sep_dim=\dimen262
+\l__xfrac_numerator_top_sep_dim=\dimen263
+\l__xfrac_slash_left_sep_dim=\dimen264
+\l__xfrac_slash_right_sep_dim=\dimen265
+\l__xfrac_slash_left_muskip=\muskip18
+\l__xfrac_slash_right_muskip=\muskip19
+
+LaTeX template Info: Declaring template type 'xfrac' taking 3 argument(s) on
+(template)           line 100.
+
+
+LaTeX template Info: Declaring instance 'cmr' of type xfrac on line 392.
+
+
+LaTeX template Info: Declaring instance 'cmss' of type xfrac on line 392.
+
+
+LaTeX template Info: Declaring instance 'cmtt' of type xfrac on line 392.
+
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2019/06/20 v3.9 Customized lists
+\labelindent=\skip78
+\enit@outerparindent=\dimen266
+\enit@toks=\toks32
+\enit@inbox=\box114
+\enit@count@id=\count315
+\enitdp@description=\count316
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/tools/dcolumn.sty
+Package: dcolumn 2023/07/08 v1.06 decimal alignment package (DPC)
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/appendix/appendix.sty
+Package: appendix 2020/02/08 v1.2c extra appendix facilities
+\c@@pps=\count317
+\c@@ppsavesec=\count318
+\c@@ppsaveapp=\count319
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/notoccite/notoccite.sty
+Package: notoccite 2000/07/20
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/minitoc/minitoc.sty
+Package: minitoc 2018/07/12 v62 Package minitoc
+(/usr/local/texlive/2024/texmf-dist/tex/latex/minitoc/mtcmess.sty
+Package: mtcmess 2006/03/14
+)
+Package minitoc Info: I0001
+(minitoc)             *** minitoc package, version 62 ***.
+\tf@mtc=\write3
+\mtcindent=\skip79
+\mtcskipamount=\skip80
+Package minitoc Info: I0005
+(minitoc)             compatible with hyperref.
+Package minitoc Info: I0023
+(minitoc)             part level macros available.
+Package minitoc Info: I0003
+(minitoc)             chapter level macros available.
+\mtc@toks=\toks33
+\mtc@strutbox=\box115
+\mtc@hstrutbox=\box116
+Package minitoc Info: I0002
+(minitoc)             Autoconfiguration of extensions.
+\openout3 = `_main.mtc0'.
+
+\openout3 = `_main.mtc'.
+
+(./_main.mtc0)
+Package minitoc Info: I0012
+(minitoc)             Long extensions (Unix-like) will be used.
+Package minitoc Info: I0031
+(minitoc)             ==> this version is configured for UNIX-like 
+(minitoc)                 (long extensions) file names.
+\openout3 = `_main.mtc'.
+
+\openout3 = `_main.mtc0'.
+
+\c@mtc=\count320
+\c@minitocdepth=\count321
+\c@ptc=\count322
+\c@parttocdepth=\count323
+\ptcindent=\skip81
+Package minitoc Info: I0010
+(minitoc)             The english language is selected.
+(minitoc)              on input line 4910.
+(/usr/local/texlive/2024/texmf-dist/tex/latex/minitoc/english.mld
+File: english.mld 2006/01/13
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/minitoc/english.mld
+File: english.mld 2006/01/13
+)) (/usr/local/texlive/2024/texmf-dist/tex/latex/quotchap/quotchap.sty
+Package: quotchap 2020/11/13 v1.3 Decorative Chapter Headings with Quotes
+\@quotebox=\box117
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/tocbibind/tocbibind.sty
+Package: tocbibind 2010/10/13 v1.5k extra ToC listings
+Package tocbibind Info: The document has chapter divisions on input line 50.
+
+Package tocbibind Note: Using chapter style headings, unless overridden.
+
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/lmodern.sty
+Package: lmodern 2015/05/01 v1.6.1 Latin Modern Fonts
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/lmm/m/it on input line 23.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/lmsy/m/n on input line 24.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 25.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 26.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/lmm/b/it on input line 27.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/lmsy/b/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 29.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 31.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 32.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/lmr/m/it on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 36.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/lmr/bx/it on input line 37.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+(/usr/local/texlive/2024/texmf-dist/tex/latex/greek-fontenc/lgrenc.def
+File: lgrenc.def 2023-09-12 2.5 LGR Greek font encoding definitions
+(/usr/local/texlive/2024/texmf-dist/tex/latex/greek-fontenc/greek-fontenc.def
+File: greek-fontenc.def 2023-09-12 2.5 Common Greek font encoding definitions
+))
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 11
+6.
+(/usr/local/texlive/2024/texmf-dist/tex/latex/lm/t1lmr.fd
+File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)) (/usr/local/texlive/2024/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2025/01/01 v25.1 The multilingual framework for pdfLaTeX, LuaLaT
+eX and XeLaTeX
+\babel@savecnt=\count324
+\U@D=\dimen267
+\l@unhyphenated=\language89
+(/usr/local/texlive/2024/texmf-dist/tex/generic/babel/xebabel.def)
+\bbl@readstream=\read2
+\bbl@dirlevel=\count325
+(/usr/local/texlive/2024/texmf-dist/tex/generic/babel-greek/greek.ldf
+Language: greek 2023/10/13 1.15 Greek support for the babel system
+\bbl@monogreek=\count326
+\bbl@polygreek=\count327
+\bbl@ancientgreek=\count328
+(/usr/local/texlive/2024/texmf-dist/tex/latex/greek-fontenc/tuenc-greek.def
+File: tuenc-greek.def 2023-09-12 2.5 Greek LICRs for XeTeX and LuaTeX
+(/usr/local/texlive/2024/texmf-dist/tex/latex/greek-fontenc/greek-fontenc.def
+File: greek-fontenc.def 2023-09-12 2.5 Common Greek font encoding definitions
+))) (/usr/local/texlive/2024/texmf-dist/tex/generic/babel-latin/latin.ldf
+Language: latin 2021-06-27 v4.0 Latin support from the babel system
+Package babel Info: Making " an active character on input line 135.
+) (/usr/local/texlive/2024/texmf-dist/tex/generic/babel-english/english.ldf
+Language: english 2017/06/06 v3.3r English support from the babel system
+Package babel Info: Hyphen rules for 'canadian' set to \l@english
+(babel)             (\language0). Reported on input line 102.
+Package babel Info: Hyphen rules for 'australian' set to \l@ukenglish
+(babel)             (\language23). Reported on input line 105.
+Package babel Info: Hyphen rules for 'newzealand' set to \l@ukenglish
+(babel)             (\language23). Reported on input line 108.
+))
+(/usr/local/texlive/2024/texmf-dist/tex/generic/babel/locale/en/babel-english.t
+ex
+Package babel Info: Importing font and identification data for english
+(babel)             from babel-en.ini. Reported on input line 11.
+)
+(/usr/local/texlive/2024/texmf-dist/tex/generic/babel/locale/la/babel-latin.tex
+Package babel Info: Importing font and identification data for latin
+(babel)             from babel-la.ini. Reported on input line 9.
+)
+(/usr/local/texlive/2024/texmf-dist/tex/generic/babel/locale/el/babel-greek.tex
+Package babel Info: Importing font and identification data for greek
+(babel)             from babel-el.ini. Reported on input line 11.
+)
+\mccurrentbaselineskip=\skip82
+\mccurrentparskip=\skip83
+\mccurrentparindent=\skip84
+(/usr/local/texlive/2024/texmf-dist/tex/latex/framed/framed.sty
+Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
+\OuterFrameSep=\skip85
+\fb@frw=\dimen268
+\fb@frh=\dimen269
+\FrameRule=\dimen270
+\FrameSep=\dimen271
+) (/usr/local/texlive/2024/texmf-dist/tex/generic/soul/soul.sty
+Package: soul 2023-06-14 v3.1 Permit use of UTF-8 characters in soul (HO)
+(/usr/local/texlive/2024/texmf-dist/tex/generic/soul/soul-ori.sty
+Package: soul-ori 2023-06-14 v3.1 letterspacing/underlining (mf)
+\SOUL@word=\toks34
+\SOUL@lasttoken=\toks35
+\SOUL@syllable=\toks36
+\SOUL@cmds=\toks37
+\SOUL@buffer=\toks38
+\SOUL@token=\toks39
+\SOUL@syllgoal=\dimen272
+\SOUL@syllwidth=\dimen273
+\SOUL@charkern=\dimen274
+\SOUL@hyphkern=\dimen275
+\SOUL@dimen=\dimen276
+\SOUL@dimeni=\dimen277
+\SOUL@minus=\count329
+\SOUL@comma=\count330
+\SOUL@apo=\count331
+\SOUL@grave=\count332
+\SOUL@spaceskip=\skip86
+\SOUL@ttwidth=\dimen278
+\SOUL@uldp=\dimen279
+\SOUL@ulht=\dimen280
+) (/usr/local/texlive/2024/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+) (/usr/local/texlive/2024/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+))) (/usr/local/texlive/2024/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2024-11-05 v7.01l Hypertext links for LaTeX
+(/usr/local/texlive/2024/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+) (/usr/local/texlive/2024/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+) (/usr/local/texlive/2024/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+(/usr/local/texlive/2024/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+) (/usr/local/texlive/2024/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode not found.
+)) (/usr/local/texlive/2024/texmf-dist/tex/latex/hycolor/hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2023-11-26 v2.56 Cross-referencing by name of section
+(/usr/local/texlive/2024/texmf-dist/tex/latex/refcount/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+(/usr/local/texlive/2024/texmf-dist/tex/generic/gettitlestring/gettitlestring.s
+ty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+))
+\c@section@level=\count333
+) (/usr/local/texlive/2024/texmf-dist/tex/generic/stringenc/stringenc.sty
+Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
+)
+)
+\@linkdim=\dimen281
+\Hy@linkcounter=\count334
+\Hy@pagecounter=\count335
+(/usr/local/texlive/2024/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2024-11-05 v7.01l Hyperref: PDFDocEncoding definition (HO)
+) (/usr/local/texlive/2024/texmf-dist/tex/generic/intcalc/intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+\Hy@SavedSpaceFactor=\count336
+(/usr/local/texlive/2024/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2024-11-05 v7.01l Hyperref: PDF Unicode definition (HO)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/greek-fontenc/puenc-greek.def
+File: puenc-greek.def 2023-09-12 2.5 Greek LICRs for PDF strings
+(/usr/local/texlive/2024/texmf-dist/tex/latex/greek-fontenc/greek-fontenc.def
+File: greek-fontenc.def 2023-09-12 2.5 Common Greek font encoding definitions
+)))
+Package hyperref Info: Option `pdfpagelabels' set `true' on input line 4040.
+Package hyperref Info: Hyper figures OFF on input line 4157.
+Package hyperref Info: Link nesting OFF on input line 4162.
+Package hyperref Info: Hyper index ON on input line 4165.
+Package hyperref Info: Plain pages OFF on input line 4172.
+Package hyperref Info: Backreferencing OFF on input line 4177.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4424.
+\c@Hy@tempcnt=\count337
+(/usr/local/texlive/2024/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip20
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4763.
+\XeTeXLinkMargin=\dimen282
+(/usr/local/texlive/2024/texmf-dist/tex/generic/bitset/bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+(/usr/local/texlive/2024/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
+\Fld@menulength=\count338
+\Field@Width=\dimen283
+\Fld@charsize=\dimen284
+Package hyperref Info: Hyper figures OFF on input line 6042.
+Package hyperref Info: Link nesting OFF on input line 6047.
+Package hyperref Info: Hyper index ON on input line 6050.
+Package hyperref Info: backreferencing OFF on input line 6057.
+Package hyperref Info: Link coloring OFF on input line 6062.
+Package hyperref Info: Link coloring with OCG OFF on input line 6067.
+Package hyperref Info: PDF/A mode OFF on input line 6072.
+(/usr/local/texlive/2024/texmf-dist/tex/latex/base/atbegshi-ltx.sty
+Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
+package with kernel methods
+)
+\Hy@abspage=\count339
+\c@Item=\count340
+\c@Hfootnote=\count341
+)
+Package hyperref Info: Driver (autodetected): hxetex.
+(/usr/local/texlive/2024/texmf-dist/tex/latex/hyperref/hxetex.def
+File: hxetex.def 2024-11-05 v7.01l Hyperref driver for XeTeX
+\pdfm@box=\box118
+\c@Hy@AnnotLevel=\count342
+\HyField@AnnotCount=\count343
+\Fld@listcount=\count344
+\c@bookmark@seq@number=\count345
+
+(/usr/local/texlive/2024/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/base/atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
+kage
+with kernel methods
+)
+(/usr/local/texlive/2024/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+85.
+)
+\Hy@SectionHShift=\skip87
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/xurl/xurl.sty
+Package: xurl 2022/01/09 v 0.10 modify URL breaks
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 51.
+Package hyperref Info: Option `linktocpage' set `true' on input line 51.
+(/usr/local/texlive/2024/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count346
+\float@exts=\toks40
+\float@box=\box119
+\@float@everytoks=\toks41
+\@floatcapt=\box120
+) (/usr/local/texlive/2024/texmf-dist/tex/generic/ulem/ulem.sty
+\UL@box=\box121
+\UL@hyphenbox=\box122
+\UL@skip=\skip88
+\UL@hook=\toks42
+\UL@height=\dimen285
+\UL@pe=\count347
+\UL@pixel=\dimen286
+\ULC@box=\box123
+Package: ulem 2019/11/18
+\ULdepth=\dimen287
+) (/usr/local/texlive/2024/texmf-dist/tex/generic/soul/soulutf8.sty
+Package: soulutf8 2023-06-14 v3.1 Permit use of UTF-8 characters in soul (HO)
+
+Package soulutf8 Warning: This package is obsolete,
+(soulutf8)                use the soul package directly. 
+(soulutf8)                 on input line 29.
+
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/wrapfig/wrapfig.sty
+\wrapoverhang=\dimen288
+\WF@size=\dimen289
+\c@WF@wrappedlines=\count348
+\WF@box=\box124
+\WF@everypar=\toks43
+Package: wrapfig 2003/01/31  v 3.6
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/colortbl/colortbl.sty
+Package: colortbl 2024/07/06 v1.0i Color table columns (DPC)
+\everycr=\toks44
+\minrowclearance=\skip89
+\rownum=\count349
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/pdflscape/pdflscape.sty
+Package: pdflscape 2022-10-27 v0.13 Display of landscape pages in PDF
+
+(/usr/local/texlive/2024/texmf-dist/tex/latex/pdflscape/pdflscape-nometadata.st
+y
+Package: pdflscape-nometadata 2022-10-28 v0.13 Display of landscape pages in PD
+F (HO)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/lscape.sty
+Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: dvipdfm (xetex) on input line 98.
+
+)) (/usr/local/texlive/2024/texmf-dist/tex/latex/tabu/tabu.sty
+Package: tabu 2019/01/11 v2.9 - flexible LaTeX tabulars (FC+tabu-fixed)
+\c@taburow=\count350
+\tabu@nbcols=\count351
+\tabu@cnt=\count352
+\tabu@Xcol=\count353
+\tabu@alloc=\count354
+\tabu@nested=\count355
+\tabu@target=\dimen290
+\tabu@spreadtarget=\dimen291
+\tabu@naturalX=\dimen292
+\tabucolX=\dimen293
+\tabu@Xsum=\dimen294
+\extrarowdepth=\dimen295
+\abovetabulinesep=\dimen296
+\belowtabulinesep=\dimen297
+\tabustrutrule=\dimen298
+\tabu@thebody=\toks45
+\tabu@footnotes=\toks46
+\tabu@box=\box125
+\tabu@arstrutbox=\box126
+\tabu@hleads=\box127
+\tabu@vleads=\box128
+\tabu@cellskip=\skip90
+)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/threeparttable/threeparttable.sty
+Package: threeparttable 2003/06/13  v 3.0
+\@tempboxb=\box129
+)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/threeparttablex/threeparttablex.s
+ty
+Package: threeparttablex 2013/07/23 v0.3 by daleif
+(/usr/local/texlive/2024/texmf-dist/tex/latex/environ/environ.sty
+Package: environ 2014/05/04 v0.3 A new way to define environments
+(/usr/local/texlive/2024/texmf-dist/tex/latex/trimspaces/trimspaces.sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+))
+\TPTL@width=\skip91
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/makecell/makecell.sty
+Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
+\rotheadsize=\dimen299
+\c@nlinenum=\count356
+\TeXr@lab=\toks47
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/fontspec/fontspec.sty (/usr/loc
+al/texlive/2024/texmf-dist/tex/latex/l3packages/xparse/xparse.sty (/usr/local/t
+exlive/2024/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2024-12-25 L3 programming layer (loader) 
+(/usr/local/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
+File: l3backend-xetex.def 2024-05-08 L3 backend support: XeTeX
+\g__graphics_track_int=\count357
+\l__pdf_internal_box=\box130
+\g__pdf_backend_annotation_int=\count358
+\g__pdf_backend_link_int=\count359
+))
+Package: xparse 2024-08-16 L3 Experimental document command parser
+)
+Package: fontspec 2024/05/11 v2.9e Font selection for XeLaTeX and LuaLaTeX
+(/usr/local/texlive/2024/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
+Package: fontspec-xetex 2024/05/11 v2.9e Font selection for XeLaTeX and LuaLaTe
+X
+\l__fontspec_script_int=\count360
+\l__fontspec_language_int=\count361
+\l__fontspec_strnum_int=\count362
+\l__fontspec_tmp_int=\count363
+\l__fontspec_tmpa_int=\count364
+\l__fontspec_tmpb_int=\count365
+\l__fontspec_tmpc_int=\count366
+\l__fontspec_em_int=\count367
+\l__fontspec_emdef_int=\count368
+\l__fontspec_strong_int=\count369
+\l__fontspec_strongdef_int=\count370
+\l__fontspec_tmpa_dim=\dimen300
+\l__fontspec_tmpb_dim=\dimen301
+\l__fontspec_tmpc_dim=\dimen302
+(/usr/local/texlive/2024/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/fontspec/fontspec.cfg))) (/usr/
+local/texlive/2024/texmf-dist/tex/latex/tools/hhline.sty
+Package: hhline 2020/01/04 v2.04 Table rule package (DPC)
+)
+\Oldarrayrulewidth=\skip92
+\Oldtabcolsep=\skip93
+(/usr/local/texlive/2024/texmf-dist/tex/latex/titlesec/titlesec.sty
+Package: titlesec 2025/01/04 v2.17 Sectioning titles
+\ttl@box=\box131
+\beforetitleunit=\skip94
+\aftertitleunit=\skip95
+\ttl@plus=\dimen303
+\ttl@minus=\dimen304
+\ttl@toksa=\toks48
+\titlewidth=\dimen305
+\titlewidthlast=\dimen306
+\titlewidthfirst=\dimen307
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+Package: fancyhdr 2025/01/06 v5.1 Extensive control of page headers and footers
+
+\f@nch@headwidth=\skip96
+\f@nch@offset@elh=\skip97
+\f@nch@offset@erh=\skip98
+\f@nch@offset@olh=\skip99
+\f@nch@offset@orh=\skip100
+\f@nch@offset@elf=\skip101
+\f@nch@offset@erf=\skip102
+\f@nch@offset@olf=\skip103
+\f@nch@offset@orf=\skip104
+\f@nch@height=\skip105
+\f@nch@footalignment=\skip106
+\f@nch@widthL=\skip107
+\f@nch@widthC=\skip108
+\f@nch@widthR=\skip109
+\@temptokenb=\toks49
+)
+
+Package fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+less.
+(fancyhdr)                Please consider using the `twoside' option on input l
+ine 133.
+
+(/usr/local/texlive/2024/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+Package: fancyvrb 2024/01/20 4.5c verbatim text (tvz,hv)
+\FV@CodeLineNo=\count371
+\FV@InFile=\read3
+\FV@TabBox=\box132
+\c@FancyVerbLine=\count372
+\FV@StepNumber=\count373
+\FV@OutFile=\write4
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/fvextra/fvextra.sty
+Package: fvextra 2024/11/17 v1.10.0 fvextra - extensions and patches for fancyv
+rb
+(/usr/local/texlive/2024/texmf-dist/tex/latex/upquote/upquote.sty
+Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
+tim
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/lineno/lineno.sty
+Package: lineno 2023/05/20 line numbers on paragraphs v5.3
+Invalid UTF-8 byte or sequence at line 292 replaced by U+FFFD.
+\linenopenalty=\count374
+\output=\toks50
+\linenoprevgraf=\count375
+\linenumbersep=\dimen308
+\linenumberwidth=\dimen309
+\c@linenumber=\count376
+\c@pagewiselinenumber=\count377
+\c@LN@truepage=\count378
+\c@internallinenumber=\count379
+\c@internallinenumbers=\count380
+\quotelinenumbersep=\dimen310
+\bframerule=\dimen311
+\bframesep=\dimen312
+\bframebox=\box133
+\linenoamsmath@ams@eqpen=\count381
+LaTeX Info: Redefining \\ on input line 3180.
+)
+\c@FancyVerbWriteLine=\count382
+\c@FancyVerbBufferLine=\count383
+\c@FV@TrueTabGroupLevel=\count384
+\c@FV@TrueTabCounter=\count385
+\FV@TabBox@Group=\box134
+\FV@TmpLength=\skip110
+\c@FV@HighlightLinesStart=\count386
+\c@FV@HighlightLinesStop=\count387
+\FV@LoopCount=\count388
+\FV@NCharsBox=\box135
+\FV@BreakIndent=\dimen313
+\FV@BreakIndentNChars=\count389
+\FV@BreakSymbolSepLeft=\dimen314
+\FV@BreakSymbolSepLeftNChars=\count390
+\FV@BreakSymbolSepRight=\dimen315
+\FV@BreakSymbolSepRightNChars=\count391
+\FV@BreakSymbolIndentLeft=\dimen316
+\FV@BreakSymbolIndentLeftNChars=\count392
+\FV@BreakSymbolIndentRight=\dimen317
+\FV@BreakSymbolIndentRightNChars=\count393
+\c@FancyVerbLineBreakLast=\count394
+\FV@LineBox=\box136
+\FV@LineIndentBox=\box137
+\c@FV@BreakBufferDepth=\count395
+\FV@LineWidth=\dimen318
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/csquotes/csquotes.sty
+Package: csquotes 2024-04-04 v5.2o context-sensitive quotations (JAW)
+\csq@reset=\count396
+\csq@gtype=\count397
+\csq@glevel=\count398
+\csq@qlevel=\count399
+\csq@maxlvl=\count400
+\csq@tshold=\count401
+\csq@ltx@everypar=\toks51
+(/usr/local/texlive/2024/texmf-dist/tex/latex/csquotes/csquotes.def
+File: csquotes.def 2024-04-04 v5.2o csquotes generic definitions (JAW)
+)
+Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
+Package csquotes Info: ... configuration file loaded successfully.
+(/usr/local/texlive/2024/texmf-dist/tex/latex/csquotes/csquotes.cfg
+File: csquotes.cfg 
+)) (/usr/local/texlive/2024/texmf-dist/tex/latex/biblatex/biblatex.sty
+Package: biblatex 2024/03/21 v3.20 programmable bibliographies (PK/MW)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/logreq/logreq.sty
+Package: logreq 2010/08/04 v1.0 xml request logger
+\lrq@indent=\count402
+(/usr/local/texlive/2024/texmf-dist/tex/latex/logreq/logreq.def
+File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
+))
+\c@tabx@nest=\count403
+\c@listtotal=\count404
+\c@listcount=\count405
+\c@liststart=\count406
+\c@liststop=\count407
+\c@citecount=\count408
+\c@citetotal=\count409
+\c@multicitecount=\count410
+\c@multicitetotal=\count411
+\c@instcount=\count412
+\c@maxnames=\count413
+\c@minnames=\count414
+\c@maxitems=\count415
+\c@minitems=\count416
+\c@citecounter=\count417
+\c@maxcitecounter=\count418
+\c@savedcitecounter=\count419
+\c@uniquelist=\count420
+\c@uniquename=\count421
+\c@refsection=\count422
+\c@refsegment=\count423
+\c@maxextratitle=\count424
+\c@maxextratitleyear=\count425
+\c@maxextraname=\count426
+\c@maxextradate=\count427
+\c@maxextraalpha=\count428
+\c@abbrvpenalty=\count429
+\c@highnamepenalty=\count430
+\c@lownamepenalty=\count431
+\c@maxparens=\count432
+\c@parenlevel=\count433
+\blx@tempcnta=\count434
+\blx@tempcntb=\count435
+\blx@tempcntc=\count436
+\c@blx@maxsection=\count437
+\blx@maxsegment@0=\count438
+\blx@notetype=\count439
+\blx@parenlevel@text=\count440
+\blx@parenlevel@foot=\count441
+\blx@sectionciteorder@0=\count442
+\blx@sectionciteorderinternal@0=\count443
+\blx@entrysetcounter=\count444
+\blx@biblioinstance=\count445
+\labelnumberwidth=\skip111
+\labelalphawidth=\skip112
+\biblabelsep=\skip113
+\bibitemsep=\skip114
+\bibnamesep=\skip115
+\bibinitsep=\skip116
+\bibparsep=\skip117
+\bibhang=\skip118
+\blx@bcfin=\read4
+\blx@bcfout=\write5
+\blx@langwohyphens=\language90
+\c@mincomprange=\count446
+\c@maxcomprange=\count447
+\c@mincompwidth=\count448
+Package biblatex Info: Trying to load biblatex default data model...
+Package biblatex Info: ... file 'blx-dm.def' found.
+(/usr/local/texlive/2024/texmf-dist/tex/latex/biblatex/blx-dm.def
+File: blx-dm.def 2024/03/21 v3.20 biblatex datamodel (PK/MW)
+)
+Package biblatex Info: Trying to load biblatex style data model...
+Package biblatex Info: ... file 'authoryear.dbx' not found.
+Package biblatex Info: Trying to load biblatex custom data model...
+Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
+\c@afterword=\count449
+\c@savedafterword=\count450
+\c@annotator=\count451
+\c@savedannotator=\count452
+\c@author=\count453
+\c@savedauthor=\count454
+\c@bookauthor=\count455
+\c@savedbookauthor=\count456
+\c@commentator=\count457
+\c@savedcommentator=\count458
+\c@editor=\count459
+\c@savededitor=\count460
+\c@editora=\count461
+\c@savededitora=\count462
+\c@editorb=\count463
+\c@savededitorb=\count464
+\c@editorc=\count465
+\c@savededitorc=\count466
+\c@foreword=\count467
+\c@savedforeword=\count468
+\c@holder=\count469
+\c@savedholder=\count470
+\c@introduction=\count471
+\c@savedintroduction=\count472
+\c@namea=\count473
+\c@savednamea=\count474
+\c@nameb=\count475
+\c@savednameb=\count476
+\c@namec=\count477
+\c@savednamec=\count478
+\c@translator=\count479
+\c@savedtranslator=\count480
+\c@shortauthor=\count481
+\c@savedshortauthor=\count482
+\c@shorteditor=\count483
+\c@savedshorteditor=\count484
+\c@labelname=\count485
+\c@savedlabelname=\count486
+\c@institution=\count487
+\c@savedinstitution=\count488
+\c@lista=\count489
+\c@savedlista=\count490
+\c@listb=\count491
+\c@savedlistb=\count492
+\c@listc=\count493
+\c@savedlistc=\count494
+\c@listd=\count495
+\c@savedlistd=\count496
+\c@liste=\count497
+\c@savedliste=\count498
+\c@listf=\count499
+\c@savedlistf=\count500
+\c@location=\count501
+\c@savedlocation=\count502
+\c@organization=\count503
+\c@savedorganization=\count504
+\c@origlocation=\count505
+\c@savedoriglocation=\count506
+\c@origpublisher=\count507
+\c@savedorigpublisher=\count508
+\c@publisher=\count509
+\c@savedpublisher=\count510
+\c@language=\count511
+\c@savedlanguage=\count512
+\c@origlanguage=\count513
+\c@savedoriglanguage=\count514
+\c@pageref=\count515
+\c@savedpageref=\count516
+\shorthandwidth=\skip119
+\shortjournalwidth=\skip120
+\shortserieswidth=\skip121
+\shorttitlewidth=\skip122
+\shortauthorwidth=\skip123
+\shorteditorwidth=\skip124
+\locallabelnumberwidth=\skip125
+\locallabelalphawidth=\skip126
+\localshorthandwidth=\skip127
+\localshortjournalwidth=\skip128
+\localshortserieswidth=\skip129
+\localshorttitlewidth=\skip130
+\localshortauthorwidth=\skip131
+\localshorteditorwidth=\skip132
+Package biblatex Info: Trying to load enhanced support for Unicode engines...
+Package biblatex Info: ... file 'blx-unicode.def' found.
+(/usr/local/texlive/2024/texmf-dist/tex/latex/biblatex/blx-unicode.def)
+Package biblatex Info: Trying to load compatibility code...
+Package biblatex Info: ... file 'blx-compat.def' found.
+(/usr/local/texlive/2024/texmf-dist/tex/latex/biblatex/blx-compat.def
+File: blx-compat.def 2024/03/21 v3.20 biblatex compatibility (PK/MW)
+)
+Package biblatex Info: Trying to load generic definitions...
+Package biblatex Info: ... file 'biblatex.def' found.
+(/usr/local/texlive/2024/texmf-dist/tex/latex/biblatex/biblatex.def
+File: biblatex.def 2024/03/21 v3.20 biblatex compatibility (PK/MW)
+\c@textcitecount=\count517
+\c@textcitetotal=\count518
+\c@textcitemaxnames=\count519
+\c@biburlbigbreakpenalty=\count520
+\c@biburlbreakpenalty=\count521
+\c@biburlnumpenalty=\count522
+\c@biburlucpenalty=\count523
+\c@biburllcpenalty=\count524
+\biburlbigskip=\muskip21
+\biburlnumskip=\muskip22
+\biburlucskip=\muskip23
+\biburllcskip=\muskip24
+\c@smartand=\count525
+)
+Package biblatex Info: Trying to load bibliography style 'authoryear'...
+Package biblatex Info: ... file 'authoryear.bbx' found.
+(/usr/local/texlive/2024/texmf-dist/tex/latex/biblatex/bbx/authoryear.bbx
+File: authoryear.bbx 2024/03/21 v3.20 biblatex bibliography style (PK/MW)
+Package biblatex Info: Trying to load bibliography style 'standard'...
+Package biblatex Info: ... file 'standard.bbx' found.
+(/usr/local/texlive/2024/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
+File: standard.bbx 2024/03/21 v3.20 biblatex bibliography style (PK/MW)
+\c@bbx:relatedcount=\count526
+\c@bbx:relatedtotal=\count527
+))
+Package biblatex Info: Trying to load citation style 'authoryear'...
+Package biblatex Info: ... file 'authoryear.cbx' found.
+(/usr/local/texlive/2024/texmf-dist/tex/latex/biblatex/cbx/authoryear.cbx
+File: authoryear.cbx 2024/03/21 v3.20 biblatex citation style (PK/MW)
+Package biblatex Info: Redefining '\cite'.
+Package biblatex Info: Redefining '\parencite'.
+Package biblatex Info: Redefining '\footcite'.
+Package biblatex Info: Redefining '\footcitetext'.
+Package biblatex Info: Redefining '\smartcite'.
+Package biblatex Info: Redefining '\textcite'.
+Package biblatex Info: Redefining '\textcites'.
+)
+Package biblatex Info: Trying to load configuration file...
+Package biblatex Info: ... file 'biblatex.cfg' found.
+(/usr/local/texlive/2024/texmf-dist/tex/latex/biblatex/biblatex.cfg
+File: biblatex.cfg 
+)
+Package biblatex Info: XeTeX detected.
+(biblatex)             Assuming input encoding 'utf8'.
+Package biblatex Info: Document encoding is UTF8 ....
+Package biblatex Info: ... and expl3
+(biblatex)             2024-12-25 L3 programming layer (loader) 
+(biblatex)             is new enough (at least 2020/04/06),
+(biblatex)             setting 'casechanger=expl3'.
+(/usr/local/texlive/2024/texmf-dist/tex/latex/biblatex/blx-case-expl3.sty
+Package: blx-case-expl3 2024/03/21 v3.20 expl3 case changing code for biblatex
+))
+Package csquotes Info: Checking for multilingual support...
+Package csquotes Info: ... found 'babel' package.
+Package csquotes Info: Adjusting default style.
+Package csquotes Info: Redefining alias 'default' -> 'english'.
+No file _main.aux.
+\openout1 = `_main.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 215.
+LaTeX Font Info:    ... okay on input line 215.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 215.
+LaTeX Font Info:    ... okay on input line 215.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 215.
+LaTeX Font Info:    ... okay on input line 215.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 215.
+LaTeX Font Info:    ... okay on input line 215.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 215.
+LaTeX Font Info:    ... okay on input line 215.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 215.
+LaTeX Font Info:    ... okay on input line 215.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 215.
+LaTeX Font Info:    ... okay on input line 215.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 215.
+LaTeX Font Info:    ... okay on input line 215.
+LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 215.
+LaTeX Font Info:    Trying to load font information for LGR+cmr on input line 2
+15.
+(/usr/local/texlive/2024/texmf-dist/tex/latex/cbfonts-fd/lgrcmr.fd
+File: lgrcmr.fd 2017/07/29 v1.2 Greek European Computer Regular
+)
+LaTeX Font Info:    ... okay on input line 215.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 215.
+LaTeX Font Info:    ... okay on input line 215.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 215.
+LaTeX Font Info:    ... okay on input line 215.
+*geometry* driver: auto-detecting
+*geometry* detected driver: xetex
+*geometry* verbose mode - [ preamble ] result:
+* driver: xetex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: includehead 
+* h-part:(L,W,R)=(88.2037pt, 421.10046pt, 88.2037pt)
+* v-part:(T,H,B)=(71.13188pt, 697.09262pt, 76.82234pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=421.10046pt
+* \textheight=662.33034pt
+* \oddsidemargin=15.93372pt
+* \evensidemargin=15.93372pt
+* \topmargin=-1.1381pt
+* \headheight=15.0pt
+* \headsep=22.76228pt
+* \topskip=12.0pt
+* \footskip=34.14322pt
+* \marginparwidth=44.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+Package microtype Info: Patching varwidth to enable character protrusion.
+\MT@vwid@leftmargin=\dimen319
+\MT@vwid@rightmargin=\dimen320
+LaTeX Info: Redefining \microtypecontext on input line 215.
+Package microtype Info: Applying patch `item' on input line 215.
+Package microtype Info: Applying patch `toc' on input line 215.
+Package microtype Info: Applying patch `eqnum' on input line 215.
+Package microtype Info: Applying patch `footnote' on input line 215.
+Package microtype Info: Applying patch `verbatim' on input line 215.
+LaTeX Info: Redefining \microtypesetup on input line 215.
+Package microtype Info: Character protrusion enabled (level 2).
+Package microtype Info: Using default protrusion set `alltext'.
+Package microtype Info: No adjustment of tracking.
+Package microtype Info: No adjustment of spacing.
+Package microtype Info: No adjustment of kerning.
+
+(/usr/local/texlive/2024/texmf-dist/tex/latex/microtype/mt-LatinModernRoman.cfg
+File: mt-LatinModernRoman.cfg 2021/02/21 v1.1 microtype config. file: Latin Mod
+ern Roman (RS)
+)
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
+Package caption Info: hyperref package is loaded.
+Package caption Info: rotating package is loaded.
+Package caption Info: threeparttable package is loaded.
+Package caption Info: wrapfig package is loaded.
+Package caption Info: End \AtBeginDocument code.
+Package hyperref Info: Link coloring ON on input line 215.
+\@outlinefile=\write6
+\openout6 = `_main.out'.
+
+
+Package hyperref Warning: Rerun to get /PageLabels entry.
+
+Package biblatex Info: Trying to load language 'english'...
+Package biblatex Info: ... file 'english.lbx' found.
+(/usr/local/texlive/2024/texmf-dist/tex/latex/biblatex/lbx/english.lbx
+File: english.lbx 2024/03/21 v3.20 biblatex localization (PK/MW)
+)
+Package biblatex Info: Trying to load language 'latin'...
+Package biblatex Info: ... file 'latin.lbx' not found.
+
+Package biblatex Warning: Language 'latin' not supported.
+(biblatex)                Using dummy definitions on input line 215.
+
+Package biblatex Info: Trying to load language 'greek'...
+Package biblatex Info: ... file 'greek.lbx' found.
+(/usr/local/texlive/2024/texmf-dist/tex/latex/biblatex/lbx/greek.lbx
+File: greek.lbx 2024/03/21 v3.20 biblatex localization (PK/MW)
+)
+Package biblatex Info: XeTeX detected.
+(biblatex)             Assuming input encoding 'utf8'.
+Package biblatex Info: Automatic encoding selection.
+(biblatex)             Assuming data encoding 'utf8'.
+\openout5 = `_main.bcf'.
+
+Package biblatex Info: Trying to load bibliographic data...
+Package biblatex Info: ... file '_main.bbl' not found.
+No file _main.bbl.
+Package biblatex Info: Reference section=0 on input line 215.
+Package biblatex Info: Reference segment=0 on input line 215.
+File: templates/beltcrest.pdf Graphic file (type pdf)
+<use templates/beltcrest.pdf>
+
+
+[1
+
+
+
+]
+
+[2
+
+]
+LaTeX Font Info:    Trying to load font information for TU+put on input line 28
+0.
+LaTeX Font Info:    No file TUput.fd. on input line 280.
+
+LaTeX Font Warning: Font shape `TU/put/b/n' undefined
+(Font)              using `TU/lmr/m/n' instead on input line 280.
+
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `put' (encoding: TU).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+
+
+[3
+
+
+]
+
+[4]
+
+[5
+
+
+]
+
+Package minitoc Warning: W0010
+(minitoc)                No file _main.toc. 
+(minitoc)                MINITOCS NOT PREPARED on input line 322.
+
+No file _main.toc.
+\tf@toc=\write7
+\openout7 = `_main.toc'.
+
+
+
+[6
+
+]
+No file _main.lof.
+\tf@lof=\write8
+\openout8 = `_main.lof'.
+
+
+
+[7
+
+]
+No file _main.lot.
+\tf@lot=\write9
+\openout9 = `_main.lot'.
+
+
+
+[8
+
+]
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 3
+44.
+(/usr/local/texlive/2024/texmf-dist/tex/latex/lm/ot1lmr.fd
+File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `lmr' (encoding: OT1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 3
+44.
+(/usr/local/texlive/2024/texmf-dist/tex/latex/lm/omllmm.fd
+File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
+344.
+(/usr/local/texlive/2024/texmf-dist/tex/latex/lm/omslmsy.fd
+File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
+344.
+(/usr/local/texlive/2024/texmf-dist/tex/latex/lm/omxlmex.fd
+File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12> on input line 344.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 344.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 344.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 344
+.
+(/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/microtype/mt-msa.cfg
+File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 344
+.
+(/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/microtype/mt-msb.cfg
+File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
+)
+
+[9
+
+]
+
+Package hyperref Warning: The anchor of a bookmark and its parent's must not
+(hyperref)                be the same. Added a new anchor on input line 430.
+
+
+LaTeX Warning: Citation 'jonassen_instructional_1997' on page 1 undefined on in
+put line 445.
+
+
+LaTeX Warning: Citation 'van_den_berge_cognitive_2013' on page 1 undefined on i
+nput line 445.
+
+
+LaTeX Warning: Citation 'norman_etiology_2014' on page 1 undefined on input lin
+e 445.
+
+
+LaTeX Warning: Citation 'restrepo_annals_2020' on page 1 undefined on input lin
+e 445.
+
+
+
+[1
+
+
+]
+
+LaTeX Warning: Citation 'fenwick_medical_1891' on page 2 undefined on input lin
+e 448.
+
+
+LaTeX Warning: Citation 'hsib_investigation_2021' on page 2 undefined on input 
+line 448.
+
+
+LaTeX Warning: Citation 'hsib_investigation_2022' on page 2 undefined on input 
+line 448.
+
+
+Overfull \hbox (68.81956pt too wide) in paragraph at lines 447--449
+\TU/lmr/m/n/12 from another and trace symptoms to causes from which they spring
+” ([]).
+ []
+
+
+LaTeX Warning: Citation 'bhise_errors_2017' on page 2 undefined on input line 4
+51.
+
+
+LaTeX Warning: Citation 'kohn_errors_2000' on page 2 undefined on input line 45
+1.
+
+
+LaTeX Warning: Citation 'baker_canadian_2004' on page 2 undefined on input line
+ 451.
+
+
+LaTeX Warning: Citation 'wilson_analysis_1999' on page 2 undefined on input lin
+e 451.
+
+
+
+[2]
+
+LaTeX Warning: Citation 'schiff_diagnostic_2009' on page 3 undefined on input l
+ine 454.
+
+
+LaTeX Warning: Citation 'thammasitboon_diagnostic_2013' on page 3 undefined on 
+input line 454.
+
+
+LaTeX Warning: Citation 'hautz_diagnostic_2019' on page 3 undefined on input li
+ne 454.
+
+
+LaTeX Warning: Citation 'berwick_eliminating_2012' on page 3 undefined on input
+ line 454.
+
+
+LaTeX Warning: Citation 'carpenter_overtesting_2015' on page 3 undefined on inp
+ut line 454.
+
+
+LaTeX Warning: Citation 'salem-schatz_influence_1990' on page 3 undefined on in
+put line 454.
+
+
+Overfull \hbox (25.53958pt too wide) in paragraph at lines 453--455
+\TU/lmr/m/n/12 larly the clinician’s failure to weigh up competing diagnoses ([
+]).
+ []
+
+
+Overfull \hbox (151.9689pt too wide) in paragraph at lines 453--455
+\TU/lmr/m/n/12 when they may not be medically necessary ([]). []
+ []
+
+
+
+[3]
+
+LaTeX Warning: Citation 'yates_physician_2020' on page 4 undefined on input lin
+e 457.
+
+
+LaTeX Warning: Citation 'kahneman_thinking_2011' on page 4 undefined on input l
+ine 462.
+
+
+LaTeX Warning: Citation 'saetrevik_anchoring_2020' on page 4 undefined on input
+ line 462.
+
+
+LaTeX Warning: Citation 'chapman_order_1996' on page 4 undefined on input line 
+462.
+
+
+LaTeX Warning: Citation 'baron_outcome_1988' on page 4 undefined on input line 
+462.
+
+
+LaTeX Warning: Citation 'aiyer_outcomes_2023' on page 4 undefined on input line
+ 462.
+
+
+LaTeX Warning: Citation 'tarrant_social_2012' on page 4 undefined on input line
+ 462.
+
+
+Overfull \hbox (8.96039pt too wide) in paragraph at lines 462--463
+\TU/lmr/m/n/12 pending on whether they arrive earlier (primacy bias, [])
+ []
+
+
+Overfull \hbox (73.27907pt too wide) in paragraph at lines 462--463
+\TU/lmr/m/n/12 than failure ceteris paribus (outcome bias, ([]; []))
+ []
+
+
+
+[4]
+
+LaTeX Warning: Citation 'croskerry_clinical_2009' on page 5 undefined on input 
+line 465.
+
+
+LaTeX Warning: Citation 'featherston_decision_2020' on page 5 undefined on inpu
+t line 465.
+
+
+LaTeX Warning: Citation 'croskerry_deciding_2014' on page 5 undefined on input 
+line 465.
+
+
+LaTeX Warning: Citation 'croskerry_mindless_2013' on page 5 undefined on input 
+line 465.
+
+
+LaTeX Warning: Citation 'royce_teaching_2019' on page 5 undefined on input line
+ 465.
+
+
+LaTeX Warning: Citation 'gigerenzer_why_2008' on page 5 undefined on input line
+ 465.
+
+
+Overfull \hbox (110.69162pt too wide) in paragraph at lines 464--466
+\TU/lmr/m/n/12 studies in the allied health professions found evidence of a cog
+nitive bias ([]).
+ []
+
+
+Overfull \hbox (30.97556pt too wide) in paragraph at lines 464--466
+\TU/lmr/m/n/12 tion would reduce diagnostic errors and improve patient safety (
+[]).
+ []
+
+
+
+[5]
+
+LaTeX Warning: Citation 'restrepo_annals_2020' on page 6 undefined on input lin
+e 468.
+
+
+LaTeX Warning: Citation 'van_den_berge_cognitive_2013' on page 6 undefined on i
+nput line 468.
+
+
+LaTeX Warning: Citation 'crowley_automated_2013' on page 6 undefined on input l
+ine 468.
+
+
+LaTeX Warning: Citation 'groopman_how_2010' on page 6 undefined on input line 4
+68.
+
+
+Overfull \hbox (3.93558pt too wide) in paragraph at lines 467--469
+\TU/lmr/m/n/12 based on case studies and compelling anecdotal evidence ([]).
+ []
+
+
+
+[6]
+
+LaTeX Warning: Citation 'oeberst_toward_2023' on page 7 undefined on input line
+ 471.
+
+
+LaTeX Warning: Citation 'nickerson_how_1999' on page 7 undefined on input line 
+471.
+
+
+LaTeX Warning: Citation 'robbins_social_2005' on page 7 undefined on input line
+ 471.
+
+
+LaTeX Warning: Citation 'mullen_self-serving_1988' on page 7 undefined on input
+ line 471.
+
+
+LaTeX Warning: Citation 'alicke_better-than-average_2005' on page 7 undefined o
+n input line 471.
+
+
+Overfull \hbox (51.74573pt too wide) in paragraph at lines 470--472
+\TU/lmr/m/n/12 fined. In an attempt to condense the large number of defined bia
+ses, []
+ []
+
+
+Overfull \hbox (75.33638pt too wide) in paragraph at lines 470--472
+\TU/lmr/m/n/12 and the tendency to judge others as similar to oneself (social p
+rojection, ([]))
+ []
+
+
+LaTeX Warning: Citation 'berner_overconfidence_2008' on page 7 undefined on inp
+ut line 474.
+
+
+LaTeX Warning: Citation 'meyer_physicians_2013' on page 7 undefined on input li
+ne 474.
+
+
+Overfull \hbox (45.93956pt too wide) in paragraph at lines 473--475
+\TU/lmr/m/n/12 aforementioned decision making biases) is overconfidence ([];
+ []
+
+
+
+[7]
+
+LaTeX Warning: Citation 'fleming_self-evaluation_2017' on page 8 undefined on i
+nput line 479.
+
+
+LaTeX Warning: Citation 'shea_supra-personal_2014' on page 8 undefined on input
+ line 479.
+
+
+LaTeX Warning: Citation 'henmon_relation_1911' on page 8 undefined on input lin
+e 479.
+
+
+LaTeX Warning: Citation 'rabbitt_three_1968' on page 8 undefined on input line 
+479.
+
+
+LaTeX Warning: Citation 'zarnoth_social_1997' on page 8 undefined on input line
+ 479.
+
+
+LaTeX Warning: Citation 'cheng_social_2021' on page 8 undefined on input line 4
+79.
+
+
+LaTeX Warning: Citation 'cutler_eyewitness_1989' on page 8 undefined on input l
+ine 479.
+
+
+LaTeX Warning: Citation 'roediger_iii_curious_2012' on page 8 undefined on inpu
+t line 479.
+
+
+LaTeX Warning: Citation 'ais_individual_2016' on page 8 undefined on input line
+ 479.
+
+
+LaTeX Warning: Citation 'vickers_effects_1982' on page 8 undefined on input lin
+e 479.
+
+
+LaTeX Warning: Citation 'charles_dynamic_2019' on page 8 undefined on input lin
+e 479.
+
+
+LaTeX Warning: Citation 'nickerson_confirmation_1998' on page 8 undefined on in
+put line 479.
+
+
+
+[8]
+
+LaTeX Warning: Citation 'price_intuitive_2004' on page 9 undefined on input lin
+e 482.
+
+
+LaTeX Warning: Citation 'boldt_shared_2015' on page 9 undefined on input line 4
+85.
+
+
+LaTeX Warning: Citation 'xue_challenging_2023' on page 9 undefined on input lin
+e 485.
+
+
+LaTeX Warning: Citation 'kiani_choice_2014' on page 9 undefined on input line 4
+85.
+
+
+LaTeX Warning: Citation 'rouault_psychiatric_2018' on page 9 undefined on input
+ line 485.
+
+
+LaTeX Warning: Citation 'schaefer_overconfidence_2004' on page 9 undefined on i
+nput line 485.
+
+
+LaTeX Warning: Citation 'syzmanowicz_gender_2011' on page 9 undefined on input 
+line 485.
+
+
+LaTeX Warning: Citation 'see_detrimental_2011' on page 9 undefined on input lin
+e 485.
+
+
+LaTeX Warning: Citation 'mata_metacognitive_2013' on page 9 undefined on input 
+line 485.
+
+
+LaTeX Warning: Citation 'koriat_reasons_1980' on page 9 undefined on input line
+ 485.
+
+
+LaTeX Warning: Citation 'scherer_trust_2015' on page 9 undefined on input line 
+485.
+
+
+LaTeX Warning: Citation 'desender_subjective_2018' on page 9 undefined on input
+ line 485.
+
+
+LaTeX Warning: Citation 'rouault_forming_2019' on page 9 undefined on input lin
+e 485.
+
+
+LaTeX Warning: Citation 'kruger_unskilled_1999' on page 9 undefined on input li
+ne 485.
+
+
+LaTeX Warning: Citation 'zarnoth_social_1997' on page 9 undefined on input line
+ 485.
+
+
+LaTeX Warning: Citation 'silver_wise_2021' on page 9 undefined on input line 48
+5.
+
+
+Overfull \hbox (29.94035pt too wide) in paragraph at lines 484--486
+\TU/lmr/m/n/12 mood ([]), personality ([]),
+ []
+
+
+
+[9]
+
+[10]
+File: ./assets/confidenceCalibration.png Graphic file (type bmp)
+<./assets/confidenceCalibration.png>
+
+LaTeX Warning: Citation 'kovacs_overconfident_2020' on page 11 undefined on inp
+ut line 494.
+
+
+LaTeX Warning: Citation 'aron_diagnostic_2024' on page 11 undefined on input li
+ne 494.
+
+
+LaTeX Warning: Citation 'jaspan_improving_2022' on page 11 undefined on input l
+ine 494.
+
+
+Overfull \hbox (57.12035pt too wide) in paragraph at lines 493--495
+\TU/lmr/m/n/12 ceived positive feedback (also known as diagnostic momentum bias
+, []).
+ []
+
+
+Overfull \hbox (57.06839pt too wide) in paragraph at lines 493--495
+\TU/lmr/m/n/12 dence inappropriately, whether working individually or in teams 
+([]).
+ []
+
+
+
+[11]
+
+LaTeX Warning: Citation 'meyer_physicians_2013' on page 12 undefined on input l
+ine 497.
+
+
+LaTeX Warning: Citation 'schoenherr_subjective_2018' on page 12 undefined on in
+put line 497.
+
+
+LaTeX Warning: Citation 'schoenherr_subjective_2018' on page 12 undefined on in
+put line 497.
+
+
+LaTeX Warning: Citation 'yang_nurses_2010' on page 12 undefined on input line 4
+97.
+
+
+LaTeX Warning: Citation 'brezis_does_2019' on page 12 undefined on input line 4
+97.
+
+
+LaTeX Warning: Citation 'friedman_physicians_2005' on page 12 undefined on inpu
+t line 497.
+
+
+LaTeX Warning: Citation 'hemon_speaking_2020' on page 12 undefined on input lin
+e 497.
+
+
+LaTeX Warning: Citation 'kovacs_overconfident_2020' on page 12 undefined on inp
+ut line 497.
+
+
+Overfull \hbox (22.30357pt too wide) in paragraph at lines 496--498
+\TU/lmr/m/n/12 cially when comparing medical students to residents ([]).
+ []
+
+
+
+[12]
+Overfull \hbox (3.58841pt too wide) in paragraph at lines 499--501
+\TU/lmr/m/n/12 To summarise, confidence can be thought of as a readout of the e
+vidence/information
+ []
+
+
+LaTeX Warning: Citation 'xu_who_2006' on page 13 undefined on input line 505.
+
+
+LaTeX Warning: Citation 'adams_reduction_1961' on page 13 undefined on input li
+ne 505.
+
+
+LaTeX Warning: Citation 'schulz_dogmatism_2020' on page 13 undefined on input l
+ine 505.
+
+
+LaTeX Warning: Citation 'gehlbach_illusion_2024' on page 13 undefined on input 
+line 505.
+
+
+LaTeX Warning: Citation 'rollwage_confidence_2020' on page 13 undefined on inpu
+t line 505.
+
+
+LaTeX Warning: Citation 'schulz-hardt_biased_2000' on page 13 undefined on inpu
+t line 505.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 505--506
+
+ []
+
+
+
+[13]
+
+LaTeX Warning: Citation 'vickers_effects_1982' on page 14 undefined on input li
+ne 507.
+
+
+LaTeX Warning: Citation 'ko_divergent_2022' on page 14 undefined on input line 
+507.
+
+
+LaTeX Warning: Citation 'akaishi_autonomous_2014' on page 14 undefined on input
+ line 507.
+
+
+LaTeX Warning: Citation 'nickerson_confirmation_1998' on page 14 undefined on i
+nput line 507.
+
+
+LaTeX Warning: Citation 'jonas_confirmation_2001' on page 14 undefined on input
+ line 507.
+
+
+LaTeX Warning: Citation 'kaanders_humans_2022' on page 14 undefined on input li
+ne 507.
+
+
+LaTeX Warning: Citation 'desender_subjective_2018' on page 14 undefined on inpu
+t line 507.
+
+
+LaTeX Warning: Citation 'wei_confidence_2021' on page 14 undefined on input lin
+e 507.
+
+
+
+[14]
+
+LaTeX Warning: Citation 'balsdon_confidence_2020' on page 15 undefined on input
+ line 510.
+
+
+LaTeX Warning: Citation 'rausch_cognitive_2020' on page 15 undefined on input l
+ine 510.
+
+
+LaTeX Warning: Citation 'kiani_choice_2014' on page 15 undefined on input line 
+510.
+
+
+LaTeX Warning: Citation 'rollwage_confidence_2020' on page 15 undefined on inpu
+t line 510.
+
+
+LaTeX Warning: Citation 'pescetelli_confidence_2021' on page 15 undefined on in
+put line 510.
+
+
+Overfull \hbox (47.04361pt too wide) in paragraph at lines 509--511
+\TU/lmr/m/n/12 viewing ([]) and deliberating over evidence ([]).
+ []
+
+
+Overfull \hbox (32.21959pt too wide) in paragraph at lines 509--511
+\TU/lmr/m/n/12 associated with a tendency to seek confirmatory evidence ([])
+ []
+
+
+Overfull \hbox (39.0676pt too wide) in paragraph at lines 509--511
+\TU/lmr/m/n/12 and how likely incoming evidence is to change one’s mind ([]).
+ []
+
+
+
+[15]
+
+LaTeX Warning: Citation 'oskamp_overconfidence_1965' on page 16 undefined on in
+put line 513.
+
+
+
+[16]
+File: ./assets/OskampGraph.png Graphic file (type bmp)
+<./assets/OskampGraph.png>
+
+LaTeX Warning: Citation 'oskamp_overconfidence_1965' on page 17 undefined on in
+put line 519.
+
+
+LaTeX Warning: Citation 'meyer_physicians_2013' on page 17 undefined on input l
+ine 519.
+
+
+Overfull \hbox (15.07956pt too wide) in paragraph at lines 519--520
+[]\TU/lmr/m/it/12 Figure 1.2: Graph representing the results from [],
+ []
+
+
+LaTeX Warning: Citation 'gruppen_information_1991' on page 17 undefined on inpu
+t line 522.
+
+
+LaTeX Warning: Citation 'clayton_are_2023' on page 17 undefined on input line 5
+22.
+
+
+LaTeX Warning: Citation 'meyer_physicians_2013' on page 17 undefined on input l
+ine 522.
+
+
+Overfull \hbox (90.03369pt too wide) in paragraph at lines 521--523
+\TU/lmr/m/n/12 agnosis has revealed similar interactions and imperfections. Not
+ably, []
+ []
+
+
+
+[17]
+
+LaTeX Warning: Citation 'kostopoulou_information_2012' on page 18 undefined on 
+input line 525.
+
+
+LaTeX Warning: Citation 'leblanc_believing_2002' on page 18 undefined on input 
+line 525.
+
+
+Overfull \hbox (78.67557pt too wide) in paragraph at lines 524--526
+\TU/lmr/m/n/12 clusive evidence to be interpreted as supporting prior beliefs (
+[]).
+ []
+
+
+LaTeX Warning: Citation 'wason_failure_1960' on page 18 undefined on input line
+ 530.
+
+
+LaTeX Warning: Citation 'hunt_approach-induced_2016' on page 18 undefined on in
+put line 530.
+
+
+LaTeX Warning: Citation 'peters_perceptual_2017' on page 18 undefined on input 
+line 530.
+
+
+
+[18]
+
+LaTeX Warning: Citation 'robinson_revision_1985' on page 19 undefined on input 
+line 533.
+
+
+LaTeX Warning: Citation 'van_wallendael_tracing_1990' on page 19 undefined on i
+nput line 533.
+
+
+LaTeX Warning: Citation 'vallee-tourangeau_role_2000' on page 19 undefined on i
+nput line 533.
+
+
+LaTeX Warning: Citation 'meyer_physicians_2013' on page 19 undefined on input l
+ine 536.
+
+
+LaTeX Warning: Citation 'chartan_isolating_2019' on page 19 undefined on input 
+line 536.
+
+
+LaTeX Warning: Citation 'kuper_mitigating_2024' on page 19 undefined on input l
+ine 536.
+
+
+Overfull \hbox (27.77292pt too wide) in paragraph at lines 535--537
+\TU/lmr/m/n/12 ([]; []; []),
+ []
+
+
+
+[19]
+
+LaTeX Warning: Citation 'kuipers_causal_1984' on page 20 undefined on input lin
+e 539.
+
+
+LaTeX Warning: Citation 'higgs_clinical_2019' on page 20 undefined on input lin
+e 539.
+
+
+LaTeX Warning: Citation 'coderre_diagnostic_2003' on page 20 undefined on input
+ line 539.
+
+
+LaTeX Warning: Citation 'gilhooly_cognitive_1990' on page 20 undefined on input
+ line 539.
+
+
+LaTeX Warning: Citation 'nendaz_diagnostic_2012' on page 20 undefined on input 
+line 539.
+
+
+Overfull \hbox (25.27692pt too wide) in paragraph at lines 538--540
+\TU/lmr/m/n/12 ([]). This account was challenged by [],
+ []
+
+
+
+[20]
+
+LaTeX Warning: Citation 'alby_diagnostic_2015' on page 21 undefined on input li
+ne 544.
+
+
+
+[21]
+
+LaTeX Warning: Citation 'higham_observer-based_2019' on page 22 undefined on in
+put line 547.
+
+
+LaTeX Warning: Citation 'greig_lack_2015' on page 22 undefined on input line 54
+7.
+
+
+LaTeX Warning: Citation 'katz_why_1984' on page 22 undefined on input line 547.
+
+
+
+LaTeX Warning: Citation 'lawton_are_2019' on page 22 undefined on input line 54
+7.
+
+
+LaTeX Warning: Citation 'han_varieties_2011' on page 22 undefined on input line
+ 547.
+
+
+LaTeX Warning: Citation 'lee_towards_2021' on page 22 undefined on input line 5
+47.
+
+
+LaTeX Warning: Citation 'hancock_tolerance_2020' on page 22 undefined on input 
+line 547.
+
+
+LaTeX Warning: Citation 'stephens_exploring_2021' on page 22 undefined on input
+ line 547.
+
+
+Overfull \hbox (31.5036pt too wide) in paragraph at lines 546--548
+\TU/lmr/m/n/12 addressed in a widespread standardised manner in medical curricu
+la ([]).
+ []
+
+
+
+[22]
+
+LaTeX Warning: Citation 'wears_diagnosing_2014' on page 23 undefined on input l
+ine 553.
+
+
+Overfull \hbox (27.90495pt too wide) in paragraph at lines 552--554
+\TU/lmr/m/it/12 nomena…to create an understanding of them as a problem.” \TU/lm
+r/m/n/12 ([]) 
+ []
+
+
+
+[23]
+
+[24]
+Overfull \hbox (0.60039pt too wide) in paragraph at lines 574--576
+\TU/lmr/m/n/12 In Chapter 4, we present an in-person study using a similar vign
+ette-based paradigm
+ []
+
+
+
+[25]
+
+[26]
+
+Package hyperref Warning: The anchor of a bookmark and its parent's must not
+(hyperref)                be the same. Added a new anchor on input line 593.
+
+
+LaTeX Warning: Citation 'pouget_confidence_2016' on page 27 undefined on input 
+line 597.
+
+
+
+[27
+
+]
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `lmtt' (encoding: TU).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+
+LaTeX Warning: Citation 'peters_scoping_2024' on page 28 undefined on input lin
+e 614.
+
+
+
+[28]
+
+LaTeX Warning: Citation 'webster_analyzing_2002' on page 29 undefined on input 
+line 620.
+
+
+LaTeX Warning: Citation 'tranfield_towards_2003' on page 29 undefined on input 
+line 620.
+
+
+
+[29]
+File: ./assets/PRISMA.png Graphic file (type bmp)
+<./assets/PRISMA.png>
+
+
+[30]
+
+[31]
+File: ./assets/ReviewTable.png Graphic file (type bmp)
+<./assets/ReviewTable.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 670--671
+
+ []
+
+File: ./assets/ReviewYears.png Graphic file (type bmp)
+<./assets/ReviewYears.png>
+
+Underfull \vbox (badness 3492) has occurred while \output is active []
+
+
+
+[32]
+
+LaTeX Warning: Citation 'yang_effect_2012' on page 33 undefined on input line 6
+80.
+
+
+
+[33]
+
+LaTeX Warning: Citation 'gherman_neural_2015' on page 34 undefined on input lin
+e 683.
+
+
+
+[34]
+
+LaTeX Warning: Citation 'mann_relationship_1993' on page 35 undefined on input 
+line 694.
+
+
+LaTeX Warning: Citation 'yang_effect_2012' on page 35 undefined on input line 6
+94.
+
+
+LaTeX Warning: Citation 'brezis_does_2019' on page 35 undefined on input line 6
+94.
+
+
+LaTeX Warning: Citation 'friedman_are_2001' on page 35 undefined on input line 
+694.
+
+
+LaTeX Warning: Citation 'fernandez-aguilar_use_2022' on page 35 undefined on in
+put line 694.
+
+
+LaTeX Warning: Citation 'garbayo_metacognitive_2023' on page 35 undefined on in
+put line 694.
+
+
+Overfull \hbox (122.43427pt too wide) in paragraph at lines 694--695
+[]\TU/lmr/m/n/12 )and others overconfidence ([]; [];
+ []
+
+
+LaTeX Warning: Citation 'yang_nurses_2010' on page 35 undefined on input line 6
+99.
+
+
+LaTeX Warning: Citation 'clayton_are_2023' on page 35 undefined on input line 6
+99.
+
+
+LaTeX Warning: Citation 'tabak_clinical_1996' on page 35 undefined on input lin
+e 699.
+
+
+LaTeX Warning: Citation 'brannon_nursing_2003' on page 35 undefined on input li
+ne 699.
+
+
+LaTeX Warning: Citation 'kostopoulou_information_2012' on page 35 undefined on 
+input line 699.
+
+
+LaTeX Warning: Citation 'hautz_diagnostic_2019' on page 35 undefined on input l
+ine 699.
+
+
+LaTeX Warning: Citation 'kostopoulou_information_2012' on page 35 undefined on 
+input line 699.
+
+
+LaTeX Warning: Citation 'mamede_role_2024' on page 35 undefined on input line 6
+99.
+
+
+LaTeX Warning: Citation 'mamede_role_2024' on page 35 undefined on input line 6
+99.
+
+
+Overfull \hbox (79.88757pt too wide) in paragraph at lines 699--700
+\TU/lmr/m/n/12 mation ‘distortion’ was found to affect novice clinicians more (
+[])
+ []
+
+
+
+[35]
+
+LaTeX Warning: Citation 'meyer_physicians_2013' on page 36 undefined on input l
+ine 704.
+
+
+LaTeX Warning: Citation 'hausmann_sensitivity_2019' on page 36 undefined on inp
+ut line 704.
+
+
+LaTeX Warning: Citation 'li_relationship_2023' on page 36 undefined on input li
+ne 704.
+
+
+LaTeX Warning: Citation 'meyer_physicians_2013' on page 36 undefined on input l
+ine 704.
+
+
+LaTeX Warning: Citation 'hausmann_sensitivity_2019' on page 36 undefined on inp
+ut line 704.
+
+
+LaTeX Warning: Citation 'yang_nurses_2010' on page 36 undefined on input line 7
+04.
+
+
+LaTeX Warning: Citation 'kuhn_improving_2022' on page 36 undefined on input lin
+e 704.
+
+
+LaTeX Warning: Citation 'staal_impact_2024' on page 36 undefined on input line 
+704.
+
+
+Overfull \hbox (62.77559pt too wide) in paragraph at lines 704--705
+\TU/lmr/m/n/12 tion is affected by the complexity or difficulty of the presente
+d case ([];
+ []
+
+
+Overfull \hbox (7.35559pt too wide) in paragraph at lines 704--705
+[]\TU/lmr/m/n/12 ; []). When confidence judge-
+ []
+
+
+Overfull \hbox (42.2916pt too wide) in paragraph at lines 704--705
+\TU/lmr/m/n/12 formation about the patient to indicate multiple possible condit
+ions ([]).
+ []
+
+
+LaTeX Warning: Citation 'soares_accuracy_2019' on page 36 undefined on input li
+ne 706.
+
+
+LaTeX Warning: Citation 'gupta_associations_2023' on page 36 undefined on input
+ line 706.
+
+
+LaTeX Warning: Citation 'bergl_factors_2024' on page 36 undefined on input line
+ 706.
+
+
+
+[36]
+
+LaTeX Warning: Citation 'mackenzie_magnetic_1996' on page 37 undefined on input
+ line 711.
+
+
+LaTeX Warning: Citation 'albrechtsen_impact_2022' on page 37 undefined on input
+ line 711.
+
+
+LaTeX Warning: Citation 'abujudeh_abdominopelvic_2011' on page 37 undefined on 
+input line 711.
+
+
+LaTeX Warning: Citation 'harvey_evacuation_1999' on page 37 undefined on input 
+line 711.
+
+
+LaTeX Warning: Citation 'sanger_diagnosing_2017' on page 37 undefined on input 
+line 711.
+
+
+LaTeX Warning: Citation 'hillson_effects_1995' on page 37 undefined on input li
+ne 711.
+
+
+LaTeX Warning: Citation 'berner_influence_1999' on page 37 undefined on input l
+ine 711.
+
+
+LaTeX Warning: Citation 'dreiseitl_physicians_2005' on page 37 undefined on inp
+ut line 711.
+
+
+LaTeX Warning: Citation 'neugebauer_clinical_2020' on page 37 undefined on inpu
+t line 711.
+
+
+LaTeX Warning: Citation 'hillson_effects_1995' on page 37 undefined on input li
+ne 711.
+
+
+LaTeX Warning: Citation 'neugebauer_clinical_2020' on page 37 undefined on inpu
+t line 711.
+
+
+LaTeX Warning: Citation 'berner_influence_1999' on page 37 undefined on input l
+ine 711.
+
+
+LaTeX Warning: Citation 'dreiseitl_physicians_2005' on page 37 undefined on inp
+ut line 711.
+
+
+Overfull \hbox (128.28757pt too wide) in paragraph at lines 711--712
+\TU/lmr/m/n/12 evacuation proctography ([]) or photos of wounds ([]).
+ []
+
+
+Overfull \hbox (68.0423pt too wide) in paragraph at lines 711--712
+\TU/lmr/m/n/12 tems with the goal of increasing confidence ([]; [];
+ []
+
+
+Overfull \hbox (30.44757pt too wide) in paragraph at lines 711--712
+[]\TU/lmr/m/n/12 ; []). []
+ []
+
+
+Overfull \hbox (1.87236pt too wide) in paragraph at lines 711--712
+\TU/lmr/m/n/12 the other hand, both [] and []
+ []
+
+
+LaTeX Warning: Citation 'kammer_differential_2021' on page 37 undefined on inpu
+t line 716.
+
+
+LaTeX Warning: Citation 'kourtidis_influences_2022' on page 37 undefined on inp
+ut line 716.
+
+
+LaTeX Warning: Citation 'kourtidis_influences_2022' on page 37 undefined on inp
+ut line 716.
+
+
+LaTeX Warning: Citation 'staal_does_2022' on page 37 undefined on input line 71
+6.
+
+
+LaTeX Warning: Citation 'eva_influence_2001' on page 37 undefined on input line
+ 716.
+
+
+LaTeX Warning: Citation 'feyzi-behnagh_metacognitive_2014' on page 37 undefined
+ on input line 716.
+
+
+LaTeX Warning: Citation 'chartan_isolating_2019' on page 37 undefined on input 
+line 716.
+
+
+LaTeX Warning: Citation 'lambe_guided_2018' on page 37 undefined on input line 
+716.
+
+
+LaTeX Warning: Citation 'costa_filho_effects_2019' on page 37 undefined on inpu
+t line 716.
+
+
+LaTeX Warning: Citation 'benvenuto-andrade_level_2006' on page 37 undefined on 
+input line 716.
+
+
+LaTeX Warning: Citation 'kuhn_learning_2023' on page 37 undefined on input line
+ 716.
+
+
+
+[37]
+
+LaTeX Warning: Citation 'heller_heuristics_1992' on page 38 undefined on input 
+line 718.
+
+
+LaTeX Warning: Citation 'gruppen_information_1991' on page 38 undefined on inpu
+t line 718.
+
+
+LaTeX Warning: Citation 'ben-assuli_improving_2015' on page 38 undefined on inp
+ut line 718.
+
+
+LaTeX Warning: Citation 'tio_effect_2022' on page 38 undefined on input line 71
+8.
+
+
+LaTeX Warning: Citation 'fawver_seeing_2020' on page 38 undefined on input line
+ 718.
+
+
+Overfull \hbox (1.8676pt too wide) in paragraph at lines 718--719
+\TU/lmr/m/n/12 Record of the patient alongside other information ([])
+ []
+
+
+Overfull \hbox (51.39159pt too wide) in paragraph at lines 718--719
+\TU/lmr/m/n/12 and when presented with the patient history first rather than ou
+t of order ([]).
+ []
+
+
+LaTeX Warning: Citation 'gupta_associations_2023' on page 38 undefined on input
+ line 723.
+
+
+LaTeX Warning: Citation 'clayton_are_2023' on page 38 undefined on input line 7
+23.
+
+
+LaTeX Warning: Citation 'levin_antimicrobial_2012' on page 38 undefined on inpu
+t line 723.
+
+
+LaTeX Warning: Citation 'garbayo_metacognitive_2023' on page 38 undefined on in
+put line 723.
+
+
+LaTeX Warning: Citation 'calman_variability_1992' on page 38 undefined on input
+ line 723.
+
+
+LaTeX Warning: Citation 'brezis_does_2019' on page 38 undefined on input line 7
+23.
+
+
+LaTeX Warning: Citation 'krupat_avoiding_2017' on page 38 undefined on input li
+ne 723.
+
+
+LaTeX Warning: Citation 'hageman_surgeon_2013' on page 38 undefined on input li
+ne 723.
+
+
+LaTeX Warning: Citation 'thorlacius-ussing_comparing_2021' on page 38 undefined
+ on input line 723.
+
+
+Overfull \hbox (55.4836pt too wide) in paragraph at lines 723--724
+\TU/lmr/m/n/12 been linked to more referrals to specialists in other department
+s ([])
+ []
+
+
+
+[38]
+
+[39]
+
+LaTeX Warning: Citation 'kostopoulou_information_2012' on page 40 undefined on 
+input line 730.
+
+
+LaTeX Warning: Citation 'hautz_accuracy_2019' on page 40 undefined on input lin
+e 730.
+
+
+LaTeX Warning: Citation 'mamede_role_2024' on page 40 undefined on input line 7
+30.
+
+
+LaTeX Warning: Citation 'yang_effect_2012' on page 40 undefined on input line 7
+32.
+
+
+LaTeX Warning: Citation 'soares_accuracy_2019' on page 40 undefined on input li
+ne 732.
+
+
+LaTeX Warning: Citation 'gupta_associations_2023' on page 40 undefined on input
+ line 732.
+
+
+LaTeX Warning: Citation 'meyer_physicians_2013' on page 40 undefined on input l
+ine 732.
+
+
+LaTeX Warning: Citation 'hausmann_sensitivity_2019' on page 40 undefined on inp
+ut line 732.
+
+
+LaTeX Warning: Citation 'li_relationship_2023' on page 40 undefined on input li
+ne 732.
+
+
+Overfull \hbox (108.48224pt too wide) in paragraph at lines 732--733
+\TU/lmr/m/n/12 conflicting information or comorbidities) ([]; [];
+ []
+
+
+LaTeX Warning: Citation 'hemon_speaking_2020' on page 40 undefined on input lin
+e 734.
+
+
+LaTeX Warning: Citation 'schaefer_overconfidence_2004' on page 40 undefined on 
+input line 734.
+
+
+LaTeX Warning: Citation 'syzmanowicz_gender_2011' on page 40 undefined on input
+ line 734.
+
+
+LaTeX Warning: Citation 'see_detrimental_2011' on page 40 undefined on input li
+ne 734.
+
+
+
+[40]
+File: ./assets/ReviewModel.png Graphic file (type bmp)
+<./assets/ReviewModel.png>
+
+
+[41]
+
+LaTeX Warning: Citation 'kostopoulou_diagnostic_2008' on page 42 undefined on i
+nput line 746.
+
+
+LaTeX Warning: Citation 'graber_cognitive_2012' on page 42 undefined on input l
+ine 746.
+
+
+LaTeX Warning: Citation 'saposnik_cognitive_2016' on page 42 undefined on input
+ line 746.
+
+
+LaTeX Warning: Citation 'hall_reviewing_2002' on page 42 undefined on input lin
+e 746.
+
+
+LaTeX Warning: Citation 'bhise_defining_2018' on page 42 undefined on input lin
+e 746.
+
+
+LaTeX Warning: Citation 'berner_overconfidence_2008' on page 42 undefined on in
+put line 746.
+
+
+LaTeX Warning: Citation 'wears_diagnosing_2014' on page 42 undefined on input l
+ine 746.
+
+
+LaTeX Warning: Citation 'hemon_speaking_2020' on page 42 undefined on input lin
+e 746.
+
+
+Overfull \hbox (0.80757pt too wide) in paragraph at lines 746--747
+[]\TU/lmr/m/n/12 ) and characterising medical uncertainty more broadly
+ []
+
+
+Overfull \hbox (85.36758pt too wide) in paragraph at lines 746--747
+\TU/lmr/m/n/12 though confidence has been linked to diagnostic error in the pas
+t ([]),
+ []
+
+
+LaTeX Warning: Citation 'mann_relationship_1993' on page 42 undefined on input 
+line 749.
+
+
+LaTeX Warning: Citation 'yang_effect_2012' on page 42 undefined on input line 7
+49.
+
+
+LaTeX Warning: Citation 'brezis_does_2019' on page 42 undefined on input line 7
+49.
+
+
+LaTeX Warning: Citation 'thompson_nurses_2004' on page 42 undefined on input li
+ne 749.
+
+
+LaTeX Warning: Citation 'gupta_associations_2023' on page 42 undefined on input
+ line 749.
+
+
+LaTeX Warning: Citation 'lambe_guided_2018' on page 42 undefined on input line 
+749.
+
+
+LaTeX Warning: Citation 'costa_filho_effects_2019' on page 42 undefined on inpu
+t line 749.
+
+
+LaTeX Warning: Citation 'dunlosky_strengthening_2013' on page 42 undefined on i
+nput line 749.
+
+
+LaTeX Warning: Citation 'putnam_optimizing_2016' on page 42 undefined on input 
+line 749.
+
+
+Overfull \hbox (4.89694pt too wide) in paragraph at lines 748--750
+\TU/lmr/m/n/12 ([]; []; []) and can
+ []
+
+
+Overfull \hbox (11.65556pt too wide) in paragraph at lines 748--750
+\TU/lmr/m/n/12 medicine to improve students’ memory retention ([];
+ []
+
+
+
+[42]
+
+LaTeX Warning: Citation 'heereman_stress_2011' on page 43 undefined on input li
+ne 752.
+
+
+
+[43]
+
+LaTeX Warning: Citation 'noauthor_state_2024' on page 44 undefined on input lin
+e 760.
+
+
+LaTeX Warning: Citation 'arocha_novice_1995' on page 44 undefined on input line
+ 763.
+
+
+LaTeX Warning: Citation 'coderre_diagnostic_2003' on page 44 undefined on input
+ line 763.
+
+
+LaTeX Warning: Citation 'feyzi-behnagh_metacognitive_2014' on page 44 undefined
+ on input line 763.
+
+
+LaTeX Warning: Citation 'schmidt_simulation_2013' on page 44 undefined on input
+ line 763.
+
+
+LaTeX Warning: Citation 'jans_examining_2023' on page 44 undefined on input lin
+e 763.
+
+
+
+[44]
+
+LaTeX Warning: Citation 'silver_wise_2021' on page 45 undefined on input line 7
+66.
+
+
+LaTeX Warning: Citation 'mahmoodi_equality_2015' on page 45 undefined on input 
+line 766.
+
+
+LaTeX Warning: Citation 'stasser_pooling_1985' on page 45 undefined on input li
+ne 766.
+
+
+LaTeX Warning: Citation 'brezis_does_2019' on page 45 undefined on input line 7
+66.
+
+
+LaTeX Warning: Citation 'price_acute_2016' on page 45 undefined on input line 7
+66.
+
+
+Overfull \hbox (89.57959pt too wide) in paragraph at lines 765--767
+\TU/lmr/m/n/12 confident team members can anchor a group on an incorrect decisi
+on ([]).
+ []
+
+
+Overfull \hbox (0.1076pt too wide) in paragraph at lines 765--767
+\TU/lmr/m/n/12 the collaborative nature of healthcare and the social benefits o
+f communicating opin-
+ []
+
+
+
+[45]
+
+LaTeX Warning: Citation 'ais_individual_2016' on page 46 undefined on input lin
+e 769.
+
+
+LaTeX Warning: Citation 'navajas_idiosyncratic_2017' on page 46 undefined on in
+put line 769.
+
+
+Overfull \hbox (23.3876pt too wide) in paragraph at lines 768--770
+\TU/lmr/m/n/12 vidual systematic tendencies toward higher or lower confidence (
+[];
+ []
+
+
+LaTeX Warning: Citation 'gruppen_information_1991' on page 46 undefined on inpu
+t line 774.
+
+
+
+[46]
+
+[47]
+
+Package hyperref Warning: The anchor of a bookmark and its parent's must not
+(hyperref)                be the same. Added a new anchor on input line 783.
+
+
+LaTeX Warning: Citation 'friedman_physicians_2005' on page 48 undefined on inpu
+t line 791.
+
+
+LaTeX Warning: Citation 'fernandez-aguilar_use_2022' on page 48 undefined on in
+put line 791.
+
+
+LaTeX Warning: Citation 'garbayo_metacognitive_2023' on page 48 undefined on in
+put line 791.
+
+
+LaTeX Warning: Citation 'mann_relationship_1993' on page 48 undefined on input 
+line 791.
+
+
+LaTeX Warning: Citation 'yang_effect_2012' on page 48 undefined on input line 7
+91.
+
+
+LaTeX Warning: Citation 'brezis_does_2019' on page 48 undefined on input line 7
+91.
+
+
+LaTeX Warning: Citation 'levin_antimicrobial_2012' on page 48 undefined on inpu
+t line 791.
+
+
+LaTeX Warning: Citation 'garbayo_metacognitive_2023' on page 48 undefined on in
+put line 791.
+
+
+LaTeX Warning: Citation 'calman_variability_1992' on page 48 undefined on input
+ line 791.
+
+
+LaTeX Warning: Citation 'tabak_clinical_1996' on page 48 undefined on input lin
+e 791.
+
+
+LaTeX Warning: Citation 'gupta_associations_2023' on page 48 undefined on input
+ line 791.
+
+
+LaTeX Warning: Citation 'tabak_clinical_1996' on page 48 undefined on input lin
+e 791.
+
+
+LaTeX Warning: Citation 'gupta_associations_2023' on page 48 undefined on input
+ line 791.
+
+
+Overfull \hbox (27.59825pt too wide) in paragraph at lines 790--792
+\TU/lmr/m/n/12 ing to overconfidence ([]; [];
+ []
+
+
+Overfull \hbox (15.18355pt too wide) in paragraph at lines 790--792
+[]\TU/lmr/m/n/12 ) or underconfidence ([];
+ []
+
+
+Overfull \hbox (76.55638pt too wide) in paragraph at lines 790--792
+\TU/lmr/m/n/12 with many aspects of the patient care process, such as prescript
+ions ([];
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 790--792
+
+ []
+
+
+
+[48
+
+]
+Overfull \hbox (25.94437pt too wide) in paragraph at lines 793--794
+[]\TU/lmr/m/n/12 Crucially, this past work studies information seeking by askin
+g participants/clinicians
+ []
+
+
+
+[49]
+
+[50]
+
+LaTeX Warning: Citation 'ko_divergent_2022' on page 51 undefined on input line 
+802.
+
+
+LaTeX Warning: Citation 'redelmeier_fallacy_2023' on page 51 undefined on input
+ line 805.
+
+
+LaTeX Warning: Citation 'meyer_physicians_2013' on page 51 undefined on input l
+ine 805.
+
+
+LaTeX Warning: Citation 'feyzi-behnagh_metacognitive_2014' on page 51 undefined
+ on input line 805.
+
+
+LaTeX Warning: Citation 'schiff_diagnostic_2009' on page 51 undefined on input 
+line 805.
+
+
+
+[51]
+
+LaTeX Warning: Citation 'vickers_effects_1982' on page 52 undefined on input li
+ne 808.
+
+
+
+[52]
+Underfull \hbox (badness 10000) in paragraph at lines 813--815
+
+ []
+
+
+
+[53]
+
+[54]
+
+[55]
+
+LaTeX Warning: Citation 'friedman_are_2001' on page 56 undefined on input line 
+846.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 846--847
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 853--854
+
+ []
+
+
+
+[56]
+File: ./assets/Paradigm.png Graphic file (type bmp)
+<./assets/Paradigm.png>
+
+
+[57]
+File: ./assets/Screenshot1.png Graphic file (type bmp)
+<./assets/Screenshot1.png>
+
+LaTeX Warning: Citation 'hampton_relative_1975' on page 58 undefined on input l
+ine 865.
+
+
+LaTeX Warning: Citation 'peterson_contributions_1992' on page 58 undefined on i
+nput line 865.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 865--866
+
+ []
+
+
+
+[58]
+File: ./assets/Screenshot2.png Graphic file (type bmp)
+<./assets/Screenshot2.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 869--870
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 871--872
+
+ []
+
+
+
+[59]
+
+[60]
+
+[61]
+
+[62]
+
+LaTeX Warning: Citation 'dice_measures_1945' on page 63 undefined on input line
+ 907.
+
+
+
+[63]
+
+[64]
+
+[65]
+Underfull \hbox (badness 10000) in paragraph at lines 924--926
+
+ []
+
+
+Package fontspec Info: 
+(fontspec)             Font family 'Helvetica(0)' created for font 'Helvetica'
+(fontspec)             with options [Ligatures=TeX].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"Helvetica/AAT:mapping=tex-text;"
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->"Helvetica/B/AAT:mapping=tex-text;"
+(fontspec)             - 'italic' (m/it) with NFSS spec.:
+(fontspec)             <->"Helvetica/I/AAT:mapping=tex-text;"
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
+(fontspec)             <->"Helvetica/BI/AAT:mapping=tex-text;"
+
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `Helvetica' (encoding: TU).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+
+Overfull \hbox (0.82436pt too wide) in paragraph at lines 945--945
+ []|[]\TU/Helvetica(0)/m/n/11 Information 
+ []
+
+
+Overfull \hbox (0.82436pt too wide) in paragraph at lines 951--951
+ []|[]\TU/Helvetica(0)/m/n/11 Information 
+ []
+
+
+
+[66]
+File: _main_files/figure-latex/meyerGraph-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/meyerGraph-1.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[67]
+Underfull \hbox (badness 10000) in paragraph at lines 1009--1010
+
+ []
+
+
+
+[68]
+
+[69]
+
+[70]
+File: _main_files/figure-latex/diffsOverStages-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/diffsOverStages-1.pdf>
+
+
+[71]
+
+[72]
+
+[73]
+File: _main_files/figure-latex/diffsPlot-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/diffsPlot-1.pdf>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[74]
+
+[75]
+Underfull \hbox (badness 10000) in paragraph at lines 1040--1041
+
+ []
+
+
+
+[76]
+
+[77]
+File: _main_files/figure-latex/confAccPlot-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/confAccPlot-1.pdf>
+
+Underfull \hbox (badness 10000) in paragraph at lines 1054--1055
+
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[78]
+Underfull \hbox (badness 10000) in paragraph at lines 1056--1057
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1058--1059
+
+ []
+
+
+
+[79]
+Underfull \hbox (badness 10000) in paragraph at lines 1060--1061
+
+ []
+
+File: _main_files/figure-latex/accuracyClassifier-1.pdf Graphic file (type pdf)
+
+<use _main_files/figure-latex/accuracyClassifier-1.pdf>
+
+Underfull \hbox (badness 10000) in paragraph at lines 1064--1065
+
+ []
+
+
+
+[80]
+Underfull \hbox (badness 10000) in paragraph at lines 1066--1067
+
+ []
+
+
+
+[81]
+File: _main_files/figure-latex/accVarPlot-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/accVarPlot-1.pdf>
+
+
+[82]
+
+[83]
+File: _main_files/figure-latex/accVarSplitPlot-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/accVarSplitPlot-1.pdf>
+
+Underfull \hbox (badness 10000) in paragraph at lines 1083--1084
+
+ []
+
+
+
+[84]
+
+[85]
+File: _main_files/figure-latex/infoProps-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/infoProps-1.pdf>
+
+
+[86]
+
+[87]
+
+LaTeX Warning: Citation 'lichtenstein_calibration_1977' on page 88 undefined on
+ input line 1268.
+
+
+LaTeX Warning: Citation 'merkle_disutility_2009' on page 88 undefined on input 
+line 1268.
+
+
+LaTeX Warning: Citation 'redelmeier_fallacy_2023' on page 88 undefined on input
+ line 1268.
+
+
+LaTeX Warning: Citation 'kammer_potential_2017' on page 88 undefined on input l
+ine 1268.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1268--1269
+
+ []
+
+
+LaTeX Warning: Citation 'meyer_physicians_2013' on page 88 undefined on input l
+ine 1270.
+
+
+LaTeX Warning: Citation 'yang_nurses_2010' on page 88 undefined on input line 1
+270.
+
+
+LaTeX Warning: Citation 'friedman_physicians_2005' on page 88 undefined on inpu
+t line 1270.
+
+
+LaTeX Warning: Citation 'meyer_physicians_2013' on page 88 undefined on input l
+ine 1270.
+
+
+LaTeX Warning: Citation 'lambe_guided_2018' on page 88 undefined on input line 
+1270.
+
+
+LaTeX Warning: Citation 'kuper_mitigating_2024' on page 88 undefined on input l
+ine 1270.
+
+
+LaTeX Warning: Citation 'friedman_physicians_2005' on page 88 undefined on inpu
+t line 1270.
+
+
+Overfull \hbox (15.50357pt too wide) in paragraph at lines 1270--1271
+\TU/lmr/m/n/12 for more experienced medical professionals to be overconfident (
+[]).
+ []
+
+
+Overfull \hbox (9.58092pt too wide) in paragraph at lines 1270--1271
+[]\TU/lmr/m/n/12 ; []; [])),
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1270--1271
+
+ []
+
+
+
+[88]
+
+[89]
+
+LaTeX Warning: Citation 'joseph_domain_1990' on page 90 undefined on input line
+ 1275.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1275--1277
+
+ []
+
+
+
+[90]
+
+LaTeX Warning: Citation 'wears_standardisation_2015' on page 91 undefined on in
+put line 1297.
+
+
+
+[91]
+
+[92]
+
+LaTeX Warning: Citation 'coderre_diagnostic_2003' on page 93 undefined on input
+ line 1305.
+
+
+
+[93]
+
+[94]
+
+Package hyperref Warning: The anchor of a bookmark and its parent's must not
+(hyperref)                be the same. Added a new anchor on input line 1317.
+
+
+
+[95
+
+]
+
+LaTeX Warning: Citation 'kuipers_causal_1984' on page 96 undefined on input lin
+e 1331.
+
+
+LaTeX Warning: Citation 'higgs_clinical_2019' on page 96 undefined on input lin
+e 1331.
+
+
+LaTeX Warning: Citation 'coderre_diagnostic_2003' on page 96 undefined on input
+ line 1331.
+
+
+LaTeX Warning: Citation 'norman_etiology_2014' on page 96 undefined on input li
+ne 1331.
+
+
+LaTeX Warning: Citation 'kahneman_thinking_2011' on page 96 undefined on input 
+line 1331.
+
+
+Overfull \hbox (48.82492pt too wide) in paragraph at lines 1330--1332
+\TU/lmr/m/n/12 noses. Further information is then gathered to test these hypoth
+eses ([])
+ []
+
+
+
+[96]
+
+LaTeX Warning: Citation 'coderre_diagnostic_2003' on page 97 undefined on input
+ line 1334.
+
+
+
+[97]
+
+LaTeX Warning: Citation 'coderre_diagnostic_2003' on page 98 undefined on input
+ line 1348.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1347--1350
+
+ []
+
+
+
+[98]
+
+LaTeX Warning: Citation 'coderre_diagnostic_2003' on page 99 undefined on input
+ line 1351.
+
+
+LaTeX Warning: Citation 'someren_think_1994' on page 99 undefined on input line
+ 1351.
+
+
+LaTeX Warning: Citation 'payne_thinking_1994' on page 99 undefined on input lin
+e 1351.
+
+
+LaTeX Warning: Citation 'newell_human_1972' on page 99 undefined on input line 
+1351.
+
+
+LaTeX Warning: Citation 'groot_thought_1978' on page 99 undefined on input line
+ 1351.
+
+
+LaTeX Warning: Citation 'payne_thinking_1994' on page 99 undefined on input lin
+e 1351.
+
+
+Overfull \hbox (65.77237pt too wide) in paragraph at lines 1351--1352
+\TU/lmr/m/n/12 based paradigm, we adopted a think-aloud methodology similar to 
+[],
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1351--1352
+
+ []
+
+
+
+[99]
+
+[100]
+
+[101]
+
+[102]
+Underfull \hbox (badness 10000) in paragraph at lines 1399--1401
+
+ []
+
+
+
+[103]
+Underfull \hbox (badness 10000) in paragraph at lines 1418--1419
+
+ []
+
+
+
+[104]
+
+[105]
+
+LaTeX Warning: Citation 'coderre_diagnostic_2003' on page 106 undefined on inpu
+t line 1458.
+
+
+LaTeX Warning: Citation 'coderre_diagnostic_2003' on page 106 undefined on inpu
+t line 1458.
+
+
+Overfull \hbox (50.13239pt too wide) in paragraph at lines 1458--1459
+\TU/lmr/m/n/12 To code for reasoning strategies, we adopt a similar approach to
+ [].
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1469--1470
+
+ []
+
+
+
+[106]
+Underfull \hbox (badness 10000) in paragraph at lines 1472--1473
+
+ []
+
+
+
+[107]
+
+[108]
+
+LaTeX Warning: Citation 'braun_using_2006' on page 109 undefined on input line 
+1482.
+
+
+
+[109]
+Underfull \hbox (badness 10000) in paragraph at lines 1489--1490
+
+ []
+
+
+
+[110]
+
+[111]
+Overfull \hbox (0.82436pt too wide) in paragraph at lines 1524--1524
+ []|[]\TU/Helvetica(0)/m/n/11 Information 
+ []
+
+
+Overfull \hbox (0.82436pt too wide) in paragraph at lines 1530--1530
+ []|[]\TU/Helvetica(0)/m/n/11 Information 
+ []
+
+
+
+[112]
+
+[113]
+
+[114]
+
+[115]
+File: _main_files/figure-latex/diffbarsplot-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/diffbarsplot-1.pdf>
+
+
+[116]
+Overfull \hbox (44.51953pt too wide) in alignment at lines 1700--1708
+ [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (44.51953pt too wide) in alignment at lines 1708--1714
+ [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (44.51953pt too wide) in alignment at lines 1714--1814
+ [] [] [] [] [] [] [] [] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1826--1827
+
+ []
+
+
+
+[117]
+File: _main_files/figure-latex/stratbreakdown-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/stratbreakdown-1.pdf>
+
+Overfull \hbox (50.59343pt too wide) in paragraph at lines 1828--1829
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1832--1833
+
+ []
+
+
+Overfull \hbox (36.09952pt too wide) in alignment at lines 1834--1838
+ [] [] [] [] 
+ []
+
+
+Overfull \hbox (36.09952pt too wide) in alignment at lines 1838--1843
+ [] [] [] [] 
+ []
+
+
+Overfull \hbox (36.09952pt too wide) in alignment at lines 1843--1856
+ [] [] [] [] 
+ []
+
+
+
+[118] [119]
+
+[120]
+Overfull \hbox (3.68178pt too wide) in paragraph at lines 1883--1883
+ []|[]\TU/Helvetica(0)/m/n/11 Differentials 
+ []
+
+
+Overfull \hbox (0.82436pt too wide) in paragraph at lines 1883--1883
+ []|[]\TU/Helvetica(0)/m/n/11 Information 
+ []
+
+
+Overfull \hbox (0.82436pt too wide) in paragraph at lines 1883--1883
+ []|[]\TU/Helvetica(0)/m/n/11 Information 
+ []
+
+
+Overfull \hbox (1.4474pt too wide) in paragraph at lines 1883--1883
+ []|[]\TU/Helvetica(0)/m/n/11 Confidence 
+ []
+
+
+Overfull \hbox (44.51953pt too wide) in alignment at lines 1877--1885
+ [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (3.68178pt too wide) in paragraph at lines 1889--1889
+ []|[]\TU/Helvetica(0)/m/n/11 Differentials 
+ []
+
+
+Overfull \hbox (0.82436pt too wide) in paragraph at lines 1889--1889
+ []|[]\TU/Helvetica(0)/m/n/11 Information 
+ []
+
+
+Overfull \hbox (0.82436pt too wide) in paragraph at lines 1889--1889
+ []|[]\TU/Helvetica(0)/m/n/11 Information 
+ []
+
+
+Overfull \hbox (1.4474pt too wide) in paragraph at lines 1889--1889
+ []|[]\TU/Helvetica(0)/m/n/11 Confidence 
+ []
+
+
+Overfull \hbox (44.51953pt too wide) in alignment at lines 1885--1891
+ [] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (44.51953pt too wide) in alignment at lines 1891--1919
+ [] [] [] [] [] [] [] [] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1931--1932
+
+ []
+
+
+
+[121]
+
+[122]
+Overfull \hbox (0.82436pt too wide) in paragraph at lines 1960--1960
+ []|[]\TU/Helvetica(0)/m/n/11 Information 
+ []
+
+
+Overfull \hbox (1.4474pt too wide) in paragraph at lines 1960--1960
+ []|[]\TU/Helvetica(0)/m/n/11 Confidence 
+ []
+
+
+Overfull \hbox (0.82436pt too wide) in paragraph at lines 1966--1966
+ []|[]\TU/Helvetica(0)/m/n/11 Information 
+ []
+
+
+Overfull \hbox (1.4474pt too wide) in paragraph at lines 1966--1966
+ []|[]\TU/Helvetica(0)/m/n/11 Confidence 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2013--2014
+
+ []
+
+
+
+[123]
+Overfull \hbox (0.82436pt too wide) in paragraph at lines 2033--2033
+ []|[]\TU/Helvetica(0)/m/n/11 Information 
+ []
+
+
+Overfull \hbox (1.4474pt too wide) in paragraph at lines 2033--2033
+ []|[]\TU/Helvetica(0)/m/n/11 Confidence 
+ []
+
+
+Overfull \hbox (0.82436pt too wide) in paragraph at lines 2039--2039
+ []|[]\TU/Helvetica(0)/m/n/11 Information 
+ []
+
+
+Overfull \hbox (1.4474pt too wide) in paragraph at lines 2039--2039
+ []|[]\TU/Helvetica(0)/m/n/11 Confidence 
+ []
+
+
+
+[124]
+Overfull \hbox (48.49951pt too wide) in alignment at lines 2071--2075
+ [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (48.49951pt too wide) in alignment at lines 2075--2080
+ [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (48.49951pt too wide) in alignment at lines 2080--2113
+ [] [] [] [] [] 
+ []
+
+[125] [126] [127] [128] [129] [130]
+Underfull \hbox (badness 10000) in paragraph at lines 2117--2118
+
+ []
+
+
+
+[131]
+Underfull \hbox (badness 10000) in paragraph at lines 2129--2130
+
+ []
+
+
+
+[132]
+Underfull \hbox (badness 10000) in paragraph at lines 2145--2147
+
+ []
+
+
+
+[133]
+
+[134]
+Underfull \hbox (badness 10000) in paragraph at lines 2162--2163
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2164--2165
+
+ []
+
+
+
+[135]
+Underfull \hbox (badness 10000) in paragraph at lines 2178--2179
+
+ []
+
+
+
+[136]
+Underfull \hbox (badness 10000) in paragraph at lines 2194--2195
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2196--2197
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2198--2199
+
+ []
+
+
+
+[137]
+Underfull \hbox (badness 10000) in paragraph at lines 2204--2205
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2206--2207
+
+ []
+
+
+
+[138]
+Underfull \hbox (badness 10000) in paragraph at lines 2220--2221
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2226--2227
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2228--2229
+
+ []
+
+
+
+[139]
+Underfull \hbox (badness 10000) in paragraph at lines 2241--2242
+
+ []
+
+
+
+[140]
+
+[141]
+
+[142]
+Underfull \hbox (badness 10000) in paragraph at lines 2251--2252
+
+ []
+
+File: _main_files/figure-latex/accmodelplot-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/accmodelplot-1.pdf>
+
+Overfull \hbox (45.57468pt too wide) in paragraph at lines 2253--2254
+[][] 
+ []
+
+
+
+[143]
+
+LaTeX Warning: Citation 'coderre_diagnostic_2003' on page 144 undefined on inpu
+t line 2260.
+
+
+LaTeX Warning: Citation 'akaishi_autonomous_2014' on page 144 undefined on inpu
+t line 2267.
+
+
+LaTeX Warning: Citation 'kaanders_humans_2022' on page 144 undefined on input l
+ine 2267.
+
+
+LaTeX Warning: Citation 'klayman_confirmation_1987' on page 144 undefined on in
+put line 2267.
+
+
+LaTeX Warning: Citation 'hunt_approach-induced_2016' on page 144 undefined on i
+nput line 2267.
+
+
+LaTeX Warning: Citation 'jonas_confirmation_2001' on page 144 undefined on inpu
+t line 2267.
+
+
+LaTeX Warning: Citation 'aron_diagnostic_2024' on page 144 undefined on input l
+ine 2267.
+
+
+Overfull \hbox (57.90892pt too wide) in paragraph at lines 2267--2268
+\TU/lmr/m/n/12 spite the sequential nature of the task’s information seeking (c
+f. []).
+ []
+
+
+
+[144]
+
+LaTeX Warning: Citation 'voytovich_premature_1985' on page 145 undefined on inp
+ut line 2269.
+
+
+LaTeX Warning: Citation 'eva_difficulty_2006' on page 145 undefined on input li
+ne 2269.
+
+
+LaTeX Warning: Citation 'krupat_avoiding_2017' on page 145 undefined on input l
+ine 2269.
+
+
+LaTeX Warning: Citation 'mamede_role_2024' on page 145 undefined on input line 
+2269.
+
+
+LaTeX Warning: Citation 'gupta_associations_2023' on page 145 undefined on inpu
+t line 2269.
+
+
+
+[145]
+
+LaTeX Warning: Citation 'coderre_diagnostic_2003' on page 146 undefined on inpu
+t line 2274.
+
+
+
+[146]
+
+LaTeX Warning: Citation 'nendaz_diagnostic_2012' on page 147 undefined on input
+ line 2276.
+
+
+LaTeX Warning: Citation 'arocha_novice_1995' on page 147 undefined on input lin
+e 2276.
+
+
+LaTeX Warning: Citation 'gupta_associations_2023' on page 147 undefined on inpu
+t line 2278.
+
+
+LaTeX Warning: Citation 'soares_accuracy_2019' on page 147 undefined on input l
+ine 2278.
+
+
+LaTeX Warning: Citation 'coderre_diagnostic_2003' on page 147 undefined on inpu
+t line 2278.
+
+
+LaTeX Warning: Citation 'oeberst_toward_2023' on page 147 undefined on input li
+ne 2278.
+
+
+LaTeX Warning: Citation 'alicke_better-than-average_2005' on page 147 undefined
+ on input line 2278.
+
+
+LaTeX Warning: Citation 'pronin_bias_2002' on page 147 undefined on input line 
+2278.
+
+
+Overfull \hbox (104.58037pt too wide) in paragraph at lines 2278--2279
+\TU/lmr/m/n/12 (e.g. time pressures as per [], interruptions as per [])
+ []
+
+
+
+[147]
+
+LaTeX Warning: Citation 'coderre_diagnostic_2003' on page 148 undefined on inpu
+t line 2280.
+
+
+LaTeX Warning: Citation 'coderre_diagnostic_2003' on page 148 undefined on inpu
+t line 2280.
+
+
+LaTeX Warning: Citation 'kuipers_causal_1984' on page 148 undefined on input li
+ne 2280.
+
+
+LaTeX Warning: Citation 'higgs_clinical_2019' on page 148 undefined on input li
+ne 2280.
+
+
+LaTeX Warning: Citation 'coderre_diagnostic_2003' on page 148 undefined on inpu
+t line 2280.
+
+
+
+[148]
+
+LaTeX Warning: Citation 'leblanc_believing_2002' on page 149 undefined on input
+ line 2287.
+
+
+LaTeX Warning: Citation 'brooks_difficulty_2000' on page 149 undefined on input
+ line 2287.
+
+
+LaTeX Warning: Citation 'kourtidis_influences_2022' on page 149 undefined on in
+put line 2287.
+
+
+LaTeX Warning: Citation 'redelmeier_fallacy_2023' on page 149 undefined on inpu
+t line 2287.
+
+
+LaTeX Warning: Citation 'keifenheim_teaching_2015' on page 149 undefined on inp
+ut line 2287.
+
+
+
+[149]
+
+LaTeX Warning: Citation 'wears_standardisation_2015' on page 150 undefined on i
+nput line 2289.
+
+
+LaTeX Warning: Citation 'ely_checklists_2011' on page 150 undefined on input li
+ne 2289.
+
+
+Overfull \hbox (20.32571pt too wide) in paragraph at lines 2289--2290
+\TU/lmr/m/n/12 ([]), such as checklists ([]). When
+ []
+
+
+
+[150]
+
+LaTeX Warning: Citation 'royce_teaching_2019' on page 151 undefined on input li
+ne 2294.
+
+
+LaTeX Warning: Citation 'arocha_novice_1995' on page 151 undefined on input lin
+e 2294.
+
+
+LaTeX Warning: Citation 'coderre_diagnostic_2003' on page 151 undefined on inpu
+t line 2294.
+
+
+LaTeX Warning: Citation 'graber_cognitive_2012' on page 151 undefined on input 
+line 2294.
+
+
+LaTeX Warning: Citation 'lambe_dual-process_2016' on page 151 undefined on inpu
+t line 2294.
+
+
+
+[151]
+
+[152]
+
+[153]
+
+LaTeX Warning: Empty bibliography on input line 2310.
+
+Package minitoc Info: I0009
+(minitoc)             Listing minitoc auxiliary files. 
+(minitoc)             Creating the _main.maf file.
+\openout3 = `_main.maf'.
+
+
+
+[154
+
+] (./_main.aux)
+ ***********
+LaTeX2e <2024-11-01> patch level 1
+L3 programming layer <2024-12-25>
+ ***********
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `_main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `_main.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  DE58F5969D6DBD75F22D5C94EB69ADA3;4613.
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                _main
+(biblatex)                and rerun LaTeX afterwards.
+
+Package logreq Info: Writing requests to '_main.run.xml'.
+\openout1 = `_main.run.xml'.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 35167 strings out of 473853
+ 674922 string characters out of 5730238
+ 1662386 words of memory out of 5000000
+ 57683 multiletter control sequences out of 15000+600000
+ 575075 words of font info for 81 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 79i,12n,93p,3163b,4212s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+Output written on _main.pdf (163 pages).
