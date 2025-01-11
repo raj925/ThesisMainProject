@@ -43,8 +43,6 @@ abbreviations: |
 ## bibliography path ##
 #######################
 bibliography: [bibliography/references.bib]
-biblio-style: "apalike"
-citeproc: true
 
 ########################
 ## PDF layout options ###
@@ -54,7 +52,7 @@ citeproc: true
 # candidate number and word count
 masters-submission: false
 candidate-number: 123456
-word-count: "10,052"
+word-count: "50,000"
 
 # if you want to use a different title page altogether, provide a path to a 
 # .tex file here and it will override the default Oxford one
@@ -79,7 +77,6 @@ refs-space-between-entries: 1mm
 ## biblatex options ##
 use-biblatex: true # set to true, and set "output:bookdown::pdf_book: citation_package: biblatex"
 bib-latex-options: "style=authoryear, sorting=nyt, backend=biber, maxcitenames=2, useprefix, doi=true, isbn=false, uniquename=false" #for science, you might want style=numeric-comp, sorting=none for numerical in-text citation with references in order of appearance
-biblatex_options: [backend=biber]
 
 ## natbib options ##
 # use-natbib: true # set to true, and set "output:bookdown::pdf_book: citation_package: natbib"
@@ -192,15 +189,9 @@ documentclass: book
 always_allow_html: true #this allows html stuff in word (.docx) output
 ---
 
-```{r setupglob, include=FALSE}
-knitr::opts_knit$set(envir = knitr::knit_global())
-```
-
 ```{r install_packages, include=FALSE}
 source('scripts_and_filters/install_packages_if_missing.R')
-opts_knit$set(global.env = TRUE)
 ```
-
 
 ```{r mathfuncs, include=FALSE}
 
@@ -400,179 +391,7 @@ for (n in 1:length(participantIDS))
   aggData$initialIncorrectLik[n] <- mean(initialIncorrectLikelihoods)
   aggData$middleIncorrectLik[n] <- mean(middleIncorrectLikelihoods)
   aggData$finalIncorrectLik[n] <- mean(finalIncorrectLikelihoods)
-  # 
-  # files <- list.files(paste(dataFolder, "/", id, sep="")) 
-  # fileName <- files[1]
-  # fileName <- paste(dataFolder, "/", id, "/", fileName, sep="")
-  # #processFile(fileName)
-  # myData <- fromJSON(file=fileName)
-  # demoQs <- myData$rawData$demoQuestionnaire
-  # aggData$age[n] <- as.integer(demoQs[1])
-  # aggData$gender[n] <- demoQs[2]
-  # aggData$medExp[n] <- demoQs[3]
-  # 
-  # rawdata <- myData$rawData
-  # 
-  # decisionRationalScore <- 0
-  # decisionIntuitionScore <- 0
-  # 
-  # extraversionScore <- 0
-  # agreeableScore <- 0
-  # conscientiousScore <- 0
-  # neuroticScore <- 0 
-  # opennessScore <- 0
-  # 
-  # if ("decisionAnswers" %in% names(rawdata)) 
-  # {  
-  #   
-  #   # Decision Scale:
-  #   # 1 = Strongly Disagree
-  #   # 2 = Disagree
-  #   # 3 = Neutral
-  #   # 4 = Agree
-  #   # 5 = Strongly Agree
-  #   
-  #   
-  #   decisionAnswers <- rawdata$decisionAnswers
-  #   decisionRationalItems <- c(decisionAnswers$RationalInfo, decisionAnswers$RationalEval,
-  #                              decisionAnswers$RationalCont, decisionAnswers$RationalDecision,
-  #                              decisionAnswers$RationalWeigh)
-  #   
-  #   decisionScale <- c("Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree")
-  #   
-  #   decisionIntuitiveItems <- c(decisionAnswers$IntuitiveGut, decisionAnswers$IntuitiveHunch,
-  #                               decisionAnswers$IntuitiveDecision, decisionAnswers$IntuitiveImpress,
-  #                               decisionAnswers$IntuitiveWeigh)
-  #   
-  #   for (x in 1:length(decisionRationalItems))
-  #   {
-  #     item <- decisionRationalItems[x]
-  #     decisionRationalScore <- decisionRationalScore + match(item,decisionScale)
-  #   }
-  #   
-  #   for (x in 1:length(decisionIntuitiveItems))
-  #   {
-  #     item <- decisionIntuitiveItems[x]
-  #     decisionIntuitionScore <- decisionIntuitionScore + match(item,decisionScale)
-  #   }
-  # }
-  # 
-  # if ("bigFiveAnswers" %in% names(rawdata)) 
-  # {  
-  #   
-  #   # Big Five Scale:
-  #   # 1 = Disagree Strongly
-  #   # 2 = Disagree a little
-  #   # 3 = Neither agree nor disagree
-  #   # 4 = Agree a little
-  #   # 5 = Agree Strongly
-  #   
-  #   bigFiveScale <- c("Disagree Strongly", "Disagree a little", "Neither agree nor disagree", "Agree a little", "Agree Strongly")
-  #   
-  #   bigFiveAnswers <- rawdata$bigFiveAnswers
-  #   
-  #   extraversionItems <- c(bigFiveAnswers$Talk, bigFiveAnswers$Reserved, bigFiveAnswers$Energy, bigFiveAnswers$Enthusiastic, bigFiveAnswers$Quiet, bigFiveAnswers$Assertive, bigFiveAnswers$Shy, bigFiveAnswers$Sociable)
-  #   agreeableItems <- c(bigFiveAnswers$Fault, bigFiveAnswers$Help, bigFiveAnswers$Quarrel, bigFiveAnswers$Forgive, bigFiveAnswers$Trusting, bigFiveAnswers$Cold, bigFiveAnswers$Considerate, bigFiveAnswers$Rude, bigFiveAnswers$Cooperate)
-  #   conscientiousItems <- c(bigFiveAnswers$Thorough, bigFiveAnswers$Careless, bigFiveAnswers$Reliable, bigFiveAnswers$Disorganise, bigFiveAnswers$Lazy, bigFiveAnswers$Persevere, bigFiveAnswers$Efficient, bigFiveAnswers$Plan, bigFiveAnswers$Distract)
-  #   neuroticItems <- c(bigFiveAnswers$Blue, bigFiveAnswers$Relax, bigFiveAnswers$Tense, bigFiveAnswers$Worry, bigFiveAnswers$Stable, bigFiveAnswers$Moody, bigFiveAnswers$Calm, bigFiveAnswers$Nervous)
-  #   openItems <- c(bigFiveAnswers$Orig, bigFiveAnswers$Curious, bigFiveAnswers$Ingenious, bigFiveAnswers$Active, bigFiveAnswers$Inventive, bigFiveAnswers$Art, bigFiveAnswers$Routine, bigFiveAnswers$Ideas, bigFiveAnswers$Artistic, bigFiveAnswers$Lit)
-  #   
-  #   extraversionReverses <- c(2,5,7)
-  #   agreeableReverses <- c(1,3,6,8)
-  #   conscientiousReverses <- c(2,4,5,9)
-  #   neuroticReverses <- c(2,5,7)
-  #   openReverses <- c(7,9)
-  #   
-  #   for (x in 1:length(extraversionItems))
-  #   {
-  #     item <- extraversionItems[x]
-  #     if (x %in% extraversionReverses)
-  #     {
-  #       extraversionScore <- extraversionScore + (6-match(item,bigFiveScale))
-  #     }
-  #     else
-  #     {
-  #       extraversionScore <- extraversionScore + match(item,bigFiveScale)
-  #     }
-  #   }
-  #   
-  #   for (x in 1:length(agreeableItems))
-  #   {
-  #     item <- agreeableItems[x]
-  #     if (x %in% agreeableReverses)
-  #     {
-  #       agreeableScore <- agreeableScore + (6-match(item,bigFiveScale))
-  #     }
-  #     else
-  #     {
-  #       agreeableScore <- agreeableScore + match(item,bigFiveScale)
-  #     }
-  #   }
-  #   
-  #   for (x in 1:length(conscientiousItems))
-  #   {
-  #     item <- conscientiousItems[x]
-  #     if (x %in% conscientiousReverses)
-  #     {
-  #       conscientiousScore <- conscientiousScore + (6-match(item,bigFiveScale))
-  #     }
-  #     else
-  #     {
-  #       conscientiousScore <- conscientiousScore + match(item,bigFiveScale)
-  #     }
-  #   }
-  #   
-  #   for (x in 1:length(neuroticItems))
-  #   {
-  #     item <- neuroticItems[x]
-  #     if (x %in% neuroticReverses)
-  #     {
-  #       neuroticScore <- neuroticScore + (6-match(item,bigFiveScale))
-  #     }
-  #     else
-  #     {
-  #       neuroticScore <- neuroticScore + match(item,bigFiveScale)
-  #     }
-  #   }
-  #   
-  #   for (x in 1:length(openItems))
-  #   {
-  #     item <- openItems[x]
-  #     if (x %in% openReverses)
-  #     {
-  #       opennessScore <- opennessScore + (6-match(item,bigFiveScale))
-  #     }
-  #     else
-  #     {
-  #       opennessScore <- opennessScore + match(item,bigFiveScale)
-  #     }
-  #   }
-  #   
-  #   extraversionScore <- extraversionScore/length(extraversionItems)
-  #   agreeableScore <- agreeableScore/length(agreeableItems)
-  #   conscientiousScore <- conscientiousScore/length(conscientiousItems)
-  #   neuroticScore <- neuroticScore/length(neuroticItems)
-  #   opennessScore <- opennessScore/length(openItems)
-  #   
-  # }
-  # aggData$decisionRationalScore[n] <- decisionRationalScore
-  # aggData$decisionIntuitionScore[n] <- decisionIntuitionScore
-  # aggData$relativeRationalism[n] <- decisionRationalScore - decisionIntuitionScore
-  # 
-  # aggData$extraversionScore[n] <- extraversionScore
-  # aggData$agreeableScore[n] <- agreeableScore
-  # aggData$conscientiousScore[n] <- conscientiousScore
-  # aggData$neuroticScore[n] <- neuroticScore
-  # aggData$opennessScore[n] <- opennessScore
-  # 
-  # if ("debrief" %in% names(myData$processedData))
-  # {
-  #   aggData$diagnosticApproach[n] <- myData$processedData$debrief$DiagnosticApproach
-  # }
-  # else
-  # {
-  #   aggData$diagnosticApproach[n] <- ""
-  # }
+
 }
 
 ################################################
@@ -1107,17 +926,11 @@ vrCompleteData <- vrCompleteData[!is.na(vrCompleteData$t2Confidence),]
 nFullPpts <- nrow(vrCompleteData)/2
 ```
 
-
 ```{r create_chunk_options, include=FALSE, eval=knitr::is_latex_output()}
 source('scripts_and_filters/create_chunk_options.R')
 ```
 
-<!--
-Include the create_chunk_options chunk above at the top of your index.Rmd file
-This will include code to create additional chunk options (e.g. for adding author references to savequotes)
-If you need to create your own additional chunk options, edit the file scripts/create_chunk_options.R
--->
-
 <!-- This chunk includes the front page content in HTML output -->
+
 ```{r ebook-welcome, child = 'front-and-back-matter/_welcome-ebook.Rmd', eval=knitr::is_html_output()}
 ```
