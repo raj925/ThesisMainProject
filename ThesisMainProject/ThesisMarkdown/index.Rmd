@@ -188,7 +188,15 @@ output:
 link-citations: true
 documentclass: book
 always_allow_html: true #this allows html stuff in word (.docx) output
+header-includes:
+ \usepackage{float}
+ \floatplacement{figure}{H}
 ---
+
+```{r global_options, include=FALSE}
+knitr::opts_chunk$set(fig.pos = 'H')
+knitr::opts_chunk$set(tab.topcaption=FALSE)
+```
 
 ```{r install_packages, include=FALSE}
 source('scripts_and_filters/install_packages_if_missing.R')
