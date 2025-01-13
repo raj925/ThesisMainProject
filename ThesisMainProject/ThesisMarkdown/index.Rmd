@@ -39,6 +39,8 @@ show-abstract-in-toc: false
 abbreviations: |
   `r paste(readLines("front-and-back-matter/_abbreviations.Rmd"), collapse = '\n  ')`
 
+
+
 #######################
 ## bibliography path ##
 #######################
@@ -155,7 +157,6 @@ gap-after-crest: 25mm
 abstractseparate: false  # include front page w/ abstract for examination schools?
 includeline-num: false # show line numbering in PDF?
 no-line-wrapping-in-code: false # by default, we prevent lines in code blocks from going off into the margins -- set 'true' to override this
-
 
 #####################
 ## output details  ##
