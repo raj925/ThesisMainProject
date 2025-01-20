@@ -1,34 +1,76 @@
+\item[ABCDE] Airway Breathing Circulation Disability Exposure (assessment tool)
+
 \item[AD] Aortic Dissection
+
+\item[AICU] Adult Intensive Care Unit
+
+\item[AUC] Area Under the Curve
+
+\item[CI] Confidence Interval
+
+\item[CRP] C-Reactive Protein blood Test
 
 \item[DKA] Diabetic Ketoacidosis
 
-\item[GBS] Guillain-Barre Syndrome
+\item[ECG] Electrocardiogram
+
+\item[ED] Emergency Department
+
+\item[EPR] Electronic Patient Record
+
+\item[FBC] Full Blood Count
+
+\item[GBS] Guillain-Barré Syndrome
+
+\item[GI] Gastrointestinal
+
+\item[GLM] Generalised Logistic Regression
 
 \item[HD] Hypothetico-Deductive Reasoning
 
-\item[ICU] Intensive Care Unit
+\item[LOOCV] Leave One Out Cross-Validation
+
+\item[M] Mean
+
+\item[MDiff] Mean Difference
+
+\item[MRC] Medical Research Council
+
+\item[MRI] Magnetic Resonance Imaging
 
 \item[MTB] Miliary Tuberculosis
+
+\item[NHS] National Health Service
 
 \item[OMS] Oxford Medical Simulation
 
 \item[OSF] Open Science Framework
 
-\item[PhEx] Physical Examination
+\item[OUH] Oxford University Hospitals (NHS Trust)
 
-\item[PaHi] Patient History
+\item[PE] Pulmonary Embolism
 
 \item[PR] Pattern Recognition
 
-\item[SI] Scheme-Induced Reasoning
+\item[PRISMA] Preferred Reporting Items for Systematic Reviews and Meta-Analyses
+
+\item[ROC] Receiver Operating Characteristic
+
+\item[SBAR] Situation Background Assessment Recommendation (handover framework)
+
+\item[SD] Standard Deviation
+
+\item[SI] Scheme-Inductive Reasoning
 
 \item[TA] Temporal Arteritis
-
-\item[Te] Testing
 
 \item[TTP] Thrombotic Thrombocytopenic Purpura
 
 \item[UC] Ulcerative Colitis
+
+\item[U\&E] Urea & Electrolytes
+
+\item[VBG] Venous Blood Gas
 
 \item[VR] Virtual Reality
 

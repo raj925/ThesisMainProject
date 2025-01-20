@@ -71,7 +71,7 @@ We refer to confidence as being ‘calibrated’ if it closely predicts objectiv
 
 \newpage
 
-```{r calibrationgraph, include=TRUE, echo=FALSE, out.width='100%', fig.align='center', fig.cap="Visual representation of confidence calibration when comparing objective accuracy (x-axis) to subjective confidence (y-axis). Confidence is said to be calibrated when the two are relative equivalent (green line). Individuals are considered underconfident when their confidence is lower than their true accuracy (blue area) and overconfident when their confidence is higher than their true accuracy (orange area)."}
+```{r calibrationgraph, include=TRUE, echo=FALSE, out.width='100%', fig.align='center', fig.cap="Visual representation of confidence calibration when comparing objective accuracy (x-axis) to subjective confidence (y-axis). Confidence is said to be calibrated when the two are relative equivalent (green line). Individuals are considered underconfident when their confidence is lower than their true accuracy (blue area) and overconfident when their confidence is higher than their true accuracy (orange area).", fig.scap="Visual representation of confidence calibration"}
 
 knitr::include_graphics("./assets/confidenceCalibration.png")
 
@@ -100,7 +100,7 @@ One of the earliest papers to investigate the link between overconfidence and in
 
 \newpage
 
-```{r oskamp, include=TRUE, echo=FALSE, out.width='100%', fig.align='center',fig.cap="Graph representing the results from Oskamp (1965), which was plotted using the reported data (the original paper did not have such a figure). The graph shows at each stage of information being provided about the patient (x-axis), the average confidence (y-axis, red), accuracy (y-axis, blue) and proportion of answers that were changed from the answers provided during the previous stage (y-axis, orange). This graph, showing that confidence increased with more information whilst accuracy remained at a similar level, is representative of findings from other papers (e.g. Meyer, 2013) of overconfidence with the receipt of further information."}
+```{r oskamp, include=TRUE, echo=FALSE, out.width='100%', fig.align='center',fig.cap="Graph representing the results from Oskamp (1965), which was plotted using the reported data (the original paper did not have such a figure). The graph shows at each stage of information being provided about the patient (x-axis), the average confidence (y-axis, red), accuracy (y-axis, blue) and proportion of answers that were changed from the answers provided during the previous stage (y-axis, orange). This graph, showing that confidence increased with more information whilst accuracy remained at a similar level, is representative of findings from other papers (e.g. Meyer, 2013) of overconfidence with the receipt of further information.", fig.scap="Graph representing the results from Oskamp (1965)"}
 
 knitr::include_graphics("./assets/OskampGraph.png")
 

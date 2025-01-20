@@ -189,8 +189,10 @@ link-citations: true
 documentclass: book
 always_allow_html: true #this allows html stuff in word (.docx) output
 header-includes:
- \usepackage{float}
- \floatplacement{figure}{H}
+ - \usepackage{float}
+ - \floatplacement{figure}{H}
+ - \usepackage{caption}
+ - \captionsetup[figure]{singlelinecheck=off, font=small, justification=justified,belowskip=0pt, aboveskip=5pt}
 ---
 
 ```{r global_options, include=FALSE}
