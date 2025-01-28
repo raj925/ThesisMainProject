@@ -34,9 +34,9 @@ We organised articles under two main themes: the determinants of confidence and 
 \
 Based on the literature from this review, we propose a theoretical model of factors that affect diagnostic confidence/certainty and accuracy throughout various stages of the patient care process. The proposed conceptual model highlights our current understanding of diagnostic confidence and how future research might focus on underexplored areas, particularly on group decisions, individual differences in confidence, and on the link between information seeking and confidence. Such a model can inform future work on how appropriate diagnostic confidence can be prompted and communicated amongst clinicians. Improving the calibration of confidence should hence be a priority for medical education and clinical practice (e.g., via decision aids), with this model acting as a starting point for future work to target specific factors that contribute to misclibrated confidence.
 
-## Methods 
+## Methods
 
-### Search Strategy 
+### Search Strategy
 
 Our review protocol was preregistered on the Open Science Framework: <https://osf.io/wz5se>. We conducted a systematic scoping review of empirical studies on confidence and certainty in medical diagnosis using JBI’s PRISMA-ScR Checklist for Scoping Reviews [@peters_scoping_2024]. The search strategy was designed in cooperation with a subject specialist librarian at the University of Oxford’s Bodleian Libraries group. The search string comprised keywords that captured the intersection of four elements: confidence/certainty, medical diagnoses, decision making and a study population of medical staff/students (i.e., clinicians, physicians, doctors and medics). The full search terms were as follows:
 
@@ -46,7 +46,7 @@ Our review protocol was preregistered on the Open Science Framework: <https://os
 \
 The databases SCOPUS, MEDLINE, PsycINFO and Global Health were searched during February 2024. Finally, we hand-searched the citations of the included articles from these databases for further relevant articles via backward and forward scanning [@webster_analyzing_2002; @tranfield_towards_2003].
 
-### Study Selection 
+### Study Selection
 
 The inclusion criteria for screened studies were as follows:
 
@@ -59,13 +59,13 @@ The inclusion criteria for screened studies were as follows:
 
 Identified articles were uploaded onto Rayyan (<https://rayyan.ai/>) to detect duplicate papers for manual checking and removal. This is the only part of the review process in which an automation tool is used. Data from the papers was collected using manual review. Research characteristics were derived iteratively and can be found on OSF (<https://osf.io/4g6s3/>).
 
-### Research Synthesis 
+### Research Synthesis
 
 Papers selected for review were first categorised by their broad research methodology (e.g., patient vignettes, in situ questionnaires, etc.) and their medical population of study (e.g., medical students, general practitioners/hospital physicians etc.). We reviewed the experimental procedures to extract their key manipulations and independent variables (e.g., case complexity, use of a cognitive intervention, level of medical experience). We also extracted dependent variables as they pertain to confidence/certainty and, where relevant, recording of both diagnostic differentials and information seeking. Each of the paper’s key findings were summarised and then all findings were categorised under recurring themes.
 
-## Results 
+## Results
 
-### Findings of Scoping Review 
+### Findings of Scoping Review
 
 The initial search returned a total of 3,332 articles. Applying the inclusion criteria identified 50 eligible articles. 439 further articles were retrieved for review from the included articles’ citations. After applying both exclusions of duplicates and our inclusion criteria, 29 further articles were identified. This produced a total of 79 articles for inclusion and synthesis (see [Figure \@ref(fig:primsa)](#fig:primsa) below for PRISMA diagram). The full set of papers can be found in [Table \@ref(tab:paperstable)](#tab:paperstable) of the Appendices.
 
@@ -75,7 +75,7 @@ knitr::include_graphics("./assets/PRISMA.png")
 
 ```
 
-#### Study Characteristics 
+#### Study Characteristics
 
 [Table \@ref(fig:chartable)](#fig:chartable) below summarises study characteristics and [Figure \@ref(fig:reviewyears)](#fig:reviewyears) shows that 36 of the 79 studies (46%) were published since 2019, indicating a recent surge of research interest in this field and the timeliness of this scoping review. The studies appeared in 59 different publications, including both medical and psychological journals, with medical education journals being most common (19 studies). Clinical areas most represented were Primary Care/General Practice, Emergency Medicine and Nursing.
 
@@ -109,7 +109,7 @@ In terms of accuracy, most studies prompt clinicians for a single diagnosis that
 
 Calibration is assessed by comparing confidence ratings with objective diagnostic accuracy: When clinicians rate 100% (or 50% or 60%, etc.) certainty in their diagnosis, are they in fact correct 100% (or 50%, 60%, etc.) of the time? Calibration is then an indirect measure that is calculated by comparing two other observed measures: confidence and accuracy. In our study sample, there was limited evidence of calibrated confidence judgements, with some studies reporting underconfidence [@mann_relationship_1993; @yang_effect_2012; @brezis_does_2019]and others overconfidence [@friedman_are_2001; @fernandez-aguilar_use_2022; @garbayo_metacognitive_2023]. To examine these findings in more detail, we considered factors that impact and promote calibration in diagnoses.
 
-##### The Impact of Experience on Calibration 
+##### The Impact of Experience on Calibration
 
 The first major theme of interest is whether calibration improves with experience. This was not always observed in the results [@yang_nurses_2010; @clayton_are_2023]. However, experienced clinicians seem better able to identify when a case is more complex and adjust their confidence accordingly [@tabak_clinical_1996; @brannon_nursing_2003]. Looking at the link between calibration and experience alone may be too simplistic, and there are other aspects of experience that influence diagnoses. Experienced clinicians were found to be less likely to ‘distort’ neutral information to be in support of their reported diagnoses, indicating a lower tendency toward confirmation bias [@kostopoulou_information_2012]. Past work has also suggested a distinction between experience (operationalised as years of experience or role seniority) and knowledge (measured using standardised tests of medical knowledge). In medical students, the calibration of confidence judgements were found to improve with years of education but not with medical knowledge [@hautz_diagnostic_2019]. Information ‘distortion’ was found to affect novice clinicians more [@kostopoulou_information_2012] and lower knowledge was found to be related to higher susceptibility to irrelevant, distracting features of a patient [@mamede_role_2024], However, the latter study from @mamede_role_2024 found that medical knowledge on the part of resident physicians was not directly associated with calibration.
 
@@ -119,7 +119,7 @@ The second major theme relates to contextual and environmental factors. Studies 
 
 Contextual factors that pertain to the situated medical environment can also affect overall levels of confidence (rather than calibration), as found using naturalistic paradigms. For example, clinicians may be constantly interrupted by other tasks [@soares_accuracy_2019], especially during busier shifts where they have to manage more patients [@gupta_associations_2023] and may not be present for the sharing of information during handovers [@bergl_factors_2024]. Studies that simulated these situations found they resulted in lower diagnostic confidence. However, such studies cannot assess the effect of contextual factors on confidence calibration with diagnostic accuracy because they were conducted in-situ, meaning that researchers do not yet have a ground truth of the patient’s condition. At this stage, we can only determine how these contextual factors affect confidence, rather than calibration.
 
-##### Imaging and Decision Support Systems 
+##### Imaging and Decision Support Systems
 
 A subset of papers found evidence for an increase in confidence when providing clinicians with specialised imaging for a patient to assist diagnoses, be they MRI scans [@mackenzie_magnetic_1996; @albrechtsen_impact_2022], CT scans [@abujudeh_abdominopelvic_2011], evacuation proctography [@harvey_evacuation_1999] or photos of wounds [@sanger_diagnosing_2017]. Another subset of papers used various forms of computer-aided decision support systems with the goal of increasing confidence [@hillson_effects_1995; @berner_influence_1999; @dreiseitl_physicians_2005; @neugebauer_clinical_2020]. @hillson_effects_1995 found that the adoption of diagnoses that were recommended by a computer-aided decision support system was not associated with an increase in confidence. @neugebauer_clinical_2020 did find evidence for such an association, however, with use of decision support leading to both increased confidence and increased diagnostic accuracy when compared to diagnoses made without using the system. On the other hand, both @berner_influence_1999 and @dreiseitl_physicians_2005 found that usage of decision support recommendations were associated with lower confidence when compared with decisions in which such recommendations were not utilised. Taken as a whole, whilst useful imaging increases confidence when available to clinicians, the efficacy of decision support systems at increasing confidence is likely dependent on other factors that require future work to elucidate.
 
@@ -129,7 +129,7 @@ The process of generating diagnostic differentials has been subject to experimen
 
 Studies have also investigated how confidence is affected by the manner in which information is presented to clinicians during the diagnostic process. Higher confidence was found when clinicians were presented with additional patient information even when this did not carry diagnostic value [@heller_heuristics_1992] and when given all available patient information rather than having to gather information themselves [@gruppen_information_1991]. Clinicians were also found to be more confident and more accurate when presented with an Electronic Health Record of the patient alongside other information [@ben-assuli_improving_2015] and when presented with the patient history first rather than out of order [@tio_effect_2022]. This finding indicates that complete patient history available early on has a positive impact on confidence. However, an erroneous patient history has also been found to cue both novice and experienced clinicians to incorrect diagnoses whilst confidence remained relatively high, resulting in overconfidence [@fawver_seeing_2020].
 
-##### Uses of Confidence 
+##### Uses of Confidence
 
 With more naturalistic studies, it is possible to isolate ways in which confidence is utilised within the wider diagnostic process, especially where healthcare involves transitions of care between multiple clinicians and departments. Past work has attempted to establish a link between confidence and further seeking of patient information and tests, with mixed results. US hospitalists (medical staff who provide care for patients specifically within US hospitals) with lower confidence were found to order more tests [@gupta_associations_2023] whilst pathologists who were better calibrated (i.e., who tended to report confidence judgements that were closer to their true accuracy) were found to be more likely to request further tests when they were unsure [@clayton_are_2023]. Confidence has also been linked to prescribing medication, though overtreatment with unnecessary medications has been linked to both underconfidence [@levin_antimicrobial_2012] and overconfidence [@garbayo_metacognitive_2023]. Higher confidence has also been linked to more referrals to specialists in other departments [@calman_variability_1992] and to a lower willingness to admit mistakes [@brezis_does_2019]. One study found that whilst experienced clinicians were not more accurate in their initial diagnoses, they were more willing to change diagnoses and request more information [@krupat_avoiding_2017]. Lower confidence has been found to result in less specific diagnoses for patients in situ [@hageman_surgeon_2013]. Although psychology research on confidence has examined its role within groups (as discussed in the Introduction), only one article looked at confidence in group decisions in medicine. This study found that a multidisciplinary panel was more confident and better calibrated than a single clinician [@thorlacius-ussing_comparing_2021].
 

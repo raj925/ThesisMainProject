@@ -1,11 +1,8 @@
-requiredPackages <- c("tibble", "scales", "psych", "ltm", "stringr", "ggsci", "ggplot2", "rjson", 
-                      "reticulate", "ggpubr", "lme4", "lmtest", "lmerTest", "MASS", "apcluster", "blme", "emmeans",
-                      "factoextra", "pwr", "magrittr", "tidyr", "dplyr", "boot", "rstatix", 
-                      "devtools",  "tidyverse", "proxy", "plotly","viridis","padr", "pracma", "bookdown",
-                      "RColorBrewer", "tm", "logisticPCA", "rARPACK", "FactoMineR", "verification","interactions",
-                      "rpart", "caret", "data.table", "ROCR", "maptree", "knitr", "kableExtra",
-                      "glmnet", "gridExtra", "mgcv", "nnet", "pROC", "stats", "e1071", "olsrr",
-                      "gbm", "xgboost", "DT", "NeuralNetTools", "rpart.plot", "poLCA", "lsr", "cowplot", "diffcor","pheatmap","readxl","flextable")
+requiredPackages <- c("bookdown","caret","cowplot","data.table","devtools","diffcor","dplyr","emmeans",
+  "factoextra","flextable","ggpubr","grateful","ggsci","ggplot2", "glmnet", "gridExtra","interactions",
+  "knitr","logisticPCA","lme4","lmerTest","lmtest","lsr","ltm", "kableExtra","magrittr","NeuralNetTools",
+  "MASS", "mgcv", "nnet","pheatmap","pracma","pROC", "psych","pwr","RColorBrewer","readxl","reticulate","rjson","ROCR",
+  "rpart","rpart.plot","rstatix", "scales","stats","stringr","tibble","tidyr","tidyverse","verification","viridis")
 
 new.packages <- requiredPackages[!(requiredPackages %in% installed.packages()[,"Package"])]
 if(length(new.packages)) install.packages(new.packages, repos = "http://cran.us.r-project.org")

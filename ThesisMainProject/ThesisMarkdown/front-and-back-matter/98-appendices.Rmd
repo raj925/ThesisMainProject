@@ -5,7 +5,7 @@
 
 <!-- If you feel it necessary to include an appendix, it goes here. The first appendix should include the commands above. -->
 
-# Chapter 2 Supplemental Materials
+# Chapter 2 Appendices
 
 ## Full Table of Included Review Papers
 
@@ -26,7 +26,7 @@ ft
 
 ```
 
-# Chapter 3 Supplemental Materials
+# Chapter 3 Appendices
 
 ## Vignette Information Requests
 
@@ -75,6 +75,78 @@ ft
 ## Analysis of Expert Participants {#experts}
 
 In this section, we present analysis of experienced participants who had completed the same online vignette task that the medical student participants completed. In total, 7 experienced participants completed the experiment. Given this small sample size, we primarily use the expert participants' results as a comparison with the medical student participants' results (presented in the main thesis).
+
+### Differentials
+
+```{r diffanovaexp, include=FALSE, echo=FALSE}
+
+diffdf <- expertDf %>%
+  group_by(stage,participantID) %>%
+  dplyr::summarise(Differentials = mean(numOfDifferentials))
+
+diffdf$stage <- as.factor(diffdf$stage)
+
+model <- summary(aov(Differentials ~ stage, data=diffdf))
+print(model)
+model <- model[[1]]
+colnames(model) <- c("DF", "SumSq", "MeanSq", "F", "p")
+etasq <- round(etaSquared(aov(Differentials ~ stage, data=diffdf))[1],2)
+
+attach(diffdf)
+pairtests <- pairwise.t.test(Differentials,stage,p.adj="bonf")
+detach()
+```
+
+We analysed the number of differentials to provide insights into the diagnostic decision process across stages for the expert participants. This allows us to determine if experienced clinicians use a process of deductive narrowing (decreasing differentials) or open-minded broadening (increasing differentials). Analysis of the number of differentials considered by participants at each stage provides little evidence for an overall strategy of deductive narrowing towards a single differential. Instead, participants overall increased the number of the differentials they reported as they received more information (F(`r model$DF[1]`, `r model$DF[2]`) = `r round(model$F[1],2)`, $\eta^2$G = `r etasq`, p \< .001). Participants reported fewer differentials during the Patient History stage (M = `r round(mean(diffdf[diffdf$stage==1,]$Differentials),2)`, SD = `r round(sd(diffdf[diffdf$stage==1,]$Differentials),2)`) than during the Physical Examination (M = `r round(mean(diffdf[diffdf$stage==2,]$Differentials),2)`, SD = `r round(sd(diffdf[diffdf$stage==2,]$Differentials),2)`) and Testing stages (M = `r round(mean(diffdf[diffdf$stage==3,]$Differentials),2)`, SD = `r round(sd(diffdf[diffdf$stage==3,]$Differentials),2)`). As can be observed in [Figure \@ref(fig:expdiffs)](#fig:expdiffs) below, all expert participants tended to, on average, increase the differentials they were considering across stages.
+
+```{r, expdiffs, include=TRUE, echo=FALSE, fig.cap="The average number of differentials after each stage of information seeking (x-axis, History = Patient History, Physical = Physical Examinations, Testing = Testing) for expert participants. The width of the blue area corresponds to the amount of data points that fall within that part of the y-axis, with a wider area meaning a higher concentration of data points. The larger black dots indicate the mean values, whilst the larger black vertical lines indicate standard deviations. The grey dots show individual values at each stage, with grey lines connecting the dots at each stage to represent individual participants' trend across the information seeking stages.",fig.scap="Online Study Appendix: Average Differentials by Stage for Expert Participants (Violin Plot)"}
+
+nPpts <- nrow(expertAggData)
+
+xb <- c(rep("History",nPpts),rep("Physical",nPpts), rep("Testing",nPpts))
+yb <- c(expertAggData$meanInitialDiffs, expertAggData$meanMiddleDiffs, expertAggData$meanFinalDiffs)
+dataV <- data.frame("Stage" = xb, "Mean"= yb)
+dataV$Stage <- as.factor(dataV$Stage)
+dataV$ID <- expertAggData$participantID
+
+# Calculate the trend direction for each participant
+# Check if the value for "History" (first stage) is greater than "Testing" (last stage)
+trend_data <- dataV %>%
+    group_by(ID) %>%
+    summarize(Trend = first(Mean[Stage == "History"]) > last(Mean[Stage == "Testing"]))
+
+# Merge the trend information back into the main data frame
+dataV <- merge(dataV, trend_data, by = "ID")
+
+diffs <- ggplot(dataV, aes(x=Stage, y=Mean)) +
+    geom_violin(colour="black", fill=differentialColour, alpha=0.8, trim=FALSE) + 
+    geom_dotplot(binaxis='y', stackdir='center', dotsize=0.5,colour="grey",alpha=0.5) +
+    # Add individual points
+    #geom_point(aes(group = ID), position = position_jitter(width = 0.2), size = 2, alpha = 0.7) +
+    # Add lines connecting the points for each participant
+    # Add lines connecting the points for each participant
+    geom_line(aes(group = ID, color = Trend), alpha = 0.3) +
+    stat_summary(fun.data=data_summary, colour="black") +
+    # Define colors for lines
+    scale_color_manual(
+        values = c("TRUE" = "red", "FALSE" = "grey"),
+        labels = c("TRUE" = "Narrowing Differentials", "FALSE" = "Broadening or Stable Differentials")
+    )
+
+
+print(diffs +
+          labs(x = "Stage", y = "Average Differentials") +
+          theme_classic() +
+          theme(axis.text=element_text(size=16),
+                axis.title=element_text(size=18),
+                plot.title=element_text(size=18,face="bold"),
+                line = element_blank(),
+                legend.position = "bottom"
+          )
+) 
+
+
+```
 
 ### Calibration of Confidence and Accuracy 
 
@@ -533,7 +605,7 @@ In order to examine the observed overconfidence in more detail, we compare confi
 
 \newpage
 
-# Chapter 4 Supplemental Materials
+# Chapter 4 Appendices
 
 ## Debrief Questionnaire from Think-Aloud Study {#debriefqs}
 
@@ -546,7 +618,7 @@ Each question has a corresponding follow-up question below in case they are not 
 
 \newpage
 
-# Chapter 5 Supplemental Materials
+# Chapter 5 Appendices
 
 ## Diagnostic Appropriateness Marking Scheme for VR Study
 
@@ -576,22 +648,22 @@ ft
 
 ```{r, include=TRUE, echo=FALSE, warning=FALSE}
 
-# print("R version:")
-# version$version.string
-# 
-# print("Rstudio version:")
-# rstudioversion <- rstudioapi::versionInfo()
-# rstudioversion$version
-# 
-# print("Citations for packages used:")
-# get_pkgs_info(pkgs = required_packages, out.dir = getwd())
-# pkgs <- scan_packages()
-# get_citations(pkgs$pkg, out.dir = getwd(), include.RStudio = TRUE)
-# cite_packages(pkgs = required_packages, output = "table", out.format = "Rmd", out.dir = getwd())
-# 
-# required_packages %>%
-#   map(citation) %>%
-#   print(style = "text")
+print("R version:")
+version$version.string
+
+print("Rstudio version:")
+rstudioversion <- rstudioapi::versionInfo()
+rstudioversion$version
+
+print("Citations for packages used:")
+get_pkgs_info(pkgs = requiredPackages, out.dir = getwd())
+pkgs <- scan_packages()
+get_citations(pkgs$pkg, out.dir = getwd(), include.RStudio = TRUE)
+cite_packages(pkgs = requiredPackages, output = "table", out.format = "Rmd", out.dir = getwd())
+
+requiredPackages %>%
+  map(citation) %>%
+  print(style = "text")
 
 ```
 

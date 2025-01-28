@@ -69,7 +69,7 @@ With this study, we investigated the following research questions:
 
 This study was designed to understand how information seeking, confidence and differential generation interact within the diagnosis process. Specifically, we investigated whether information seeking patterns were associated with diagnostic accuracy and confidence. We conducted a vignette-based diagnosis study with medical students to characterise their diagnostic process and potentially to inform future on how diagnostic reasoning is taught to students, especially when it comes to weighing up competing differentials. Data is openly available on OSF: <https://osf.io/kb54u/>.
 
-### Participants 
+### Participants
 
 We recruited final year medical students within the UK. 85 medical students completed the study, including 32 males, 52 females and 1 participant who identified as non-binary. Their ages ranged between 22-34 years (M = 24.2). Participants were recruited between July 11th 2022 and April 6th 2023 via emails sent to all UK medical students within a UK Medical Schools Council mailing list. We also recruited 7 experienced clinicians (with speciality experience), and provide analysis of their data in the Appendices (in the section titled [Analysis of Expert Participants](#experts)). Participants were emailed with a study information sheet and a link to access the experiment, where they first provided consent via an anonymous online form. After doing so, the participant provided demographic information (age, gender and years of medical experience). The study was conducted online, with participants able to run the experiment in a browser on a desktop computer or laptop (and not a phone or tablet) in a location of their choice. The experiment was coded using the JSPsych Javascript plugin. The code is publicly available on Github: <https://github.com/raj925/DiagnosisParadigm>. Ethical approval was granted by the Oxford Medical Sciences Interdivisional Research Ethics Committee under reference R81158/RE001.
 
@@ -97,7 +97,7 @@ knitr::include_graphics("./assets/Screenshot1.png")
 
 ```
 
-The procedure of a single case is as follows. The participant was asked to imagine that they are working in a busy district hospital and they encounter patients in a similar way to how they would in their real medical practice. At the start of each case, the participant was shown a description of a patient, which includes the patient’s gender, age and their presenting complaint. An example of this was: “Patient is a 68 year old male presenting with fever and arthralgia”. Each case is split into three information stages: Patient History, Physical Examination and Testing (in this order). This structure has been utilised in past work as being prototypical for a diagnosis [@hampton_relative_1975; @peterson_contributions_1992]. The Patient History stage included information on “Allergies”, “History of the Presenting Complaint”, “Past Medical History” and “Family History”. The Physical Examination stage included ‘actions’ that a doctor may take when examining a patient, such as “auscultate the lungs”, “abdominal examination”, “take pulse” and “measure temperature”. Finally, the Testing stage involved information on any bedside tests or tests they may request from another department. This includes “Chest X-Ray”, “Venous Blood Gas”, “Urine Dipstick” and “Clotting Test”. In total, there were 29 possible information requests across the three stages, with the available set of information being the same for all patient cases. The full set of information available on each case can be viewed in [Table \@ref(tab:inforequests)](#tab:inforequests) of the Appendices. \
+The procedure of a single case is as follows. The participant was asked to imagine that they are working in a busy district hospital and they encounter patients in a similar way to how they would in their real medical practice. At the start of each case, the participant was shown a description of a patient, which includes the patient’s gender, age and their presenting complaint. An example of this was: “Patient is a 68 year old male presenting with fever and arthralgia”. Each case is split into three information stages: Patient History, Physical Examination and Testing (in this order). This structure has been utilised in past work as being prototypical for a diagnosis [@hampton_relative_1975; @peterson_contributions_1992]. The Patient History stage included information on “Allergies”, “History of the Presenting Complaint”, “Past Medical History” and “Family History”. The Physical Examination stage included ‘actions’ that a doctor may take when examining a patient, such as “auscultate the lungs”, “abdominal examination”, “take pulse” and “measure temperature”. Finally, the Testing stage involved information on any bedside tests or tests they may request from another department. This includes “Chest X-Ray”, “Venous Blood Gas”, “Urine Dipstick” and “Clotting Test”. In total, there were 29 possible information requests across the three stages, with the available set of information being the same for all patient cases. The full set of information available on each case can be viewed in [Table \@ref(tab:inforequests)](#tab:inforequests) of the Appendices.\
 
 ```{r screenshot2, include=TRUE, echo=FALSE, out.width='100%', fig.align='center',fig.cap="Screenshot of the interface. This is the screen in which participants report their current list of differentials, including the name of each condition as well as the severity and likelihood ratings for each condition. Participants remove conditions by clicking the red cross on the right hand side of each differential. Participants add a new differential by clicking the plus icon below the list", fig.scap="Online Study: Screenshot 2"}
 
@@ -142,7 +142,7 @@ We used statistical analyses to consider differences in confidence, accuracy and
 
 ## Results
 
-### Overall Performance and Calibration 
+### Overall Performance and Calibration
 
 ```{r accanova, include=FALSE, echo=FALSE}
 
@@ -484,7 +484,7 @@ print(cow) #view the multi-panel figure
 
 \newpage
 
-### Information Seeking 
+### Information Seeking
 
 ```{r infoanova, include=FALSE, echo=FALSE}
 
@@ -871,7 +871,6 @@ ft
 
 ```
 
-
 Taking these findings together, keeping information seeking more constant (i.e. requesting similar high-value information) across cases was found to have an association with accuracy whilst there also being some information that is useful for clinicians to know for patients with specific conditions. To reconcile these, we derive which information requests were most weighted in our classifier models to find which were considered markers of accuracy (by being sought across cases) and which were considered markers of identifying specific cases. We extract coefficients from the logistic classifier of accuracy (the ROC curve for which was shown in [Figure \@ref(fig:accuracyClassifier)](#fig:accuracyClassifier)) and the multinomial classifier (the accuracy of which was depicted above in [Table \@ref(tab:caseClassifierTable)](#tab:caseClassifierTable)). We identify the highest weighted information requests as input parameters for each model. The five highest weighted information requests for each model are shown below in [Table \@ref(tab:coefficientTable)](#tab:coefficientTable). We also show how often each piece of information was sought for each of the cases in [Figure \@ref(fig:infoProps)](#fig:infoProps) below. Viewing this figure shows individual tests that are useful for specific cases. For example, an ECG is sought by most participants for the AD (a heart condition) case.
 
 ```{r coefficientTable, include=TRUE, eval=TRUE, message=FALSE, echo=FALSE, warning=FALSE,out.width='100%', fig.align='center'}
@@ -940,11 +939,11 @@ number_color = "black")
 
 ```
 
-## Discussion 
+## Discussion
 
 This study of medical students explored the interplay between confidence, accuracy and information seeking in a novel medical diagnosis task. Using an online interface, we explored how medical students work through diagnostic scenarios, freely seeking information to develop and test sets of possible differentials. Our aim was to look at how different aspects of information seeking impacts both diagnostic confidence and accuracy. The main strength of this study's paradigm is in allowing us to investigate the diagnostic process as it evolves over time and with more information, rather than as a single decision at a single point in time. By tracking how both confidence and the diagnoses considered by participants changes over time, we gain a better understanding of how the manner in which information sought is key to the diagnostic process and to clinicians' subjective confidence.
 
-### Calibration of Confidence 
+### Calibration of Confidence
 
 On the question of whether medical students provided confidence judgements that were calibrated to their objective accuracy, we found that students become more accurate across successive stages of information seeking as well more confident. However, cases varied in difficulty as reflected in participant accuracy. In particular, the AD and MTB cases exhibited lower observed accuracy across participants. We observed overconfidence for these two cases, and underconfidence for the UC case (for which accuracy was highest). This indicates a classical hard-easy effect of confidence [@lichtenstein_calibration_1977], whereby individuals have a greater tendency to be overconfident for more difficult decisions when compared to easier decision [@merkle_disutility_2009]. Confidence also increased as participants received more information. However, students reported fairly low confidence overall to treat patients, with an average confidence of below 50% even after receiving all available information. This may indicate that part of ensuring appropriate confidence, or expressions of uncertainty could be related to properly evaluating all possible diagnostic differentials rather than forcing decisions to focus on a single diagnosis, which has been cited previously as a problematic tendency [@redelmeier_fallacy_2023]. This may also be a function of undertaking the diagnostic process in isolation (i.e. without being able to discuss with colleagues, as would be the case in naturalistic medical environments). Such a reduction in confidence when making a decision alone rather than in group would be justified from a calibration perspective, as combining medical students' diagnoses has been found to improve accuracy [@kammer_potential_2017].\
 
