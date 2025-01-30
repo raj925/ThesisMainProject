@@ -1,0 +1,860 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% OXFORD THESIS TEMPLATE
+
+% Use this template to produce a standard thesis that meets the Oxford University requirements for DPhil submission
+%
+% Originally by Keith A. Gillow (gillow@maths.ox.ac.uk), 1997
+% Modified by Sam Evans (sam@samuelevansresearch.org), 2007
+% Modified by John McManigle (john@oxfordechoes.com), 2015
+% Modified by Ulrik Lyngs (ulrik.lyngs@cs.ox.ac.uk), 2018-, for use with R Markdown
+%
+% Ulrik Lyngs, 25 Nov 2018: Following John McManigle, broad permissions are granted to use, modify, and distribute this software
+% as specified in the MIT License included in this distribution's LICENSE file.
+%
+% John commented this file extensively, so read through to see how to use the various options.  Remember that in LaTeX,
+% any line starting with a % is NOT executed.
+
+%%%%% PAGE LAYOUT
+% The most common choices should be below.  You can also do other things, like replace "a4paper" with "letterpaper", etc.
+
+% 'twoside' formats for two-sided binding (ie left and right pages have mirror margins; blank pages inserted where needed):
+%\documentclass[a4paper,twoside]{templates/ociamthesis}
+% Specifying nothing formats for one-sided binding (ie left margin > right margin; no extra blank pages):
+%\documentclass[a4paper]{ociamthesis}
+% 'nobind' formats for PDF output (ie equal margins, no extra blank pages):
+%\documentclass[a4paper,nobind]{templates/ociamthesis}
+
+% As you can see from the line below, oxforddown uses the a4paper size, 
+% and passes in the binding option from the YAML header in index.Rmd:
+\documentclass[a4paper, nobind]{templates/ociamthesis}
+
+
+%%%%% ADDING LATEX PACKAGES
+% add hyperref package with options from YAML %
+\usepackage[pdfpagelabels]{hyperref}
+% handle long urls
+\usepackage{xurl}
+% change the default coloring of links to something sensible
+\usepackage{xcolor}
+
+\definecolor{mylinkcolor}{RGB}{0,0,139}
+\definecolor{myurlcolor}{RGB}{0,0,139}
+\definecolor{mycitecolor}{RGB}{0,33,71}
+
+\hypersetup{
+  hidelinks,
+  colorlinks,
+  linktocpage=true,
+  linkcolor=mylinkcolor,
+  urlcolor=myurlcolor,
+  citecolor=mycitecolor
+}
+
+
+% add float package to allow manual control of figure positioning %
+\usepackage{float}
+
+% enable strikethrough
+\usepackage[normalem]{ulem}
+
+% use soul package for correction highlighting
+\usepackage{color, soulutf8}
+\definecolor{correctioncolor}{HTML}{CCCCFF}
+\sethlcolor{correctioncolor}
+\newcommand{\ctext}[3][RGB]{%
+  \begingroup
+  \definecolor{hlcolor}{#1}{#2}\sethlcolor{hlcolor}%
+  \hl{#3}%
+  \endgroup
+}
+% stop soul from freaking out when it sees citation commands
+\soulregister\ref7
+\soulregister\cite7
+\soulregister\citet7
+\soulregister\autocite7
+\soulregister\textcite7
+\soulregister\pageref7
+
+%%%%% FIXING / ADDING THINGS THAT'S SPECIAL TO R MARKDOWN'S USE OF LATEX TEMPLATES
+% pandoc puts lists in 'tightlist' command when no space between bullet points in Rmd file,
+% so we add this command to the template
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+ 
+% allow us to include code blocks in shaded environments
+
+% User-included things with header_includes or in_header will appear here
+% kableExtra packages will appear here if you use library(kableExtra)
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage[normalem]{ulem}
+\usepackage{makecell}
+\usepackage{xcolor}
+\usepackage{multicol}
+\usepackage{hhline}
+\newlength\Oldarrayrulewidth
+\newlength\Oldtabcolsep
+\usepackage{hyperref}
+
+
+%UL set section header spacing
+\usepackage{titlesec}
+% 
+\titlespacing\subsubsection{0pt}{24pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+
+
+%UL set whitespace around verbatim environments
+\usepackage{etoolbox}
+\makeatletter
+\preto{\@verbatim}{\topsep=0pt \partopsep=0pt }
+\makeatother
+
+
+%%%%%%% PAGE HEADERS AND FOOTERS %%%%%%%%%
+\usepackage{fancyhdr}
+\setlength{\headheight}{15pt}
+\fancyhf{} % clear the header and footers
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter. #1}{\thechapter. #1}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection. #1}} 
+\renewcommand{\headrulewidth}{0pt}
+
+
+
+
+
+% UL page number position 
+\fancyfoot[C]{\emph{\thepage}} %regular pages
+\fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\emph{\thepage}}} %chapter pages
+
+
+
+
+%%%%% SELECT YOUR DRAFT OPTIONS
+% This adds a "DRAFT" footer to every normal page.  (The first page of each chapter is not a "normal" page.)
+
+% IP feb 2021: option to include line numbers in PDF
+
+% for line wrapping in code blocks
+\usepackage{fancyvrb}
+\usepackage{fvextra}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines=true, breakanywhere=true, commandchars=\\\{\}}
+
+% for quotations -- loaded here rather than in ociamthesis.cls, as it needs to
+% be loaded after fvextra, otherwise we get a warning message
+\usepackage{csquotes}
+
+% This highlights (in blue) corrections marked with (for words) \mccorrect{blah} or (for whole
+% paragraphs) \begin{mccorrection} . . . \end{mccorrection}.  This can be useful for sending a PDF of
+% your corrected thesis to your examiners for review.  Turn it off, and the blue disappears.
+
+
+%%%%% BIBLIOGRAPHY SETUP
+% Note that your bibliography will require some tweaking depending on your department, preferred format, etc.
+% If you've not used LaTeX before, I recommend just using pandoc for citations -- this is what's used unless you specific e.g. "citation_package: natbib" in index.Rmd
+% If you're already a LaTeX pro and are used to natbib or something, modify as necessary.
+
+% this allows the latex template to handle pandoc citations
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newlength{\cslentryspacingunit} % times entry-spacing
+\setlength{\cslentryspacingunit}{\parskip}
+\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+  \let\oldpar\par
+  \def\par{\hangindent=\cslhangindent\oldpar}
+  \fi
+  % set entry spacing
+  \setlength{\parskip}{1mm}
+  \setlength{\baselineskip}{6mm}
+ }%
+ {}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+
+
+
+
+% Uncomment this if you want equation numbers per section (2.3.12), instead of per chapter (2.18):
+%\numberwithin{equation}{subsection}
+
+
+%%%%% THESIS / TITLE PAGE INFORMATION
+% Everybody needs to complete the following:
+
+
+
+
+% Master's candidates who require the alternate title page (with candidate number and word count)
+% must also un-comment and complete the following three lines:
+
+% Uncomment the following line if your degree also includes exams (eg most masters):
+%\renewcommand{\submittedtext}{Submitted in partial completion of the}
+% Your full degree name.  (But remember that DPhils aren't "in" anything.  They're just DPhils.)
+
+
+% Term and year of submission, or date if your board requires (eg most masters)
+
+
+
+%%%%% YOUR OWN PERSONAL MACROS
+% This is a good place to dump your own LaTeX macros as they come up.
+
+% To make text superscripts shortcuts
+\renewcommand{\th}{\textsuperscript{th}} % ex: I won 4\th place
+\newcommand{\nd}{\textsuperscript{nd}}
+\renewcommand{\st}{\textsuperscript{st}}
+\newcommand{\rd}{\textsuperscript{rd}}
+
+%%%%% THE ACTUAL DOCUMENT STARTS HERE
+\begin{document}
+%%%%% CHOOSE YOUR LINE SPACING HERE
+% This is the official option.  Use it for your submission copy and library copy:
+\setlength{\textbaselineskip}{22pt plus2pt}
+% This is closer spacing (about 1.5-spaced) that you might prefer for your personal copies:
+%\setlength{\textbaselineskip}{18pt plus2pt minus1pt}
+
+% You can set the spacing here for the roman-numbered pages (acknowledgements, table of contents, etc.)
+\setlength{\frontmatterbaselineskip}{17pt plus1pt minus1pt}
+
+% UL: You can set the line and paragraph spacing here for the separate abstract page to be handed in to Examination schools
+\setlength{\abstractseparatelineskip}{13pt plus1pt minus1pt}
+\setlength{\abstractseparateparskip}{0pt plus 1pt}
+
+% UL: You can set the general paragraph spacing here - I've set it to 2pt (was 0) so
+% it's less claustrophobic
+\setlength{\parskip}{2pt plus 1pt}
+
+%
+% Customise title page
+%
+\def\crest{}
+\renewcommand{\university}{}
+\renewcommand{\submittedtext}{}
+\renewcommand{\thesistitlesize}{\fontsize{22pt}{28pt}\selectfont}
+\renewcommand{\gapbeforecrest}{25mm}
+\renewcommand{\gapaftercrest}{25mm
+}
+
+
+% Leave this line alone; it gets things started for the real document.
+\setlength{\baselineskip}{\textbaselineskip}
+
+
+%%%%% CHOOSE YOUR SECTION NUMBERING DEPTH HERE
+% You have two choices.  First, how far down are sections numbered?  (Below that, they're named but
+% don't get numbers.)  Second, what level of section appears in the table of contents?  These don't have
+% to match: you can have numbered sections that don't show up in the ToC, or unnumbered sections that
+% do.  Throughout, 0 = chapter; 1 = section; 2 = subsection; 3 = subsubsection, 4 = paragraph...
+
+% The level that gets a number:
+\setcounter{secnumdepth}{2}
+% The level that shows up in the ToC:
+\setcounter{tocdepth}{1}
+
+
+%%%%% ABSTRACT SEPARATE
+% This is used to create the separate, one-page abstract that you are required to hand into the Exam
+% Schools.  You can comment it out to generate a PDF for printing or whatnot.
+
+% JEM: Pages are roman numbered from here, though page numbers are invisible until ToC.  This is in
+% keeping with most typesetting conventions.
+\begin{romanpages}
+
+% Title page is created here
+
+%%%%% DEDICATION
+
+%%%%% ACKNOWLEDGEMENTS
+
+
+%%%%% ABSTRACT
+
+
+%%%%% MINI TABLES
+% This lays the groundwork for per-chapter, mini tables of contents.  Comment the following line
+% (and remove \minitoc from the chapter files) if you don't want this.  Un-comment either of the
+% next two lines if you want a per-chapter list of figures or tables.
+\dominitoc % include a mini table of contents
+
+% This aligns the bottom of the text of each page.  It generally makes things look better.
+\flushbottom
+
+% This is where the whole-document ToC appears:
+
+
+% Uncomment to generate a list of tables:
+%%%%% LIST OF ABBREVIATIONS
+% This example includes a list of abbreviations.  Look at text/abbreviations.tex to see how that file is
+% formatted.  The template can handle any kind of list though, so this might be a good place for a
+% glossary, etc.
+
+% The Roman pages, like the Roman Empire, must come to its inevitable close.
+\end{romanpages}
+
+%%%%% CHAPTERS
+% Add or remove any chapters you'd like here, by file name (excluding '.tex'):
+\flushbottom
+
+% all your chapters and appendices will appear here
+\chapter{Chapter 5 - Diagnostic Uncertainty and Information Seeking in Virtual Reality Paediatric Scenarios}\label{chapter-5}
+
+\adjustmtc
+\markboth{VR Study}{}
+
+\section{Introduction}\label{introduction}
+
+In the previous two studies, we used experimental paradigms that made use of textual vignettes, in which patient information was described to participants as per standardised case descriptions adapted from the work of previous researchers (C. P. Friedman et al. 2005). The first study was conducted online with medical students from across the UK, whilst the second study used an in-person think-aloud version of a similar paradigm with Oxford medical students. When taking these studies together, we can conceptualise a general model of the diagnostic decision making process. We observe diagnosis to be a process of using early information from history taking on a patient to build up a diagnostic picture of several possible differentials and their relative likelihood. Past this point, we observe a rich interplay between generating differentials, seeking further information on the patient, and reevaluating differentials based on interpretation of this new information. This interplay is managed through variable reasoning strategies for working through the diagnostic process.
+
+\hfill\break
+A common finding across both studies was that medical students showed a reticence to remove differentials from consideration, and instead broadened the differentials they were considering as they received more information. This brings up a question of whether such a tendency would be exhibited in real medical practice. One can imagine that when a patient requires (sometimes urgent) treatment, the situation may then require clinicians to commit to a working diagnosis at some point and remove others from consideration. Whilst we found evidence for a general tendency in medical students to broaden the range of differentials with more information, these studies made use of patient vignettes where there was no requirement to treat the patient and no subsequent observation of improvement or deterioration in the patients' state. This begs the question of whether medical students still show a tendency to broaden the differentials they are considering when beginning a treatment plan for a patient, when they are intuitively required to narrow their diagnoses. Diagnosis and treatment are also likely to be intimately linked in many medical situations, with each influencing the other and altering clinicians' evolving thought process (Brody and Waters 1980).
+
+\hfill\break
+There is also a limitation with our work thus far, in that the use of textual vignettes has limits in terms of naturalism (as noted by some participants during the think-aloud study's debrief interviews) despite our use of a flexible decision making paradigm. As we found during our systematic scoping review, the majority of past work on confidence during diagnoses made use of textual vignettes in their experimental paradigms. Past papers seemed to make limited use of high-fidelity simulations (e.g. (Huiqin Yang, Thompson, and Bland 2012; Garbayo et al. 2023)) or other types of naturalistic paradigms (although some papers used in-situ questionnaires whilst clinicians were treating actual patients, e.g. (Calman, Hyman, and Licht 1992; Hageman et al. 2013; Gupta et al. 2023)). Use of such simulation-based paradigms would have increased naturalism when compared to textual vignettes, as well as allowing researchers to look at how confidence impacts the actual treatment of patients in a controlled experimental environment. In the case of our work, we can use simulation of patient scenarios to better understand how confidence impacts diagnoses for patients who actually require treatment (rather than simply being described as per our vignettes) and develop over time in terms of condition. Participants are unable to see the patient during a vignette task, which is important given that the visual state (or distress) of a patient influence how doctors diagnose their patient (Brooks, LeBlanc, and Norman 2000; Sibbald et al. 2017).
+
+\hfill\break
+In this study, we aim to extend our previous findings using a virtual reality (VR) experimental paradigm that is more naturalistic to real medical practice. We use VR scenarios to take another important step towards the realism of medical practice and investigate our overarching questions on differential generation, information seeking and confidence using a different experimental method. Similar to our previous studies, we measure the range of diagnostic differentials that students are considering at multiple points during the scenarios. Our online study found that initial diagnostic breadth of students was predictive of their subsequent information seeking and changes in confidence. We not only look to replicate this finding in a more naturalistic medical context but also to investigate whether initial diagnostic breadth is also predictive of patient treatment.
+
+\hfill\break
+VR has seen limited use in previous work on clinical decision making but has potential for studying and improving clinical reasoning and decision making (Jans et al. 2023). One of the benefits of using a VR paradigm is that we are able to simulate a real medical environment. This includes the wider range of possible actions available to a clinician. Using our paradigm, we are able to record every action or information request made by participants. These actions can then be categorised into a number of areas: Patient History, Physical Examinations, Testing and Treatment. Our findings around initial diagnostic breadth and the qualitative theme from the previous study on the importance of an in-depth history to base diagnosis on necessitate a deeper look at history taking during diagnoses. Our vignette paradigm used fairly limited patient histories, with a perceived lack of detail potentially explaining why some participants expressed diagnostic uncertainty. History taking is especially important to study given its high degree of influence on eventual diagnoses compared to other information (Hampton et al. 1975; Sandler 1980; Peterson et al. 1992) and its importance as a skill to teach to medical students (Keifenheim et al. 2015).
+
+\hfill\break
+In the VR paradigm, there is much more detail available on the patient's medical history, including follow-up questions to patients to access more detail on their condition. For example, if a patient is feeling pain, the interactive nature of VR allows participants to ask about the nature of the pain (e.g.~whether it is a dull or sharp pain, whether anything makes the pain better/worse etc.). With the wider range of actions available to participants, we not only look at information seeking as a whole, but also information seeking with each of these categories. In particular, we are interested in how the comprehensiveness of participants' history taking affects their subsequent confidence and the diagnoses they consider. Given that VR also simulates active medical situations, participants can be graded based on the information they seek, the tests they run and treatment they administer.\\
+
+By using a higher fidelity paradigm such as VR, we aim to investigate the link between information seeking and confidence in a more open-ended clinical situation that has a wider range of possible options for history taking, physical examination, testing and treatment options when compared to our vignette paradigm (which constrained the amount of information available on each case for usability). Given this increased flexibility, we can look at more nuanced aspects of information seeking, as well as the effect of ongoing treatment of patients on confidence. Our vignette task was static in time, in that the patient does not change over the course of a case (i.e.~improving or deteriorating over time). This VR paradigm then allows doctors to start managing the patient's symptoms and even using reactions to their treatment plan in order to change their understanding of the patient's condition.
+
+\hfill\break
+The VR methodology in this study is substantially different to our vignette methodology, there, the analysis of accuracy has to change. In the previous studies, we operationalised accuracy given that there was a specific condition/diagnosis that participants were tasked with identifying. In this task however, determining a diagnosis is not the primary focus (although we do ask participants to report the set of diagnostic differentials that they are considering). Instead, participants are required to begin treatment for the patient in the scenario and handover the case to a senior colleague. In addition, the focal condition to be identified may be fairly evident from the patient (e.g.~a febrile seizure) but there is a wider range of potential sources/causes underlying this condition. Given this, there are two ways in which performance can be measured for participants: performance in terms of the clinical actions they take (e.g.~testing, treatment etc.) they take or in terms of the diagnoses they report. We record both measures of accuracy, with details about they are defined in the Methods section.
+
+\subsection{Research Questions}\label{research-questions}
+
+With this study, we investigated the following research questions:
+
+\begin{itemize}
+\tightlist
+\item
+  Do medical students narrow or broaden their diagnostic differentials in a naturalistic medical scenario where patient treatment is required?
+\item
+  Is information seeking, in terms of quantity and quality, linked to more appropriate sets of diagnoses?
+\item
+  How do specific types of information seeking (i.e.~around Patient History, Physical Examinations and Testing) relate to confidence, both in terms of information seeking preceding confidence, and as a result of confidence?
+\end{itemize}
+
+\section{Methods}\label{methods}
+
+\subsection{Participants}\label{participants}
+
+We recruited medical students based at the University of Oxford in their second year of clinical training (which equates to three years of pre-clinical and one year of clinical training). 76 students completed this study. Students were randomly split into pairs such that they also observed other students during their scenarios and administered a questionnaire during the scenario.
+
+\subsection{Materials}\label{materials}
+
+We used VR scenarios implemented by Oxford Medical Simulation (OMS, \url{https://oxfordmedicalsimulation.com/}), a company that implements bespoke VR software for medical education and simulation. Participants in this study were medical students based in Oxford who were at the time taking part in VR-based teaching sessions as part of their medical degrees. Students performed the scenarios using Oculus Quest 2 VR headsets. The clinical scenarios were paediatric (i.e cases were presented where a child would be attending the hospital with their legal guardian). Each scenario features a visual 3D implementation of a cubicle in an Emergency Department of a hospital (as visualised below in \hyperref[fig:screenshot1vr]{Figure \ref{fig:screenshot1vr}}). Participants are shown a range of avatars, including a (child) patient, their guardian and a nurse who can help with certain treatment and investigations/testing. All of the `avatars' in the scenario can be questioned by the participant using a predefined set of requests/actions (e.g.~asking the nurse to check blood pressure, asking the patient/child about if they are in pain, \hyperref[fig:screenshot2vr]{Figure \ref{fig:screenshot2vr}} below). The scenarios provide a reasonably accurate representation of real life including accurate audiovisual information (i.e.~avatar voices are realistic, and it is possible to hear simulated heart or breath sounds or an alarm bell). The scenarios, and their associated criteria for assessing performance, were developed using a peer review process with subject matter experts (i.e.~recently practicing clinicians), whilst consulting best practice guidelines.
+
+\newpage
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{./assets/VRScreenshot1} 
+
+}
+
+\caption[VR Study: Screenshot 1]{Screenshot from the VR software, implemented by Oxford Medical Simulation. Depicted here is the patient/child, their parent/guardian and a nurse (who can be asked to seek tests or administer treatment)}\label{fig:screenshot1vr}
+\end{figure}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{./assets/VRScreenshot2} 
+
+}
+
+\caption[VR Study: Screenshot 2]{Screenshot from the VR software. Depicted here is the participant consulting available guidelines on the management of asthma in children.}\label{fig:screenshot2vr}
+\end{figure}
+
+\hfill\break
+Each participant completed two scenarios over two separate VR sessions. The sessions were held around one month apart. During each session, the participants each performed one scenario in VR and observed another medical student during their scenario. We chose medical scenarios that were considered fairly common to arise for paediatric patients. The scenarios presented in each session are described below (students are split into two groups, shown below as groups A and B, each performing a different pair of scenarios in a fixed order):
+
+\begin{itemize}
+\tightlist
+\item
+  Session One:
+\item
+  \begin{itemize}
+  \tightlist
+  \item
+    \emph{Group A:} patient/child is a 6-year-old-girl presenting with a 1-day history of central abdominal pain and thirst. She was generally unwell for 2 days prior, with a reduced appetite and a sore throat. Collateral history reveals Type 1 Diabetes and erratic blood sugars. (\textbf{Underlying Condition: Diabetic Ketoacidosis}, henceforth referred to as the `DKA' scenario)
+  \end{itemize}
+\item
+  \begin{itemize}
+  \tightlist
+  \item
+    \emph{Group B:} patient/child is a 5-year-old boy presenting with worsening shortness of breath, wheeze, and signs of respiratory distress, on the background of 2 days of likely viral illness. He has a medical history of asthma and has had similar exacerbations in the past. (\textbf{Underlying Condition: Acute Severe Exacerbation of Asthma}, henceforth referred to as the `Asthma' scenario)
+  \end{itemize}
+\item
+  Session Two:
+\item
+  \begin{itemize}
+  \tightlist
+  \item
+    \emph{Group A:} patient/child is a 5-year-old boy presenting with shortness of breath and drowsiness (\textbf{Underlying Condition: Chest Sepsis/Pneumonia}, henceforth referred to as the `Pneumonia' scenario)
+  \end{itemize}
+\item
+  \begin{itemize}
+  \tightlist
+  \item
+    \emph{Group B:} patient/child is a 5-year-old girl with a 1-day history of sore throat and fever. She starts having a generalised tonic-clonic seizure during the scenario. (\textbf{Underlying Condition: Febrile seizure on background of tonsillitis}, henceforth referred to as the `Seizure' scenario)
+  \end{itemize}
+\end{itemize}
+
+\subsection{Procedure}\label{procedure}
+
+The aim for students in the scenarios was to diagnose the patient, begin treatment and hand over the case to a senior with appropriate understanding of the patient. Handovers were conducted using a standardised framework known as SBAR, meaning that clinicians have to brief the senior on the Situation, Background, Assessment and Recommendation for the patient. Participants were expected to take a clinical history, complete a physical examination, start emergency treatment to stabilise the patient and escalate to a senior clinician for further input. Whilst in the scenario, participants can learn about the patient's medical history, check key parameters (such as temperature, pulse, blood pressure, respiratory rate etc), perform physical examination/tests and begin certain treatment actions (such as administering oxygen or prescribing medication). Participants were also expected by the end of the scenario to be able to give an explanation of the situation to the patient's parent/guardian. All participants had the same starting point in each scenario and the patient in the scenario deteriorated in an identical way if the participant took no action. If participants undertook certain actions, the patient improved both in terms of vital signs (e.g., blood pressure, heart rate, oxygen saturation etc.) and in their response to questions (e.g., responding, if asked, ``Yes, I feel a bit better''). If participants select irrelevant actions, the patient did not improve, and some actions resulted in the patient's state deteriorating.
+
+\hfill\break
+After 5 minutes in the scenario (by which point it was expected that participants would have gathered key points from the history and have started some early assessment of the patient), participants were asked to pause the scenario (taking off their VR headset) and filled in a brief questionnaire on paper. Multiple VR participants were performing the scenario simultaneously and were paired with another student who would watch their performance. This other student would aid with administering the questionnaire, with the students subsequently switching roles for the other scenario. The VR participant was asked in the questionnaire to answer the following (this is considered time point 1):
+
+\begin{itemize}
+\tightlist
+\item
+  ``Please say all the conditions that you are currently considering or are concerned about for this patient. Include any/all common, rare or contributing conditions you are considering. For each, please rate how likely you think they are on a scale of 1 (low) to 5 (high).''
+\item
+  ``On a scale of 1-10, how confident are you that you understand the patient's condition?''
+\item
+  ``How severe do you think the patient's condition is on a scale of 1 to 10?'' (Each point of the scale represented a different clinical action/course, with 1 representing ``Discharge in \textless4 hours, no follow up'' and 10 representing ``Requires arrest/peri arrest team.'')
+\end{itemize}
+
+During the scenario, participants had access to a phone on the virtual wall that could be used to call external staff members for help. In terms of general options for external second opinions, participants could call the on-call doctor or the day team on the ward. For more serious situations, participants could call the rapid response team, crash team or push the emergency button (in very severe situations). Participants were expected to at least handover to another staff member using the aforementioned SBAR protocol but could request the help of a senior before this point. Crucially, the structure of the scenario (including the amount of time spent in the scenario) is dictated by the participant, who can handover the case when they feel they have done enough to stabilise the patient and understand enough to handover to a senior. Once the participant is ready to finish, they `leave the room' in the VR ward. However, the scenario automatically ends after 20 minutes if the participant has not finished it themselves.
+
+\hfill\break
+After the scenario, the participant answered a second questionnaire (this is considered time point 2). This included the same three questions as above in timepoint 1 (so that participants could record their updated responses), as well as the following additional questions:
+
+\begin{itemize}
+\tightlist
+\item
+  ``What is the most likely course of the patient?'' (this was a free text response)
+\item
+  ``To what extent would you be prepared to leave the patient prior to a senior review. Mark your response below on a scale ranging from Not at All to Completely'' (this question was answered using a visual analogue scale)
+\item
+  ``Did you complete all the history, examinations and investigations necessary? If not, what else would you do if given more time?''
+\item
+  ``What investigation would you give highest priority next?''
+\end{itemize}
+
+Upon completing this second questionnaire, the students in each pair swapped over such that the student who had previously been observed was now performing a VR scenario (from Group B). Each session always featured two different scenarios, with each participant performing one scenario each.
+
+\subsection{Data Analysis}\label{data-analysis}
+
+In this section, we detail three different groups of dependent variables defined for this study: measures of participant performance, variables from our questionnaires and measures based on information seeking and actions recorded within the VR scenario.
+
+\subsubsection{Performance Measures}\label{performance-measures}
+
+We define two performance measures for this study. Firstly, we make use of predetermined criteria for which clinical actions are considered optimal for each patient scenario. When it comes to diagnostic accuracy (as we defined in our previous studies), given that the scenarios are more naturalistic, there is not a correct (ground truth) condition that the patients have. For example, one of the scenarios sees the patient having a febrile convulsion/seizure. Identifying this as such, as a focal diagnosis, is expected of most medical students due to there being a lack of diagnostic uncertainty. Identifying the causes of this seizure however, is associated with more diagnostic uncertainty as there are several possible causes of such a medical episode. When it comes to identifying these causes, there is not a set correct answer, as the scenario does not comprise of later stages of the patient's care pathway. Because of this, we instead consider a measure of Diagnostic Appropriateness, where we measure how suitable the recorded set of diagnostic differentials is as a whole in terms of whether participants record differentials that would be considered plausible or likely given the patient's condition.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Performance Score}: The OMS software implements a series of objectives for each scenario (designed by a peer review process with clinicians and subject matter experts in consultation with Oxford Medical School), which are tasks or actions that the participant is expected to have completed within the allotted time. These objectives are comprised of a range of actions, including examinations that they were expected to conduct, history questions they should have asked and treatment that should have been administered. These objectives can include administering oxygen, prescribing a particular medication or calculating the Paediatric Early Warning Score (PEWS). Some objectives are required to contribute towards a higher performance score, whilst a participant may be penalised for doing certain other actions (e.g.~prescribing a medication without first checking for allergies). The peer review panel differently weighted certain actions/objectives, so some result in a larger point deduction based on how serious the consequences would be for the patient. See \hyperref[fig:scoreimage]{Figure \ref{fig:scoreimage}} below for an example of objectives used for the Pneumonia scenario.
+\end{itemize}
+
+\newpage
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{./assets/OMSScoreExample} 
+
+}
+
+\caption[VR Study: Scoring Criteria Example]{An example of scoring criteria used when calculating the Performance Score. The criteria are pre-defined specifically to each scenario. This example shows objectives that have been met (as denoted by a green tick) and those that have not been met (as denoted by a red cross). This example is taken from the OMS software, which calculates Performance Score internally for each case.}\label{fig:scoreimage}
+\end{figure}
+
+\newpage
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Diagnostic Appropriateness}: To define this metric formally, we express \textbf{Diagnostic Appropriateness (A)} as follows:
+\end{itemize}
+
+\hfill\break
+Let \(L = \{ l_1, l_2, \ldots, l_m \}\) be the set of all likelihoods provided across participants for a given scenario, where each array of likelihoods provided for a given scenario \(l_j\) has a length \(|l_j|\) (i.e.~the number of differentials recorded).
+
+\hfill\break
+We define:
+
+\begin{itemize}
+\item
+  \(n_{\text{max}} = \max(|l_1|, |l_2|, \ldots, |l_m|)\) (length of the longest array in \(L\))
+\item
+  The penalty for a lower number of provided differentials: \[
+  \lambda_j = n_{\text{max}} - |l_j|
+  \]
+\end{itemize}
+
+Diagnostic Appropriateness for a given set of differentials and likelihoods \(A_j\) for each array \(l_j\) can be expressed as:
+
+\[
+A_j = \frac{S_{p,j} + \frac{1}{2} S_{u,j}}{S_{L,j} + \lambda_j}
+\]
+
+Where:
+
+\begin{itemize}
+\item
+  \(S_{p,j} = \sum_{l_k \in l_j, l_k = p} l_k\) (sum of likelihoods for probable/possible differentials for that scenario/condition)
+\item
+  \(S_{u,j} = \sum_{l_k \in l_j, l_k = u} l_k\) (sum of likelihoods for unlikely differentials for that scenario/condition)
+\item
+  \(S_{L,j} = \sum_{l_k \in l_j} l_k\) (total sum of likelihoods across all differentials in \(l_j\))
+\end{itemize}
+
+Hence:
+
+\begin{itemize}
+\item
+  \(A_j \to 0\) when all listed differentials are incorrect.
+\item
+  \(A_j \to 0.5\) when all listed differentials are unlikely.
+\item
+  \(A_j \to 1\) when all listed differentials are correct.
+\end{itemize}
+
+Complementing the Performance Score, this other key metric of diagnostic performance concerns how appropriate each participant's set of differentials are assessed for how appropriate they are for the scenario. Each scenario has a set of differentials that are considered most likely, probable and improbable (with any others considered incorrect). This criteria for provided differentials was developed in consultation with an experienced medical professional (who at the time of this study was an Anaesthetic and Intensive Care Doctor, as well as a medical educator). The full criteria can be found in \hyperref[tab:vrmarking]{Table \ref{tab:vrmarking}} of the Appendices. To calculate a score for how appropriate the diagnoses are, we consider what proportion of likelihood values are assigned to likely or probable differentials, whilst penalising participants for providing fewer differentials, such that larger sets of likely or probable differentials are assigned higher scores. This is because we expect participants to provide a wider set of differentials that could be contributing to the patients' conditions (as explained during the Introduction).
+
+\newpage
+
+\subsubsection{Questionnaire Measures}\label{questionnaire-measures}
+
+\begin{itemize}
+\item
+  \textbf{Number of Differentials}: participants are asked to record all the diagnostic differentials that they are considering at the two aforementioned time points. Hence, the total number of differentials is recorded at each stage. The Initial Number of differentials (also known as Initial Diagnostic Breadth) is the number of diagnoses provided at the pause point.
+\item
+  \textbf{Confidence Change}: the participants' confidence in their understanding of the patient's condition is recorded at two time points, with the first being after 5 minutes (out of the 20-minute time limit) and the second being after the participant has finished the scenario. Confidence at each stage is recorded on a 10-point scale (1-10). The difference between the second and the first confidence rating is taken, such that a positive value indicates that the participant has increased their confidence over the course of the scenario.
+\end{itemize}
+
+\subsubsection{Information Seeking and VR Scenario Measures}\label{information-seeking-and-vr-scenario-measures}
+
+We also derived measures of information seeking similar to previous studies. The VR scenarios are far richer in terms of the available set of information for participants when compared to the vignette paradigm. For our analysis, we record all actions (or `clicks) made by participants whilst in the scenario. Actions are categorised into a number of groups. The main categories are labelled as History, Examination or Testing, similar to the vignette studies. This set of information is mostly similar across scenarios though there are minor differences especially in the History category. Across scenarios, there are 35 possible History actions, 29 Examination actions and 18 Testing actions. This especially means that in comparison to the vignette paradigm, participants can take more detailed patient histories and can receive very different pieces of information depending on what they request from patient documentation and from asking the patient/guardian in the scenario. Outside of these categories, there are other actions available to participants, such as administering medication for the patient, calling for help or providing reassurance to the patient/guardian, but these are not used for our analysis. After categorising the participants' actions, we define a number information seeking measures:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{History Taking}: this is the number of History actions for a given scenario that take place before the pause point.
+\item
+  \textbf{Total Information Seeking}: this is the number of unique actions (i.e.~does not include requesting the taking of the same action multiple times) classified under History, Examination or Testing across the scenario.
+\item
+  \textbf{Information Value}: this measure captures the value of each piece of information sought, similar to our measure of information value used in the vignette studies. We calculate the difference in OMS performance score for participants with or without that information on a given scenario. We then sum all values across all information sought by the participant within each of the information categories (History, Examination, Testing). This allows us to have a measure of value for every possible action, which is not the case within the OMS Performance Score criteria (as only certain objectives/actions have a bearing on the overall scoring).
+\item
+  \textbf{Amount of Treatment}: this is the number of actions classified as treatment of the patient across the scenario.
+\end{itemize}
+
+\hfill\break
+Given that, unlike our vignette paradigm, participants are able to administer treatment and ask for help from a senior member (using the telephone in the VR ward), we measure how long it takes for students to do both of these:
+
+\begin{itemize}
+\item
+  \textbf{Time to Treatment}: this is the amount of time (in seconds) between the start of the scenario and the point at which the first treatment action is performed.
+\item
+  \textbf{Time to Call for Help}: this is the amount of time (in seconds) between the start of the scenario and the point at which the participant uses the phone to call a senior for help.
+\end{itemize}
+
+We expect that confidence will predict how long it takes for participants to both start treatment and call for help, with higher confidence being associated with quicker times to start treatment and slower times to call for help (given that they do call for help at some point during the scenario). We exclude participants from these analyses if they do not ask for help or do not administer any treatment respectively.
+
+\subsubsection{Planned Analyses}\label{planned-analyses}
+
+As all actions are recorded with timestamps in the output dataset, we categorise whether actions occurred before or after the pause point (5 minutes in). Hence, we can investigate information seeking before and after the pause point where participants record their initial diagnoses and confidence. For this study, we are particularly interested in the relationship between confidence and information seeking as it follows the time course of a diagnostic decision. To this end, we look at whether information seeking up until the pause point predicts initial confidence (as reported during the pause point). We then look at whether this initial confidence predicts subsequent information seeking (after the pause point). This allows us to look at the relationship between information seeking and confidence in both directions: respectively, how information informs subsequent confidence and how confidence informs subsequent information seeking. Finally, we look at whether the amount of patient treatment during the scenario is predicted by confidence, both before and after participants administer treatment. We investigate this by looking at the number of treatment actions performed and its relationship with both initial and final confidence. These analyses are performed on a case-wise level, and thus we used generalised mixed effects modelling due to the lack of independence between observations. As such, we control for individual participants and the patient condition/case as random effects.
+
+\hfill\break
+Given that Diagnostic Appropriateness is our variable for diagnostic accuracy in this study, we look at information seeking as a predictor of accuracy similar to Study 2. We do not use the OMS performance score as a measure of accuracy to relate to information seeking, as this score is in itself calculated using the information sought and actions taken by students in the scenario. Given the much larger set of possible information that could be sought in the VR scenarios, we use Principal Component Analysis (PCA) to reduce the dimensionality of the information seeking data.
+
+\section{Results}\label{results}
+
+\subsection{Overall Performance}\label{overall-performance}
+
+We report data from 76 participants. As shown in \hyperref[tab:descstatstable]{Table \ref{tab:descstatstable}}, some participants only completed a single scenario rather than two. 41 participants completed two scenarios (as part of either Scenario A or B as explained in the Procedure section). Overall, 37 participants completed the Asthma scenario, 30 participants completed the DKA scenario, 28 participants completed the Pneumonia scenario and 22 participants completed the Seizure scenario.
+
+\hfill\break
+We first characterise how well medical students performed during the scenario using our two performance measures. In terms of overall performance, the average Diagnostic Appropriateness score (calculated at the pause point) across all scenarios and participants was 0.55 (ranging from 0.07 to 0.85). The mean Diagnostic Appropriateness score for each scenario was as follows: Asthma = 0.61, DKA = 0.53, Pneumonia = 0.48, Seizure = 0.59. The average OMS score (calculated at the end of the scenario) across all scenarios and all participants was 63.35 (ranging from 38 to 79), which indicates the extent to which the predefined `objectives' for each scenario were successfully completed by participants (each scenario has its own set of objectives, with some overlap). The mean OMS score for each scenario was as follows: Asthma = 68.14, DKA = 57.3, Pneumonia = 63.31, Seizure = 63.81.
+
+\hfill\break
+We next look at confidence reported by participants and its calibration to objective performance. Across all scenarios, participants increase their confidence between the two timepoints. Average initial confidence (recorded on a 10-point Likert scale) across scenarios was 6.17 and average final confidence was 8.06. By scenario, average final confidence was higher than average initial confidence (see \hyperref[tab:descstatstable]{Table \ref{tab:descstatstable}} below). Other dependent variables such as the number of differentials are also summarised below in \hyperref[tab:descstatstable]{Table \ref{tab:descstatstable}}. The distribution of confidence values are shown below in \hyperref[fig:confidencetime]{Figure \ref{fig:confidencetime}}.
+
+\global\setlength{\Oldarrayrulewidth}{\arrayrulewidth}
+
+\global\setlength{\Oldtabcolsep}{\tabcolsep}
+
+\setlength{\tabcolsep}{2pt}
+
+\renewcommand*{\arraystretch}{1.5}
+
+
+
+\providecommand{\ascline}[3]{\noalign{\global\arrayrulewidth #1}\arrayrulecolor[HTML]{#2}\cline{#3}}
+
+\begin{longtable}[c]{|p{0.75in}|p{0.75in}|p{0.75in}|p{0.75in}|p{0.75in}|p{0.75in}|p{0.75in}|p{0.75in}|p{0.75in}}
+
+\caption{Average\ values\ for\ dependent\ variables\ by\ scenario.\ The\ n\ column\ denotes\ the\ number\ of\ participants\ (or\ 'observations')\ per\ scenario.\ We\ show\ mean\ values\ for\ the\ Diagnostic\ Appropriateness,\ Performance\ Score,\ Amount\ of\ Information\ Seeking\ (the\ number\ of\ actions\ taken\ belonging\ to\ History,\ Physical\ Examinations\ or\ Testing),\ Initial\ Confidence\ (as\ reported\ at\ the\ pause\ point\ in\ the\ scenario),\ Final\ Confidence\ (reported\ at\ the\ end\ of\ the\ scenario),\ Initial\ Diagnoses\ (the\ number\ of\ differentials\ reported\ at\ the\ pause\ point)\ and\ Final\ Diagnoses\ (the\ number\ of\ differentials\ reported\ at\ the\ end\ of\ the\ scenario).}\label{tab:descstatstable}\\
+
+\ascline{1.5pt}{666666}{1-9}
+
+\multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\textbf{Scenario}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\textbf{n}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\textbf{Diagnostic\ Score}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\textbf{OMS\ Score}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\textbf{Information\ Seeking}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\textbf{Initial\ Confidence}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\textbf{Final\ Confidence}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\textbf{Initial\ Differentials}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\textbf{Final\ Differentials}}}} \\
+
+\ascline{1.5pt}{666666}{1-9}\endfirsthead \caption[]{Average\ values\ for\ dependent\ variables\ by\ scenario.\ The\ n\ column\ denotes\ the\ number\ of\ participants\ (or\ 'observations')\ per\ scenario.\ We\ show\ mean\ values\ for\ the\ Diagnostic\ Appropriateness,\ Performance\ Score,\ Amount\ of\ Information\ Seeking\ (the\ number\ of\ actions\ taken\ belonging\ to\ History,\ Physical\ Examinations\ or\ Testing),\ Initial\ Confidence\ (as\ reported\ at\ the\ pause\ point\ in\ the\ scenario),\ Final\ Confidence\ (reported\ at\ the\ end\ of\ the\ scenario),\ Initial\ Diagnoses\ (the\ number\ of\ differentials\ reported\ at\ the\ pause\ point)\ and\ Final\ Diagnoses\ (the\ number\ of\ differentials\ reported\ at\ the\ end\ of\ the\ scenario).}\label{tab:descstatstable}\\
+
+\ascline{1.5pt}{666666}{1-9}
+
+\multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\textbf{Scenario}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\textbf{n}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\textbf{Diagnostic\ Score}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\textbf{OMS\ Score}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\textbf{Information\ Seeking}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\textbf{Initial\ Confidence}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\textbf{Final\ Confidence}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\textbf{Initial\ Differentials}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\textbf{Final\ Differentials}}}} \\
+
+\ascline{1.5pt}{666666}{1-9}\endhead
+
+
+
+\multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{Asthma}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{37}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{0.61}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{68.14}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{19.7}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{5.7}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{7.7}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{4.4}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{3.2}}} \\
+
+
+
+
+
+\multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{DKA}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{30}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{0.53}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{57.30}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{19.5}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{7.1}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{8.8}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{2.9}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{1.8}}} \\
+
+
+
+
+
+\multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{Pneumonia}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{28}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{0.48}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{63.31}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{24.5}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{6.3}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{7.8}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{3.6}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{2.8}}} \\
+
+
+
+
+
+\multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{Seizure}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{22}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{0.59}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{63.81}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{24.1}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{5.5}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{7.9}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{3.6}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{3.4}}} \\
+
+\ascline{1.5pt}{666666}{1-9}
+
+
+
+\end{longtable}
+
+
+
+\arrayrulecolor[HTML]{000000}
+
+\global\setlength{\arrayrulewidth}{\Oldarrayrulewidth}
+
+\global\setlength{\tabcolsep}{\Oldtabcolsep}
+
+\renewcommand*{\arraystretch}{1}
+
+\newpage
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{04-study4_files/figure-latex/confidencetime-1} 
+
+}
+
+\caption[VR Study: Confidence by Timepoint and Scenario (Violin Plots)]{Violin plots showing confidence at timepoint 1 (the pause point at 5 minutes into the scenario) and timepoint 2 (at the end of the scenario) by condition (Asthma = red, DKA = green, Pnuemonia = blue, Seizure = purple). The dark region of the box plot shows the mean value, with the lines of the box plots showing standard deviation.}\label{fig:confidencetime}
+\end{figure}
+
+\hfill\break
+As with previous studies, we look at whether participants provide confidence judgements that are calibrated to their objective performance. We separately determine how calibrated initial and final confidence judgements are. Initial Confidence is compared against the Diagnostic Appropriateness (which is calculated based on the differentials provided at the pause point), whilst Final Confidence is compared against Performance Score (which is calculated at the end of the scenario based on the actions performed and information sought across the scenario). We median split cases into two groups of low and high Diagnostic Appropriateness and also into groups of low and high Performance Score. Participants would be considered calibrated if we found evidence of higher confidence when performance is higher. Contrary to expectations, participants reported lower Initial Confidence when Diagnostic Appropriateness was higher (M = 6, SD = 1.74) compared to when it was low (M = 6.36, SD = 1.7). Given that the samples from each of these groups are not independent, we test for a difference between these groups using a binomial mixed effects model that predicts performance group using initial confidence as a fixed effect and both the individual participant and condition as random effects. We do not find evidence of confidence being predictive of Diagnostic Appropriateness (\(\beta\) = -0.09, SE = 0.13, z = -0.68, p = 0.5). For final confidence, participants reported lower Final Confidence when Performance Score was higher (M = 7.95, SD = 1.28) compared to when it was low (M = 8.19, SD = 1.21). We test for a difference between these groups using a binomial mixed effects model that predicts performance group using final confidence as a fixed effect and both the individual participant and condition as random effects. We do not find evidence of confidence being predictive of Performance Score (\(\beta\) = -0.06, SE = 0.2, z = -0.31, p = 0.75). Overall, we do not find evidence that participants provide calibrated confidence judgements at either timepoint with either of our measures of accuracy/performance.
+
+\subsection{Initial Diagnostic Breadth}\label{initial-diagnostic-breadth}
+
+The distribution of values for the number of differentials at each time point is shown below in \hyperref[fig:diagtime]{Figure \ref{fig:diagtime}}. Visually, it can be observed that the number of differentials considered by participants decreases between the two timepoints (i.e.~a narrowing of differentials). We confirm this using a linear mixed effect that predicts the number of differentials with timepoint as a fixed effect and both scenario and participant as random effects (\(\beta\) = -0.9, t = -6.13, p \textless{} .001). We therefore surmise that participants tend to narrow their differentials between the two timepoints regardless of the scenario.
+
+\hfill\break
+We can ask whether the initial diagnostic breadth (i.e.~the number of diagnostic differentials being considered early in the scenario) is predictive of information seeking and change in confidence over the course of the scenario (as we found evidence for such an association in the online vignette study). We fit generalized linear mixed effects models to predict each of these with the number of initial differentials as a fixed effect and both the scenario and participant as random effects. We do not see evidence that the initial diagnostic breadth is predictive of the amount of information seeking (\(\beta\) = 0.02, SE = 0.02 z = 0.99, p = 0.32) or changes in confidence (\(\beta\) = 0.04, SE = 0.03 z = 1.08, p = 0.28). As a result, we are not able to replicate findings from Study 2 on a case-level, in which initial diagnostic breadth was predictive of information seeking via a linear mixed effects model (and changes in confidence via an individual differences correlation).
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{04-study4_files/figure-latex/diagtime-1} 
+
+}
+
+\caption[VR Study: Differentials by Timepoint and Scenario (Violin Plots)]{Violin plots showing the number of reported differentials at timepoint 1 (the pause point at 5 minutes into the scenario) and timepoint 2 (at the end of the scenario) by condition (Asthma = red, DKA = green, Pnuemonia = blue, Seizure = purple). The dark region of the box plot shows the mean value, with the lines of the box plots showing standard deviation.}\label{fig:diagtime}
+\end{figure}
+
+\subsection{Information Seeking and Confidence}\label{information-seeking-and-confidence}
+
+We ask whether confidence is related to the amount of information sought on a given case. To investigate this, we look at information seeking before and after the pause point and look at both initial and final confidence. This allows us to look at this association in both directions: whether the amount of information seeking predicts subsequent confidence and whether confidence predicts subsequent information seeking. We fit generalised mixed effect models using the amount of information seeking in each of the three categories (Patient History, Physical Examinations and Testing).
+
+\hfill\break
+We first look at whether initial confidence is predicted by information seeking prior to the pause point (i.e.~prior to when this initial confidence was reported). In line with our previous results, we would expect participants to be more confident after having sought more information beforehand. For this, we use a generalised mixed effect model with a Poisson distribution (due to a violation of normality of residuals assumption for linear mixed effects models, Shapiro-Wilk Test p = 0.004). We do not find evidence that initial confidence is predicted by prior information seeking related to Patient History (\(\beta\) = 0.01, SE = 0.02, z = 0.67, p = 0.5), Physical Examinations (\(\beta\) = 0.01, SE = 0.03, z = 0.23, p = 0.82) or Testing (\(\beta\) = 0.03, SE = 0.04, z = 0.85, p = 0.4).\\
+
+To investigate information seeking later in the scenario, we look at whether initial confidence predicts subsequent information seeking. To investigate this, we fit separate generalised mixed effect models with Possion distributions for each type of information seeking as the outcome variable. We would expect that with higher initial confidence, participants subsequently seek less information (as they need less further information to confidently state a diagnosis). We find limited evidence that initial confidence predicts subsequent history taking in a negative direction (i.e.~that higher confidence is associated with lower subsequent history taking) (\(\beta\) = -0.08, SE = 0.04, z = 1.91, p = 0.06). We do not find evidence that initial confidence is associated with subsequent Physical Examinations (\(\beta\) = 0.01, SE = 0.03, z = 0.42, p = 0.67). We do find however, unlike our expectation, that initial confidence was associated with higher amounts of Testing (\(\beta\) = 0.09, SE = 0.04, z = 2.34, p = 0.02). We plot the effect sizes and their confidence intervals below in \hyperref[fig:finalconfidenceplot]{Figure \ref{fig:finalconfidenceplot}}.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{04-study4_files/figure-latex/finalconfidenceplot-1} 
+
+}
+
+\caption[VR Study: Effect Sizes of Initial Confidence Predicting Subseqeuent Information Seeking]{Plot of effect sizes (beta values) of each linear mixed effects model, with initial confidence as a fixed effect predicting the number of tests (after the pause point and the recording of this initial confidence value) belonging to each category (Patient History: red, Physical Examinations: green, Testing: blue). For all models, case/condition and participants are both included as random effects. 95\% confidence intervals are visualised for each effect size estimate. A confidence interval not intersecting with an effect size of 0 would be interpreted as evidence for an effect of initial confidence on the number of subsequent information requests within each category.}\label{fig:finalconfidenceplot}
+\end{figure}
+
+We also look at whether final confidence (as reported at the end of the scenario) is predicted by the number of treatment actions performed by participants during the scenario. We fit a linear mixed effects model with the number of treatment actions as a fixed effect and both scenario and participant as random effects. We find evidence that final confidence was predicted by the amount of treatment actions administered during the scenario (\(\beta\) = 0.38, SE = 0.13 t = 2.99, p = 0.003), such that higher confidence was associated with more treatment actions being performed during the scenario.
+
+\subsection{Diagnostic Appropriateness as a Predictor of Information Seeking}\label{diagnostic-appropriateness-as-a-predictor-of-information-seeking}
+
+\hfill\break
+We are also interested in whether initial diagnostic appropriateness has an effect on subsequent information seeking. As in previous studies, we look at two aspects of information seeking: the amount of information seeking and informational value. To this end, we look at whether diagnostic appropriateness (at the pause point) predictions the subsequent information seeking amount and value for each of the three categories: History, Physical Examinations and Testing. We fit linear mixed effect models whilst controlling for scenario and participant as random effects. We use this modelling to ask whether, on cases where more appropriate diagnoses are provided early on, participants are found to have sought more information and/or useful information. We find that diagnostic appropriateness is not predictive of the number of actions belonging to any of the information seeking categories (Fs \textless{} 1, ps \textgreater{} .1). We do however find evidence that diagnostic appropriateness is predictive of the value of Patient History taking (\(\beta\) = 22.48, t = 2.16, p = 0.03), but not with Physical Examination value (\(\beta\) = -6.06, t = -0.64, p = 0.53) or Testing value (\(\beta\) = 5.24, t = 0.99, p = 0.33). The relationship between Patient History Value and Diagnostic Appropriateness is plotted below in \hyperref[fig:historyvalplot]{\ref{fig:historyvalplot}}. One explanation for this relationship that Diagnostic Appropriateness is necessarily associated with history taking, as information on the Patient History is intuitively mostly sought towards the earlier stages of a diagnostic decision process. If this were the case, we would expect that Diagnostic Appropriateness would be predicted by how much of the history taking took place before the pause point (i.e.~when the initial Diagnostic Appropriateness is recorded and measured). To this end, we fit a linear mixed model to predict initial Diagnostic Appropriateness using the proportion of a scenario's history taking that took place before the pause point as a fixed effect. We do not find evidence that this is predictive however (\(\beta\) = -0.05, t = -0.84, p = 0.4).
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{04-study4_files/figure-latex/historyvalplot-1} 
+
+}
+
+\caption[VR Study: History Value Against Diagnostic Appropriateness (Scatter Plot)]{Scatter plot showing the relationship between information value for information requests in the Patient History category (x-axis) and Diagnostic Appropriateness score (y-axis) calculated based on the initial set of differentials provided at the pause point in the scenario. Each data point in this plot represents a single case/scenario.}\label{fig:historyvalplot}
+\end{figure}
+
+\subsection{Time to Treat and Call for Help}\label{time-to-treat-and-call-for-help}
+
+We next turn to the time taken for participants to start treatment of patients and to call for help from a senior in the scenarios. We use linear mixed effect modelling to determine if the time taken to start treatment and to call for help is predicted by both confidence judgements and ratings of patient severity. We control for individual participants and scenarios as random effects. 16 cases were excluded from the following analysis involving time taken to treat, as no treatment actions were recorded for these cases. 9 cases were excluded from the analysis involving time taken to call for help, as no help actions were recorded for these cases. We do not find evidence that Initial Confidence predicts the time taken to start treatment or ask for help (ps \textgreater{} .1). We do not find evidence that initial ratings of severity predict the time taken to start treatment (\(\beta\) = -11, SE = 8.27, t = -1.33, p = 0.19), but we do find that severity is predictive of the time taken to call for help (\(\beta\) = -26.13, SE = 10.79, t = -2.42, p = 0.02). Each unit increase in severity rating was associated with participants seeking help 26.13 seconds quicker.
+
+\section{Discussion}\label{discussion}
+
+This study of 76 medical students utilised paediatric Virtual Reality (VR) scenarios to investigate how medical students seek information and consider diagnostic differentials in a more naturalistic manner than has been in our previous studies. Using VR software, it is possible to emulate realistic situations that doctors may encounter involving paediatric patients and record nuanced aspects of behaviour during the scenario, such as what actions are taken (including treatment) and when participants call for help from a senior member of staff. The strength of this paradigm is allowing participants to interact with a patient, who can improve/deteriorate over the course of a scenario in reaction to any administered treatment (or an absence of it). This represents a significant increase in realism relative to our previous studies, in which patient scenarios were presented and described using textual vignettes. As opposed to textual descriptions of cases, our VR methodology provides visual (e.g.~viewing scans) and auditory (e.g.~auscultating the patient's lungs, speaking to the patient) information to participants about the patient. The use of high-fidelity or virtual reality simulations can be also useful for emulating the time pressures (Schmidt et al. 2013; Jans et al. 2023) that clinicians contend with in daily practice (Yates 2020), especially when simulating patients who are in deteriorating state (as is the case in our VR scenarios). Emulating these aspects of medical practice is especially pertinent given that clinicians may behave differently in a simulation-based study compared to a paper vignette study (H. Yang, Thompson, and Bland 2012). Using such simulation-based methodologies is then well-suited to deriving insights into medical decision making that apply to naturalistic contexts. In this section, we summarise the main findings from this VR study and contextualise them within the existing literature.
+
+\subsection{Making Appropriate Diagnoses}\label{making-appropriate-diagnoses}
+
+First, we consider our findings around predictors of appropriate diagnoses. When assessing the diagnoses provided by medical students in this study, we used a score for diagnostic accuracy that took into account the range of differentials that medical students considered. We adopted this measure to assess diagnostic thinking as a whole, rather than simply identifying a focal diagnosis/condition correctly. This was important to do given that the diagnostic uncertainty came not from the focal condition, but from identifying its source and causes. We note that with this measure, we operationalise diagnostic accuracy quite differently to our previous work (and to previous work in the extant literature, e.g (Meyer et al. 2013; Kämmer et al. 2021)), which only considered whether a single correct differential was mentioned by participants. A measure that considers of a set of multiple diagnostic differentials is more analogous to real practice, as clinicians may not always be able to identify a focal diagnosis. Alternatively, identifying a focal diagnosis may not be the central priority for their practice. Rather, their priority is on starting an appropriate treatment plan and being thorough in considering possible causes of the patient's condition. As we noted in previous chapters however, diagnostic accuracy can be defined in many different ways, which can subsequently impact the calibration of confidence judgements. In this study, we found that confidence was not calibrated to either of our performance measures (Diagnostic Appropriateness or Performance Score), which marks a difference from our previous vignette-based studies (in which we found confidence judgements to be calibrated to objective accuracy). The lack of calibration in confidence judgements is more in line with findings in past papers (C. Friedman et al. 2001; Meyer et al. 2013; Jaspan et al. 2022). One account of self-monitoring of one's own accuracy (in the case of medical students) from Hautz et al. (2019) is the quality of such self-monitoring is dependent on context: students' self-monitoring was posited to be reflective of their struggles with a specific case rather than a general ability to tell when they are right or wrong. We did find in our online study that calibration varied as a function of case. Whilst we can collate confidence and accuracy values across cases to calculate overall calibration, this account from Hautz et al. (2019) would indicate that such an outcome variable is not meaningful in capturing some aspect of overall self-monitoring ability. We revisit this line of discussion in the Overall Discussion section.
+
+We found that information seeking was predictive of differences in diagnostic appropriateness. More specifically, we found more informative/valuable history taking was associated with higher diagnostic appropriateness. There is a heuristic taught within medicine that history taking alone determines between 70\% and 90\% of diagnoses (Keifenheim et al. 2015) and this seems to bear out within empirical work comparing the relative contributions of history, physical examinations and laboratory investigations to eventual diagnoses (Hampton et al. 1975; Peterson et al. 1992; Tsukamoto et al. 2012). This would then explain why we observe the positive effect of optimal history taking on diagnostic performance. We also ruled out that this result is simply due to history taking tending to take place We show that with a more appropriate patient history, participants are better able to understand the patient's condition and its possible causes. This suggests that future work and interventions could be especially effective when focused on history taking and early information seeking by clinicians. We interpret this as evidence for history taking being an important part of the diagnostic process (Tio et al. 2022) that is used as a starting point for differential generation (as supported by our thematic analysis during the think-aloud study). This finding is used in our Overall Discussion to consider an integrative model of the diagnostic process.
+
+\subsection{Treatment as a Means of Reducing Uncertainty}\label{treatment-as-a-means-of-reducing-uncertainty}
+
+One of the other key findings from this study is on the role of treatment to increase confidence during the diagnostic process. We found in this study that the final diagnostic confidence of students was predicted by the amount of treatment administered during the scenario. The consideration of treatment in this study is an important aspect of real medical practice that we emulated. When formulating a diagnosis, clinicians subsequently use this diagnosis to guide their future treatment and care pathway. By administering treatment, both in real medical practice and in our VR scenarios, clinicians can observe the patient's condition changing in reaction to treatment. If a clinician decides to administer oxygen to the patient for example, they may then observe the patient's oxygen saturation increase if successful. We use this aspect of treatment and patient improvement to explain our finding in this study that differentials narrowed between the two timepoints, rather than broadening as in the previous studies. We did not replicate our finding from the both online vignette study and the think-aloud study that the initial diagnostic breadth of medical students (i.e.~the number of differentials recorded during the pause point at 5 minutes in) predicts information seeking or changes in confidence. We explain this difference as a result of the role of treatment in the VR scenario (and in wider medical practice). The act of administering treatment and observing the patient's reaction to this treatment is a key part of the diagnostic decisional process, as it provides clinicians with a form of feedback on their decisions. When participants could not administer treatment in the vignette studies and observe the patient's change in condition (either improving or deteriorating), they then do not receive feedback that can be used to support or rule out diagnoses. Broadening and narrowing may represent different stages of the diagnostic process, such that clinicians first broaden their differentials as they develop a diagnosis and then narrow as their chosen treatment is observed to be effective (as the patient improves). Arocha and Patel (1995) found evidence, from verbal utterances during diagnoses, of initial hypothesis generation and then narrowing of differentials based on subsequent information received (particularly for more experienced medical students).
+
+\subsection{Confidence and its Relationship with Information Seeking}\label{confidence-and-its-relationship-with-information-seeking}
+
+We next consider the interplay between confidence and information seeking, building on a theme of our research that we explored in our previous studies. On confidence and information seeking, we were able to look at information seeking in a more fine-grained manner in comparison to both our previous studies and past literature, due to the paradigm's open-ended nature and greater availability of information requests, testing and treatment options in the VR scenarios. We did not find initial confidence was predicted by information seeking prior to that point. We do however find that initial confidence was positively associated with the amount of subsequent testing that medical students requested. If we intuitively consider the different stages of the diagnostic process, as we observed in Studies 2 and 3 with our vignette methodology, clinicians tend to request tests when they are honing in on a particular diagnosis and want to either confirm their beliefs or rule out an alternative diagnosis. In other words, tests tend to be performed in a hypothesis-driven way. This would explain why, with higher confidence, medical students in this study subsequently request more tests as they seek to confirm or rule out their diagnostic hypotheses. Conversely, medicals students with lower initial confidence would be less sure of which tests to request, being less able to reduce their differentials. Past work found that higher confidence was associated with a tendency to seek confirmatory evidence (Rollwage et al. 2020), and that higher confidence decreases the chance that incoming information would change one's mind (Pescetelli, Hauperich, and Yeung 2021). These papers can be used to explain our findings: once clinicians have sufficiently considered enough diagnostic hypotheses (as reflected in their higher confidence), they then use testing as confirmatory evidence to support and then narrow their differentials. The higher confidence in a clinician's differentials before this narrowing takes place, the less susceptible they are to having their mind changed to consider other possibilities. This corresponds with the hypothetico-deductive `ideal' of the diagnostic process, in which hypotheses are formulated based on patients and then further information is sought to test these hypotheses (Higgs et al. 2008). In addition, when clinicians have broadened their set of differentials, they are likely to have competing differentials, necessitating the seeking of information to reduce cognitive dissonance (Adams 1961). This is predicated on both having access to and being able to suitably interpret incoming information in order to help narrow differentials. For instance, medical students may lack the necessary knowledge to interpret information as being contradictory of their beliefs and subsequently narrow their differentials (Arocha and Patel 1995).
+
+When coupled with the previous section on how broadening and narrowing of differentials may represent different parts of the diagnostic process, this could help explain the different directionalities for the relationship between information seeking and confidence. As discussed during the Introduction chapter, one can study information seeking informs subsequent confidence or how confidence informs subsequent information seeking. Firstly, information is sought to capture a wide range of differentials, with more information increasing confidence. This explains why the absolute magnitude of information (rather than the relative evidence for a particular option) increases confidence in of itself (Ko et al. 2022). This higher confidence then, during the narrowing stage of the decision process, increases the extent to which information sampling is biased towards considered options (Kaanders et al. 2022) and confirmatory evidence for these options (Rollwage et al. 2020). As a result, during this narrowing stage, confidence decreases the follow-up information that a clinician chooses to receive (Meyer et al. 2013) as they become more selective in choosing information that helps narrow their differentials. We discussed in the Introduction how there are two potential directionalities to the relationship between confidence and information seeking. With this account in mind, information seeking and confidence can be thought of, rather than influencing each other in one of two possible directions, instead have an interplay that depends on the stage of the decision process and the goal of the decision maker (either broadening or narrowing differentials).
+
+\subsection{Implications and Limitations}\label{implications-and-limitations}
+
+The implications of this study's results can be thought of both from a methodological perspective and a theoretical perspective. For the former, the effect of treatment on uncertainty provides an important consideration for future work looking at diagnostic uncertainty, in that methodologies without treatable patients (e.g textual vignettes) may result in different behaviour to how clinicians would approach such diagnoses in everyday practice. The emulation of treatment and observing its effects is novel within the field of diagnostic decision making, and speaks to the strengths of simulation-based methodologies that have not been widely utilised for empirical research into medical decision making aside from a few exceptions (Schmidt et al. 2013; Jans et al. 2023). Such methodologies also allow for visual and auditory observations of the patient, which are not only more immersive and realistic when compared to textual vignettes, but also such visual cues (i.e.~how a patient presents and looks) are important for making medical diagnoses in practice (Sibbald et al. 2017). For the latter, the use of treatment and specialised investigations/testing to guide diagnoses has clear implications for medical practice and for our understanding of decision making. In a medical setting, it appears that increased confidence in diagnostic decisions comes from being able to observe the effects of a treatment plan on a patient. We also interpret our findings as showing that narrowing diagnostic differentials comes from hypothesis-driven testing on patients. Our findings of both broadening and narrowing of differentials across our studies are posited as being different stages of a diagnostic process, with the point at which treatment is started acting as the transition point between these two stages. We elucidate this account further in the Overall Discussion section.
+
+We note some limitations with this study. For one, whilst the use of VR represents an increase in realism when compared to our vignette studies, there is a still a gap between the simulated scenarios and real practice. The VR software allows participants to perform a wide range of actions, but this range is necessarily finite. Hence, not every possibility of what a clinician/medical student might do in a given situation is covered. Future work that requires greater flexibility can utilise other methodologies (e.g.~high-fidelity simulations, standardised patients). We note however that the use of VR allowed us to both control the available information during each scenario and also easily record information seeking during the scenarios. For the sake of standardisation in order to have a controlled experimental procedure, VR was an ideal method for use in our methodology. Recording information seeking would be far more time-intensive for other experimental methods, such as high-fidelity simulations. This trade-off between realism and standardisation is a crucial one for researchers and educators to consider depending on the outcomes and goals of their project. Another limitation is that of our focus on individual decision making. Whilst participants in the study interact with a virtual nurse during the VR scenarios, real practice involves working with a larger group of clinicians/staff with different levels of experience and different specialty expertise. Emulating the group dynamics of decision making is easier in other simulation-based methodologies when compared to VR. For our purpose of studying individual confidence and information seeking patterns, VR provides an immersive and controlled environment to study individual decision makers. Future work should utilise the aforementioned methodologies in order to emulate and study group decisions and confidence during diagnostic decisions.
+
+Our empirical studies during this thesis have utilised a range of experimental methodologies that have increased in realism, with our aim being to capture as much of real medical decision making as possible whilst still affording us a large degree of experimental standardisation and control. We note however, that there may still be lingering aspects of real medical practice that we have not captured during our research, which in turn may limit the applicability of this research's implications. For research that is based on an applied setting and context, it is important to assess how well our research maps onto this context when making claims based on our results. Rather than merely guessing about this research's relevance to real medical practice, we instead sought to ground such assessments of generalisability and ecological validity in observations of actual medical practice. To this end, in the following chapter, we present observations from a rapid ethnography conducted in two hospital settings: an Adult Intensive Care Unit and an Emergency Department. These observations are used to capture and reflect on real instances of diagnostic uncertainty, information seeking and differential evaluation during medical practice. We utilise these observations to increase the validity of our research findings and better assess the applicability of our research in the Overall Discussion chapter later on.
+
+\phantomsection\label{refs}
+\begin{CSLReferences}{1}{0}
+\bibitem[\citeproctext]{ref-adams_reduction_1961}
+Adams, J. Stacy. 1961. {``Reduction of Cognitive Dissonance by Seeking Consonant Information.''} \emph{The Journal of Abnormal and Social Psychology} 62 (1): 74--78. \url{https://doi.org/10.1037/h0047029}.
+
+\bibitem[\citeproctext]{ref-arocha_novice_1995}
+Arocha, José F., and Vimla L. Patel. 1995. {``Novice {Diagnostic} {Reasoning} in {Medicine}: {Accounting} for {Evidence}.''} \emph{The Journal of the Learning Sciences}, October. \url{https://doi.org/10.1207/s15327809jls0404_1}.
+
+\bibitem[\citeproctext]{ref-brody_diagnosis_1980}
+Brody, H., and D. B. Waters. 1980. {``\href{https://www.ncbi.nlm.nih.gov/pubmed/7354290}{Diagnosis Is Treatment}.''} \emph{The Journal of Family Practice} 10 (3): 445--49.
+
+\bibitem[\citeproctext]{ref-brooks_difficulty_2000}
+Brooks, Lee R., Vicki R. LeBlanc, and Geoffrey R. Norman. 2000. {``On the {Difficulty} of {Noticing} {Obvious} {Features} in {Patient} {Appearance}.''} \emph{Psychological Science} 11 (2): 112--17. \url{https://doi.org/10.1111/1467-9280.00225}.
+
+\bibitem[\citeproctext]{ref-calman_variability_1992}
+Calman, Neil, R Hyman, and W Licht. 1992. {``Variability in {Consultation} {Rates} and {Practitioner} {Level} of {Diagnostic} {Certainty}.''} \emph{The Journal of Family Practice} 35 (August): 31--38.
+
+\bibitem[\citeproctext]{ref-friedman_physicians_2005}
+Friedman, Charles P., Guido G. Gatti, Timothy M. Franz, Gwendolyn C. Murphy, Fredric M. Wolf, Paul S. Heckerling, Paul L. Fine, Thomas M. Miller, and Arthur S. Elstein. 2005. {``Do Physicians Know When Their Diagnoses Are Correct?''} \emph{Journal of General Internal Medicine} 20 (4): 334--39. \url{https://doi.org/10.1111/j.1525-1497.2005.30145.x}.
+
+\bibitem[\citeproctext]{ref-friedman_are_2001}
+Friedman, Charles, Guido Gatti, Arthur Elstein, Timothy Franz, Gwendolyn Murphy, and Fredric Wolf. 2001. {``Are {Clinicians} {Correct} {When} {They} {Believe} {They} Are {Correct}? {Implications} for {Medical} {Decision} {Support}.''} In \emph{{MEDINFO} 2001}, 454--58. IOS Press. \url{https://doi.org/10.3233/978-1-60750-928-8-454}.
+
+\bibitem[\citeproctext]{ref-garbayo_metacognitive_2023}
+Garbayo, Luciana S., David M. Harris, Stephen M. Fiore, Matthew Robinson, and Jonathan D. Kibble. 2023. {``A Metacognitive Confidence Calibration ({MCC}) Tool to Help Medical Students Scaffold Diagnostic Reasoning in Decision-Making During High-Fidelity Patient Simulations.''} \emph{Advances in Physiology Education} 47 (1): 71--81. \url{https://doi.org/10.1152/advan.00156.2021}.
+
+\bibitem[\citeproctext]{ref-gupta_associations_2023}
+Gupta, Ashwin B., M. Todd Greene, Karen E. Fowler, and Vineet I. Chopra. 2023. {``Associations {Between} {Hospitalist} {Shift} {Busyness}, {Diagnostic} {Confidence}, and {Resource} {Utilization}: {A} {Pilot} {Study}.''} \emph{Journal of Patient Safety} 19 (7): 447. \url{https://doi.org/10.1097/PTS.0000000000001157}.
+
+\bibitem[\citeproctext]{ref-hageman_surgeon_2013}
+Hageman, Michiel G. J. S., Jeroen K. J. Bossen, John D. King, and David Ring. 2013. {``Surgeon {Confidence} in an {Outpatient} {Setting}.''} \emph{HAND} 8 (4): 430--33. \url{https://doi.org/10.1007/s11552-013-9533-6}.
+
+\bibitem[\citeproctext]{ref-hampton_relative_1975}
+Hampton, J R, M J Harrison, J R Mitchell, J S Prichard, and C Seymour. 1975. {``Relative Contributions of History-Taking, Physical Examination, and Laboratory Investigation to Diagnosis and Management of Medical Outpatients.''} \emph{BMJ} 2 (5969): 486--89. \url{https://doi.org/10.1136/bmj.2.5969.486}.
+
+\bibitem[\citeproctext]{ref-hautz_accuracy_2019}
+Hautz, Wolf E, Sebastian Schubert, Stefan K Schauber, Olga Kunina-Habenicht, Stefanie C Hautz, Juliane E Kämmer, and Kevin W Eva. 2019. {``Accuracy of Self-Monitoring: Does Experience, Ability or Case Difficulty Matter?''} \emph{Medical Education} 53 (7): 735--44. \url{https://doi.org/10.1111/medu.13801}.
+
+\bibitem[\citeproctext]{ref-higgs2008}
+Higgs, Joy, Mark A Jones, Stephen Loftus, and Nicole Christensen. 2008. \emph{Clinical Reasoning in the Health Professions e-Book: Clinical Reasoning in the Health Professions e-Book}. Elsevier Health Sciences.
+
+\bibitem[\citeproctext]{ref-jans_examining_2023}
+Jans, Carley, Fiona Bogossian, Patrea Andersen, and Tracy Levett-Jones. 2023. {``Examining the Impact of Virtual Reality on Clinical Decision Making -- {An} Integrative Review.''} \emph{Nurse Education Today} 125 (June): 105767. \url{https://doi.org/10.1016/j.nedt.2023.105767}.
+
+\bibitem[\citeproctext]{ref-jaspan_improving_2022}
+Jaspan, Oren, Anna Wysocka, Carmen Sanchez, and Andrew D. Schweitzer. 2022. {``Improving the {Relationship} {Between} {Confidence} and {Competence}: {Implications} for {Diagnostic} {Radiology} {Training} {From} the {Psychology} and {Medical} {Literature}.''} \emph{Academic Radiology} 29 (3): 428--38. \url{https://doi.org/10.1016/j.acra.2020.12.006}.
+
+\bibitem[\citeproctext]{ref-kaanders_humans_2022}
+Kaanders, Paula, Pradyumna Sepulveda, Tomas Folke, Pietro Ortoleva, and Benedetto De Martino. 2022. {``Humans Actively Sample Evidence to Support Prior Beliefs.''} Edited by Valentin Wyart, Michael J Frank, and Konstantinos Tsetsos. \emph{eLife} 11 (April): e71768. \url{https://doi.org/10.7554/eLife.71768}.
+
+\bibitem[\citeproctext]{ref-kammer_differential_2021}
+Kämmer, Juliane E., Stefan K. Schauber, Stefanie C. Hautz, Fabian Stroben, and Wolf E. Hautz. 2021. {``Differential Diagnosis Checklists Reduce Diagnostic Error Differentially: {A} Randomised Experiment.''} \emph{Medical Education} 55 (10): 1172--82. \url{https://doi.org/10.1111/medu.14596}.
+
+\bibitem[\citeproctext]{ref-keifenheim_teaching_2015}
+Keifenheim, Katharina E., Martin Teufel, Julianne Ip, Natalie Speiser, Elisabeth J. Leehr, Stephan Zipfel, and Anne Herrmann-Werner. 2015. {``Teaching History Taking to Medical Students: A Systematic Review.''} \emph{BMC Medical Education} 15 (1): 159. \url{https://doi.org/10.1186/s12909-015-0443-x}.
+
+\bibitem[\citeproctext]{ref-ko_divergent_2022}
+Ko, Yiu Hong, Daniel Feuerriegel, William Turner, Helen Overhoff, Eva Niessen, Jutta Stahl, Robert Hester, Gereon R. Fink, Peter H. Weiss, and Stefan Bode. 2022. {``Divergent Effects of Absolute Evidence Magnitude on Decision Accuracy and Confidence in Perceptual Judgements.''} \emph{Cognition} 225 (August): 105125. \url{https://doi.org/10.1016/j.cognition.2022.105125}.
+
+\bibitem[\citeproctext]{ref-meyer_physicians_2013}
+Meyer, Ashley N. D., Velma L. Payne, Derek W. Meeks, Radha Rao, and Hardeep Singh. 2013. {``Physicians' {Diagnostic} {Accuracy}, {Confidence}, and {Resource} {Requests}: {A} {Vignette} {Study}.''} \emph{JAMA Internal Medicine} 173 (21): 1952--58. \url{https://doi.org/10.1001/jamainternmed.2013.10081}.
+
+\bibitem[\citeproctext]{ref-pescetelli_confidence_2021}
+Pescetelli, Niccolò, Anna-Katharina Hauperich, and Nick Yeung. 2021. {``Confidence, Advice Seeking and Changes of Mind in Decision Making.''} \emph{Cognition} 215 (October): 104810. \url{https://doi.org/10.1016/j.cognition.2021.104810}.
+
+\bibitem[\citeproctext]{ref-peterson_contributions_1992}
+Peterson, Michael C., John M. Holbrook, De Von Hales, N. Lee Smith, and Larry V. Staker. 1992. {``Contributions of the {History}, {Physical} {Examination}, and {Laboratory} {Investigation} in {Making} {Medical} {Diagnoses}:''} \emph{Obstetrical and Gynecological Survey} 47 (10): 711--12. \url{https://doi.org/10.1097/00006254-199210000-00013}.
+
+\bibitem[\citeproctext]{ref-rollwage_confidence_2020}
+Rollwage, Max, Alisa Loosen, Tobias U. Hauser, Rani Moran, Raymond J. Dolan, and Stephen M. Fleming. 2020. {``Confidence Drives a Neural Confirmation Bias.''} \emph{Nature Communications} 11 (1): 2634. \url{https://doi.org/10.1038/s41467-020-16278-6}.
+
+\bibitem[\citeproctext]{ref-sandler_importance_1980}
+Sandler, Gerald. 1980. {``The Importance of the History in the Medical Clinic and the Cost of Unnecessary Tests.''} \emph{American Heart Journal} 100 (6, Part 1): 928--31. \url{https://doi.org/10.1016/0002-8703(80)90076-9}.
+
+\bibitem[\citeproctext]{ref-schmidt_simulation_2013}
+Schmidt, Eric, Sara N. Goldhaber-Fiebert, Lawrence A. Ho, and Kathryn M. McDonald. 2013. {``Simulation {Exercises} as a {Patient} {Safety} {Strategy}.''} \emph{Annals of Internal Medicine} 158 (5\_Part\_2): 426--32. \url{https://doi.org/10.7326/0003-4819-158-5-201303051-00010}.
+
+\bibitem[\citeproctext]{ref-sibbald_eyeballing_2017}
+Sibbald, Matthew, Jonathan Sherbino, Ian Preyra, Tara Coffin-Simpson, Geoff Norman, and Sandra Monteiro. 2017. {``Eyeballing: The Use of Visual Appearance to Diagnose {`Sick'}.''} \emph{Medical Education} 51 (11): 1138--45. \url{https://doi.org/10.1111/medu.13396}.
+
+\bibitem[\citeproctext]{ref-tio_effect_2022}
+Tio, René A., Marco A. Carvalho Filho, Marcos F. de Menezes Mota, André Santanchè, and Sı́lvia Mamede. 2022. {``The {Effect} of {Information} {Presentation} {Order} on {Residents}' {Diagnostic} {Accuracy} of {Online} {Simulated} {Patients} {With} {Chest} {Pain}.''} \emph{Journal of Graduate Medical Education} 14 (4): 475--81. \url{https://doi.org/10.4300/JGME-D-21-01053.1}.
+
+\bibitem[\citeproctext]{ref-tsukamoto_contribution_2012}
+Tsukamoto, Tomoko, Yoshiyuki Ohira, Kazutaka Noda, Toshihiko Takada, and Masatomi Ikusaka. 2012. {``The Contribution of the Medical History for the Diagnosis of Simulated Cases by Medical Students.''} \emph{Int J Med Educ} 3 (April): 78--82. \url{https://doi.org/10.5116/ijme.4f8a.e48c}.
+
+\bibitem[\citeproctext]{ref-yang2012}
+Yang, H., C. Thompson, and M. Bland. 2012. {``Effect of Improving the Realism of Simulated Clinical Judgement Tasks on Nurses' Overconfidence and Underconfidence: Evidence from a Comparative Confidence Calibration Analysis.''} \emph{International Journal of Nursing Studies} 49 (12): 1505--11. \url{https://www.scopus.com/inward/record.uri?eid=2-s2.0-84869875001&doi=10.1016\%2fj.ijnurstu.2012.08.005&partnerID=40&md5=2a223ef461e1996637b9d027c068f199}.
+
+\bibitem[\citeproctext]{ref-yang_effect_2012}
+Yang, Huiqin, Carl Thompson, and Martin Bland. 2012. {``The Effect of Clinical Experience, Judgment Task Difficulty and Time Pressure on Nurses' Confidence Calibration in a High Fidelity Clinical Simulation.''} \emph{BMC Medical Informatics and Decision Making} 12 (1): 113. \url{https://doi.org/10.1186/1472-6947-12-113}.
+
+\bibitem[\citeproctext]{ref-yates_physician_2020}
+Yates, Scott W. 2020. {``Physician {Stress} and {Burnout}.''} \emph{The American Journal of Medicine} 133 (2): 160--64. \url{https://doi.org/10.1016/j.amjmed.2019.08.034}.
+
+\end{CSLReferences}
+
+%%%%% REFERENCES
+
+
+
+\end{document}

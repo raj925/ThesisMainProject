@@ -16,10 +16,10 @@ bibliography: [bibliography/references.bib]
 knitr::opts_chunk$set(cache =TRUE)
 ```
 
-# Chapter 3 - Information Seeking and Confidence During Medical Diagnoses {#chapter-3}
+# Information Seeking and Confidence During Medical Diagnoses {#chapter-3}
 
 \adjustmtc
-\markboth{Online Study}{}
+\markboth{3. Online Study}{}
 
 <!-- For PDF output, include these two LaTeX commands after unnumbered chapter headings, otherwise the mini table of contents and the running header will show the previous chapter -->
 
@@ -646,7 +646,7 @@ modelcoeffs$PercentChangeInOdds <- modelcoeffs$OddsRatio-1
 accPredictions <- modelglm$pred
 confusionAcc <- confusionMatrix(accPredictions$pred,accPredictions$obs)
 
-nShuffles <- 10
+nShuffles <- 1000
 
 set.seed(1000)
 
@@ -740,8 +740,6 @@ varAcc <- ggplot(data = studentAggData, aes(x=infoSeekingDiceVariability, y=mean
 print(varAcc)
 
 ```
-
-\newpage
 
 ```{r accVarSplitPlot, include=TRUE, eval=TRUE, message=FALSE, echo=FALSE, warning=FALSE,out.width='100%', fig.align='center', fig.cap="Information Seeking Variability (y-axis) for all cases of a given condition (x-axis), with cases median split by participant accuracy. Red bars indicate high performers and blue indicating lower performers. Cases are in descending order (UC = Ulcerative Colitis, GBS = Guillain Barré Syndrome, TA = Temporal Arteritis, TTP = Thrombotic Thrombocytopenic Purpura, AD = Aortic Dissection, MTB = Miliary Tuberculosis) by their average accuracy across participants. Higher variability values signify that participants were less alike one another in terms of the information they sought on a given case.", fig.scap="Online Study: Information Seeking Variability Split by Accuracy and Case (Bar Graph)"}
 
@@ -919,6 +917,8 @@ ft <- set_caption(ft, "The five highest weighted parameters (by the absolute val
 ft
 
 ```
+
+\newpage
 
 ```{r infoProps, include=TRUE, eval=TRUE, message=FALSE, echo=FALSE, warning=FALSE,out.width='100%', fig.align='center', fig.cap="Visualisation of the proportion of participants who sought each available piece of information (columns, x-axis) broken down by case (rows, y-axis). Lighter blue colours indicate that fewer participants sought that information for a given case (i.e. towards 0%), whilst lighter orange colours indicate more participants sought that information for a given case (i.e. towards 100%).",fig.scap="Online Study: Information Sought on Each Case (Heatmap)"}
 

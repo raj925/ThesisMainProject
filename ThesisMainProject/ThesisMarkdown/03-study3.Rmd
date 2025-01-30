@@ -11,10 +11,10 @@ bibliography: [bibliography/references.bib]
 #    wrap: 72
 ---
 
-# Chapter 4 - Characterising Diagnostic Reasoning Strategies via a Think-Aloud Paradigm {#chapter-4}
+# Characterising Diagnostic Reasoning Strategies via a Think-Aloud Paradigm {#chapter-4}
 
 \adjustmtc
-\markboth{Think Aloud}{}
+\markboth{4. Think Aloud Study}{}
 
 <!-- For PDF output, include these two LaTeX commands after unnumbered chapter headings, otherwise the mini table of contents and the running header will show the previous chapter -->
 
@@ -174,6 +174,8 @@ calibrationtest <- summary(calibrationtest)
 
 Accuracy (the proportion of cases where a correct differential was mentioned by the participant) was `r round(mean(caseBreakdown$Accuracy),2)` across all cases. This differed by case, as can be seen below in [Table \@ref(tab:casewiseStatsTableTA)](#tab:casewiseStatsTableTA). When compared to the online experiment, confidence judgments were similar to those provided in this study. Accuracy, on the other hand, was lower particularly for three cases (MTB, TA, UC) during this study when compared to the online experiment. Similar to the previous study, we ask whether participants provided confidence judgements that were, on the whole, calibrated to their objective accuracy. In order to investigate this for this study, we compare the final confidence reported by participants on cases when they were objectively correct and when they were objectively incorrect. Participants would be considered calibrated if we found evidence of higher confidence when correct compared to when participants were incorrect. Participants did indeed report higher confidence when correct (M = `r round(mean(TAData[TAData$Correct==1,]$finalConfidence))`, SD = `r round(sd(TAData[TAData$Correct==1,]$finalConfidence))`) compared to when they were incorrect (M = `r round(mean(TAData[TAData$Correct==0,]$finalConfidence))`, SD = `r round(sd(TAData[TAData$Correct==0,]$finalConfidence))`). Given that the samples from each of these groups are not independent, we test for a difference between these groups using a binomial mixed effects model that predicts correctness using final confidence as a fixed effect and both the individual participant and condition as random effects. We find evidence that the case correctness was predicted by final confidence ($\beta$ = `r round(calibrationtest$coefficients[2],2)`, SE = `r round(calibrationtest$coefficients[,"Std. Error"][2],2)`, z = `r round(calibrationtest$coefficients[,"z value"][2],2)`, p = `r round(calibrationtest$coefficients[,"Pr(>|z|)"][2],2)`). This provides evidence that participants' confidence judgements that were well calibrated to their objective accuracy, as confidence judgements were sensitive to whether participants were correct or incorrect across cases.
 
+\newpage
+
 ```{r casewiseStatsTableTA, include=TRUE, echo=FALSE, warning=FALSE}
 
 #knitr::kable(caseBreakdown) %>% 
@@ -186,8 +188,6 @@ ft <- set_caption(ft,"Table of data from this think-aloud study showing, by case
 ft
 
 ```
-
-\newpage
 
 #### Differential Evaluations
 
@@ -867,7 +867,7 @@ testingDataStrats$value <- temp$infoValue
 
 ```{r stratClassifierNullShuffle, include=FALSE, echo=FALSE, warning = FALSE, message=FALSE}
 
-nShuffles <- 10
+nShuffles <- 1000
 
 set.seed(1000)
 
