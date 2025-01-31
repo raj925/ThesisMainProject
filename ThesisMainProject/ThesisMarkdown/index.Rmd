@@ -26,7 +26,7 @@ university-logo: templates/beltcrest.pdf
 university-logo-width: 5cm
 submitted-text: A thesis submitted for the degree of
 degree: Doctor of Philosophy
-degreedate: Michaelmas 2024
+degreedate: Hilary 2025
 dedication: For my paatis and my thathas
 acknowledgements: |
   `r paste(readLines("front-and-back-matter/_acknowledgements.Rmd"), collapse = '\n  ')`
