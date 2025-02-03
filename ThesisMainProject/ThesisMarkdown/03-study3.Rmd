@@ -365,14 +365,14 @@ print(p)
 
 ```
 
-\
+\newpage
 
 ```{r strategyexamples, include = TRUE,warning=FALSE, message=FALSE, echo=FALSE}
 
 colnames(stratexamples) <- c("Participant (Case)","Quote","Coded Strategy","Interpretation")
 
 knitr::kable(stratexamples, longtable = TRUE, caption="Examples of cases that were coded for a particular reasoning strategy and key quotes that suggest the coded reasoning strategy. We provide the quotes from each case, as well as how we interpret the quotes in line with the particular reasoning strategy.") %>% 
-  kableExtra::kable_styling(latex_options=c("HOLD_position","repeat_header")) %>%
+  kableExtra::kable_styling(latex_options=c("HOLD_position")) %>%
   column_spec(1, width = "6em") %>%
   column_spec(2, width = "15em") %>%
   column_spec(3, width = "4em") %>%
@@ -587,7 +587,7 @@ subjstrategies <- subjstrategies %>%
 arrange(`Coded Strategy`)
 
 knitr::kable(subjstrategies, longtable = TRUE, caption="Categorisation of participants under one of three possible reasoning strategies based on their responses during the debrief interview. We capture here the subjective reasoning strategy for each participant based on how they reflect on how they tend to make diagnostic decisions. In the second column are key highlighted quotes related to each of the participants' diagnostic decision making processes. In the fourth column, we provide our summary of the quote and then in the fifth column, our interpretation of the quote that explains the choice of reasoning strategy for that participant. Participants have been sorted/ordered by their coded strategy.") %>% 
-  kableExtra::kable_styling(latex_options=c("HOLD_position","repeat_header")) %>%
+  kableExtra::kable_styling(latex_options=c("HOLD_position")) %>%
   column_spec(1, width = "5em") %>%
   column_spec(2, width = "14em") %>%
   column_spec(3, width = "3em") %>%

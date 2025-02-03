@@ -42,7 +42,7 @@ colnames(marking) <- c("Patient History", "Physical Examinations", "Testing")
 ft <- flextable(marking)
 ft <- align(ft, part = "all", align = "center")
 ft <- width(ft, width = 2)
-ft <- set_caption(ft,"Full list of possible information requests that participants can make. This set of information is the same for all cases. The same vignettes and corresponding information are used for the online and think-aloud vignette studies.")
+ft <- set_caption(ft,"Full list of possible information requests that participants can make in the vignette studies (both the online and think-aloud studies presented in Chapters 3 and 4 respectively). This set of information is the same for all six cases/conditions.")
 
 ft
 
@@ -74,7 +74,7 @@ ft
 
 ## Analysis of Expert Participants {#experts}
 
-In this section, we present analysis of experienced participants who had completed the same online vignette task that the medical student participants completed. In total, 7 experienced participants completed the experiment. Given this small sample size, we primarily use the expert participants' results as a comparison with the medical student participants' results (presented in the main thesis).
+In this section, we present analysis of experienced participants who had completed the same online vignette task that the medical student participants completed (as presented in the main thesis). In total, 7 experienced participants completed the experiment. Given this small sample size, we primarily use the expert participants' results as a comparison with the medical student participants' results (presented in the main thesis).
 
 ### Differentials
 
@@ -98,6 +98,8 @@ detach()
 ```
 
 We analysed the number of differentials to provide insights into the diagnostic decision process across stages for the expert participants. This allows us to determine if experienced clinicians use a process of deductive narrowing (decreasing differentials) or open-minded broadening (increasing differentials). Analysis of the number of differentials considered by participants at each stage provides little evidence for an overall strategy of deductive narrowing towards a single differential. Instead, participants overall increased the number of the differentials they reported as they received more information (F(`r model$DF[1]`, `r model$DF[2]`) = `r round(model$F[1],2)`, $\eta^2$G = `r etasq`, p \< .001). Participants reported fewer differentials during the Patient History stage (M = `r round(mean(diffdf[diffdf$stage==1,]$Differentials),2)`, SD = `r round(sd(diffdf[diffdf$stage==1,]$Differentials),2)`) than during the Physical Examination (M = `r round(mean(diffdf[diffdf$stage==2,]$Differentials),2)`, SD = `r round(sd(diffdf[diffdf$stage==2,]$Differentials),2)`) and Testing stages (M = `r round(mean(diffdf[diffdf$stage==3,]$Differentials),2)`, SD = `r round(sd(diffdf[diffdf$stage==3,]$Differentials),2)`). As can be observed in [Figure \@ref(fig:expdiffs)](#fig:expdiffs) below, all expert participants tended to, on average, increase the differentials they were considering across stages.
+
+\newpage
 
 ```{r, expdiffs, include=TRUE, echo=FALSE, message=FALSE, warning=FALSE, fig.cap="The average number of differentials after each stage of information seeking (x-axis, History = Patient History, Physical = Physical Examinations, Testing = Testing) for expert participants. The width of the blue area corresponds to the amount of data points that fall within that part of the y-axis, with a wider area meaning a higher concentration of data points. The larger black dots indicate the mean values, whilst the larger black vertical lines indicate standard deviations. The grey dots show individual values at each stage, with grey lines connecting the dots at each stage to represent individual participants' trend across the information seeking stages.",fig.scap="Online Study Appendix: Average Differentials by Stage for Expert Participants (Violin Plot)"}
 
@@ -204,7 +206,7 @@ testtest <- t.test(condf[condf$stage==3,]$Confidence,accdf[accdf$stage==3,]$Accu
 
 ```
 
-We first look at whether confidence is calibrated within experienced clinicians during our vignette task. Clinicians had highest accuracy at the Physical Examination stage (M = `r round(mean(accdf[accdf$stage==1,]$Accuracy),2)`, SD = `r round(sd(accdf[accdf$stage==1,]$Accuracy),2)`) compared to the Testing (M = `r round(mean(accdf[accdf$stage==2,]$Accuracy)/10,2)`, SD = `r round(sd(accdf[accdf$stage==2,]$Accuracy),2)`) and Physical History stages (M = `r round(mean(accdf[accdf$stage==3,]$Accuracy),2)`, SD = `r round(sd(accdf[accdf$stage==3,]$Accuracy),2)`). Clinicians reported lower confidence during the Patient History stage (M = `r round(mean(condf[condf$stage==1,]$Confidence),2)`, SD = `r round(sd(condf[condf$stage==1,]$Confidence),2)`) both compared to during the Physical Examination (M = `r round(mean(condf[condf$stage==2,]$Confidence),2)`, SD = `r round(sd(condf[condf$stage==2,]$Confidence),2)`) and Testing stages (M = `r round(mean(condf[condf$stage==3,]$Confidence),2)`, SD = `r round(mean(condf[condf$stage==3,]$Confidence),2)`). Hence, at all stages, clinicians were both more confident and more accurate when compared to medical students on average. When comparing Accuracy (taking into account the likelihood assigned to correct differentials) to Confidence, we find, across stages, clinicians’ Confidence was aligned to their Accuracy (see Figure below). As per the previous section, calibration varies as a function of the accuracy measure used, with Differential Accuracy showing evidence for underconfidence if compared against confidence. 
+We first look at whether confidence is calibrated within experienced clinicians during our vignette task. Clinicians had highest accuracy at the Physical Examination stage (M = `r round(mean(accdf[accdf$stage==2,]$Accuracy),2)`, SD = `r round(sd(accdf[accdf$stage==2,]$Accuracy),2)`) compared to the Testing (M = `r round(mean(accdf[accdf$stage==3,]$Accuracy),2)`, SD = `r round(sd(accdf[accdf$stage==3,]$Accuracy),2)`) and Patient History stages (M = `r round(mean(accdf[accdf$stage==1,]$Accuracy),2)`, SD = `r round(sd(accdf[accdf$stage==1,]$Accuracy),2)`). Clinicians reported lower confidence during the Patient History stage (M = `r round(mean(condf[condf$stage==1,]$Confidence),2)`, SD = `r round(sd(condf[condf$stage==1,]$Confidence),2)`) both compared to during the Physical Examination (M = `r round(mean(condf[condf$stage==2,]$Confidence),2)`, SD = `r round(sd(condf[condf$stage==2,]$Confidence),2)`) and Testing stages (M = `r round(mean(condf[condf$stage==3,]$Confidence),2)`, SD = `r round(sd(condf[condf$stage==3,]$Confidence),2)`). Hence, at all stages, clinicians were both more confident and more accurate when compared to medical students on average. When comparing Accuracy (taking into account the likelihood assigned to correct differentials) to Confidence, we find, across stages, clinicians’ Confidence was aligned to their Accuracy (see Figure below). As per the previous section, calibration varies as a function of the accuracy measure used, with Differential Accuracy showing evidence for underconfidence if compared against confidence. 
 
 \newpage
 
@@ -327,9 +329,9 @@ corexpacc <- cor.test(studentAggData$infoValueExp,studentAggData$meanFinalAccura
 
 ```
 
-In the main thesis, we use a measure of information seeking value that is defined by splitting all cases completed across participants into two groups: cases where that information was sought at any stage and cases where that information was not sought. For each group, we computed the proportion of trials where the students included a correct differential, and then take the difference between these two values. A positive value would indicate that students were more likely to identify the correct condition with that information rather than without that information. This difference can be considered that information’s ‘value’. For this measure, we use the medical student participants to both define and measure information value for each participant. With our clinician participants, we can use their information seeking patterns to define information value to them measure the performance of the medical students. We use a similar method as defined above to define each piece of information's 'value': we instead compute the difference accuracy when the experienced clinicians did or did not seek that piece of information. We then calculate the sum of all information values for each case. This gives an overall measure of, on average, how useful the information was that participants sought on each case. However, this measure instead separates the definition of informational value from the information seeking behaviour. We use this measure to replicate our analyses correlating information value with both Confidence Change and Accuracy (as depicted in Figures 3.7B and 3.7D). Below we show the expert participants' information seeking by case in Figure. 
+In the main thesis, we use a measure of information seeking value that is defined by splitting all cases completed across participants into two groups: cases where that information was sought at any stage and cases where that information was not sought. For each group, we computed the proportion of trials where the students included a correct differential, and then take the difference between these two values. A positive value would indicate that students were more likely to identify the correct condition with that information rather than without that information. This difference can be considered that information’s ‘value’. For this measure, we use the medical student participants to both define and measure information value for each participant. With our clinician participants, we can use their information seeking patterns to define information value to them measure the performance of the medical students. We use a similar method as defined above to define each piece of information's 'value': we instead compute the difference accuracy when the experienced clinicians did or did not seek that piece of information. We then calculate the sum of all information values for each case. This gives an overall measure of, on average, how useful the information was that participants sought on each case. However, this measure instead separates the definition of informational value from the information seeking behaviour. We use this measure to replicate our analyses correlating information value with both Confidence Change and Accuracy (as depicted in Figures [Figure \@ref(fig:confAccPlot)](#fig:confAccPlot)B and [Figure \@ref(fig:confAccPlot)](#fig:confAccPlot)D). Below we show the expert participants' information seeking by case in [Figure \@ref(fig:infoPropsExp)](#fig:infoPropsExp). 
 
-```{r infoPropsExp, include=TRUE, eval=TRUE, message=FALSE, echo=FALSE, warning=FALSE,out.width='100%', fig.align='center', fig.cap="Visualisation of the proportion of experience clinicians who sought each available piece of information (columns, x-axis) broken down by case (rows, y-axis). Lighter blue colours indicate that fewer participants sought that information for a given case (i.e. towards 0%), whilst lighter orange colours indicate more participants sought that information for a given case (i.e. towards 100%).",fig.scap="Online Study Appendix: Expert Information Seeking by Case (Heatmap)"}
+```{r infoPropsExp, include=TRUE, eval=TRUE, message=FALSE, echo=FALSE, warning=FALSE,out.width='100%', fig.align='center', fig.cap="Visualisation of the proportion of experienced clinicians who sought each available piece of information (columns, x-axis) broken down by case (rows, y-axis). Lighter blue colours indicate that fewer participants sought that information for a given case (i.e. towards 0%), whilst lighter orange colours indicate more participants sought that information for a given case (i.e. towards 100%).",fig.scap="Online Study Appendix: Expert Information Seeking by Case (Heatmap)"}
 
 temp <- infoSeekingFullMatrix[infoSeekingFullMatrix$ParticipantType=="e",c(1:29)]
 temp$Condition <- infoSeekingFullMatrix[infoSeekingFullMatrix$ParticipantType=="e",]$Condition
@@ -348,11 +350,11 @@ number_color = "black")
 
 ```
 
-We assess the degree to which each participant’s accuracy is predicted by the quality of the information they sought using this new measure and find evidence for a positive relationship between accuracy and information value (r(`r corexpacc$parameter`) = `r round(corexpacc$estimate,2)`, 95% CI = [`r round(corexpacc$conf.int[1],2)`, `r round(corexpacc$conf.int[2],2)`], p = `r round(corexpacc$p.value,2)`, Figure A), as well as between confidence and information value (r(`r corexpcon$parameter`) = `r round(corexpcon$estimate,2)`, 95% CI = [`r round(corexpcon$conf.int[1],2)`, `r round(corexpcon$conf.int[2],2)`], p = `r round(corexpcon$p.value,2)`, Figure B).
+We assess the degree to which each (student) participant’s accuracy is predicted by the quality of the information they sought using this new measure and find evidence for a positive relationship between accuracy and information value (r(`r corexpacc$parameter`) = `r round(corexpacc$estimate,2)`, 95% CI = [`r round(corexpacc$conf.int[1],2)`, `r round(corexpacc$conf.int[2],2)`], p = `r round(corexpacc$p.value,2)`, Figure A), as well as between confidence and information value (r(`r corexpcon$parameter`) = `r round(corexpcon$estimate,2)`, 95% CI = [`r round(corexpcon$conf.int[1],2)`, `r round(corexpcon$conf.int[2],2)`], p = `r round(corexpcon$p.value,2)`, Figure B).
 
 \newpage
 
-```{r confAccPlotExp, include=TRUE, message=FALSE, echo=FALSE, warning=FALSE,out.width='100%', fig.align='center', fig.height=7, fig.cap="Scatter plots showing information seeking value (defined using experienced clinicians' information seeking) against our key dependent variables of accuracy (the likelihood assigned to a correct differential if provided, A) and change in confidence (difference between final confidence and initial confidence, B). Information Sought refers to the proportion of available information sought across cases. Information Value refers to the sum of all mean information values across all 6 cases for a given participant. All data points are for a single participant where variables are averaged across all 6 cases they completed.",fig.scap="Online Study Appendix: Expert Information Seeking against Confidnece/Accuracy (Scatter Plots)"}
+```{r confAccPlotExp, include=TRUE, message=FALSE, echo=FALSE, warning=FALSE,out.width='100%', fig.align='center', fig.height=7, fig.cap="Scatter plots showing information seeking value (defined using experienced clinicians' information seeking) against our key dependent variables of accuracy (the likelihood assigned to a correct differential if provided, A) and change in confidence (difference between final confidence and initial confidence, B) for the medical student participants. Information Sought refers to the proportion of available information sought across cases. Information Value refers to the sum of all mean information values across all 6 cases for a given participant. All data points are for a single participant where variables are averaged across all 6 cases they completed.",fig.scap="Online Study Appendix: Expert Information Seeking against Confidnece/Accuracy (Scatter Plots)"}
 
 ### Correlation between info value and confidence
 
@@ -435,10 +437,10 @@ studentsSurpassedPercent <- round(studentsSurpassedNum/nrow(varDf[varDf$Particip
 
 ```
 
-We turn to our analysis of Information Seeking Variability as depicted in Figures 3.9 and 3.10. We surmised from these analyses that diagnostic accuracy was negatively correlated with information seeking variability. This meant that medical students were observed to be more accurate in their diagnoses when seeking more similar across cases. In Figure below, we show information seeking variability by accuracy for medical students, as compared with expert clinicians. The highest quartile of medical students had an average accuracy of `r round(varSum[varSum$AccuracyGroup==4,]$Accuracy,2)`, which is slightly higher than the expert clinicians' average accuracy of `r round(varSum[varSum$AccuracyGroup=="e",]$Accuracy,2)`. Hence, whilst expert clinicians outperformed the majority of medical students (`r studentsSurpassedNum`,`r studentsSurpassedPercent`%), some medical students exhibited better performance than the clinicians.
+We turn to our analysis of Information Seeking Variability as depicted in Figures [Figure \@ref(fig:accVarPlot)](#fig:accVarPlot) and [Figure \@ref(fig:accVarSplitPlot)](#fig:accVarSplitPlot). We surmised from these analyses that diagnostic accuracy was negatively correlated with information seeking variability. This meant that medical students were observed to be more accurate in their diagnoses when seeking more similar across cases. In [Figure \@ref(fig:accVarExpPlot)](#fig:accVarExpPlot) below, we show information seeking variability by accuracy for medical students, as compared with expert clinicians. The highest quartile of medical students had an average accuracy of `r round(varSum[varSum$AccuracyGroup==4,]$Accuracy,2)`, which is slightly higher than the expert clinicians' average accuracy of `r round(varSum[varSum$AccuracyGroup=="e",]$Accuracy,2)`. Hence, whilst expert clinicians outperformed the majority (`r studentsSurpassedNum`, `r studentsSurpassedPercent`%) of medical students, some medical students exhibited better performance than the clinicians.
 
 \
-When comparing Information Seeking Variability, we find the average variability to higher for expert clinicians compared to the highest performing medical students (see Figure below). This would support our account that lower information seeking variability is associated with higher accuracy, but we show that it is not necessarily associated with expertise/experience. 
+When comparing Information Seeking Variability, we find the average variability to higher for expert clinicians compared to the highest performing medical students (see [Figure \@ref(fig:accVarExpPlot)](#fig:accVarExpPlot) below). This would support our account that lower information seeking variability is associated with higher accuracy, but we show that it is not necessarily associated with expertise/experience. 
 
 \newpage
 
@@ -449,7 +451,7 @@ varexpplot <- ggplot(varSum) +
   geom_errorbar(aes(x = AccuracyGroup,ymin=Variance-VarErr, ymax=Variance+VarErr), width=.3, position=position_dodge(0.05),color="orange")
 
 print(varexpplot +
-        labs(x = "Participant Accuracy Group/Expert", y = "Variance in MDS Distances") +
+        labs(x = "Participant Accuracy Group/Expert", y = "Variability") +
         theme_classic()) 
 
 ```
@@ -504,7 +506,7 @@ detach()
 condf$Confidence <- condf$Confidence/100
 
 
-histtest <- t.test(accdf[accdf$stage==1,]$Accuracy,condf[condf$stage==1,]$Confidence,paired=T)
+histtest <- t.test(condf[condf$stage==1,]$Confidence,accdf[accdf$stage==1,]$Accuracy,paired=T)
 exattest <- t.test(condf[condf$stage==2,]$Confidence,accdf[accdf$stage==2,]$Accuracy,paired=T)
 testtest <- t.test(condf[condf$stage==3,]$Confidence,accdf[accdf$stage==3,]$Accuracy,paired=T)
 
@@ -532,7 +534,8 @@ colnames(caseComparisons) <- c("Case","df","t","MDiff","p")
 
 ```
 
-In order to examine the observed underconfidence in more detail, we compare confidence and Differential Accuracy by case (the mean values of which can be found in Table 1 of the main thesis). We conducted paired t-tests for each condition's cases by comparing Differential Accuracy and confidence values (at the final Testing stage) to observe if they significantly differ from each other. A p value of less than .05 is interpreted as evidence for overconfidence or underconfidence (depending on the direction of the effect). We observed underconfidence for the GBS case (t(`r as.numeric(caseComparisons[caseComparisons$Case=="GBS",]$df)`) = `r as.numeric(caseComparisons[caseComparisons$Case=="GBS",]$t)`, MDiff = `r as.numeric(caseComparisons[caseComparisons$Case=="GBS",]$MDiff)`, p = < .001), the TA case (t(`r as.numeric(caseComparisons[caseComparisons$Case=="TA",]$df)`) = `r as.numeric(caseComparisons[caseComparisons$Case=="TA",]$t)`, MDiff = `r as.numeric(caseComparisons[caseComparisons$Case=="TA",]$MDiff)`, p = < .001), the TTP case (t(`r as.numeric(caseComparisons[caseComparisons$Case=="TTP",]$df)`) = `r as.numeric(caseComparisons[caseComparisons$Case=="TTP",]$t)`, MDiff = `r as.numeric(caseComparisons[caseComparisons$Case=="TTP",]$MDiff)`, p = < .001) and the UC case (t(`r as.numeric(caseComparisons[caseComparisons$Case=="UC",]$df)`) = `r as.numeric(caseComparisons[caseComparisons$Case=="UC",]$t)`, MDiff = `r as.numeric(caseComparisons[caseComparisons$Case=="UC",]$MDiff)`, p = < .001). The remaining cases did not yield a significant effect. 
+\
+In order to examine the observed underconfidence in more detail, we compare confidence and Differential Accuracy by case (the mean values of which can be found in [Table \@ref(tab:casewiseStatsTable)](#tab:casewiseStatsTable) of the main thesis). We conducted paired t-tests for each condition's cases by comparing Differential Accuracy and Confidence values (at the final Testing stage) to observe if they significantly differ from each other. A p value of less than .05 is interpreted as evidence for overconfidence or underconfidence (depending on the direction of the effect). We observed underconfidence for the GBS case (t(`r as.numeric(caseComparisons[caseComparisons$Case=="GBS",]$df)`) = `r as.numeric(caseComparisons[caseComparisons$Case=="GBS",]$t)`, MDiff = `r as.numeric(caseComparisons[caseComparisons$Case=="GBS",]$MDiff)`, p = < .001), the TA case (t(`r as.numeric(caseComparisons[caseComparisons$Case=="TA",]$df)`) = `r as.numeric(caseComparisons[caseComparisons$Case=="TA",]$t)`, MDiff = `r as.numeric(caseComparisons[caseComparisons$Case=="TA",]$MDiff)`, p = < .001), the TTP case (t(`r as.numeric(caseComparisons[caseComparisons$Case=="TTP",]$df)`) = `r as.numeric(caseComparisons[caseComparisons$Case=="TTP",]$t)`, MDiff = `r as.numeric(caseComparisons[caseComparisons$Case=="TTP",]$MDiff)`, p = < .001) and the UC case (t(`r as.numeric(caseComparisons[caseComparisons$Case=="UC",]$df)`) = `r as.numeric(caseComparisons[caseComparisons$Case=="UC",]$t)`, MDiff = `r as.numeric(caseComparisons[caseComparisons$Case=="UC",]$MDiff)`, p = < .001). The remaining cases did not yield a significant effect. 
 
 ### Highest Likelihood Accuracy
 
@@ -581,7 +584,7 @@ accdf$Accuracy <- accdf$Accuracy/10
 condf$Confidence <- condf$Confidence/100
 
 
-histtest <- t.test(accdf[accdf$stage==1,]$Accuracy,condf[condf$stage==1,]$Confidence,paired=T)
+histtest <- t.test(condf[condf$stage==1,]$Confidence,accdf[accdf$stage==1,]$Accuracy,paired=T)
 exattest <- t.test(condf[condf$stage==2,]$Confidence,accdf[accdf$stage==2,]$Accuracy,paired=T)
 testtest <- t.test(condf[condf$stage==3,]$Confidence,accdf[accdf$stage==3,]$Accuracy,paired=T)
 
@@ -609,7 +612,8 @@ colnames(caseComparisons) <- c("Case","df","t","MDiff","p")
 
 ```
 
-In order to examine the observed overconfidence in more detail, we compare confidence and Highest Likelihood Accuracy by case (the mean values of which can be found in Table 1 of the main thesis). We conducted paired t-tests for each condition's cases by comparing Highest Likelihood Accuracy and confidence values (at the final Testing stage) to observe if they significantly differ from each other. A p value of less than .05 is interpreted as evidence for overconfidence or underconfidence (depending on the direction of the effect). We observed overconfidence for the AD case (t(`r as.numeric(caseComparisons[caseComparisons$Case=="AD",]$df)`) = `r as.numeric(caseComparisons[caseComparisons$Case=="AD",]$t)`, MDiff = `r as.numeric(caseComparisons[caseComparisons$Case=="AD",]$MDiff)`, p = < .001), the MTB case (t(`r as.numeric(caseComparisons[caseComparisons$Case=="MTB",]$df)`) = `r as.numeric(caseComparisons[caseComparisons$Case=="MTB",]$t)`, MDiff = `r as.numeric(caseComparisons[caseComparisons$Case=="MTB",]$MDiff)`, p = < .001) and the TTP case (t(`r as.numeric(caseComparisons[caseComparisons$Case=="TTP",]$df)`) = `r as.numeric(caseComparisons[caseComparisons$Case=="TTP",]$t)`, MDiff = `r as.numeric(caseComparisons[caseComparisons$Case=="TTP",]$MDiff)`, p = < .001). The remaining cases did not yield a significant effect. 
+\
+In order to examine the observed overconfidence in more detail, we compare Confidence and Highest Likelihood Accuracy by case (the mean values of which can be found in [Table \@ref(tab:casewiseStatsTable)](#tab:casewiseStatsTable) of the main thesis). We conducted paired t-tests for each condition's cases by comparing Highest Likelihood Accuracy and confidence values (at the final Testing stage) to observe if they significantly differ from each other. A p value of less than .05 is interpreted as evidence for overconfidence or underconfidence (depending on the direction of the effect). We observed overconfidence for the AD case (t(`r as.numeric(caseComparisons[caseComparisons$Case=="AD",]$df)`) = `r as.numeric(caseComparisons[caseComparisons$Case=="AD",]$t)`, MDiff = `r as.numeric(caseComparisons[caseComparisons$Case=="AD",]$MDiff)`, p = < .001), the MTB case (t(`r as.numeric(caseComparisons[caseComparisons$Case=="MTB",]$df)`) = `r as.numeric(caseComparisons[caseComparisons$Case=="MTB",]$t)`, MDiff = `r as.numeric(caseComparisons[caseComparisons$Case=="MTB",]$MDiff)`, p = < .001) and the TTP case (t(`r as.numeric(caseComparisons[caseComparisons$Case=="TTP",]$df)`) = `r as.numeric(caseComparisons[caseComparisons$Case=="TTP",]$t)`, MDiff = `r as.numeric(caseComparisons[caseComparisons$Case=="TTP",]$MDiff)`, p = < .001). The remaining cases did not yield a significant effect. 
 
 \newpage
 
@@ -627,6 +631,28 @@ Each question has a corresponding follow-up question below in case they are not 
 \newpage
 
 # Chapter 5 Appendices
+
+## VR Information Seeking Requests
+
+``` {r vrinforequests, include=TRUE, eval=TRUE, message=FALSE, echo=FALSE, warning=FALSE,out.width='100%', fig.align='center'}
+
+actionsVR <- as.data.frame(read.csv("./assets/actionCategoriesTable.csv",header=TRUE))
+
+colnames(marking) <- c("Patient History", "Physical Examinations", "Testing/Investigations","Treatment")
+
+#knitr::kable(marking) %>% 
+#  kableExtra::kable_styling(latex_options=c("HOLD_position","scale_down"))
+
+ft <- flextable(actionsVR)
+ft <- align(ft, part = "all", align = "center")
+ft <- width(ft, width = 1.5)
+ft <- set_caption(ft,"Full list of possible information requests that participants can make in the VR study. Each information request is categorised under one of the possible groups shown in the table header above.")
+
+ft
+
+```
+
+\newpage
 
 ## Diagnostic Appropriateness Marking Scheme for VR Study
 
