@@ -110,7 +110,7 @@ We also code all utterances related to differential/hypothesis generation. We de
     -   *Differential Added:* - Mentions a new condition that they are considering
     -   *Differential Removed:* - Rules out or eliminates a condition from consideration
     -   *Likelihood Increased:* - Mention of increased likelihood of a previously mentioned condition, or that information seems to correspond with a condition
-    -   *Likelihood Decreased:* - Mention of decreased likelihood of a previously mentioned condition, or that information seems to rule out a particular condition
+    -   *Likelihood Decreased:* - Mention of decreased likelihood of a previously mentioned condition, or that information seems to go against a particular condition
 
 Based on this, in lieu of the Number of Differentials variable from our previous study, we define a new variable to look at the number of instances in which participants evaluate or reevaluate the differentials they are considering:
 

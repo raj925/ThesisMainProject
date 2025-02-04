@@ -748,8 +748,6 @@ for (n in 1:nrow(temp)) #row
 }
 temp = subset(temp, select = -c(Condition,ID))
 
-
-#temp$infoValue <- rowMeans(temp,na.rm = TRUE)
 temp$infoValue <- rowSums(temp,na.rm = TRUE)
 temp$infoValueAfterHistory <- rowSums(temp[,7:29],na.rm=T)
 
