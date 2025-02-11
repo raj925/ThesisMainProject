@@ -678,26 +678,25 @@ ft
 
 \newpage
 
-# R Environment and Packages
 
 ```{r, include=TRUE, echo=FALSE, warning=FALSE}
 
-print("R version:")
-version$version.string
-
-print("Rstudio version:")
-rstudioversion <- rstudioapi::versionInfo()
-rstudioversion$version
-
-print("Citations for packages used:")
-get_pkgs_info(pkgs = requiredPackages, out.dir = getwd())
-pkgs <- scan_packages()
-get_citations(pkgs$pkg, out.dir = getwd(), include.RStudio = TRUE)
-cite_packages(pkgs = requiredPackages, output = "table", out.format = "Rmd", out.dir = getwd())
-
-requiredPackages %>%
-  map(citation) %>%
-  print(style = "text")
+# print("R version:")
+# version$version.string
+# 
+# print("Rstudio version:")
+# rstudioversion <- rstudioapi::versionInfo()
+# rstudioversion$version
+# 
+# print("Citations for packages used:")
+# get_pkgs_info(pkgs = requiredPackages, out.dir = getwd())
+# pkgs <- scan_packages()
+# get_citations(pkgs$pkg, out.dir = getwd(), include.RStudio = TRUE)
+# cite_packages(pkgs = requiredPackages, output = "table", out.format = "Rmd", out.dir = getwd())
+# 
+# requiredPackages %>%
+#   map(citation) %>%
+#   print(style = "text")
 
 ```
 

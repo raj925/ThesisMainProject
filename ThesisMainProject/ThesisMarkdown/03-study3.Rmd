@@ -440,7 +440,7 @@ conTest <- joint_tests(conTest)
 
 ```
 
-```{r stratstable, include=TRUE, warning=FALSE, message=FALSE, echo=FALSE}
+```{r stratstable, include=TRUE, warning=FALSE, message=FALSE, echo=FALSE, out.width='100%'}
 
 #knitr::kable(strattable) %>% 
 #  kableExtra::kable_styling(latex_options=c("HOLD_position","scale_down"))

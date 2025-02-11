@@ -79,14 +79,6 @@ knitr::include_graphics("./assets/PRISMA.png")
 
 #### Study Characteristics
 
-[Table \@ref(tab:reviewcharstab)](#fig:chartable) below summarises study characteristics and [Figure \@ref(fig:reviewyears)](#fig:reviewyears) shows that 36 of the 79 studies (46%) were published since 2019, indicating a recent surge of research interest in this field and the timeliness of this scoping review. The studies appeared in 59 different publications, including both medical and psychological journals, with medical education journals being most common (19 studies). Clinical areas most represented were Primary Care/General Practice, Emergency Medicine and Nursing.
-
-```{r chartable, include=FALSE, echo=FALSE, out.width='100%', fig.align='center', fig.cap="Characteristics of Included Studies, including year of publication, study environment used and medical population (recruiting single or multiple levels of participant experience, medical subdiscipline, sample size). A full list of all included papers can be found in the Appendices (Table A.1).", fig.scap="Scoping Review: Characteristics of Included Studies"}
-
-knitr::include_graphics("./assets/ReviewTable.png")
-
-```
-
 ```{r reviewcharstab, include=TRUE, warning=FALSE, message=FALSE, echo=FALSE}
 
 reviewchars <- as.data.frame(read.csv("./assets/ReviewPapersBreakdown.csv",header=FALSE))
@@ -98,10 +90,12 @@ ft <- align(ft, part = "all", align = "center")
 ft <- set_caption(ft,"Characteristics of Included Studies, including year of publication, study environment used and medical population (recruiting single or multiple levels of participant experience, medical subdiscipline, sample size). A full list of all included papers can be found in the Appendices (Table A.1).")
 
 ft <- flextable::merge_at(ft, i = 1:4, j = 1)
-ft <- flextable::merge_at(ft, i = 7:10, j = 1)
-ft <- flextable::merge_at(ft, i = 13:14, j = 1)
-ft <- flextable::merge_at(ft, i = 17:23, j = 1)
-ft <- flextable::merge_at(ft, i = 26:29, j = 1)
+ft <- flextable::merge_at(ft, i = 5:8, j = 1)
+ft <- flextable::merge_at(ft, i = 9:10, j = 1)
+ft <- flextable::merge_at(ft, i = 11:17, j = 1)
+ft <- flextable::merge_at(ft, i = 18:21, j = 1)
+
+ft <- flextable::border(ft, border.top = fp_border(color = "black"))
 
 ft <- width(ft, width = 2)
 
@@ -114,6 +108,8 @@ ft
 knitr::include_graphics("./assets/ReviewYears.png")
 
 ```
+
+[Table \@ref(tab:reviewcharstab)](#fig:chartable) above summarises study characteristics and [Figure \@ref(fig:reviewyears)](#fig:reviewyears) shows that 36 of the 79 studies (46%) were published since 2019, indicating a recent surge of research interest in this field and the timeliness of this scoping review. The studies appeared in 59 different publications, including both medical and psychological journals, with medical education journals being most common (19 studies). Clinical areas most represented were Primary Care/General Practice, Emergency Medicine and Nursing.
 
 \
 Study designs were split roughly evenly between focusing on how confidence varies across individuals (35 studies) and on how confidence varies according to features of the patient case (31 studies), with remaining (13 studies) studying both. Thirty-four studies (43% ) looked at the level of medical experience or training’s effect on confidence, either measured as a dependent variable or by recruiting participants in ‘novice’ versus ‘experienced’ group. Nineteen studies (24%) manipulated the complexity or difficulty of the patient case. Finally, ten studies (13%) investigated how diagnostic confidence varies with the information presented or the opportunity to seek information.

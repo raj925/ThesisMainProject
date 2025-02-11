@@ -21,7 +21,6 @@ bibliography: [bibliography/references.bib]
 Seymour Fiddle, 1980
 
 \
-
 Over the course of this thesis, we have presented research that contributes to our understanding of the cognitive mechanisms of medical diagnoses. In particular, we aimed to use the study of information seeking, hypothesis generation and confidence to better understand their interplay. The goal of this research was to better represent the complexities of real diagnostic decisions and understand the cognitive mechanisms of diagnoses. In particular, we studied how diagnoses change over time, to investigate potential sources of both diagnostic error and miscalibrations of confidence during diagnoses. This section first provides a brief summary of each of the previous chapter’s findings. We then synthesise these findings into an overall account of the diagnostic process, whilst contextualising this account in both medical practice and past research. We finally provide an evaluation of the strengths and limitations of this thesis, with implications and future work for both researchers in cognitive psychology and medical educators.
 \
 

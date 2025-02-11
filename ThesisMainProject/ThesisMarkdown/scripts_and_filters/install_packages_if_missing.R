@@ -1,7 +1,7 @@
 requiredPackages <- c("bookdown","caret","cowplot","data.table","devtools","diffcor","dplyr","emmeans",
   "factoextra","flextable","ggpubr","grateful","ggsci","ggplot2", "glmnet", "gridExtra","interactions",
   "knitr","logisticPCA","lme4","lmerTest","lmtest","lsr","ltm", "kableExtra","magrittr","NeuralNetTools",
-  "MASS", "mgcv", "nnet","pheatmap","pracma","pROC", "psych","pwr","RColorBrewer","readxl","reticulate","rjson","ROCR",
+  "MASS", "mgcv", "nnet","officer","pheatmap","pracma","pROC", "psych","pwr","RColorBrewer","readxl","reticulate","rjson","ROCR",
   "rpart","rpart.plot","rstatix", "scales","stats","stringr","tibble","tidyr","tidyverse","verification","viridis")
 
 new.packages <- requiredPackages[!(requiredPackages %in% installed.packages()[,"Package"])]

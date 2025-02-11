@@ -11,7 +11,7 @@
 bibliography: [bibliography/references.bib]
 ---
 
-# Ethnography Based on In-Situ Observations within an Intensive Care Unit and Emergency Department {#chapter-6}
+# Ethnography Based on In-Situ Observations within an Adult Intensive Care Unit and Emergency Department {#chapter-6}
 
 \adjustmtc
 \markboth{6. Ethnography}{}

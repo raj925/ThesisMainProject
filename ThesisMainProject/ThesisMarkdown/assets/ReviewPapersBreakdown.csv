@@ -2,18 +2,12 @@
 Publication Date,2001-2010,11
 Publication Date,2011-2020,29
 Publication Date,2021-29,29
-,,
-,,
 Study Environment/Context,Text Vignette,44
 Study Environment/Context,Imaging Interpretation (e.g. ECG),20
 Study Environment/Context,In Situ Questionnaires/Surveys,13
 Study Environment/Context,High-Fidelity Simulation,2
-,,
-,,
-Participant Experience Levels,Fixed Across Participants,50
-Participant Experience Levels,Multiple Experience Groups,29
-,,
-,,
+Participant Experience Levels,Same Across Participants,50
+Participant Experience Levels,Multiple Experience Levels,29
 Subdiscipline / Population,Primary Care / General Practice,26
 Subdiscipline / Population,Medical Students,15
 Subdiscipline / Population,Emergency Medicine,10
@@ -21,8 +15,6 @@ Subdiscipline / Population,Nursing,6
 Subdiscipline / Population,Pathology,4
 Subdiscipline / Population,Radiology,4
 Subdiscipline / Population,Other ,14
-,,
-,,
 Study Population Sample Size,< 100,44
 Study Population Sample Size,101-200,20
 Study Population Sample Size,201-300,9

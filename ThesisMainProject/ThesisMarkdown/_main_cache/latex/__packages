@@ -35,6 +35,7 @@ NeuralNetTools
 nlme
 mgcv
 nnet
+officer
 pheatmap
 pracma
 pROC

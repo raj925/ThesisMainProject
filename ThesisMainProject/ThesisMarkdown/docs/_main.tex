@@ -517,7 +517,7 @@ Virtual Reality
 
 \section{Diagnosis and Error}\label{diagnosis-and-error}
 
-Imagine a medical consultant within a hospital's intensive/critical care unit. They are asking a colleague for advice about a particular patient. The patient has a series of symptoms, including dizziness, breathing difficulties and eventual chest pain. She has been placed under continuous monitoring of her `vital signs', including heart rate, body temperature, blood pressure, blood oxygen saturation and respiration rate. There has been a slow decrease in her blood pressure and blood oxygen saturation. The consultant is deciding what the most likely causes of this patient's symptoms are and how they may inform her future care/treatment. It is possible that the patient is suffering from pulmonary oedema, whereby fluid is collected in the air sacs of the lungs, causing severe and sometimes fatal congestion. The symptoms could also be suggestive of a tension pneumothorax, when a lung becomes severely compressed. Alternatively, there could be a cardiac cause of the patient's condition. The consultant must integrate the information they have so far, align their individual mental models of the patient's condition (i.e.~the root causes and contributing factors of a patient's symptoms and risks associated with them) with colleagues (e.g.~nurses, specialists) and decide the following:
+Imagine a medical consultant within a hospital's intensive/critical care unit. They are asking a colleague for advice about a particular patient. The patient has a series of symptoms, including dizziness, breathing difficulties and eventual chest pain. Her `vital signs', including heart rate, body temperature, blood pressure, blood oxygen saturation and respiration rate are monitored continuously. There has been a slow decrease in her blood pressure and blood oxygen saturation. The consultant is deciding what are the most likely causes of this patient's symptoms and how they may inform her future care/treatment. It is possible that the patient is suffering from pulmonary oedema secondary to heart failure, whereby fluid is collected in the air sacs of the lungs, causing severe and sometimes fatal congestion. The symptoms could also be suggestive of a pulmonary embolism (a blood clot in the lungs) or sepsis. Alternatively, there could be a cardiac cause of the patient's condition. The consultant must integrate the information they have so far, align their individual mental models of the patient's condition (i.e., the most likely root causes and contributing factors of a patient's symptoms and risks associated with them) with colleagues (e.g., nurses, pharmacists) and decide the following:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -530,45 +530,45 @@ Imagine a medical consultant within a hospital's intensive/critical care unit. T
   What actions should they start taking to treat the patient given the most likely diagnosis?
 \end{enumerate}
 
-One of the difficulties within this scenario is that the symptoms are indicative of multiple underlying conditions, which is a common occurrence in medical decision making. This example is illustrative of why many medical decisions are `ill-structured' problems, in that they present several possible courses of action, and can produce disagreements between clinicians over both the current hypothesis for the patient's condition and desired end goal (be they or short-term or long-term) for that patient's care \autocite{jonassen_instructional_1997}. During this thesis, we will investigate and aim to elucidate the cognitive mechanisms of medical diagnoses. Diagnosis is a core aspect of several medical subdisciplines and we choose it as an area of study for a few reasons. Firstly, accurate diagnosis is crucial to a patient's care and treatment. Secondly, from a psychological standpoint, it allows for an extension of previous research on the relationship between information gathering and confidence to an ecologically valid, real-world setting. Finally, past work looking at diagnosis has not yet provided clarity on the causes of diagnostic errors \autocite{van_den_berge_cognitive_2013,norman_etiology_2014,restrepo_annals_2020}.
+One of the difficulties within this scenario is that the symptoms are indicative of multiple underlying conditions, which is a common occurrence in medical decision making. This example is illustrative of why many medical decisions are `ill-structured' problems, in that they present several possible courses of action, and can produce disagreements between clinicians over both the current hypothesis for the patient's condition and desired end goal (be they or short-term or long-term) for that patient's care \autocite{jonassen_instructional_1997}. This thesis aims to elucidate the cognitive mechanisms of medical diagnoses. Diagnosis is a core aspect of several medical subdisciplines and we choose it as an area of study for several reasons. Firstly, accurate diagnosis is crucial to a patient's care and treatment. Secondly, from a psychological standpoint, studying diagnosis allows for an extension of previous research on the relationship between information gathering and confidence to an ecologically valid, real-world setting. Finally, past work looking at diagnosis has not yet provided clarity on the causes of diagnostic errors \autocite{van_den_berge_cognitive_2013,norman_etiology_2014,restrepo_annals_2020}.
 
 \hfill\break
-Diagnosis in medicine has been defined as ``the science\ldots to distinguish one disease from another and trace symptoms to causes from which they spring'' \autocite{fenwick_medical_1891}. Identifying the condition that a patient has is important for guiding subsequent treatment. Accurate medical diagnosis is crucial to safe, high quality patient care and is a core part of a doctor's job. Research on diagnosis has then been grounded in the incidence of errors in order to better ensure safer patient care. Looking into medical errors allows healthcare systems to learn from past mistakes and improve both technical and safety processes for future patients. For instance, the Healthcare Safety Investigation Branch (HSIB) has reviewed patient case studies to guide future diagnosis of aortic dissection \autocite{hsib_investigation_2021} and lung cancer \autocite{hsib_investigation_2022} among others, due to these case studies exemplifying delayed recognition of these conditions and their negative consequences for patients.
+Diagnosis in medicine has been defined as ``the science\ldots to distinguish one disease from another and trace symptoms to causes from which they spring'' \autocite{fenwick_medical_1891}. Identifying the condition that a patient has is important for guiding subsequent treatment. Accurate medical diagnosis is crucial to safe, high quality patient care and is a core part of a doctor's job. Research on diagnosis has therefore been grounded in the incidence of errors in order to better ensure safer patient care. Looking into medical errors allows healthcare systems to learn from past mistakes and improve both technical and safety processes for future patients. For instance, the Health Services Safety Investigations Body (HSSIB, formerly the HSIB) has reviewed patient case studies to guide future diagnosis of aortic dissection \autocite{hsib_investigation_2021} and lung cancer \autocite{hsib_investigation_2022} among others, due to these case studies exemplifying delayed recognition of these conditions and their negative consequences for patients. These are examples of investigating medical errors to guide future best practices.
 
 \hfill\break
-Past work has attempted to quantify the scale of diagnostic errors within healthcare. A report from the US Institute of Medicine concluded that most patients will experience a diagnostic error within their lifetime. When looking at records of new diagnoses for spinal epidural abscess in the US Department of Veteran Affairs, \autocite{bhise_errors_2017} found that up to 55.5\% of patients experienced a diagnostic error. Other papers have estimated a lower incidence of diagnostic error: the Harvard Medical Practice Study found that diagnostic errors were responsible for 17\% of adverse events (injuries/harm that were caused by medical management, rather than the underlying disease) \autocite{kohn_errors_2000}, whilst the Canadian Adverse Events Study found this value to be 10.5\% \autocite{baker_canadian_2004}. The Quality in Australian Health Care Study found that 20\% of adverse events were due to delayed diagnosis \autocite{wilson_analysis_1999}. Even when using the most conservative of these estimates, the scale of the diagnostic error is substantial when extrapolated to the population of patients. Past work has hence attempted to find the sources of diagnostic error in order to identify how to reduce their prevalence. All in all, understanding the common sources of medical errors and adverse events can be extremely valuable for improving healthcare in the future.
+Past work has attempted to quantify the scale of diagnostic errors within healthcare. A report from the US Institute of Medicine concluded that most patients will experience a diagnostic error within their lifetime. A review of records for new diagnoses for spinal epidural abscess in the US Department of Veteran Affairs, \autocite{bhise_errors_2017} found that up to 55.5\% of patients experienced a diagnostic error. Other papers have estimated a lower incidence of diagnostic error: the Harvard Medical Practice Study found that diagnostic errors were responsible for 17\% of adverse events (injuries/harm that were caused by medical management, rather than the underlying disease) \autocite{kohn_errors_2000}, whilst the Canadian Adverse Events Study found this value to be 10.5\% \autocite{baker_canadian_2004}. The Quality in Australian Health Care Study found that 20\% of adverse events were due to delayed diagnosis \autocite{wilson_analysis_1999}. Even when using the most conservative of these estimates, the scale of the diagnostic error is substantial when extrapolated to the population of patients. Past work has hence attempted to find the sources of diagnostic error in order to identify how to reduce their prevalence. All in all, understanding the common sources of medical errors and adverse events can be extremely valuable for improving healthcare in the future.
 
 \hfill\break
-With this scale of diagnostic errors in mind, another subset of past work has connected diagnostic errors to clinicians' diagnostic thinking, including how they weigh up diagnostic hypotheses (also known as differentials) against each other and how they seek information to support or rule out these hypotheses. Around 32\% of clinical errors have been found to be caused by clinician suboptimal assessment, particularly the clinician's failure to weigh up competing diagnoses \autocite{schiff_diagnostic_2009}. Another study estimated that 75\% of diagnostic failures could be attributed to failures in clinicians' diagnostic thinking \autocite{thammasitboon_diagnostic_2013}, including having inadequate knowledge, faulty gathering of information, and not thoroughly verifying information. In terms of their downstream consequences, diagnostic errors have also been found to lead to longer hospital stays and increased patient mortality \autocite{hautz_diagnostic_2019}. In addition to longer stays in hospital, errors also manifest in differences to treatment for patients. Unnecessary treatment (or `overtreatment') was estimated to cost the US healthcare system 158-226 billion dollars in 2011 \autocite{berwick_eliminating_2012}. There has been increasing emphasis in the research literature on overtesting, such as requesting costly imaging scans when they may not be medically necessary \autocite{carpenter_overtesting_2015}. \textcite{salem-schatz_influence_1990} found that 61\% of surveyed resident doctors had ordered unnecessary transfusions at least once a month due to a suggestion to do so by a more senior physician. Taken together, this set of literature illustrates the broad impact of diagnostic error and the amount of work that has gone into understanding its impact on patients.
+With this scale of diagnostic errors in mind, another subset of past work has connected diagnostic errors to clinicians' diagnostic thinking, including how they weigh up diagnostic hypotheses (also known as differentials) against each other and how clinicians seek information to support or rule out these hypotheses. Around 32\% of clinical errors have been found to be caused by clinician suboptimal assessment, particularly the clinician's failure to weigh up competing diagnoses \autocite{schiff_diagnostic_2009}. Another study estimated that 75\% of diagnostic failures could be attributed to failures in clinicians' diagnostic thinking \autocite{thammasitboon_diagnostic_2013}, including having inadequate knowledge, faulty gathering of information, and not thoroughly verifying information. In terms of their downstream consequences, diagnostic errors have also been found to lead to longer hospital stays and increased patient mortality \autocite{hautz_diagnostic_2019}. In addition to longer stays in hospital, errors also manifest in differences to treatment for patients. Unnecessary treatment (or `overtreatment') was estimated to cost the US healthcare system 158-226 billion dollars in 2011 \autocite{berwick_eliminating_2012}. There has been increasing emphasis in the research literature on overtesting, such as requesting costly imaging scans when they may not be medically necessary \autocite{carpenter_overtesting_2015}. \textcite{salem-schatz_influence_1990} found that 61\% of surveyed resident doctors had ordered unnecessary blood transfusions at least once a month due to a suggestion to do so by a more senior physician. Taken together, this set of literature illustrates the broad impact of diagnostic error and the amount of work that has gone into understanding its impact on patients.
 
 \hfill\break
-Diagnostic error is by no means the sole cause of medical incidents. There are several factors tied to the wider work environment, culture and technology that can contribute to incidents and errors. Individuals involved in clinical decision making must frequently contend with an uncertain decision making environment, as well as time pressure and personal stresses \autocite{yates_physician_2020}. However, by understanding the individual psychological factors that affect the diagnostic process, we better understand how sociotechnical and environmental factors may interact with and amplify individual contributing factors to diagnostic error. Gaining a greater understanding of the causes of diagnostic error can have important implications for future interventions within healthcare settings and improvement of patient care. Studying diagnosis also has added insights for the field of cognitive psychology, within which decision making has been studied in the past. Such insights can then be applied to the real-world context of medicine with the aim of improving diagnostic decisions. In the next two sections, we describe the extant psychology literature on decision making and how it has been previously applied to medical diagnoses.
+Diagnostic error is by no means solely caused by individual clinicians' decision making. There are several factors tied to the wider work environment, culture and technology that can contribute to incidents and errors. This means that many diagnostic errors result from systemic failures rather than individual failures. Individuals involved in clinical decision making must frequently contend with an uncertain decision making environment, as well as time pressure and personal stresses \autocite{yates_physician_2020}. However, by understanding the individual psychological factors that affect the diagnostic process, we can better understand how sociotechnical and environmental factors may interact with and amplify individual contributing factors to diagnostic error. Gaining a greater understanding of the causes of diagnostic error can have important implications for future interventions within healthcare settings and improvement of patient care. Studying diagnosis also has added insights for the field of cognitive psychology, within which decision making has been studied in the past. Such insights can then be applied to the real-world context of medicine with the aim of improving diagnostic decisions. The next two sections describe the extant psychology literature on decision making and how it has been previously applied to medical diagnoses.
 
 \section{Cognitive Biases in Diagnoses}\label{cognitive-biases-in-diagnoses}
 
-One potential account of diagnostic errors is that they stem from cognitive biases during the diagnostic decision making process. Cognitive biases have been investigated substantially in past psychology research on judgement and decision making. Studies of biases have aimed to elucidate the ways in which the decisions we make are reliant on heuristics that can often contribute to suboptimal or erroneous decisions. These heuristics are believed to be used as `shortcuts' to make quicker and more automatic decisions. This was originally posited by \textcite{kahneman_thinking_2011} as part of the dual-system theory of thinking, such that decisions are either made on a fast, intuitive level (System 1) or on a slower, systematic basis (System 2). Biases can include weighting information differently depending on whether they arrive earlier (primacy bias, \textcite{saetrevik_anchoring_2020}) or later (recency bias, \textcite{chapman_order_1996}) in a decision making process. They can also include judging a decision as better when it results in a success rather than failure ceteris paribus (outcome bias, \autocite{baron_outcome_1988,aiyer_outcomes_2023}) and judging members of an outgroup less favourably when compared to an ingroup (ingroup bias, \autocite{tarrant_social_2012}). The study of decision making biases has been broad and considered a large number of ways in which decision making deviates from what we might consider as optimal or rational.
+One potential account of diagnostic errors is that they stem from cognitive biases during the diagnostic decision making process. Cognitive biases have been investigated substantially in past psychology research on judgement and decision making. Studies of biases have aimed to elucidate the ways in which the decisions we make are reliant on heuristics that can often contribute to suboptimal or erroneous decisions. These heuristics are believed to be used as `shortcuts' to make quicker and more automatic decisions. This was originally posited by \textcite{tversky1974} as part of the dual-system theory of thinking, such that decisions are either made on a fast, intuitive level (System 1) or on a slower, systematic basis (System 2). Certain biases were studied by \textcite{tversky1974}, including availability (overweighting information that corresponds with a recent or memorable case/instance), anchoring (whereby individuals are highly influenced by a reference point that other options for a decision are judged against) and representativeness (basing judgements on a single prototypical example as a reference). This work inspired the the field of judgement and decision making to subsequently uncover other decision making biases. These include weighting information differently depending on whether they arrive earlier (primacy bias, \textcite{saetrevik_anchoring_2020}) or later (recency bias, \textcite{chapman_order_1996}) in a decision making process. They can also include judging a decision as better when it results in a success rather than failure ceteris paribus (outcome bias, \autocite{baron_outcome_1988,aiyer_outcomes_2023}) and judging members of an outgroup (i.e., a different social group identity to ourselves) less favourably when compared to an ingroup (ingroup bias, \autocite{tarrant_social_2012}). The study of decision making biases has been broad and considered a large number of ways in which decision making deviates from what we might consider as optimal or rational.
 
 \hfill\break
-The dual system theory of reasoning has been proposed as being applicable for diagnostic decisions \autocite{croskerry_clinical_2009}. According to one review, 77\% of studies in the allied health professions found evidence of a cognitive bias \autocite{featherston_decision_2020}. Whilst the biases in the previous paragraph have tended to be implicated within System 1 thinking, there are also error-prone approaches that arise from the more analytical, deliberate mode of System 2 thinking: reasoning from a false premise, having inadequate contextual knowledge and being paralysed with indecision are a few notable examples \autocite{croskerry_deciding_2014}. Making a simple `debiasing' intervention to aid accurate diagnoses is not a trivial task given that in many cases, decision makers are not aware of their biases \autocite{croskerry_mindless_2013}. It has been proposed that integrating education on cognitive biases within medical education would reduce diagnostic errors and improve patient safety \autocite{royce_teaching_2019}. What complicates this picture however is the argument that the use of heuristics, that may seem biased or suboptimal, can actually be beneficial in many situations where environmental and cognitive constraints are placed upon the decision maker \autocite{gigerenzer_why_2008}, which is common within healthcare. For example, a clinician who has less time with a patient due to other commitments may employ certain heuristics to expedite their decision making process. Hence, it is important to understand the situations in which medical decisions are biased in a manner that increases the risk of errors and situations in which these biases instead reflect good decision making.
+The dual system theory of reasoning has been proposed as being applicable for diagnostic decisions \autocite{croskerry_clinical_2009}. According to one review, 77\% of studies in the allied health professions found evidence of a cognitive bias \autocite{featherston_decision_2020}, including anchoring and confirmation bias. Whilst the biases in the previous paragraph have tended to be implicated within System 1 thinking, there are also error-prone approaches that arise from the more analytical, deliberate mode of System 2 thinking: reasoning from a false premise, having inadequate contextual knowledge and being paralysed with indecision are a few notable examples \autocite{croskerry_deciding_2014}. Making a simple `debiasing' intervention to aid accurate diagnoses is not a trivial task given that in many cases, decision makers are not aware of their biases \autocite{croskerry_mindless_2013}. It has been proposed that integrating education on cognitive biases within medical education would reduce diagnostic errors and improve patient safety \autocite{royce_teaching_2019}. What complicates this picture however is the argument that the use of heuristics, which may seem biased or suboptimal, can actually be beneficial in many situations where environmental and cognitive constraints are placed upon the decision maker \autocite{gigerenzer_why_2008}, a situation that is common within healthcare. For example, a clinician who has less time with a patient than they would ideally want, due to other commitments, may employ certain heuristics to expedite their decision making process. Hence, it is important to understand the situations in which medical decisions are biased in a manner that increases the risk of errors and situations in which these biases instead reflect good decision making.
 
 \hfill\break
-While it seems intuitive that classical decision making biases affect those in healthcare too \autocite{restrepo_annals_2020}, the empirical evidence of the impact for medical decision making is scant \autocite{van_den_berge_cognitive_2013}. One example from dermatology found examples of satisficing bias (also known as premature closure, whereby clinicians arrive at an incorrect diagnosis too early and subsequently stop considering alternatives or seeking other information) and anchoring bias (whereby individuals are highly influenced by a reference point that other options for a decision are judged against), but few examples of other biases, such as availability bias (overweighting information or symptoms that correspond with a recent or memorable case from a clinician's experience) \autocite{crowley_automated_2013}. These biases have been considered to be most applicable to medical decision making based on case studies and compelling anecdotal evidence \autocite{groopman_how_2010}. For many of these biases, it can be challenging to establish a causal empirical relationship such that errors can be shown to be a result of a bias. For example, investigating availability bias requires researchers to simulate a patient situation that clinicians have experienced recently and then show that relating the current situation to that recent case is what caused a diagnostic error (if indeed the clinician does make an error).
+Although it seems intuitive that classical decision making biases affect those in healthcare too \autocite{restrepo_annals_2020}, the empirical evidence of the impact for medical decision making is scant \autocite{van_den_berge_cognitive_2013}. One example from dermatology found examples of satisficing bias (also known as premature closure, whereby clinicians arrive at an incorrect diagnosis too early and subsequently stop considering alternatives or seeking other information) and anchoring bias, but far fewer examples of other biases, such as availability bias \autocite{crowley_automated_2013}. These biases have been considered to be most applicable to medical decision making based on case studies and compelling anecdotal evidence \autocite{groopman_how_2010}. For many of these biases, it can be challenging to establish a causal empirical relationship such that errors can be shown to be a result of a bias. For example, investigating availability bias requires researchers to simulate a patient situation that clinicians have experienced recently and then show that relating the current situation to that recent case is what caused a diagnostic error (if indeed the clinician does make an error).
 
 \hfill\break
-The literature on cognitive biases is vast, with a lot of different biases named and defined. In an attempt to condense the large number of defined biases, \textcite{oeberst_toward_2023} categorised several biases from psychology research under a number of groups of beliefs about how individuals process information. For instance, a belief that one's opinion is shared by many others (false consensus effect, \autocite{nickerson_how_1999}) and the tendency to judge others as similar to oneself (social projection, \autocite{robbins_social_2005}) are both heuristics/biases driven by a common underlining belief: that one's own experience is a reasonable reference to extrapolate others. Similarly, tendencies to believe that successes come from one's self rather than external factors (self-serving bias, \autocite{mullen_self-serving_1988}) and that one's performance is better than others (better-than-average effect, \autocite{alicke_better-than-average_2005}) are both underscored by a belief that we are good or high performing at what we do. This latter belief is of particular interest to our present work, as it is related to the estimation of one's own ability. In other words, it can be considered as one's subjective `confidence'. Confidence is important to study given that it can often not be matched to objective performance and underscores a large amount of medical practice, as we shall explore during the remainder of this section.
+The literature on cognitive biases is vast, with several different biases named and defined. In an attempt to condense the large number of defined biases, \textcite{oeberst_toward_2023} categorised several biases from psychology research under a number of groups of beliefs about how individuals process information. For instance, a belief that one's opinion is shared by many others (false consensus effect, \textcite{nickerson_how_1999}) and the tendency to judge others as similar to oneself (social projection, \textcite{robbins_social_2005}) are both heuristics/biases driven by a common underlining belief: that one's own experience is a reasonable reference to extrapolate others. Similarly, tendencies to believe that successes come from oneself rather than external factors (self-serving bias, \textcite{mullen_self-serving_1988}) and that one's performance is better than others (better-than-average effect, \textcite{alicke_better-than-average_2005}) are both underscored by a belief that we are good or high performing at what we do. This latter belief is of particular interest to our present work, as it is related to the estimation of one's own ability. In other words, it can be considered as one's subjective `confidence'. Confidence is important to study, both because it is often not be matched to objective performance and because it underscores a large amount of medical practice \autocite{croskerry2008,berner_overconfidence_2008}.
 
 \hfill\break
-Confidence is important to consider within healthcare given the scarcity of clear feedback available to clinicians. In addition, in line with the implications of cognitive biases in diagnoses, one type of bias that has more consistently been revealed in experimental findings within medical decision making (when compared to other aforementioned decision making biases) is overconfidence \autocite{berner_overconfidence_2008,meyer_physicians_2013}. These findings revealed clinicians to report themselves as being more confident in their decisions than they should be given their objective accuracy. When making a diagnosis for a patient, clinicians likely do not receive a lot of feedback about the correctness of their diagnosis. Generally, doctors gather information through tests, patient documentation and other means to generate a model of the patient's condition, through which they can surmise a hypothesis for what could be the underlying cause of a patient's symptoms. Some may view diagnostic tests (eg blood tests) as a form of feedback: doctors use these test results to either reinforce or re-evaluate their prior beliefs. However, tests are not objective markers of feedback, as they have differing levels of sensitivity and specificity rates, leading to false positives, false negatives or even inconclusive results. Clearer feedback may be available to the clinician based on how a patient's condition changes. A patient's reaction to treatment, and their rate of recovery, can be seen as a form of feedback. This in itself is imperfect however, as patients can deteriorate or improve due to circumstances outside of the doctor's control or awareness. This also requires a patient's condition to develop over time and cannot be known in the moment of a diagnosis. In the absence of clear feedback then, confidence is used as one of the only markers available for how likely someone is to be correct. We shall now explore how confidence has been studied within cognitive psychology and why it is very relevant to medical diagnoses.
+Confidence can be used as a marker of how sure a clinician is about a decision in the absence of clear feedback (e.g., the true condition of that a patient has), which can then be used to guide discussions between clinicians. In addition, in line with the implications of cognitive biases in diagnoses, one type of bias that has more consistently been revealed in experimental findings within medical decision making (when compared to other aforementioned decision making biases) is overconfidence \autocite{berner_overconfidence_2008,meyer_physicians_2013}. These findings revealed clinicians to report themselves as being more confident in their decisions than they should be given their objective accuracy. When making a diagnosis for a patient, clinicians likely do not receive unambiguous feedback about the correctness of their diagnosis. Generally, doctors gather information through tests, patient documentation and other means to generate a model of the patient's condition, through which they can surmise a hypothesis for what could be the underlying cause of a patient's symptoms. Some may view diagnostic tests (e.g., blood tests) as a form of feedback: doctors use these test results to either reinforce or re-evaluate their prior beliefs. However, tests are not objective markers of feedback, as they have differing levels of sensitivity and specificity rates, leading to false positives, false negatives or even inconclusive results. Clearer feedback may be available to the clinician based on how a patient's condition changes. A patient's reaction to treatment, and their rate of recovery, can be seen as a form of feedback. This in itself is imperfect however, as patients can deteriorate or improve due to circumstances outside of the doctor's control or awareness. This also requires a patient's condition to develop over time and cannot be known in the moment of a diagnosis. In the absence of clear feedback then, confidence is used as one of the only markers available for how likely someone is to be correct. We shall now explore how confidence has been studied within cognitive psychology and why it is very relevant to medical diagnoses.
 
 \section{Confidence and Miscalibration}\label{confidence-and-miscalibration}
 
-Confidence can be defined as one's ``subjective probability of their decision being correct'' \autocite{fleming_self-evaluation_2017}, and has been viewed as a way for humans to communicate their thought process to others (as per Kahneman's System 2 mode of thinking) \autocite{shea_supra-personal_2014}. Individuals have been shown to be able to evaluate their own decisions without any objective feedback via judgements of confidence \autocite{henmon_relation_1911} and evaluations of their own accuracy \autocite{rabbitt_three_1968} that correlated well with objective performance. Confident individuals tend to be more influential with others in a group \autocite{zarnoth_social_1997} and can even causally increase the confidence of other observers \autocite{cheng_social_2021}. This effect has been observed in mock jury trials, during which participants heard eyewitness testimonies presented with high confidence and then perceived those testimonies as more credible than testimonies provided with lower confidence \autocite{cutler_eyewitness_1989,roediger_iii_curious_2012}. Confidence is a commonly used predictor of another person's accuracy, especially when feedback is not readily available on an individual's true accuracy. Confidence also varies across individuals with what may be considered a `subjective fingerprint' \autocite{ais_individual_2016}, meaning that individuals may be systematically underconfident or overconfident. Confidence has been explained computationally as the difference in the strength of evidence for a decision alternative compared to other alternatives \autocite{vickers_effects_1982}. After a decision is made, we continue to process evidence (i.e.~we continue to think about a decision after it has been made). Having `second thoughts' or changes of mind are more likely with a lower level of confidence \autocite{charles_dynamic_2019}. If an individual is systematically overconfident, they would be less likely to change their mind in the face of evidence that is contradictory to their beliefs (i.e.~confirmation bias, \textcite{nickerson_confirmation_1998}).
+Confidence can be defined as a person's ``subjective probability of their decision being correct'' \autocite{fleming_self-evaluation_2017} (pg. 1), and has been viewed as a way for humans to communicate their thought process to others (as per Kahneman's System 2 mode of thinking) \autocite{shea_supra-personal_2014}. Individuals have been shown to be able to evaluate their own decisions without any objective feedback via judgements of confidence \autocite{henmon_relation_1911} and evaluations of their own accuracy \autocite{rabbitt_three_1968} that correlate well with objective performance. Confident individuals tend to be more influential with others in a group \autocite{zarnoth_social_1997} and can even causally increase the confidence of other observers \autocite{cheng_social_2021}. This effect has been observed in mock jury trials, during which participants heard eyewitness testimonies presented with high confidence and then perceived those testimonies as more credible than testimonies provided with lower confidence \autocite{cutler_eyewitness_1989,roediger_iii_curious_2012}. Confidence is a commonly used predictor of another person's accuracy, especially when feedback is not readily available on an individual's true accuracy or an individual's competence/expertise \autocite{price_intuitive_2004,pulford2018}. Confidence also varies across individuals with what may be considered a `subjective fingerprint' \autocite{ais_individual_2016}, meaning that individuals tend to be underconfident or overconfident across different situations. Confidence has been explained computationally as the difference in the strength of evidence for a decision alternative compared to other alternatives \autocite{vickers_effects_1982}. After a decision is made, we continue to process evidence (i.e., we continue to think about a decision after it has been made). Having `second thoughts' or changes of mind are more likely with a lower level of confidence \autocite{charles_dynamic_2019}. If an individual is systematically overconfident, they would be less likely to change their mind in the face of evidence that is contradictory to their beliefs (i.e., confirmation bias, \textcite{nickerson_confirmation_1998}).
 
 \hfill\break
-What can be surmised here is that confidence is important for decision making, as it allows for an indicator of how likely a decision is to be correct. This is especially useful in contexts where objective feedback is scarce, such as in medicine. In the absence of objective feedback, confidence can be used as a marker of how likely someone is to be correct \autocite{price_intuitive_2004}. Confidence is also important for deciding when a individual commits to a decision or whether more information is needed first before committing. Building on the current research landscape of confidence is then important within medical decision making. If there is an assumption that others will calibrate their confidence to their true accuracy, this would mean that heeding high confidence advice/judgements would be an optimal strategy for maximising accuracy. However, this can be a serious issue when high confidence errors lead others astray. This is important, as in addition to seniority and specialty experience, a clinician's confidence is one of the only markers available for other clinicians and for patients during key medical decisions.
+What can be surmised here is that confidence is important for decision making, as it allows for an indicator of how likely a decision is to be correct. This is especially useful in contexts where objective feedback is scarce, such as in medicine. In the absence of objective feedback, confidence can be used as a marker of how likely someone is to be correct \autocite{price_intuitive_2004}. Confidence is also important for deciding when a individual commits to a decision or whether more information is needed first before committing. Building on the current research landscape of confidence is then important within medical decision making. If there is an assumption that others will calibrate their confidence to their true accuracy, this would mean that heeding high confidence advice/judgements would be an optimal strategy for maximising accuracy. However, this can be a serious issue when high confidence errors lead others astray. This is important, as in addition to seniority and specialty experience, a clinician's confidence is one of the few markers available for other clinicians and for patients during key medical decisions.
 
 \hfill\break
-We refer to confidence as being `calibrated' if it closely predicts objective accuracy (i.e., such that the individual is neither overconfident nor underconfident, see \hyperref[fig:calibrationgraph]{Figure \ref{fig:calibrationgraph}} below). In experimental studies, confidence sometimes exhibits impressive calibration to objective accuracy \autocite{boldt_shared_2015}, which is thought to reflect people's ability to evaluate the quality of evidence on which they base their decisions \autocite{xue_challenging_2023}. But calibration is rarely perfect because confidence also depends on factors that do not directly correlate with accuracy, such as the time spent deliberating and the total amount of evidence considered (independent of the quality or consistency of this evidence) \autocite{kiani_choice_2014}, as well as the mood \autocite{rouault_psychiatric_2018}, personality \autocite{schaefer_overconfidence_2004}, gender \autocite{syzmanowicz_gender_2011} and status \autocite{see_detrimental_2011} of the decision maker. Miscalibration of confidence come from a lack of deliberation over one's decisions and confidence, leading to an overreliance on intuitive decision making \autocite{mata_metacognitive_2013}. Overconfidence has also been associated with insufficient consideration of reasons to choose alternative options/decisions \autocite{koriat_reasons_1980,scherer_trust_2015}. The resulting under- and overconfidence matters: overconfident decision makers leap to premature conclusions and ignore useful information or advice, whilst underconfident decision makers waste time collecting evidence that will not improve their decisions \autocite{desender_subjective_2018}. Especially in the absence of feedback, decision makers may develop systematically incorrect evaluations of their general performance \autocite{rouault_forming_2019} and their performance in comparison to their peers \autocite{kruger_unskilled_1999}. Individual miscalibrations of confidence can also become amplified within groups. Effective decision making in groups depends on team members sharing calibrated information about their uncertainty: Confident team members tend to be listened to more, which can lead others astray if they are overconfident \autocite{zarnoth_social_1997}. Conversely, underconfident team members may be ignored or may fail to share potentially useful information \autocite{silver_wise_2021}.
+We refer to confidence as being `calibrated' if it closely predicts objective accuracy (i.e., such that the individual is neither overconfident nor underconfident, see \hyperref[fig:calibrationgraph]{Figure \ref{fig:calibrationgraph}} below). In experimental studies, confidence sometimes exhibits impressive calibration to objective accuracy \autocite{boldt_shared_2015}, which is thought to reflect people's ability to evaluate the quality of evidence on which they base their decisions \autocite{xue_challenging_2023}. But calibration is rarely perfect because confidence also depends on factors that do not directly correlate with accuracy, such as the time spent deliberating and the total amount of evidence considered (independent of the quality or consistency of this evidence) \autocite{kiani_choice_2014}, as well as the mood \autocite{rouault_psychiatric_2018}, personality \autocite{schaefer_overconfidence_2004}, gender \autocite{syzmanowicz_gender_2011} and status \autocite{see_detrimental_2011} of the decision maker. Miscalibrations of confidence come from a lack of deliberation over one's decisions and confidence, leading to an overreliance on intuitive decision making \autocite{mata_metacognitive_2013}. Overconfidence has also been associated with insufficient consideration of reasons to choose alternative options/decisions \autocite{koriat_reasons_1980,scherer_trust_2015}. The resulting under- and overconfidence matters: overconfident decision makers may leap to premature conclusions and ignore useful information or advice, whereas underconfident decision makers waste time collecting evidence that will not improve their decisions \autocite{desender_subjective_2018}. Especially in the absence of feedback, decision makers may develop systematically incorrect evaluations of their general performance \autocite{rouault_forming_2019} and their performance in comparison to their peers \autocite{kruger_unskilled_1999}. Individual miscalibrations of confidence can also become amplified within groups. Effective decision making in groups depends on team members sharing calibrated information about their uncertainty: Confident team members tend to be listened to more, which can lead others astray if they are overconfident \autocite{zarnoth_social_1997}. Conversely, underconfident team members may be ignored or may fail to share potentially useful information \autocite{silver_wise_2021,larson1996}.
 
 \newpage
 
@@ -584,19 +584,19 @@ We refer to confidence as being `calibrated' if it closely predicts objective ac
 These findings of miscalibrated confidence are important to highlight specifically within healthcare, as overconfidence can lead to insufficient consideration of diagnostic alternatives and inadequate care in terms of seeking appropriate tests and treatment for patients \autocite{kovacs_overconfident_2020}. In medicine, a lack of clearly communicated feedback can cause clinicians to proceed as if they have received positive feedback (also known as diagnostic momentum bias, \textcite{aron_diagnostic_2024}). Without clear feedback on whether their decisions are correct, clinicians may not adequately update their internal model of the patient and then increase their confidence inappropriately, whether working individually or in teams \autocite{jaspan_improving_2022}. As we shall explore in the next chapter, the link between confidence and eventual patient care/treatment has been explored in past work, demonstrating the importance of confidence calibration of studying in medical decisions.
 
 \hfill\break
-Some past work has explored instances of miscalibrated confidence specifically within the context of diagnoses. \autocite{meyer_physicians_2013} found that instances of overconfidence in physicians, even with the receipt of further information, were especially stark for difficult cases when objective accuracy was very low. In a task that involved diagnosing ultrasound scans, it was found that overconfidence was inversely associated with the amount of clinical experience that the clinicians/participants had \autocite{schoenherr_subjective_2018}. However, it has also been found that underconfidence can be more prevalent than overconfidence, especially when comparing medical students to residents \autocite{schoenherr_subjective_2018}. Similarly, \autocite{yang_nurses_2010} found that experienced nurses exhibited similar performance to nursing students, but were more confident in their judgements, resulting in differences in confidence calibration across experience levels. However, \autocite{brezis_does_2019} found that compared to students, experienced physicians were both more confident and less accurate at making a diagnosis for a paediatric case. Similarly, \autocite{friedman_physicians_2005} found that residents were overconfident in their diagnoses on 41\% of cases, whilst students were overconfident on 25\% of cases. As can be observed from this set of research, past work has tended to focus on drawing out the link between experience and confidence calibration. The overall finding that additional experience as a clinician does not lessen (and could even exacerbate) miscalibration of confidence shows that studying the mechanisms of diagnostic confidence would have benefits for clinicians across all levels of experience. This is especially pertinent in healthcare environments where more experienced clinicians tend to be listened to more. Highly confident members within a group could unknowingly reduce the chance of less confident (or less experienced) members speaking up about potential errors \autocite{hemon_speaking_2020}. Overconfidence has also been linked to a lower likelihood of sufficient patient management and clinical effort as per a field study in Senegal \autocite{kovacs_overconfident_2020}.
+Some past work has explored instances of miscalibrated confidence specifically within the context of diagnoses. \textcite{meyer_physicians_2013} found that instances of overconfidence in physicians, even with the receipt of further information, were especially stark for difficult cases when objective accuracy was very low. In a task that involved diagnosing ultrasound scans, it was found that overconfidence was inversely associated with the amount of clinical experience that the clinicians/participants had \autocite{schoenherr_subjective_2018}. However, it has also been found that underconfidence can be more prevalent than overconfidence, especially when comparing medical students to residents \autocite{schoenherr_subjective_2018}. Similarly, \textcite{yang_nurses_2010} found that experienced nurses exhibited similar performance to nursing students, but were more confident in their judgements, resulting in differences in confidence calibration across experience levels. However, \textcite{brezis_does_2019} found that compared to students, experienced physicians were both more confident and less accurate at making a diagnosis for a paediatric case. Similarly, \textcite{friedman_physicians_2005} found that residents were overconfident in their diagnoses on 41\% of cases, whilst students were overconfident on 25\% of cases. As can be observed from this research in diverse groups, past work has tended to focus on drawing out the link between experience and confidence calibration. The overall finding that additional experience as a clinician does not lessen (and could even exacerbate) miscalibration of confidence shows that studying the mechanisms of diagnostic confidence could have benefits for clinicians across all levels of experience. This is especially pertinent in healthcare environments where more experienced clinicians tend to be listened to more. Highly confident members within a group could unknowingly reduce the chance of less confident (or less experienced) members speaking up about potential errors \autocite{hemon_speaking_2020}. Overconfidence has also been linked to a lower likelihood of sufficient patient management and clinical effort as per a field study in primary care settings within Senegal \autocite{kovacs_overconfident_2020}.
 
 \hfill\break
-To summarise, confidence can be thought of as a readout of the evidence/information received in favour of a particular decision relative to the evidence against that decision. Past work has not only shown evidence for miscalibration of confidence (i.e.~overconfidence or underconfidence), but also that such miscalibration has an impact on patient treatment. In sum, one can infer that the decoupling between confidence and accuracy is linked to the way in which evidence/information is sought or received. This is pertinent within medicine where doctors must synthesise a vast array of patient information (e.g.~documents, test results, examinations etc.). In addition, the fact the papers covered in this section span different medical subdisiciplines and experience levels indicate the broad relevance of and interest in confidence calibration across the field of medical decision making. In the next section, we review the extant literature on the relationship between information seeking and confidence and how it may provide additional insight into how confidence can become miscalibrated during diagnoses.
+To summarise, confidence can be thought of as a subjective evaluation of a decision's quality that is based on the evidence/information received in favour of a particular decision relative to the evidence against that decision. Past work has not only shown evidence for miscalibration of confidence (i.e., overconfidence or underconfidence), but also that such miscalibration has an impact on patient treatment. In summary, one can infer that the decoupling between confidence and accuracy is linked to the way in which evidence/information is sought or received. This is pertinent within medicine where doctors must synthesise a vast array of patient information (e.g., documents, test results, examinations etc.). In addition, the fact that the evidence described above spans different medical subdisiciplines and experience levels indicates the broad relevance of and interest in confidence calibration across the field of medical decision making. The next section reviews the extant literature on the relationship between information seeking and confidence and how it may provide additional insight into how confidence can become miscalibrated during diagnoses.
 
 \section{Information Seeking and its link to Confidence}\label{information-seeking-and-its-link-to-confidence}
 
-The way that individuals seek information is important, as it affects what information they are using to make their decisions. Information seeking is also thought to signal the importance of a task and quality of the source of the information among factors \autocite{xu_who_2006}. Information seeking is an aspect of real-life medicine that should be considered: two clinicians confronted with the same patient case are likely to not use the same information to make a diagnosis if they seek different investigations/examinations. In addition, considering information seeking allow us to conceptualise decision making as an active, ongoing process where information is sought in response to previously seen information. For instance, an individual may be more likely to seek further information when they receive information that is contrary to, as opposed to being supportive of, their prior beliefs \autocite{adams_reduction_1961}. Similarly, individuals with staunchly held beliefs have been found to be less likely to seek new information to refine their beliefs \autocite{schulz_dogmatism_2020}. Information seeking patterns are also a signal of certainty or uncertainty, especially when a clinician has to decide whether the information they have is adequate \autocite{gehlbach_illusion_2024} to make a diagnosis or whether they need more information before coming to a decision. Seeking confirmatory information has been thought of as indicative of calibrated judgements of confidence when information is not processed in a biased way \autocite{rollwage_confidence_2020}, such as weighting confirmatory information higher than corrective information \autocite{schulz-hardt_biased_2000}. Taken together, information seeking as a research area from cognitive psychology has potential applications for a deeper study within medical diagnoses.\\
+The way that individuals seek information is important, as it affects what information they are using to make their decisions. For many decisions, people have some control over which information, and how much information, they will collect to inform their decisions. Information seeking is also thought to signal the importance of a task and quality of the source of the information among factors \autocite{xu_who_2006}. Information seeking is an aspect of real-life medicine that should be considered: two clinicians confronted with the same patient case are unlikely to use the same information to make a diagnosis if they seek different investigations/examinations. In addition, analysing information seeking allow us to conceptualise decision making as an active, ongoing process where information is sought in response to previously acquired information. For instance, an individual may be more likely to seek further information when they receive information that is contrary to, and not supportive of, their prior beliefs \autocite{adams_reduction_1961}. Similarly, individuals with staunchly held beliefs have been found to be less likely to seek new information to refine their beliefs \autocite{schulz_dogmatism_2020}. Information seeking patterns could be a signal of certainty or uncertainty, especially when a clinician has to decide whether the information they have is adequate to make an accurate diagnosis or whether they need more information before coming to a decision \autocite{gehlbach_illusion_2024}. Seeking confirmatory information has been thought of as indicative of calibrated judgements of confidence when information is not processed in a biased way \autocite{rollwage_confidence_2020}, such as weighting confirmatory information higher than corrective information \autocite{schulz-hardt_biased_2000}. Taken together, information seeking as a research area from cognitive psychology has potential applications for a deeper study within medical diagnoses, improving our understanding of the process of medical decision making and, more importantly, how accuracy might be improved.\\
 
-The link between confidence and information seeking has been previously investigated in cognitive psychology research. This association can be studied in two directions, looking at either how the evidence collected subsequently informs confidence or how confidence informs subsequent information seeking. In relation to the former of these, confidence is primarily determined by the accumulated strength of evidence in favour of a particular decision alternative relative to others \autocite{vickers_effects_1982}. However, it has also been shown that the mere quantity of information, even if some information favours the non-preferred option, increases confidence in of itself \autocite{ko_divergent_2022}. One potential reason that has been suggested for this is that individuals experience `decision inertia', whereby they tend to maintain their previous choices regardless of the evidence presented against those choices \autocite{akaishi_autonomous_2014}. Alternatively, past decisions made by an individual may bias any subsequent information sampling (i.e.~`confirmation bias', \autocite{nickerson_confirmation_1998}). The utilisation of confirmatory information has been found to be especially higher when presenting information sequentially rather than simultaneously \autocite{jonas_confirmation_2001}, which can be the case in healthcare when it comes to requesting tests or examining the patient. Individuals have been shown to have a tendency to sample information that corresponds with a previous choice, with confidence increasing the extent to which information sampling is biased \autocite{kaanders_humans_2022}. The qualities of the information received matters for confidence too however, with more variability in information being associated with lower confidence \autocite{desender_subjective_2018}. Choosing when to stop gathering information has also been found to produce a `boost' in confidence when compared to being forced to stop gathering information at a certain time \autocite{wei_confidence_2021}. In summary, the process of seeking evidence is implicated in the confidence that individuals have in their decisions.
+The link between confidence and information seeking has been previously investigated in cognitive psychology research. This association can be studied in two directions, looking at either how the evidence collected subsequently informs confidence or how confidence informs subsequent information seeking. In relation to the former, confidence is primarily determined by the accumulated strength of evidence in favour of a particular decision alternative relative to others \autocite{vickers_effects_1982,pleskac2010}. However, it has also been shown that the mere quantity of information, even if some information favours the non-preferred option, increases confidence by itself \autocite{ko_divergent_2022}. One potential reason for this increased confidence that has been suggested is that individuals experience `decision inertia', whereby they tend to maintain their previous choices regardless of the evidence presented against those choices \autocite{akaishi_autonomous_2014}. Alternatively, past decisions made by an individual may bias any subsequent information sampling (i.e., `confirmation bias', \autocite{nickerson_confirmation_1998}). The utilisation of confirmatory information has been found to be especially obvious when presenting information sequentially rather than simultaneously \autocite{jonas_confirmation_2001}, which can be the case in healthcare when it comes to requesting tests or examining the patient. Individuals have been shown to have a tendency to sample information that corresponds with a previous choice, with confidence increasing the extent to which information sampling is biased \autocite{kaanders_humans_2022}. The qualities of the information received matters for confidence too however, with more variability in information (i.e.~a higher range in the information available) being associated with lower confidence \autocite{desender_subjective_2018}. Choosing when to stop gathering information has also been found to produce a `boost' in confidence when compared to being forced to stop gathering information at a certain time \autocite{wei_confidence_2021}. In summary, the process of seeking evidence is implicated in the confidence that individuals have in their decisions.
 
 \hfill\break
-In relation to the latter directionality, such that confidence informs subsequent information seeking, confidence has been found to affect the accumulation of perceptual evidence \textcite{balsdon_confidence_2020}, as well as the amount of time spent viewing \autocite{rausch_cognitive_2020} and deliberating over evidence \autocite{kiani_choice_2014}. Confidence also affects the type of evidence that is sought, as it has been found to be associated with a tendency to seek confirmatory evidence \autocite{rollwage_confidence_2020} and how likely incoming evidence is to change one's mind \autocite{pescetelli_confidence_2021}. After a decision is made, we continue to process evidence, meaning that we continue to think about a decision after the decision is made. This means that having `second thoughts' or changes of mind are more likely with a lower level of initial confidence (and hence a lower relative strength of evidence). When taken together, confidence and information seeking are deeply connected during the decisional process. Given that the confidence that individuals have in their decision is based on the evidence evaluated either in favour or against that decision, systematic differences in information seeking and evaluation could be responsible for differences in confidence calibration. Hence, studying information seeking in the context of medical decisions can elucidate how clinicians' confidence can become decoupled from their objective accuracy. We now look at research on information seeking and confidence during medical decisions.
+In relation to the latter directionality, such that confidence informs subsequent information seeking, confidence has been found to affect the accumulation of perceptual evidence \textcite{balsdon_confidence_2020}, as well as the amount of time spent viewing \autocite{rausch_cognitive_2020} and deliberating over evidence \autocite{kiani_choice_2014}. Confidence also affects the type of evidence that is sought, as it has been found to be associated with a tendency to seek confirmatory evidence \autocite{rollwage_confidence_2020}, how likely incoming evidence is to change one's mind \autocite{pescetelli_confidence_2021} and how likely individuals are to seek advice for a decision \autocite{carlebach2023}. After a decision is made, we continue to process evidence, meaning that we continue to think about a decision after the decision is made. This means that having `second thoughts' or changes of mind are more likely with a lower level of initial confidence (and hence a lower relative strength of evidence). When taken together, confidence and information seeking are deeply connected during the decisional process. Given that the confidence individuals have in their decision is based on the evidence evaluated either in favour or against that decision, systematic differences in information seeking and evaluation could be responsible for differences in confidence calibration. Hence, studying information seeking in the context of medical decisions can elucidate how clinicians' confidence can become decoupled from their objective accuracy. We now look at research on the link between information seeking and confidence during medical decisions.
 
 \hfill\break
 One of the earliest papers to investigate the link between overconfidence and information seeking in clinical settings was by \textcite{oskamp_overconfidence_1965}. This study focused specifically on clinical psychology and tasked participants with answering questions about a patient who had been displaying signs of post-traumatic stress disorder caused by the patient's army service. Participants received some information about this former soldier named Joseph Kidd and were asked 25 multiple choice questions about Kidd's past and predicted future behaviour. They finally reported their `confidence' by estimating the percentage of questions they answered correctly, ranging from 20\% (at chance) to 100\% (all correct). Participants then received more information about Kidd in three subsequent stages, focusing on Kidd's childhood, his time in school and his time in the army. After receiving each set of new information, participants could revise their answers to all questions and report their new confidence. Oskamp found that with each new set of information, participants increased their confidence but did not significantly improve their accuracy. In fact, participants were less likely to change their answers as more information was provided (see \hyperref[fig:oskamp]{Figure \ref{fig:oskamp}} below). This demonstrated that confidence could be linked to mere receipt of information and that participants were more confident than they should have been given their objective accuracy.
@@ -609,68 +609,62 @@ One of the earliest papers to investigate the link between overconfidence and in
 
 }
 
-\caption[Graph representing the results from Oskamp (1965)]{Graph representing the results from Oskamp (1965), which was plotted using the reported data (the original paper did not have such a figure). The graph shows at each stage of information being provided about the patient (x-axis), the average confidence (y-axis, red), accuracy (y-axis, blue) and proportion of answers that were changed from the answers provided during the previous stage (y-axis, orange). This graph, showing that confidence increased with more information whilst accuracy remained at a similar level, is representative of findings from other papers (e.g. Meyer, 2013) of overconfidence with the receipt of further information.}\label{fig:oskamp}
+\caption[Graph representing the results from Oskamp (1965)]{Graph representing the results from Oskamp (1965), which was plotted using the reported data (the original paper did not have such a figure). The graph shows at each stage of information being provided about the patient (x-axis), the average confidence (y-axis, red), accuracy (y-axis, blue) and proportion of answers that were changed from the answers provided during the previous stage (y-axis, orange). This graph, showing that confidence increased with more information whilst accuracy remained at a similar level, is representative of findings from other papers (e.g., Meyer, 2013) of overconfidence with the receipt of further information.}\label{fig:oskamp}
 \end{figure}
 
-Studying the interaction between confidence and information seeking in medical diagnosis has revealed similar interactions and imperfections. Notably, \textcite{gruppen_information_1991} found that clinicians were less confident when they had to seek relevant information for themselves compared to when all information was already provided, indicating that information seeking as a task is contributory to formulating diagnostic confidence. While this shows the relationship in one direction, past work has also viewed confidence as contributory to further information seeking. Pathologists with more calibrated confidence were found to request more information, such as second opinions or ancillary tests, when unconfident (and hence less accurate) in their judgements \autocite{clayton_are_2023}. In a sample of 118 physicians who were presented with patient vignettes, it was found that higher confidence was associated with a decreased number of diagnostic tests being ordered, even if confidence and accuracy were largely decoupled/miscalibrated \autocite{meyer_physicians_2013}.
+Studying the interaction between confidence and information seeking in medical diagnosis has revealed similar interactions and imperfections. Notably, \textcite{gruppen_information_1991} found that clinicians were less confident when they had to seek relevant information for themselves compared to when all information was already provided, indicating that information seeking as a task is contributory to formulating diagnostic confidence. While this shows the relationship in one direction, past work has also viewed confidence as contributory to further information seeking. Pathologists with more calibrated confidence were found to request more information, such as second opinions or ancillary tests, when unconfident (and hence less accurate) in their judgements \autocite{clayton_are_2023} (whilst less well calibrated pathologists were as likely to seek helpful information whether they were confident or unconfident). In other words, pathologists who gave better confidence judgements were also better able to tell when they needed extra information/help to improve their own diagnostic accuracy. In a sample of 118 physicians who were presented with patient vignettes, it was found that higher confidence was associated with a decreased number of diagnostic tests being ordered, even if confidence and accuracy were largely decoupled/miscalibrated \autocite{meyer_physicians_2013}.
 
 \hfill\break
 It has also been observed previously that physicians may `distort' neutral or inconclusive evidence to be interpreted as supporting prior beliefs \autocite{kostopoulou_information_2012}. Similarly, it has been found that a patient's case history that suggests a particular diagnosis prompts selective interpretation of clinical features that favour this initial diagnosis \autocite{leblanc_believing_2002}. Together, these findings have implications for how clinicians may seek and integrate evidence when making diagnostic decisions and how patterns of receiving information could affect decision confidence and in turn confidence calibration.
 
 \section{Evaluation of Diagnostic Hypotheses}\label{evaluation-of-diagnostic-hypotheses}
 
-Information seeking has a clear goal during medical diagnoses: weighing up possible diagnoses. When making a diagnosis, clinicians generate hypotheses and then gather information to evaluate the likelihood of these hypotheses. They should ideally eliminate hypotheses from consideration only when it makes sense given the incoming evidence. By the same token, they should also not be attached to a hypothesis when there is overwhelming evidence to the contrary. One conclusion of \textcite{wason_failure_1960} was that individuals struggle to remove a hypothesis from consideration even if they receive evidence against it. Individuals may look to sample positive evidence for their generated hypotheses and then reject alternative hypotheses that were relatively undersampled (i.e.~such that they did not seek as much information to support them) \autocite{hunt_approach-induced_2016}. Past work on positive evidence bias predict confidence to be biased towards confirmatory evidence in favour of a chosen decision \autocite{peters_perceptual_2017}. When taken together with the previous papers on information seeking, hypotheses are potentially evaluated based on the quantity of evidence, rather than the balance of evidence for and against. Understanding how individuals generally reason about a possible space of hypotheses is important for understanding how the reasoning process works differently for novices and experts, especially in a specialised domain such as medicine. We would argue then that the information seeking process feeds into hypothesis generation during diagnoses.
+Information seeking has a clear goal during medical diagnoses: weighing up possible differentials (a clinical term used for diagnostic hypotheses). When making a diagnosis, clinicians generate hypotheses/differentials and then gather information to evaluate the likelihood of these hypotheses. They should ideally eliminate hypotheses from consideration only when it makes sense given the incoming evidence. By the same token, they should also not be attached to a hypothesis when there is overwhelming evidence to the contrary. One conclusion of the lab study from \textcite{wason_failure_1960} was that individuals struggle to remove a hypothesis from consideration even if they receive evidence against it. Individuals may look to seek evidence in favour of their generated hypotheses and then reject alternative hypotheses that they did not seek as much information in support of \autocite{hunt_approach-induced_2016}. Past work has found confidence to be biased towards evidence/information that is in favour of a chosen decision rather than against the decision \autocite{peters_perceptual_2017}. When taken together, hypotheses are potentially evaluated based on the quantity of evidence, rather than the balance of evidence for and against, which has relevance within the medical context for how clinicians evaluate differentials. Understanding how individuals generally reason about a possible space of hypotheses is especially important in a specialised domain such as medicine. We would argue that the information seeking process feeds into hypothesis generation during diagnosis: how clinicians seek information affects the diagnostic differentials they consider, which in turn impacts the accuracy of their diagnoses. Hypothesis generation and information seeking are linked together, as has been found in one study, in which individuals were more willing to integrate information that conflicted with a prior belief when they had already considered an alternative hypothesis that could explain said information compared when they had not considered an alternative explanation \autocite{vallee-tourangeau_role_2000}. There is currently little known about how individuals seek information and form hypotheses in complex, knowledge-rich domains such as medicine.
 
 \hfill\break
-There are interesting questions here around how individuals consider and maintain multiple hypotheses at once. Past work looking at hypothesis consideration \autocite{robinson_revision_1985,van_wallendael_tracing_1990} has tended to show that when participants assign probabilities to each hypothesis in their `list' that they are considering, probabilities are considered for each hypothesis in turn. This leads to situations where the sum of probabilities of all hypotheses exceeds 1, indicating a poor grasp of probability theory but perhaps a more realistic depiction of how individuals consider a set of hypotheses. Individuals may not be maintaining a set of hypotheses in their mind that they modify as they receive information, but instead focus on one at a time. Hypothesis generation and information seeking are linked together, as has been found in one study, in which individuals were more willing to integrate information that conflicted with a prior belief when they had already considered an alternative hypothesis that could explain said information \autocite{vallee-tourangeau_role_2000}.
+Understanding how individuals generally reason (and vary from each other in their approach) about a possible space of hypotheses is interesting for understanding how the clinical reasoning process works. Contrary to experiments that prompt a set of two or three choice alternatives \autocite{meyer_physicians_2013,chartan_isolating_2019,kuper_mitigating_2024}, many real-world decisions have a large set of potential options (which depends on the individual's task-specific knowledge in order to generate plausible hypotheses). In theory, individuals gather information in order to reduce the initial set of potential alternatives to a more manageable set (or in some cases, deciding on a single option). On the one hand, individuals with more domain knowledge will be able to generate a larger set of plausible alternatives (including more `obscure' or lesser known options), but their knowledge also allows them to eliminate hypotheses earlier in a decision process based on less information. On the other hand, if an individual has a larger set of initial hypotheses, this could mean that the problem space is more complex and potentially harder to whittle down. A question here is how this reasoning process works during medical diagnosis: with a large range of potential hypotheses for a patient's condition, how do clinicians generate an initial set of hypotheses and then seek information to determine a definitive diagnosis from this set?
 
 \hfill\break
-Understanding how individuals generally reason (and vary from each other in their approach) about a possible space of hypotheses is interesting for understanding how the clinical reasoning process works. We are particularly interested in how one's `process of elimination' (if clinicians do practice this) affects confidence. Contrary to experiments that prompt a set of two or three alternatives \autocite{meyer_physicians_2013,chartan_isolating_2019,kuper_mitigating_2024}, a lot of real-world decisions have a large set of potential options (which depends on the individual's task-specific knowledge in order to generate plausible hypotheses). In theory, individuals gather information in order to reduce the initial set of potential alternatives to a more manageable set (or in some cases, deciding on a single option). On the one hand, individuals with more domain knowledge will be able to generate a larger set of plausible alternatives (including more `obscure' or lesser known options), but their knowledge also allows them to eliminate hypotheses earlier in a decision process based on less information. A question here is how the amount of hypothesis elimination is related to information seeking patterns and confidence. If an individual has a larger set of initial hypotheses, this means that the problem space is more complex and potentially harder to whittle down.
+Diagnostic decisions have been thought of as `ideal' when using the hypothetico-deductive process \autocite{kuipers_causal_1984}, whereby hypotheses are formulated based on specific features of a patient and are then linked to established criteria for a diagnosis, with further information gathering to test these hypotheses \autocite{higgs_clinical_2019}. In other words, diagnosis is formulated as a process of starting with a set of hypotheses and than gradually narrowing down this initial set in a logical and systematic way, akin to a `process of elimination'. This account was challenged by \textcite{coderre_diagnostic_2003}, who found, via analysis of clinicians' verbal explanations as they worked through diagnostic cases, that more accurate diagnoses were based more on pattern recognition (matching observed information/symptoms to the most likely diagnosis), especially for more experienced clinicians. In other words, rather than seeking information to rule out alternatives from an initial set, the `ideal' diagnostic process is framed more as forming an impression of the single most likely diagnosis and then evaluating this diagnosis against collected evidence. \textcite{gilhooly_cognitive_1990} proposed that both novice and expert clinicians used a mixture of reasoning strategies to arrive at a diagnosis. \textcite{arocha_novice_1995} utilised a think-aloud protocol that was similar to \textcite{coderre_diagnostic_2003}, but found that novice clinicians at different stages demonstrated different abilities to narrow their diagnostic differentials, with intermediate students framed as lacking sufficient knowledge to eliminate differentials from consideration.
 
-\hfill\break
-Diagnostic decisions have been thought of as `ideal' when using the hypothetico-deductive process \autocite{kuipers_causal_1984}, whereby hypotheses are formulated based on specific features of a patient and are then linked to established criteria for a diagnosis, with further information gathering to test these hypotheses \autocite{higgs_clinical_2019}. This account was challenged by \textcite{coderre_diagnostic_2003}, who found, via analysis of clinicians' verbal explanations as they worked through diagnostic cases, that more accurate diagnoses were based more on pattern recognition (matching observed information/symptoms to the most likely diagnosis), especially for more experienced clinicians. \autocite{gilhooly_cognitive_1990} proposed that both novice and expert clinicians used a mixture of reasoning strategies to arrive at a diagnosis. \autocite{arocha_novice_1995} utilised a think-aloud protocol that was similar to \textcite{coderre_diagnostic_2003}, but found that novice clinicians at different stages demonstrated different abilities to narrow their diagnostic differentials, with intermediate students framed as lacking sufficient knowledge to eliminate differentials from consideration.
-
-Regardless of what kind of reasoning strategy is truly `optimal' for accurate diagnostic decisions, the bridge between confidence and information seeking could be considered as a function of the reasoning strategy utilised by clinicians. The reasoning strategy used impacts how many diagnoses are considered at once, how much information is needed to increase or decrease the number of diagnoses being considered and, in turn, how confidence changes as a function of the information received. For example, a clinician may consider many diagnoses to start with, require more information to eliminate the diagnoses being considered to form a more manageable set, and by eliminating more diagnoses, they increase their confidence to signal how much the information has refined their thinking. Diagnostic reasoning is currently taught using cognitive frameworks such as the surgical sieve (which prompts clinicians to individually consider each pathophysiological system in turn as a possible cause of the patient's condition) and the ABCDE mneumonic for patient assessment (Airway, Breathing, Circulation, Disability, Exposure). However, current education does not teach differences in reasoning strategies, whether strategies may vary meaningfully by case or by clinician and how these strategies have a downstream influence on the diagnostic process in terms of seeking information, generating differentials and formulating confidence. Making clinicians and medical students more aware of their own reasoning processes can be useful for addressing cognitive errors in seeking and integrating information \autocite{nendaz_diagnostic_2012}.
+Regardless of what kind of reasoning strategy is truly `optimal' for accurate diagnostic decisions, the bridge between confidence and information seeking could be considered as a function of the reasoning strategy utilised by clinicians. The reasoning strategy used impacts how many diagnoses are considered at once, how much information is needed to increase or decrease the number of diagnoses being considered and, in turn, how confidence changes as a function of the information received. For example, a clinician may consider many diagnoses to start with, require more information to eliminate the diagnoses being considered to form a more manageable set, and by eliminating more diagnoses, they increase their confidence to signal how much the information has refined their thinking. Diagnostic reasoning is currently taught using cognitive frameworks such as the surgical sieve (which prompts clinicians to individually consider each pathophysiological system in turn as a possible cause of the patient's condition) and the ABCDE mnemonic for patient assessment (Airway, Breathing, Circulation, Disability, Exposure). However, current education does not teach differences in reasoning strategies, whether strategies may vary meaningfully by case or by clinician, or how these strategies may have a downstream influence on the diagnostic process in terms of seeking information, generating differentials and formulating confidence. Making clinicians and medical students more aware of their own reasoning processes can be useful for addressing cognitive errors in seeking and integrating information \autocite{nendaz_diagnostic_2012}.
 
 \section{Current Work}\label{current-work}
 
-Based on the literature previously presented, we can surmise that there has been considerable work on understanding the sources of diagnostic error. This has led to key insights, such as cognitive biases being implicated in diagnostic decisions and the role of information seeking in diagnostic errors. However, past research has often used simplified diagnostic tasks that do not capture the complex interplay between information seeking and decision making that are evident in real-world decisions, both medical and otherwise. There is evidence from both psychology and medicine that this rich interplay is important to study. As we have explained, lab experiments within the field of psychology have found imperfections and biases in the link between information seeking and confidence, and there is evidence of similar biases in clinicians. There is also evidence that clinicians vary in the strategies they use to seek and integrate information within their consideration of diagnostic hypotheses. Taken together, this implies gaps in our understanding of how clinicians make diagnostic decisions on a cognitive level, which has implications for the development of cognitive interventions or educational/training resources on how to make accurate diagnostic decisions. We aim to fill these gaps with research that better represents the complexities of real diagnostic decisions, whilst also studying the cognitive mechanisms of how the decision making evolves over time and as more information is afforded to the clinician. In particular, we aim to study diagnosis not as a single decision but as a more continuous `practice' of information interpretation, hypothesis evaluation and choosing when to commit to a particular course of action \autocite{alby_diagnostic_2015}. With this more naturalistic framing of the diagnostic process, we can investigate potential sources of both diagnostic error and miscalibrations of confidence during diagnoses.
+The literature review above indicates that there has been considerable progress made in understanding the sources of diagnostic error. This work has led to key insights, such as cognitive biases being implicated in diagnostic decisions and the role of information seeking in diagnostic errors. However, past research has often used simplified diagnostic tasks that do not capture the complex interplay between information seeking and decision making that are evident in real-world decisions, both medical and otherwise. There is evidence from both psychology and medicine that this rich interplay is important to study. As we have explained, lab experiments within the field of psychology have found imperfections and biases in the link between information seeking and confidence, and there is evidence of similar biases in clinicians. There is also evidence that clinicians vary in the strategies they use to seek and integrate information within their consideration of diagnostic hypotheses. Taken together, the current set of literature implies gaps in our understanding of how clinicians make diagnostic decisions on a cognitive level, which has implications for the development of cognitive interventions or educational/training resources on how to make accurate diagnostic decisions. We aim to fill these gaps with research that better represents the complexities of real diagnostic decisions, whilst also studying the cognitive mechanisms of how the decision making evolves over time and as more information is afforded to the clinician. In particular, we aim to study diagnosis not as a single decision but as a more continuous process of information interpretation, hypothesis evaluation and choosing when to commit to a particular course of action \autocite{alby_diagnostic_2015}. With this more naturalistic framing of the diagnostic process, we can investigate potential sources of both diagnostic error and miscalibrations of confidence during diagnoses.
 
 \hfill\break
-There is a need for the teaching and assessment of non-technical skills and human factors in healthcare \autocite{higham_observer-based_2019}, which is currently not addressed in a widespread standardised manner in medical curricula \autocite{greig_lack_2015}. Curricula within medicine also place little emphasis on how uncertainty is communicated and approached in medical decision making (Hall, 2002). This is especially important to note given that doctors can be reticent to express their uncertainty \autocite{katz_why_1984}. Clinical experience may also be connected to risk aversion and further information seeking behaviour \autocite{lawton_are_2019}, which offers an important avenue for future medical education. Uncertainty within medicine can stem from many sources, be they cognitive, emotional or behavioural \autocite{han_varieties_2011,lee_towards_2021}, and the ongoing tolerance of uncertainty is an important skill that medical students develop but also is a source of stress for them \autocite{hancock_tolerance_2020,stephens_exploring_2021}. If we can understand the mechanisms by which uncertainty arises during medical decision making, this can be beneficial both for patients and for clinicians.
+There is a need for the teaching and assessment of non-technical skills and human factors in healthcare \autocite{higham_observer-based_2019}, which is currently not addressed in a widespread standardised manner in medical curricula \autocite{greig_lack_2015}. Curricula within medicine also place little emphasis on how uncertainty is communicated and approached in medical decision making (Hall, 2002). This is especially important to note given that doctors can be reticent to express their uncertainty \autocite{katz_why_1984}. Clinical experience may also be connected to risk aversion and further information seeking behaviour \autocite{lawton_are_2019}, which offers an important avenue for future medical education. Uncertainty within medicine can stem from many sources, be they cognitive, emotional or behavioural \autocite{han_varieties_2011,lee_towards_2021}, and the ongoing tolerance of uncertainty is an important skill that medical students develop but also is a source of stress for them \autocite{hancock_tolerance_2020,stephens_exploring_2021}. If we can understand the mechanisms by which uncertainty arises during medical decision making, this could be beneficial both for patients and for clinicians.
 
 \hfill\break
-This research aims to inform medical education on non-technical skills such as diagnostic reasoning, especially around evaluating diagnostic differentials and seeking information during the diagnosis process. This work also allows for the application of cognitive psychology to important real-world decisions, testing the ecological validity of the field's findings and using the field to better understand diagnosis as a complex decision making process. This has been considered as a necessary avenue for research:
+This research aims to inform medical education on non-technical skills such as diagnostic reasoning, especially around evaluating diagnostic differentials and seeking information during the diagnosis process. Past research utilising simple, controlled decisions has yielded insights into the possible causes of diagnostic error (and provided possible targets for improving clinical training). This current work also allows for the application of cognitive psychology to important real-world decisions, testing the ecological validity of the field's findings and using the field to better understand diagnosis as a complex decision making process. It seems plausible that there are valuable insights that can be derived from studying decisions with a more realistic level of complexity around the availability of information and range of choice options that characterise real-world medical decision making. This cross-disciplinary approach has been considered as a necessary avenue for research:
 
 \hfill\break
 \emph{``Problems in diagnosis have\ldots been heavily dominated by physicians with little input from the cognitive sciences. What is missing\ldots is foundational work aimed at understanding how clinicians in actual situations take a complex, tangled stream of phenomena\ldots to create an understanding of them as a problem.''} \autocite{wears_diagnosing_2014}
 
 \hfill\break
-Over the course of thesis, we aim to elucidate the cognitive mechanisms that underpin medical diagnoses. In particular, we aim to gain a better understanding of how clinicians seek and interpret the information they receive pertaining to patients and translate their understanding into a set of diagnoses and their subjective confidence. Clinical reasoning is taught as a non-technical skill to medical students, but the field is currently lacking the input from cognitive sciences on how to foster accurate decision making and appropriate expressions of uncertainty. By emulating the diagnostic decision process, we can formulate some practical implications for medical education and clinical practice. We also aim to evaluate the methods from cognitive psychology and their applicability to everyday decisions that have significant real-world impact.
+Over the course of thesis, we aim to better understand the cognitive mechanisms that underpin medical diagnoses. In particular, we aim to gain a better understanding of how clinicians seek and interpret the information they receive pertaining to patients and translate their understanding into a set of diagnoses and their subjective confidence. Clinical reasoning is taught as a non-technical skill to medical students, but the field is currently lacking the input from cognitive sciences on how to foster accurate decision making and appropriate expressions of uncertainty. By emulating specific features of diagnosis that have tended to be lacking in past research, we can formulate some practical implications for medical education and clinical practice. We also aim to evaluate the methods from cognitive psychology and their applicability to everyday decisions that have significant real-world impact.
 
 \newpage
 
 \section{Thesis Structure}\label{thesis-structure}
 
-In this chapter, we presented an overview of past work studying medical diagnoses. In particular, we underscored the need to study their cognitive mechanisms due to the larger incidence of diagnostic errors and their impact on patient care. We laid out research that sought to draw a causal link between cognitive biases and diagnostic errors, with a particular focus on overconfidence/underconfidence. We outlined the importance of confidence from a cognitive psychology perspective, particularly in the field of medicine where objective feedback that could correct biases in confidence is scarce. Finally, we explored the link between information seeking and confidence, which has been investigated in cognitive psychology but only to a limited degree in the context of medical diagnoses. To this end, we orient our current work on further elucidating this link in diagnostic decisions. The overarching hypothesis of our work is that miscalibrations of confidence (when compared to objective accuracy) are caused by clinicians' suboptimal information seeking. For instance, a clinician may cease seeking information and decide on a diagnosis too early (known as `premature closure'). Alternatively, a clinician may preferentially seek more information to confirm their beliefs, inflating their subjective confidence. We also aim to understand how information seeking relates to the breadth of diagnoses being considered by clinicians. By developing our understanding of how information seeking relates to diagnostic uncertainty, we can present implications for future work on how to prompt appropriate information seeking, and in turn appropriate diagnostic confidence.
+In this chapter, we presented an overview of past work studying medical diagnoses. In particular, we underscored the need to study their cognitive mechanisms due to the incidence of diagnostic errors and their impact on patient care. We laid out research that sought to draw a causal link between cognitive biases and diagnostic errors, with a particular focus on overconfidence/underconfidence. We outlined the importance of confidence from a cognitive psychology perspective, particularly in the field of medicine where objective feedback that could correct biases in confidence is scarce. Finally, we explored the link between information seeking and confidence, which has been investigated in cognitive psychology but only to a limited degree in the context of medical diagnoses. To this end, we orient our current work on further elucidating this link in diagnostic decisions. The overarching hypothesis of our work is that miscalibrations of confidence (when compared to objective accuracy) are caused by clinicians' suboptimal information seeking. For instance, a clinician may cease seeking information and decide on a diagnosis too early (known as `premature closure'). Alternatively, a clinician may preferentially seek more information to confirm their beliefs, inflating their subjective confidence. We also aim to understand how information seeking relates to the breadth of diagnoses being considered by clinicians. By developing our understanding of how information seeking relates to diagnostic uncertainty, future researchers and medical practitioners/educators can build from this work to understand how to prompt appropriate information seeking, and in turn appropriate diagnostic confidence. The subsequent chapters in this thesis process as follows.
 
 \hfill\break
-We now present the structure for the subsequent chapters in this thesis.
+In Chapter 2, we present a systematic scoping review of the medical and psychological literature in which confidence or certainty has been studied within diagnostic decisions. Some of the extant literature is reviewed above, but we use this review to describe the existing literature more thoroughly. This is especially pertinent given the broad relevance of diagnostic confidence across medicine alongside the siloed nature of literature within the various medical specialties, necessitating a more systematic approach to capturing the relevant literature. The main aim of this review is determine whether past work has found evidence for calibration of confidence judgements provided during diagnostic decisions. We also summarise how clinicians' confidence in their diagnostic decisions predicts aspects of the patients' care pathway. Alongside these research aims, the review is used to map out the themes of the extant literature and types of methodologies used. We use the reviewed literature to propose a conceptual model for how diagnostic decisions are affected by decisional, clinician-based and contextual factors.
 
 \hfill\break
-In Chapter 2, we present a systematic scoping review of the medical and psychological literature in which confidence or certainty has been studied within diagnostic decisions. Whilst some of the extant literature has been presented here, we use this review to describe the existing literature more thoroughly. This is especially pertinent given the broad relevance of diagnostic confidence across medicine alongside the siloed nature of literature within the various medical specialties, necessitating a more systematic approach to capturing the relevant literature. The main aim of this review is to look at whether past work has found evidence for calibration of confidence judgements provided during diagnostic decisions. We also look at how confidence predicts aspects of the patients' care pathway. Alongside these research aims, the review is used to map out the themes of the extant literature and types of methodologies used. We use the reviewed literature to propose a conceptual model for how diagnostic decisions are affected by decisional, clinician-based and contextual factors.
+In Chapter 3, we present an online behavioural study where participants (medical students) freely sought information and provided diagnostic differentials at different stages during a series of patient vignettes. This study allows us to investigate how diagnostic differentials and confidence are affected by patterns of information seeking. In particular, we introduce and investigate different aspects of information seeking, namely how much, how valuable and how variable the information that medical students seek is, with these aspects differentially informing diagnostic confidence and accuracy.
 
 \hfill\break
-In Chapter 3, we present an online behavioural study where participants (medical students) freely sought information and provided diagnostic differentials at different stages during a series of patient vignettes. This study allows us to look at how diagnostic differentials and confidence are affected by patterns of information seeking. In particular, we introduce and investigate different aspects of information seeking, namely how much, how valuable and how variable the information that medical students seek is, with these aspects differentially informing diagnostic confidence and accuracy.
+In Chapter 4, we present an in-person study using a similar vignette-based paradigm in which medical students verbalised their thought process as they were making these diagnoses, with the aim to use these think-aloud utterances to classify different diagnostic reasoning strategies. We use this paradigm to investigate how reasoning strategies affect confidence and information seeking. This study also allows for a qualitative analysis of medical students' thought process whilst they are making diagnoses, including their main considerations regarding the evaluation of diagnostic hypotheses.
 
 \hfill\break
-In Chapter 4, we present an in-person study using a similar vignette-based paradigm where medical students verbalised their thought process as they were making these diagnoses, with the aim to use these think-aloud utterances to classify different diagnostic reasoning strategies. We use this paradigm to investigate how reasoning strategies affect confidence and information seeking. This study also allows for a qualitative analysis of medical students' thought process whilst they are making diagnoses, including their main considerations regarding the evaluation of diagnostic hypotheses.
+In Chapter 5, we present the third empirical study, in which we investigate diagnostic decisions in a more naturalistic manner by using virtual reality paediatric scenarios to investigate differences in information seeking and confidence. This paradigm allows for the study of information seeking in an open-ended manner that is more akin to real medical practice. Given the higher fidelity of this paradigm, we also study how the ongoing treatment of patients is informed by confidence and information seeking.
 
 \hfill\break
-In Chapter 5, we present the third empirical study, where we investigate diagnostic decisions in a more naturalistic manner by using virtual reality paediatric scenarios to investigate differences in information seeking and confidence. This paradigm allows for the study of information seeking in an open-ended manner that is more akin to real medical practice. Given the higher fidelity of this paradigm, we also study how the ongoing treatment of patients is informed by confidence and information seeking.
-
-\hfill\break
-In Chapter 6, we present a reflective chapter based on observations in both Adult Intensive Care and Emergency Medicine, whereby the findings from this DPhil are contextualised within the decisions made during actual medical practice. This chapter is used to better characterise the strengths and limitations of the studies within this DPhil by evaluating how well they relate to aspects of everyday medical decision making, as well as discussing real examples of where diagnostic uncertainty arises. This section acts as a precursor to our General Discussion section, such that evaluations of this DPhil's ecological validity and generalisability can be grounded in everyday medical practice.
+In Chapter 6, we present a reflective chapter based on observations in both Adult Intensive Care and Emergency Medicine, whereby the findings from this DPhil are contextualised within the decisions made during actual medical practice. This chapter is used to better characterise the strengths and limitations of the studies within this thesis by evaluating how well they relate to aspects of everyday medical decision making, as well as discussing real examples of where diagnostic uncertainty arises. This section acts as a precursor to our General Discussion section, such that evaluations of the ecological validity and generalisability of the research reported in this thesis can be grounded in everyday medical practice.
 
 \hfill\break
 In Chapter 7, we present an overall discussion of the studies conducted in the context of the current literature on diagnostic decision making. We aim to demonstrate how the cognitive mechanisms of confidence and information seeking impact medical diagnoses. We discuss the implications of this work for both the field of cognitive psychology and medicine (in particular, how our findings can inform future medical education given our focus on medical students). We finally evaluate the generalisability of our work and suggest directions for future research (within both cognitive psychology and medical decision making) and medical practice.
@@ -753,8 +747,6 @@ The initial search returned a total of 3,332 articles. Applying the inclusion cr
 
 \subsubsection{Study Characteristics}\label{study-characteristics}
 
-\hyperref[fig:chartable]{Table \ref{tab:reviewcharstab}} below summarises study characteristics and \hyperref[fig:reviewyears]{Figure \ref{fig:reviewyears}} shows that 36 of the 79 studies (46\%) were published since 2019, indicating a recent surge of research interest in this field and the timeliness of this scoping review. The studies appeared in 59 different publications, including both medical and psychological journals, with medical education journals being most common (19 studies). Clinical areas most represented were Primary Care/General Practice, Emergency Medicine and Nursing.
-
 \global\setlength{\Oldarrayrulewidth}{\arrayrulewidth}
 
 \global\setlength{\Oldtabcolsep}{\tabcolsep}
@@ -787,169 +779,121 @@ The initial search returned a total of 3,332 articles. Applying the inclusion cr
 
 \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{} & \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{1991-2000}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{10}}}} \\
 
-
+\ascline{1pt}{000000}{2-3}
 
 
 
 \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{} & \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{2001-2010}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{11}}}} \\
 
-
+\ascline{1pt}{000000}{2-3}
 
 
 
 \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{} & \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{2011-2020}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{29}}}} \\
 
-
+\ascline{1pt}{000000}{2-3}
 
 
 
 \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{\multirow[c]{-4}{*}{\parbox{2in}{\centering \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{Publication\ Date}}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{2021-29}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{29}}}} \\
 
-
-
-
-
-\multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{}}}} \\
-
-
-
-
-
-\multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{}}}} \\
-
-
+\ascline{1pt}{000000}{1-3}
 
 
 
 \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{} & \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{Text\ Vignette}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{44}}}} \\
 
-
+\ascline{1pt}{000000}{2-3}
 
 
 
 \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{} & \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{Imaging\ Interpretation\ (e.g.\ ECG)}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{20}}}} \\
 
-
+\ascline{1pt}{000000}{2-3}
 
 
 
 \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{} & \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{In\ Situ\ Questionnaires/Surveys}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{13}}}} \\
 
-
+\ascline{1pt}{000000}{2-3}
 
 
 
 \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{\multirow[c]{-4}{*}{\parbox{2in}{\centering \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{Study\ Environment/Context}}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{High-Fidelity\ Simulation}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{2}}}} \\
 
+\ascline{1pt}{000000}{1-3}
 
 
 
+\multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{} & \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{Same\ Across\ Participants}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{50}}}} \\
 
-\multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{}}}} \\
-
-
-
-
-
-\multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{}}}} \\
+\ascline{1pt}{000000}{2-3}
 
 
 
+\multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{\multirow[c]{-2}{*}{\parbox{2in}{\centering \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{Participant\ Experience\ Levels}}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{Multiple\ Experience\ Levels}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{29}}}} \\
 
-
-\multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{} & \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{Fixed\ Across\ Participants}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{50}}}} \\
-
-
-
-
-
-\multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{\multirow[c]{-2}{*}{\parbox{2in}{\centering \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{Participant\ Experience\ Levels}}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{Multiple\ Experience\ Groups}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{29}}}} \\
-
-
-
-
-
-\multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{}}}} \\
-
-
-
-
-
-\multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{}}}} \\
-
-
+\ascline{1pt}{000000}{1-3}
 
 
 
 \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{} & \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{Primary\ Care\ /\ General\ Practice}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{26}}}} \\
 
-
+\ascline{1pt}{000000}{2-3}
 
 
 
 \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{} & \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{Medical\ Students}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{15}}}} \\
 
-
+\ascline{1pt}{000000}{2-3}
 
 
 
 \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{} & \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{Emergency\ Medicine}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{10}}}} \\
 
-
+\ascline{1pt}{000000}{2-3}
 
 
 
 \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{} & \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{Nursing}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{6}}}} \\
 
-
+\ascline{1pt}{000000}{2-3}
 
 
 
 \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{} & \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{Pathology}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{4}}}} \\
 
-
+\ascline{1pt}{000000}{2-3}
 
 
 
 \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{} & \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{Radiology}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{4}}}} \\
 
-
+\ascline{1pt}{000000}{2-3}
 
 
 
 \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{\multirow[c]{-7}{*}{\parbox{2in}{\centering \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{Subdiscipline\ /\ Population}}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{Other\ }}}} & \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{14}}}} \\
 
-
-
-
-
-\multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{}}}} \\
-
-
-
-
-
-\multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{}}}} \\
-
-
+\ascline{1pt}{000000}{1-3}
 
 
 
 \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{} & \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{<\ 100}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{44}}}} \\
 
-
+\ascline{1pt}{000000}{2-3}
 
 
 
 \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{} & \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{101-200}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{20}}}} \\
 
-
+\ascline{1pt}{000000}{2-3}
 
 
 
 \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{} & \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{201-300}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 2in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{9}}}} \\
 
-
+\ascline{1pt}{000000}{2-3}
 
 
 
@@ -979,6 +923,8 @@ The initial search returned a total of 3,332 articles. Applying the inclusion cr
 
 \caption[Scoping Review: Paper Distribution by Publication Year]{Distribution of Scoping Review Papers by Publication Year}\label{fig:reviewyears}
 \end{figure}
+
+\hyperref[fig:chartable]{Table \ref{tab:reviewcharstab}} above summarises study characteristics and \hyperref[fig:reviewyears]{Figure \ref{fig:reviewyears}} shows that 36 of the 79 studies (46\%) were published since 2019, indicating a recent surge of research interest in this field and the timeliness of this scoping review. The studies appeared in 59 different publications, including both medical and psychological journals, with medical education journals being most common (19 studies). Clinical areas most represented were Primary Care/General Practice, Emergency Medicine and Nursing.
 
 \hfill\break
 Study designs were split roughly evenly between focusing on how confidence varies across individuals (35 studies) and on how confidence varies according to features of the patient case (31 studies), with remaining (13 studies) studying both. Thirty-four studies (43\% ) looked at the level of medical experience or training's effect on confidence, either measured as a dependent variable or by recruiting participants in `novice' versus `experienced' group. Nineteen studies (24\%) manipulated the complexity or difficulty of the patient case. Finally, ten studies (13\%) investigated how diagnostic confidence varies with the information presented or the opportunity to seek information.
@@ -2873,45 +2819,111 @@ We next look at confidence reported by participants and its calibration to objec
 
 \providecommand{\ascline}[3]{\noalign{\global\arrayrulewidth #1}\arrayrulecolor[HTML]{#2}\cline{#3}}
 
-\begin{longtable}[c]{|p{0.75in}|p{0.75in}|p{0.75in}|p{0.75in}|p{0.75in}|p{0.75in}|p{0.75in}|p{0.75in}|p{0.75in}}
+\begin{longtable}[c]{|p{0.75in}|p{0.75in}|p{0.75in}|p{0.75in}|p{0.75in}}
 
 
 
-\ascline{1.5pt}{666666}{1-9}
+\ascline{1.5pt}{666666}{1-5}
 
-\multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{Scenario}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{n}}}} & \multicolumn{1}{>{\centering}b{\dimexpr 0.75in+0\tabcolsep}}{\rotatebox[origin=c]{270}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{Diagnostic\ Score}}}}} & \multicolumn{1}{>{\centering}b{\dimexpr 0.75in+0\tabcolsep}}{\rotatebox[origin=c]{270}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{OMS\ Score}}}}} & \multicolumn{1}{>{\centering}b{\dimexpr 0.75in+0\tabcolsep}}{\rotatebox[origin=c]{270}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{Information\ Seeking}}}}} & \multicolumn{1}{>{\centering}b{\dimexpr 0.75in+0\tabcolsep}}{\rotatebox[origin=c]{270}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{Initial\ Confidence}}}}} & \multicolumn{1}{>{\centering}b{\dimexpr 0.75in+0\tabcolsep}}{\rotatebox[origin=c]{270}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{Final\ Confidence}}}}} & \multicolumn{1}{>{\centering}b{\dimexpr 0.75in+0\tabcolsep}}{\rotatebox[origin=c]{270}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{Initial\ Differentials}}}}} & \multicolumn{1}{>{\centering}b{\dimexpr 0.75in+0\tabcolsep}}{\rotatebox[origin=c]{270}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{Final\ Differentials}}}}} \\
+\multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{Scenario}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{n}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{Diagnostic\ Score}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{OMS\ Score}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{Information\ Seeking}}}} \\
 
-\ascline{1.5pt}{666666}{1-9}\endfirsthead
+\ascline{1.5pt}{666666}{1-5}\endfirsthead
 
-\ascline{1.5pt}{666666}{1-9}
+\ascline{1.5pt}{666666}{1-5}
 
-\multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{Scenario}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{n}}}} & \multicolumn{1}{>{\centering}b{\dimexpr 0.75in+0\tabcolsep}}{\rotatebox[origin=c]{270}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{Diagnostic\ Score}}}}} & \multicolumn{1}{>{\centering}b{\dimexpr 0.75in+0\tabcolsep}}{\rotatebox[origin=c]{270}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{OMS\ Score}}}}} & \multicolumn{1}{>{\centering}b{\dimexpr 0.75in+0\tabcolsep}}{\rotatebox[origin=c]{270}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{Information\ Seeking}}}}} & \multicolumn{1}{>{\centering}b{\dimexpr 0.75in+0\tabcolsep}}{\rotatebox[origin=c]{270}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{Initial\ Confidence}}}}} & \multicolumn{1}{>{\centering}b{\dimexpr 0.75in+0\tabcolsep}}{\rotatebox[origin=c]{270}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{Final\ Confidence}}}}} & \multicolumn{1}{>{\centering}b{\dimexpr 0.75in+0\tabcolsep}}{\rotatebox[origin=c]{270}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{Initial\ Differentials}}}}} & \multicolumn{1}{>{\centering}b{\dimexpr 0.75in+0\tabcolsep}}{\rotatebox[origin=c]{270}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{Final\ Differentials}}}}} \\
+\multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{Scenario}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{n}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{Diagnostic\ Score}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{OMS\ Score}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{Information\ Seeking}}}} \\
 
-\ascline{1.5pt}{666666}{1-9}\endhead
-
-
-
-\multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{Asthma}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{37}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{0.61}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{68.14}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{19.7}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{5.7}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{7.7}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{4.4}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{3.2}}}} \\
+\ascline{1.5pt}{666666}{1-5}\endhead
 
 
 
-
-
-\multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{DKA}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{30}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{0.53}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{57.30}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{19.5}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{7.1}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{8.8}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{2.9}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{1.8}}}} \\
+\multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{Asthma}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{37}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{0.61}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{68.14}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{19.7}}}} \\
 
 
 
 
 
-\multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{Pneumonia}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{28}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{0.48}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{63.31}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{24.5}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{6.3}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{7.8}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{3.6}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{2.8}}}} \\
+\multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{DKA}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{30}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{0.53}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{57.30}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{19.5}}}} \\
 
 
 
 
 
-\multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{Seizure}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{22}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{0.59}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{63.81}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{24.1}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{5.5}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{7.9}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{3.6}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{3.4}}}} \\
+\multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{Pneumonia}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{28}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{0.48}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{63.31}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{24.5}}}} \\
 
-\ascline{1.5pt}{666666}{1-9}
+
+
+
+
+\multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{Seizure}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{22}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{0.59}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{63.81}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{24.1}}}} \\
+
+\ascline{1.5pt}{666666}{1-5}
+
+
+
+\end{longtable}
+
+
+
+\arrayrulecolor[HTML]{000000}
+
+\global\setlength{\arrayrulewidth}{\Oldarrayrulewidth}
+
+\global\setlength{\tabcolsep}{\Oldtabcolsep}
+
+\renewcommand*{\arraystretch}{1}
+
+\global\setlength{\Oldarrayrulewidth}{\arrayrulewidth}
+
+\global\setlength{\Oldtabcolsep}{\tabcolsep}
+
+\setlength{\tabcolsep}{2pt}
+
+\renewcommand*{\arraystretch}{1.5}
+
+
+
+\providecommand{\ascline}[3]{\noalign{\global\arrayrulewidth #1}\arrayrulecolor[HTML]{#2}\cline{#3}}
+
+\begin{longtable}[c]{|p{1.50in}|p{1.50in}|p{1.50in}|p{1.50in}}
+
+
+
+\ascline{1.5pt}{666666}{1-4}
+
+\multicolumn{1}{>{\centering}m{\dimexpr 1.5in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{Initial\ Confidence}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 1.5in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{Final\ Confidence}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 1.5in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{Initial\ Differentials}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 1.5in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{Final\ Differentials}}}} \\
+
+\ascline{1.5pt}{666666}{1-4}\endfirsthead
+
+\ascline{1.5pt}{666666}{1-4}
+
+\multicolumn{1}{>{\centering}m{\dimexpr 1.5in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{Initial\ Confidence}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 1.5in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{Final\ Confidence}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 1.5in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{Initial\ Differentials}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 1.5in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{Final\ Differentials}}}} \\
+
+\ascline{1.5pt}{666666}{1-4}\endhead
+
+
+
+\multicolumn{1}{>{\centering}m{\dimexpr 1.5in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{5.7}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 1.5in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{7.7}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 1.5in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{4.4}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 1.5in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{3.2}}}} \\
+
+
+
+
+
+\multicolumn{1}{>{\centering}m{\dimexpr 1.5in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{7.1}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 1.5in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{8.8}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 1.5in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{2.9}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 1.5in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{1.8}}}} \\
+
+
+
+
+
+\multicolumn{1}{>{\centering}m{\dimexpr 1.5in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{6.3}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 1.5in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{7.8}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 1.5in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{3.6}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 1.5in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{2.8}}}} \\
+
+
+
+
+
+\multicolumn{1}{>{\centering}m{\dimexpr 1.5in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{5.5}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 1.5in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{7.9}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 1.5in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{3.6}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 1.5in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Helvetica}{3.4}}}} \\
+
+\ascline{1.5pt}{666666}{1-4}
 
 \caption{Average\ values\ for\ dependent\ variables\ by\ scenario.\ The\ n\ column\ denotes\ the\ number\ of\ participants\ (or\ 'observations')\ per\ scenario.\ We\ show\ mean\ values\ for\ the\ Diagnostic\ Appropriateness,\ Performance\ Score,\ Amount\ of\ Information\ Seeking\ (the\ number\ of\ actions\ taken\ belonging\ to\ History,\ Physical\ Examinations\ or\ Testing),\ Initial\ Confidence\ (as\ reported\ at\ the\ pause\ point\ in\ the\ scenario),\ Final\ Confidence\ (reported\ at\ the\ end\ of\ the\ scenario),\ Initial\ Diagnoses\ (the\ number\ of\ differentials\ reported\ at\ the\ pause\ point)\ and\ Final\ Diagnoses\ (the\ number\ of\ differentials\ reported\ at\ the\ end\ of\ the\ scenario).}\label{tab:descstatstable}\\
 
@@ -3016,7 +3028,7 @@ One of the other key findings from this study is on the role of treatment to inc
 We next consider the interplay between confidence and information seeking, building on a theme of our research that we explored in our previous studies. On confidence and information seeking, we were able to look at information seeking in a more fine-grained manner when compared to both of our previous studies and past literature, due to the paradigm's open-ended nature and greater availability of information requests, testing and treatment options during the VR scenarios. We did not find initial confidence was predicted by information seeking prior to that point. We do however find that initial confidence was positively associated with the amount of subsequent testing that medical students requested. If we intuitively consider the different stages of the diagnostic process, as we observed in Studies 2 and 3 with our vignette methodology, clinicians tend to request tests when they are honing in on a particular diagnosis and want to either confirm their beliefs or rule out an alternative diagnosis. In other words, tests tend to be performed in a hypothesis-driven way.
 
 \hfill\break
-This would explain why, with higher confidence, medical students in this study subsequently request more tests as they seek to confirm or rule out their diagnostic hypotheses. Conversely, medicals students with lower initial confidence would be less sure of which tests to request, being less able to reduce their differentials. Past work found that higher confidence was associated with a tendency to seek confirmatory evidence \autocite{rollwage_confidence_2020}, and that higher confidence decreases the chance that incoming information would change one's mind \autocite{pescetelli_confidence_2021}. These papers can be used to explain our findings: once clinicians have sufficiently considered enough diagnostic hypotheses (as reflected in their higher confidence), they then use testing as confirmatory evidence to support and then narrow their differentials. The higher confidence in a clinician's differentials before this narrowing takes place, the less susceptible they are to having their mind changed to consider other possibilities. This corresponds with the hypothetico-deductive `ideal' of the diagnostic process, in which hypotheses are formulated based on patients and then further information is sought to test these hypotheses \autocite{higgs2008}. In addition, when clinicians have broadened their set of differentials, they are likely to have competing differentials, necessitating the seeking of information to reduce cognitive dissonance \autocite{adams_reduction_1961}. This is predicated on both having access to and being able to suitably interpret incoming information in order to help narrow differentials. For instance, medical students may lack the necessary knowledge to interpret information as being contradictory of their beliefs and subsequently narrow their differentials \autocite{arocha_novice_1995}.\\
+This would explain why, with higher confidence, medical students in this study subsequently request more tests as they seek to confirm or rule out their diagnostic hypotheses. Conversely, medicals students with lower initial confidence would be less sure of which tests to request, being less able to reduce their differentials. Past work found that higher confidence was associated with a tendency to seek confirmatory evidence \autocite{rollwage_confidence_2020}, and that higher confidence decreases the chance that incoming information would change one's mind \autocite{pescetelli_confidence_2021}. These papers can be used to explain our findings: once clinicians have sufficiently considered enough diagnostic hypotheses (as reflected in their higher confidence), they then use testing as confirmatory evidence to support and then narrow their differentials. The higher confidence in a clinician's differentials before this narrowing takes place, the less susceptible they are to having their mind changed to consider other possibilities. This corresponds with the hypothetico-deductive `ideal' of the diagnostic process, in which hypotheses are formulated based on patients and then further information is sought to test these hypotheses \autocite{higgs_clinical_2019}. In addition, when clinicians have broadened their set of differentials, they are likely to have competing differentials, necessitating the seeking of information to reduce cognitive dissonance \autocite{adams_reduction_1961}. This is predicated on both having access to and being able to suitably interpret incoming information in order to help narrow differentials. For instance, medical students may lack the necessary knowledge to interpret information as being contradictory of their beliefs and subsequently narrow their differentials \autocite{arocha_novice_1995}.\\
 
 When coupled with the previous section on how broadening and narrowing of differentials may represent different parts of the diagnostic process, this could help explain the different directionalities for the relationship between information seeking and confidence. As discussed during the Introduction chapter, one can study how information seeking informs subsequent confidence or how confidence informs subsequent information seeking. Firstly, information is sought to capture a wide range of differentials, with more information increasing confidence. This explains why the absolute magnitude of information (rather than the relative evidence for a particular option) increases confidence in of itself \autocite{ko_divergent_2022}. This higher confidence then, during the narrowing stage of the decision process, increases the extent to which information sampling is biased towards considered options \autocite{kaanders_humans_2022} and confirmatory evidence for these options \autocite{rollwage_confidence_2020}. As a result, during this narrowing stage, confidence decreases the follow-up information that a clinician chooses to receive \autocite{meyer_physicians_2013} as they become more selective in choosing information that helps narrow their differentials. We discussed in the Introduction how there are two potential directionalities to the relationship between confidence and information seeking. With this account in mind, information seeking and confidence can be thought of, rather than influencing each other in one of two possible directions, instead have an interplay that depends on the stage of the decision process and the goal of the decision maker (either broadening or narrowing differentials).
 
@@ -3031,7 +3043,7 @@ Another limitation is that of our focus on individual decision making. Whilst pa
 
 Our empirical studies during this thesis have utilised a range of experimental methodologies that have increased in realism, with our aim being to capture as much of real medical decision making as possible whilst still affording us a large degree of experimental standardisation and control. We note however, that there may still be lingering aspects of real medical practice that we have not captured during our research, which in turn may limit the applicability of this research's implications. For research that is based on an applied setting and context, it is important to assess how well our research maps onto this context when making claims based on our results. Rather than merely guessing about this research's relevance to real medical practice, we instead sought to ground such assessments of generalisability and ecological validity in observations of actual medical practice. To this end, in the following chapter, we present observations from a rapid ethnography conducted in two hospital settings: an Adult Intensive Care Unit and an Emergency Department. These observations are used to capture and reflect on real instances of diagnostic uncertainty, information seeking and differential evaluation during medical practice. We utilise these observations to increase the validity of our research findings and better assess the applicability of our research in the Overall Discussion chapter.
 
-\chapter{Ethnography Based on In-Situ Observations within an Intensive Care Unit and Emergency Department}\label{chapter-6}
+\chapter{Ethnography Based on In-Situ Observations within an Adult Intensive Care Unit and Emergency Department}\label{chapter-6}
 
 \adjustmtc
 \markboth{6. Ethnography}{}
@@ -3208,7 +3220,6 @@ With the observations of real medical practice discussed during this chapter in 
 Seymour Fiddle, 1980
 
 \hfill\break
-
 Over the course of this thesis, we have presented research that contributes to our understanding of the cognitive mechanisms of medical diagnoses. In particular, we aimed to use the study of information seeking, hypothesis generation and confidence to better understand their interplay. The goal of this research was to better represent the complexities of real diagnostic decisions and understand the cognitive mechanisms of diagnoses. In particular, we studied how diagnoses change over time, to investigate potential sources of both diagnostic error and miscalibrations of confidence during diagnoses. This section first provides a brief summary of each of the previous chapter's findings. We then synthesise these findings into an overall account of the diagnostic process, whilst contextualising this account in both medical practice and past research. We finally provide an evaluation of the strengths and limitations of this thesis, with implications and future work for both researchers in cognitive psychology and medical educators.\\
 
 Chapter 2 presented a scoping review of the existing literature on confidence during medical diagnoses. This review revealed evidence that confidence judgements during medical diagnoses are rarely calibrated to objective performance/accuracy. Past findings also linked confidence to other aspects of the patient care process, such as referrals to specialists, prescribing medication and ordering tests. It was noted that the majority of past studies utilised textual patient vignettes to study diagnoses as single decisions (i.e.~with information presented in a uniform, linear fashion, followed by a prompt for clinicians/participants to provide a diagnosis), rather than more dynamic, integrated decisional processes. We used the past findings in the extant literature to propose a conceptual model of decisional, clinician-based and contextual factors that impact diagnostic confidence.\\
@@ -4683,464 +4694,6 @@ Each question has a corresponding follow-up question below in case they are not 
 \renewcommand*{\arraystretch}{1}
 
 \newpage
-
-\chapter{R Environment and Packages}\label{r-environment-and-packages}
-
-\begin{verbatim}
-## [1] "R version:"
-\end{verbatim}
-
-\begin{verbatim}
-## [1] "R version 4.4.1 (2024-06-14)"
-\end{verbatim}
-
-\begin{verbatim}
-## [1] "Rstudio version:"
-\end{verbatim}
-
-\begin{verbatim}
-## [1] '2024.12.0.467'
-\end{verbatim}
-
-\begin{verbatim}
-## [1] "Citations for packages used:"
-\end{verbatim}
-
-\begin{verbatim}
-##               pkg  version                                         citekeys
-## 1        bookdown     0.41                       bookdown2024, bookdown2016
-## 2           caret    7.0.1                                            caret
-## 3         cowplot    1.1.3                                          cowplot
-## 4      data.table   1.16.4                                        datatable
-## 5        devtools    2.4.5                                         devtools
-## 6         diffcor    0.8.4                                          diffcor
-## 7         emmeans   1.10.6                                          emmeans
-## 8      factoextra    1.0.7                                       factoextra
-## 9       flextable    0.9.7                                        flextable
-## 10         ggpubr    0.6.0                                           ggpubr
-## 11          ggsci    3.2.0                                            ggsci
-## 12         glmnet    4.1.8               glmnet2010, glmnet2011, glmnet2023
-## 13       grateful   0.2.10                                         grateful
-## 14      gridExtra      2.3                                        gridExtra
-## 15   interactions    1.2.0                                     interactions
-## 16     kableExtra    1.4.0                                       kableExtra
-## 17          knitr     1.49                  knitr2024, knitr2015, knitr2014
-## 18           lme4 1.1.35.5                                             lme4
-## 19       lmerTest    3.1.3                                         lmerTest
-## 20         lmtest   0.9.40                                           lmtest
-## 21    logisticPCA      0.2                                      logisticPCA
-## 22            lsr    0.5.2                                              lsr
-## 23            ltm    1.2.0                                              ltm
-## 24           MASS   7.3.64                                             MASS
-## 25           mgcv    1.9.1 mgcv2011, mgcv2016, mgcv2004, mgcv2017, mgcv2003
-## 26 NeuralNetTools    1.5.3                                   NeuralNetTools
-## 27           nnet   7.3.20                                             nnet
-## 28       pheatmap   1.0.12                                         pheatmap
-## 29         pracma    2.4.4                                           pracma
-## 30           pROC   1.18.5                                             pROC
-## 31          psych   2.4.12                                            psych
-## 32            pwr    1.3.0                                              pwr
-## 33   RColorBrewer    1.1.3                                     RColorBrewer
-## 34     reticulate   1.40.0                                       reticulate
-## 35          rjson   0.2.23                                            rjson
-## 36           ROCR   1.0.11                                             ROCR
-## 37          rpart   4.1.23                                            rpart
-## 38     rpart.plot    3.1.2                                        rpartplot
-## 39        rstatix    0.7.2                                          rstatix
-## 40         scales    1.3.0                                           scales
-## 41          stats    4.4.1                                            stats
-## 42      tidyverse    2.0.0                                        tidyverse
-## 43   verification     1.44                                     verification
-## 44        viridis    0.6.5                                          viridis
-\end{verbatim}
-
-\begin{verbatim}
-##           Package  Version
-## 1        bookdown     0.41
-## 2           caret    7.0.1
-## 3         cowplot    1.1.3
-## 4      data.table   1.16.4
-## 5        devtools    2.4.5
-## 6         diffcor    0.8.4
-## 7         emmeans   1.10.6
-## 8      factoextra    1.0.7
-## 9       flextable    0.9.7
-## 10         ggpubr    0.6.0
-## 11          ggsci    3.2.0
-## 12         glmnet    4.1.8
-## 13       grateful   0.2.10
-## 14      gridExtra      2.3
-## 15   interactions    1.2.0
-## 16     kableExtra    1.4.0
-## 17          knitr     1.49
-## 18           lme4 1.1.35.5
-## 19       lmerTest    3.1.3
-## 20         lmtest   0.9.40
-## 21    logisticPCA      0.2
-## 22            lsr    0.5.2
-## 23            ltm    1.2.0
-## 24           MASS   7.3.64
-## 25           mgcv    1.9.1
-## 26 NeuralNetTools    1.5.3
-## 27           nnet   7.3.20
-## 28       pheatmap   1.0.12
-## 29         pracma    2.4.4
-## 30           pROC   1.18.5
-## 31          psych   2.4.12
-## 32            pwr    1.3.0
-## 33   RColorBrewer    1.1.3
-## 34     reticulate   1.40.0
-## 35          rjson   0.2.23
-## 36           ROCR   1.0.11
-## 37          rpart   4.1.23
-## 38     rpart.plot    3.1.2
-## 39        rstatix    0.7.2
-## 40         scales    1.3.0
-## 41          stats    4.4.1
-## 42      tidyverse    2.0.0
-## 43   verification     1.44
-## 44        viridis    0.6.5
-##                                                 Citation
-## 1                           @bookdown2016; @bookdown2024
-## 2                                                 @caret
-## 3                                               @cowplot
-## 4                                             @datatable
-## 5                                              @devtools
-## 6                                               @diffcor
-## 7                                               @emmeans
-## 8                                            @factoextra
-## 9                                             @flextable
-## 10                                               @ggpubr
-## 11                                                @ggsci
-## 12                 @glmnet2010; @glmnet2011; @glmnet2023
-## 13                                             @grateful
-## 14                                            @gridExtra
-## 15                                         @interactions
-## 16                                           @kableExtra
-## 17                    @knitr2014; @knitr2015; @knitr2024
-## 18                                                 @lme4
-## 19                                             @lmerTest
-## 20                                               @lmtest
-## 21                                          @logisticPCA
-## 22                                                  @lsr
-## 23                                                  @ltm
-## 24                                                 @MASS
-## 25 @mgcv2003; @mgcv2004; @mgcv2011; @mgcv2016; @mgcv2017
-## 26                                       @NeuralNetTools
-## 27                                                 @nnet
-## 28                                             @pheatmap
-## 29                                               @pracma
-## 30                                                 @pROC
-## 31                                                @psych
-## 32                                                  @pwr
-## 33                                         @RColorBrewer
-## 34                                           @reticulate
-## 35                                                @rjson
-## 36                                                 @ROCR
-## 37                                                @rpart
-## 38                                            @rpartplot
-## 39                                              @rstatix
-## 40                                               @scales
-## 41                                                @stats
-## 42                                            @tidyverse
-## 43                                         @verification
-## 44                                              @viridis
-\end{verbatim}
-
-\begin{verbatim}
-## [[1]]
-## Xie Y (2024). _bookdown: Authoring Books and Technical Documents with R
-## Markdown_. R package version 0.41,
-## <https://github.com/rstudio/bookdown>.
-## 
-## Xie Y (2016). _bookdown: Authoring Books and Technical Documents with R
-## Markdown_. Chapman and Hall/CRC, Boca Raton, Florida. ISBN
-## 978-1138700109, <https://bookdown.org/yihui/bookdown>.
-## 
-## [[2]]
-## Kuhn, Max (2008). "Building Predictive Models in R Using the caret
-## Package." _Journal of Statistical Software_, *28*(5), 1–26.
-## doi:10.18637/jss.v028.i05 <https://doi.org/10.18637/jss.v028.i05>,
-## <https://www.jstatsoft.org/index.php/jss/article/view/v028i05>.
-## 
-## [[3]]
-## Wilke C (2024). _cowplot: Streamlined Plot Theme and Plot Annotations
-## for 'ggplot2'_. R package version 1.1.3,
-## <https://CRAN.R-project.org/package=cowplot>.
-## 
-## [[4]]
-## Barrett T, Dowle M, Srinivasan A, Gorecki J, Chirico M, Hocking T,
-## Schwendinger B (2024). _data.table: Extension of `data.frame`_. R
-## package version 1.16.4,
-## <https://CRAN.R-project.org/package=data.table>.
-## 
-## [[5]]
-## Wickham H, Hester J, Chang W, Bryan J (2022). _devtools: Tools to Make
-## Developing R Packages Easier_. R package version 2.4.5,
-## <https://CRAN.R-project.org/package=devtools>.
-## 
-## [[6]]
-## Blötner C (2024). _diffcor: Fisher's z-Tests Concerning Differences
-## Between Correlations_. R package version 0.8.4,
-## <https://CRAN.R-project.org/package=diffcor>.
-## 
-## [[7]]
-## Wickham H, François R, Henry L, Müller K, Vaughan D (2023). _dplyr: A
-## Grammar of Data Manipulation_. R package version 1.1.4,
-## <https://CRAN.R-project.org/package=dplyr>.
-## 
-## [[8]]
-## Lenth R (2024). _emmeans: Estimated Marginal Means, aka Least-Squares
-## Means_. R package version 1.10.6,
-## <https://CRAN.R-project.org/package=emmeans>.
-## 
-## [[9]]
-## Kassambara A, Mundt F (2020). _factoextra: Extract and Visualize the
-## Results of Multivariate Data Analyses_. R package version 1.0.7,
-## <https://CRAN.R-project.org/package=factoextra>.
-## 
-## [[10]]
-## Gohel D, Skintzos P (2024). _flextable: Functions for Tabular
-## Reporting_. R package version 0.9.7,
-## <https://CRAN.R-project.org/package=flextable>.
-## 
-## [[11]]
-## Kassambara A (2023). _ggpubr: 'ggplot2' Based Publication Ready Plots_.
-## R package version 0.6.0, <https://CRAN.R-project.org/package=ggpubr>.
-## 
-## [[12]]
-## Rodriguez-Sanchez F, Jackson C (2023). _grateful: Facilitate citation
-## of R packages_. <https://pakillo.github.io/grateful/>.
-## 
-## [[13]]
-## Xiao N (2024). _ggsci: Scientific Journal and Sci-Fi Themed Color
-## Palettes for 'ggplot2'_. R package version 3.2.0,
-## <https://CRAN.R-project.org/package=ggsci>.
-## 
-## [[14]]
-## Wickham H (2016). _ggplot2: Elegant Graphics for Data Analysis_.
-## Springer-Verlag New York. ISBN 978-3-319-24277-4,
-## <https://ggplot2.tidyverse.org>.
-## 
-## [[15]]
-## Friedman J, Tibshirani R, Hastie T (2010). "Regularization Paths for
-## Generalized Linear Models via Coordinate Descent." _Journal of
-## Statistical Software_, *33*(1), 1-22. doi:10.18637/jss.v033.i01
-## <https://doi.org/10.18637/jss.v033.i01>.
-## 
-## Simon N, Friedman J, Tibshirani R, Hastie T (2011). "Regularization
-## Paths for Cox's Proportional Hazards Model via Coordinate Descent."
-## _Journal of Statistical Software_, *39*(5), 1-13.
-## doi:10.18637/jss.v039.i05 <https://doi.org/10.18637/jss.v039.i05>.
-## 
-## Tay JK, Narasimhan B, Hastie T (2023). "Elastic Net Regularization
-## Paths for All Generalized Linear Models." _Journal of Statistical
-## Software_, *106*(1), 1-31. doi:10.18637/jss.v106.i01
-## <https://doi.org/10.18637/jss.v106.i01>.
-## 
-## [[16]]
-## Auguie B (2017). _gridExtra: Miscellaneous Functions for "Grid"
-## Graphics_. R package version 2.3,
-## <https://CRAN.R-project.org/package=gridExtra>.
-## 
-## [[17]]
-## Long JA (2024). _interactions: Comprehensive, User-Friendly Toolkit for
-## Probing Interactions_. doi:10.32614/CRAN.package.interactions
-## <https://doi.org/10.32614/CRAN.package.interactions>, R package version
-## 1.2.0, <https://cran.r-project.org/package=interactions>.
-## 
-## [[18]]
-## Xie Y (2024). _knitr: A General-Purpose Package for Dynamic Report
-## Generation in R_. R package version 1.49, <https://yihui.org/knitr/>.
-## 
-## Xie Y (2015). _Dynamic Documents with R and knitr_, 2nd edition.
-## Chapman and Hall/CRC, Boca Raton, Florida. ISBN 978-1498716963,
-## <https://yihui.org/knitr/>.
-## 
-## Xie Y (2014). "knitr: A Comprehensive Tool for Reproducible Research in
-## R." In Stodden V, Leisch F, Peng RD (eds.), _Implementing Reproducible
-## Computational Research_. Chapman and Hall/CRC. ISBN 978-1466561595.
-## 
-## [[19]]
-## Landgraf AJ, Lee Y (2015). "Dimensionality Reduction for Binary Data
-## through the Projection of Natural Parameters." Technical Report 890,
-## Department of Statistics, The Ohio State University.
-## <http://arxiv.org/abs/1510.06112>.
-## 
-## [[20]]
-## Bates D, Mächler M, Bolker B, Walker S (2015). "Fitting Linear
-## Mixed-Effects Models Using lme4." _Journal of Statistical Software_,
-## *67*(1), 1-48. doi:10.18637/jss.v067.i01
-## <https://doi.org/10.18637/jss.v067.i01>.
-## 
-## [[21]]
-## Kuznetsova A, Brockhoff PB, Christensen RHB (2017). "lmerTest Package:
-## Tests in Linear Mixed Effects Models." _Journal of Statistical
-## Software_, *82*(13), 1-26. doi:10.18637/jss.v082.i13
-## <https://doi.org/10.18637/jss.v082.i13>.
-## 
-## [[22]]
-## Zeileis A, Hothorn T (2002). "Diagnostic Checking in Regression
-## Relationships." _R News_, *2*(3), 7-10.
-## <https://CRAN.R-project.org/doc/Rnews/>.
-## 
-## [[23]]
-## Navarro D (2015). _Learning statistics with R: A tutorial for
-## psychology students and other beginners. (Version 0.6)_. University of
-## New South Wales, Sydney, Australia. R package version 0.5.1,
-## <https://learningstatisticswithr.com>.
-## 
-## [[24]]
-## Rizopoulos D (2006). "ltm: An R package for Latent Variable Modelling
-## and Item Response Theory Analyses." _Journal of Statistical Software_,
-## *17*(5), 1-25. <https://doi.org/10.18637/jss.v017.i05>.
-## 
-## [[25]]
-## Zhu H (2024). _kableExtra: Construct Complex Table with 'kable' and
-## Pipe Syntax_. R package version 1.4.0,
-## <https://CRAN.R-project.org/package=kableExtra>.
-## 
-## [[26]]
-## Bache S, Wickham H (2022). _magrittr: A Forward-Pipe Operator for R_. R
-## package version 2.0.3, <https://CRAN.R-project.org/package=magrittr>.
-## 
-## [[27]]
-## Beck MW (2018). "NeuralNetTools: Visualization and Analysis Tools for
-## Neural Networks." _Journal of Statistical Software_, *85*(11), 1-20.
-## doi:10.18637/jss.v085.i11 <https://doi.org/10.18637/jss.v085.i11>.
-## 
-## [[28]]
-## Venables WN, Ripley BD (2002). _Modern Applied Statistics with S_,
-## Fourth edition. Springer, New York. ISBN 0-387-95457-0,
-## <https://www.stats.ox.ac.uk/pub/MASS4/>.
-## 
-## [[29]]
-## Wood SN (2011). "Fast stable restricted maximum likelihood and marginal
-## likelihood estimation of semiparametric generalized linear models."
-## _Journal of the Royal Statistical Society (B)_, *73*(1), 3-36.
-## 
-## Wood S, N., Pya, S"afken B (2016). "Smoothing parameter and model
-## selection for general smooth models (with discussion)." _Journal of the
-## American Statistical Association_, *111*, 1548-1575.
-## 
-## Wood SN (2004). "Stable and efficient multiple smoothing parameter
-## estimation for generalized additive models." _Journal of the American
-## Statistical Association_, *99*(467), 673-686.
-## 
-## Wood S (2017). _Generalized Additive Models: An Introduction with R_, 2
-## edition. Chapman and Hall/CRC.
-## 
-## Wood SN (2003). "Thin-plate regression splines." _Journal of the Royal
-## Statistical Society (B)_, *65*(1), 95-114.
-## 
-## [[30]]
-## Venables WN, Ripley BD (2002). _Modern Applied Statistics with S_,
-## Fourth edition. Springer, New York. ISBN 0-387-95457-0,
-## <https://www.stats.ox.ac.uk/pub/MASS4/>.
-## 
-## [[31]]
-## Kolde R (2019). _pheatmap: Pretty Heatmaps_. R package version 1.0.12,
-## <https://CRAN.R-project.org/package=pheatmap>.
-## 
-## [[32]]
-## Borchers H (2023). _pracma: Practical Numerical Math Functions_. R
-## package version 2.4.4, <https://CRAN.R-project.org/package=pracma>.
-## 
-## [[33]]
-## Robin X, Turck N, Hainard A, Tiberti N, Lisacek F, Sanchez J, Müller M
-## (2011). "pROC: an open-source package for R and S+ to analyze and
-## compare ROC curves." _BMC Bioinformatics_, *12*, 77.
-## 
-## [[34]]
-## William Revelle (2024). _psych: Procedures for Psychological,
-## Psychometric, and Personality Research_. Northwestern University,
-## Evanston, Illinois. R package version 2.4.12,
-## <https://CRAN.R-project.org/package=psych>.
-## 
-## [[35]]
-## Champely S (2020). _pwr: Basic Functions for Power Analysis_. R package
-## version 1.3-0, <https://CRAN.R-project.org/package=pwr>.
-## 
-## [[36]]
-## Neuwirth E (2022). _RColorBrewer: ColorBrewer Palettes_. R package
-## version 1.1-3, <https://CRAN.R-project.org/package=RColorBrewer>.
-## 
-## [[37]]
-## Wickham H, Bryan J (2023). _readxl: Read Excel Files_. R package
-## version 1.4.3, <https://CRAN.R-project.org/package=readxl>.
-## 
-## [[38]]
-## Ushey K, Allaire J, Tang Y (2024). _reticulate: Interface to 'Python'_.
-## R package version 1.40.0,
-## <https://CRAN.R-project.org/package=reticulate>.
-## 
-## [[39]]
-## Couture-Beil A (2024). _rjson: JSON for R_. R package version 0.2.23,
-## <https://CRAN.R-project.org/package=rjson>.
-## 
-## [[40]]
-## Sing T, Sander O, Beerenwinkel N, Lengauer T (2005). "ROCR: visualizing
-## classifier performance in R." _Bioinformatics_, *21*(20), 7881.
-## <http://rocr.bioinf.mpi-sb.mpg.de>.
-## 
-## [[41]]
-## Therneau T, Atkinson B (2023). _rpart: Recursive Partitioning and
-## Regression Trees_. R package version 4.1.23,
-## <https://CRAN.R-project.org/package=rpart>.
-## 
-## [[42]]
-## Milborrow S (2024). _rpart.plot: Plot 'rpart' Models: An Enhanced
-## Version of 'plot.rpart'_. R package version 3.1.2,
-## <https://CRAN.R-project.org/package=rpart.plot>.
-## 
-## [[43]]
-## Kassambara A (2023). _rstatix: Pipe-Friendly Framework for Basic
-## Statistical Tests_. R package version 0.7.2,
-## <https://CRAN.R-project.org/package=rstatix>.
-## 
-## [[44]]
-## Wickham H, Pedersen T, Seidel D (2023). _scales: Scale Functions for
-## Visualization_. R package version 1.3.0,
-## <https://CRAN.R-project.org/package=scales>.
-## 
-## [[45]]
-## R Core Team (2024). _R: A Language and Environment for Statistical
-## Computing_. R Foundation for Statistical Computing, Vienna, Austria.
-## <https://www.R-project.org/>.
-## 
-## [[46]]
-## Wickham H (2023). _stringr: Simple, Consistent Wrappers for Common
-## String Operations_. R package version 1.5.1,
-## <https://CRAN.R-project.org/package=stringr>.
-## 
-## [[47]]
-## Müller K, Wickham H (2023). _tibble: Simple Data Frames_. R package
-## version 3.2.1, <https://CRAN.R-project.org/package=tibble>.
-## 
-## [[48]]
-## Wickham H, Vaughan D, Girlich M (2024). _tidyr: Tidy Messy Data_. R
-## package version 1.3.1, <https://CRAN.R-project.org/package=tidyr>.
-## 
-## [[49]]
-## Wickham H, Averick M, Bryan J, Chang W, McGowan LD, François R,
-## Grolemund G, Hayes A, Henry L, Hester J, Kuhn M, Pedersen TL, Miller E,
-## Bache SM, Müller K, Ooms J, Robinson D, Seidel DP, Spinu V, Takahashi
-## K, Vaughan D, Wilke C, Woo K, Yutani H (2019). "Welcome to the
-## tidyverse." _Journal of Open Source Software_, *4*(43), 1686.
-## doi:10.21105/joss.01686 <https://doi.org/10.21105/joss.01686>.
-## 
-## [[50]]
-## Gilleland E (2024). _verification: Weather Forecast Verification
-## Utilities_. R package version 1.44,
-## <https://CRAN.R-project.org/package=verification>.
-## 
-## [[51]]
-## Garnier, Simon, Ross, Noam, Rudis, Robert, Camargo, Pedro A, Sciaini,
-## Marco, Scherer, Cédric (2024). _viridis(Lite) - Colorblind-Friendly
-## Color Maps for R_. doi:10.5281/zenodo.4679423
-## <https://doi.org/10.5281/zenodo.4679423>, viridis package version
-## 0.6.5, <https://sjmgarnier.github.io/viridis/>.
-\end{verbatim}
 
 \chapter*{References}\label{references}
 \addcontentsline{toc}{chapter}{References}
